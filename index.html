@@ -3,8 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duy UI | Premium Portfolio & Client Portal</title>
     
+    <!-- ========================================== -->
+    <!-- 🚀 BỘ TỐI ƯU SEO & DIGITAL MARKETING TỪ KHÓA -->
+    <!-- ========================================== -->
+    
+    <!-- 1. Title & Meta Description -->
+    <title>Đức Duy | Chuyên Gia Làm Website, Digital Marketing & SEO</title>
+    <meta name="description" content="Đức Duy - Chuyên gia thiết kế, làm website chuẩn SEO, tối ưu UX/UI và triển khai Digital Marketing thực chiến. Giúp doanh nghiệp bứt phá doanh thu tự nhiên.">
+    <meta name="keywords" content="Đức Duy, làm website, thiết kế website, digital marketing, SEO, chuyên gia SEO, tối ưu UX UI, thiết kế web chuyển đổi">
+    <meta name="author" content="Đức Duy">
+    <meta name="robots" content="index, follow">
+
+    <!-- 2. Favicon Tùy Chỉnh (Thay file favicon.ico của bạn vào thư mục assets) -->
+    <link rel="icon" href="./img/duy-web.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./assets/images/apple-touch-icon.png">
+
+    <!-- 3. Open Graph (Tối ưu khi gửi link qua Zalo, Facebook) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://duyux.com/"> <!-- LƯU Ý: Đổi thành link miền thực tế của bạn -->
+    <meta property="og:title" content="Đức Duy | Chuyên Gia Làm Website & Digital Marketing">
+    <meta property="og:description" content="Đức Duy - Giải pháp thiết kế web và SEO thực chiến. Tăng tốc độ, tối ưu chuyển đổi, chuẩn định dạng AI Search.">
+    <!-- LƯU Ý THƯ MỤC ẢNH: Thay bằng link ảnh thật của bạn trên hosting -->
+    <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"> 
+
+    <!-- 4. Schema Markup (JSON-LD) - Tối ưu cho AI Overview (Gemini/SGE) & Định danh cá nhân -->
+    <!-- Cấu trúc "@graph" này cho phép bạn dễ dàng thêm mảng "Article" (Bài viết blog) vào sau này -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://duyux.com/#ducduy",
+          "name": "Đức Duy",
+          "url": "https://duyux.com/",
+          "image": "https://ui-avatars.com/api/?name=Đức+Duy&background=10b981&color=fff",
+          "jobTitle": "Chuyên gia Thiết kế Website & Digital Marketing",
+          "description": "Đức Duy là chuyên gia cung cấp dịch vụ làm website chuẩn SEO, thiết kế UX/UI và triển khai các chiến dịch Digital Marketing tổng thể giúp doanh nghiệp tăng trưởng bền vững.",
+          "knowsAbout": [
+            "Làm Website",
+            "Thiết kế Website",
+            "Search Engine Optimization (SEO)",
+            "Digital Marketing",
+            "User Experience (UX) Design"
+          ],
+          "sameAs": [
+            "https://www.facebook.com/tran.duc.duy.742865/", 
+            "https://www.tiktok.com/@di0938415218"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://duyux.com/#website",
+          "url": "https://duyux.com/",
+          "name": "Đức Duy - Làm Website & Digital Marketing",
+          "publisher": {
+            "@id": "https://duyux.com/#ducduy"
+          }
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://duyux.com/#service",
+          "name": "Dịch vụ Thiết kế Web & SEO Đức Duy",
+          "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+          "provider": {
+            "@id": "https://duyux.com/#ducduy"
+          },
+          "url": "https://duyux.com/",
+          "telephone": "0938415218",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "VN"
+          }
+        }
+      ]
+    }
+    </script>
+    <!-- ========================================== -->
+
     <!-- Tích hợp Tailwind CSS trực tiếp qua CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -29,13 +106,11 @@
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
-        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #0a0a0a; }
         ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #555; }
         
-        /* Smooth fade transition cho các View */
         .view-section { display: none; animation: fadeIn 0.4s ease-in-out forwards; }
         .view-section.active { display: block; }
         @keyframes fadeIn {
@@ -46,7 +121,7 @@
 </head>
 <body class="relative min-h-screen flex flex-col">
 
-    <!-- Background Ambient Glows Tổng -->
+    <!-- Background Ambient Glows -->
     <div class="fixed top-0 left-1/4 w-[500px] h-[500px] bg-emerald-500/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
     <div class="fixed bottom-0 right-1/4 w-[600px] h-[600px] bg-pink-500/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
 
@@ -56,11 +131,19 @@
         <nav class="fixed top-0 left-0 w-full bg-[#0a0a0a]/80 backdrop-blur-xl z-50 border-b border-white/5 transition-colors duration-300">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div class="flex justify-between h-20 items-center">
-                    <a href="#home" class="flex items-center gap-3 shrink-0 cursor-pointer group">
-                        <div class="bg-[#121212] p-2 rounded-xl border border-white/10 shadow-[inset_0_0_15px_rgba(255,255,255,0.05)] group-hover:border-emerald-500/50 transition-colors">
-                            <i data-lucide="code" class="text-emerald-400 drop-shadow-[0_0_8px_rgba(52,211,153,0.8)] w-5 h-5"></i>
+                    
+                    <!-- THƯƠNG HIỆU LÀ LOGO (SEO Tối ưu) -->
+                    <a href="#home" class="flex items-center gap-3 shrink-0 cursor-pointer group" title="Đức Duy - Chuyên gia làm website">
+                        <!-- LƯU Ý THƯ MỤC ẢNH: Đổi src thành thư mục của bạn VD: src="./assets/images/logo.png" -->
+                        <img  src="./img/logo-duy-web.jpg" 
+                             alt="Logo Đức Duy - Chuyên gia làm website và Digital Marketing" 
+                             class=" w-10 h-10 rounded-xl border border-white/10 shadow-[0_0_15px_rgba(52,211,153,0.2)] group-hover:border-emerald-500/50 transition-colors">
+                        
+                        <!-- Tên Text hỗ trợ thêm SEO Keyword -->
+                        <div class="hidden sm:flex flex-col">
+                            <span class="font-bold text-lg tracking-tight text-white leading-none">Đức Duy</span>
+                            <span class="text-[10px] text-emerald-400 font-medium uppercase tracking-widest mt-1">Làm Website & SEO</span>
                         </div>
-                        <span class="font-bold text-xl tracking-tight text-white hidden sm:block">Duy.UI</span>
                     </a>
                     
                     <div class="hidden lg:flex items-center space-x-2 xl:space-x-4">
@@ -114,18 +197,20 @@
                 <div class="w-full lg:w-1/2 space-y-8 relative z-10 text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#121212] border border-white/10 text-[10px] sm:text-xs font-medium text-white/50 uppercase tracking-widest shadow-[0_0_15px_rgba(255,255,255,0.02)]">
                         <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                        UX Designer & SEO Writer
+                        Chuyên gia Web & Digital Marketing
                     </div>
+                    
+                    <!-- H1 Tối ưu hóa chứa Keyword cho AI Overview đọc hiểu dễ nhất -->
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-white">
-                        Thiết kế Web <br class="hidden lg:block"/>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 drop-shadow-[0_0_20px_rgba(52,211,153,0.3)]">không chỉ để ngắm.</span>
+                        Làm Website <br class="hidden lg:block"/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 drop-shadow-[0_0_20px_rgba(52,211,153,0.3)]">chuẩn SEO & Chuyển đổi.</span>
                     </h1>
                     <p class="text-base sm:text-lg text-white/40 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                        Tôi xây dựng các sản phẩm số mang lại tỷ lệ chuyển đổi thực tế. Sự kết hợp hoàn hảo giữa thiết kế giao diện (UI) tinh gọn và kiến trúc thông tin chuẩn SEO.
+                        Chào bạn, tôi là <strong>Đức Duy</strong>. Thay vì làm một website chỉ để ngắm, tôi cung cấp giải pháp <strong>Digital Marketing tổng thể</strong>: Kết hợp thiết kế UX/UI sắc nét và nội dung chuẩn SEO để biến website thành cỗ máy bán hàng tự động 24/7.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
                         <a href="#brief" class="px-8 py-4 bg-white text-black font-bold rounded-2xl hover:bg-emerald-400 transition-colors shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(52,211,153,0.4)] flex items-center justify-center gap-2">
-                            Khởi tạo dự án <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            Bắt đầu dự án <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
                         <a href="#projects" class="px-8 py-4 bg-[#121212] border border-white/10 text-white font-medium rounded-2xl hover:bg-white/5 transition-colors flex items-center justify-center">
                             Xem Case Study
@@ -159,7 +244,7 @@
                         </div>
                         <div class="relative z-10 text-right">
                             <h2 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-500 drop-shadow-[0_0_15px_rgba(249,115,22,0.4)] mb-1">Top 1</h2>
-                            <p class="text-white/40 text-xs font-medium uppercase">Google Search</p>
+                            <p class="text-white/40 text-xs font-medium uppercase">Google Search SEO</p>
                         </div>
                     </div>
 
@@ -176,7 +261,7 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-white/40 text-sm font-medium mb-1">Tỷ lệ chuyển đổi</h3>
+                            <h3 class="text-white/40 text-sm font-medium mb-1">Tỷ lệ chuyển đổi Marketing</h3>
                             <div class="flex gap-4">
                                 <div class="bg-[#0d0d0d] px-4 py-2 rounded-xl shadow-[inset_2px_2px_6px_rgba(0,0,0,0.8),inset_-1px_-1px_4px_rgba(255,255,255,0.03)] border border-white/[0.02] flex items-center justify-center">
                                     <span class="text-pink-400 font-bold drop-shadow-[0_0_8px_rgba(236,72,153,0.5)]">+ 200%</span>
@@ -198,8 +283,8 @@
             <section id="about" class="py-24 relative border-t border-white/5 scroll-mt-20">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center max-w-3xl mx-auto mb-16">
-                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Triết lý "Ăn chắc mặc bền"</h2>
-                        <p class="text-white/40 text-sm md:text-base leading-relaxed">Website là cỗ máy kinh doanh. Tôi không chạy theo xu hướng phù phiếm, tôi tập trung vào 3 giá trị cốt lõi mang lại hiệu quả thực tế và lợi nhuận cho khách hàng.</p>
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Giải Pháp Digital Marketing Của Đức Duy</h2>
+                        <p class="text-white/40 text-sm md:text-base leading-relaxed">Website là trung tâm của mọi chiến dịch Digital Marketing. Tôi không chạy theo xu hướng phù phiếm, tôi tập trung vào 3 giá trị cốt lõi mang lại hiệu quả thực tế và lợi nhuận cho khách hàng.</p>
                     </div>
                     <div class="grid sm:grid-cols-3 gap-6">
                         <div class="relative rounded-[2rem] bg-[#121212] border border-white/5 p-8 flex flex-col items-center text-center group hover:-translate-y-2 transition-transform duration-500">
@@ -208,23 +293,23 @@
                                 <i data-lucide="smartphone" class="text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)] w-7 h-7"></i>
                             </div>
                             <h3 class="text-xl font-bold text-white mb-3 relative z-10">Tối ưu UX / Mobile</h3>
-                            <p class="text-white/40 text-sm leading-relaxed relative z-10">Hơn 80% khách hàng duyệt web trên điện thoại. Luồng thao tác được thiết kế đơn giản để dễ dàng chốt đơn.</p>
+                            <p class="text-white/40 text-sm leading-relaxed relative z-10">Hơn 80% khách hàng duyệt web trên điện thoại. Luồng thao tác được Đức Duy thiết kế đơn giản để dễ dàng chốt đơn.</p>
                         </div>
                         <div class="relative rounded-[2rem] bg-[#121212] border border-white/5 p-8 flex flex-col items-center text-center group hover:-translate-y-2 transition-transform duration-500">
                             <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-24 h-24 bg-orange-500/20 blur-[30px] rounded-full pointer-events-none group-hover:bg-orange-500/30 transition-colors"></div>
                             <div class="w-16 h-16 rounded-[1.5rem] bg-[#0d0d0d] shadow-[inset_2px_2px_6px_rgba(0,0,0,0.8),inset_-1px_-1px_4px_rgba(255,255,255,0.03)] border border-white/[0.02] flex items-center justify-center mb-6 relative z-10">
                                 <i data-lucide="search" class="text-orange-400 drop-shadow-[0_0_8px_rgba(251,146,60,0.8)] w-7 h-7"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-3 relative z-10">Chuẩn SEO từ gốc</h3>
-                            <p class="text-white/40 text-sm leading-relaxed relative z-10">Mã nguồn sạch, cấu trúc Heading chuẩn và nội dung viết theo Insight giúp lên Top Google bền vững.</p>
+                            <h3 class="text-xl font-bold text-white mb-3 relative z-10">Làm Website Chuẩn SEO</h3>
+                            <p class="text-white/40 text-sm leading-relaxed relative z-10">Mã nguồn sạch, cấu trúc Heading chuẩn và nội dung viết theo Insight giúp web của bạn lên Top Google bền vững.</p>
                         </div>
                         <div class="relative rounded-[2rem] bg-[#121212] border border-white/5 p-8 flex flex-col items-center text-center group hover:-translate-y-2 transition-transform duration-500">
                             <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-24 h-24 bg-pink-500/20 blur-[30px] rounded-full pointer-events-none group-hover:bg-pink-500/30 transition-colors"></div>
                             <div class="w-16 h-16 rounded-[1.5rem] bg-[#0d0d0d] shadow-[inset_2px_2px_6px_rgba(0,0,0,0.8),inset_-1px_-1px_4px_rgba(255,255,255,0.03)] border border-white/[0.02] flex items-center justify-center mb-6 relative z-10">
                                 <i data-lucide="shield-check" class="text-pink-400 drop-shadow-[0_0_8px_rgba(236,72,153,0.8)] w-7 h-7"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-3 relative z-10">Bền bỉ & Bảo mật</h3>
-                            <p class="text-white/40 text-sm leading-relaxed relative z-10">Không nhồi nhét plugin làm nặng máy. Cấu trúc vững chắc, dễ bảo trì và mở rộng khi phát triển.</p>
+                            <h3 class="text-xl font-bold text-white mb-3 relative z-10">Hệ Sinh Thái An Toàn</h3>
+                            <p class="text-white/40 text-sm leading-relaxed relative z-10">Triển khai Digital Marketing không phụ thuộc quá mức vào Quảng cáo. Xây dựng nền tảng vững chắc, dễ bảo trì.</p>
                         </div>
                     </div>
                 </div>
@@ -235,7 +320,7 @@
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="mb-16">
                         <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Dự án tiêu biểu</h2>
-                        <p class="text-white/40 text-sm md:text-base">Xem cách tôi giải quyết vấn đề bằng thiết kế hệ thống.</p>
+                        <p class="text-white/40 text-sm md:text-base">Xem cách Đức Duy áp dụng Digital Marketing và thiết kế website giải quyết bài toán kinh doanh.</p>
                     </div>
                     <div class="relative rounded-[2rem] md:rounded-[3rem] bg-[#121212] border border-white/5 shadow-2xl p-6 sm:p-10 lg:p-16 flex flex-col lg:flex-row gap-12 items-center">
                         <div class="w-full lg:w-1/2 space-y-8 z-10">
@@ -248,17 +333,17 @@
                                     <h4 class="text-sm font-bold text-white/70 flex items-center gap-2 mb-3 uppercase tracking-wider">
                                         <span class="w-2 h-2 bg-pink-500 rounded-full drop-shadow-[0_0_5px_#ec4899]"></span> Vấn đề
                                     </h4>
-                                    <p class="text-white/50 text-sm leading-relaxed">Khách hàng khó phân loại thức ăn theo độ tuổi/giống. Giao diện cũ thiếu điểm nhấn để tạo sự tin tưởng khi bán cám nhập khẩu cao cấp.</p>
+                                    <p class="text-white/50 text-sm leading-relaxed">Khách hàng khó phân loại thức ăn theo độ tuổi/giống. Cần một chiến lược Digital Marketing và Website chuẩn SEO để tạo sự tin tưởng khi bán cám nhập khẩu cao cấp.</p>
                                 </div>
                                 <div class="bg-[#0a0a0a] p-6 rounded-2xl border border-emerald-500/10 shadow-[inset_0_0_20px_rgba(52,211,153,0.05)] relative overflow-hidden">
                                     <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 blur-[30px] pointer-events-none"></div>
                                     <h4 class="text-sm font-bold text-white/70 flex items-center gap-2 mb-3 uppercase tracking-wider relative z-10">
-                                        <span class="w-2 h-2 bg-emerald-500 rounded-full drop-shadow-[0_0_5px_#34d399]"></span> Giải pháp
+                                        <span class="w-2 h-2 bg-emerald-500 rounded-full drop-shadow-[0_0_5px_#34d399]"></span> Giải pháp của Đức Duy
                                     </h4>
                                     <ul class="text-white/50 text-sm space-y-3 relative z-10">
                                         <li class="flex gap-2 items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i> Thiết kế giao diện tươi sáng, thân thiện.</li>
                                         <li class="flex gap-2 items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i> Tối ưu bộ lọc thông minh (Chó/Mèo, Hạt/Pate).</li>
-                                        <li class="flex gap-2 items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i> Cấu trúc Blog kiến thức chuẩn SEO.</li>
+                                        <li class="flex gap-2 items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i> Xây dựng Masterplan Blog kiến thức chuẩn SEO.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -277,9 +362,11 @@
                                         </div>
                                         <div class="w-10"></div>
                                     </div>
-                                    <div class="w-full h-full relative overflow-hidden bg-[#0a0a0a]">
-                                        <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80" alt="Demo" class="w-full h-auto object-cover object-top transition-transform duration-[8s] ease-in-out group-hover:-translate-y-[40%] opacity-80 group-hover:opacity-100" />
-                                        <div class="absolute inset-0 shadow-[inset_0_0_50px_rgba(0,0,0,0.8)] pointer-events-none"></div>
+                                   <div class="w-full h-full relative overflow-hidden bg-[#0a0a0a] rounded-[1.5rem] isolate">
+                                        <!-- Thêm thuộc tính ALT chuẩn SEO cho ảnh -->
+                                        <!-- LƯU Ý THƯ MỤC ẢNH: Đổi src thành thư mục VD: src="./assets/images/bifood-demo.jpg" -->
+                                        <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80" alt="Đức Duy làm website và tối ưu digital marketing SEO cho dự án Bifood" class="w-full h-auto object-cover object-top transition-transform duration-[8s] ease-in-out group-hover:-translate-y-[40%] opacity-80 group-hover:opacity-100" />
+                                        <div class="absolute inset-0 shadow-[inset_0_0_50px_rgba(0,0,0,0.8)] pointer-events-none rounded-[1.5rem]"></div>
                                     </div>
                                 </div>
                             </div>
@@ -292,28 +379,29 @@
             <section id="contact" class="py-24 relative border-t border-white/5 overflow-hidden scroll-mt-20">
                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[300px] bg-gradient-to-r from-emerald-500/10 via-cyan-500/10 to-pink-500/10 blur-[80px] pointer-events-none rounded-full"></div>
                 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white mb-6">Bạn đã sẵn sàng để nâng cấp?</h2>
-                    <p class="text-base sm:text-lg text-white/40 mb-12 max-w-xl mx-auto">Hãy nhắn tin cho tôi để chúng ta cùng thảo luận về giải pháp thiết kế phù hợp nhất cho dự án của bạn.</p>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white mb-6">Bạn đã sẵn sàng nâng cấp Digital Marketing?</h2>
+                    <p class="text-base sm:text-lg text-white/40 mb-12 max-w-xl mx-auto">Hãy nhắn tin cho Đức Duy để chúng ta cùng thảo luận về giải pháp thiết kế website và SEO phù hợp nhất cho dự án của bạn.</p>
                     <div class="bg-[#121212] rounded-[2rem] border border-white/5 p-8 md:p-12 shadow-2xl max-w-2xl mx-auto text-left relative overflow-hidden group">
                         <div class="absolute -top-20 -right-20 w-40 h-40 bg-white/5 blur-[40px] rounded-full pointer-events-none"></div>
-                        <h3 class="text-xl font-bold text-white mb-8 text-center uppercase tracking-widest text-sm">Liên hệ trực tiếp</h3>
+                        <h3 class="text-xl font-bold text-white mb-8 text-center uppercase tracking-widest text-sm">Liên hệ trực tiếp Đức Duy</h3>
                         <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                            <a href="https://zalo.me/0938415218" target="_blank" class="flex-1 bg-[#0d0d0d] p-4 rounded-2xl shadow-[inset_2px_2px_6px_rgba(0,0,0,0.8),inset_-1px_-1px_4px_rgba(255,255,255,0.03)] border border-white/[0.02] flex items-center gap-4 hover:border-cyan-500/30 transition-colors group/btn">
-                                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center border border-cyan-500/20 shadow-[0_0_15px_rgba(6,182,212,0.1)] group-hover/btn:bg-cyan-500/20">
-                                    <i data-lucide="phone" class="text-cyan-400 drop-shadow-[0_0_8px_rgba(6,182,212,0.8)] w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-white/40 uppercase font-medium">Zalo / Hotline</p>
-                                    <p class="text-white font-bold tracking-wider">0938.415.218</p>
-                                </div>
-                            </a>
-                            <a href="#" target="_blank" class="flex-1 bg-[#0d0d0d] p-4 rounded-2xl shadow-[inset_2px_2px_6px_rgba(0,0,0,0.8),inset_-1px_-1px_4px_rgba(255,255,255,0.03)] border border-white/[0.02] flex items-center gap-4 hover:border-blue-500/30 transition-colors group/btn">
+                            <a href="https://www.facebook.com/tran.duc.duy.742865/" target="_blank" class="flex-1 bg-[#0d0d0d] p-4 rounded-2xl shadow-[inset_2px_2px_6px_rgba(0,0,0,0.8),inset_-1px_-1px_4px_rgba(255,255,255,0.03)] border border-white/[0.02] flex items-center gap-4 hover:border-blue-500/30 transition-colors group/btn">
                                 <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.1)] group-hover/btn:bg-blue-500/20">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-400 drop-shadow-[0_0_8px_rgba(59,130,246,0.8)]"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                                 </div>
                                 <div>
                                     <p class="text-xs text-white/40 uppercase font-medium">Facebook</p>
-                                    <p class="text-white font-bold tracking-wider">Cá Nhân</p>
+                                    <p class="text-white font-bold tracking-wider">Đức Duy</p>
+                                </div>
+                            </a>
+                            <a href="https://www.tiktok.com/@di0938415218" target="_blank" class="flex-1 bg-[#0d0d0d] p-4 rounded-2xl shadow-[inset_2px_2px_6px_rgba(0,0,0,0.8),inset_-1px_-1px_4px_rgba(255,255,255,0.03)] border border-white/[0.02] flex items-center gap-4 hover:border-pink-500/30 transition-colors group/btn">
+                                <div class="w-12 h-12 rounded-xl bg-pink-500/10 flex items-center justify-center border border-pink-500/20 shadow-[0_0_15px_rgba(236,72,153,0.1)] group-hover/btn:bg-pink-500/20">
+                                    <!-- Custom TikTok SVG -->
+                                    <svg class="w-5 h-5 text-pink-400 drop-shadow-[0_0_8px_rgba(236,72,153,0.8)]" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.25-.71 4.54-2.11 6.32-1.48 1.9-3.69 3.08-6.1 3.25-2.48.18-5.06-.26-7.14-1.74-2.09-1.49-3.32-3.86-3.48-6.42-.16-2.58.74-5.2 2.5-7.05 1.77-1.85 4.29-2.88 6.84-2.73v4.08c-1.39-.02-2.81.33-3.89 1.25-1.07.93-1.65 2.37-1.58 3.82.07 1.5.88 2.87 2.14 3.65 1.26.78 2.88.94 4.31.54 1.44-.4 2.54-1.52 3.03-2.92.35-1.02.39-2.13.39-3.21V.02h4.08z"/></svg>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-white/40 uppercase font-medium">TikTok</p>
+                                    <p class="text-white font-bold tracking-wider">@di0938415218</p>
                                 </div>
                             </a>
                         </div>
@@ -327,16 +415,15 @@
         <!-- ======================================================== -->
         <main id="brief-view" class="view-section flex-1 pt-32 pb-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <a href="#home" class="mb-8 inline-flex items-center gap-2 text-white/40 hover:text-white text-sm font-medium transition-colors">
-                <i data-lucide="arrow-right" class="w-4 h-4 rotate-180"></i> Quay lại
+                <i data-lucide="arrow-right" class="w-4 h-4 rotate-180"></i> Quay lại trang chủ
             </a>
             <div class="text-center mb-16">
                 <h1 class="text-3xl md:text-5xl font-extrabold mb-4 text-white">
-                    Khởi tạo dự án <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]">Thực Chiến</span>
+                    Khởi tạo dự án <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]">Thực Chiến cùng Đức Duy</span>
                 </h1>
-                <p class="text-sm text-white/40 max-w-2xl mx-auto">Vui lòng cung cấp 4 thông tin thiết yếu dưới đây để tôi có thể định hình giải pháp chính xác nhất cho bạn.</p>
+                <p class="text-sm text-white/40 max-w-2xl mx-auto">Vui lòng cung cấp 4 thông tin thiết yếu dưới đây để Đức Duy có thể định hình giải pháp Digital Marketing & Web chính xác nhất cho bạn.</p>
             </div>
             <div class="space-y-6">
-                <!-- Brief Item 1 -->
                 <div class="bg-[#121212] p-6 md:p-8 rounded-[2rem] border border-white/5 shadow-2xl relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 blur-[40px] rounded-full pointer-events-none"></div>
                     <div class="flex gap-4 md:gap-6 relative z-10">
@@ -344,13 +431,12 @@
                             <i data-lucide="target" class="text-cyan-400 w-5 h-5 drop-shadow-[0_0_8px_rgba(6,182,212,0.5)]"></i>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-lg font-bold text-white mb-1">1. Mục tiêu dự án</h3>
+                            <h3 class="text-lg font-bold text-white mb-1">1. Mục tiêu dự án SEO/Web</h3>
                             <p class="text-white/40 text-xs mb-4">Bạn muốn khách hàng làm gì sau khi vào web?</p>
                             <textarea rows="2" placeholder="VD: Bán hàng ngay, hay Xây dựng thương hiệu lâu dài..." class="w-full p-4 rounded-xl bg-[#0a0a0a] border border-white/5 text-white text-sm focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 outline-none placeholder:text-white/20 shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]"></textarea>
                         </div>
                     </div>
                 </div>
-                <!-- Brief Item 2 -->
                 <div class="bg-[#121212] p-6 md:p-8 rounded-[2rem] border border-white/5 shadow-2xl relative overflow-hidden">
                     <div class="flex gap-4 md:gap-6 relative z-10">
                         <div class="w-12 h-12 shrink-0 rounded-2xl bg-[#0d0d0d] shadow-[inset_2px_2px_6px_rgba(0,0,0,0.8),inset_-1px_-1px_4px_rgba(255,255,255,0.03)] border border-white/[0.02] flex items-center justify-center">
@@ -363,7 +449,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Brief Item 3 -->
                 <div class="bg-[#121212] p-6 md:p-8 rounded-[2rem] border border-white/5 shadow-2xl relative overflow-hidden">
                     <div class="flex gap-4 md:gap-6 relative z-10">
                         <div class="w-12 h-12 shrink-0 rounded-2xl bg-[#0d0d0d] shadow-[inset_2px_2px_6px_rgba(0,0,0,0.8),inset_-1px_-1px_4px_rgba(255,255,255,0.03)] border border-white/[0.02] flex items-center justify-center">
@@ -376,14 +461,13 @@
                         </div>
                     </div>
                 </div>
-                <!-- Brief Item 4 -->
                 <div class="bg-[#121212] p-6 md:p-8 rounded-[2rem] border border-white/5 shadow-2xl relative overflow-hidden">
                     <div class="flex gap-4 md:gap-6 relative z-10">
                         <div class="w-12 h-12 shrink-0 rounded-2xl bg-[#0d0d0d] shadow-[inset_2px_2px_6px_rgba(0,0,0,0.8),inset_-1px_-1px_4px_rgba(255,255,255,0.03)] border border-white/[0.02] flex items-center justify-center">
                             <i data-lucide="trending-up" class="text-cyan-400 w-5 h-5"></i>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-lg font-bold text-white mb-1">4. Kỳ vọng số liệu</h3>
+                            <h3 class="text-lg font-bold text-white mb-1">4. Kỳ vọng số liệu Digital Marketing</h3>
                             <p class="text-white/40 text-xs mb-4">Mục tiêu cụ thể.</p>
                             <textarea rows="2" placeholder="VD: Top 1 từ khóa A, 500 truy cập/tháng..." class="w-full p-4 rounded-xl bg-[#0a0a0a] border border-white/5 text-white text-sm outline-none placeholder:text-white/20 shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]"></textarea>
                         </div>
@@ -392,7 +476,7 @@
 
                 <div class="text-center pt-8">
                     <a href="https://zalo.me/0938415218" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-2xl hover:bg-cyan-400 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.1)]">
-                        <i data-lucide="phone" class="w-4 h-4"></i> Gửi yêu cầu qua Zalo
+                        <i data-lucide="phone" class="w-4 h-4"></i> Gửi yêu cầu qua Zalo cho Đức Duy
                     </a>
                 </div>
             </div>
@@ -403,13 +487,13 @@
         <!-- ======================================================== -->
         <main id="roadmap-view" class="view-section flex-1 pt-32 pb-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <a href="#home" class="mb-8 inline-flex items-center gap-2 text-white/40 hover:text-white text-sm font-medium transition-colors">
-                <i data-lucide="arrow-right" class="w-4 h-4 rotate-180"></i> Quay lại
+                <i data-lucide="arrow-right" class="w-4 h-4 rotate-180"></i> Quay lại trang chủ
             </a>
 
             <!-- ROADMAP TIMELINE -->
             <div class="mb-16 border-b border-white/10 pb-12">
                 <div class="mb-8">
-                    <h2 class="text-3xl font-extrabold text-white tracking-tight mb-2">Lộ trình triển khai</h2>
+                    <h2 class="text-3xl font-extrabold text-white tracking-tight mb-2">Lộ trình triển khai Digital Marketing & SEO</h2>
                     <p class="text-white/40 text-sm">Dự án: <span class="font-bold text-pink-400 uppercase drop-shadow-[0_0_5px_rgba(236,72,153,0.5)]">Orio "Cám Mát"</span></p>
                 </div>
                 
@@ -419,7 +503,7 @@
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
                         </div>
                         <h3 class="text-white font-bold mb-1">1. Research & Data</h3>
-                        <p class="text-white/40 text-xs">Đã phân tích 10 đối thủ trực tiếp.</p>
+                        <p class="text-white/40 text-xs">Phân tích đối thủ và từ khóa SEO.</p>
                     </div>
                     <div class="bg-[#121212] p-6 rounded-[2rem] border border-pink-500/20 shadow-[0_0_30px_rgba(236,72,153,0.05)] relative overflow-hidden">
                         <div class="absolute top-0 right-0 w-32 h-32 bg-pink-500/10 blur-[40px] pointer-events-none rounded-full"></div>
@@ -427,8 +511,8 @@
                             <span class="text-pink-400 font-bold">2</span>
                         </div>
                         <div class="relative z-10">
-                            <h3 class="text-white font-bold mb-1 flex items-center gap-2">2. Phê duyệt <span class="px-2 py-0.5 bg-red-500/20 text-red-400 text-[9px] rounded border border-red-500/30 whitespace-nowrap">QUAN TRỌNG</span></h3>
-                            <p class="text-white/60 text-xs mb-4">Sườn bài tập trung vào "Đạm tươi" và "Giảm mùi hôi".</p>
+                            <h3 class="text-white font-bold mb-1 flex items-center gap-2">2. Phê duyệt SEO <span class="px-2 py-0.5 bg-red-500/20 text-red-400 text-[9px] rounded border border-red-500/30 whitespace-nowrap">QUAN TRỌNG</span></h3>
+                            <p class="text-white/60 text-xs mb-4">Duyệt sườn bài tập trung vào "Đạm tươi" và "Giảm mùi hôi".</p>
                             <button class="w-full py-2 bg-pink-500/20 text-pink-400 font-bold text-xs rounded-xl border border-pink-500/30 hover:bg-pink-500/30 transition-colors mb-2">Duyệt Ngay</button>
                         </div>
                     </div>
@@ -439,7 +523,7 @@
                         </div>
                         <div class="relative z-10">
                             <h3 class="text-white font-bold mb-1 flex items-center gap-2">3. Triển khai Content <span class="px-2 py-0.5 bg-cyan-500/20 text-cyan-400 text-[9px] rounded border border-cyan-500/30 whitespace-nowrap">ĐANG TIẾN HÀNH</span></h3>
-                            <p class="text-white/60 text-xs mb-4">Lên bài viết chuẩn SEO giải quyết nỗi đau của khách nuôi Pet.</p>
+                            <p class="text-white/60 text-xs mb-4">Đức Duy đang lên bài viết chuẩn SEO giải quyết nỗi đau của khách nuôi Pet.</p>
                             <button onclick="document.getElementById('content-plan').scrollIntoView({behavior: 'smooth'})" class="w-full py-2 flex items-center justify-center gap-2 bg-cyan-500/20 text-cyan-400 font-bold text-xs rounded-xl border border-cyan-500/30 hover:bg-cyan-500/30 transition-colors shadow-[0_0_10px_rgba(6,182,212,0.2)]">
                                 <i data-lucide="bar-chart" class="w-3 h-3"></i> Xem Từ khóa & Bài viết
                             </button>
@@ -453,9 +537,9 @@
                 <div class="mb-10 text-center md:text-left">
                     <div class="inline-flex items-center gap-2 px-4 py-2 mb-4 rounded-full bg-[#121212] border border-white/10 shadow-[inset_0_0_10px_rgba(255,255,255,0.02)]">
                         <i data-lucide="book-open" class="w-4 h-4 text-purple-400"></i>
-                        <span class="text-xs font-bold text-white/70 uppercase tracking-widest">Kế hoạch Content</span>
+                        <span class="text-xs font-bold text-white/70 uppercase tracking-widest">Kế hoạch Content SEO</span>
                     </div>
-                    <h2 class="text-2xl md:text-4xl font-extrabold text-white tracking-tight mb-4">Top of Funnel (Nhận diện)</h2>
+                    <h2 class="text-2xl md:text-4xl font-extrabold text-white tracking-tight mb-4">Chiến Lược Từ Khóa Chuyển Đổi</h2>
                     <p class="text-white/40 text-sm md:text-base max-w-2xl">Mục tiêu: Tiếp cận người nuôi thông qua các từ khóa tìm kiếm phổ biến, cung cấp kiến thức giá trị và giải quyết "nỗi đau" nhỏ hằng ngày để dẫn dắt họ về sản phẩm Cám Mát Orio.</p>
                 </div>
 
@@ -672,7 +756,7 @@
         <footer class="bg-[#0a0a0a] py-8 border-t border-white/5 mt-auto relative z-10">
             <div class="max-w-7xl mx-auto px-4 text-center">
                 <p class="text-white/30 text-xs">
-                    © 2024 Duy UX/UI. Thiết kế mang phong cách Premium Dark Neumorphism (Pure HTML/JS).
+                    © 2024 Đức Duy UX/UI & Digital Marketing. Thiết kế mang phong cách Premium Dark Neumorphism.
                 </p>
             </div>
         </footer>
@@ -689,7 +773,7 @@
                     <div class="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30">
                         <i data-lucide="bot" class="w-4 h-4 text-emerald-400"></i>
                     </div>
-                    <h3 class="font-bold text-white text-sm">Trợ lý AI của Duy</h3>
+                    <h3 class="font-bold text-white text-sm">Trợ lý AI của Đức Duy</h3>
                 </div>
                 <button onclick="toggleChat()" class="text-white/40 hover:text-white transition-colors">
                     <i data-lucide="x-circle" class="w-5 h-5"></i>
@@ -698,7 +782,7 @@
             <div id="chat-messages" class="flex-1 overflow-y-auto p-6 space-y-4 text-sm bg-gradient-to-b from-[#121212] to-[#0a0a0a]">
                 <div class="flex justify-start">
                     <div class="max-w-[85%] p-3.5 rounded-2xl bg-[#1a1a1a] text-white/80 border border-white/5 rounded-tl-sm shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">
-                        Chào bạn! Mình là Trợ lý AI của Duy. Bạn cần tìm hiểu về thiết kế Web hay SEO?
+                        Chào bạn! Mình là Trợ lý AI của Đức Duy. Bạn cần tìm hiểu về thiết kế Web hay Digital Marketing SEO?
                     </div>
                 </div>
             </div>
@@ -729,31 +813,27 @@
         // 1. Khởi tạo Icon
         lucide.createIcons();
 
-        // 2. Định tuyến (Hash Routing) - Tự động mở đúng trang khi nhận link
+        // 2. Định tuyến (Hash Routing)
         function handleRouting() {
             let hash = window.location.hash.substring(1);
             if (!hash) hash = 'home';
 
             const scrollSections = ['about', 'projects', 'contact'];
             
-            // Đóng menu mobile
             document.getElementById('mobile-menu').classList.add('hidden');
 
             if (scrollSections.includes(hash)) {
-                // Nếu khách click vào các mục cuộn trang
                 renderView('home');
                 setTimeout(() => {
                     const el = document.getElementById(hash);
                     if (el) {
-                        const yOffset = -80; // Trừ hao chiều cao của thanh menu
+                        const yOffset = -80;
                         const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
                         window.scrollTo({top: y, behavior: 'smooth'});
                     }
                 }, 100);
             } else {
-                // Chuyển trang hẳn (Roadmap, Brief)
                 renderView(hash);
-                // Nếu không phải là cuộn xuống bảng Content Plan thì cuộn lên đầu
                 if (window.location.hash !== '#content-plan') {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
@@ -764,11 +844,9 @@
             const validViews = ['home', 'brief', 'roadmap'];
             if (!validViews.includes(viewId)) viewId = 'home';
 
-            // Đổi giao diện
             document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
             document.getElementById(viewId + '-view').classList.add('active');
             
-            // Đổi màu Menu
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 btn.className = "nav-btn flex items-center gap-2 px-4 py-2 rounded-xl font-medium text-sm transition-all border bg-[#121212] border-white/5 text-white/60 hover:bg-white/5 hover:text-white";
             });
@@ -782,7 +860,6 @@
             }
         }
 
-        // Lắng nghe đổi link URL
         window.addEventListener('hashchange', handleRouting);
         window.addEventListener('DOMContentLoaded', handleRouting);
 
@@ -816,7 +893,6 @@
             const chatMessages = document.getElementById('chat-messages');
             const typingIndicator = document.getElementById('typing-indicator');
 
-            // Render User msg
             chatMessages.innerHTML += `
                 <div class="flex justify-end">
                     <div class="max-w-[85%] p-3.5 rounded-2xl bg-white text-black rounded-tr-sm font-medium shadow-[0_0_15px_rgba(255,255,255,0.1)]">
@@ -834,7 +910,7 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         contents: [{ parts: [{ text: text }] }],
-                        systemInstruction: { parts: [{ text: "Bạn là trợ lý AI trên trang Portfolio của Duy. Trả lời ngắn gọn, lịch sự bằng tiếng Việt. Khuyên khách liên hệ Zalo 0938.415.218." }] }
+                        systemInstruction: { parts: [{ text: "Bạn là trợ lý AI trên trang Portfolio của Đức Duy. Trả lời ngắn gọn, lịch sự bằng tiếng Việt. Khuyên khách liên hệ Zalo 0938.415.218 để làm website, digital marketing." }] }
                     })
                 });
 
@@ -855,7 +931,7 @@
                 chatMessages.innerHTML += `
                     <div class="flex justify-start">
                         <div class="max-w-[85%] p-3.5 rounded-2xl bg-red-900/50 text-white/80 border border-red-500/50 rounded-tl-sm">
-                            Vui lòng nhập API KEY vào mã nguồn để sử dụng Chat AI. Lhe Zalo Duy: 0938.415.218
+                            Vui lòng nhập API KEY vào mã nguồn để sử dụng Chat AI. Liên hệ Zalo Đức Duy: 0938.415.218
                         </div>
                     </div>`;
             }
