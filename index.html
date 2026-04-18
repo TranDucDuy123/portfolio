@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi" class="dark">
 <head>
     <meta charset="UTF-8">
@@ -53,33 +53,33 @@
     <div class="relative z-10 w-full flex flex-col min-h-screen">
         
         <!-- NAVIGATION -->
-        <nav class="fixed top-0 left-0 w-full bg-[#0a0a0a]/70 backdrop-blur-xl z-50 border-b border-white/5 transition-colors duration-300">
+        <nav class="fixed top-0 left-0 w-full bg-[#0a0a0a]/80 backdrop-blur-xl z-50 border-b border-white/5 transition-colors duration-300">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div class="flex justify-between h-20 items-center">
-                    <button onclick="switchView('home')" class="flex items-center gap-3 shrink-0 cursor-pointer group">
+                    <a href="#home" class="flex items-center gap-3 shrink-0 cursor-pointer group">
                         <div class="bg-[#121212] p-2 rounded-xl border border-white/10 shadow-[inset_0_0_15px_rgba(255,255,255,0.05)] group-hover:border-emerald-500/50 transition-colors">
                             <i data-lucide="code" class="text-emerald-400 drop-shadow-[0_0_8px_rgba(52,211,153,0.8)] w-5 h-5"></i>
                         </div>
                         <span class="font-bold text-xl tracking-tight text-white hidden sm:block">Duy.UI</span>
-                    </button>
+                    </a>
                     
                     <div class="hidden lg:flex items-center space-x-2 xl:space-x-4">
-                        <button onclick="scrollToSection('about')" class="px-4 py-2 text-white/60 hover:text-white font-medium transition-colors text-sm">Triết lý</button>
-                        <button onclick="scrollToSection('projects')" class="px-4 py-2 text-white/60 hover:text-white font-medium transition-colors text-sm">Dự án</button>
+                        <a href="#about" class="px-4 py-2 text-white/60 hover:text-white font-medium transition-colors text-sm">Triết lý</a>
+                        <a href="#projects" class="px-4 py-2 text-white/60 hover:text-white font-medium transition-colors text-sm">Dự án</a>
                         
                         <div class="w-px h-6 bg-white/10 mx-2"></div>
 
-                        <button id="nav-roadmap" onclick="switchView('roadmap')" class="nav-btn flex items-center gap-2 px-4 py-2 rounded-xl font-medium text-sm transition-all border bg-[#121212] border-white/5 text-white/60 hover:bg-white/5 hover:text-white">
+                        <a href="#roadmap" id="nav-roadmap" class="nav-btn flex items-center gap-2 px-4 py-2 rounded-xl font-medium text-sm transition-all border bg-[#121212] border-white/5 text-white/60 hover:bg-white/5 hover:text-white">
                             <i data-lucide="user" class="w-4 h-4"></i> Roadmap
-                        </button>
+                        </a>
 
-                        <button id="nav-brief" onclick="switchView('brief')" class="nav-btn flex items-center gap-2 px-4 py-2 rounded-xl font-medium text-sm transition-all border bg-[#121212] border-white/5 text-white/60 hover:bg-white/5 hover:text-white">
+                        <a href="#brief" id="nav-brief" class="nav-btn flex items-center gap-2 px-4 py-2 rounded-xl font-medium text-sm transition-all border bg-[#121212] border-white/5 text-white/60 hover:bg-white/5 hover:text-white">
                             <i data-lucide="clipboard-edit" class="w-4 h-4"></i> Gửi Yêu Cầu
-                        </button>
+                        </a>
 
-                        <button onclick="scrollToSection('contact')" class="ml-2 px-6 py-2 bg-white text-black font-bold rounded-xl hover:bg-emerald-400 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_20px_rgba(52,211,153,0.4)] text-sm">
+                        <a href="#contact" class="ml-2 px-6 py-2 bg-white text-black font-bold rounded-xl hover:bg-emerald-400 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_20px_rgba(52,211,153,0.4)] text-sm inline-block text-center">
                             Liên Hệ
-                        </button>
+                        </a>
                     </div>
 
                     <div class="lg:hidden flex items-center gap-3 shrink-0">
@@ -93,14 +93,14 @@
             <!-- Mobile Nav Menu -->
             <div id="mobile-menu" class="hidden lg:hidden bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/5 absolute w-full left-0 transition-colors duration-300">
                 <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
-                    <button onclick="scrollToSection('about')" class="text-left block px-4 py-3 text-sm font-medium text-white/70 hover:bg-white/5 rounded-xl">Triết lý</button>
-                    <button onclick="scrollToSection('projects')" class="text-left block px-4 py-3 text-sm font-medium text-white/70 hover:bg-white/5 rounded-xl">Dự án</button>
-                    <button onclick="switchView('roadmap')" class="text-left flex items-center gap-2 px-4 py-3 text-sm font-bold text-pink-400 bg-pink-500/10 border border-pink-500/20 rounded-xl mt-2">
+                    <a href="#about" onclick="toggleMobileMenu()" class="text-left block px-4 py-3 text-sm font-medium text-white/70 hover:bg-white/5 rounded-xl">Triết lý</a>
+                    <a href="#projects" onclick="toggleMobileMenu()" class="text-left block px-4 py-3 text-sm font-medium text-white/70 hover:bg-white/5 rounded-xl">Dự án</a>
+                    <a href="#roadmap" onclick="toggleMobileMenu()" class="text-left flex items-center gap-2 px-4 py-3 text-sm font-bold text-pink-400 bg-pink-500/10 border border-pink-500/20 rounded-xl mt-2">
                         <i data-lucide="user" class="w-4 h-4"></i> Roadmap Khách Hàng
-                    </button>
-                    <button onclick="switchView('brief')" class="text-left flex items-center gap-2 px-4 py-3 text-sm font-bold text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 rounded-xl mt-2">
+                    </a>
+                    <a href="#brief" onclick="toggleMobileMenu()" class="text-left flex items-center gap-2 px-4 py-3 text-sm font-bold text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 rounded-xl mt-2">
                         <i data-lucide="clipboard-edit" class="w-4 h-4"></i> Gửi Yêu Cầu Dự Án
-                    </button>
+                    </a>
                 </div>
             </div>
         </nav>
@@ -124,18 +124,17 @@
                         Tôi xây dựng các sản phẩm số mang lại tỷ lệ chuyển đổi thực tế. Sự kết hợp hoàn hảo giữa thiết kế giao diện (UI) tinh gọn và kiến trúc thông tin chuẩn SEO.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
-                        <button onclick="switchView('brief')" class="px-8 py-4 bg-white text-black font-bold rounded-2xl hover:bg-emerald-400 transition-colors shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(52,211,153,0.4)] flex items-center justify-center gap-2">
+                        <a href="#brief" class="px-8 py-4 bg-white text-black font-bold rounded-2xl hover:bg-emerald-400 transition-colors shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(52,211,153,0.4)] flex items-center justify-center gap-2">
                             Khởi tạo dự án <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                        </button>
-                        <button onclick="scrollToSection('projects')" class="px-8 py-4 bg-[#121212] border border-white/10 text-white font-medium rounded-2xl hover:bg-white/5 transition-colors flex items-center justify-center">
+                        </a>
+                        <a href="#projects" class="px-8 py-4 bg-[#121212] border border-white/10 text-white font-medium rounded-2xl hover:bg-white/5 transition-colors flex items-center justify-center">
                             Xem Case Study
-                        </button>
+                        </a>
                     </div>
                 </div>
                 
                 <!-- Right Side: Premium Bento UI -->
                 <div class="w-full lg:w-1/2 relative grid grid-cols-2 gap-4 sm:gap-6">
-                    <!-- Card 1 -->
                     <div class="col-span-2 sm:col-span-1 relative rounded-[2rem] bg-[#121212] border border-white/5 shadow-2xl p-6 overflow-hidden aspect-[4/3] flex flex-col justify-between group hover:scale-[1.02] transition-transform duration-500">
                         <div class="absolute -top-1/4 -right-1/4 w-full h-full bg-emerald-500/10 blur-[40px] pointer-events-none rounded-full"></div>
                         <div class="relative z-10 flex justify-between items-start">
@@ -151,7 +150,6 @@
                         </div>
                     </div>
 
-                    <!-- Card 2 -->
                     <div class="col-span-2 sm:col-span-1 relative rounded-[2rem] bg-[#121212] border border-white/5 shadow-2xl p-6 overflow-hidden aspect-[4/3] flex flex-col justify-between group hover:scale-[1.02] transition-transform duration-500">
                         <div class="absolute top-0 right-0 w-full h-[150%] bg-gradient-to-l from-orange-500/20 via-yellow-500/5 to-transparent blur-[40px] pointer-events-none rounded-full"></div>
                         <div class="relative z-10 text-right">
@@ -165,7 +163,6 @@
                         </div>
                     </div>
 
-                    <!-- Card 3 -->
                     <div class="col-span-2 relative rounded-[2rem] bg-[#121212] border border-white/5 shadow-2xl p-6 sm:p-8 overflow-hidden flex items-center justify-between group hover:scale-[1.02] transition-transform duration-500">
                         <div class="absolute left-0 top-0 w-1/2 h-full opacity-10 pointer-events-none">
                             <svg viewBox="0 0 100 50" class="w-full h-full">
@@ -198,7 +195,7 @@
             </section>
 
             <!-- ABOUT SECTION -->
-            <section id="about" class="py-24 relative border-t border-white/5">
+            <section id="about" class="py-24 relative border-t border-white/5 scroll-mt-20">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center max-w-3xl mx-auto mb-16">
                         <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Triết lý "Ăn chắc mặc bền"</h2>
@@ -234,7 +231,7 @@
             </section>
 
             <!-- PROJECTS SECTION -->
-            <section id="projects" class="py-24 relative border-t border-white/5">
+            <section id="projects" class="py-24 relative border-t border-white/5 scroll-mt-20">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="mb-16">
                         <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Dự án tiêu biểu</h2>
@@ -292,7 +289,7 @@
             </section>
 
             <!-- CONTACT SECTION -->
-            <section id="contact" class="py-24 relative border-t border-white/5 overflow-hidden">
+            <section id="contact" class="py-24 relative border-t border-white/5 overflow-hidden scroll-mt-20">
                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[300px] bg-gradient-to-r from-emerald-500/10 via-cyan-500/10 to-pink-500/10 blur-[80px] pointer-events-none rounded-full"></div>
                 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                     <h2 class="text-3xl sm:text-5xl font-extrabold text-white mb-6">Bạn đã sẵn sàng để nâng cấp?</h2>
@@ -329,9 +326,9 @@
         <!-- VIEW: CLIENT BRIEF -->
         <!-- ======================================================== -->
         <main id="brief-view" class="view-section flex-1 pt-32 pb-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <button onclick="switchView('home')" class="mb-8 flex items-center gap-2 text-white/40 hover:text-white text-sm font-medium transition-colors">
+            <a href="#home" class="mb-8 inline-flex items-center gap-2 text-white/40 hover:text-white text-sm font-medium transition-colors">
                 <i data-lucide="arrow-right" class="w-4 h-4 rotate-180"></i> Quay lại
-            </button>
+            </a>
             <div class="text-center mb-16">
                 <h1 class="text-3xl md:text-5xl font-extrabold mb-4 text-white">
                     Khởi tạo dự án <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]">Thực Chiến</span>
@@ -405,9 +402,9 @@
         <!-- VIEW: ROADMAP & CONTENT MASTERPLAN -->
         <!-- ======================================================== -->
         <main id="roadmap-view" class="view-section flex-1 pt-32 pb-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <button onclick="switchView('home')" class="mb-8 flex items-center gap-2 text-white/40 hover:text-white text-sm font-medium transition-colors">
+            <a href="#home" class="mb-8 inline-flex items-center gap-2 text-white/40 hover:text-white text-sm font-medium transition-colors">
                 <i data-lucide="arrow-right" class="w-4 h-4 rotate-180"></i> Quay lại
-            </button>
+            </a>
 
             <!-- ROADMAP TIMELINE -->
             <div class="mb-16 border-b border-white/10 pb-12">
@@ -665,7 +662,7 @@
             </div>
 
             <div class="mt-16 text-center">
-                <a href="https://zalo.me/0938415218" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-2xl hover:bg-cyan-400 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]">
+                <a href="https://zalo.me/0938415218" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-2xl hover:bg-emerald-400 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(52,211,153,0.4)]">
                     <i data-lucide="check-circle-2" class="w-5 h-5"></i> Duyệt kế hoạch & Bắt đầu bài viết
                 </a>
             </div>
@@ -685,7 +682,7 @@
     <!-- AI CHAT WIDGET -->
     <!-- ======================================================== -->
     <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-        <!-- Box Chat (Mặc định ẩn) -->
+        <!-- Box Chat -->
         <div id="chat-box" class="hidden bg-[#121212]/95 backdrop-blur-xl w-[calc(100vw-48px)] sm:w-96 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-white/10 mb-4 flex-col h-[400px] animate-[fadeIn_0.3s_ease]">
             <div class="bg-[#0a0a0a] px-6 py-4 flex justify-between items-center border-b border-white/5">
                 <div class="flex items-center gap-3">
@@ -699,20 +696,19 @@
                 </button>
             </div>
             <div id="chat-messages" class="flex-1 overflow-y-auto p-6 space-y-4 text-sm bg-gradient-to-b from-[#121212] to-[#0a0a0a]">
-                <!-- Tin nhắn mẫu -->
                 <div class="flex justify-start">
                     <div class="max-w-[85%] p-3.5 rounded-2xl bg-[#1a1a1a] text-white/80 border border-white/5 rounded-tl-sm shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">
                         Chào bạn! Mình là Trợ lý AI của Duy. Bạn cần tìm hiểu về thiết kế Web hay SEO?
                     </div>
                 </div>
             </div>
-            <!-- Hiệu ứng Typing -->
+            <!-- Typing -->
             <div id="typing-indicator" class="hidden px-6 pb-2">
                 <div class="inline-flex bg-[#1a1a1a] text-white/60 border border-white/5 p-2 px-3 rounded-2xl rounded-tl-sm items-center gap-2 text-xs">
                     <i data-lucide="loader-2" class="w-3 h-3 animate-spin text-emerald-400"></i> AI đang suy nghĩ...
                 </div>
             </div>
-            <!-- Khung nhập -->
+            <!-- Input -->
             <div class="p-4 bg-[#0a0a0a] border-t border-white/5 flex gap-2">
                 <input id="chat-input" type="text" placeholder="Nhập câu hỏi..." class="flex-1 px-4 py-3 bg-[#121212] border border-white/10 rounded-xl outline-none focus:border-emerald-500/50 text-white text-sm placeholder:text-white/20 shadow-[inset_2px_2px_6px_rgba(0,0,0,0.5)]" onkeypress="if(event.key === 'Enter') sendMessage()"/>
                 <button onclick="sendMessage()" class="bg-white text-black p-3 rounded-xl hover:bg-emerald-400 transition-colors shadow-[0_0_15px_rgba(255,255,255,0.1)]">
@@ -721,56 +717,80 @@
             </div>
         </div>
 
-        <!-- Nút Tròn Mở Chat -->
+        <!-- Chat Toggle -->
         <button id="chat-toggle-btn" onclick="toggleChat()" class="bg-white text-black p-4 rounded-2xl shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(52,211,153,0.4)] hover:bg-emerald-400 transition-all hover:scale-105 flex items-center justify-center relative">
             <i data-lucide="message-square" class="w-6 h-6"></i>
             <span class="absolute -top-1 -right-1 w-3.5 h-3.5 bg-emerald-500 border-2 border-[#0a0a0a] rounded-full animate-pulse"></span>
         </button>
     </div>
 
-    <!-- SCRIPT ĐIỀU KHIỂN GIAO DIỆN VÀ API -->
+    <!-- SCRIPT ĐIỀU KHIỂN HASH ROUTING & API -->
     <script>
-        // Khởi tạo Icon Lucide
+        // 1. Khởi tạo Icon
         lucide.createIcons();
 
-        // 1. Quản lý chuyển View (Home / Brief / Roadmap)
-        function switchView(viewId) {
-            // Ẩn tất cả views
+        // 2. Định tuyến (Hash Routing) - Tự động mở đúng trang khi nhận link
+        function handleRouting() {
+            let hash = window.location.hash.substring(1);
+            if (!hash) hash = 'home';
+
+            const scrollSections = ['about', 'projects', 'contact'];
+            
+            // Đóng menu mobile
+            document.getElementById('mobile-menu').classList.add('hidden');
+
+            if (scrollSections.includes(hash)) {
+                // Nếu khách click vào các mục cuộn trang
+                renderView('home');
+                setTimeout(() => {
+                    const el = document.getElementById(hash);
+                    if (el) {
+                        const yOffset = -80; // Trừ hao chiều cao của thanh menu
+                        const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                        window.scrollTo({top: y, behavior: 'smooth'});
+                    }
+                }, 100);
+            } else {
+                // Chuyển trang hẳn (Roadmap, Brief)
+                renderView(hash);
+                // Nếu không phải là cuộn xuống bảng Content Plan thì cuộn lên đầu
+                if (window.location.hash !== '#content-plan') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }
+        }
+
+        function renderView(viewId) {
+            const validViews = ['home', 'brief', 'roadmap'];
+            if (!validViews.includes(viewId)) viewId = 'home';
+
+            // Đổi giao diện
             document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
-            // Hiện view được chọn
             document.getElementById(viewId + '-view').classList.add('active');
             
-            // Xử lý Active state cho Menu nút bấm
+            // Đổi màu Menu
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 btn.className = "nav-btn flex items-center gap-2 px-4 py-2 rounded-xl font-medium text-sm transition-all border bg-[#121212] border-white/5 text-white/60 hover:bg-white/5 hover:text-white";
             });
             
             if(viewId === 'roadmap') {
-                document.getElementById('nav-roadmap').className = "nav-btn flex items-center gap-2 px-4 py-2 rounded-xl font-medium text-sm transition-all border bg-pink-500/10 border-pink-500/50 text-pink-400 shadow-[0_0_15px_rgba(236,72,153,0.2)]";
+                const nav = document.getElementById('nav-roadmap');
+                if(nav) nav.className = "nav-btn flex items-center gap-2 px-4 py-2 rounded-xl font-medium text-sm transition-all border bg-pink-500/10 border-pink-500/50 text-pink-400 shadow-[0_0_15px_rgba(236,72,153,0.2)]";
             } else if (viewId === 'brief') {
-                document.getElementById('nav-brief').className = "nav-btn flex items-center gap-2 px-4 py-2 rounded-xl font-medium text-sm transition-all border bg-cyan-500/10 border-cyan-500/50 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.2)]";
+                const nav = document.getElementById('nav-brief');
+                if(nav) nav.className = "nav-btn flex items-center gap-2 px-4 py-2 rounded-xl font-medium text-sm transition-all border bg-cyan-500/10 border-cyan-500/50 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.2)]";
             }
-
-            // Đóng menu mobile và cuộn lên đầu
-            document.getElementById('mobile-menu').classList.add('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Chuyển nhanh đến các Section trong trang chủ
-        function scrollToSection(id) {
-            switchView('home');
-            setTimeout(() => {
-                document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-            }, 100);
-        }
+        // Lắng nghe đổi link URL
+        window.addEventListener('hashchange', handleRouting);
+        window.addEventListener('DOMContentLoaded', handleRouting);
 
-        // Toggle Mobile Menu
+        // 3. UI Tương tác
         function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         }
 
-        // 2. Logic Chat AI
         function toggleChat() {
             const box = document.getElementById('chat-box');
             const btn = document.getElementById('chat-toggle-btn');
@@ -785,8 +805,7 @@
             }
         }
 
-        // LƯU Ý QUAN TRỌNG: API Key đang hiển thị rõ trong code.
-        // Khi đẩy lên Vercel, bắt buộc phải giới hạn tên miền (HTTP Referrers) trên Google Cloud Console để tránh bị lấy trộm Key.
+        // 4. API Gemini Chatbot
         const API_KEY = "AIzaSyBaKhJ2rIYekaWzUbuE8iQRZ_KlqrZQu9c"; 
 
         async function sendMessage() {
@@ -797,7 +816,7 @@
             const chatMessages = document.getElementById('chat-messages');
             const typingIndicator = document.getElementById('typing-indicator');
 
-            // Render tin nhắn User
+            // Render User msg
             chatMessages.innerHTML += `
                 <div class="flex justify-end">
                     <div class="max-w-[85%] p-3.5 rounded-2xl bg-white text-black rounded-tr-sm font-medium shadow-[0_0_15px_rgba(255,255,255,0.1)]">
@@ -807,7 +826,6 @@
             input.value = '';
             chatMessages.scrollTop = chatMessages.scrollHeight;
             
-            // Hiện Typing
             typingIndicator.classList.remove('hidden');
 
             try {
@@ -821,9 +839,8 @@
                 });
 
                 const data = await response.json();
-                const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Xin lỗi, API Key chưa được thiết lập hoặc bị lỗi.";
+                const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Xin lỗi, API Key bị lỗi.";
                 
-                // Ẩn typing, render tin AI
                 typingIndicator.classList.add('hidden');
                 chatMessages.innerHTML += `
                     <div class="flex justify-start">
@@ -838,7 +855,7 @@
                 chatMessages.innerHTML += `
                     <div class="flex justify-start">
                         <div class="max-w-[85%] p-3.5 rounded-2xl bg-red-900/50 text-white/80 border border-red-500/50 rounded-tl-sm">
-                            Vui lòng nhập API KEY vào mã nguồn để sử dụng tính năng Chat AI. Nếu cần thiết kế web, hãy liên hệ Zalo Duy: 0938.415.218
+                            Vui lòng nhập API KEY vào mã nguồn để sử dụng Chat AI. Lhe Zalo Duy: 0938.415.218
                         </div>
                     </div>`;
             }
