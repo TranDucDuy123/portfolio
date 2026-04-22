@@ -130,6 +130,13 @@
                 linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
             background-size: 40px 40px;
         }
+
+        /* TỐI ƯU RESPONSIVE: Ngăn chặn hiệu ứng Zoom tự động trên iOS khi nhấn vào form */
+        @media screen and (max-width: 768px) {
+            input, select, textarea {
+                font-size: 16px !important;
+            }
+        }
     </style>
 </head>
 <body class="relative min-h-screen flex flex-col font-sans bg-grid">
@@ -148,12 +155,12 @@
                     
                     <!-- BRAND -->
                     <a href="#home" class="flex items-center gap-3 shrink-0 cursor-pointer group">
-                        <div class="w-12 h-12 bg-neon-lime border-2 border-white rounded-full flex items-center justify-center shadow-brutal-white group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] transition-all">
-                            <i data-lucide="zap" class="text-black fill-black w-6 h-6"></i>
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-neon-lime border-2 border-white rounded-full flex items-center justify-center shadow-brutal-white group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] transition-all">
+                            <i data-lucide="zap" class="text-black fill-black w-5 h-5 sm:w-6 sm:h-6"></i>
                         </div>
-                        <div class="hidden sm:flex flex-col font-display">
-                            <span class="font-extrabold text-2xl tracking-tighter text-white leading-none uppercase">Đức Duy</span>
-                            <span class="text-[10px] text-neon-cyan font-bold uppercase tracking-widest mt-1">SEO & Web</span>
+                        <div class="flex flex-col font-display">
+                            <span class="font-extrabold text-xl sm:text-2xl tracking-tighter text-white leading-none uppercase">Đức Duy</span>
+                            <span class="hidden sm:inline-block text-[10px] text-neon-cyan font-bold uppercase tracking-widest mt-1">SEO & Web</span>
                         </div>
                     </a>
                     
@@ -193,15 +200,15 @@
 
                     <!-- MOBILE MENU BTN -->
                     <div class="xl:hidden flex items-center shrink-0">
-                        <button onclick="toggleMobileMenu()" class="p-2.5 bg-white text-black border-2 border-white rounded-full shadow-[2px_2px_0px_0px_#ccff00]">
-                            <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+                        <button onclick="toggleMobileMenu()" class="p-2 sm:p-2.5 bg-white text-black border-2 border-white rounded-full shadow-[2px_2px_0px_0px_#ccff00]">
+                            <i data-lucide="menu" id="menu-icon" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                         </button>
                     </div>
                 </div>
             </div>
 
             <!-- Mobile Nav Menu Dropdown -->
-            <div id="mobile-menu" class="hidden xl:hidden bg-brutal border-b-4 border-white absolute w-full left-0 z-40">
+            <div id="mobile-menu" class="hidden xl:hidden bg-brutal border-b-4 border-white absolute w-full left-0 z-40 max-h-[80vh] overflow-y-auto">
                 <div class="px-4 py-6 flex flex-col gap-4 font-display font-bold uppercase tracking-wider">
                     <a href="#about" onclick="toggleMobileMenu()" class="block p-4 bg-white/5 border-2 border-white/20 text-white rounded-xl text-center">Triết lý</a>
                     <a href="#projects" onclick="toggleMobileMenu()" class="block p-4 bg-white/5 border-2 border-white/20 text-white rounded-xl text-center">Dự án</a>
@@ -211,7 +218,7 @@
                     <a href="#roadmap-solar" onclick="toggleMobileMenu()" class="flex items-center justify-center gap-2 p-4 bg-neon-lime text-black border-2 border-white rounded-xl shadow-brutal-white">
                         <i data-lucide="sun" class="w-5 h-5"></i> Roadmap Solar
                     </a>
-                    <a href="#brief" onclick="toggleMobileMenu()" class="flex items-center justify-center gap-2 p-4 bg-neon-cyan text-black border-2 border-white rounded-xl shadow-brutal-white mt-4">
+                    <a href="#brief" onclick="toggleMobileMenu()" class="flex items-center justify-center gap-2 p-4 bg-neon-cyan text-black border-2 border-white rounded-xl shadow-brutal-white mt-2">
                         <i data-lucide="clipboard-edit" class="w-5 h-5"></i> Gửi Yêu Cầu Dự Án
                     </a>
                 </div>
@@ -225,113 +232,114 @@
             
             <!-- MARQUEE BANNER -->
             <div class="mt-20 marquee-container">
-                <div class="marquee-content text-lg">
+                <div class="marquee-content text-sm sm:text-base lg:text-lg">
                     LÀM WEBSITE CHUẨN SEO ✦ DIGITAL MARKETING THỰC CHIẾN ✦ TỐI ƯU CHUYỂN ĐỔI ✦ THIẾT KẾ UX/UI ✦ LÊN TOP GOOGLE ✦ LÀM WEBSITE CHUẨN SEO ✦ DIGITAL MARKETING THỰC CHIẾN ✦ TỐI ƯU CHUYỂN ĐỔI ✦ THIẾT KẾ UX/UI ✦ LÊN TOP GOOGLE ✦
                 </div>
             </div>
 
             <!-- HERO SECTION -->
-            <section class="pt-16 pb-20 md:pt-24 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 border-b-2 border-white/10">
-                <div class="w-full lg:w-1/2 space-y-8 relative z-10 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white text-black font-display font-bold uppercase tracking-widest text-xs border-2 border-white shadow-brutal-lime">
-                        <i data-lucide="flame" class="w-4 h-4 fill-neon-lime text-black"></i> Expert
+            <section class="pt-12 pb-16 md:pt-24 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 md:gap-12 border-b-2 border-white/10">
+                <div class="w-full lg:w-1/2 space-y-6 md:space-y-8 relative z-10 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 md:px-5 py-1.5 md:py-2 rounded-full bg-white text-black font-display font-bold uppercase tracking-widest text-[10px] sm:text-xs border-2 border-white shadow-brutal-lime">
+                        <i data-lucide="flame" class="w-3 h-3 sm:w-4 sm:h-4 fill-neon-lime text-black"></i> Expert
                     </div>
                     
-                    <h1 class="text-6xl sm:text-7xl lg:text-[5.5rem] font-display font-extrabold tracking-tighter leading-[0.95] text-white uppercase">
+                    <!-- Font title scale cho Mobile tốt hơn -->
+                    <h1 class="text-5xl sm:text-7xl lg:text-[5.5rem] font-display font-extrabold tracking-tighter leading-[0.95] text-white uppercase break-words">
                         DIGITAL <br/>
                         <span class="text-transparent" style="-webkit-text-stroke: 2px #00e5ff;">MARKETING</span><br/>
                         & LÀM WEB
                     </h1>
-                    <p class="text-base sm:text-lg text-white/70 leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
-                        Không làm web chỉ để ngắm. Tôi là <strong>Đức Duy</strong>, biến website của bạn thành <span class="bg-neon-pink text-black px-2 font-bold">CỖ MÁY CHỐT SALE</span> bằng UX/UI sắc bén và nội dung chuẩn SEO.
+                    <p class="text-sm sm:text-base md:text-lg text-white/70 leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium px-2 sm:px-0">
+                        Không làm web chỉ để ngắm. Tôi là <strong>Đức Duy</strong>, biến website của bạn thành <span class="bg-neon-pink text-black px-2 font-bold inline-block mt-1 sm:mt-0">CỖ MÁY CHỐT SALE</span> bằng UX/UI sắc bén và nội dung chuẩn SEO.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4 pt-6 justify-center lg:justify-start font-display">
-                        <a href="#brief" class="px-8 py-5 bg-neon-lime text-black font-extrabold text-lg rounded-full border-2 border-white shadow-brutal-white hover:translate-x-1 hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
-                            BẮT ĐẦU NGAY <i data-lucide="arrow-right" class="w-6 h-6"></i>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4 md:pt-6 justify-center lg:justify-start font-display px-4 sm:px-0">
+                        <a href="#brief" class="w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-5 bg-neon-lime text-black font-extrabold text-base sm:text-lg rounded-full border-2 border-white shadow-brutal-white hover:translate-x-1 hover:-translate-y-1 transition-all flex items-center justify-center gap-2 sm:gap-3">
+                            BẮT ĐẦU NGAY <i data-lucide="arrow-right" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                         </a>
-                        <a href="#projects" class="px-8 py-5 bg-transparent text-white font-extrabold text-lg rounded-full border-2 border-white hover:bg-white hover:text-black transition-all flex items-center justify-center">
+                        <a href="#projects" class="w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-5 bg-transparent text-white font-extrabold text-base sm:text-lg rounded-full border-2 border-white hover:bg-white hover:text-black transition-all flex items-center justify-center">
                             XEM DỰ ÁN
                         </a>
                     </div>
                 </div>
                 
-                <!-- BENTO GRID HERO (Brutalist Widgets) -->
-                <div class="w-full lg:w-1/2 grid grid-cols-2 gap-6 font-display">
+                <!-- BENTO GRID HERO -->
+                <div class="w-full lg:w-1/2 grid grid-cols-2 gap-4 sm:gap-6 font-display px-2 sm:px-0">
                     <!-- Widget 1 -->
-                    <div class="col-span-2 sm:col-span-1 bg-brutal border-2 border-white rounded-[2rem] shadow-brutal-lime p-8 flex flex-col justify-between aspect-square transform hover:-translate-y-2 transition-transform">
-                        <div class="w-14 h-14 bg-neon-lime rounded-full border-2 border-black flex items-center justify-center self-end">
-                            <i data-lucide="zap" class="w-8 h-8 text-black fill-black"></i>
+                    <div class="col-span-2 sm:col-span-1 bg-brutal border-2 border-white rounded-[1.5rem] md:rounded-[2rem] shadow-brutal-lime p-6 md:p-8 flex flex-col justify-between aspect-auto sm:aspect-square transform hover:-translate-y-2 transition-transform gap-4 sm:gap-0">
+                        <div class="w-12 h-12 md:w-14 md:h-14 bg-neon-lime rounded-full border-2 border-black flex items-center justify-center self-end">
+                            <i data-lucide="zap" class="w-6 h-6 md:w-8 md:h-8 text-black fill-black"></i>
                         </div>
                         <div>
-                            <h2 class="text-6xl font-extrabold text-white tracking-tighter">99<span class="text-2xl text-white/50">/100</span></h2>
-                            <p class="text-neon-lime font-bold uppercase mt-2">Tốc độ & Hiệu năng</p>
+                            <h2 class="text-5xl md:text-6xl font-extrabold text-white tracking-tighter">99<span class="text-xl md:text-2xl text-white/50">/100</span></h2>
+                            <p class="text-neon-lime text-xs md:text-sm font-bold uppercase mt-1 md:mt-2">Tốc độ & Hiệu năng</p>
                         </div>
                     </div>
 
                     <!-- Widget 2 -->
-                    <div class="col-span-2 sm:col-span-1 bg-brutal border-2 border-white rounded-[2rem] shadow-brutal-cyan p-8 flex flex-col justify-between aspect-square transform hover:-translate-y-2 transition-transform">
-                        <div class="w-14 h-14 bg-neon-cyan rounded-full border-2 border-black flex items-center justify-center self-end">
-                            <i data-lucide="target" class="w-8 h-8 text-black"></i>
+                    <div class="col-span-2 sm:col-span-1 bg-brutal border-2 border-white rounded-[1.5rem] md:rounded-[2rem] shadow-brutal-cyan p-6 md:p-8 flex flex-col justify-between aspect-auto sm:aspect-square transform hover:-translate-y-2 transition-transform gap-4 sm:gap-0">
+                        <div class="w-12 h-12 md:w-14 md:h-14 bg-neon-cyan rounded-full border-2 border-black flex items-center justify-center self-end">
+                            <i data-lucide="target" class="w-6 h-6 md:w-8 md:h-8 text-black"></i>
                         </div>
                         <div>
-                            <h2 class="text-6xl font-extrabold text-white tracking-tighter">TOP 1</h2>
-                            <p class="text-neon-cyan font-bold uppercase mt-2">SEO Google Search</p>
+                            <h2 class="text-5xl md:text-6xl font-extrabold text-white tracking-tighter">TOP 1</h2>
+                            <p class="text-neon-cyan text-xs md:text-sm font-bold uppercase mt-1 md:mt-2">SEO Google Search</p>
                         </div>
                     </div>
 
-                    <!-- Widget 3 (Full width) -->
-                    <div class="col-span-2 bg-neon-pink border-2 border-white rounded-[2rem] shadow-brutal-white p-8 flex items-center justify-between transform hover:-translate-y-2 transition-transform">
+                    <!-- Widget 3 -->
+                    <div class="col-span-2 bg-neon-pink border-2 border-white rounded-[1.5rem] md:rounded-[2rem] shadow-brutal-white p-6 md:p-8 flex items-center justify-between transform hover:-translate-y-2 transition-transform gap-4">
                         <div class="text-black">
-                            <h3 class="text-xl font-bold uppercase mb-2">Tỷ lệ chuyển đổi</h3>
-                            <h2 class="text-6xl font-extrabold tracking-tighter">+200%</h2>
+                            <h3 class="text-sm sm:text-xl font-bold uppercase mb-1 sm:mb-2">Tỷ lệ chuyển đổi</h3>
+                            <h2 class="text-5xl md:text-6xl font-extrabold tracking-tighter">+200%</h2>
                         </div>
-                        <div class="w-24 h-24 rounded-full border-4 border-black flex items-center justify-center bg-white">
-                            <i data-lucide="trending-up" class="w-12 h-12 text-black"></i>
+                        <div class="w-16 h-16 sm:w-24 sm:h-24 rounded-full border-4 border-black flex items-center justify-center bg-white shrink-0">
+                            <i data-lucide="trending-up" class="w-8 h-8 sm:w-12 sm:h-12 text-black"></i>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- ABOUT SECTION -->
-            <section id="about" class="py-24 border-b-2 border-white/10 scroll-mt-20">
+            <section id="about" class="py-16 md:py-24 border-b-2 border-white/10 scroll-mt-20">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="mb-16 md:flex justify-between items-end">
-                        <h2 class="text-5xl md:text-7xl font-display font-extrabold text-white uppercase leading-none">
+                    <div class="mb-12 md:mb-16 md:flex justify-between items-end">
+                        <h2 class="text-4xl sm:text-5xl md:text-7xl font-display font-extrabold text-white uppercase leading-none">
                             TRIẾT LÝ<br/>
                             <span class="text-neon-lime">ĂN CHẮC MẶC BỀN</span>
                         </h2>
-                        <p class="text-white/60 text-base md:text-lg max-w-sm mt-6 md:mt-0 font-medium">
+                        <p class="text-white/60 text-sm sm:text-base md:text-lg max-w-sm mt-4 md:mt-0 font-medium">
                             Tôi không chạy theo xu hướng phù phiếm. Tập trung vào cốt lõi để tạo ra doanh thu thực tế.
                         </p>
                     </div>
                     
-                    <div class="grid md:grid-cols-3 gap-8 font-display">
-                        <div class="bg-brutal border-2 border-white p-10 rounded-3xl shadow-brutal-white hover:bg-white hover:text-black transition-all group">
-                            <div class="w-20 h-20 bg-neon-cyan border-2 border-black rounded-full flex items-center justify-center mb-8">
-                                <i data-lucide="smartphone" class="w-10 h-10 text-black"></i>
+                    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 font-display">
+                        <div class="bg-brutal border-2 border-white p-8 md:p-10 rounded-[2rem] shadow-brutal-white hover:bg-white hover:text-black transition-all group">
+                            <div class="w-16 h-16 md:w-20 md:h-20 bg-neon-cyan border-2 border-black rounded-full flex items-center justify-center mb-6 md:mb-8">
+                                <i data-lucide="smartphone" class="w-8 h-8 md:w-10 md:h-10 text-black"></i>
                             </div>
-                            <h3 class="text-3xl font-extrabold mb-4 uppercase">Tối Ưu UX/UI</h3>
-                            <p class="text-current opacity-70 font-sans leading-relaxed">
+                            <h3 class="text-2xl md:text-3xl font-extrabold mb-3 md:mb-4 uppercase">Tối Ưu UX/UI</h3>
+                            <p class="text-current opacity-70 font-sans leading-relaxed text-sm md:text-base">
                                 Hơn 80% khách duyệt web trên điện thoại. Luồng thao tác đơn giản, không rườm rà. Nút bấm to rõ, chốt sale nhanh.
                             </p>
                         </div>
                         
-                        <div class="bg-brutal border-2 border-white p-10 rounded-3xl shadow-brutal-white hover:bg-white hover:text-black transition-all group">
-                            <div class="w-20 h-20 bg-neon-lime border-2 border-black rounded-full flex items-center justify-center mb-8">
-                                <i data-lucide="search" class="w-10 h-10 text-black"></i>
+                        <div class="bg-brutal border-2 border-white p-8 md:p-10 rounded-[2rem] shadow-brutal-white hover:bg-white hover:text-black transition-all group">
+                            <div class="w-16 h-16 md:w-20 md:h-20 bg-neon-lime border-2 border-black rounded-full flex items-center justify-center mb-6 md:mb-8">
+                                <i data-lucide="search" class="w-8 h-8 md:w-10 md:h-10 text-black"></i>
                             </div>
-                            <h3 class="text-3xl font-extrabold mb-4 uppercase">Chuẩn SEO</h3>
-                            <p class="text-current opacity-70 font-sans leading-relaxed">
+                            <h3 class="text-2xl md:text-3xl font-extrabold mb-3 md:mb-4 uppercase">Chuẩn SEO</h3>
+                            <p class="text-current opacity-70 font-sans leading-relaxed text-sm md:text-base">
                                 Code sạch, chuẩn Heading. Nội dung viết trúng Insight giúp leo Top Google tự nhiên, tiết kiệm tiền Ads.
                             </p>
                         </div>
 
-                        <div class="bg-brutal border-2 border-white p-10 rounded-3xl shadow-brutal-white hover:bg-white hover:text-black transition-all group">
-                            <div class="w-20 h-20 bg-neon-pink border-2 border-black rounded-full flex items-center justify-center mb-8">
-                                <i data-lucide="shield-check" class="w-10 h-10 text-black"></i>
+                        <div class="bg-brutal border-2 border-white p-8 md:p-10 rounded-[2rem] shadow-brutal-white hover:bg-white hover:text-black transition-all group sm:col-span-2 md:col-span-1">
+                            <div class="w-16 h-16 md:w-20 md:h-20 bg-neon-pink border-2 border-black rounded-full flex items-center justify-center mb-6 md:mb-8">
+                                <i data-lucide="shield-check" class="w-8 h-8 md:w-10 md:h-10 text-black"></i>
                             </div>
-                            <h3 class="text-3xl font-extrabold mb-4 uppercase">An Toàn</h3>
-                            <p class="text-current opacity-70 font-sans leading-relaxed">
+                            <h3 class="text-2xl md:text-3xl font-extrabold mb-3 md:mb-4 uppercase">An Toàn</h3>
+                            <p class="text-current opacity-70 font-sans leading-relaxed text-sm md:text-base">
                                 Hệ sinh thái Digital bền vững. Không phụ thuộc 100% vào quảng cáo. Dễ dàng bảo trì và mở rộng.
                             </p>
                         </div>
@@ -340,33 +348,33 @@
             </section>
 
             <!-- PROJECTS SECTION -->
-            <section id="projects" class="py-24 border-b-2 border-white/10 scroll-mt-20 bg-white text-black">
+            <section id="projects" class="py-16 md:py-24 border-b-2 border-white/10 scroll-mt-20 bg-white text-black">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="mb-16 text-center">
-                        <h2 class="text-5xl md:text-7xl font-display font-extrabold uppercase leading-none">
+                    <div class="mb-10 md:mb-16 text-center">
+                        <h2 class="text-4xl sm:text-5xl md:text-7xl font-display font-extrabold uppercase leading-none">
                             DỰ ÁN NỔI BẬT
                         </h2>
                     </div>
 
                     <!-- Project Card Brutalist -->
-                    <div class="border-4 border-black rounded-[2rem] shadow-brutal-black bg-[#f0f0f0] p-6 sm:p-12 flex flex-col lg:flex-row gap-12">
-                        <div class="w-full lg:w-1/2 space-y-8 flex flex-col justify-center">
-                            <div class="inline-flex px-4 py-2 border-2 border-black rounded-full font-display font-bold uppercase text-sm bg-neon-cyan">
+                    <div class="border-4 border-black rounded-[1.5rem] md:rounded-[2rem] shadow-brutal-black bg-[#f0f0f0] p-6 sm:p-10 md:p-12 flex flex-col lg:flex-row gap-8 md:gap-12">
+                        <div class="w-full lg:w-1/2 space-y-6 md:space-y-8 flex flex-col justify-center">
+                            <div class="inline-flex px-3 py-1.5 md:px-4 md:py-2 border-2 border-black rounded-full font-display font-bold uppercase text-xs md:text-sm bg-neon-cyan self-start">
                                 Case Study: Bán Lẻ / Thú Cưng
                             </div>
                             
-                            <h3 class="text-5xl md:text-6xl font-display font-extrabold uppercase tracking-tighter">
+                            <h3 class="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold uppercase tracking-tighter break-all">
                                 BIFOOD
                             </h3>
                             
-                            <div class="space-y-6 font-sans">
-                                <div class="border-l-4 border-neon-pink pl-6">
-                                    <h4 class="font-display font-bold text-xl uppercase mb-2">Vấn đề</h4>
-                                    <p class="text-gray-700 font-medium">Giao diện cũ phân loại kém, thiếu uy tín cho dòng sản phẩm nhập khẩu cao cấp.</p>
+                            <div class="space-y-5 md:space-y-6 font-sans">
+                                <div class="border-l-4 border-neon-pink pl-4 md:pl-6">
+                                    <h4 class="font-display font-bold text-lg md:text-xl uppercase mb-1 md:mb-2">Vấn đề</h4>
+                                    <p class="text-gray-700 font-medium text-sm md:text-base">Giao diện cũ phân loại kém, thiếu uy tín cho dòng sản phẩm nhập khẩu cao cấp.</p>
                                 </div>
-                                <div class="border-l-4 border-neon-lime pl-6">
-                                    <h4 class="font-display font-bold text-xl uppercase mb-2">Giải pháp SEO & UX</h4>
-                                    <ul class="text-gray-700 font-medium space-y-2">
+                                <div class="border-l-4 border-neon-lime pl-4 md:pl-6">
+                                    <h4 class="font-display font-bold text-lg md:text-xl uppercase mb-1 md:mb-2">Giải pháp SEO & UX</h4>
+                                    <ul class="text-gray-700 font-medium space-y-1 md:space-y-2 text-sm md:text-base">
                                         <li>+ Tái cấu trúc UX/UI.</li>
                                         <li>+ Bộ lọc đa tầng thông minh.</li>
                                         <li>+ Masterplan Content chuẩn SEO.</li>
@@ -374,23 +382,22 @@
                                 </div>
                             </div>
 
-                            <a href="#brief" class="self-start px-8 py-4 bg-black text-white font-display font-bold uppercase rounded-full border-2 border-black hover:bg-transparent hover:text-black transition-colors flex items-center gap-2">
-                                TẠO DỰ ÁN TƯƠNG TỰ <i data-lucide="arrow-right"></i>
+                            <a href="#brief" class="w-full sm:w-auto px-6 py-4 bg-black text-white font-display font-bold uppercase rounded-full border-2 border-black hover:bg-transparent hover:text-black transition-colors flex items-center justify-center gap-2 text-sm md:text-base">
+                                TẠO DỰ ÁN TƯƠNG TỰ <i data-lucide="arrow-right" class="w-4 h-4 md:w-5 md:h-5"></i>
                             </a>
                         </div>
                         
                         <!-- Image Mockup -->
                         <div class="w-full lg:w-1/2">
-                            <div class="border-4 border-black rounded-3xl overflow-hidden bg-white relative group">
-                                <div class="border-b-4 border-black p-3 bg-[#e0e0e0] flex items-center gap-2">
-                                    <div class="w-4 h-4 rounded-full border-2 border-black bg-white"></div>
-                                    <div class="w-4 h-4 rounded-full border-2 border-black bg-white"></div>
-                                    <div class="w-4 h-4 rounded-full border-2 border-black bg-white"></div>
-                                    <div class="ml-4 font-display font-bold text-xs uppercase border-2 border-black px-3 py-1 rounded-full bg-white">bifood.com.vn</div>
+                            <div class="border-4 border-black rounded-2xl md:rounded-3xl overflow-hidden bg-white relative group">
+                                <div class="border-b-4 border-black p-2.5 md:p-3 bg-[#e0e0e0] flex items-center gap-2">
+                                    <div class="w-3 h-3 md:w-4 md:h-4 rounded-full border-2 border-black bg-white"></div>
+                                    <div class="w-3 h-3 md:w-4 md:h-4 rounded-full border-2 border-black bg-white"></div>
+                                    <div class="w-3 h-3 md:w-4 md:h-4 rounded-full border-2 border-black bg-white"></div>
+                                    <div class="ml-2 md:ml-4 font-display font-bold text-[10px] md:text-xs uppercase border-2 border-black px-2 md:px-3 py-0.5 md:py-1 rounded-full bg-white">bifood.com.vn</div>
                                 </div>
                                 <div class="aspect-[4/3] overflow-hidden relative">
-                                    <!-- Ảnh pixelated nhẹ tạo cảm giác retro -->
-                                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80" alt="Dự án Bifood" class="w-full h-auto object-cover object-top hover:-translate-y-1/3 transition-transform duration-[5s] ease-linear" style="image-rendering: crisp-edges;">
+                                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80" alt="Dự án Bifood" class="w-full h-auto object-cover object-top lg:hover:-translate-y-1/3 transition-transform duration-[5s] ease-linear" style="image-rendering: crisp-edges;">
                                 </div>
                             </div>
                         </div>
@@ -399,24 +406,24 @@
             </section>
 
             <!-- CONTACT SECTION -->
-            <section id="contact" class="py-24 scroll-mt-20 relative">
+            <section id="contact" class="py-16 md:py-24 scroll-mt-20 relative">
                 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center font-display">
-                    <h2 class="text-5xl md:text-7xl font-extrabold text-white uppercase mb-8">BẮT ĐẦU <br><span class="text-neon-lime">NGAY BÂY GIỜ</span></h2>
+                    <h2 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white uppercase mb-6 md:mb-8">BẮT ĐẦU <br><span class="text-neon-lime">NGAY BÂY GIỜ</span></h2>
                     
-                    <div class="bg-brutal border-4 border-white p-10 md:p-16 rounded-[3rem] shadow-brutal-white mt-12">
-                        <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                            <a href="https://zalo.me/0938415218" target="_blank" class="flex-1 border-4 border-black bg-white text-black p-6 rounded-3xl flex flex-col items-center gap-4 hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_#ccff00] transition-all">
-                                <i data-lucide="phone" class="w-12 h-12"></i>
+                    <div class="bg-brutal border-4 border-white p-6 sm:p-10 md:p-16 rounded-[2rem] md:rounded-[3rem] shadow-brutal-white mt-8 md:mt-12">
+                        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+                            <a href="https://zalo.me/0938415218" target="_blank" class="flex-1 border-4 border-black bg-white text-black p-5 md:p-6 rounded-2xl md:rounded-3xl flex flex-col items-center gap-3 md:gap-4 hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_#ccff00] transition-all">
+                                <i data-lucide="phone" class="w-8 h-8 md:w-12 md:h-12"></i>
                                 <div>
-                                    <p class="text-xs font-bold uppercase text-gray-500">Zalo / Hotline</p>
-                                    <p class="text-2xl font-extrabold">0938.415.218</p>
+                                    <p class="text-[10px] md:text-xs font-bold uppercase text-gray-500">Zalo / Hotline</p>
+                                    <p class="text-xl md:text-2xl font-extrabold">0938.415.218</p>
                                 </div>
                             </a>
-                            <a href="https://www.facebook.com/tran.duc.duy.742865/" target="_blank" class="flex-1 border-4 border-black bg-neon-cyan text-black p-6 rounded-3xl flex flex-col items-center gap-4 hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_#ffffff] transition-all">
-                                <i data-lucide="facebook" class="w-12 h-12"></i>
+                            <a href="https://www.facebook.com/tran.duc.duy.742865/" target="_blank" class="flex-1 border-4 border-black bg-neon-cyan text-black p-5 md:p-6 rounded-2xl md:rounded-3xl flex flex-col items-center gap-3 md:gap-4 hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_#ffffff] transition-all">
+                                <i data-lucide="facebook" class="w-8 h-8 md:w-12 md:h-12"></i>
                                 <div>
-                                    <p class="text-xs font-bold uppercase text-black/60">Facebook</p>
-                                    <p class="text-2xl font-extrabold">Đức Duy</p>
+                                    <p class="text-[10px] md:text-xs font-bold uppercase text-black/60">Facebook</p>
+                                    <p class="text-xl md:text-2xl font-extrabold">Đức Duy</p>
                                 </div>
                             </a>
                         </div>
@@ -428,51 +435,51 @@
         <!-- ======================================================== -->
         <!-- VIEW: CLIENT BRIEF -->
         <!-- ======================================================== -->
-        <main id="brief-view" class="view-section flex-1 pt-32 pb-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full font-display">
-            <a href="#home" class="mb-8 inline-flex items-center gap-2 text-white hover:text-neon-lime font-bold uppercase transition-colors">
-                <i data-lucide="arrow-left" class="w-6 h-6 border-2 border-current rounded-full p-1"></i> TRỞ VỀ
+        <main id="brief-view" class="view-section flex-1 pt-28 md:pt-32 pb-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full font-display">
+            <a href="#home" class="mb-6 md:mb-8 inline-flex items-center gap-2 text-white hover:text-neon-lime font-bold uppercase transition-colors text-sm">
+                <i data-lucide="arrow-left" class="w-5 h-5 border-2 border-current rounded-full p-0.5"></i> TRỞ VỀ
             </a>
             
-            <div class="bg-brutal border-4 border-white shadow-brutal-white p-8 md:p-16 rounded-[3rem]">
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-8 uppercase leading-none">
+            <div class="bg-brutal border-4 border-white shadow-brutal-white p-6 sm:p-10 md:p-16 rounded-[2rem] md:rounded-[3rem]">
+                <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4 md:mb-8 uppercase leading-tight md:leading-none">
                     KHỞI TẠO <br><span class="text-neon-cyan">DỰ ÁN MỚI</span>
                 </h1>
-                <p class="text-white/70 font-sans text-lg mb-12">Điền 4 thông tin thiết lõi dưới đây để tôi phân tích giải pháp SEO & Web cho bạn.</p>
+                <p class="text-white/70 font-sans text-sm md:text-lg mb-8 md:mb-12">Điền 4 thông tin thiết lõi dưới đây để tôi phân tích giải pháp SEO & Web cho bạn.</p>
 
-                <div class="space-y-8 font-sans">
-                    <!-- Form Control Brutalist -->
+                <div class="space-y-6 md:space-y-8 font-sans">
+                    <!-- Form Control Brutalist (Thêm text-[16px] để tránh zoom trên iOS) -->
                     <div class="flex flex-col gap-2">
-                        <label class="font-display font-bold text-xl uppercase flex items-center gap-3">
-                            <span class="bg-neon-lime text-black w-8 h-8 rounded-full flex items-center justify-center border-2 border-black">1</span> Mục tiêu dự án
+                        <label class="font-display font-bold text-lg md:text-xl uppercase flex items-center gap-3">
+                            <span class="bg-neon-lime text-black w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center border-2 border-black text-sm md:text-base">1</span> Mục tiêu dự án
                         </label>
-                        <textarea rows="2" class="w-full p-5 bg-black border-2 border-white rounded-2xl text-white font-medium focus:border-neon-lime focus:outline-none transition-colors" placeholder="Bạn muốn khách hàng làm gì sau khi vào web?"></textarea>
+                        <textarea rows="2" class="w-full p-4 md:p-5 bg-black border-2 border-white rounded-xl md:rounded-2xl text-white font-medium focus:border-neon-lime focus:outline-none transition-colors text-[16px] md:text-base" placeholder="Bạn muốn khách hàng làm gì sau khi vào web?"></textarea>
                     </div>
 
                     <div class="flex flex-col gap-2">
-                        <label class="font-display font-bold text-xl uppercase flex items-center gap-3">
-                            <span class="bg-neon-cyan text-black w-8 h-8 rounded-full flex items-center justify-center border-2 border-black">2</span> Đối tượng
+                        <label class="font-display font-bold text-lg md:text-xl uppercase flex items-center gap-3">
+                            <span class="bg-neon-cyan text-black w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center border-2 border-black text-sm md:text-base">2</span> Đối tượng
                         </label>
-                        <textarea rows="2" class="w-full p-5 bg-black border-2 border-white rounded-2xl text-white font-medium focus:border-neon-cyan focus:outline-none transition-colors" placeholder="Ai sẽ mua hàng/đọc web?"></textarea>
+                        <textarea rows="2" class="w-full p-4 md:p-5 bg-black border-2 border-white rounded-xl md:rounded-2xl text-white font-medium focus:border-neon-cyan focus:outline-none transition-colors text-[16px] md:text-base" placeholder="Ai sẽ mua hàng/đọc web?"></textarea>
                     </div>
 
                     <div class="flex flex-col gap-2">
-                        <label class="font-display font-bold text-xl uppercase flex items-center gap-3">
-                            <span class="bg-neon-pink text-black w-8 h-8 rounded-full flex items-center justify-center border-2 border-black">3</span> Điểm độc nhất (USP)
+                        <label class="font-display font-bold text-lg md:text-xl uppercase flex items-center gap-3">
+                            <span class="bg-neon-pink text-black w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center border-2 border-black text-sm md:text-base">3</span> Điểm độc nhất (USP)
                         </label>
-                        <textarea rows="2" class="w-full p-5 bg-black border-2 border-white rounded-2xl text-white font-medium focus:border-neon-pink focus:outline-none transition-colors" placeholder="VD: Giao nhanh 2h, Rẻ nhất thị trường..."></textarea>
+                        <textarea rows="2" class="w-full p-4 md:p-5 bg-black border-2 border-white rounded-xl md:rounded-2xl text-white font-medium focus:border-neon-pink focus:outline-none transition-colors text-[16px] md:text-base" placeholder="VD: Giao nhanh 2h, Rẻ nhất thị trường..."></textarea>
                     </div>
 
                     <div class="flex flex-col gap-2">
-                        <label class="font-display font-bold text-xl uppercase flex items-center gap-3">
-                            <span class="bg-white text-black w-8 h-8 rounded-full flex items-center justify-center border-2 border-black">4</span> Kỳ vọng SEO
+                        <label class="font-display font-bold text-lg md:text-xl uppercase flex items-center gap-3">
+                            <span class="bg-white text-black w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center border-2 border-black text-sm md:text-base">4</span> Kỳ vọng SEO
                         </label>
-                        <textarea rows="2" class="w-full p-5 bg-black border-2 border-white rounded-2xl text-white font-medium focus:border-white focus:outline-none transition-colors" placeholder="VD: Top 1 từ khóa ABC..."></textarea>
+                        <textarea rows="2" class="w-full p-4 md:p-5 bg-black border-2 border-white rounded-xl md:rounded-2xl text-white font-medium focus:border-white focus:outline-none transition-colors text-[16px] md:text-base" placeholder="VD: Top 1 từ khóa ABC..."></textarea>
                     </div>
                 </div>
 
-                <div class="mt-12 text-center">
-                    <a href="https://zalo.me/0938415218" target="_blank" class="inline-flex items-center gap-3 px-10 py-5 bg-neon-lime text-black font-display font-extrabold uppercase text-xl rounded-full border-4 border-black hover:-translate-y-2 hover:shadow-[6px_6px_0px_0px_#ffffff] transition-all">
-                        <i data-lucide="send" class="w-6 h-6"></i> GỬI CHO ĐỨC DUY
+                <div class="mt-10 md:mt-12 text-center">
+                    <a href="https://zalo.me/0938415218" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 sm:px-10 py-4 sm:py-5 bg-neon-lime text-black font-display font-extrabold uppercase text-lg sm:text-xl rounded-full border-4 border-black hover:-translate-y-1 sm:hover:-translate-y-2 hover:shadow-[4px_4px_0px_0px_#ffffff] sm:hover:shadow-[6px_6px_0px_0px_#ffffff] transition-all">
+                        <i data-lucide="send" class="w-5 h-5 sm:w-6 sm:h-6"></i> GỬI CHO ĐỨC DUY
                     </a>
                 </div>
             </div>
@@ -481,42 +488,42 @@
         <!-- ======================================================== -->
         <!-- VIEW: ROADMAP PET (ORIO) -->
         <!-- ======================================================== -->
-        <main id="roadmap-view" class="view-section flex-1 pt-32 pb-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full font-display">
-            <a href="#home" class="mb-8 inline-flex items-center gap-2 text-white hover:text-neon-pink font-bold uppercase transition-colors">
-                <i data-lucide="arrow-left" class="w-6 h-6 border-2 border-current rounded-full p-1"></i> TRỞ VỀ
+        <main id="roadmap-view" class="view-section flex-1 pt-28 md:pt-32 pb-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full font-display">
+            <a href="#home" class="mb-6 md:mb-8 inline-flex items-center gap-2 text-white hover:text-neon-pink font-bold uppercase transition-colors text-sm">
+                <i data-lucide="arrow-left" class="w-5 h-5 border-2 border-current rounded-full p-0.5"></i> TRỞ VỀ
             </a>
 
-            <div class="bg-neon-pink text-black p-10 md:p-16 rounded-[3rem] border-4 border-black shadow-brutal-white mb-16">
-                <h1 class="text-5xl md:text-7xl font-extrabold uppercase leading-none mb-6">
+            <div class="bg-neon-pink text-black p-8 md:p-16 rounded-[2rem] md:rounded-[3rem] border-4 border-black shadow-brutal-white mb-12 md:mb-16">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold uppercase leading-none mb-4 md:mb-6">
                     MASTERPLAN <br>ORIO PET
                 </h1>
-                <p class="font-sans font-bold text-lg max-w-2xl">Chiến lược bao vây từ khóa & giải quyết nỗi đau của khách nuôi Pet. Tập trung vào USP "Cám Mát".</p>
+                <p class="font-sans font-bold text-base md:text-lg max-w-2xl">Chiến lược bao vây từ khóa & giải quyết nỗi đau của khách nuôi Pet. Tập trung vào USP "Cám Mát".</p>
             </div>
 
             <!-- Bảng Brutalist -->
-            <div class="bg-brutal border-4 border-white rounded-[2rem] overflow-hidden shadow-brutal-pink">
-                <div class="bg-white text-black p-6 border-b-4 border-black">
-                    <h2 class="text-3xl font-extrabold uppercase flex items-center gap-3"><i data-lucide="activity" class="w-8 h-8"></i> 1. Sức Khỏe Tiêu Hóa</h2>
+            <div class="bg-brutal border-4 border-white rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-brutal-pink">
+                <div class="bg-white text-black p-4 md:p-6 border-b-4 border-black">
+                    <h2 class="text-xl md:text-3xl font-extrabold uppercase flex items-center gap-2 md:gap-3"><i data-lucide="activity" class="w-6 h-6 md:w-8 md:h-8"></i> 1. Sức Khỏe Tiêu Hóa</h2>
                 </div>
                 <div class="overflow-x-auto">
-                    <table class="w-full text-left font-sans text-lg min-w-[600px]">
-                        <thead class="bg-black/50 text-white font-display uppercase border-b-2 border-white/20">
+                    <table class="w-full text-left font-sans text-sm md:text-lg min-w-[500px] md:min-w-[600px]">
+                        <thead class="bg-black/50 text-white font-display uppercase border-b-2 border-white/20 text-xs md:text-base">
                             <tr>
-                                <th class="p-6 w-1/3">Chủ đề</th>
-                                <th class="p-6 w-1/3">Nội dung</th>
-                                <th class="p-6 w-1/3">Keyword Focus</th>
+                                <th class="p-4 md:p-6 w-1/3">Chủ đề</th>
+                                <th class="p-4 md:p-6 w-1/3">Nội dung</th>
+                                <th class="p-4 md:p-6 w-1/3">Keyword Focus</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y-2 divide-white/20">
                             <tr class="hover:bg-white/10 transition-colors">
-                                <td class="p-6 font-bold">Bảng màu phân</td>
-                                <td class="p-6 text-white/70">Giải mã sức khỏe Boss qua màu sắc và độ cứng.</td>
-                                <td class="p-6"><span class="bg-neon-pink text-black font-bold px-3 py-1 border-2 border-black rounded-lg text-sm">Cách nhận biết phân mèo</span></td>
+                                <td class="p-4 md:p-6 font-bold">Bảng màu phân</td>
+                                <td class="p-4 md:p-6 text-white/70 text-xs md:text-base">Giải mã sức khỏe Boss qua màu sắc và độ cứng.</td>
+                                <td class="p-4 md:p-6"><span class="bg-neon-pink text-black font-bold px-2 py-1 md:px-3 md:py-1 border-2 border-black rounded-lg text-xs md:text-sm">Cách nhận biết phân mèo</span></td>
                             </tr>
                             <tr class="hover:bg-white/10 transition-colors">
-                                <td class="p-6 font-bold">Lười uống nước</td>
-                                <td class="p-6 text-white/70">Hiểm họa suy thận từ việc thiếu nước.</td>
-                                <td class="p-6"><span class="bg-neon-pink text-black font-bold px-3 py-1 border-2 border-black rounded-lg text-sm">Cách cho mèo uống nước</span></td>
+                                <td class="p-4 md:p-6 font-bold">Lười uống nước</td>
+                                <td class="p-4 md:p-6 text-white/70 text-xs md:text-base">Hiểm họa suy thận từ việc thiếu nước.</td>
+                                <td class="p-4 md:p-6"><span class="bg-neon-pink text-black font-bold px-2 py-1 md:px-3 md:py-1 border-2 border-black rounded-lg text-xs md:text-sm">Cách cho mèo uống nước</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -527,64 +534,64 @@
         <!-- ======================================================== -->
         <!-- VIEW: ROADMAP SOLAR -->
         <!-- ======================================================== -->
-        <main id="roadmap-solar-view" class="view-section flex-1 pt-32 pb-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full font-display">
-            <a href="#home" class="mb-8 inline-flex items-center gap-2 text-white hover:text-neon-lime font-bold uppercase transition-colors">
-                <i data-lucide="arrow-left" class="w-6 h-6 border-2 border-current rounded-full p-1"></i> TRỞ VỀ
+        <main id="roadmap-solar-view" class="view-section flex-1 pt-28 md:pt-32 pb-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full font-display">
+            <a href="#home" class="mb-6 md:mb-8 inline-flex items-center gap-2 text-white hover:text-neon-lime font-bold uppercase transition-colors text-sm">
+                <i data-lucide="arrow-left" class="w-5 h-5 border-2 border-current rounded-full p-0.5"></i> TRỞ VỀ
             </a>
 
-            <div class="bg-neon-lime text-black p-10 md:p-16 rounded-[3rem] border-4 border-black shadow-brutal-white mb-16">
-                <h1 class="text-5xl md:text-7xl font-extrabold uppercase leading-none mb-6">
+            <div class="bg-neon-lime text-black p-8 md:p-16 rounded-[2rem] md:rounded-[3rem] border-4 border-black shadow-brutal-white mb-12 md:mb-16">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold uppercase leading-none mb-4 md:mb-6">
                     MASTERPLAN <br>SOLAR ĐỨC LINH
                 </h1>
-                <p class="font-sans font-bold text-lg max-w-2xl">Thống lĩnh từ khóa năng lượng mặt trời Local. Đánh mạnh vào mảng Nông nghiệp và Bơm tưới tiêu.</p>
+                <p class="font-sans font-bold text-base md:text-lg max-w-2xl">Thống lĩnh từ khóa năng lượng mặt trời Local. Đánh mạnh vào mảng Nông nghiệp và Bơm tưới tiêu.</p>
             </div>
 
             <!-- Bảng Brutalist -->
-            <div class="bg-brutal border-4 border-white rounded-[2rem] overflow-hidden shadow-brutal-lime">
-                <div class="bg-white text-black p-6 border-b-4 border-black flex flex-col md:flex-row md:items-center justify-between gap-4">
-                    <h2 class="text-3xl font-extrabold uppercase flex items-center gap-3"><i data-lucide="zap" class="w-8 h-8"></i> 1. Dịch vụ Lắp Đặt</h2>
-                    <span class="bg-black text-neon-lime font-bold px-4 py-2 border-2 border-black rounded-full text-sm uppercase">Transaction Intent</span>
+            <div class="bg-brutal border-4 border-white rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-brutal-lime">
+                <div class="bg-white text-black p-4 md:p-6 border-b-4 border-black flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-4">
+                    <h2 class="text-xl md:text-3xl font-extrabold uppercase flex items-center gap-2 md:gap-3"><i data-lucide="zap" class="w-6 h-6 md:w-8 md:h-8"></i> 1. Dịch vụ Lắp Đặt</h2>
+                    <span class="bg-black text-neon-lime font-bold px-3 py-1.5 md:px-4 md:py-2 border-2 border-black rounded-full text-xs md:text-sm uppercase self-start md:self-auto">Transaction Intent</span>
                 </div>
                 <div class="overflow-x-auto">
-                    <table class="w-full text-left font-sans text-lg min-w-[600px]">
-                        <thead class="bg-black/50 text-white font-display uppercase border-b-2 border-white/20">
+                    <table class="w-full text-left font-sans text-sm md:text-lg min-w-[500px] md:min-w-[600px]">
+                        <thead class="bg-black/50 text-white font-display uppercase border-b-2 border-white/20 text-xs md:text-base">
                             <tr>
-                                <th class="p-6 w-1/3">Chủ đề</th>
-                                <th class="p-6 w-1/3">Nội dung</th>
-                                <th class="p-6 w-1/3">Keyword Focus</th>
+                                <th class="p-4 md:p-6 w-1/3">Chủ đề</th>
+                                <th class="p-4 md:p-6 w-1/3">Nội dung</th>
+                                <th class="p-4 md:p-6 w-1/3">Keyword Focus</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y-2 divide-white/20">
                             <tr class="hover:bg-white/10 transition-colors">
-                                <td class="p-6 font-bold">Lắp điện hộ gia đình</td>
-                                <td class="p-6 text-white/70">Giải pháp, chi phí và lợi ích cho nhà dân.</td>
-                                <td class="p-6"><span class="bg-neon-lime text-black font-bold px-3 py-1 border-2 border-black rounded-lg text-sm">Lắp điện mặt trời Đức Linh</span></td>
+                                <td class="p-4 md:p-6 font-bold">Lắp điện hộ gia đình</td>
+                                <td class="p-4 md:p-6 text-white/70 text-xs md:text-base">Giải pháp, chi phí và lợi ích cho nhà dân.</td>
+                                <td class="p-4 md:p-6"><span class="bg-neon-lime text-black font-bold px-2 py-1 md:px-3 md:py-1 border-2 border-black rounded-lg text-xs md:text-sm">Lắp điện mặt trời Đức Linh</span></td>
                             </tr>
                             <tr class="hover:bg-white/10 transition-colors">
-                                <td class="p-6 font-bold">Thi công trang trại</td>
-                                <td class="p-6 text-white/70">Tưới tiêu xa dân cư. Bơm nước rẫy sầu riêng.</td>
-                                <td class="p-6"><span class="bg-neon-lime text-black font-bold px-3 py-1 border-2 border-black rounded-lg text-sm">Điện mặt trời nông nghiệp</span></td>
+                                <td class="p-4 md:p-6 font-bold">Thi công trang trại</td>
+                                <td class="p-4 md:p-6 text-white/70 text-xs md:text-base">Tưới tiêu xa dân cư. Bơm nước rẫy sầu riêng.</td>
+                                <td class="p-4 md:p-6"><span class="bg-neon-lime text-black font-bold px-2 py-1 md:px-3 md:py-1 border-2 border-black rounded-lg text-xs md:text-sm">Điện mặt trời nông nghiệp</span></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
             
-            <div class="mt-16 bg-white text-black border-4 border-black rounded-[2rem] p-10 shadow-brutal-cyan">
-                <h3 class="text-3xl font-extrabold uppercase mb-6 flex items-center gap-3"><i data-lucide="map-pin" class="w-8 h-8 text-neon-cyan"></i> Lời Khuyên SEO</h3>
-                <p class="font-sans text-lg font-medium">Tạo ngay địa điểm Google Maps với tên <strong class="bg-neon-cyan px-2">Điện năng lượng mặt trời Đức Linh</strong> và review seeding tại địa phương.</p>
+            <div class="mt-12 md:mt-16 bg-white text-black border-4 border-black rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-10 shadow-brutal-cyan">
+                <h3 class="text-xl md:text-3xl font-extrabold uppercase mb-4 md:mb-6 flex items-center gap-2 md:gap-3"><i data-lucide="map-pin" class="w-6 h-6 md:w-8 md:h-8 text-neon-cyan"></i> Lời Khuyên SEO</h3>
+                <p class="font-sans text-sm md:text-lg font-medium">Tạo ngay địa điểm Google Maps với tên <strong class="bg-neon-cyan px-1.5 py-0.5 md:px-2 rounded border border-black inline-block mt-1 sm:mt-0">Điện năng lượng mặt trời Đức Linh</strong> và review seeding tại địa phương.</p>
             </div>
         </main>
 
         <!-- FOOTER BOLD -->
-        <footer class="bg-black py-12 border-t-4 border-white mt-auto relative z-10 font-display">
+        <footer class="bg-black py-10 md:py-12 border-t-4 border-white mt-auto relative z-10 font-display">
             <div class="max-w-7xl mx-auto px-4 text-center">
-                <h2 class="text-4xl font-extrabold uppercase mb-6">ĐỨC DUY</h2>
+                <h2 class="text-3xl md:text-4xl font-extrabold uppercase mb-6">ĐỨC DUY</h2>
                 <div class="flex justify-center gap-4 mb-8">
-                    <a href="#" class="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-neon-cyan hover:text-black transition-colors"><i data-lucide="facebook"></i></a>
-                    <a href="#" class="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-neon-pink hover:text-black transition-colors"><i data-lucide="music"></i></a>
+                    <a href="#" class="w-10 h-10 md:w-12 md:h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-neon-cyan hover:text-black transition-colors"><i data-lucide="facebook" class="w-5 h-5 md:w-6 md:h-6"></i></a>
+                    <a href="#" class="w-10 h-10 md:w-12 md:h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-neon-pink hover:text-black transition-colors"><i data-lucide="music" class="w-5 h-5 md:w-6 md:h-6"></i></a>
                 </div>
-                <p class="text-white/50 text-sm font-bold uppercase tracking-widest">
+                <p class="text-white/50 text-[10px] md:text-sm font-bold uppercase tracking-widest px-4">
                     © 2026 ĐỨC DUY UX/UI & SEO. NEO-BRUTALISM EDITION.
                 </p>
             </div>
@@ -594,45 +601,45 @@
     <!-- ======================================================== -->
     <!-- AI CHAT TERMINAL (BRUTALIST WIDGET) -->
     <!-- ======================================================== -->
-    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end font-sans">
-        <div id="chat-box" class="hidden bg-black w-[calc(100vw-48px)] sm:w-96 border-4 border-white shadow-brutal-cyan mb-4 flex-col h-[450px] animate-[slideUp_0.3s_ease]">
+    <div class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex flex-col items-end font-sans">
+        <div id="chat-box" class="hidden bg-black w-[calc(100vw-32px)] sm:w-96 border-4 border-white shadow-brutal-cyan mb-3 md:mb-4 flex-col h-[400px] md:h-[450px] animate-[slideUp_0.3s_ease]">
             <!-- Terminal Header -->
-            <div class="bg-white text-black px-4 py-3 flex justify-between items-center border-b-4 border-black font-display font-bold uppercase">
-                <div class="flex items-center gap-2">
-                    <i data-lucide="terminal" class="w-5 h-5"></i> AI_ASSISTANT.EXE
+            <div class="bg-white text-black px-4 py-2.5 md:py-3 flex justify-between items-center border-b-4 border-black font-display font-bold uppercase">
+                <div class="flex items-center gap-2 text-sm md:text-base">
+                    <i data-lucide="terminal" class="w-4 h-4 md:w-5 md:h-5"></i> AI_ASSISTANT.EXE
                 </div>
                 <button onclick="toggleChat()" class="hover:text-red-600 transition-colors">
-                    <i data-lucide="x" class="w-6 h-6 border-2 border-black rounded-sm"></i>
+                    <i data-lucide="x" class="w-5 h-5 md:w-6 md:h-6 border-2 border-black rounded-sm"></i>
                 </button>
             </div>
             
-            <div id="chat-messages" class="flex-1 overflow-y-auto p-5 space-y-5 text-sm font-medium">
+            <div id="chat-messages" class="flex-1 overflow-y-auto p-4 md:p-5 space-y-4 md:space-y-5 text-xs md:text-sm font-medium">
                 <div class="flex justify-start">
-                    <div class="max-w-[85%] p-4 bg-neon-cyan text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]">
+                    <div class="max-w-[85%] p-3 md:p-4 bg-neon-cyan text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] leading-relaxed">
                         Hệ thống sẵn sàng. Bạn cần Đức Duy hỗ trợ Web hay SEO?
                     </div>
                 </div>
             </div>
             
-            <div id="typing-indicator" class="hidden px-5 pb-2">
-                <div class="inline-flex bg-white text-black font-bold border-2 border-black p-2 text-xs uppercase animate-pulse">
+            <div id="typing-indicator" class="hidden px-4 md:px-5 pb-2">
+                <div class="inline-flex bg-white text-black font-bold border-2 border-black p-1.5 md:p-2 text-[10px] md:text-xs uppercase animate-pulse">
                     AI IS TYPING...
                 </div>
             </div>
             
             <!-- Terminal Input -->
-            <div class="p-4 border-t-4 border-white flex gap-2 bg-[#111]">
-                <input id="chat-input" type="text" placeholder="Gõ lệnh..." class="flex-1 px-4 py-3 bg-black border-2 border-white text-white font-mono focus:border-neon-cyan focus:outline-none" onkeypress="if(event.key === 'Enter') sendMessage()"/>
-                <button onclick="sendMessage()" class="bg-white text-black px-4 py-3 border-2 border-black hover:bg-neon-cyan transition-colors font-bold uppercase">
+            <div class="p-3 md:p-4 border-t-4 border-white flex gap-2 bg-[#111]">
+                <input id="chat-input" type="text" placeholder="Gõ lệnh..." class="flex-1 px-3 md:px-4 py-2 md:py-3 bg-black border-2 border-white text-white font-mono focus:border-neon-cyan focus:outline-none text-[16px] md:text-sm" onkeypress="if(event.key === 'Enter') sendMessage()"/>
+                <button onclick="sendMessage()" class="bg-white text-black px-3 md:px-4 py-2 md:py-3 border-2 border-black hover:bg-neon-cyan transition-colors font-bold uppercase text-sm md:text-base">
                     Gửi
                 </button>
             </div>
         </div>
 
-        <!-- Float Button (Hình Vuông / Sắc Cạnh) -->
-        <button id="chat-toggle-btn" onclick="toggleChat()" class="bg-neon-cyan text-black p-5 border-4 border-white shadow-brutal-white hover:translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_#ffffff] transition-all flex items-center justify-center relative">
-            <i data-lucide="bot" class="w-8 h-8"></i>
-            <span class="absolute -top-2 -right-2 bg-red-500 text-white font-bold text-[10px] px-2 py-1 border-2 border-black">AI</span>
+        <!-- Float Button -->
+        <button id="chat-toggle-btn" onclick="toggleChat()" class="bg-neon-cyan text-black p-3.5 md:p-5 border-4 border-white shadow-[4px_4px_0px_0px_#ffffff] md:shadow-brutal-white hover:translate-x-1 hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#ffffff] md:hover:shadow-[8px_8px_0px_0px_#ffffff] transition-all flex items-center justify-center relative">
+            <i data-lucide="bot" class="w-6 h-6 md:w-8 md:h-8"></i>
+            <span class="absolute -top-2 -right-2 bg-red-500 text-white font-bold text-[9px] md:text-[10px] px-1.5 md:px-2 py-0.5 md:py-1 border-2 border-black">AI</span>
         </button>
     </div>
 
@@ -710,7 +717,7 @@
             }
         }
 
-        const API_KEY = "AIzaSyD8hiks_mAxfy5WfleVgSmmu88kw4mmVIg"; 
+        const API_KEY = ""; 
 
         async function sendMessage() {
             const input = document.getElementById('chat-input');
@@ -722,7 +729,7 @@
 
             chatMessages.innerHTML += `
                 <div class="flex justify-end">
-                    <div class="max-w-[85%] p-4 bg-white text-black border-2 border-black shadow-[2px_2px_0px_0px_#ccff00]">
+                    <div class="max-w-[85%] p-3 md:p-4 bg-white text-black border-2 border-black shadow-[2px_2px_0px_0px_#ccff00] leading-relaxed">
                         ${text}
                     </div>
                 </div>`;
@@ -749,7 +756,7 @@
                 typingIndicator.classList.add('hidden');
                 chatMessages.innerHTML += `
                     <div class="flex justify-start">
-                        <div class="max-w-[85%] p-4 bg-neon-cyan text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]">
+                        <div class="max-w-[85%] p-3 md:p-4 bg-neon-cyan text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] leading-relaxed">
                             ${aiText}
                         </div>
                     </div>`;
@@ -759,7 +766,7 @@
                 typingIndicator.classList.add('hidden');
                 chatMessages.innerHTML += `
                     <div class="flex justify-start">
-                        <div class="max-w-[85%] p-4 bg-red-500 text-white border-2 border-white font-bold">
+                        <div class="max-w-[85%] p-3 md:p-4 bg-red-500 text-white border-2 border-white font-bold leading-relaxed">
                             LỖI: Chưa có API Key. Vui lòng LH Đức Duy 0938.415.218.
                         </div>
                     </div>`;
