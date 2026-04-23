@@ -5,23 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- ========================================== -->
-    <!-- 🚀 BỘ TỐI ƯU SEO CAO CẤP & SCHEMA -->
+    <!-- 🚀 SEO CHUYÊN SÂU & ĐỊNH DANH THƯƠNG HIỆU -->
     <!-- ========================================== -->
-    <title>ĐỨC DUY | CHUYÊN GIA DIGITAL MARKETING & WEB ĐỘT PHÁ</title>
-    <meta name="description" content="Đức Duy - Chuyên gia thiết kế website chuẩn SEO, tối ưu UX/UI và triển khai Digital Marketing thực chiến tại Đức Linh, Bình Thuận.">
-    <meta name="keywords" content="Đức Duy, làm website, thiết kế website, digital marketing, SEO, chuyên gia SEO, thiết kế web chuyển đổi, duyweb">
+    <title>ĐỨC DUY | Làm Website Chuẩn SEO & Digital Marketing Thực Chiến</title>
+    <meta name="description" content="Đức Duy cung cấp giải pháp làm website chuẩn SEO, thiết kế UX/UI và Digital Marketing đột phá tại Đức Linh, Bình Thuận. Tối ưu chuyển đổi, cam kết tăng trưởng doanh thu thực tế.">
+    <meta name="keywords" content="Đức Duy, duyweb, làm website Đức Linh, thiết kế website Bình Thuận, digital marketing thực chiến, SEO website chuyên sâu, thiết kế UX/UI">
     <meta name="author" content="Đức Duy">
     
+    <!-- Định danh URL gốc để tránh trùng lặp nội dung -->
     <link rel="canonical" href="https://duyweb.info.vn/" />
     <meta name="google-site-verification" content="DÁN_MÃ_CỦA_BẠN_VÀO_ĐÂY" />
     
-    <!-- Open Graph -->
-    <meta property="og:title" content="ĐỨC DUY | DIGITAL MARKETING & WEB ĐỘT PHÁ">
-    <meta property="og:description" content="Giải pháp thiết kế web và SEO thực chiến giúp bứt phá doanh thu.">
+    <!-- Open Graph (Zalo/Facebook/LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://duyweb.info.vn/">
+    <meta property="og:title" content="ĐỨC DUY | Chuyên Gia Làm Website & Digital Marketing">
+    <meta property="og:description" content="Website không chỉ đẹp mà phải bán được hàng. Giải pháp SEO và Web thực chiến từ Đức Duy.">
     <meta property="og:image" content="image_c4293b.jpg"> 
+    
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ducduy_web">
+    <meta name="twitter:image" content="image_c4293b.jpg">
 
-    <!-- Schema Markup JSON-LD -->
+    <!-- Schema Markup JSON-LD (Định danh Chuyên gia & Dịch vụ Local) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -32,23 +39,51 @@
           "name": "Đức Duy",
           "url": "https://duyweb.info.vn/",
           "image": "image_c4293b.jpg",
-          "jobTitle": "Chuyên gia Digital Marketing & Thiết kế Web",
+          "jobTitle": "Chuyên gia Digital Marketing & Thiết kế Website",
+          "description": "Chuyên gia tư vấn và triển khai giải pháp Marketing Online, làm website chuẩn SEO tối ưu chuyển đổi cho doanh nghiệp.",
           "sameAs": [
             "https://www.facebook.com/tran.duc.duy.742865/", 
             "https://www.tiktok.com/@di0938415218"
           ]
         },
         {
-          "@type": "WebSite",
+          "@type": "ProfessionalService",
+          "name": "Duy Web - Thiết kế Website & SEO Bình Thuận",
+          "image": "image_c4293b.jpg",
+          "@id": "https://duyweb.info.vn/#service",
           "url": "https://duyweb.info.vn/",
-          "name": "Duy Web - Thiết kế & SEO"
+          "telephone": "0938415218",
+          "priceRange": "VND",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Đức Linh",
+            "addressRegion": "Bình Thuận",
+            "addressCountry": "VN"
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+            ],
+            "opens": "08:00",
+            "closes": "21:00"
+          }
         }
       ]
     }
     </script>
 
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
     <!-- ========================================== -->
-    <!-- CẤU HÌNH GIAO DIỆN & FONTS -->
+    <!-- CẤU HÌNH GIAO DIỆN -->
     <!-- ========================================== -->
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -64,11 +99,7 @@
                         display: ['Space Grotesk', 'sans-serif'],
                     },
                     colors: {
-                        neon: {
-                            lime: '#ccff00', 
-                            cyan: '#00e5ff', 
-                            pink: '#ff00ff', 
-                        },
+                        neon: { lime: '#ccff00', cyan: '#00e5ff', pink: '#ff00ff' },
                         brutal: '#0f0f0f'
                     },
                     boxShadow: {
@@ -97,7 +128,6 @@
 
         .bg-grid { background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 40px 40px; }
 
-        /* Chống Zoom trên iOS */
         @media screen and (max-width: 768px) {
             input, select, textarea { font-size: 16px !important; }
         }
@@ -113,18 +143,16 @@
     <nav class="fixed top-0 left-0 w-full bg-brutal z-50 border-b-4 border-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
             
-            <!-- BRAND / LOGO TÙY CHỈNH -->
-            <a href="#home" class="flex items-center gap-3 group">
+            <a href="#home" class="flex items-center gap-3 group" title="Đức Duy - Giải pháp Website & Marketing">
                 <div class="w-12 h-12 bg-neon-lime border-2 border-white rounded-lg flex items-center justify-center shadow-brutal-white transition-all group-hover:translate-x-1 group-hover:-translate-y-1">
                     <i data-lucide="zap" class="text-black fill-black w-6 h-6"></i>
                 </div>
                 <div class="flex flex-col font-display">
                     <span class="font-extrabold text-2xl tracking-tighter text-white uppercase leading-none">Đức Duy</span>
-                    <span class="text-[10px] text-neon-cyan font-bold uppercase tracking-widest mt-1">duyweb.info.vn</span>
+                    <span class="text-[10px] text-neon-cyan font-bold uppercase tracking-widest mt-1">DUYWEB.INFO.VN</span>
                 </div>
             </a>
             
-            <!-- DESKTOP MENU -->
             <div class="hidden xl:flex items-center space-x-6 font-display font-bold text-sm uppercase">
                 <a href="#about" class="text-white hover:text-neon-lime transition-colors">Triết lý</a>
                 <a href="#projects" class="text-white hover:text-neon-cyan transition-colors">Dự án</a>
@@ -146,13 +174,11 @@
                 </a>
             </div>
 
-            <!-- MOBILE MENU BTN -->
             <button onclick="toggleMobileMenu()" class="xl:hidden p-2 bg-white text-black border-2 border-white rounded-full shadow-brutal-lime">
                 <i data-lucide="menu"></i>
             </button>
         </div>
 
-        <!-- MOBILE MENU CONTENT -->
         <div id="mobile-menu" class="hidden xl:hidden bg-brutal border-b-4 border-white p-6 flex flex-col gap-4 font-display font-bold uppercase">
             <a href="#about" onclick="toggleMobileMenu()">Triết lý</a>
             <a href="#projects" onclick="toggleMobileMenu()">Dự án</a>
@@ -169,23 +195,24 @@
         
         <div class="mt-20 marquee-container">
             <div class="marquee-content">
-                LÀM WEBSITE CHUẨN SEO ✦ DIGITAL MARKETING THỰC CHIẾN ✦ TỐI ƯU CHUYỂN ĐỔI ✦ THIẾT KẾ UX/UI ✦ LÊN TOP GOOGLE ✦ GIẢI PHÁP VEO 3 AI ✦ CHUẨN SEO ĐỨC LINH ✦
+                ĐỨC DUY CHUYÊN GIA SEO ✦ THIẾT KẾ WEB THỰC CHIẾN ✦ TỐI ƯU CHUYỂN ĐỔI ✦ GOOGLE MAP SEO ✦ LÀM WEBSITE TẠI BÌNH THUẬN ✦ GIẢI PHÁP AI VEO 3 ✦ ĐỨC DUY CHUYÊN GIA SEO ✦
             </div>
         </div>
 
         <!-- HERO SECTION -->
         <section class="pt-16 pb-20 px-4 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
             <div class="w-full lg:w-3/5 space-y-8 text-center lg:text-left">
+                <!-- H1 Chuẩn SEO cho trang chủ -->
                 <h1 class="text-6xl sm:text-8xl font-display font-extrabold tracking-tighter leading-[0.9] uppercase">
-                    WEB & <br/>
-                    <span class="text-neon-cyan">MARKETING</span><br/>
-                    ĐỘT PHÁ
+                    LÀM WEB <br/>
+                    <span class="text-neon-cyan">& SEO</span><br/>
+                    THỰC CHIẾN
                 </h1>
                 <p class="text-lg text-white/70 max-w-xl mx-auto lg:mx-0 font-medium">
-                    Chào bạn, tôi là <strong class="text-white border-b-4 border-neon-lime">Đức Duy</strong>. Tôi giúp doanh nghiệp của bạn sở hữu website không chỉ đẹp mà còn là <span class="bg-neon-pink text-black px-2">CỖ MÁY BÁN HÀNG</span> chuẩn SEO 2026.
+                    Tôi là <strong>Đức Duy</strong>, chuyên gia mang đến giải pháp Digital Marketing đột phá. Website của bạn sẽ được tối ưu <span class="bg-neon-pink text-black px-2">CHUẨN SEO 2026</span> để bứt phá doanh thu tự nhiên.
                 </p>
                 <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
-                    <a href="#brief" class="px-10 py-5 bg-neon-lime text-black font-extrabold text-xl rounded-full border-4 border-black shadow-brutal-white hover:translate-x-1 hover:-translate-y-1 transition-all">KHỞI TẠO NGAY</a>
+                    <a href="#brief" class="px-10 py-5 bg-neon-lime text-black font-extrabold text-xl rounded-full border-4 border-black shadow-brutal-white hover:translate-x-1 hover:-translate-y-1 transition-all">BẮT ĐẦU DỰ ÁN</a>
                     <a href="https://zalo.me/0938415218" target="_blank" class="px-10 py-5 border-4 border-white rounded-full font-extrabold text-xl hover:bg-white hover:text-black transition-all">ZALO: 0938.415.218</a>
                 </div>
             </div>
@@ -194,55 +221,48 @@
             <div class="w-full lg:w-2/5 grid grid-cols-2 gap-4">
                 <div class="bg-brutal border-2 border-white p-6 rounded-3xl shadow-brutal-cyan text-center">
                     <p class="text-4xl font-display font-extrabold text-neon-cyan">99/100</p>
-                    <p class="text-[10px] font-bold uppercase opacity-50">Performance</p>
+                    <p class="text-[10px] font-bold uppercase opacity-50">Tốc độ tải web</p>
                 </div>
                 <div class="bg-brutal border-2 border-white p-6 rounded-3xl shadow-brutal-lime text-center">
                     <p class="text-4xl font-display font-extrabold text-neon-lime">TOP 1</p>
-                    <p class="text-[10px] font-bold uppercase opacity-50">Local SEO</p>
+                    <p class="text-[10px] font-bold uppercase opacity-50">SEO Local Maps</p>
                 </div>
                 <div class="col-span-2 bg-neon-pink border-2 border-black p-6 rounded-3xl shadow-brutal-white text-black flex justify-between items-center">
-                    <span class="font-display font-extrabold text-2xl uppercase">Tăng trưởng</span>
+                    <span class="font-display font-extrabold text-2xl uppercase">ROI Tăng trưởng</span>
                     <span class="font-display font-extrabold text-4xl">+200%</span>
                 </div>
             </div>
         </section>
 
-        <!-- ======================================================== -->
-        <!-- NEW SECTION: THE EXPERT (BỐ CỤC CHÂN DUNG MỚI) -->
-        <!-- ======================================================== -->
+        <!-- THE EXPERT SECTION (Hình ảnh và Định danh) -->
         <section class="py-20 bg-white text-black border-y-4 border-black relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12 lg:gap-20">
-                
-                <!-- Portrait Wrapper -->
                 <div class="w-full md:w-1/2 relative group">
-                    <!-- Khung ảnh Brutalist dày -->
                     <div class="relative z-10 border-[6px] border-black rounded-[2.5rem] overflow-hidden shadow-brutal-black transform group-hover:-rotate-2 transition-transform duration-500">
-                        <img src="./img/avt.jpg" alt="Đức Duy - Chuyên gia Digital Marketing & SEO" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700">
-                        <!-- Label phát sáng -->
+                        <!-- Tối ưu ALT cho ảnh -->
+                        <img src="./img/avt.jpg" alt="Đức Duy - Chuyên gia Digital Marketing và Làm Website chuẩn SEO tại Bình Thuận" class="w-full h-full object-cover">
                         <div class="absolute bottom-6 left-6 bg-black text-neon-lime px-4 py-2 font-display font-bold text-sm uppercase rounded-full border-2 border-white">
-                            Verified Expert
+                            Verified SEO Expert
                         </div>
                     </div>
-                    <!-- Decor Circles -->
-                    <div class="absolute -top-6 -right-6 w-24 h-24 bg-neon-cyan rounded-full border-4 border-black z-0 animate-bounce"></div>
-                    <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-neon-pink/20 rounded-full blur-3xl z-0"></div>
+                    <div class="absolute -top-6 -right-6 w-24 h-24 bg-neon-cyan rounded-full border-4 border-black z-0"></div>
                 </div>
 
-                <!-- Text Content -->
                 <div class="w-full md:w-1/2 space-y-6">
                     <h2 class="text-5xl md:text-7xl font-display font-extrabold uppercase leading-none tracking-tighter">
-                        GẶP GỠ <br/> <span class="text-transparent" style="-webkit-text-stroke: 2px black;">ĐỨC DUY</span>
+                        ĐỨC DUY <br/> <span class="text-transparent" style="-webkit-text-stroke: 2px black;">EXPERTISE</span>
                     </h2>
                     <p class="text-xl font-bold leading-tight">
-                        Chuyên gia giải pháp số với tư duy <br/> 
-                        <span class="bg-black text-white px-2 italic">"Làm thật - Kết quả thật"</span>
+                        Chuyên gia thiết kế website chuẩn SEO <br/> 
+                        <span class="bg-black text-white px-2 italic">Dẫn đầu thị trường Bình Thuận</span>
                     </p>
                     <div class="space-y-4 font-medium text-lg text-gray-700">
-                        <p>Với hơn 5 năm thực chiến trong ngành <strong>Làm Website & SEO</strong>, tôi không chỉ xây dựng code, tôi xây dựng phễu bán hàng cho bạn.</p>
-                        <ul class="space-y-2">
-                            <li class="flex items-center gap-3"><i data-lucide="check-square" class="text-neon-pink"></i> Thiết kế giao diện Unique 100%</li>
-                            <li class="flex items-center gap-3"><i data-lucide="check-square" class="text-neon-cyan"></i> Cấu trúc Schema Expert định danh AI</li>
-                            <li class="flex items-center gap-3"><i data-lucide="check-square" class="text-neon-lime"></i> SEO Local thống lĩnh khu vực</li>
+                        <p>Thay vì sở hữu một website vô hồn, tôi mang đến cho bạn giải pháp <strong class="text-black">Digital Marketing tổng thể</strong> giúp thống lĩnh thị trường ngách.</p>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="text-neon-pink w-5 h-5"></i> UI/UX Độc quyền</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="text-neon-cyan w-5 h-5"></i> SEO Local thống trị</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="text-neon-lime w-5 h-5"></i> Hệ thống Schema AI</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="text-black w-5 h-5"></i> Tích hợp AI Veo 3</li>
                         </ul>
                     </div>
                     <div class="pt-6 flex gap-4">
@@ -257,24 +277,21 @@
             </div>
         </section>
 
-        <!-- TRIẾT LÝ SECTION -->
+        <!-- TRIẾT LÝ DỊCH VỤ -->
         <section id="about" class="py-24 max-w-7xl mx-auto px-4 scroll-mt-20">
-            <h2 class="text-5xl font-display font-extrabold uppercase mb-12 text-center">Triết lý <span class="text-neon-lime italic">Ăn chắc mặc bền</span></h2>
+            <h2 class="text-5xl font-display font-extrabold uppercase mb-12 text-center">Chiến Lược <span class="text-neon-lime italic">Làm Là Thắng</span></h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-brutal border-2 border-white p-10 rounded-[2rem] shadow-brutal-white group hover:bg-white hover:text-black transition-all">
-                    <i data-lucide="smartphone" class="w-12 h-12 mb-6 text-neon-cyan group-hover:text-black"></i>
-                    <h3 class="text-2xl font-bold uppercase mb-4">Tối Ưu Mobile</h3>
-                    <p class="opacity-70 font-medium">80% khách hàng chốt đơn trên điện thoại. Web của tôi ưu tiên luồng chạm - bấm siêu mượt.</p>
+                <div class="bg-brutal border-2 border-white p-10 rounded-[2rem] shadow-brutal-white">
+                    <h3 class="text-2xl font-bold uppercase mb-4 text-neon-cyan">Website Bán Hàng</h3>
+                    <p class="opacity-70 font-medium">Thiết kế tập trung vào tỷ lệ chuyển đổi. Tối ưu trải nghiệm mua hàng trên di động (Mobile-First).</p>
                 </div>
-                <div class="bg-brutal border-2 border-white p-10 rounded-[2rem] shadow-brutal-white group hover:bg-white hover:text-black transition-all">
-                    <i data-lucide="search" class="w-12 h-12 mb-6 text-neon-lime group-hover:text-black"></i>
-                    <h3 class="text-2xl font-bold uppercase mb-4">SEO Từ Gốc</h3>
-                    <p class="opacity-70 font-medium">Không dùng plugin nặng nề. Code HTML sạch giúp Google lập chỉ mục nhanh nhất.</p>
+                <div class="bg-brutal border-2 border-white p-10 rounded-[2rem] shadow-brutal-white">
+                    <h3 class="text-2xl font-bold uppercase mb-4 text-neon-lime">Content SEO Master</h3>
+                    <p class="opacity-70 font-medium">Bao vây từ khóa nỗi đau của khách hàng. Lên Top bền vững không sợ thay đổi thuật toán.</p>
                 </div>
-                <div class="bg-brutal border-2 border-white p-10 rounded-[2rem] shadow-brutal-white group hover:bg-white hover:text-black transition-all">
-                    <i data-lucide="shield-check" class="w-12 h-12 mb-6 text-neon-pink group-hover:text-black"></i>
-                    <h3 class="text-2xl font-bold uppercase mb-4">Bền Vững</h3>
-                    <p class="opacity-70 font-medium">Hệ sinh thái an toàn, dễ bảo trì, tích hợp AI để tối ưu chi phí Media lâu dài.</p>
+                <div class="bg-brutal border-2 border-white p-10 rounded-[2rem] shadow-brutal-white">
+                    <h3 class="text-2xl font-bold uppercase mb-4 text-neon-pink">Automation AI</h3>
+                    <p class="opacity-70 font-medium">Ứng dụng ChatGPT và Gemini Veo 3 để sản xuất nội dung video/hình ảnh quy mô lớn với chi phí cực thấp.</p>
                 </div>
             </div>
         </section>
@@ -282,29 +299,17 @@
         <!-- DỰ ÁN SECTION -->
         <section id="projects" class="py-24 bg-brutal border-t-4 border-white scroll-mt-20">
             <div class="max-w-7xl mx-auto px-4">
-                <div class="flex justify-between items-center mb-12">
-                    <h2 class="text-5xl font-display font-extrabold uppercase">Case Studies</h2>
-                    <a href="#brief" class="hidden sm:block text-neon-cyan font-bold border-b-2 border-neon-cyan">TẠO DỰ ÁN CỦA BẠN ✦</a>
-                </div>
-
+                <h2 class="text-5xl font-display font-extrabold uppercase mb-12">Case Studies</h2>
                 <div class="border-4 border-white rounded-[2.5rem] p-8 md:p-12 flex flex-col lg:flex-row gap-12 bg-[#151515] shadow-brutal-lime">
                     <div class="w-full lg:w-1/2 space-y-6">
-                        <span class="bg-neon-cyan text-black px-4 py-1 rounded-full font-bold text-xs uppercase">Retail / Pet Care</span>
+                        <span class="bg-neon-cyan text-black px-4 py-1 rounded-full font-bold text-xs uppercase">Dự án: Bán lẻ</span>
                         <h3 class="text-5xl font-display font-extrabold uppercase italic">BIFOOD.VN</h3>
-                        <div class="space-y-4 text-white/70 font-medium">
-                            <p class="border-l-4 border-neon-pink pl-4">Vấn đề: Web cũ chậm, khó phân loại hạt theo bệnh lý của chó mèo.</p>
-                            <p class="border-l-4 border-neon-lime pl-4">Giải pháp: Tái cấu trúc UX lọc thông minh, Masterplan SEO phủ 200 từ khóa ngách.</p>
-                        </div>
-                        <a href="#roadmap" class="inline-block px-8 py-3 border-2 border-white rounded-full font-bold hover:bg-white hover:text-black transition-all">XEM LỘ TRÌNH CHI TIẾT</a>
+                        <p class="text-white/70 font-medium">Kết quả: Thống lĩnh 200+ từ khóa ngách về dinh dưỡng thú cưng. Doanh thu tăng trưởng 150% sau 6 tháng triển khai SEO bài bản.</p>
+                        <a href="#roadmap" class="inline-block px-8 py-3 border-2 border-white rounded-full font-bold hover:bg-white hover:text-black transition-all uppercase">Xem Lộ Trình SEO</a>
                     </div>
                     <div class="w-full lg:w-1/2">
-                        <div class="border-4 border-white rounded-2xl overflow-hidden relative group">
-                            <div class="bg-white/10 p-2 border-b-2 border-white/20 flex items-center gap-2">
-                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                            </div>
-                            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80" alt="Dự án Bifood" class="w-full grayscale group-hover:grayscale-0 transition-all duration-500 hover:-translate-y-1/4">
+                        <div class="border-4 border-white rounded-2xl overflow-hidden shadow-brutal-white">
+                            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80" alt="Bifood Website Case Study" class="w-full hover:scale-105 transition-transform duration-700">
                         </div>
                     </div>
                 </div>
@@ -312,32 +317,24 @@
         </section>
     </main>
 
-    <!-- ======================================================== -->
-    <!-- VIEW: CLIENT BRIEF -->
-    <!-- ======================================================== -->
+    <!-- VIEW: BRIEF -->
     <main id="brief-view" class="view-section flex-1 pt-32 pb-24 max-w-4xl mx-auto px-4 w-full">
         <a href="#home" class="mb-8 inline-flex items-center gap-2 text-white hover:text-neon-lime font-bold uppercase transition-colors">
-            <i data-lucide="arrow-left" class="w-5 h-5"></i> TRỞ VỀ
+            <i data-lucide="arrow-left" class="w-5 h-5"></i> QUAY LẠI
         </a>
         <div class="bg-brutal border-4 border-white p-10 rounded-[3rem] shadow-brutal-cyan">
-            <h2 class="text-4xl md:text-6xl font-display font-extrabold uppercase leading-none mb-8 text-neon-cyan">Khởi Tạo <br/> Dự Án</h2>
+            <h2 class="text-4xl md:text-6xl font-display font-extrabold uppercase leading-none mb-8 text-neon-cyan">KHỞI TẠO <br/> DỰ ÁN</h2>
             <div class="space-y-8 font-sans">
                 <div class="flex flex-col gap-2">
-                    <label class="font-display font-bold text-xl uppercase">1. Mục tiêu kinh doanh?</label>
-                    <textarea rows="2" class="w-full p-4 bg-black border-2 border-white rounded-xl text-white focus:border-neon-cyan outline-none" placeholder="VD: Bán hàng ngay, hay xây dựng thương hiệu..."></textarea>
-                </div>
-                <div class="flex flex-col gap-2">
-                    <label class="font-display font-bold text-xl uppercase">2. Đối tượng khách hàng?</label>
-                    <textarea rows="2" class="w-full p-4 bg-black border-2 border-white rounded-xl text-white focus:border-neon-cyan outline-none" placeholder="VD: Dân văn phòng, chủ rẫy, hay mẹ bỉm sữa..."></textarea>
+                    <label class="font-display font-bold text-xl uppercase">1. Mục tiêu kinh doanh của bạn?</label>
+                    <textarea rows="2" class="w-full p-4 bg-black border-2 border-white rounded-xl text-white focus:border-neon-cyan outline-none" placeholder="VD: Muốn phủ sóng thương hiệu tại Đức Linh, Bình Thuận..."></textarea>
                 </div>
                 <button class="w-full py-5 bg-neon-cyan text-black font-extrabold text-xl rounded-full border-4 border-black shadow-brutal-white hover:translate-x-1 hover:-translate-y-1 transition-all uppercase">GỬI YÊU CẦU CHO ĐỨC DUY</button>
             </div>
         </div>
     </main>
 
-    <!-- ======================================================== -->
-    <!-- VIEW: ROADMAP SOLAR (VEO 3 GUIDE) -->
-    <!-- ======================================================== -->
+    <!-- VIEW: ROADMAP SOLAR (VEO 3 AI) -->
     <main id="roadmap-solar-view" class="view-section flex-1 pt-32 pb-24 max-w-5xl mx-auto px-4 w-full font-display">
         <a href="#home" class="mb-8 inline-flex items-center gap-2 text-white hover:text-neon-lime font-bold uppercase transition-colors">
             <i data-lucide="arrow-left" class="w-6 h-6 border-2 border-current rounded-full p-1 text-neon-lime"></i> TRỞ VỀ
@@ -345,40 +342,25 @@
 
         <div class="bg-neon-lime text-black p-10 md:p-16 rounded-[3rem] border-4 border-black shadow-brutal-white mb-12">
             <h1 class="text-5xl md:text-7xl font-extrabold uppercase leading-none mb-6 italic">SOLAR MASTERPLAN <br/> ĐỨC LINH</h1>
-            <p class="font-sans font-bold text-lg max-w-2xl border-l-4 border-black pl-6">Chiến lược thống lĩnh thị trường Năng Lượng Mặt Trời tại Bình Thuận bằng Web chuẩn SEO & Marketing 4.0.</p>
+            <p class="font-sans font-bold text-lg max-w-2xl border-l-4 border-black pl-6">Chiến lược thống lĩnh từ khóa Điện Mặt Trời bằng Web chuẩn SEO & Công nghệ Video AI Veo 3 mới nhất.</p>
         </div>
 
-        <!-- AI VEO 3 GUIDE SECTION -->
         <div class="bg-brutal border-4 border-neon-pink p-8 md:p-12 rounded-[3rem] shadow-brutal-pink relative overflow-hidden">
-            <div class="absolute -right-20 -top-20 w-64 h-64 bg-neon-pink/10 blur-3xl"></div>
-            
             <h3 class="text-3xl md:text-4xl font-extrabold uppercase mb-8 flex items-center gap-4 text-neon-pink">
                 <i data-lucide="video" class="w-10 h-10"></i> AI VIDEO VEO 3 HACK
             </h3>
-
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Step 1 -->
-                <div class="bg-white/5 border-2 border-white/20 p-8 rounded-3xl hover:border-white transition-colors">
+                <div class="bg-white/5 border-2 border-white/20 p-8 rounded-3xl">
                     <span class="bg-neon-cyan text-black px-4 py-1 rounded-full font-bold text-xs uppercase mb-4 inline-block">BƯỚC 1: CHATGPT DIRECTOR</span>
-                    <p class="font-sans text-sm text-white/70 mb-6">Sử dụng prompt đóng vai đạo diễn để tạo kịch bản video flycam chuyên nghiệp.</p>
-                    <div class="bg-black p-4 rounded-xl font-mono text-xs text-neon-lime border border-white/10">
-                        "Write 3 cinematic prompts for Gemini Veo 3 to create a photorealistic 4K flyover video of a large solar farm in a tropical agricultural area. Include golden hour lighting."
-                    </div>
+                    <p class="font-sans text-sm text-white/70 mb-4 font-mono">"Write 3 cinematic prompts for Gemini Veo 3 to create a flyover video of a modern solar farm in Đức Linh, Bình Thuận."</p>
                 </div>
-                <!-- Step 2 -->
-                <div class="bg-white/5 border-2 border-white/20 p-8 rounded-3xl hover:border-white transition-colors">
+                <div class="bg-white/5 border-2 border-white/20 p-8 rounded-3xl">
                     <span class="bg-neon-lime text-black px-4 py-1 rounded-full font-bold text-xs uppercase mb-4 inline-block">BƯỚC 2: GEMINI RENDER</span>
-                    <p class="font-sans text-sm text-white/70 mb-6">Ném kết quả từ ChatGPT vào Gemini Advanced để đẻ ra video quảng cáo triệu view.</p>
-                    <div class="bg-black p-4 rounded-xl font-mono text-xs text-neon-cyan border border-white/10 italic">
-                        [Copy English Prompt from ChatGPT] -> Paste to Gemini -> Press Generate.
-                    </div>
+                    <p class="font-sans text-sm text-white/70">Ném kịch bản vào Gemini Advanced để render video quảng cáo thực tế ảo triệu view cho công ty của bạn.</p>
                 </div>
             </div>
-            
-            <div class="mt-8 text-center">
-                <a href="https://zalo.me/0938415218" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-neon-pink text-black font-extrabold rounded-full border-4 border-black hover:scale-105 transition-transform">
-                    NHẬN TRỌN BỘ PROMPT VEO 3 <i data-lucide="zap"></i>
-                </a>
+            <div class="mt-10 text-center">
+                <a href="https://zalo.me/0938415218" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-neon-pink text-black font-extrabold rounded-full border-4 border-black shadow-brutal-white hover:scale-105 transition-transform uppercase">Nhận bộ kịch bản AI</a>
             </div>
         </div>
     </main>
@@ -386,32 +368,30 @@
     <!-- FOOTER -->
     <footer class="bg-black py-16 border-t-4 border-white mt-auto z-10 font-display">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-4xl font-extrabold uppercase mb-6 tracking-tighter italic">ĐỨC DUY . STUDIO</h2>
+            <h2 class="text-4xl font-extrabold uppercase mb-6 italic tracking-tighter">ĐỨC DUY . DIGITAL</h2>
             <div class="flex justify-center gap-6 mb-10">
-                <a href="https://www.facebook.com/tran.duc.duy.742865/" class="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-neon-cyan hover:text-black transition-all"><i data-lucide="facebook"></i></a>
-                <a href="https://www.tiktok.com/@di0938415218" class="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-neon-pink hover:text-black transition-all"><i data-lucide="music"></i></a>
+                <a href="https://www.facebook.com/tran.duc.duy.742865/" class="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-neon-cyan hover:text-black transition-all shadow-brutal-cyan"><i data-lucide="facebook"></i></a>
+                <a href="https://www.tiktok.com/@di0938415218" class="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-neon-pink hover:text-black transition-all shadow-brutal-pink"><i data-lucide="music"></i></a>
             </div>
             <p class="text-white/30 text-[10px] font-bold uppercase tracking-widest">
-                © 2026 DUC DUY DIGITAL EXPERT. ALL RIGHTS RESERVED. NEO-BRUTALISM EDITION.
+                © 2026 DUC DUY EXPERT. TỐI ƯU SEO & DIGITAL MARKETING TỔNG THỂ.
             </p>
         </div>
     </footer>
 
-    <!-- ======================================================== -->
     <!-- AI CHAT TERMINAL -->
-    <!-- ======================================================== -->
     <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
         <div id="chat-box" class="hidden bg-black w-[calc(100vw-48px)] sm:w-96 border-4 border-white shadow-brutal-cyan mb-4 flex-col h-[450px] animate-[slideUp_0.3s_ease]">
             <div class="bg-white text-black px-4 py-3 flex justify-between items-center border-b-4 border-black font-display font-bold uppercase text-sm">
-                <span>AI_ASSISTANT.EXE</span>
+                <span>DUY_AI_BOT.EXE</span>
                 <button onclick="toggleChat()"><i data-lucide="x" class="w-5 h-5"></i></button>
             </div>
             <div id="chat-messages" class="flex-1 overflow-y-auto p-5 space-y-4 text-xs font-mono text-neon-cyan leading-relaxed">
-                <div class="p-3 border border-white/20 bg-white/5">Hệ thống sẵn sàng. Nhập câu hỏi để bắt đầu...</div>
+                <div class="p-3 border border-white/20 bg-white/5">Hệ thống sẵn sàng. Nhập câu hỏi để bắt đầu thảo luận về Web/SEO...</div>
             </div>
             <div class="p-4 border-t-4 border-white flex gap-2">
                 <input id="chat-input" type="text" class="flex-1 bg-black border-2 border-white p-2 text-white outline-none focus:border-neon-cyan font-mono text-sm" placeholder="Gõ lệnh..."/>
-                <button onclick="sendMessage()" class="bg-white text-black px-4 font-bold uppercase text-xs">Gửi</button>
+                <button onclick="sendMessage()" class="bg-white text-black px-4 font-bold uppercase text-xs hover:bg-neon-cyan transition-colors">Gửi</button>
             </div>
         </div>
         <button id="chat-toggle-btn" onclick="toggleChat()" class="bg-neon-cyan text-black p-5 border-4 border-white shadow-brutal-white hover:translate-x-1 hover:-translate-y-1 transition-all">
@@ -450,9 +430,11 @@
                 btn.className = "nav-btn flex items-center gap-2 px-5 py-2 rounded-full border-2 border-white text-white hover:bg-white hover:text-black transition-all";
             });
             if (viewId.includes('roadmap')) {
-                document.getElementById('nav-roadmap-group').className = "nav-btn flex items-center gap-2 px-5 py-2 rounded-full border-4 border-black bg-neon-lime text-black font-extrabold shadow-brutal-white";
+                const group = document.getElementById('nav-roadmap-group');
+                if(group) group.className = "nav-btn flex items-center gap-2 px-5 py-2 rounded-full border-4 border-black bg-neon-lime text-black font-extrabold shadow-brutal-white";
             } else if (viewId === 'brief') {
-                document.getElementById('nav-brief').className = "nav-btn px-5 py-2 rounded-full border-4 border-black bg-neon-cyan text-black font-extrabold shadow-brutal-white";
+                const brief = document.getElementById('nav-brief');
+                if(brief) brief.className = "nav-btn px-5 py-2 rounded-full border-4 border-black bg-neon-cyan text-black font-extrabold shadow-brutal-white";
             }
         }
 
@@ -471,9 +453,9 @@
             const msg = input.value.trim();
             if (!msg) return;
             const container = document.getElementById('chat-messages');
-            container.innerHTML += `<div class="text-white">> ${msg}</div>`;
+            container.innerHTML += `<div class="text-white mt-2">> ${msg}</div>`;
             input.value = '';
-            // Logic gọi API có thể thêm vào đây
+            // Logic gọi Gemini API có thể thêm tại đây
         }
     </script>
 </body>
