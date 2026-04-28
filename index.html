@@ -4,20 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>ĐỨC DUY | Web Architect & SEO Strategist 2026</title>
-    <meta name="description" content="Đức Duy - Chuyên gia thiết kế Website chuẩn SEO và chiến lược Digital Marketing thực chiến. Giải pháp tăng trưởng cho Nội thất, Garage, Billiards và Thương mại.">
-    <meta name="keywords" content="Đức Duy, duyweb, thiết kế web bida, seo web nội thất, marketing garage ô tô, làm website đức linh, chuyên gia digital marketing">
-    <meta name="author" content="Đức Duy">
+    <title>Đức Duy | Chuyên Viên Tư Vấn Website Bán Hàng & Chuyển Đổi</title>
+    <meta name="description" content="Tôi không chỉ làm website. Tôi xây hệ thống giúp bạn có khách từ Facebook, TikTok và chuyển đổi thành đơn hàng trên website.">
     
-    <link rel="canonical" href="https://duyweb.info.vn/" />
-    
-    <!-- Open Graph for Social Media -->
-    <meta property="og:title" content="ĐỨC DUY | WEB ARCHITECT & MARKETING STRATEGIST">
-    <meta property="og:description" content="Web đẹp là chưa đủ. Website phải là cỗ máy bán hàng. Gặp gỡ chuyên gia tối ưu chuyển đổi số.">
-    <meta property="og:image" content="image_c4293b.jpg"> 
-
-    <!-- Fonts & Tailwind & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -27,14 +17,8 @@
             theme: {
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'] },
-                    colors: { neon: { lime: '#ccff00', cyan: '#00e5ff', pink: '#ff00ff', orange: '#ff5500' }, brutal: '#0f0f0f' },
-                    boxShadow: { 
-                        'brutal': '4px 4px 0px 0px #000000', 
-                        'brutal-white': '4px 4px 0px 0px #ffffff',
-                        'brutal-lime': '4px 4px 0px 0px #ccff00',
-                        'brutal-cyan': '4px 4px 0px 0px #00e5ff',
-                        'brutal-pink': '4px 4px 0px 0px #ff00ff',
-                    }
+                    colors: { neon: { lime: '#ccff00', cyan: '#00e5ff', pink: '#ff00ff' }, brutal: '#0f0f0f' },
+                    boxShadow: { 'brutal': '6px 6px 0px 0px #000000', 'brutal-white': '6px 6px 0px 0px #ffffff', 'brutal-cyan': '6px 6px 0px 0px #00e5ff', 'brutal-lime': '6px 6px 0px 0px #ccff00' }
                 }
             }
         }
@@ -42,177 +26,241 @@
 
     <style>
         body { background-color: #0f0f0f; color: #ffffff; overflow-x: hidden; scroll-behavior: smooth; }
-        
-        .noise-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
         .bg-grid { background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 40px 40px; }
-
-        .marquee-container { overflow: hidden; white-space: nowrap; width: 100%; border-y: 4px solid white; padding: 12px 0; background: #ccff00; color: black; font-family: 'Space Grotesk', sans-serif; font-weight: 800; text-transform: uppercase; }
-        .marquee-content { display: inline-block; animation: marquee 30s linear infinite; }
-        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-        /* Tối ưu iOS Input Zoom */
         @media screen and (max-width: 768px) { input, textarea { font-size: 16px !important; } }
+        /* Highlight text effect */
+        .highlight { position: relative; display: inline-block; z-index: 1; }
+        .highlight::after { content: ''; position: absolute; bottom: 2px; left: 0; width: 100%; height: 40%; background-color: #ff00ff; z-index: -1; transform: rotate(-1deg); }
+        .highlight-lime::after { background-color: #ccff00; }
     </style>
 </head>
-<body class="font-sans">
+<body class="font-sans bg-grid">
 
-    <div class="noise-bg"></div>
-
-    <!-- ======================================================== -->
-    <!-- NAVBAR CHÍNH -->
-    <!-- ======================================================== -->
-    <nav class="fixed top-0 left-0 w-full bg-brutal/90 backdrop-blur-md z-50 border-b-4 border-white h-20 flex items-center transition-all">
+    <nav class="fixed top-0 left-0 w-full bg-brutal/95 backdrop-blur-md z-50 border-b-4 border-white h-20 flex items-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2 sm:gap-3 group">
-                <div class="w-10 h-10 md:w-12 md:h-12 bg-neon-cyan border-2 border-white rounded-lg flex items-center justify-center shadow-[4px_4px_0_0_#fff] group-hover:rotate-12 transition-transform">
-                    <i data-lucide="zap" class="text-black fill-black w-5 h-5 md:w-6 md:h-6"></i>
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-display font-extrabold text-lg sm:text-xl md:text-2xl uppercase tracking-tighter leading-none">ĐỨC DUY</span>
-                    <span class="text-[9px] sm:text-[10px] text-neon-lime font-bold uppercase tracking-widest mt-1 hidden sm:block">DIGITAL MASTER</span>
-                </div>
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-neon-cyan border-2 border-white flex items-center justify-center shadow-[2px_2px_0_0_#fff]"><i data-lucide="zap" class="text-black fill-black w-5 h-5"></i></div>
+                <span class="font-display font-extrabold text-xl uppercase tracking-tighter">ĐỨC DUY</span>
             </a>
-            
-            <div class="hidden lg:flex items-center gap-6 font-display font-bold text-sm uppercase">
-                <a href="index.html" class="hover:text-neon-cyan transition-colors text-neon-cyan border-b-2 border-neon-cyan pb-1">Trang Chủ</a>
-                <a href="./chien-luoc/bifood.html" class="hover:text-neon-lime transition-colors flex items-center gap-1"><i data-lucide="star" class="w-4 h-4"></i> Case Study</a>
-                <a href="./campaign.html" class="hover:text-neon-pink transition-colors">Giải Pháp</a>
-                <a href="./brief.html" class="bg-white text-black px-6 py-2 border-2 border-white shadow-brutal-white hover:translate-x-1 hover:-translate-y-1 transition-all">GỬI YÊU CẦU</a>
+            <div class="hidden lg:flex items-center gap-8 font-display font-bold text-sm uppercase">
+                <a href="#vande" class="hover:text-neon-cyan transition-colors">Vấn đề</a>
+                <a href="#giaphap" class="hover:text-neon-pink transition-colors">Hệ thống</a>
+                <a href="#casestudy" class="hover:text-neon-lime transition-colors">Case Study</a>
+                <a href="#cta" class="bg-white text-black px-6 py-2 border-2 border-white shadow-brutal-white hover:translate-x-1 transition-transform">TƯ VẤN MIỄN PHÍ</a>
             </div>
-            
-            <button onclick="toggleMobileMenu()" class="lg:hidden p-2 bg-white text-black border-2 border-black rounded-lg shadow-brutal-lime">
-                <i data-lucide="menu"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-brutal border-b-4 border-white p-6 flex flex-col gap-4 font-display font-bold uppercase shadow-2xl z-50">
-            <a href="index.html" class="text-neon-cyan pb-2 border-b border-white/10">Trang Chủ</a>
-            <a href="./chien-luoc/bifood.html" class="text-white hover:text-neon-lime pb-2 border-b border-white/10">Case Study (Bifood)</a>
-            <a href="campaign.html" class="text-white hover:text-neon-pink pb-2 border-b border-white/10">Giải pháp tự động hóa</a>
-            <a href="brief.html" class="bg-neon-cyan text-black px-4 py-3 text-center border-2 border-white rounded-lg mt-2">GỬI BRIEF DỰ ÁN</a>
+            <button class="lg:hidden p-2 bg-white text-black border-2 border-black rounded"><i data-lucide="menu"></i></button>
         </div>
     </nav>
 
-    <!-- ======================================================== -->
-    <!-- MAIN CONTENT: HOME -->
-    <!-- ======================================================== -->
-    <main class="bg-grid pt-28 md:pt-32 pb-16 md:pb-20">
-        
-        <!-- HERO SECTION -->
-        <section class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-16 mb-20 md:mb-24">
-            <div class="w-full lg:w-3/5 space-y-6 text-center lg:text-left z-10">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 border-2 border-white rounded-full font-display font-bold uppercase text-[10px] md:text-xs bg-black text-white shadow-brutal-white">
-                    <span class="w-2 h-2 rounded-full bg-neon-cyan animate-pulse"></span> Sẵn sàng nhận dự án mới
-                </div>
-                <h1 class="text-5xl sm:text-6xl md:text-[5rem] font-display font-extrabold leading-[1] md:leading-[0.9] uppercase tracking-tighter break-words">
-                    KIẾN TRÚC SƯ <br>
-                    <span class="text-transparent" style="-webkit-text-stroke: 1.5px #ccff00; text-shadow: 3px 3px 0 #ccff00;">HỆ SINH THÁI SỐ</span>
-                </h1>
-                <p class="text-base sm:text-lg md:text-xl text-white/80 max-w-xl mx-auto lg:mx-0 font-medium leading-relaxed px-2 sm:px-0">
-                    Tôi là <strong>Đức Duy</strong>. Thay vì bán cho bạn một website vô hồn, tôi xây dựng "cỗ máy chốt sale" kết hợp thiết kế UX/UI độc bản và sức mạnh SEO Google.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4 sm:pt-6 font-display">
-                    <a href="brief.html" class="px-6 py-3 md:px-8 md:py-4 bg-neon-cyan text-black font-extrabold text-base md:text-lg border-4 border-black shadow-brutal hover:translate-x-1 hover:-translate-y-1 transition-all uppercase flex items-center justify-center gap-2">
-                        Bắt đầu dự án <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </a>
-                    <a href="campaign.html" class="px-6 py-3 md:px-8 md:py-4 bg-black text-white font-extrabold text-base md:text-lg border-4 border-white hover:bg-white hover:text-black transition-all uppercase flex justify-center">
-                        Khám phá giải pháp
-                    </a>
-                </div>
+    <section class="pt-32 pb-20 px-4 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+        <div class="w-full lg:w-3/5 space-y-6 text-center lg:text-left z-10">
+            <div class="inline-block px-4 py-2 border-2 border-black rounded-full font-display font-bold uppercase text-xs bg-neon-lime text-black shadow-[4px_4px_0_0_#fff]">
+                Chuyên viên tư vấn Website Bán Hàng
             </div>
-
-            <!-- HERO IMAGE -->
-            <div class="w-full lg:w-2/5 flex justify-center lg:justify-end relative mt-8 lg:mt-0">
-                <div class="relative z-10 w-[80%] sm:w-[60%] lg:w-full max-w-[400px] border-[4px] md:border-[6px] border-white shadow-brutal-cyan overflow-hidden bg-black transform rotate-2 hover:rotate-0 transition-transform duration-500 rounded-3xl md:rounded-[3rem]">
-                    <img src="./asset/img/avt.jpg" alt="Đức Duy Chuyên Gia Web" class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-700 aspect-[4/5]">
-                    <div class="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6 bg-black/90 backdrop-blur-sm border-2 border-white p-3 md:p-4 font-display font-bold rounded-xl md:rounded-2xl text-[10px] md:text-sm">
-                        <div class="flex justify-between items-center text-neon-lime mb-1 md:mb-2">
-                            <span>Chuyên môn</span><span>Technical SEO</span>
-                        </div>
-                        <div class="flex justify-between items-center text-neon-cyan">
-                            <span>Kinh nghiệm</span><span>+5 Năm Thực Chiến</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-64 md:h-64 bg-neon-lime rounded-full blur-[80px] md:blur-[100px] z-0"></div>
+            <h1 class="text-5xl md:text-[4.5rem] font-display font-extrabold leading-[1] tracking-tighter uppercase">
+                TÔI KHÔNG CHỈ <br> LÀM WEBSITE. <br>
+                <span class="text-transparent" style="-webkit-text-stroke: 1.5px white;">TÔI XÂY HỆ THỐNG</span>
+            </h1>
+            <p class="text-lg md:text-xl text-white/80 max-w-xl mx-auto lg:mx-0 font-medium leading-relaxed">
+                Website không phải để trưng bày — mà là công cụ kiếm tiền. Tôi giúp bạn xây dựng luồng hút khách từ <span class="text-white font-bold">Facebook/TikTok</span> và chuyển đổi thành <span class="highlight highlight-lime text-black px-1">Đơn hàng</span> trên Website.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-6 font-display">
+                <a href="#casestudy" class="px-8 py-4 bg-transparent text-white font-extrabold text-lg border-4 border-white hover:bg-white hover:text-black transition-all uppercase flex justify-center items-center gap-2">
+                    Xem Case Thực Tế <i data-lucide="bar-chart-2"></i>
+                </a>
+                <a href="#cta" class="px-8 py-4 bg-neon-cyan text-black font-extrabold text-lg border-4 border-black shadow-brutal hover:translate-x-1 hover:-translate-y-1 transition-all uppercase flex justify-center items-center gap-2">
+                    Nhận Tư Vấn Miễn Phí <i data-lucide="arrow-right"></i>
+                </a>
             </div>
-        </section>
-
-        <!-- CHỈ SỐ NIỀM TIN -->
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 md:mb-24">
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 font-display">
-                <div class="bg-brutal border-4 border-white p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-brutal-white flex flex-col items-center text-center group hover:bg-neon-lime hover:text-black transition-colors">
-                    <h3 class="text-5xl md:text-6xl font-extrabold mb-2 group-hover:text-black">99<span class="text-xl md:text-2xl">/100</span></h3>
-                    <p class="font-bold uppercase tracking-widest opacity-80 text-xs md:text-sm">Tốc độ & Hiệu năng</p>
-                </div>
-                <div class="bg-brutal border-4 border-white p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-brutal-white flex flex-col items-center text-center group hover:bg-neon-cyan hover:text-black transition-colors">
-                    <h3 class="text-5xl md:text-6xl font-extrabold mb-2 group-hover:text-black">TOP 1</h3>
-                    <p class="font-bold uppercase tracking-widest opacity-80 text-xs md:text-sm">Google Local Maps</p>
-                </div>
-                <div class="bg-brutal border-4 border-white p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-brutal-white flex flex-col items-center text-center group hover:bg-neon-pink hover:text-black transition-colors">
-                    <h3 class="text-5xl md:text-6xl font-extrabold mb-2 group-hover:text-black">+200%</h3>
-                    <p class="font-bold uppercase tracking-widest opacity-80 text-xs md:text-sm">Tỷ lệ chuyển đổi (CRO)</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- DỰ ÁN NỔI BẬT -->
-        <section class="py-16 md:py-24 border-t-4 border-white bg-black">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 md:mb-12 gap-4">
-                    <h2 class="text-4xl md:text-5xl lg:text-7xl font-display font-extrabold uppercase tracking-tighter">DỰ ÁN NỔI BẬT</h2>
-                </div>
-
-                <!-- Dự án 1: Bifood -->
-                <div class="border-4 border-white rounded-[2rem] md:rounded-[3rem] p-6 sm:p-8 md:p-12 flex flex-col lg:flex-row gap-8 md:gap-12 bg-[#111] shadow-brutal-cyan relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-48 h-48 md:w-64 md:h-64 bg-neon-cyan/10 blur-[80px] group-hover:bg-neon-cyan/20 transition-colors"></div>
-                    
-                    <div class="w-full lg:w-1/2 space-y-4 md:space-y-6 flex flex-col justify-center relative z-10">
-                        <span class="bg-neon-cyan text-black px-3 py-1.5 md:px-4 md:py-2 rounded-full font-display font-bold text-[10px] md:text-xs uppercase self-start border-2 border-black">Bán lẻ / Thú cưng</span>
-                        <h3 class="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold uppercase">BIFOOD.VN</h3>
-                        <p class="text-white/70 font-medium text-sm sm:text-base md:text-lg leading-relaxed">
-                            Tái cấu trúc toàn bộ trải nghiệm người dùng (UX) và xây dựng hệ thống SEO Silo chuyên sâu, giúp Bifood thống lĩnh hơn 200+ từ khóa ngách về dinh dưỡng thú cưng.
-                        </p>
-                        
-                        <a href="bifood.html" class="inline-flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 bg-white text-black font-display font-bold uppercase rounded-full border-4 border-black hover:-translate-y-1 hover:shadow-[4px_4px_0_0_#00e5ff] transition-all self-start mt-2 md:mt-4 text-sm md:text-base">
-                            Đọc Full Case Study <i data-lucide="arrow-right" class="w-4 h-4 md:w-5 md:h-5"></i>
-                        </a>
-                    </div>
-                    
-                    <div class="w-full lg:w-1/2 relative z-10 mt-6 lg:mt-0">
-                        <div class="border-4 border-white rounded-2xl md:rounded-3xl overflow-hidden bg-black relative shadow-2xl">
-                            <div class="absolute top-0 w-full h-8 md:h-10 border-b-4 border-white flex items-center px-3 md:px-4 gap-1.5 md:gap-2 z-20 bg-[#222]">
-                                <div class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-red-500 border border-black"></div>
-                                <div class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-yellow-500 border border-black"></div>
-                                <div class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-green-500 border border-black"></div>
-                            </div>
-                            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80" alt="Bifood" class="w-full mt-8 md:mt-10 hover:scale-105 transition-transform duration-700">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="bg-black py-12 md:py-16 border-t-4 border-white font-display">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-extrabold uppercase mb-6 italic tracking-tighter text-white">ĐỨC DUY . DIGITAL</h2>
-            <div class="flex justify-center gap-4 md:gap-6 mb-8 md:mb-10">
-                <a href="https://zalo.me/0938415218" target="_blank" class="w-12 h-12 md:w-14 md:h-14 bg-white text-black border-4 border-black rounded-full flex items-center justify-center hover:bg-neon-lime transition-all shadow-brutal"><i data-lucide="phone" class="w-5 h-5 md:w-6 md:h-6"></i></a>
-                <a href="https://www.facebook.com/tran.duc.duy.742865/" target="_blank" class="w-12 h-12 md:w-14 md:h-14 bg-white text-black border-4 border-black rounded-full flex items-center justify-center hover:bg-neon-cyan transition-all shadow-brutal"><i data-lucide="facebook" class="w-5 h-5 md:w-6 md:h-6"></i></a>
-            </div>
-            <p class="text-white/30 text-[9px] md:text-[10px] font-bold uppercase tracking-widest">© 2026 DUC DUY. TƯ DUY LÀM LÀ THẮNG. ALL RIGHTS RESERVED.</p>
         </div>
+        <div class="w-full lg:w-2/5 relative flex justify-center">
+            <div class="relative w-full max-w-[380px] border-[6px] border-white shadow-brutal-cyan bg-black rotate-2 hover:rotate-0 transition-transform duration-500">
+                <img src="image_c4293b.jpg" alt="Đức Duy - Chuyên gia Website" class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all">
+                <div class="absolute bottom-0 left-0 w-full bg-black/90 border-t-2 border-white p-4 font-display text-center">
+                    <p class="text-neon-lime font-bold uppercase tracking-widest text-sm">Đức Duy . Web Strategist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="vande" class="py-20 bg-white text-black border-y-4 border-black">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl md:text-6xl font-display font-extrabold uppercase mb-12 text-center">
+                90% WEBSITE ĐANG <br><span class="highlight text-white px-2">ĐỐT TIỀN</span> CỦA BẠN
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="border-4 border-black p-8 shadow-brutal hover:-translate-y-2 transition-transform bg-[#fff0f0]">
+                    <i data-lucide="trending-down" class="w-12 h-12 text-red-600 mb-6"></i>
+                    <h3 class="text-2xl font-extrabold uppercase mb-3">Chạy Ads Không Ra Đơn</h3>
+                    <p class="font-medium text-gray-700">Đổ hàng chục triệu vào Facebook/TikTok Ads nhưng khách vào web xem rồi thoát ngay lập tức vì không tìm thấy thứ họ cần.</p>
+                </div>
+                <div class="border-4 border-black p-8 shadow-brutal hover:-translate-y-2 transition-transform bg-[#f0f8ff]">
+                    <i data-lucide="users" class="w-12 h-12 text-blue-600 mb-6"></i>
+                    <h3 class="text-2xl font-extrabold uppercase mb-3">Có Traffic - Không Chuyển Đổi</h3>
+                    <p class="font-medium text-gray-700">Web có hàng ngàn lượt truy cập nhưng không có ai điền form hay gọi điện. Trải nghiệm người dùng (UX) đang có lỗ hổng lớn.</p>
+                </div>
+                <div class="border-4 border-black p-8 shadow-brutal hover:-translate-y-2 transition-transform bg-[#f0fff0]">
+                    <i data-lucide="image" class="w-12 h-12 text-green-600 mb-6"></i>
+                    <h3 class="text-2xl font-extrabold uppercase mb-3">Web Chỉ Để Trưng Bày</h3>
+                    <p class="font-medium text-gray-700">Web đẹp, code xịn, nhiều hiệu ứng bay lượn... nhưng tốc độ rùa bò và hoàn toàn không có tính năng chốt sale giữ chân khách.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="giaphap" class="py-24 bg-brutal">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-16">
+            <div class="w-full lg:w-1/2 relative">
+                <div class="border-4 border-white rounded-[2rem] overflow-hidden shadow-brutal-pink">
+                    <img src="image_69be36.jpg" alt="Hệ sinh thái Đa kênh" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700">
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2 space-y-8">
+                <h2 class="text-4xl md:text-5xl font-display font-extrabold uppercase leading-tight">
+                    SỰ THẬT: WEBSITE KHÔNG TỰ SINH RA <span class="text-neon-cyan">KHÁCH HÀNG</span>
+                </h2>
+                <p class="text-xl font-bold text-white/70 italic">"Facebook & TikTok là mồi câu mang khách về. Website là chiếc giỏ giữ khách và chuyển đổi thành tiền."</p>
+                
+                <div class="space-y-6">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-12 h-12 rounded-full bg-neon-cyan flex items-center justify-center text-black font-bold text-xl shrink-0">1</div>
+                        <div>
+                            <h4 class="text-2xl font-extrabold uppercase text-neon-cyan mb-2">Đa kênh thu hút</h4>
+                            <p class="text-white/80 font-medium">Lưu lượng từ Facebook/TikTok/SEO được dẫn khéo léo về Website bằng các chiến dịch mồi (Lead Magnet).</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-12 h-12 rounded-full bg-neon-pink flex items-center justify-center text-black font-bold text-xl shrink-0">2</div>
+                        <div>
+                            <h4 class="text-2xl font-extrabold uppercase text-neon-pink mb-2">Tối ưu UX / Chuyển Đổi</h4>
+                            <p class="text-white/80 font-medium">Khách vào Web sẽ bị thuyết phục bởi cấu trúc nội dung khoa học, nút Call-to-action xuất hiện đúng lúc khách đang có cảm xúc mua hàng cao nhất.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="casestudy" class="py-24 border-t-4 border-white bg-black">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-7xl font-display font-extrabold uppercase mb-4 tracking-tighter">KẾT QUẢ <span class="text-transparent" style="-webkit-text-stroke: 2px #ccff00;">THỰC CHIẾN</span></h2>
+                <p class="text-xl font-bold text-white/50">Tôi không khoe code xịn. Tôi khoe sự tăng trưởng của khách hàng.</p>
+            </div>
+
+            <div class="space-y-12">
+                <div class="border-4 border-white p-8 md:p-12 bg-[#111] shadow-brutal-cyan flex flex-col lg:flex-row gap-10">
+                    <div class="w-full lg:w-1/3">
+                        <span class="bg-neon-cyan text-black px-4 py-1 rounded-full font-bold text-xs uppercase mb-4 inline-block">Ngành: Bán Lẻ Thú Cưng</span>
+                        <h3 class="text-4xl font-display font-extrabold uppercase mb-2">BIFOOD.VN</h3>
+                        <p class="text-white/60 font-medium mb-6">Website bán thức ăn chó mèo trị liệu.</p>
+                    </div>
+                    <div class="w-full lg:w-2/3 grid sm:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-red-500 font-bold uppercase text-sm mb-1"><i data-lucide="x-circle" class="inline w-4 h-4"></i> Trước khi làm</p>
+                                <p class="text-sm opacity-80">Web có 0 khách. Giao diện rối khiến khách không tìm được hạt cho thú cưng bị bệnh. Bounce Rate > 85%.</p>
+                            </div>
+                            <div>
+                                <p class="text-neon-lime font-bold uppercase text-sm mb-1"><i data-lucide="check-circle-2" class="inline w-4 h-4"></i> Giải pháp Đức Duy</p>
+                                <p class="text-sm opacity-80">Xây lại UX luồng lọc sản phẩm (Tìm theo bệnh lý). Kéo traffic từ TikTok Shop về thẳng link mua hàng trên Web.</p>
+                            </div>
+                        </div>
+                        <div class="border-l-4 border-neon-cyan pl-6 flex flex-col justify-center">
+                            <p class="text-sm font-bold uppercase text-white/50 mb-2">Kết quả đạt được</p>
+                            <p class="text-4xl font-display font-extrabold text-neon-cyan mb-2">5,000+</p>
+                            <p class="text-sm font-medium mb-4">Traffic tự nhiên / tháng</p>
+                            <p class="text-4xl font-display font-extrabold text-neon-cyan mb-2">20 <span class="text-lg">đơn/ngày</span></p>
+                            <p class="text-sm font-medium">Từ con số 0 tròn trĩnh</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-4 border-white p-8 md:p-12 bg-[#111] shadow-brutal-pink flex flex-col lg:flex-row gap-10">
+                    <div class="w-full lg:w-1/3">
+                        <span class="bg-neon-pink text-black px-4 py-1 rounded-full font-bold text-xs uppercase mb-4 inline-block">Ngành: F&B / Giải Trí</span>
+                        <h3 class="text-4xl font-display font-extrabold uppercase mb-2">QT BILLIARDS</h3>
+                        <p class="text-white/60 font-medium mb-6">Chuỗi CLB Bida chuyên nghiệp.</p>
+                    </div>
+                    <div class="w-full lg:w-2/3 grid sm:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-red-500 font-bold uppercase text-sm mb-1"><i data-lucide="x-circle" class="inline w-4 h-4"></i> Trước khi làm</p>
+                                <p class="text-sm opacity-80">Phụ thuộc Page Facebook, thường xuyên bị trôi tin nhắn đặt bàn vào giờ cao điểm, mất khách.</p>
+                            </div>
+                            <div>
+                                <p class="text-neon-lime font-bold uppercase text-sm mb-1"><i data-lucide="check-circle-2" class="inline w-4 h-4"></i> Giải pháp Đức Duy</p>
+                                <p class="text-sm opacity-80">Thiết kế Web tối ưu di động với nút "Booking 1 chạm". Chạy Ads FB dẫn thẳng về trang Đặt bàn.</p>
+                            </div>
+                        </div>
+                        <div class="border-l-4 border-neon-pink pl-6 flex flex-col justify-center">
+                            <p class="text-sm font-bold uppercase text-white/50 mb-2">Kết quả đạt được</p>
+                            <p class="text-4xl font-display font-extrabold text-neon-pink mb-2">100%</p>
+                            <p class="text-sm font-medium mb-4">Tự động hóa luồng Booking</p>
+                            <p class="text-4xl font-display font-extrabold text-neon-pink mb-2">Giảm 60%</p>
+                            <p class="text-sm font-medium">Tỷ lệ hủy/chờ bàn do rep chậm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-neon-lime text-black border-y-4 border-black">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl md:text-6xl font-display font-extrabold uppercase mb-16 text-center">QUY TRÌNH <br>HỢP TÁC RÕ RÀNG</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 font-display">
+                <div class="bg-white border-4 border-black p-8 shadow-brutal">
+                    <span class="text-4xl font-extrabold text-black/20 block mb-4">01</span>
+                    <h3 class="text-xl font-extrabold uppercase mb-2">Phân Tích</h3>
+                    <p class="font-sans font-medium text-sm text-gray-700">Nghiên cứu khách hàng mục tiêu của bạn đến từ kênh nào, nỗi đau của họ là gì.</p>
+                </div>
+                <div class="bg-white border-4 border-black p-8 shadow-brutal">
+                    <span class="text-4xl font-extrabold text-black/20 block mb-4">02</span>
+                    <h3 class="text-xl font-extrabold uppercase mb-2">Cấu Trúc</h3>
+                    <p class="font-sans font-medium text-sm text-gray-700">Vẽ lại sitemap, luồng người dùng (User Flow) để đảm bảo không ai bị lạc trên web.</p>
+                </div>
+                <div class="bg-white border-4 border-black p-8 shadow-brutal">
+                    <span class="text-4xl font-extrabold text-black/20 block mb-4">03</span>
+                    <h3 class="text-xl font-extrabold uppercase mb-2">Thiết Kế & Code</h3>
+                    <p class="font-sans font-medium text-sm text-gray-700">Code giao diện UX/UI cực nhanh, tích hợp sẵn các công cụ SEO và Tracking (Pixel/GA4).</p>
+                </div>
+                <div class="bg-white border-4 border-black p-8 shadow-brutal">
+                    <span class="text-4xl font-extrabold text-black/20 block mb-4">04</span>
+                    <h3 class="text-xl font-extrabold uppercase mb-2">Tối Ưu</h3>
+                    <p class="font-sans font-medium text-sm text-gray-700">Theo dõi số liệu thực tế, tinh chỉnh các nút CTA để đạt tỷ lệ chuyển đổi cao nhất.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta" class="py-32 bg-black relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-neon-cyan/20 to-transparent z-0"></div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-5xl md:text-7xl font-display font-extrabold uppercase leading-tight mb-8">
+                WEB CỦA BẠN CÓ ĐANG <br><span class="text-neon-cyan">MẤT KHÁCH?</span>
+            </h2>
+            <p class="text-xl font-bold text-white/80 mb-12 max-w-2xl mx-auto">
+                Để mình xem Website của bạn miễn phí và chỉ ra ngay 3 lỗi UX/UI đang khiến bạn chạy Ads mãi mà không ra đơn.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="https://zalo.me/0938415218" target="_blank" class="px-10 py-5 bg-neon-cyan text-black font-display font-extrabold text-xl border-4 border-black shadow-[6px_6px_0_0_#fff] hover:translate-x-1 hover:-translate-y-1 transition-all uppercase flex justify-center items-center gap-3">
+                    <i data-lucide="search"></i> Audit Web Miễn Phí Ngay
+                </a>
+                <a href="https://www.facebook.com/tran.duc.duy.742865/" target="_blank" class="px-10 py-5 bg-transparent text-white font-display font-extrabold text-xl border-4 border-white hover:bg-white hover:text-black transition-all uppercase flex justify-center items-center gap-3">
+                    <i data-lucide="facebook"></i> Nhắn qua Facebook
+                </a>
+            </div>
+            <p class="mt-8 text-white/40 font-medium italic">Hoặc gọi trực tiếp Hotline/Zalo: 0938.415.218</p>
+        </div>
+    </section>
+
+    <footer class="bg-brutal py-10 border-t-4 border-white text-center">
+        <p class="text-white/40 font-display font-bold text-xs uppercase tracking-widest">© 2026 ĐỨC DUY. CHUYÊN VIÊN TƯ VẤN WEBSITE CHUYỂN ĐỔI.</p>
     </footer>
 
-    <!-- SCRIPTS -->
     <script>
         lucide.createIcons();
-        function toggleMobileMenu() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        }
     </script>
 </body>
 </html>
