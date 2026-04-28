@@ -2,59 +2,22 @@
 <html lang="vi" class="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <!-- ========================================== -->
-    <!-- 🚀 SEO CHUYÊN SÂU & ĐỊNH DANH THƯƠNG HIỆU -->
-    <!-- ========================================== -->
-    <title>ĐỨC DUY | Tư Duy Website & Digital Marketing Thực Chiến</title>
-    <meta name="description" content="Đức Duy cung cấp giải pháp Website chuẩn SEO kết hợp Digital Marketing đột phá cho ngành Nội thất, Garage, Billiards và Bán lẻ. Tối ưu chuyển đổi, cam kết doanh thu.">
-    <meta name="keywords" content="Đức Duy, thiết kế website nội thất, marketing garage ô tô, seo web bida, thiết kế web thương mại, digital marketing thực chiến">
+    <title>ĐỨC DUY | Web Architect & SEO Strategist 2026</title>
+    <meta name="description" content="Đức Duy - Chuyên gia thiết kế Website chuẩn SEO và chiến lược Digital Marketing thực chiến. Giải pháp tăng trưởng cho Nội thất, Garage, Billiards và Thương mại.">
+    <meta name="keywords" content="Đức Duy, duyweb, thiết kế web bida, seo web nội thất, marketing garage ô tô, làm website đức linh, chuyên gia digital marketing">
     <meta name="author" content="Đức Duy">
     
     <link rel="canonical" href="https://duyweb.info.vn/" />
     
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://duyweb.info.vn/">
-    <meta property="og:title" content="ĐỨC DUY | Giải Pháp Website x Marketing Thực Chiến">
-    <meta property="og:description" content="Web đẹp là chưa đủ. Website phải là cỗ máy bán hàng. Khám phá chiến lược cho Nội thất, Garage, Billiards, Bán lẻ.">
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="ĐỨC DUY | WEB ARCHITECT & MARKETING STRATEGIST">
+    <meta property="og:description" content="Web đẹp là chưa đủ. Website phải là cỗ máy bán hàng. Gặp gỡ chuyên gia tối ưu chuyển đổi số.">
     <meta property="og:image" content="image_c4293b.jpg"> 
 
-    <!-- Schema Markup JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Person",
-          "@id": "https://duyweb.info.vn/#ducduy",
-          "name": "Đức Duy",
-          "url": "https://duyweb.info.vn/",
-          "image": "image_c4293b.jpg",
-          "jobTitle": "Chuyên gia Digital Marketing & Thiết kế Website",
-          "sameAs": [
-            "https://www.facebook.com/tran.duc.duy.742865/", 
-            "https://www.tiktok.com/@di0938415218"
-          ]
-        },
-        {
-          "@type": "ProfessionalService",
-          "name": "Duy Web - Thiết kế Website & SEO Chuyển Đổi",
-          "image": "image_c4293b.jpg",
-          "@id": "https://duyweb.info.vn/#service",
-          "url": "https://duyweb.info.vn/",
-          "telephone": "0938415218",
-          "address": { "@type": "PostalAddress", "addressCountry": "VN" }
-        }
-      ]
-    }
-    </script>
-
-    <!-- ========================================== -->
-    <!-- CẤU HÌNH GIAO DIỆN NEO-BRUTALISM -->
-    <!-- ========================================== -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Fonts & Tailwind & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -63,21 +26,14 @@
             darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Space Grotesk', 'sans-serif'],
-                    },
-                    colors: {
-                        neon: { lime: '#ccff00', cyan: '#00e5ff', pink: '#ff00ff', orange: '#ff5500' },
-                        brutal: '#0f0f0f'
-                    },
-                    boxShadow: {
-                        'brutal-white': '4px 4px 0px 0px rgba(255, 255, 255, 1)',
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'] },
+                    colors: { neon: { lime: '#ccff00', cyan: '#00e5ff', pink: '#ff00ff', orange: '#ff5500' }, brutal: '#0f0f0f' },
+                    boxShadow: { 
+                        'brutal': '4px 4px 0px 0px #000000', 
+                        'brutal-white': '4px 4px 0px 0px #ffffff',
                         'brutal-lime': '4px 4px 0px 0px #ccff00',
                         'brutal-cyan': '4px 4px 0px 0px #00e5ff',
                         'brutal-pink': '4px 4px 0px 0px #ff00ff',
-                        'brutal-orange': '4px 4px 0px 0px #ff5500',
-                        'brutal-black': '6px 6px 0px 0px #000000',
                     }
                 }
             }
@@ -86,461 +42,176 @@
 
     <style>
         body { background-color: #0f0f0f; color: #ffffff; overflow-x: hidden; scroll-behavior: smooth; }
-        .noise-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); }
         
-        .marquee-container { overflow: hidden; white-space: nowrap; width: 100%; border-top: 2px solid white; border-bottom: 2px solid white; padding: 12px 0; background: #ccff00; color: black; font-family: 'Space Grotesk', sans-serif; font-weight: 800; text-transform: uppercase; }
+        .noise-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+        .bg-grid { background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 40px 40px; }
+
+        .marquee-container { overflow: hidden; white-space: nowrap; width: 100%; border-y: 4px solid white; padding: 12px 0; background: #ccff00; color: black; font-family: 'Space Grotesk', sans-serif; font-weight: 800; text-transform: uppercase; }
         .marquee-content { display: inline-block; animation: marquee 30s linear infinite; }
         @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        .view-section { display: none; animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        .view-section.active { display: block; }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-
-        .bg-grid { background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 40px 40px; }
-
-        @media screen and (max-width: 768px) {
-            input, select, textarea { font-size: 16px !important; }
-        }
+        /* Tối ưu iOS Input Zoom */
+        @media screen and (max-width: 768px) { input, textarea { font-size: 16px !important; } }
     </style>
 </head>
-<body class="relative min-h-screen flex flex-col font-sans bg-grid">
+<body class="font-sans">
 
     <div class="noise-bg"></div>
 
     <!-- ======================================================== -->
-    <!-- NAVIGATION -->
+    <!-- NAVBAR CHÍNH -->
     <!-- ======================================================== -->
-    <nav class="fixed top-0 left-0 w-full bg-brutal z-50 border-b-4 border-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
-            
-            <a href="#home" class="flex items-center gap-3 group">
-                <div class="w-12 h-12 bg-neon-lime border-2 border-white rounded-lg flex items-center justify-center shadow-brutal-white transition-all group-hover:translate-x-1 group-hover:-translate-y-1">
-                    <i data-lucide="zap" class="text-black fill-black w-6 h-6"></i>
+    <nav class="fixed top-0 left-0 w-full bg-brutal/90 backdrop-blur-md z-50 border-b-4 border-white h-20 flex items-center transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 sm:gap-3 group">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-neon-cyan border-2 border-white rounded-lg flex items-center justify-center shadow-[4px_4px_0_0_#fff] group-hover:rotate-12 transition-transform">
+                    <i data-lucide="zap" class="text-black fill-black w-5 h-5 md:w-6 md:h-6"></i>
                 </div>
-                <div class="flex flex-col font-display">
-                    <span class="font-extrabold text-2xl tracking-tighter text-white uppercase leading-none">Đức Duy</span>
-                    <span class="text-[10px] text-neon-cyan font-bold uppercase tracking-widest mt-1">DUYWEB.INFO.VN</span>
+                <div class="flex flex-col">
+                    <span class="font-display font-extrabold text-lg sm:text-xl md:text-2xl uppercase tracking-tighter leading-none">ĐỨC DUY</span>
+                    <span class="text-[9px] sm:text-[10px] text-neon-lime font-bold uppercase tracking-widest mt-1 hidden sm:block">DIGITAL MASTER</span>
                 </div>
             </a>
             
-            <div class="hidden xl:flex items-center space-x-4 font-display font-bold text-sm uppercase">
-                <a href="#mindset" class="px-3 text-white hover:text-neon-lime transition-colors">Tư Duy</a>
-                <a href="#projects" class="px-3 text-white hover:text-neon-cyan transition-colors">Case Studies</a>
-
-                <div class="relative group">
-                    <button id="nav-roadmap-group" class="nav-btn flex items-center gap-2 px-5 py-2 rounded-full border-2 border-white text-white hover:bg-white hover:text-black transition-all">
-                        Chiến Lược Ngành <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                    </button>
-                    <div class="absolute top-full left-0 mt-2 w-64 bg-brutal border-2 border-white rounded-xl shadow-brutal-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all overflow-hidden z-50">
-                        <a href="#projects" class="flex items-center gap-3 p-4 border-b-2 border-white/10 hover:bg-neon-cyan hover:text-black"><i data-lucide="sofa" class="w-4 h-4"></i> Nội thất (LW Design)</a>
-                        <a href="#projects" class="flex items-center gap-3 p-4 border-b-2 border-white/10 hover:bg-neon-pink hover:text-black"><i data-lucide="crosshair" class="w-4 h-4"></i> Billiards (QT Club)</a>
-                        <a href="#projects" class="flex items-center gap-3 p-4 border-b-2 border-white/10 hover:bg-neon-lime hover:text-black"><i data-lucide="shopping-bag" class="w-4 h-4"></i> Bán lẻ (Bifood)</a>
-                        <a href="#projects" class="flex items-center gap-3 p-4 hover:bg-white hover:text-black"><i data-lucide="car" class="w-4 h-4"></i> Garage Ô tô</a>
-                    </div>
-                </div>
-
-                <a href="#brief" id="nav-brief" class="nav-btn px-5 py-2 rounded-full border-2 border-white text-white hover:bg-neon-pink hover:text-black transition-all">Gửi Yêu Cầu</a>
-                
-                <a href="#contact" class="bg-white text-black px-6 py-2 rounded-full border-2 border-white font-extrabold shadow-brutal-lime hover:translate-x-1 hover:-translate-y-1 transition-all">
-                    LIÊN HỆ
-                </a>
+            <div class="hidden lg:flex items-center gap-6 font-display font-bold text-sm uppercase">
+                <a href="index.html" class="hover:text-neon-cyan transition-colors text-neon-cyan border-b-2 border-neon-cyan pb-1">Trang Chủ</a>
+                <a href="./chien-luoc/bifood.html" class="hover:text-neon-lime transition-colors flex items-center gap-1"><i data-lucide="star" class="w-4 h-4"></i> Case Study</a>
+                <a href="campaign.html" class="hover:text-neon-pink transition-colors">Giải Pháp</a>
+                <a href="brief.html" class="bg-white text-black px-6 py-2 border-2 border-white shadow-brutal-white hover:translate-x-1 hover:-translate-y-1 transition-all">GỬI YÊU CẦU</a>
             </div>
-
-            <button onclick="toggleMobileMenu()" class="xl:hidden p-2 bg-white text-black border-2 border-white rounded-full shadow-brutal-lime">
+            
+            <button onclick="toggleMobileMenu()" class="lg:hidden p-2 bg-white text-black border-2 border-black rounded-lg shadow-brutal-lime">
                 <i data-lucide="menu"></i>
             </button>
         </div>
 
-        <div id="mobile-menu" class="hidden xl:hidden bg-brutal border-b-4 border-white p-6 flex flex-col gap-4 font-display font-bold uppercase z-50 absolute w-full left-0">
-            <a href="#mindset" onclick="toggleMobileMenu()">Tư duy Web x Marketing</a>
-            <a href="#projects" onclick="toggleMobileMenu()">Case Studies Ngành</a>
-            <a href="#brief" onclick="toggleMobileMenu()" class="text-neon-pink">Gửi Yêu Cầu Dự Án</a>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-brutal border-b-4 border-white p-6 flex flex-col gap-4 font-display font-bold uppercase shadow-2xl z-50">
+            <a href="index.html" class="text-neon-cyan pb-2 border-b border-white/10">Trang Chủ</a>
+            <a href="./chien-luoc/bifood.html" class="text-white hover:text-neon-lime pb-2 border-b border-white/10">Case Study (Bifood)</a>
+            <a href="campaign.html" class="text-white hover:text-neon-pink pb-2 border-b border-white/10">Giải pháp tự động hóa</a>
+            <a href="brief.html" class="bg-neon-cyan text-black px-4 py-3 text-center border-2 border-white rounded-lg mt-2">GỬI BRIEF DỰ ÁN</a>
         </div>
     </nav>
 
     <!-- ======================================================== -->
-    <!-- VIEW: HOME -->
+    <!-- MAIN CONTENT: HOME -->
     <!-- ======================================================== -->
-    <main id="home-view" class="view-section active flex-1">
+    <main class="bg-grid pt-28 md:pt-32 pb-16 md:pb-20">
         
-        <div class="mt-20 marquee-container">
-            <div class="marquee-content">
-                WEBSITE LÀ MẶT TIỀN ✦ MARKETING LÀ LỰC HẤP DẪN ✦ TỐI ƯU CHUYỂN ĐỔI NỘI THẤT ✦ SEO LOCAL GARAGE Ô TÔ ✦ THIẾT KẾ WEB BÁN LẺ ✦ BOOKING BILLIARDS 1 CHẠM ✦
-            </div>
-        </div>
-
         <!-- HERO SECTION -->
-        <section class="pt-16 pb-20 px-4 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 border-b-4 border-white/10">
-            <div class="w-full lg:w-3/5 space-y-8 text-center lg:text-left relative z-10">
-                <h1 class="text-5xl sm:text-7xl font-display font-extrabold tracking-tighter leading-[0.9] uppercase">
-                    WEB LÀ XÁC. <br/>
-                    <span class="text-neon-cyan">MARKETING</span><br/>
-                    LÀ LINH HỒN.
+        <section class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-16 mb-20 md:mb-24">
+            <div class="w-full lg:w-3/5 space-y-6 text-center lg:text-left z-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 border-2 border-white rounded-full font-display font-bold uppercase text-[10px] md:text-xs bg-black text-white shadow-brutal-white">
+                    <span class="w-2 h-2 rounded-full bg-neon-cyan animate-pulse"></span> Sẵn sàng nhận dự án mới
+                </div>
+                <h1 class="text-5xl sm:text-6xl md:text-[5rem] font-display font-extrabold leading-[1] md:leading-[0.9] uppercase tracking-tighter break-words">
+                    KIẾN TRÚC SƯ <br>
+                    <span class="text-transparent" style="-webkit-text-stroke: 1.5px #ccff00; text-shadow: 3px 3px 0 #ccff00;">HỆ SINH THÁI SỐ</span>
                 </h1>
-                <p class="text-lg text-white/70 max-w-xl mx-auto lg:mx-0 font-medium">
-                    Một website đẹp nhưng không có ai truy cập là một sự lãng phí. Tôi là <strong>Đức Duy</strong>, mang đến giải pháp <span class="bg-neon-lime text-black px-2 font-bold">ALL-IN-ONE</span>: Thiết kế UX/UI sắc bén kết hợp chiến lược SEO Local giúp doanh nghiệp bạn chốt khách liên tục.
+                <p class="text-base sm:text-lg md:text-xl text-white/80 max-w-xl mx-auto lg:mx-0 font-medium leading-relaxed px-2 sm:px-0">
+                    Tôi là <strong>Đức Duy</strong>. Thay vì bán cho bạn một website vô hồn, tôi xây dựng "cỗ máy chốt sale" kết hợp thiết kế UX/UI độc bản và sức mạnh SEO Google.
                 </p>
-                <div class="flex flex-wrap gap-4 justify-center lg:justify-start font-display">
-                    <a href="#mindset" class="px-8 py-4 bg-neon-cyan text-black font-extrabold text-lg rounded-full border-4 border-black shadow-brutal-white hover:translate-x-1 hover:-translate-y-1 transition-all">HIỂU ĐÚNG TƯ DUY</a>
-                    <a href="#projects" class="px-8 py-4 bg-transparent text-white font-extrabold text-lg rounded-full border-4 border-white hover:bg-white hover:text-black transition-all">XEM CASE STUDY</a>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4 sm:pt-6 font-display">
+                    <a href="brief.html" class="px-6 py-3 md:px-8 md:py-4 bg-neon-cyan text-black font-extrabold text-base md:text-lg border-4 border-black shadow-brutal hover:translate-x-1 hover:-translate-y-1 transition-all uppercase flex items-center justify-center gap-2">
+                        Bắt đầu dự án <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="campaign.html" class="px-6 py-3 md:px-8 md:py-4 bg-black text-white font-extrabold text-base md:text-lg border-4 border-white hover:bg-white hover:text-black transition-all uppercase flex justify-center">
+                        Khám phá giải pháp
+                    </a>
                 </div>
             </div>
 
-            <!-- CHÂN DUNG CHUYÊN GIA -->
-            <div class="w-full lg:w-2/5 relative group">
-                <div class="relative z-10 border-[6px] border-black rounded-[2.5rem] overflow-hidden shadow-brutal-lime transform group-hover:rotate-2 transition-transform duration-500 bg-white">
-                    <img src="./img/avt.jpg" alt="Đức Duy Chuyên gia Web & Marketing" class="w-full h-full object-cover">
-                    <div class="absolute bottom-6 right-6 bg-black text-neon-lime px-4 py-2 font-display font-bold text-sm uppercase rounded-full border-2 border-white shadow-brutal-black">
-                        CEO / Founder
+            <!-- HERO IMAGE -->
+            <div class="w-full lg:w-2/5 flex justify-center lg:justify-end relative mt-8 lg:mt-0">
+                <div class="relative z-10 w-[80%] sm:w-[60%] lg:w-full max-w-[400px] border-[4px] md:border-[6px] border-white shadow-brutal-cyan overflow-hidden bg-black transform rotate-2 hover:rotate-0 transition-transform duration-500 rounded-3xl md:rounded-[3rem]">
+                    <img src="./asset/img/avt.jpg" alt="Đức Duy Chuyên Gia Web" class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-700 aspect-[4/5]">
+                    <div class="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6 bg-black/90 backdrop-blur-sm border-2 border-white p-3 md:p-4 font-display font-bold rounded-xl md:rounded-2xl text-[10px] md:text-sm">
+                        <div class="flex justify-between items-center text-neon-lime mb-1 md:mb-2">
+                            <span>Chuyên môn</span><span>Technical SEO</span>
+                        </div>
+                        <div class="flex justify-between items-center text-neon-cyan">
+                            <span>Kinh nghiệm</span><span>+5 Năm Thực Chiến</span>
+                        </div>
                     </div>
                 </div>
-                <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-neon-pink rounded-full border-4 border-black z-0 flex items-center justify-center animate-spin-slow">
-                    <i data-lucide="target" class="w-16 h-16 text-black"></i>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-64 md:h-64 bg-neon-lime rounded-full blur-[80px] md:blur-[100px] z-0"></div>
+            </div>
+        </section>
+
+        <!-- CHỈ SỐ NIỀM TIN -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 md:mb-24">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 font-display">
+                <div class="bg-brutal border-4 border-white p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-brutal-white flex flex-col items-center text-center group hover:bg-neon-lime hover:text-black transition-colors">
+                    <h3 class="text-5xl md:text-6xl font-extrabold mb-2 group-hover:text-black">99<span class="text-xl md:text-2xl">/100</span></h3>
+                    <p class="font-bold uppercase tracking-widest opacity-80 text-xs md:text-sm">Tốc độ & Hiệu năng</p>
+                </div>
+                <div class="bg-brutal border-4 border-white p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-brutal-white flex flex-col items-center text-center group hover:bg-neon-cyan hover:text-black transition-colors">
+                    <h3 class="text-5xl md:text-6xl font-extrabold mb-2 group-hover:text-black">TOP 1</h3>
+                    <p class="font-bold uppercase tracking-widest opacity-80 text-xs md:text-sm">Google Local Maps</p>
+                </div>
+                <div class="bg-brutal border-4 border-white p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-brutal-white flex flex-col items-center text-center group hover:bg-neon-pink hover:text-black transition-colors">
+                    <h3 class="text-5xl md:text-6xl font-extrabold mb-2 group-hover:text-black">+200%</h3>
+                    <p class="font-bold uppercase tracking-widest opacity-80 text-xs md:text-sm">Tỷ lệ chuyển đổi (CRO)</p>
                 </div>
             </div>
         </section>
 
-        <!-- MINDSET: TẠI SAO WEB CẦN MARKETING? -->
-        <section id="mindset" class="py-24 bg-white text-black border-b-4 border-black scroll-mt-20">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="text-center max-w-4xl mx-auto mb-16">
-                    <h2 class="text-4xl md:text-6xl font-display font-extrabold uppercase leading-none mb-6">
-                        TẠI SAO BẠN CẦN <br><span class="text-neon-pink" style="-webkit-text-stroke: 2px black;">WEB x MARKETING?</span>
-                    </h2>
-                    <p class="text-xl font-medium text-gray-700">Rất nhiều chủ doanh nghiệp bỏ hàng chục triệu làm Website, sau đó bỏ xó vì... không có khách. Đây là cách tôi giải quyết bài toán đó.</p>
+        <!-- DỰ ÁN NỔI BẬT -->
+        <section class="py-16 md:py-24 border-t-4 border-white bg-black">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 md:mb-12 gap-4">
+                    <h2 class="text-4xl md:text-5xl lg:text-7xl font-display font-extrabold uppercase tracking-tighter">DỰ ÁN NỔI BẬT</h2>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-12 font-display">
-                    <!-- WEB -->
-                    <div class="bg-[#f0f0f0] border-4 border-black p-10 rounded-[2rem] shadow-brutal-black relative overflow-hidden">
-                        <div class="absolute top-4 right-4 bg-black text-white px-4 py-1 rounded-full text-xs uppercase font-bold">1. Chuyển Đổi (UX/UI)</div>
-                        <i data-lucide="layout-template" class="w-16 h-16 mb-6"></i>
-                        <h3 class="text-3xl font-extrabold uppercase mb-4">Website là Cửa Hàng</h3>
-                        <ul class="space-y-4 font-sans text-gray-700 font-medium">
-                            <li class="flex gap-3"><i data-lucide="check-circle" class="text-neon-cyan shrink-0"></i> Giúp khách hàng xem sản phẩm, bảng giá dễ dàng.</li>
-                            <li class="flex gap-3"><i data-lucide="check-circle" class="text-neon-cyan shrink-0"></i> Tối ưu luồng bấm Zalo, Đặt lịch (Call-to-action).</li>
-                            <li class="flex gap-3"><i data-lucide="check-circle" class="text-neon-cyan shrink-0"></i> Nâng tầm uy tín (Trust) so với các đối thủ chỉ bán qua Facebook.</li>
-                        </ul>
-                    </div>
-
-                    <!-- MARKETING -->
-                    <div class="bg-black text-white border-4 border-black p-10 rounded-[2rem] shadow-brutal-cyan relative overflow-hidden">
-                        <div class="absolute top-4 right-4 bg-neon-cyan text-black px-4 py-1 rounded-full text-xs uppercase font-bold">2. Kéo Traffic (SEO)</div>
-                        <i data-lucide="trending-up" class="w-16 h-16 text-neon-cyan mb-6"></i>
-                        <h3 class="text-3xl font-extrabold uppercase mb-4 text-neon-cyan">Marketing là Đường Đi</h3>
-                        <ul class="space-y-4 font-sans text-white/80 font-medium">
-                            <li class="flex gap-3"><i data-lucide="check-circle" class="text-neon-lime shrink-0"></i> Cửa hàng đẹp phải nằm ở mặt tiền (Top 1 Google).</li>
-                            <li class="flex gap-3"><i data-lucide="check-circle" class="text-neon-lime shrink-0"></i> Tối ưu Local SEO để khách hàng quanh khu vực tự tìm đến bạn.</li>
-                            <li class="flex gap-3"><i data-lucide="check-circle" class="text-neon-lime shrink-0"></i> Viết Content giải quyết nỗi đau, giáo dục khách hàng tự chốt sale.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CASE STUDIES SECTION (4 NGÀNH TRỌNG TÂM) -->
-        <section id="projects" class="py-24 scroll-mt-20">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="mb-16 text-center">
-                    <h2 class="text-5xl md:text-7xl font-display font-extrabold uppercase leading-none">
-                        GIẢI PHÁP THEO NGÀNH
-                    </h2>
-                    <p class="mt-4 text-white/60 font-medium">Click vào từng ngành để xem cách Web & Marketing kết hợp mang lại doanh thu.</p>
-                </div>
-
-                <div class="space-y-12">
+                <!-- Dự án 1: Bifood -->
+                <div class="border-4 border-white rounded-[2rem] md:rounded-[3rem] p-6 sm:p-8 md:p-12 flex flex-col lg:flex-row gap-8 md:gap-12 bg-[#111] shadow-brutal-cyan relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-48 h-48 md:w-64 md:h-64 bg-neon-cyan/10 blur-[80px] group-hover:bg-neon-cyan/20 transition-colors"></div>
                     
-                    {/* NGÀNH 1: NỘI THẤT */}
-                    <div class="border-4 border-white rounded-[2.5rem] p-8 md:p-12 flex flex-col lg:flex-row gap-12 bg-[#151515] shadow-brutal-cyan group hover:-translate-y-2 transition-all">
-                        <div class="w-full lg:w-1/2 space-y-6 flex flex-col justify-center">
-                            <div class="inline-flex px-4 py-1.5 border-2 border-black rounded-full font-display font-bold uppercase text-xs bg-neon-cyan text-black self-start">
-                                Ngành: Thiết Kế Nội Thất & Xây Dựng
+                    <div class="w-full lg:w-1/2 space-y-4 md:space-y-6 flex flex-col justify-center relative z-10">
+                        <span class="bg-neon-cyan text-black px-3 py-1.5 md:px-4 md:py-2 rounded-full font-display font-bold text-[10px] md:text-xs uppercase self-start border-2 border-black">Bán lẻ / Thú cưng</span>
+                        <h3 class="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold uppercase">BIFOOD.VN</h3>
+                        <p class="text-white/70 font-medium text-sm sm:text-base md:text-lg leading-relaxed">
+                            Tái cấu trúc toàn bộ trải nghiệm người dùng (UX) và xây dựng hệ thống SEO Silo chuyên sâu, giúp Bifood thống lĩnh hơn 200+ từ khóa ngách về dinh dưỡng thú cưng.
+                        </p>
+                        
+                        <a href="bifood.html" class="inline-flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 bg-white text-black font-display font-bold uppercase rounded-full border-4 border-black hover:-translate-y-1 hover:shadow-[4px_4px_0_0_#00e5ff] transition-all self-start mt-2 md:mt-4 text-sm md:text-base">
+                            Đọc Full Case Study <i data-lucide="arrow-right" class="w-4 h-4 md:w-5 md:h-5"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="w-full lg:w-1/2 relative z-10 mt-6 lg:mt-0">
+                        <div class="border-4 border-white rounded-2xl md:rounded-3xl overflow-hidden bg-black relative shadow-2xl">
+                            <div class="absolute top-0 w-full h-8 md:h-10 border-b-4 border-white flex items-center px-3 md:px-4 gap-1.5 md:gap-2 z-20 bg-[#222]">
+                                <div class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-red-500 border border-black"></div>
+                                <div class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-yellow-500 border border-black"></div>
+                                <div class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-green-500 border border-black"></div>
                             </div>
-                            <h3 class="text-4xl md:text-5xl font-display font-extrabold uppercase">LW DESIGN (<span class="text-neon-cyan">lwdesign.vn</span>)</h3>
-                            <div class="bg-black border-2 border-white/20 p-6 rounded-2xl font-sans text-sm space-y-4">
-                                <p><strong class="text-white">Đặc thù:</strong> Sản phẩm High-ticket (Giá trị cao), cần quy trình tư vấn dài, khách hàng soi xét rất kỹ hình ảnh.</p>
-                                <div class="border-l-4 border-neon-cyan pl-4">
-                                    <strong class="text-neon-cyan">Giải pháp Website:</strong> Giao diện Portfolio hình ảnh phân giải cao nhưng vẫn load nhanh. Khối "Quy trình làm việc" rõ ràng để tạo Trust.
-                                </div>
-                                <div class="border-l-4 border-neon-lime pl-4">
-                                    <strong class="text-neon-lime">Giải pháp Marketing (SEO):</strong> Đánh mạnh từ khóa phong cách ("Thiết kế nội thất Japandi", "Báo giá thi công nội thất biệt thự").
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-full lg:w-1/2 flex items-center justify-center">
-                            <div class="w-full aspect-[4/3] border-4 border-white rounded-3xl overflow-hidden bg-white relative">
-                                <div class="absolute top-0 w-full h-8 bg-[#e0e0e0] border-b-4 border-black flex items-center px-4 gap-2 z-20">
-                                    <div class="w-3 h-3 rounded-full border-2 border-black bg-white"></div>
-                                    <div class="w-3 h-3 rounded-full border-2 border-black bg-white"></div>
-                                    <div class="ml-2 font-display text-[10px] font-bold text-black">lwdesign.vn</div>
-                                </div>
-                                <div class="w-full h-full bg-[#f8f9fa] relative overflow-hidden">
-                                    <iframe src="https://lwdesign.vn" class="absolute top-0 left-0 w-[200%] h-[200%] origin-top-left scale-50 border-0 pointer-events-none transition-transform duration-[10s] ease-linear group-hover:-translate-y-[20%]" title="LW Design"></iframe>
-                                    <div class="absolute inset-0 z-10 bg-black/10 group-hover:bg-transparent transition-colors"></div>
-                                </div>
-                            </div>
+                            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80" alt="Bifood" class="w-full mt-8 md:mt-10 hover:scale-105 transition-transform duration-700">
                         </div>
                     </div>
-
-                    {/* NGÀNH 2: BILLIARDS */}
-                    <div class="border-4 border-white rounded-[2.5rem] p-8 md:p-12 flex flex-col lg:flex-row-reverse gap-12 bg-[#151515] shadow-brutal-pink group hover:-translate-y-2 transition-all">
-                        <div class="w-full lg:w-1/2 space-y-6 flex flex-col justify-center">
-                            <div class="inline-flex px-4 py-1.5 border-2 border-black rounded-full font-display font-bold uppercase text-xs bg-neon-pink text-black self-start">
-                                Ngành: Dịch vụ Giải Trí / F&B
-                            </div>
-                            <h3 class="text-4xl md:text-5xl font-display font-extrabold uppercase">QT BILLIARDS (<span class="text-neon-pink">qtbilliards.com</span>)</h3>
-                            <div class="bg-black border-2 border-white/20 p-6 rounded-2xl font-sans text-sm space-y-4">
-                                <p><strong class="text-white">Đặc thù:</strong> Khách hàng chốt cảm xúc nhanh, tìm kiếm quán gần nhà qua Google Maps.</p>
-                                <div class="border-l-4 border-neon-pink pl-4">
-                                    <strong class="text-neon-pink">Giải pháp Website:</strong> Dark Mode cá tính. Nút "Booking/Gọi Đặt Bàn" dính chặt (Sticky) trên Mobile. Bảng giá công khai minh bạch.
-                                </div>
-                                <div class="border-l-4 border-neon-cyan pl-4">
-                                    <strong class="text-neon-cyan">Giải pháp Marketing (SEO Local):</strong> Tối ưu Google My Business. SEO từ khóa "Quán Bida + Tên đường/Quận". Khách search là thấy số điện thoại.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-full lg:w-1/2 flex items-center justify-center">
-                            <div class="w-full aspect-[4/3] border-4 border-white rounded-3xl overflow-hidden bg-black relative">
-                                <div class="absolute top-0 w-full h-8 bg-[#333] border-b-4 border-white flex items-center px-4 gap-2 z-20">
-                                    <div class="w-3 h-3 rounded-full border-2 border-white bg-black"></div>
-                                    <div class="ml-2 font-display text-[10px] font-bold text-white">qtbilliards.com</div>
-                                </div>
-                                <div class="w-full h-full bg-black relative overflow-hidden">
-                                    <iframe src="https://qtbilliards.com" class="absolute top-0 left-0 w-[200%] h-[200%] origin-top-left scale-50 border-0 pointer-events-none transition-transform duration-[10s] ease-linear group-hover:-translate-y-[20%]" title="QT Billiards"></iframe>
-                                    <div class="absolute inset-0 z-10 bg-black/20 group-hover:bg-transparent transition-colors"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* NGÀNH 3: BÁN LẺ THƯƠNG MẠI */}
-                    <div class="border-4 border-white rounded-[2.5rem] p-8 md:p-12 flex flex-col lg:flex-row gap-12 bg-[#151515] shadow-brutal-lime group hover:-translate-y-2 transition-all">
-                        <div class="w-full lg:w-1/2 space-y-6 flex flex-col justify-center">
-                            <div class="inline-flex px-4 py-1.5 border-2 border-black rounded-full font-display font-bold uppercase text-xs bg-neon-lime text-black self-start">
-                                Ngành: Bán lẻ / E-commerce / Thú cưng
-                            </div>
-                            <h3 class="text-4xl md:text-5xl font-display font-extrabold uppercase">BIFOOD (<span class="text-neon-lime">bifood.com.vn</span>)</h3>
-                            <div class="bg-black border-2 border-white/20 p-6 rounded-2xl font-sans text-sm space-y-4">
-                                <p><strong class="text-white">Đặc thù:</strong> Số lượng SKU lớn, khách hàng mua theo nhu cầu đặc biệt (tuổi, bệnh lý).</p>
-                                <div class="border-l-4 border-neon-lime pl-4">
-                                    <strong class="text-neon-lime">Giải pháp Website:</strong> Hệ thống lọc (Filter) đa tầng. Giao diện sáng sủa, tạo độ tin cậy cho hàng nhập khẩu.
-                                </div>
-                                <div class="border-l-4 border-neon-pink pl-4">
-                                    <strong class="text-neon-pink">Giải pháp Marketing (SEO Content):</strong> Xây dựng Cấu trúc Silo kiến thức: "Cách trị mèo nôn", "Hạt giảm mùi hôi". Giáo dục khách tự mua hàng.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-full lg:w-1/2 flex items-center justify-center">
-                            <div class="w-full aspect-[4/3] border-4 border-white rounded-3xl overflow-hidden bg-white relative">
-                                <div class="absolute top-0 w-full h-8 bg-[#e0e0e0] border-b-4 border-black flex items-center px-4 gap-2 z-20">
-                                    <div class="w-3 h-3 rounded-full border-2 border-black bg-white"></div>
-                                    <div class="ml-2 font-display text-[10px] font-bold text-black">bifood.com.vn</div>
-                                </div>
-                                <div class="w-full h-full relative overflow-hidden bg-[#0a0a0a]">
-                                    <iframe src="https://bifood.com.vn" class="absolute top-0 left-0 w-[200%] h-[200%] origin-top-left scale-50 border-0 pointer-events-none transition-transform duration-[10s] ease-linear group-hover:-translate-y-[20%]" title="Bifood"></iframe>
-                                    <div class="absolute inset-0 z-10 bg-black/10 group-hover:bg-transparent transition-colors"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* NGÀNH 4: GARAGE Ô TÔ */}
-                    <div class="border-4 border-white rounded-[2.5rem] p-8 md:p-12 flex flex-col lg:flex-row-reverse gap-12 bg-[#151515] shadow-brutal-orange group hover:-translate-y-2 transition-all">
-                        <div class="w-full lg:w-1/2 space-y-6 flex flex-col justify-center">
-                            <div class="inline-flex px-4 py-1.5 border-2 border-black rounded-full font-display font-bold uppercase text-xs bg-[#ff5500] text-white self-start">
-                                Ngành: Garage / Sửa chữa Ô Tô
-                            </div>
-                            <h3 class="text-4xl md:text-5xl font-display font-extrabold uppercase">GARAGE & CAR CARE</h3>
-                            <div class="bg-black border-2 border-white/20 p-6 rounded-2xl font-sans text-sm space-y-4">
-                                <p><strong class="text-white">Đặc thù:</strong> Nhu cầu cấp bách (cứu hộ, sửa chữa) hoặc nhu cầu làm đẹp cao cấp (Detaling, dán PPF).</p>
-                                <div class="border-l-4 border-[#ff5500] pl-4">
-                                    <strong class="text-[#ff5500]">Giải pháp Website:</strong> Hiển thị nút Hotline nhấp nháy khổng lồ. Show rõ năng lực xưởng (Cầu nâng, máy chẩn đoán) và Review thực tế.
-                                </div>
-                                <div class="border-l-4 border-neon-cyan pl-4">
-                                    <strong class="text-neon-cyan">Giải pháp Marketing (SEO Đa kênh):</strong> Phủ sóng Google Maps "Cứu hộ ô tô + [Khu vực]". Viết bài chuẩn SEO báo giá Detailing mồi khách sộp.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-full lg:w-1/2 flex items-center justify-center">
-                            <div class="w-full aspect-[4/3] border-4 border-white rounded-3xl overflow-hidden bg-black relative">
-                                <div class="absolute top-0 w-full h-8 bg-[#333] border-b-4 border-white flex items-center px-4 gap-2 z-20">
-                                    <div class="w-3 h-3 rounded-full border-2 border-white bg-black"></div>
-                                    <div class="ml-2 font-display text-[10px] font-bold text-white">garage.com</div>
-                                </div>
-                                <div class="w-full h-full flex items-center justify-center text-center p-8 bg-gradient-to-br from-neutral-800 to-[#ff5500]/20">
-                                   <div>
-                                       <i data-lucide="car" class="w-16 h-16 text-[#ff5500] mx-auto mb-4"></i>
-                                       <p class="text-white font-display font-bold text-xl uppercase">Giao diện Cơ khí <br>Tối ưu Cuộc Gọi Nhanh</p>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
-
-        <!-- CONTACT SECTION -->
-        <section id="contact" class="py-24 relative bg-white text-black border-y-4 border-black">
-            <div class="max-w-4xl mx-auto px-4 text-center font-display">
-                <h2 class="text-4xl md:text-6xl font-extrabold uppercase mb-8">THUÊ TÔI <br><span class="text-neon-cyan" style="-webkit-text-stroke: 2px black;">XÂY HỆ THỐNG</span></h2>
-                <p class="text-lg font-sans font-medium text-gray-700 mb-12">Chuyên môn của Đức Duy dành cho các doanh nghiệp nghiêm túc muốn tăng trưởng thông qua môi trường Số.</p>
-                
-                <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                    <a href="https://zalo.me/0938415218" target="_blank" class="flex-1 border-4 border-black bg-neon-lime text-black p-6 rounded-3xl flex flex-col items-center gap-4 hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_#000000] transition-all">
-                        <i data-lucide="phone" class="w-10 h-10"></i>
-                        <div>
-                            <p class="text-xs font-bold uppercase text-black/60">Zalo / Hotline Tư Vấn</p>
-                            <p class="text-2xl font-extrabold">0938.415.218</p>
-                        </div>
-                    </a>
-                    <a href="#brief" class="flex-1 border-4 border-black bg-neon-pink text-black p-6 rounded-3xl flex flex-col items-center gap-4 hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_#000000] transition-all cursor-pointer">
-                        <i data-lucide="clipboard-edit" class="w-10 h-10"></i>
-                        <div>
-                            <p class="text-xs font-bold uppercase text-black/60">Gửi File Yêu Cầu</p>
-                            <p class="text-xl font-extrabold mt-1">ĐIỀN BRIEF DỰ ÁN</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ======================================================== -->
-    <!-- VIEW: CLIENT BRIEF -->
-    <!-- ======================================================== -->
-    <main id="brief-view" class="view-section flex-1 pt-32 pb-24 max-w-4xl mx-auto px-4 w-full">
-        <a href="#home" class="mb-8 inline-flex items-center gap-2 text-white hover:text-neon-pink font-bold uppercase transition-colors">
-            <i data-lucide="arrow-left" class="w-5 h-5"></i> QUAY LẠI
-        </a>
-        <div class="bg-brutal border-4 border-white p-10 rounded-[3rem] shadow-brutal-pink">
-            <h2 class="text-4xl md:text-6xl font-display font-extrabold uppercase leading-none mb-8 text-neon-pink">BẢN YÊU CẦU <br/> DỰ ÁN</h2>
-            <div class="space-y-8 font-sans">
-                <div class="flex flex-col gap-2">
-                    <label class="font-display font-bold text-xl uppercase">1. Mục tiêu Website & Marketing?</label>
-                    <textarea rows="2" class="w-full p-4 bg-black border-2 border-white rounded-xl text-white focus:border-neon-pink outline-none" placeholder="VD: Bán lẻ sản phẩm, Lấy thông tin khách (Lead), Booking dịch vụ..."></textarea>
-                </div>
-                <div class="flex flex-col gap-2">
-                    <label class="font-display font-bold text-xl uppercase">2. Đối thủ của bạn là ai?</label>
-                    <textarea rows="2" class="w-full p-4 bg-black border-2 border-white rounded-xl text-white focus:border-neon-pink outline-none" placeholder="Nhập tên/link website đối thủ để tôi phân tích chiến lược của họ..."></textarea>
-                </div>
-                <div class="flex flex-col gap-2">
-                    <label class="font-display font-bold text-xl uppercase">3. Ngân sách & Thời gian?</label>
-                    <textarea rows="2" class="w-full p-4 bg-black border-2 border-white rounded-xl text-white focus:border-neon-pink outline-none" placeholder="Mức ngân sách dự kiến và thời gian cần ra mắt..."></textarea>
-                </div>
-                <button class="w-full py-5 bg-neon-pink text-black font-extrabold text-xl rounded-full border-4 border-black shadow-brutal-white hover:translate-x-1 hover:-translate-y-1 transition-all uppercase">GỬI THÔNG TIN BẢO MẬT</button>
-            </div>
-        </div>
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-black py-16 mt-auto z-10 font-display">
+    <footer class="bg-black py-12 md:py-16 border-t-4 border-white font-display">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-4xl font-extrabold uppercase mb-6 tracking-tighter italic">ĐỨC DUY WEB x SEO</h2>
-            <div class="flex justify-center gap-6 mb-10">
-                <a href="https://www.facebook.com/tran.duc.duy.742865/" class="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-neon-cyan hover:text-black transition-all shadow-brutal-cyan"><i data-lucide="facebook"></i></a>
-                <a href="https://www.tiktok.com/@di0938415218" class="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-neon-pink hover:text-black transition-all shadow-brutal-pink"><i data-lucide="music"></i></a>
+            <h2 class="text-3xl md:text-4xl font-extrabold uppercase mb-6 italic tracking-tighter text-white">ĐỨC DUY . DIGITAL</h2>
+            <div class="flex justify-center gap-4 md:gap-6 mb-8 md:mb-10">
+                <a href="https://zalo.me/0938415218" target="_blank" class="w-12 h-12 md:w-14 md:h-14 bg-white text-black border-4 border-black rounded-full flex items-center justify-center hover:bg-neon-lime transition-all shadow-brutal"><i data-lucide="phone" class="w-5 h-5 md:w-6 md:h-6"></i></a>
+                <a href="https://www.facebook.com/tran.duc.duy.742865/" target="_blank" class="w-12 h-12 md:w-14 md:h-14 bg-white text-black border-4 border-black rounded-full flex items-center justify-center hover:bg-neon-cyan transition-all shadow-brutal"><i data-lucide="facebook" class="w-5 h-5 md:w-6 md:h-6"></i></a>
             </div>
-            <p class="text-white/30 text-[10px] font-bold uppercase tracking-widest">
-                © 2026 DUC DUY. WEB ARCHITECT & MARKETING STRATEGIST.
-            </p>
+            <p class="text-white/30 text-[9px] md:text-[10px] font-bold uppercase tracking-widest">© 2026 DUC DUY. TƯ DUY LÀM LÀ THẮNG. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
-
-    <!-- AI CHAT TERMINAL -->
-    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-        <div id="chat-box" class="hidden bg-black w-[calc(100vw-48px)] sm:w-96 border-4 border-white shadow-brutal-cyan mb-4 flex-col h-[450px] animate-[slideUp_0.3s_ease]">
-            <div class="bg-white text-black px-4 py-3 flex justify-between items-center border-b-4 border-black font-display font-bold uppercase text-sm">
-                <span>DUY_AI_BOT.EXE</span>
-                <button onclick="toggleChat()"><i data-lucide="x" class="w-5 h-5"></i></button>
-            </div>
-            <div id="chat-messages" class="flex-1 overflow-y-auto p-5 space-y-4 text-xs font-mono text-neon-cyan leading-relaxed">
-                <div class="p-3 border border-white/20 bg-white/5">Hệ thống sẵn sàng. Nhập "tuvan" để hỏi đáp về Web và SEO...</div>
-            </div>
-            <div class="p-4 border-t-4 border-white flex gap-2">
-                <input id="chat-input" type="text" class="flex-1 bg-black border-2 border-white p-2 text-white outline-none focus:border-neon-cyan font-mono text-sm" placeholder="Gõ lệnh..."/>
-                <button onclick="sendMessage()" class="bg-white text-black px-4 font-bold uppercase text-xs hover:bg-neon-cyan transition-colors">Gửi</button>
-            </div>
-        </div>
-        <button id="chat-toggle-btn" onclick="toggleChat()" class="bg-neon-cyan text-black p-5 border-4 border-white shadow-brutal-white hover:translate-x-1 hover:-translate-y-1 transition-all">
-            <i data-lucide="terminal" class="w-8 h-8"></i>
-        </button>
-    </div>
 
     <!-- SCRIPTS -->
     <script>
         lucide.createIcons();
-
-        function handleRouting() {
-            let hash = window.location.hash.substring(1);
-            if (!hash) hash = 'home';
-            const scrollSections = ['mindset', 'projects', 'contact'];
-            document.getElementById('mobile-menu').classList.add('hidden');
-            
-            if (scrollSections.includes(hash)) {
-                renderView('home');
-                setTimeout(() => {
-                    const el = document.getElementById(hash);
-                    if (el) { window.scrollTo({top: el.offsetTop - 100, behavior: 'smooth'}); }
-                }, 100);
-            } else {
-                renderView(hash);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        }
-
-        function renderView(viewId) {
-            const validViews = ['home', 'brief'];
-            if (!validViews.includes(viewId)) viewId = 'home';
-            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
-            document.getElementById(viewId + '-view').classList.add('active');
-            
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.className = "nav-btn flex items-center gap-2 px-5 py-2 rounded-full border-2 border-white text-white hover:bg-white hover:text-black transition-all";
-            });
-            if (viewId === 'brief') {
-                const brief = document.getElementById('nav-brief');
-                if(brief) brief.className = "nav-btn px-5 py-2 rounded-full border-4 border-black bg-neon-pink text-black font-extrabold shadow-brutal-white";
-            }
-        }
-
-        window.addEventListener('hashchange', handleRouting);
-        window.addEventListener('DOMContentLoaded', handleRouting);
-        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
-        function toggleChat() { 
-            const box = document.getElementById('chat-box');
-            box.classList.toggle('hidden');
-            box.classList.toggle('flex');
-        }
-
-        const API_KEY = ""; 
-        async function sendMessage() {
-            const input = document.getElementById('chat-input');
-            const msg = input.value.trim();
-            if (!msg) return;
-            const container = document.getElementById('chat-messages');
-            container.innerHTML += `<div class="text-white mt-2">> ${msg}</div>`;
-            input.value = '';
-            
-            try {
-                if (!API_KEY) throw new Error("Missing");
-                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${API_KEY}`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        contents: [{ parts: [{ text: msg }] }],
-                        systemInstruction: { parts: [{ text: "Bạn là AI. Trả lời ngắn, lịch sự. Khuyên liên hệ Zalo 0938.415.218." }] }
-                    })
-                });
-                const data = await response.json();
-                const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Lỗi phản hồi.";
-                container.innerHTML += `<div class="mt-2 text-neon-cyan">${aiText}</div>`;
-            } catch (error) {
-                container.innerHTML += `<div class="mt-2 text-red-500">LỖI: Chưa cấu hình API. Gọi Hotline: 0938.415.218</div>`;
-            }
-            container.scrollTop = container.scrollHeight;
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         }
     </script>
 </body>

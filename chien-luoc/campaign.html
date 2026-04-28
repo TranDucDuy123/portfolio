@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Masterplan Đa Kênh Bifood - Đức Duy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'] }, colors: { neon: { cyan: '#00e5ff', pink: '#ff00ff', lime: '#ccff00' }, brutal: '#0f0f0f' }, boxShadow: { 'brutal-white': '4px 4px 0px 0px #ffffff', 'brutal-cyan': '4px 4px 0px 0px #00e5ff', 'brutal-pink': '4px 4px 0px 0px #ff00ff', 'brutal-lime': '4px 4px 0px 0px #ccff00' } } } }</script>
+    <style> 
+        body { background-color: #0f0f0f; color: #ffffff; overflow-x: hidden; } 
+        @media screen and (max-width: 768px) { input, textarea { font-size: 16px !important; } }
+        .bg-grid { background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 40px 40px; }
+    </style>
+</head>
+<body class="font-sans bg-grid">
+    
+    <nav class="fixed top-0 left-0 w-full bg-brutal/90 backdrop-blur-md z-50 border-b-4 border-white h-20 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 sm:gap-3">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-neon-cyan border-2 border-white rounded-lg flex items-center justify-center shadow-[4px_4px_0_0_#fff]"><i data-lucide="zap" class="text-black fill-black w-5 h-5"></i></div>
+                <div class="flex flex-col"><span class="font-display font-extrabold text-lg sm:text-xl md:text-2xl uppercase tracking-tighter leading-none">ĐỨC DUY</span></div>
+            </a>
+            <div class="hidden lg:flex items-center gap-6 font-display font-bold text-sm uppercase">
+                <a href="index.html" class="hover:text-neon-cyan transition-colors text-white">Trang Chủ</a>
+                <a href="bifood.html" class="hover:text-neon-lime transition-colors text-white flex items-center gap-1"><i data-lucide="star" class="w-4 h-4"></i> Case Study</a>
+                <a href="campaign.html" class="text-neon-pink border-b-2 border-neon-pink pb-1">Chiến Lược Masterplan</a>
+                <a href="brief.html" class="bg-white text-black px-6 py-2 border-2 border-white shadow-brutal-white hover:translate-x-1 hover:-translate-y-1 transition-all">GỬI YÊU CẦU</a>
+            </div>
+            <button onclick="toggleMobileMenu()" class="lg:hidden p-2 bg-white text-black border-2 border-black rounded-lg"><i data-lucide="menu"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-brutal border-b-4 border-white p-6 flex flex-col gap-4 font-display font-bold uppercase shadow-2xl z-50">
+            <a href="index.html" class="text-white hover:text-neon-cyan pb-2 border-b border-white/10">Trang Chủ</a>
+            <a href="bifood.html" class="text-white pb-2 border-b border-white/10">Case Study (Bifood)</a>
+            <a href="campaign.html" class="text-neon-pink pb-2 border-b border-white/10">Chiến Lược Masterplan</a>
+            <a href="brief.html" class="bg-neon-cyan text-black px-4 py-3 text-center border-2 border-white rounded-lg mt-2">GỬI BRIEF</a>
+        </div>
+    </nav>
+
+    <main class="pt-28 md:pt-32 pb-16 md:pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- BREADCRUMB -->
+        <div class="mb-8 flex items-center gap-2 text-xs md:text-sm font-bold uppercase font-display text-white/50">
+            <a href="index.html" class="hover:text-neon-cyan transition-colors">Trang Chủ</a> <i data-lucide="chevron-right" class="w-3 h-3 md:w-4 md:h-4"></i>
+            <span class="text-neon-pink">Bifood Masterplan</span>
+        </div>
+
+        <div class="text-center mb-16 md:mb-20">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 border-2 border-white rounded-full font-display font-bold uppercase text-[10px] md:text-xs bg-neon-pink text-black shadow-brutal-white mb-6"><i data-lucide="lock" class="w-3 h-3"></i> Phân Tích Chiến Lược</div>
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-display font-extrabold uppercase leading-tight tracking-tighter mb-6">
+                HỆ SINH THÁI ĐA KÊNH <br> <span class="text-transparent" style="-webkit-text-stroke: 2px #ff00ff; text-shadow: 4px 4px 0 #ff00ff;">BIFOOD.COM.VN</span>
+            </h1>
+            <p class="text-lg md:text-xl font-medium text-white/70 max-w-3xl mx-auto">
+                Bán lẻ thức ăn thú cưng không chỉ là đăng bài Facebook. Đây là lộ trình xây dựng "Cỗ máy chốt sale" tự động, phân bổ rõ vai trò của từng kênh: TikTok, Facebook, Website và Zalo.
+            </p>
+        </div>
+
+        <!-- PHẦN 1: VISUAL LUỒNG TƯƠNG TÁC (HERO) -->
+        <div class="flex flex-col lg:flex-row items-center gap-8 md:gap-12 bg-[#111] border-[4px] border-white rounded-3xl md:rounded-[3rem] p-6 sm:p-8 md:p-12 shadow-brutal-pink overflow-hidden relative mb-24">
+            <div class="absolute inset-0 bg-gradient-to-r from-neon-pink/10 to-neon-cyan/10 opacity-50 z-0"></div>
+            
+            <div class="w-full lg:w-1/2 relative z-10 space-y-6">
+                <h3 class="text-3xl md:text-5xl font-display font-extrabold uppercase text-white leading-none">
+                    LUỒNG TƯƠNG TÁC <br><span class="text-neon-cyan">KHÁCH HÀNG</span>
+                </h3>
+                <p class="text-white/60 font-medium pb-4 border-b border-white/20">Hành trình biến một người lạ trên mạng xã hội thành khách hàng trung thành mua định kỳ hàng tháng.</p>
+                
+                <div class="space-y-4 font-sans font-medium">
+                    <div class="flex items-start gap-4 bg-black/50 p-4 rounded-xl border border-white/10">
+                        <div class="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center border border-blue-500/50 shrink-0"><span class="text-blue-400 font-bold">1</span></div>
+                        <div>
+                            <h4 class="text-blue-400 font-bold uppercase mb-1">Thu Hút (TikTok / FB Ads)</h4>
+                            <p class="text-xs text-white/70">Khách lướt xem video chó mèo dễ thương hoặc mẹo trị bệnh. Thấy quảng cáo sản phẩm và click vào Link Bio/Ads.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-black/50 p-4 rounded-xl border border-white/10">
+                        <div class="w-8 h-8 rounded-full bg-neon-cyan/20 flex items-center justify-center border border-neon-cyan/50 shrink-0"><span class="text-neon-cyan font-bold">2</span></div>
+                        <div>
+                            <h4 class="text-neon-cyan font-bold uppercase mb-1">Cân Nhắc & Chốt Đơn (Website)</h4>
+                            <p class="text-xs text-white/70">Khách truy cập Web. Dùng bộ lọc tìm đúng hạt cho "Mèo biếng ăn". Xem bài Blog kiến thức (Trust). Thêm vào giỏ hàng hoặc bấm gọi.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-black/50 p-4 rounded-xl border border-white/10">
+                        <div class="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center border border-green-500/50 shrink-0"><span class="text-green-400 font-bold">3</span></div>
+                        <div>
+                            <h4 class="text-green-400 font-bold uppercase mb-1">Giữ Chân & Up-sale (Zalo/FB Group)</h4>
+                            <p class="text-xs text-white/70">Nhắn tin Zalo hỏi thăm sau 30 ngày (chu kỳ hết hạt). Tự động gửi voucher khuyến mãi để khách mua lại.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2 relative z-10 flex justify-center mt-6 lg:mt-0">
+                <div class="relative w-full max-w-[500px] border-4 border-white rounded-2xl md:rounded-[2rem] overflow-hidden shadow-[0_0_40px_rgba(255,0,255,0.3)]">
+                    <img src="image_69be36.jpg" alt="Phân bổ giao diện đa kênh" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700">
+                    <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-6 text-center">
+                        <span class="font-display font-bold uppercase tracking-widest text-neon-pink">Master of Omnichannel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHẦN 2: CHI TIẾT TỪNG KÊNH (BENTO GRID) -->
+        <div class="mb-24">
+            <h2 class="text-4xl md:text-5xl font-display font-extrabold uppercase text-center mb-12 border-b-4 border-white/10 pb-6">NHIỆM VỤ TỪNG KÊNH</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- TIKTOK -->
+                <div class="bg-[#121212] border-4 border-white p-8 rounded-[2rem] shadow-brutal-white group hover:bg-[#1a1a1a] transition-colors relative overflow-hidden">
+                    <div class="absolute -right-6 -top-6 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
+                    <div class="flex items-center gap-4 mb-6 relative z-10">
+                        <div class="w-14 h-14 bg-black border-2 border-white rounded-xl flex items-center justify-center"><i data-lucide="music-2" class="text-white w-7 h-7"></i></div>
+                        <div>
+                            <h3 class="text-3xl font-display font-extrabold text-white uppercase">TikTok & Shorts</h3>
+                            <p class="text-neon-cyan font-bold text-sm uppercase tracking-wide">Kênh Kéo Traffic Mặn (Awareness)</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 font-sans text-sm text-white/70 relative z-10">
+                        <p><strong class="text-white">Nội dung nên làm:</strong> Đừng đăng bán hàng nhàm chán. Hãy làm Short Video giải trí: Khoảnh khắc chó mèo hài hước, Mẹo vặt "1 phút trị mèo kén ăn", Unbox hạt mới.</p>
+                        <p><strong class="text-white">Mục tiêu:</strong> Viral thu hút lượt xem lớn. Kích thích sự tò mò để khách bấm vào Link Bio (trỏ thẳng về Website Bifood).</p>
+                    </div>
+                </div>
+
+                <!-- WEBSITE -->
+                <div class="bg-neon-cyan text-black border-4 border-black p-8 rounded-[2rem] shadow-brutal-cyan group relative overflow-hidden">
+                    <div class="flex items-center gap-4 mb-6 relative z-10">
+                        <div class="w-14 h-14 bg-black border-2 border-black rounded-xl flex items-center justify-center"><i data-lucide="globe" class="text-neon-cyan w-7 h-7"></i></div>
+                        <div>
+                            <h3 class="text-3xl font-display font-extrabold uppercase">WEBSITE BIFOOD</h3>
+                            <p class="font-bold text-sm uppercase tracking-wide opacity-80">Trạm Chốt Đơn & Niềm Tin (The Hub)</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 font-sans text-sm text-black/80 relative z-10">
+                        <p><strong>Nội dung nên làm:</strong> Xây dựng bộ lọc UX siêu nhạy (Theo độ tuổi, giống, tình trạng bệnh). Viết Blog chuẩn SEO các từ khóa ngách: "Hạt cho mèo sỏi thận", "Thức ăn giảm hôi phân".</p>
+                        <p><strong>Mục tiêu:</strong> Nơi duy nhất khách hàng xem kỹ thông tin dinh dưỡng, check nguồn gốc hàng nhập khẩu (Trust) và tiến hành Thanh toán / Nhấp gọi Zalo mà không bị phân tâm.</p>
+                    </div>
+                </div>
+
+                <!-- FACEBOOK -->
+                <div class="bg-blue-600 text-white border-4 border-white p-8 rounded-[2rem] shadow-brutal-white group relative overflow-hidden">
+                    <div class="flex items-center gap-4 mb-6 relative z-10">
+                        <div class="w-14 h-14 bg-white border-2 border-black rounded-xl flex items-center justify-center"><img src="../asset/img/facebook-app-symbol.png " alt="" class="text-blue-600 w-7 h-7 fill-current"></div>
+                        <div>
+                            <h3 class="text-3xl font-display font-extrabold uppercase">FACEBOOK (Page/Ads)</h3>
+                            <p class="text-blue-200 font-bold text-sm uppercase tracking-wide">Kênh Bám Đuổi & Cộng Đồng</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 font-sans text-sm text-white/90 relative z-10">
+                        <p><strong>Nội dung nên làm:</strong> Không bán hàng "chay". Đăng Feedback khách hàng, hóa đơn gửi hàng, các Minigame Give-away trên Fanpage.</p>
+                        <p><strong>Mục tiêu (Ads):</strong> Cài Facebook Pixel lên Website. Chạy quảng cáo Bám Đuổi (Retargeting) vào đúng những người đã vào web Bifood xem hạt nhưng chưa mua. Xuất hiện liên tục cho đến khi họ chốt!</p>
+                    </div>
+                </div>
+
+                <!-- ZALO -->
+                <div class="bg-white text-black border-4 border-black p-8 rounded-[2rem] shadow-brutal-white group relative overflow-hidden">
+                    <div class="flex items-center gap-4 mb-6 relative z-10">
+                        <div class="w-14 h-14 bg-blue-500 border-2 border-black rounded-xl flex items-center justify-center"><i data-lucide="message-circle" class="text-white w-7 h-7 fill-current"></i></div>
+                        <div>
+                            <h3 class="text-3xl font-display font-extrabold uppercase text-blue-600">ZALO OA / CÁ NHÂN</h3>
+                            <p class="font-bold text-sm uppercase tracking-wide opacity-70">Vũ Khí Giữ Chân Khách Cũ (Retention)</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 font-sans text-sm text-black/80 relative z-10">
+                        <p><strong>Nội dung nên làm:</strong> Đưa link Zalo lên mọi nơi trên Web. Khi khách mua xong 1 bịch hạt 2kg (thường ăn trong 1 tháng).</p>
+                        <p><strong>Mục tiêu:</strong> Đúng 25 ngày sau, gửi tin nhắn Zalo kịch bản: <em>"Bé nhà mình ăn sắp hết hạt chưa ạ? Bifood đang có voucher freeship cho đơn tháng này nè"</em>. Đây là mỏ vàng lợi nhuận (Tỷ lệ mua lại).</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- PHẦN 3: CALL TO ACTION -->
+        <div class="bg-[#1a1a1a] border-4 border-neon-pink p-8 md:p-16 rounded-[3rem] text-center shadow-brutal-pink relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=80')] opacity-10 object-cover"></div>
+            <div class="relative z-10">
+                <h3 class="text-3xl md:text-6xl font-display font-extrabold uppercase mb-6 leading-tight">
+                    SẴN SÀNG TRIỂN KHAI <br><span class="text-neon-pink">BIFOOD SYSTEM?</span>
+                </h3>
+                <p class="text-lg font-medium text-white/70 max-w-2xl mx-auto mb-10">Tôi đã vạch sẵn con đường, phần còn lại là hành động. Khởi tạo một nền tảng Web vững chắc trước khi bắt đầu đổ tiền vào quảng cáo.</p>
+                <a href="brief.html" class="inline-flex items-center gap-3 px-8 py-4 bg-neon-pink text-black font-display font-extrabold text-xl rounded-full border-4 border-black hover:scale-105 transition-transform uppercase shadow-brutal-white">
+                    Gửi Yêu Cầu Cho Đức Duy <i data-lucide="rocket"></i>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <script>lucide.createIcons(); function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }</script>
+</body>
+</html>
