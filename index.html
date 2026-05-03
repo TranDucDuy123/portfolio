@@ -1,34 +1,42 @@
 <!DOCTYPE html>
-<html lang="vi" class="dark">
+<html lang="vi" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>Đức Duy | Kiến Trúc Sư Hệ Sinh Thái Số & Tối Ưu Chuyển Đổi</title>
-    <meta name="description" content="Tôi không chỉ thiết kế website. Tôi xây dựng hệ thống tự động hóa kéo khách từ Facebook/TikTok và chuyển đổi thành đơn hàng.">
+    <title>Đức Duy | Web Trọn Gói Cho Cửa Hàng Địa Phương</title>
+    <meta name="description" content="Đưa cửa hàng của bạn lên Internet dễ như pha một ly trà đá. Các gói website thiết kế sẵn cho Quán Bida, Cafe, Dịch vụ địa phương.">
     
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fonts: Sử dụng font chữ to, dày, đậm chất Editorial/Retro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800;9..40,900&family=Space+Grotesk:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons & Tailwind -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Cấu hình Tailwind (Màu sắc theo phong cách Far-outtt) -->
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: { 
-                        sans: ['Inter', 'sans-serif'], 
+                        sans: ['DM Sans', 'sans-serif'], 
                         display: ['Space Grotesk', 'sans-serif'] 
                     },
                     colors: { 
-                        neon: { lime: '#ccff00', cyan: '#00e5ff', pink: '#ff00ff' }, 
-                        brutal: { dark: '#0a0a0a', card: '#121212' }
+                        brand: {
+                            paper: '#F4F0EA',  // Màu giấy ấm
+                            ink: '#1C1A17',    // Màu mực đen đậm
+                            orange: '#E25822', // Cam gạch
+                            yellow: '#E9C46A', // Vàng retro
+                            green: '#2A9D8F'   // Xanh vintage
+                        }
                     },
-                    boxShadow: { 
-                        'brutal': '6px 6px 0px 0px #000000', 
-                        'brutal-white': '4px 4px 0px 0px #ffffff',
-                        'brutal-cyan': '4px 4px 0px 0px #00e5ff',
-                        'brutal-lime': '4px 4px 0px 0px #ccff00'
+                    boxShadow: {
+                        'retro': '4px 4px 0px 0px #1C1A17',
+                        'retro-lg': '8px 8px 0px 0px #1C1A17',
                     }
                 }
             }
@@ -36,284 +44,308 @@
     </script>
 
     <style>
-        body { background-color: #0a0a0a; color: #ffffff; overflow-x: hidden; scroll-behavior: smooth; }
+        body { 
+            background-color: #F4F0EA; 
+            color: #1C1A17; 
+            overflow-x: hidden; 
+        }
         
-        /* Hiệu ứng nền chuyên nghiệp */
-        .bg-grid { background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px); background-size: 32px 32px; }
-        .noise-overlay { position: fixed; inset: 0; pointer-events: none; z-index: 50; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+        /* Hiệu ứng hạt nhiễu (Noise) đặc trưng của phong cách in ấn cũ */
+        .noise-overlay { 
+            position: fixed; inset: 0; pointer-events: none; z-index: 50; opacity: 0.05; 
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); 
+        }
 
-        /* Animation */
-        .fade-up { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; transform: translateY(20px); }
-        .delay-100 { animation-delay: 100ms; }
-        .delay-200 { animation-delay: 200ms; }
-        @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+        /* Border phong cách vẽ tay/retro */
+        .border-retro { border: 3px solid #1C1A17; }
 
-        /* Text Highlight */
-        .hl-cyan { position: relative; display: inline-block; z-index: 1; }
-        .hl-cyan::after { content: ''; position: absolute; bottom: 4px; left: -2%; width: 104%; height: 30%; background-color: #00e5ff; z-index: -1; transition: height 0.3s ease; }
-        .hl-cyan:hover::after { height: 100%; bottom: 0; }
-        
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0a0a0a; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #00e5ff; }
-        
-        @media screen and (max-width: 768px) { input, textarea { font-size: 16px !important; } }
+        /* Animation cho dải chữ chạy (Marquee) */
+        .marquee-container {
+            width: 100vw; overflow: hidden; white-space: nowrap; 
+            border-top: 3px solid #1C1A17; border-bottom: 3px solid #1C1A17;
+            background-color: #E9C46A; padding: 12px 0;
+            transform: rotate(-1deg) scale(1.05); margin-top: 2rem; margin-bottom: 2rem;
+            position: relative; z-index: 10;
+        }
+        .marquee-content {
+            display: inline-block; animation: marquee 20s linear infinite;
+            font-family: 'Space Grotesk', sans-serif; font-weight: 900; font-size: 1.25rem; text-transform: uppercase;
+        }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* Hiệu ứng xoay của Badge Sticker */
+        .spin-slow { animation: spin 10s linear infinite; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* Khung Ticket cho Gói Sản Phẩm */
+        .ticket-shape {
+            mask-image: radial-gradient(circle at top right, transparent 15px, black 16px),
+                        radial-gradient(circle at bottom right, transparent 15px, black 16px),
+                        radial-gradient(circle at top left, transparent 15px, black 16px),
+                        radial-gradient(circle at bottom left, transparent 15px, black 16px);
+            mask-size: 51% 51%; mask-repeat: no-repeat;
+            mask-position: top right, bottom right, top left, bottom left;
+        }
     </style>
 </head>
-<body class="font-sans bg-grid relative">
+<body class="antialiased selection:bg-brand-orange selection:text-white">
     <div class="noise-overlay"></div>
 
-    <!-- NAVIGATION -->
-    <nav class="fixed top-0 left-0 w-full bg-[#0a0a0a]/90 backdrop-blur-md z-40 border-b border-white/10 h-20 flex items-center">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 bg-white text-black flex items-center justify-center font-display font-black text-xl rounded-sm group-hover:bg-neon-cyan transition-colors">
-                    D
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-display font-extrabold text-xl uppercase tracking-tight leading-none text-white group-hover:text-neon-cyan transition-colors">ĐỨC DUY</span>
-                    <span class="text-[9px] text-white/50 font-bold uppercase tracking-widest mt-1">Web Strategist</span>
+    <!-- 1. NAVIGATION -->
+    <nav class="fixed top-0 w-full z-40 bg-brand-paper/90 backdrop-blur-sm border-b-3 border-brand-ink transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="font-display font-black text-2xl tracking-tighter bg-brand-ink text-brand-paper px-2 py-1 transform -rotate-2 group-hover:rotate-0 transition-transform">
+                    DUY.WEB
                 </div>
             </a>
             
-            <div class="hidden lg:flex items-center gap-8 font-display font-bold text-xs uppercase tracking-wide">
-                <a href="#about" class="text-white hover:text-neon-cyan transition-colors">Về Tôi</a>
-                <a href="#services" class="text-white hover:text-neon-lime transition-colors">Giải Pháp</a>
-                <a href="./chien-luoc/bifood.html" class="text-white hover:text-neon-pink transition-colors">Dự Án</a>
-                <a href="./chien-luoc/brief.html" class="bg-white text-black px-6 py-2.5 hover:bg-neon-cyan hover:shadow-brutal-cyan transition-all rounded-sm">HỢP TÁC NGAY</a>
+            <div class="hidden md:flex gap-8 items-center font-display font-bold text-sm uppercase">
+                <a href="#giai-phap" class="hover:text-brand-orange transition-colors">Vấn đề của bạn</a>
+                <a href="#goi-san-pham" class="hover:text-brand-orange transition-colors">Các Gói Web</a>
+                <a href="#quy-trinh" class="hover:text-brand-orange transition-colors">Cách làm việc</a>
             </div>
-            
-            <button onclick="toggleMobileMenu()" class="lg:hidden text-white p-2"><i data-lucide="menu"></i></button>
-        </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-brutal-dark border-b border-white/10 p-6 flex flex-col gap-4 font-display font-bold uppercase z-50 shadow-2xl">
-            <a href="#about" class="text-white pb-3 border-b border-white/10">Về Tôi</a>
-            <a href="#services" class="text-white pb-3 border-b border-white/10">Giải Pháp</a>
-            <a href="./chien-luoc/bifood.html" class="text-white pb-3 border-b border-white/10">Case Study Dự Án</a>
-            <a href="./chien-luoc/brief.html" class="bg-neon-cyan text-black px-4 py-3 text-center rounded-sm mt-2">GỬI YÊU CẦU</a>
+            <a href="https://zalo.me/0938415218" target="_blank" class="px-6 py-2 bg-brand-orange text-white font-display font-bold uppercase border-retro shadow-retro hover:translate-x-1 hover:-translate-y-1 transition-transform">
+                Nhận Báo Giá
+            </a>
         </div>
     </nav>
 
-    <!-- 1. HERO SECTION (Minimal & Impactful) -->
-    <section class="pt-32 pb-20 md:pt-40 md:pb-28 px-4 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 min-h-[90vh]">
-        <div class="w-full lg:w-3/5 space-y-8 z-10 fade-up">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 border border-white/20 rounded-full font-display font-semibold uppercase text-[10px] bg-white/5 text-white backdrop-blur-sm">
-                <span class="w-2 h-2 rounded-full bg-neon-lime animate-pulse"></span> Sẵn sàng tư vấn dự án mới 2026
-            </div>
-            
-            <h1 class="text-5xl sm:text-6xl md:text-[4.5rem] font-display font-extrabold leading-[1.05] tracking-tighter">
-                TÔI KHÔNG CHỈ LÀM WEB. TÔI XÂY <span class="hl-cyan text-black px-2">CỖ MÁY CHỐT ĐƠN.</span>
-            </h1>
-            
-            <p class="text-lg md:text-xl text-white/70 max-w-xl font-medium leading-relaxed">
-                Đừng đốt tiền vào quảng cáo nếu Website của bạn chỉ để trưng bày. Tôi giúp doanh nghiệp kiến tạo hệ sinh thái kéo khách từ Facebook/TikTok và chuyển đổi tối đa trên Website.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 pt-4 font-display">
-                <a href="brief.html" class="px-8 py-4 bg-white text-black font-extrabold text-base md:text-lg border-2 border-white hover:bg-transparent hover:text-white transition-all uppercase flex justify-center items-center gap-2 rounded-sm">
-                    Nhận Phân Tích Web <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                </a>
-                <a href="campaign.html" class="px-8 py-4 bg-transparent text-white font-extrabold text-base md:text-lg border-2 border-white/20 hover:border-white transition-all uppercase flex justify-center items-center rounded-sm">
-                    Xem Hệ Sinh Thái
-                </a>
-            </div>
-        </div>
-
-        <div class="w-full lg:w-2/5 flex justify-center lg:justify-end relative fade-up delay-200">
-            <!-- Portrait Image -->
-            <div class="relative z-10 w-[80%] md:w-full max-w-[400px] border-4 border-white shadow-brutal-white bg-brutal-dark rounded-sm overflow-hidden">
-                <img src="./asset/img/avt.jpg" alt="Đức Duy - Chuyên gia Website" class="w-full h-full object-cover grayscale-[15%] hover:grayscale-0 transition-all duration-500 aspect-[4/5]">
-                <div class="absolute bottom-4 left-4 right-4 bg-black/80 backdrop-blur-md border border-white/20 p-4 rounded-sm flex items-center justify-between font-display">
-                    <div>
-                        <p class="text-[10px] text-white/50 uppercase font-bold tracking-widest mb-1">Chuyên môn</p>
-                        <p class="text-sm text-neon-cyan font-bold">UX/UI & SEO</p>
-                    </div>
-                    <div class="text-right">
-                        <p class="text-[10px] text-white/50 uppercase font-bold tracking-widest mb-1">Kinh nghiệm</p>
-                        <p class="text-sm text-neon-lime font-bold">+5 Năm</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Glow effect -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-neon-cyan/20 rounded-full blur-[100px] z-0"></div>
-        </div>
-    </section>
-
-    <!-- 2. BENTO GRID - TRIẾT LÝ HỆ SINH THÁI -->
-    <section id="about" class="py-24 border-t border-white/10 bg-brutal-dark">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-up">
-                <h2 class="text-3xl md:text-5xl font-display font-extrabold uppercase tracking-tight mb-4">SỰ THẬT VỀ MARKETING ĐA KÊNH</h2>
-                <p class="text-white/60 font-medium max-w-2xl mx-auto">Nếu Website của bạn không có khả năng giữ chân khách hàng, mọi nỗ lực trên mạng xã hội đều là vô nghĩa.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(250px,auto)]">
+    <main class="pt-32">
+        
+        <!-- 2. HERO SECTION -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
                 
-                <!-- Bức ảnh Dynamic (Chiếm 2 cột trên Desktop) -->
-                <div class="md:col-span-2 md:row-span-2 rounded-2xl md:rounded-[2rem] border border-white/10 overflow-hidden relative group fade-up">
-                    <img src="image_69be36.jpg" alt="Hệ sinh thái Đa kênh" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent p-8 flex flex-col justify-end">
-                        <div class="bg-neon-pink text-black px-3 py-1 text-[10px] font-bold uppercase w-max mb-3 rounded-sm">Tư Duy Cốt Lõi</div>
-                        <h3 class="text-2xl md:text-4xl font-display font-extrabold text-white mb-2 leading-tight">Website là Trái Tim.<br>Social là Vệ Tinh.</h3>
-                        <p class="text-white/80 font-medium text-sm md:text-base max-w-md">Sử dụng sức mạnh Viral của TikTok/Facebook để hút lượng lớn Traffic, và dùng Website để "khóa" khách hàng vào phễu chốt đơn.</p>
+                <div class="w-full lg:w-3/5 space-y-6 text-center lg:text-left">
+                    <div class="inline-block border-retro px-4 py-1.5 rounded-full font-bold text-sm bg-white shadow-retro mb-4 transform -rotate-1">
+                        👉 Dành cho Chủ quán & Dịch vụ địa phương
+                    </div>
+                    
+                    <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-display font-black leading-[0.9] tracking-tighter text-brand-ink uppercase">
+                        Đưa cửa hàng <br> lên mạng. <br>
+                        <span class="text-brand-orange italic">Dễ như pha <br> một ly trà đá.</span>
+                    </h1>
+                    
+                    <p class="text-lg md:text-xl font-medium max-w-lg mx-auto lg:mx-0 pt-4">
+                        Quên đi những thuật ngữ công nghệ phức tạp. Duy cung cấp các <strong>Gói Website thiết kế sẵn</strong>, tối ưu cho từng ngành nghề, giúp khách hàng xung quanh tìm thấy bạn ngay trên Google.
+                    </p>
+                    
+                    <div class="pt-6 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start font-display">
+                        <a href="#goi-san-pham" class="px-8 py-4 bg-brand-ink text-brand-paper font-bold text-lg uppercase border-retro hover:bg-brand-orange hover:text-brand-ink transition-colors shadow-retro-lg flex items-center justify-center gap-2">
+                            Xem Các Gói Web <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Bento Item 1 -->
-                <div class="bg-brutal-card border border-white/10 p-8 rounded-2xl md:rounded-[2rem] flex flex-col justify-center hover:border-neon-cyan transition-colors fade-up delay-100">
-                    <i data-lucide="mouse-pointer-click" class="w-10 h-10 text-neon-cyan mb-6"></i>
-                    <h4 class="text-xl font-display font-bold uppercase mb-3 text-white">Tối Ưu Điểm Chạm</h4>
-                    <p class="text-sm text-white/60 font-medium">Lượt Click không tạo ra tiền, hành động (Điền form/Gọi điện) mới tạo ra tiền. Tôi thiết kế UX để ép khách hàng hành động.</p>
-                </div>
+                <div class="w-full lg:w-2/5 relative flex justify-center">
+                    <!-- Khung ảnh dán băng keo (Tape effect) -->
+                    <div class="relative w-full max-w-sm bg-white p-4 border-retro shadow-retro-lg transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                        <!-- Băng keo -->
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-24 h-8 bg-brand-paper/80 border border-brand-ink/20 opacity-80 transform -rotate-2 z-20"></div>
+                        
+                        <img src="./asset/img/avt.jpg" alt="Đức Duy" class="w-full h-auto border-retro filter grayscale sepia-[0.2] contrast-125">
+                        
+                        <div class="mt-4 text-center">
+                            <p class="font-display font-black text-xl uppercase">Đức Duy</p>
+                            <p class="text-sm font-bold text-brand-orange">Thợ Xây "Mặt Bằng Số"</p>
+                        </div>
 
-                <!-- Bento Item 2 -->
-                <div class="bg-neon-lime p-8 rounded-2xl md:rounded-[2rem] flex flex-col justify-center border-4 border-black shadow-brutal-white group hover:-translate-y-2 transition-transform fade-up delay-200 text-black">
-                    <i data-lucide="bar-chart-3" class="w-10 h-10 mb-6"></i>
-                    <h4 class="text-xl font-display font-extrabold uppercase mb-3">Tăng Trưởng Bền Vững</h4>
-                    <p class="text-sm font-bold opacity-80">Thay vì phụ thuộc 100% vào Ads, cấu trúc SEO chuẩn mực giúp doanh nghiệp của bạn liên tục nhận khách tự nhiên từ Google.</p>
+                        <!-- Sticker xoay tròn -->
+                        <div class="absolute -bottom-10 -left-10 w-28 h-28 bg-brand-yellow rounded-full border-retro flex items-center justify-center shadow-retro z-20">
+                            <div class="absolute inset-2 border-2 border-dashed border-brand-ink rounded-full spin-slow"></div>
+                            <span class="font-display font-black text-center text-sm uppercase leading-tight transform -rotate-12">
+                                Nhanh<br>Gọn<br>Rõ Ràng
+                            </span>
+                        </div>
+                    </div>
                 </div>
 
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 3. DỊCH VỤ (SERVICES) CHUYÊN NGHIỆP -->
-    <section id="services" class="py-24 border-t border-white/10 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <h2 class="text-3xl md:text-5xl font-display font-extrabold uppercase mb-16 tracking-tight text-center">NĂNG LỰC <span class="text-white/30">THỰC THI</span></h2>
+        <!-- 3. MARQUEE (DẢI CHỮ CHẠY) -->
+        <div class="marquee-container shadow-retro">
+            <div class="marquee-content">
+                <span>✦ TRỌN GÓI WEBSITE ✦ KHÔNG PHÍ ẨN ✦ LÊN TOP GOOGLE MAPS ✦ TỐI ƯU CHO MOBILE ✦ GIAO DIỆN CHUẨN NGÀNH ✦ TRỌN GÓI WEBSITE ✦ KHÔNG PHÍ ẨN ✦ LÊN TOP GOOGLE MAPS ✦ TỐI ƯU CHO MOBILE ✦</span>
+                <span>✦ TRỌN GÓI WEBSITE ✦ KHÔNG PHÍ ẨN ✦ LÊN TOP GOOGLE MAPS ✦ TỐI ƯU CHO MOBILE ✦ GIAO DIỆN CHUẨN NGÀNH ✦ TRỌN GÓI WEBSITE ✦ KHÔNG PHÍ ẨN ✦ LÊN TOP GOOGLE MAPS ✦ TỐI ƯU CHO MOBILE ✦</span>
+            </div>
+        </div>
+
+        <!-- 4. VẤN ĐỀ (Đồng cảm) -->
+        <section id="giai-phap" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-4xl md:text-6xl font-display font-black uppercase tracking-tighter text-center">
+                    Tại sao quán bạn <br> <span class="bg-brand-ink text-brand-paper px-2 transform rotate-1 inline-block">CẦN WEB NGAY?</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 font-medium">
+                <div class="bg-white border-retro p-6 shadow-retro relative">
+                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-brand-orange border-retro rounded-full flex items-center justify-center shadow-retro transform rotate-12">
+                        <i data-lucide="map-pin" class="text-white w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-black uppercase mb-3">Tàng hình trên mạng</h3>
+                    <p>Khách ở cách quán 500m mở điện thoại tìm "Quán bida gần đây" nhưng không thấy tên quán bạn. Bạn đang nhường tiền cho đối thủ.</p>
+                </div>
+
+                <div class="bg-white border-retro p-6 shadow-retro relative mt-8 md:mt-0">
+                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-brand-green border-retro rounded-full flex items-center justify-center shadow-retro transform -rotate-6">
+                        <i data-lucide="message-square-off" class="text-white w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-black uppercase mb-3">Trôi tin nhắn giờ cao điểm</h3>
+                    <p>Quán đang đông khách, nhân viên không kịp check inbox Facebook. Khách hỏi đặt bàn không ai trả lời, khách bực mình đi quán khác.</p>
+                </div>
+
+                <div class="bg-white border-retro p-6 shadow-retro relative mt-8 md:mt-0">
+                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-brand-yellow border-retro rounded-full flex items-center justify-center shadow-retro transform rotate-6">
+                        <i data-lucide="wallet" class="text-brand-ink w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-black uppercase mb-3">Sợ bị vẽ vời tốn kém</h3>
+                    <p>Muốn làm web nhưng sợ bị các công ty hét giá chục triệu, rồi làm xong bỏ xó không biết xài. Bạn cần một giải pháp "Ăn chắc mặc bền".</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. ĐÓNG GÓI SẢN PHẨM (CORE STRATEGY) -->
+        <section id="goi-san-pham" class="py-24 bg-brand-ink text-brand-paper border-y-3 border-brand-ink relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(#ffffff_2px,transparent_2px)] [background-size:24px_24px]"></div>
             
-            <div class="grid lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="border border-white/20 bg-black p-8 rounded-xl hover:bg-white hover:text-black transition-all group">
-                    <div class="w-14 h-14 bg-white/10 group-hover:bg-black/10 rounded-full flex items-center justify-center mb-8">
-                        <i data-lucide="layout-template" class="w-6 h-6 text-white group-hover:text-black"></i>
-                    </div>
-                    <h3 class="text-2xl font-display font-extrabold uppercase mb-4">UX/UI Conversion</h3>
-                    <p class="font-medium text-sm text-white/60 group-hover:text-black/70 leading-relaxed mb-6">
-                        Thiết kế giao diện độc quyền, tải trang < 2s. Luồng hành vi được tính toán kỹ lưỡng cho từng ngành (Nội thất, Garage, Bán lẻ) để tối đa hóa tỷ lệ chốt đơn (CRO).
-                    </p>
-                    <ul class="space-y-2 text-sm font-bold opacity-80">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-neon-cyan group-hover:text-blue-600"></i> Mobile-first Design</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-neon-cyan group-hover:text-blue-600"></i> Tối ưu luồng Thanh toán</li>
-                    </ul>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-6xl font-display font-black uppercase tracking-tighter mb-4 text-brand-yellow">Các Gói Web "Thực Chiến"</h2>
+                    <p class="text-xl font-medium max-w-2xl mx-auto">Chọn gói phù hợp với ngành của bạn. Chốt giá 1 lần, bàn giao trọn gói, không phí ẩn.</p>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="border border-white/20 bg-black p-8 rounded-xl hover:bg-neon-cyan hover:text-black transition-all group">
-                    <div class="w-14 h-14 bg-white/10 group-hover:bg-black/10 rounded-full flex items-center justify-center mb-8">
-                        <i data-lucide="search" class="w-6 h-6 text-white group-hover:text-black"></i>
-                    </div>
-                    <h3 class="text-2xl font-display font-extrabold uppercase mb-4">Technical SEO</h3>
-                    <p class="font-medium text-sm text-white/60 group-hover:text-black/70 leading-relaxed mb-6">
-                        Đẩy doanh nghiệp lên TOP 1 Google Local Maps. Cấu trúc HTML sạch, gắn Schema Entity định danh giúp Google hiểu và ưu tiên xếp hạng website của bạn.
-                    </p>
-                    <ul class="space-y-2 text-sm font-bold opacity-80">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-white group-hover:text-black"></i> Cấu trúc Silo Content</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-white group-hover:text-black"></i> Tối ưu Core Web Vitals</li>
-                    </ul>
-                </div>
+                <div class="grid lg:grid-cols-2 gap-8">
+                    
+                    <!-- GÓI 1: BIDA / CAFE -->
+                    <div class="bg-brand-paper text-brand-ink border-retro p-2 shadow-[8px_8px_0px_0px_#E9C46A] transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="border-3 border-dashed border-brand-ink p-6 md:p-8 h-full flex flex-col">
+                            <div class="flex justify-between items-start mb-6">
+                                <div>
+                                    <span class="bg-brand-ink text-brand-paper px-3 py-1 font-bold text-xs uppercase rounded-full mb-3 inline-block">Gói F&B / Giải Trí</span>
+                                    <h3 class="text-3xl font-display font-black uppercase leading-none">CLB Bida & Quán Cafe</h3>
+                                </div>
+                                <div class="w-16 h-16 bg-brand-orange rounded-full border-retro flex items-center justify-center shadow-retro shrink-0 transform rotate-12">
+                                    <i data-lucide="coffee" class="text-white w-8 h-8"></i>
+                                </div>
+                            </div>
+                            
+                            <p class="font-bold mb-6 text-brand-orange">Dành cho: Quán Bida, Quán Cafe, Nhà hàng muốn tự động hóa đặt bàn.</p>
+                            
+                            <ul class="space-y-3 font-medium mb-8 flex-1">
+                                <li class="flex items-center gap-3"><i data-lucide="check" class="text-brand-green w-5 h-5 shrink-0"></i> 1 Trang chủ hiển thị Bảng giá, Menu, Hình ảnh quán đẹp mắt.</li>
+                                <li class="flex items-center gap-3"><i data-lucide="check" class="text-brand-green w-5 h-5 shrink-0"></i> Tích hợp nút <strong>Đặt Bàn Zalo 1 Chạm</strong> (Khách bấm là nhảy sang Zalo, không trôi tin nhắn).</li>
+                                <li class="flex items-center gap-3"><i data-lucide="check" class="text-brand-green w-5 h-5 shrink-0"></i> Cài đặt Google Maps để khách tìm là thấy đường đi.</li>
+                            </ul>
 
-                <!-- Service 3 -->
-                <div class="border border-white/20 bg-black p-8 rounded-xl hover:bg-neon-pink hover:text-black transition-all group">
-                    <div class="w-14 h-14 bg-white/10 group-hover:bg-black/10 rounded-full flex items-center justify-center mb-8">
-                        <i data-lucide="bot" class="w-6 h-6 text-white group-hover:text-black"></i>
+                            <a href="https://zalo.me/0938415218" class="w-full py-4 bg-brand-ink text-white font-display font-bold text-lg uppercase text-center border-retro hover:bg-brand-orange hover:text-brand-ink transition-colors shadow-retro mt-auto">
+                                Chọn Gói Này
+                            </a>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-display font-extrabold uppercase mb-4">Automation & Tracking</h3>
-                    <p class="font-medium text-sm text-white/60 group-hover:text-black/70 leading-relaxed mb-6">
-                        Cài đặt Facebook Pixel, Google GA4 để đo lường chính xác hiệu quả quảng cáo. Tích hợp Zalo OA, AI Chatbot để chăm sóc khách hàng 24/7 không rớt đơn.
-                    </p>
-                    <ul class="space-y-2 text-sm font-bold opacity-80">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-white group-hover:text-black"></i> Phễu Remarketing</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-white group-hover:text-black"></i> Chatbot Kịch bản</li>
-                    </ul>
+
+                    <!-- GÓI 2: DỊCH VỤ ĐỊA PHƯƠNG -->
+                    <div class="bg-brand-paper text-brand-ink border-retro p-2 shadow-[8px_8px_0px_0px_#2A9D8F] transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="border-3 border-dashed border-brand-ink p-6 md:p-8 h-full flex flex-col">
+                            <div class="flex justify-between items-start mb-6">
+                                <div>
+                                    <span class="bg-brand-ink text-brand-paper px-3 py-1 font-bold text-xs uppercase rounded-full mb-3 inline-block">Gói Dịch Vụ Trust</span>
+                                    <h3 class="text-3xl font-display font-black uppercase leading-none">Phòng Khám & Cửa Hàng</h3>
+                                </div>
+                                <div class="w-16 h-16 bg-brand-green rounded-full border-retro flex items-center justify-center shadow-retro shrink-0 transform -rotate-12">
+                                    <i data-lucide="store" class="text-white w-8 h-8"></i>
+                                </div>
+                            </div>
+                            
+                            <p class="font-bold mb-6 text-brand-green">Dành cho: Nha khoa, Garage sửa xe, Tiệm Spa, Xưởng nội thất.</p>
+                            
+                            <ul class="space-y-3 font-medium mb-8 flex-1">
+                                <li class="flex items-center gap-3"><i data-lucide="check" class="text-brand-orange w-5 h-5 shrink-0"></i> Trang chủ tập trung khoe uy tín: Đội ngũ, Máy móc, Feedback khách hàng.</li>
+                                <li class="flex items-center gap-3"><i data-lucide="check" class="text-brand-orange w-5 h-5 shrink-0"></i> Cấu trúc <strong>Local SEO</strong> giúp lên Top Google khi khách tìm "Dịch vụ + Tên Quận".</li>
+                                <li class="flex items-center gap-3"><i data-lucide="check" class="text-brand-orange w-5 h-5 shrink-0"></i> Nút Gọi Khẩn Cấp nổi bần bật trên điện thoại.</li>
+                            </ul>
+
+                            <a href="https://zalo.me/0938415218" class="w-full py-4 bg-brand-ink text-white font-display font-bold text-lg uppercase text-center border-retro hover:bg-brand-green hover:text-brand-ink transition-colors shadow-retro mt-auto">
+                                Chọn Gói Này
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 4. HIGHLIGHT CASE STUDY -->
-    <section class="py-24 border-t border-white/10 bg-[#111]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-white/20 pb-6">
-                <div>
-                    <h2 class="text-4xl md:text-5xl font-display font-extrabold uppercase tracking-tight">DỰ ÁN CHỨNG MINH</h2>
-                    <p class="text-white/50 mt-2 font-medium">Nói ít làm nhiều. Kết quả là thước đo duy nhất.</p>
-                </div>
+        <!-- 6. QUY TRÌNH (Bước đơn giản) -->
+        <section id="quy-trinh" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-black uppercase tracking-tighter mb-4">Làm việc với Duy</h2>
+                <p class="text-lg font-medium">3 bước gọn gàng, không nói vòng vo chuyên ngành.</p>
             </div>
 
-            <!-- Bifood Card -->
-            <div class="group flex flex-col lg:flex-row bg-black border border-white/20 rounded-2xl overflow-hidden hover:border-neon-lime transition-colors duration-300">
-                <div class="w-full lg:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-                    <div class="flex items-center gap-3 mb-6">
-                        <span class="bg-white/10 text-white px-3 py-1 rounded font-bold text-[10px] uppercase tracking-widest">E-commerce</span>
-                        <span class="text-neon-lime text-sm font-bold"><i data-lucide="trending-up" class="inline w-4 h-4 mr-1"></i> +200% Traffic</span>
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <!-- Đường nối đứt nét (Chỉ hiện trên desktop) -->
+                <div class="hidden md:block absolute top-12 left-20 right-20 border-t-4 border-dashed border-brand-ink z-0"></div>
+
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <div class="w-24 h-24 bg-white border-retro rounded-full flex flex-col items-center justify-center shadow-retro mb-6 transform rotate-6">
+                        <span class="font-display font-black text-2xl">01</span>
                     </div>
-                    <h3 class="text-4xl font-display font-extrabold uppercase mb-4">BIFOOD.COM.VN</h3>
-                    <p class="text-white/60 font-medium mb-8 leading-relaxed">
-                        Đập đi xây lại luồng UX lọc sản phẩm theo bệnh lý thú cưng. Xây dựng cấu trúc SEO Silo đè bẹp đối thủ cũ, chốt 20 đơn/ngày hoàn toàn tự nhiên từ Google.
-                    </p>
-                    <a href="bifood.html" class="inline-flex items-center gap-2 text-white font-bold uppercase text-sm group-hover:text-neon-lime transition-colors w-max pb-1 border-b-2 border-transparent group-hover:border-neon-lime">
-                        Xem chi tiết phân tích <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    <h3 class="text-2xl font-display font-black uppercase mb-2 bg-brand-yellow px-2 inline-block">Alo Cho Duy</h3>
+                    <p class="font-medium">Anh chị nhắn Zalo báo muốn làm web cho quán gì. Duy sẽ gửi mẫu và báo đúng 1 mức giá.</p>
+                </div>
+
+                <div class="relative z-10 flex flex-col items-center text-center mt-8 md:mt-0">
+                    <div class="w-24 h-24 bg-white border-retro rounded-full flex flex-col items-center justify-center shadow-retro mb-6 transform -rotate-3">
+                        <span class="font-display font-black text-2xl">02</span>
+                    </div>
+                    <h3 class="text-2xl font-display font-black uppercase mb-2 bg-brand-orange text-white px-2 inline-block">Duy Triển Khai</h3>
+                    <p class="font-medium">Anh chị gửi Duy bảng giá, hình ảnh quán. Duy bắt tay vào code trang web và thiết lập Google Maps.</p>
+                </div>
+
+                <div class="relative z-10 flex flex-col items-center text-center mt-8 md:mt-0">
+                    <div class="w-24 h-24 bg-white border-retro rounded-full flex flex-col items-center justify-center shadow-retro mb-6 transform rotate-3">
+                        <span class="font-display font-black text-2xl">03</span>
+                    </div>
+                    <h3 class="text-2xl font-display font-black uppercase mb-2 bg-brand-green text-white px-2 inline-block">Bàn Giao & Mở Cửa</h3>
+                    <p class="font-medium">Từ 5-7 ngày, web hoàn thiện. Duy giao "chìa khóa" và hỗ trợ nếu anh chị cần đổi bảng giá sau này.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. CTA CUỐI CÙNG -->
+        <section class="py-20 border-t-3 border-brand-ink bg-white">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-display font-black uppercase tracking-tighter mb-8">
+                    SẴN SÀNG ĐÓN KHÁCH TỪ <span class="text-brand-orange underline decoration-8 underline-offset-4">GOOGLE?</span>
+                </h2>
+                <div class="flex flex-col sm:flex-row justify-center gap-6 font-display">
+                    <a href="https://zalo.me/0938415218" class="px-10 py-5 bg-brand-orange text-white font-black text-xl uppercase border-retro shadow-retro hover:translate-x-1 hover:-translate-y-1 transition-transform flex items-center justify-center gap-3">
+                        <i data-lucide="message-circle" class="w-6 h-6"></i> Nhắn Zalo Cho Duy
                     </a>
                 </div>
-                <div class="w-full lg:w-1/2 relative overflow-hidden bg-[#1a1a1a] min-h-[300px]">
-                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80" alt="Bifood" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700">
-                </div>
+                <p class="mt-6 font-bold text-lg">Hotline trực tiếp: 0938.415.218</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 5. CTA SECTION -->
-    <section class="py-32 bg-neon-cyan relative overflow-hidden">
-        <div class="max-w-4xl mx-auto px-4 text-center relative z-10 text-black">
-            <h2 class="text-5xl md:text-7xl font-display font-extrabold uppercase leading-[0.9] tracking-tighter mb-8">
-                SẴN SÀNG ĐỂ <br>THAY ĐỔI CUỘC CHƠI?
-            </h2>
-            <p class="text-xl font-bold mb-12 max-w-2xl mx-auto opacity-80">
-                Để lại thông tin dự án. Tôi sẽ phân tích (Audit) hoàn toàn miễn phí hệ thống Website hiện tại của bạn và chỉ ra những điểm đang làm bạn rớt đơn.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="brief.html" class="px-8 py-4 bg-black text-white font-display font-extrabold text-lg rounded-sm hover:-translate-y-1 hover:shadow-brutal-white transition-all uppercase flex justify-center items-center gap-2">
-                    Bắt Đầu Yêu Cầu <i data-lucide="file-text" class="w-5 h-5"></i>
-                </a>
-                <a href="https://zalo.me/0938415218" target="_blank" class="px-8 py-4 bg-transparent text-black border-2 border-black font-display font-extrabold text-lg rounded-sm hover:bg-black hover:text-white transition-all uppercase flex justify-center items-center gap-2">
-                    Nhắn Zalo <i data-lucide="message-circle" class="w-5 h-5"></i>
-                </a>
-            </div>
-        </div>
-        <!-- Deco -->
-        <div class="absolute -right-20 -bottom-20 w-96 h-96 border-[40px] border-black/10 rounded-full"></div>
-    </section>
+    </main>
 
     <!-- FOOTER -->
-    <footer class="bg-black py-12 border-t border-white/20">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-center md:text-left">
-                <span class="font-display font-extrabold text-2xl uppercase tracking-tighter text-white">ĐỨC DUY.</span>
-                <p class="text-white/40 text-xs font-medium mt-1">Web Architect & Growth Partner</p>
+    <footer class="bg-brand-ink text-brand-paper py-12 border-t-4 border-brand-orange">
+        <div class="max-w-7xl mx-auto px-4 text-center flex flex-col items-center">
+            <div class="font-display font-black text-3xl tracking-tighter bg-white text-brand-ink px-2 py-1 transform rotate-2 mb-6">
+                DUY.WEB
             </div>
-            <div class="flex gap-4">
-                <a href="https://zalo.me/0938415218" class="text-white/60 hover:text-white transition-colors"><i data-lucide="phone" class="w-5 h-5"></i></a>
-                <a href="https://www.facebook.com/tran.duc.duy.742865/" class="text-white/60 hover:text-white transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-            </div>
+            <p class="font-medium mb-2">Thợ xây mặt bằng số - Thiết kế web & Local SEO</p>
+            <p class="font-bold opacity-50 text-sm uppercase tracking-widest">© 2026. LÀM BẰNG SỰ TẬN TÂM.</p>
         </div>
     </footer>
 
     <script>
         lucide.createIcons();
-        function toggleMobileMenu() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        }
-        
-        // Simple fade-up animation trigger on load
-        window.addEventListener('load', () => {
-            document.querySelectorAll('.fade-up').forEach(el => {
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
-            });
-        });
     </script>
 </body>
 </html>
