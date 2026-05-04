@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học Viện Bida 3C Trường Kame - QTBilliards Ecosystem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0A192F; /* Xanh navy đậm (Background) */
+            --accent-gold: #FFD700; /* Vàng gold (Điểm nhấn) */
+            --text-light: #E6F1FF;
+            --text-muted: #8892B0;
+            --bg-section: #112240;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 { color: var(--text-light); font-weight: 800; }
+        h2 { font-size: 2.5rem; text-align: center; margin-bottom: 40px; }
+        .accent { color: var(--accent-gold); }
+        .btn { display: inline-block; padding: 12px 24px; border-radius: 4px; font-weight: 700; text-decoration: none; transition: all 0.3s; cursor: pointer;}
+        .btn-gold { background-color: var(--accent-gold); color: var(--primary-blue); border: none; }
+        .btn-gold:hover { background-color: #E6C200; transform: translateY(-2px); }
+        .btn-outline { border: 2px solid var(--accent-gold); color: var(--accent-gold); margin-left: 15px;}
+        .btn-outline:hover { background-color: rgba(255, 215, 0, 0.1); }
+
+        /* --- HEADER --- */
+        header {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 1.5rem; font-weight: 800; }
+        .logo span { color: var(--accent-gold); }
+        nav ul { list-style: none; display: flex; gap: 30px; }
+        nav a { color: var(--text-light); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        nav a:hover { color: var(--accent-gold); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 120px 0;
+            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.9)), url('https://i.imgur.com/5c58G9Z.jpg') no-repeat center center/cover; /* Ảnh placeholder bida */
+            text-align: center;
+        }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px; }
+
+        /* --- SECTIONS --- */
+        section { padding: 80px 0; }
+
+        /* --- COURSES (Tầng 1) --- */
+        .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .course-card { background-color: var(--bg-section); border-radius: 12px; overflow: hidden; transition: transform 0.3s; border: 1px solid transparent; }
+        .course-card:hover { transform: translateY(-10px); border-color: var(--accent-gold); }
+        .course-thumb { height: 200px; background-color: #233554; position: relative; } /* Placeholder ảnh khóa học */
+        .course-content { padding: 25px; }
+        .course-level { font-size: 0.8rem; color: var(--accent-gold); text-transform: uppercase; font-weight: 700; letter-spacing: 1px;}
+        .course-title { font-size: 1.3rem; margin: 10px 0; }
+        .course-desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; }
+        .course-meta { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #233554; padding-top: 15px;}
+        .price { font-weight: 700; font-size: 1.2rem;}
+
+        /* --- ECOSYSTEM INTEGRATION (Tầng 2 & 3) --- */
+        .ecosystem-section { background-color: var(--bg-section); }
+        .ecosystem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .eco-box { padding: 40px; background-color: rgba(255,215,0,0.05); border-radius: 16px; border: 1px solid rgba(255,215,0,0.2); }
+        .eco-box h3 { font-size: 1.8rem; margin-bottom: 15px; }
+        .eco-box p { color: var(--text-muted); margin-bottom: 30px; }
+        .eco-box ul { list-style: none; padding: 0; margin-bottom: 30px; }
+        .eco-box li { margin-bottom: 10px; display: flex; align-items: center; }
+        .eco-box li::before { content: "✓"; color: var(--accent-gold); margin-right: 10px; font-weight: bold; }
+        
+        /* --- FOOTER --- */
+        footer { background-color: #061121; padding: 50px 0; text-align: center; color: var(--text-muted); font-size: 0.9rem;}
+        .footer-logos { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; opacity: 0.7; }
+        .footer-logos img { height: 40px; } /* Placeholder cho logo */
+
+    </style>
+</head>
+<body>
+
+    <header class="container">
+        <div class="logo">TRUONGKAME <span>ACADEMY</span></div>
+        <nav>
+            <ul>
+                <li><a href="#">Khóa Học</a></li>
+                <li><a href="#">Về HLV</a></li>
+                <li><a href="#">Shop Phụ Kiện (QT)</a></li>
+                <li><a href="#">Tư Vấn Mở CLB (ABB)</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="btn btn-gold" style="padding: 8px 16px; font-size: 0.9rem;">Vào Học</a>
+    </header>
+
+    <!-- === HERO SECTION (Định vị & Ấn tượng) === -->
+    <section class="hero">
+        <div class="container">
+            <h1>Làm Chủ Đường Bi <span class="accent">3 Băng</span> <br> Từ Nền Tảng Đến Đỉnh Cao</h1>
+            <p>Hệ thống đào tạo trực tuyến chuẩn mực độc quyền của HLV Trường Kame.<br>Một sản phẩm chiến lược thuộc hệ sinh thái QTBilliards & ABBGroup.</p>
+            <div>
+                <a href="#courses" class="btn btn-gold">XEM CÁC KHÓA HỌC</a>
+                <a href="#" class="btn btn-outline">HỌC THỬ MIỄN PHÍ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- === CÁC KHÓA HỌC CHÍNH (Tầng 1: E-Learning) === -->
+    <section id="courses" class="container">
+        <h2>Chương Trình Đào Tạo <span class="accent">Trọng Điểm</span></h2>
+        <div class="course-grid">
+            <!-- Khóa 1 -->
+            <div class="course-card">
+                <div class="course-thumb" style="background-image: url('https://via.placeholder.com/400x250/112240/FFD700?text=Khoa+Hoc+So+Cap'); background-size: cover;"></div>
+                <div class="course-content">
+                    <div class="course-level">SƠ CẤP - NỀN TẢNG</div>
+                    <h3 class="course-title">Nhập Môn 3C Vững Chắc</h3>
+                    <p class="course-desc">Xây dựng bộ cầu tay, tư thế chuẩn và các cú đánh nền tảng quan trọng nhất cho người mới bắt đầu.</p>
+                    <div class="course-meta">
+                        <span class="price">1.299.000đ</span>
+                        <a href="#" style="color: var(--accent-gold); text-decoration: none; font-weight: 600;">Xem chi tiết →</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Khóa 2 -->
+            <div class="course-card">
+                <div class="course-thumb" style="background-image: url('https://via.placeholder.com/400x250/112240/FFD700?text=Khoa+Hoc+Trung+Cap'); background-size: cover;"></div>
+                <div class="course-content">
+                    <div class="course-level">TRUNG CẤP - KỸ THUẬT</div>
+                    <h3 class="course-title">Bộ Nút Số & Hệ Thống Độc Quyền</h3>
+                    <p class="course-desc">Nắm vững các hệ thống tính toán khoa học, logic để tự tin xử lý các hình bi phức tạp.</p>
+                    <div class="course-meta">
+                        <span class="price">2.499.000đ</span>
+                        <a href="#" style="color: var(--accent-gold); text-decoration: none; font-weight: 600;">Xem chi tiết →</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Khóa 3 -->
+            <div class="course-card">
+                <div class="course-thumb" style="background-image: url('https://via.placeholder.com/400x250/112240/FFD700?text=Khoa+Hoc+Nang+Cao'); background-size: cover;"></div>
+                <div class="course-content">
+                    <div class="course-level">NÂNG CAO - THI ĐẤU</div>
+                    <h3 class="course-title">Chiến Thuật & Tâm Lý Thi Đấu</h3>
+                    <p class="course-desc">Tối ưu hóa việc chọn giải pháp, kiểm soát lực bi cái và rèn luyện tâm lý thép khi thi đấu.</p>
+                    <div class="course-meta">
+                        <span class="price">3.999.000đ</span>
+                        <a href="#" style="color: var(--accent-gold); text-decoration: none; font-weight: 600;">Xem chi tiết →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === HỆ SINH THÁI TÍCH HỢP (Tầng 2 & 3: Upsell) === -->
+    <section class="ecosystem-section">
+        <div class="container">
+            <h2>Hơn Cả Một Khóa Học - <span class="accent">Hệ Sinh Thái Toàn Diện</span></h2>
+            <div class="ecosystem-grid">
+                
+                <!-- Tầng 2: Upsell Phụ kiện -->
+                <div class="eco-box">
+                    <h3>Đặc Quyền Học Viên <span class="accent">QTBilliards</span></h3>
+                    <p>Học viên chính thức được hưởng các ưu đãi độc quyền khi mua sắm trang thiết bị để nâng cao kỹ năng.</p>
+                    <ul>
+                        <li>Giảm 10-15% khi mua cơ và phụ kiện cá nhân tại QT Shop.</li>
+                        <li>Được HLV tư vấn chọn dòng cơ phù hợp với lối đánh.</li>
+                        <li>Tham gia cộng đồng VIP giao lưu và sửa lỗi kỹ thuật.</li>
+                    </ul>
+                    <a href="#" class="btn btn-gold" style="width: 100%; text-align: center;">KHÁM PHÁ QT SHOP</a>
+                </div>
+
+                <!-- Tầng 3: Upsell Vận hành CLB -->
+                <div class="eco-box" style="background: linear-gradient(45deg, #112240, #1a2f55); border-color: var(--accent-gold);">
+                    <h3>Dành Cho Nhà Đầu Tư <span class="accent">Kinh Doanh CLB</span></h3>
+                    <p>Bạn đam mê bida và muốn biến nó thành công việc kinh doanh sinh lời? Đừng chỉ đầu tư phần cứng, hãy đầu tư vào tư duy vận hành.</p>
+                    <ul>
+                        <li>Tư vấn mô hình kinh doanh CLB hiệu quả từ ABBGroup.</li>
+                        <li>Khóa học chuyên sâu: "CEO Bida Thực Chiến - Trị Bệnh Vận Hành".</li>
+                        <li>Ưu đãi đặc biệt khi setup trọn gói bàn bida QTBilliards.</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline" style="width: 100%; text-align: center; margin-left: 0;">TƯ VẤN GIẢI PHÁP CLB</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <!-- Placeholder cho logo các bên -->
+            <div class="footer-logos" style="font-weight: 700; font-size: 1.2rem;">
+                [ LOGO TRUONGKAME ] + [ LOGO QTBILLIARDS ] + [ LOGO ABBGROUP ]
+            </div>
+            <p>© 2024 TruongKame Academy. Một sản phẩm chiến lược được phát triển và vận hành bởi [Tên công ty bạn/DuyWeb].</p>
+            <p>Nền tảng này là một phần không thể tách rời của hệ sinh thái Bida QTBilliards & ABBGroup Việt Nam.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
