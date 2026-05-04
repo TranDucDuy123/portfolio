@@ -1,299 +1,76 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+    <!-- SEO -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tư Vấn Dịch Vụ Hosting - DuyWeb</title>
+    
+    <!-- ================= META TITLE (Tiêu đề Trang) =================
+         - Yếu tố quan trọng nhất. Phải chứa từ khóa chính.
+         - Công thức: [Từ khóa chính/Lợi ích] | [Tên Thương Hiệu]
+         - Độ dài tối ưu: 50-60 ký tự.
+    -->
+    <title>Tư Vấn Chọn Hosting Doanh Nghiệp Tối Ưu Chi Phí 2024 | DuyWeb</title>
+
+    <!-- ================= META DESCRIPTION (Mô tả Trang) =================
+         - Dòng quảng cáo ngắn xuất hiện dưới tiêu đề trên Google.
+         - Phải hấp dẫn để tăng tỷ lệ click (CTR). Chứa từ khóa phụ và lời kêu gọi hành động (CTA).
+         - Độ dài tối ưu: 150-160 ký tự.
+    -->
+    <meta name="description" content="Bạn phân vân chưa biết chọn gói hosting nào? Sử dụng công cụ tư vấn tương tác của DuyWeb để tìm giải pháp hosting ổn định, tốc độ cao, phù hợp nhất với quy mô doanh nghiệp của bạn. Xem bảng giá & so sánh ngay!">
+
+    <!-- ================= META KEYWORDS (Từ khóa) =================
+         - Lưu ý: Google hiện tại ÍT sử dụng thẻ này để xếp hạng, nhưng các công cụ tìm kiếm khác hoặc công cụ nội bộ có thể dùng. Có thể thêm hoặc bỏ qua.
+    -->
+    <meta name="keywords" content="tư vấn hosting, chọn hosting doanh nghiệp, bảng giá hosting 2024, so sánh hosting, hosting web bán hàng, hosting tốc độ cao, DuyWeb hosting">
+
+    <!-- ================= CANONICAL TAG (Thẻ chuẩn hóa) =================
+         - CỰC KỲ QUAN TRỌNG để tránh lỗi trùng lặp nội dung nếu trang này có thể truy cập từ nhiều URL khác nhau (ví dụ có/không có www, http/https).
+         - Thay đổi URL bên dưới thành URL chính thức của trang tư vấn này.
+    -->
+    <link rel="canonical" href="https://duyweb.info.vn/tu-van-hosting/" />
+    
+    <!-- ================= ROBOTS TAG =================
+         - Cho phép Google lập chỉ mục (index) và theo dõi các liên kết (follow) trên trang này.
+    -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    
+    <!-- Tác giả và Bản quyền -->
+    <meta name="author" content="DuyWeb Team">
+    <meta name="copyright" content="© 2024 DuyWeb. All rights reserved.">
+
+    <meta property="og:type" content="website" />
+    <!-- Tiêu đề khi chia sẻ (có thể giống hoặc khác Meta Title một chút để giật gân hơn) -->
+    <meta property="og:title" content="Công Cụ Tư Vấn Chọn Hosting Doanh Nghiệp Tốt Nhất - DuyWeb" />
+    <!-- Mô tả khi chia sẻ -->
+    <meta property="og:description" content="Đừng lãng phí tiền vào gói hosting không phù hợp. Sử dụng công cụ so sánh tương tác để chọn đúng giải pháp cho website của bạn." />
+    <!-- URL của trang -->
+    <meta property="og:url" content="https://duyweb.info.vn/tu-van-hosting/" />
+    <!-- Tên website -->
+    <meta property="og:site_name" content="DuyWeb Solutions" />
+    
+    <!-- HÌNH ẢNH THUMBNAIL KHI CHIA SẺ (QUAN TRỌNG) -->
+    <!-- Hãy thiết kế 1 banner đẹp kích thước 1200x630px, có tiêu đề hấp dẫn và nút kêu gọi hành động, sau đó điền đường dẫn ảnh vào đây -->
+    <meta property="og:image" content="https://duyweb.info.vn/asset/img/logo-duy-web.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Giao diện tư vấn chọn gói hosting tương tác của DuyWeb" />
+    <meta property="og:locale" content="vi_VN" />
+
+    <!-- ================= TWITTER CARD ================= -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tư Vấn Chọn Hosting Doanh Nghiệp Tối Ưu Chi Phí 2024 | DuyWeb" />
+    <meta name="twitter:description" content="Phân vân chọn hosting? Dùng công cụ tương tác của DuyWeb để tìm gói phù hợp nhất cho doanh nghiệp. Xem ngay!" />
+    <!-- Dùng chung ảnh với Open Graph -->
+    <meta name="twitter:image" content="https://duyweb.info.vn/wp-content/asset/img/logo-duy-web.jpg" />
+    <!-- Tài khoản Twitter của bạn (nếu có) -->
+
+
     <!-- Sử dụng Font Inter cho giao diện hiện đại -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Thư viện Tippy.js cho Tooltip (CSS) -->
     <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css"/>
-    <style>
-        /* ================= CUSTOM CSS ================= */
-        :root {
-            --primary-color: #0066FF; /* Màu xanh chủ đạo */
-            --secondary-color: #FF9900; /* Màu cam nhấn (ví dụ cho gói Quảng cáo) */
-            --bg-light: #F4F7FA;
-            --text-dark: #1A202C;
-            --text-gray: #718096;
-            --success: #48BB78;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            margin: 0;
-            padding: 20px;
-            line-height: 1.5;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
-
-        h1.main-title {
-            text-align: center;
-            font-weight: 700;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-
-        p.sub-title {
-            text-align: center;
-            color: var(--text-gray);
-            margin-bottom: 40px;
-        }
-
-        /* --- Phần 1: Chọn Nhu Cầu (Category Selection) --- */
-        .category-selection {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 50px;
-            flex-wrap: wrap;
-        }
-
-        .category-card {
-            background: #fff;
-            border: 2px solid #E2E8F0;
-            border-radius: 12px;
-            padding: 25px;
-            width: 200px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .category-card:hover {
-            border-color: var(--primary-color);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0,102,255,0.1);
-        }
-
-        .category-card.active {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            color: white;
-        }
-
-        .category-card.active .cat-desc {
-            color: #E2E8F0;
-        }
-
-        .cat-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .cat-title {
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .cat-desc {
-            font-size: 0.9rem;
-            color: var(--text-gray);
-        }
-
-        /* --- Phần 2: Hiển thị Gói (Plans Display) --- */
-        #plans-container {
-            display: none; /* Ẩn mặc định, chỉ hiện khi chọn category */
-        }
-        
-        .plans-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .plan-card {
-            background: #fff;
-            border: 1px solid #E2E8F0;
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .plan-card:hover {
-             border-color: var(--primary-color);
-             box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-        }
-
-        /* Highlight gói được khuyên dùng */
-        .plan-card.recommended {
-            border: 2px solid var(--secondary-color);
-            transform: scale(1.05);
-            z-index: 10;
-        }
-        
-        .recommended-badge {
-            position: absolute;
-            top: 0;
-            right: 20px;
-            background: var(--secondary-color);
-            color: white;
-            padding: 5px 15px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            border-bottom-left-radius: 8px;
-            border-bottom-right-radius: 8px;
-            text-transform: uppercase;
-        }
-
-        .plan-header {
-            padding: 30px 25px;
-            text-align: center;
-            /* Màu nền header thay đổi theo loại gói */
-        }
-        .plan-card[data-category="pho-thong"] .plan-header { background-color: #FFC107; color: #2d3748;}
-        .plan-card[data-category="quang-cao"] .plan-header { background-color: #FF9900; color: white;}
-        .plan-card[data-category="cao-cap"] .plan-header { background-color: #48BB78; color: white;}
-
-
-        .plan-name {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin: 0;
-        }
-        
-        .plan-capacity {
-             font-size: 1.1rem;
-             margin-top: 5px;
-             opacity: 0.9;
-        }
-
-        .plan-body {
-            padding: 25px;
-        }
-
-        .plan-features-list {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 30px 0;
-        }
-
-        .plan-features-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid #EDF2F7;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .plan-features-list li:last-child {
-            border-bottom: none;
-        }
-        
-        /* Style cho các thuật ngữ có tooltip */
-        .tooltip-term {
-            border-bottom: 1px dotted var(--text-gray);
-            cursor: help;
-        }
-
-        .feature-value {
-            font-weight: 600;
-        }
-        
-        .feature-value.unlimited {
-            color: var(--primary-color);
-            font-weight: 800;
-        }
-
-        .plan-pricing {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #EDF2F7;
-        }
-
-        .price-monthly, .price-yearly {
-            margin-bottom: 15px;
-        }
-        
-        .price-label {
-            font-size: 0.9rem;
-            color: var(--text-gray);
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .price-amount {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--primary-color);
-        }
-        
-        .price-yearly .price-amount {
-            color: #E53E3E; /* Màu đỏ cho giá năm */
-        }
-
-        .currency {
-             font-size: 1rem;
-             font-weight: 600;
-        }
-        
-        .btn-select-plan {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 8px;
-            background-color: var(--primary-color);
-            color: white;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        
-        .plan-card[data-category="quang-cao"] .btn-select-plan { background-color: var(--secondary-color);}
-        .plan-card[data-category="cao-cap"] .btn-select-plan { background-color: #48BB78;}
-
-
-        .btn-select-plan:hover {
-            opacity: 0.9;
-        }
-
-        /* --- Phần Footer kỹ thuật --- */
-        .tech-specs-footer {
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 2px dashed #E2E8F0;
-            text-align: center;
-        }
-        .tech-specs-footer h3 {
-             color: var(--text-dark);
-             margin-bottom: 20px;
-        }
-        
-        .specs-badges {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .spec-badge {
-            background: #EDF2F7;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-        }
-        .spec-badge i { margin-right: 8px; color: var(--primary-color);}
-
-    </style>
+    <link rel="stylesheet" href="../asset/css/hosting.css">
 </head>
 <body>
 
