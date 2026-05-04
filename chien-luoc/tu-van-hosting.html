@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tư Vấn Dịch Vụ Hosting - DuyWeb</title>
+    <!-- Sử dụng Font Inter cho giao diện hiện đại -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Thư viện Tippy.js cho Tooltip (CSS) -->
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css"/>
+    <style>
+        /* ================= CUSTOM CSS ================= */
+        :root {
+            --primary-color: #0066FF; /* Màu xanh chủ đạo */
+            --secondary-color: #FF9900; /* Màu cam nhấn (ví dụ cho gói Quảng cáo) */
+            --bg-light: #F4F7FA;
+            --text-dark: #1A202C;
+            --text-gray: #718096;
+            --success: #48BB78;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        h1.main-title {
+            text-align: center;
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        p.sub-title {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+        }
+
+        /* --- Phần 1: Chọn Nhu Cầu (Category Selection) --- */
+        .category-selection {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .category-card {
+            background: #fff;
+            border: 2px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 25px;
+            width: 200px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,102,255,0.1);
+        }
+
+        .category-card.active {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        .category-card.active .cat-desc {
+            color: #E2E8F0;
+        }
+
+        .cat-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .cat-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .cat-desc {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* --- Phần 2: Hiển thị Gói (Plans Display) --- */
+        #plans-container {
+            display: none; /* Ẩn mặc định, chỉ hiện khi chọn category */
+        }
+        
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .plan-card {
+            background: #fff;
+            border: 1px solid #E2E8F0;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .plan-card:hover {
+             border-color: var(--primary-color);
+             box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+
+        /* Highlight gói được khuyên dùng */
+        .plan-card.recommended {
+            border: 2px solid var(--secondary-color);
+            transform: scale(1.05);
+            z-index: 10;
+        }
+        
+        .recommended-badge {
+            position: absolute;
+            top: 0;
+            right: 20px;
+            background: var(--secondary-color);
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            text-transform: uppercase;
+        }
+
+        .plan-header {
+            padding: 30px 25px;
+            text-align: center;
+            /* Màu nền header thay đổi theo loại gói */
+        }
+        .plan-card[data-category="pho-thong"] .plan-header { background-color: #FFC107; color: #2d3748;}
+        .plan-card[data-category="quang-cao"] .plan-header { background-color: #FF9900; color: white;}
+        .plan-card[data-category="cao-cap"] .plan-header { background-color: #48BB78; color: white;}
+
+
+        .plan-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 0;
+        }
+        
+        .plan-capacity {
+             font-size: 1.1rem;
+             margin-top: 5px;
+             opacity: 0.9;
+        }
+
+        .plan-body {
+            padding: 25px;
+        }
+
+        .plan-features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px 0;
+        }
+
+        .plan-features-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #EDF2F7;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .plan-features-list li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Style cho các thuật ngữ có tooltip */
+        .tooltip-term {
+            border-bottom: 1px dotted var(--text-gray);
+            cursor: help;
+        }
+
+        .feature-value {
+            font-weight: 600;
+        }
+        
+        .feature-value.unlimited {
+            color: var(--primary-color);
+            font-weight: 800;
+        }
+
+        .plan-pricing {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #EDF2F7;
+        }
+
+        .price-monthly, .price-yearly {
+            margin-bottom: 15px;
+        }
+        
+        .price-label {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .price-amount {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+        
+        .price-yearly .price-amount {
+            color: #E53E3E; /* Màu đỏ cho giá năm */
+        }
+
+        .currency {
+             font-size: 1rem;
+             font-weight: 600;
+        }
+        
+        .btn-select-plan {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .plan-card[data-category="quang-cao"] .btn-select-plan { background-color: var(--secondary-color);}
+        .plan-card[data-category="cao-cap"] .btn-select-plan { background-color: #48BB78;}
+
+
+        .btn-select-plan:hover {
+            opacity: 0.9;
+        }
+
+        /* --- Phần Footer kỹ thuật --- */
+        .tech-specs-footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px dashed #E2E8F0;
+            text-align: center;
+        }
+        .tech-specs-footer h3 {
+             color: var(--text-dark);
+             margin-bottom: 20px;
+        }
+        
+        .specs-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .spec-badge {
+            background: #EDF2F7;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+        .spec-badge i { margin-right: 8px; color: var(--primary-color);}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="main-title">Tư Vấn Chọn Gói Hosting Phù Hợp</h1>
+    <p class="sub-title">Hãy cho chúng tôi biết quy mô website của bạn để nhận được đề xuất tốt nhất.</p>
+
+    <!-- ================= PHẦN 1: CHỌN NHU CẦU ================= -->
+    <div class="category-selection">
+        <!-- Tôi chỉ làm ví dụ 3 nhóm chính để demo cho gọn -->
+        <div class="category-card" data-target="pho-thong">
+            <span class="cat-icon">🏢</span>
+            <div class="cat-title">Phổ Thông</div>
+            <div class="cat-desc">Website giới thiệu công ty, blog vừa phải.</div>
+        </div>
+        
+        <div class="category-card" data-target="quang-cao">
+            <span class="cat-icon">🚀</span>
+            <div class="cat-title">Quảng Cáo</div>
+            <div class="cat-desc">Chạy chiến dịch marketing, traffic cao đột biến.</div>
+        </div>
+
+        <div class="category-card" data-target="cao-cap">
+            <span class="cat-icon">💎</span>
+            <div class="cat-title">Cao Cấp & VIP</div>
+            <div class="cat-desc">Doanh nghiệp lớn, yêu cầu hiệu năng tối đa.</div>
+        </div>
+    </div>
+
+    <!-- ================= PHẦN 2: HIỂN THỊ CÁC GÓI ================= -->
+    <div id="plans-container">
+        <h2 style="text-align: center; margin-bottom: 30px;">Các gói dịch vụ đề xuất cho bạn:</h2>
+        
+        <div class="plans-grid">
+            <!-- Các Plan Card sẽ được JavaScript render vào đây -->
+        </div>
+    </div>
+
+    <!-- ================= PHẦN 3: HẠ TẦNG KỸ THUẬT ================= -->
+    <div class="tech-specs-footer">
+        <h3>Hạ Tầng Kỹ Thuật Mạnh Mẽ Đứng Sau Website Của Bạn</h3>
+        <div class="specs-badges">
+            <div class="spec-badge"><i>🖥️</i> Server IBM/CISCO/INTEL</div>
+            <div class="spec-badge"><i>⚡</i> 2 CPU Intel Xeon Quad Core</div>
+            <div class="spec-badge"><i>🔄</i> Công nghệ siêu phân luồng 16 Core</div>
+            <div class="spec-badge"><i>💾</i> Lưu trữ SSD RAID 10 nhanh nhất</div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Thư viện Popper và Tippy.js cho Tooltip -->
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+
+<script>
+    // ================= DỮ LIỆU CÁC GÓI HOSTING (Mô phỏng từ ảnh của bạn) =================
+    // Bạn có thể dễ dàng thêm/sửa/xóa các gói tại đây
+    const hostingPlansData = [
+        // --- Nhóm PHỔ THÔNG ---
+        {
+            id: 'pt-15gb',
+            category: 'pho-thong',
+            name: '15GB',
+            capacity: 'Dung Lượng',
+            bandwidth: 'KGH',
+            email: 'KGH',
+            addonDomain: 16,
+            subDomain: 'KGH',
+            parkDomain: 'KGH',
+            priceMonth: '864.000',
+            priceYear: '10.368.000',
+            recommended: false
+        },
+        {
+            id: 'pt-20gb',
+            category: 'pho-thong',
+            name: '20GB',
+            capacity: 'Dung Lượng',
+            bandwidth: 'KGH',
+            email: 'KGH',
+            addonDomain: 20,
+            subDomain: 'KGH',
+            parkDomain: 'KGH',
+            priceMonth: '1.080.000',
+            priceYear: '12.960.000',
+            recommended: true // Gói này sẽ được làm nổi bật
+        },
+        // --- Nhóm QUẢNG CÁO ---
+        {
+            id: 'qc-30gb',
+            category: 'quang-cao',
+            name: '30GB',
+            capacity: 'Dung Lượng',
+            bandwidth: 'KGH',
+            email: 'KGH',
+            addonDomain: 30,
+            subDomain: 'KGH',
+            parkDomain: 'KGH',
+            priceMonth: '1.447.200',
+            priceYear: '17.366.400',
+            recommended: false
+        },
+         {
+            id: 'qc-50gb',
+            category: 'quang-cao',
+            name: '50GB',
+            capacity: 'Dung Lượng',
+            bandwidth: 'KGH',
+            email: 'KGH',
+            addonDomain: 'KGH',
+            subDomain: 'KGH',
+            parkDomain: 'KGH',
+            priceMonth: '2.160.000',
+            priceYear: '25.920.000',
+            recommended: true // Gói Quảng cáo được khuyên dùng
+        },
+         // --- Nhóm CAO CẤP (Gộp chung VIP vào đây để demo) ---
+        {
+            id: 'cc-80gb',
+            category: 'cao-cap',
+            name: '80GB (Cao Cấp)',
+            capacity: 'Dung Lượng',
+            bandwidth: 'KGH',
+            email: 'KGH',
+            addonDomain: 'KGH',
+            subDomain: 'KGH',
+            parkDomain: 'KGH',
+            priceMonth: '3.240.000',
+            priceYear: '38.880.000',
+            recommended: false
+        },
+         {
+            id: 'vip-100gb',
+            category: 'cao-cap',
+            name: '100GB (VIP)',
+            capacity: 'Dung Lượng',
+            bandwidth: 'KGH',
+            email: 'KGH',
+            addonDomain: 'KGH',
+            subDomain: 'KGH',
+            parkDomain: 'KGH',
+            priceMonth: '3.888.000',
+            priceYear: '46.656.000',
+            recommended: true
+        }
+    ];
+
+    // ================= HÀM RENDER GIAO DIỆN =================
+
+    const categoryCards = document.querySelectorAll('.category-card');
+    const plansContainer = document.getElementById('plans-container');
+    const plansGrid = document.querySelector('.plans-grid');
+
+    // Hàm tạo HTML cho một thẻ Plan
+    function createPlanCardHTML(plan) {
+        const recommendedBadge = plan.recommended ? '<div class="recommended-badge">Khuyên Dùng</div>' : '';
+        const recommendedClass = plan.recommended ? 'recommended' : '';
+        // Hàm helper để format giá trị KGH
+        const formatValue = (val) => val === 'KGH' ? '<span class="feature-value unlimited">Không Giới Hạn</span>' : `<span class="feature-value">${val}</span>`;
+
+        return `
+            <div class="plan-card ${recommendedClass}" data-category="${plan.category}">
+                ${recommendedBadge}
+                <div class="plan-header">
+                    <h3 class="plan-name">${plan.name}</h3>
+                    <div class="plan-capacity">${plan.capacity}</div>
+                </div>
+                <div class="plan-body">
+                    <ul class="plan-features-list">
+                        <li>
+                            <span class="tooltip-term" data-tippy-content="Tổng lượng dữ liệu truyền tải (upload/download) cho phép mỗi tháng.">Băng Thông</span>
+                            ${formatValue(plan.bandwidth)}
+                        </li>
+                         <li>
+                            <span class="tooltip-term" data-tippy-content="Số lượng tài khoản Email theo tên miền riêng doanh nghiệp.">Địa Chỉ Gmail</span>
+                            ${formatValue(plan.email)}
+                        </li>
+                        <li>
+                            <span class="tooltip-term" data-tippy-content="Số lượng website chạy độc lập (khác tên miền) trên cùng 1 gói host.">Addon Domain</span>
+                            ${formatValue(plan.addonDomain)}
+                        </li>
+                         <li>
+                            <span class="tooltip-term" data-tippy-content="Số lượng tên miền con (ví dụ: blog.duyweb.vn).">Sub Domain</span>
+                            ${formatValue(plan.subDomain)}
+                        </li>
+                    </ul>
+
+                    <div class="plan-pricing">
+                        <div class="price-monthly">
+                            <span class="price-label">Giá theo tháng:</span>
+                            <span class="price-amount">${plan.priceMonth}<small class="currency">đ</small></span>
+                        </div>
+                        <div class="price-yearly">
+                             <span class="price-label">Giá theo năm (Tiết kiệm hơn!):</span>
+                            <span class="price-amount">${plan.priceYear}<small class="currency">đ</small></span>
+                        </div>
+                    </div>
+                     <button class="btn-select-plan">CHỌN GÓI NÀY</button>
+                </div>
+            </div>
+        `;
+    }
+
+    // Sự kiện Click vào Category
+    categoryCards.forEach(card => {
+        card.addEventListener('click', () => {
+            // 1. Xử lý active state cho category
+            categoryCards.forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+
+            // 2. Lấy category được chọn
+            const selectedCategory = card.getAttribute('data-target');
+
+            // 3. Lọc dữ liệu các gói tương ứng
+            const filteredPlans = hostingPlansData.filter(plan => plan.category === selectedCategory);
+
+            // 4. Render các gói ra màn hình
+            plansGrid.innerHTML = filteredPlans.map(createPlanCardHTML).join('');
+            
+            // 5. Hiển thị container chứa gói
+            plansContainer.style.display = 'block';
+            // Cuộn xuống phần hiển thị gói
+            plansContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            // 6. Kích hoạt Tooltip cho các gói mới được render
+            tippy('.tooltip-term', {
+                animation: 'scale',
+                theme: 'light',
+            });
+        });
+    });
+
+</script>
+
+</body>
+</html>
