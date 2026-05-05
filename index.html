@@ -2,27 +2,35 @@
 <html lang="vi" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hợp Tác Dự Án Bida Pro Lab | Đức Duy x Đối Tác</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <!-- SEO & Social Meta -->
-    <meta name="description" content="Chiến lược đóng gói tri thức Bida thành tài sản số. Mô hình lợi nhuận đột phá từ E-learning và hệ sinh thái Upsell.">
-    
-    <!-- Libraries -->
+    <!-- PRIMARY SEO META TAGS (Keywords tập trung: đức duy web, duy web, thiết kế web thực chiến) -->
+    <title>Đức Duy Web | Thợ Xây Mặt Bằng Số & Chuyên Gia SEO Local</title>
+    <meta name="title" content="Đức Duy Web | Thợ Xây Mặt Bằng Số & Chuyên Gia SEO Local">
+    <meta name="description" content="Bạn tìm Duy Web? Duy giúp các chủ quán Bida, Spa, Dịch vụ local hiểu rõ sức mạnh của Website và hệ thống Đa kênh. Xây dựng nhân hiệu, chốt đơn thực tế. Gọi 0938.415.218.">
+    <meta name="keywords" content="đức duy web, duy web, thiết kế web, làm web bida, hệ thống đa kênh, seo local, marketing địa phương">
+    <link rel="canonical" href="https://duyweb.info.vn/" />
+
+    <!-- OPEN GRAPH (ZALO/FB) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://duyweb.info.vn/">
+    <meta property="og:title" content="Đức Duy Web - Đừng để cửa hàng của bạn 'tàng hình' trên mạng">
+    <meta property="og:description" content="Dạy khách hàng cách làm Web và Đa kênh để làm chủ nhân hiệu và dòng tiền.">
+    <meta property="og:image" content="https://duyweb.info.vn/assets/banner-trang-chu.jpg">
+
+    <!-- Fonts & Libraries -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Plus Jakarta Sans', 'sans-serif'] },
-                    colors: { paper: '#FDFCFB', ink: '#1A1A1A', primary: '#E63946', secondary: '#457B9D' },
-                    boxShadow: { 'retro': '6px 6px 0px 0px #1A1A1A' }
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'] },
+                    colors: { paper: '#FDFCFB', ink: '#1A1A1A', primary: '#E63946', accent: '#E9C46A', secondary: '#457B9D' },
+                    boxShadow: { 'retro': '4px 4px 0px 0px #1A1A1A', 'retro-lg': '8px 8px 0px 0px #1A1A1A' }
                 }
             }
         }
@@ -30,386 +38,231 @@
 
     <style>
         body { background-color: #FDFCFB; color: #1A1A1A; overflow-x: hidden; }
-        .chart-container { position: relative; width: 100%; height: 320px; max-height: 400px; }
-        .step-card { transition: all 0.3s ease; }
-        .step-card:hover { transform: translateY(-5px); }
-        .gradient-text { background: linear-gradient(to right, #E63946, #457B9D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
-        /* Hiệu ứng nhấp nháy cho trạng thái Active */
-        .status-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+        .border-retro { border: 3px solid #1A1A1A; }
+        .noise::before { content: ""; position: fixed; inset: 0; width: 100%; height: 100%; opacity: 0.04; z-index: 50; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .animate-marquee { display: inline-block; animation: marquee 20s linear infinite; }
+        .chart-container { position: relative; width: 100%; height: 320px; }
     </style>
 </head>
-<body class="font-sans antialiased">
+<body class="noise antialiased">
 
-<!-- Chosen Palette: Retro Professional (White Paper #FDFCFB, Black Ink #1A1A1A, Red #E63946) -->
-<!-- Application Structure Plan: Toàn bộ nội dung được dàn trải trên một trang duy nhất (SPA) theo dòng chảy logic:
-1. Hero: Đặt vấn đề và Tầm nhìn.
-2. The Pillars: Phân tích 4 trụ cột (FPT ROI, Proactive, Paid Funnel, Upsell).
-3. Data Proof: Biểu đồ Canvas chứng minh sức mạnh của mô hình.
-4. Ecosystem Map: Sơ đồ dòng tiền từ Khóa học tới Setup/Bán bàn.
-5. Partnership Model: Phân chia vai trò rõ ràng giữa Duy và Đối tác.
-6. Roadmap: Lộ trình 12 tháng.
-7. Call to Action: Nút liên hệ Zalo trực tiếp. -->
-<!-- Visualization & Content Choices:
-- ROI Comparison: Bar chart dùng Chart.js Canvas.
-- Reach Scaling: Line chart dùng Chart.js Canvas.
-- NO SVG graphics. Chỉ dùng Lucide Icons. -->
-<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
-
-    <!-- NAVIGATION -->
-    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b-2 border-black h-20 flex items-center">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
-            <div class="flex items-center gap-2 group">
-                <div class="w-10 h-10 bg-primary border-2 border-black flex items-center justify-center shadow-[3px_3px_0px_0px_#000]">
-                    <i data-lucide="target" class="text-white w-6 h-6"></i>
-                </div>
-                <span class="font-display font-extrabold text-xl tracking-tighter uppercase">BIDA PRO LAB</span>
-            </div>
-            
-            <div class="hidden lg:flex items-center gap-8 font-display font-bold text-xs uppercase tracking-widest">
-                <a href="#tam-nhin" class="hover:text-primary transition-colors">Tầm Nhìn</a>
-                <a href="#chien-luoc" class="hover:text-primary transition-colors">Chiến Lược</a>
-                <a href="#du-lieu" class="hover:text-primary transition-colors">Dữ Liệu</a>
-                <a href="#he-sinh-thai" class="hover:text-primary transition-colors">Dòng Tiền</a>
-                <a href="#hop-tac" class="hover:text-primary transition-colors text-primary border-b-2 border-primary">Bắt Đầu</a>
-            </div>
-
-            <a href="https://zalo.me/0938415218" target="_blank" class="bg-black text-white px-6 py-2 font-display font-bold text-xs uppercase shadow-[4px_4px_0px_0px_#E63946] hover:translate-x-1 hover:translate-y-1 transition-transform">
-                Nhấn Để Bàn Bạc
+    <!-- --- NAVIGATION --- -->
+    <nav class="fixed top-0 w-full z-40 bg-paper/80 backdrop-blur-md border-b-4 border-ink h-20 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 w-full flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="font-display font-black text-2xl tracking-tighter bg-ink text-paper px-2 py-1 transform -rotate-2 group-hover:rotate-0 transition-transform">DUY.WEB</div>
             </a>
+            <div class="hidden lg:flex gap-8 font-display font-bold text-xs uppercase tracking-widest">
+                <a href="#lo-trinh" class="hover:text-primary transition-colors">Tầm quan trọng Website</a>
+                <a href="#nhan-hieu" class="hover:text-primary transition-colors">Nhân hiệu là gì?</a>
+                <a href="#lien-minh" class="hover:text-primary transition-colors">Liên minh 4 bên</a>
+                <a href="#dich-vu" class="hover:text-primary transition-colors">Gói giải pháp</a>
+            </div>
+            <a href="https://zalo.me/0938415218" target="_blank" class="px-6 py-2 bg-primary text-white font-display font-bold uppercase border-retro shadow-retro hover:translate-x-1 hover:translate-y-1 transition-all">Nhận Tư Vấn 1-1</a>
         </div>
     </nav>
 
-    <main>
+    <main class="pt-32">
         
-        <!-- SECTION 1: HERO -->
-        <section id="tam-nhin" class="pt-40 pb-24 px-4 max-w-7xl mx-auto">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="space-y-8">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-yellow-400 border-2 border-black shadow-[3px_3px_0px_0px_#000] text-xs font-black uppercase">
-                        <span class="status-pulse w-2 h-2 rounded-full bg-red-600"></span>
-                        Đang tìm đối tác chiến lược
-                    </div>
-                    <h1 class="text-5xl md:text-8xl font-display font-black leading-[0.85] uppercase italic">
-                        BIẾN <span class="text-primary tracking-tighter">TRI THỨC</span> <br/> THÀNH <span class="text-secondary tracking-tighter">TÀI SẢN.</span>
-                    </h1>
-                    <p class="text-lg font-medium text-gray-600 max-w-lg leading-relaxed">
-                        Chúng ta không chỉ dạy kỹ thuật Bida. Chúng ta đang xây dựng **Cỗ máy nhân bản lợi nhuận** dựa trên mô hình đào tạo số của các tập đoàn hàng đầu.
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="#chien-luoc" class="px-8 py-4 bg-black text-white font-display font-bold uppercase border-2 border-black shadow-[6px_6px_0px_0px_#E63946]">Khám Phá Mô Hình</a>
-                    </div>
+        <!-- --- SECTION 1: HERO (Tuyên ngôn Nhân hiệu) --- -->
+        <section class="max-w-7xl mx-auto px-4 mb-24 flex flex-col lg:flex-row items-center gap-12">
+            <div class="w-full lg:w-3/5 space-y-6 text-center lg:text-left">
+                <div class="inline-block border-retro px-4 py-1.5 rounded-full font-bold text-sm bg-accent shadow-retro mb-4">✦ Duy Web: Không chỉ là Code, là giải pháp dòng tiền ✦</div>
+                <h1 class="text-5xl md:text-[5.5rem] font-display font-black leading-[0.85] tracking-tighter uppercase">
+                    Đừng chỉ làm <span class="text-primary italic">TikTok.</span> <br> Hãy xây <span class="underline decoration-8 decoration-accent underline-offset-8">Gốc Rễ.</span>
+                </h1>
+                <p class="text-lg md:text-xl font-medium max-w-xl mx-auto lg:mx-0 pt-6 text-ink/70">
+                    Chào các anh chị chủ quán, tôi là <strong>Đức Duy</strong>. Rất nhiều người sai lầm khi nghĩ chỉ cần Livestream là đủ. Tôi ở đây để giáo dục và giúp anh chị xây dựng <strong>Website & Hệ thống Đa kênh</strong> để làm chủ cuộc chơi kinh doanh.
+                </p>
+                <div class="pt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#lo-trinh" class="px-8 py-4 bg-ink text-paper font-display font-bold text-lg uppercase border-retro shadow-retro-lg hover:bg-primary transition-colors flex items-center justify-center gap-2">Tìm hiểu ngay <i data-lucide="arrow-right"></i></a>
+                    <a href="https://zalo.me/0938415218" class="px-8 py-4 bg-white text-ink font-display font-bold text-lg uppercase border-retro shadow-retro hover:bg-accent transition-colors flex items-center justify-center gap-2">Zalo: 0938.415.218</a>
                 </div>
-                <div class="relative">
-                    <div class="bg-white border-4 border-black p-8 shadow-[15px_15px_0px_0px_#1A1A1A] rotate-2">
-                        <div class="aspect-video bg-gray-50 border-2 border-black flex items-center justify-center relative overflow-hidden">
-                            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#000_2px,transparent_2px)] [background-size:24px_24px]"></div>
-                            <div class="text-center z-10">
-                                <i data-lucide="play-circle" class="w-16 h-16 text-primary mx-auto mb-4"></i>
-                                <p class="font-display font-black text-2xl uppercase italic">E-Learning Pitch</p>
-                                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Đức Duy x Partner 2026</p>
+            </div>
+            <div class="w-full lg:w-2/5 flex justify-center">
+                <div class="relative w-full max-w-sm bg-white p-4 border-retro shadow-retro-lg transform rotate-2">
+                    <img src="./asset/img/avt.jpg" alt="Đức Duy Web" class="w-full h-auto border-retro">
+                    <div class="absolute -bottom-6 -right-6 bg-accent p-4 border-retro shadow-retro font-display font-black text-xs uppercase leading-tight">Duy xây ống dẫn<br>Anh chị đổ dầu</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- SECTION 2: GIÁO DỤC TẦM QUAN TRỌNG (The "Why") --- -->
+        <section id="lo-trinh" class="py-24 bg-ink text-paper border-y-4 border-ink mb-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-6xl font-display font-black uppercase italic text-accent mb-4">Website: Cái Gốc của đa kênh</h2>
+                    <p class="text-paper/60 max-w-2xl mx-auto font-medium">Nếu TikTok là "Cái Loa Phường", thì Website chính là "Cửa Hàng Mặt Tiền". Anh chị không thể chốt đơn bạc tỷ chỉ bằng cái loa.</p>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-8">
+                        <div class="flex gap-6 items-start">
+                            <div class="w-12 h-12 shrink-0 bg-primary border-2 border-paper flex items-center justify-center font-display font-black text-xl">1</div>
+                            <div>
+                                <h4 class="text-xl font-bold uppercase mb-2">Tránh "Tàng Hình" trên Google</h4>
+                                <p class="text-paper/50 text-sm">Hàng ngàn người quanh quán bạn đang tìm "Bida gần đây", "Sửa xe gần đây". Nếu không có Web và Map, anh chị đang nhường tiền cho đối thủ.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6 items-start">
+                            <div class="w-12 h-12 shrink-0 bg-secondary border-2 border-paper flex items-center justify-center font-display font-black text-xl">2</div>
+                            <div>
+                                <h4 class="text-xl font-bold uppercase mb-2">Làm chủ Nhân hiệu (Sổ Đỏ Số)</h4>
+                                <p class="text-paper/50 text-sm">Facebook có thể bị khóa, TikTok có thể bị bóp tương tác. Website là nơi duy nhất anh chị sở hữu 100%, là bộ mặt uy tín nhất để làm thương hiệu cá nhân.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6 items-start">
+                            <div class="w-12 h-12 shrink-0 bg-accent text-ink border-2 border-paper flex items-center justify-center font-display font-black text-xl">3</div>
+                            <div>
+                                <h4 class="text-xl font-bold uppercase mb-2">Cỗ máy chốt đơn tự động</h4>
+                                <p class="text-paper/50 text-sm">Web không biết mệt. Nó trả lời bảng giá, show hình ảnh quán, và hướng dẫn khách bấm Zalo đặt bàn 24/7.</p>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 2: CHIẾN LƯỢC CỐT LÕI (4 PILLARS) -->
-        <section id="chien-luoc" class="py-24 bg-ink text-white">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="mb-16 text-center lg:text-left">
-                    <h2 class="text-4xl md:text-6xl font-display font-black uppercase italic text-yellow-400 mb-4 tracking-tighter">4 Trụ Cột Chiến Lược</h2>
-                    <p class="text-gray-400 max-w-xl">Lý do tại sao mô hình này sẽ thắng thế so với cách làm truyền thống.</p>
-                </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Pillar 1 -->
-                    <div class="p-8 border-2 border-white/20 bg-white/5 hover:border-primary transition-all">
-                        <i data-lucide="trending-up" class="w-10 h-10 text-primary mb-6"></i>
-                        <h3 class="text-xl font-bold uppercase mb-4 tracking-tighter leading-none">Mô hình FPT (ROI Max)</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">Đầu tư vào Giáo dục (E-learning) mang lại biên lợi nhuận cao nhất trong hệ sinh thái số vì chi phí nhân bản bằng 0.</p>
-                    </div>
-                    <!-- Pillar 2 -->
-                    <div class="p-8 border-2 border-white/20 bg-white/5 hover:border-secondary transition-all">
-                        <i data-lucide="rss" class="w-10 h-10 text-secondary mb-6"></i>
-                        <h3 class="text-xl font-bold uppercase mb-4 tracking-tighter leading-none">E-Learning Chủ Động</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">Dạy Offline là "phục vụ" (bán thời gian). E-learning là "chủ động" (tạo tài sản). Hệ thống làm việc thay cho con người.</p>
-                    </div>
-                    <!-- Pillar 3 -->
-                    <div class="p-8 border-2 border-white/20 bg-white/5 hover:border-yellow-400 transition-all">
-                        <i data-lucide="shield-check" class="w-10 h-10 text-yellow-400 mb-6"></i>
-                        <h3 class="text-xl font-bold uppercase mb-4 tracking-tighter leading-none">Phễu Trả Phí Cấp Thấp</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">Không làm Free đại trà. Thu phí để lọc đối tác và học viên chất lượng, tạo cộng đồng cam kết và có tài chính.</p>
-                    </div>
-                    <!-- Pillar 4 -->
-                    <div class="p-8 border-2 border-white/20 bg-white/5 hover:border-green-400 transition-all">
-                        <i data-lucide="refresh-cw" class="w-10 h-10 text-green-400 mb-6"></i>
-                        <h3 class="text-xl font-bold uppercase mb-4 tracking-tighter leading-none">Hệ Sinh Thái Upsell</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">Khóa học là điểm chạm đầu tiên. Lợi nhuận nằm ở: Setup CLB, bán bàn bida, linh kiện và tư vấn giải cứu quán ế.</p>
+                    <div class="bg-paper text-ink p-8 border-retro shadow-[12px_12px_0px_0px_#E9C46A]">
+                        <h3 class="font-display font-black text-xl uppercase mb-6 text-center">Tăng trưởng khi có Website & SEO</h3>
+                        <div class="chart-container"><canvas id="eduChart"></canvas></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 3: DỮ LIỆU THUYẾT PHỤC -->
-        <section id="du-lieu" class="py-24 max-w-7xl mx-auto px-4">
+        <!-- --- SECTION 3: NHÂN HIỆU & SỰ TIN TƯỞNG --- -->
+        <section id="nhan-hieu" class="max-w-5xl mx-auto px-4 mb-32">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-5xl font-display font-black uppercase tracking-tighter italic">Duy là ai và tại sao <span class="text-primary">lại giúp được bạn?</span></h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-center bg-white border-retro p-8 md:p-12 shadow-retro-lg">
+                <div class="font-medium text-ink/70 space-y-4 text-lg">
+                    <p>Tôi không phải là một "Giáo sư" ngồi văn phòng máy lạnh. Tôi là một người thợ thực chiến, trực tiếp lăn lộn cùng các quán xá địa phương.</p>
+                    <p>Triết lý của <strong>Đức Duy Web</strong> là: Làm web để **ra đơn**, không làm web để ngắm. Tôi đóng gói những kiến thức khó hiểu nhất thành những bước "cầm tay chỉ việc" cho anh chị.</p>
+                    <p>Nhân hiệu của tôi gắn liền với sự **Tận tâm & Minh bạch**. Không vẽ vời, không phí ẩn.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="p-4 bg-accent/20 border-2 border-dashed border-ink rounded-xl">
+                        <h4 class="font-bold uppercase text-xs mb-1">Thế mạnh ngách</h4>
+                        <p class="text-sm font-bold">Thiết kế Web Bida / Clinic / Dịch vụ Local</p>
+                    </div>
+                    <div class="p-4 bg-secondary/20 border-2 border-dashed border-ink rounded-xl">
+                        <h4 class="font-bold uppercase text-xs mb-1">Kỹ thuật mục tiêu</h4>
+                        <p class="text-sm font-bold">SEO Local Maps & Tốc độ tải trang 99/100</p>
+                    </div>
+                    <div class="p-4 bg-primary/20 border-2 border-dashed border-ink rounded-xl">
+                        <h4 class="font-bold uppercase text-xs mb-1">Cam kết nhân hiệu</h4>
+                        <p class="text-sm font-bold">Trực tiếp Duy hỗ trợ 1-1 không qua sale</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- SECTION 4: LIÊN MINH 4 BÊN (Sức mạnh hệ sinh thái) --- -->
+        <section id="lien-minh" class="max-w-7xl mx-auto px-4 mb-32">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-6xl font-display font-black uppercase italic tracking-tighter mb-4">Sức Mạnh Của Con Số</h2>
-                <p class="text-gray-500 font-medium">Bằng chứng cho khả năng sinh lời và mở rộng thị trường.</p>
+                <h2 class="text-4xl md:text-6xl font-display font-black uppercase">Liên minh <span class="text-primary tracking-widest">THỰC CHIẾN</span></h2>
+                <p class="text-xl font-medium text-ink/60 mt-4">Sự cộng hưởng giúp dự án của bạn thành công tuyệt đối.</p>
             </div>
-
-            <div class="grid lg:grid-cols-2 gap-12">
-                <!-- ROI Chart -->
-                <div class="bg-white border-2 border-black p-8 shadow-retro">
-                    <h4 class="font-display font-bold text-lg uppercase mb-6 border-l-4 border-primary pl-4">So sánh Biên Lợi Nhuận (Theo FPT)</h4>
-                    <div class="chart-container">
-                        <canvas id="roiChart"></canvas>
-                    </div>
-                    <p class="mt-4 text-xs text-gray-400 italic">* Giáo dục số hóa có khả năng duy trì lãi ròng trên 45% nhờ loại bỏ chi phí mặt bằng & nhân sự vận hành trực tiếp.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 bg-white border-retro shadow-retro">
+                    <i data-lucide="award" class="text-primary mb-4 w-10 h-10"></i>
+                    <h3 class="font-display font-extrabold uppercase text-lg mb-2">ABB GROUP</h3>
+                    <p class="text-xs font-medium text-ink/60">Đại diện tri thức trường Kame. Bảo chứng kinh nghiệm bida chuyên nghiệp.</p>
                 </div>
-
-                <!-- Reach Chart -->
-                <div class="bg-white border-2 border-black p-8 shadow-retro">
-                    <h4 class="font-display font-bold text-lg uppercase mb-6 border-l-4 border-secondary pl-4">Khả năng tiếp cận (Reach Scaling)</h4>
-                    <div class="chart-container">
-                        <canvas id="reachChart"></canvas>
-                    </div>
-                    <p class="mt-4 text-xs text-gray-400 italic">* Offline giới hạn theo địa lý và sức người. Online phá vỡ mọi rào cản, tiếp cận khách hàng toàn quốc 24/7.</p>
+                <div class="p-6 bg-white border-retro shadow-retro">
+                    <i data-lucide="hammer" class="text-secondary mb-4 w-10 h-10"></i>
+                    <h3 class="font-display font-extrabold uppercase text-lg mb-2">QT BILLIARDS</h3>
+                    <p class="text-xs font-medium text-ink/60">Anh Định chuyên thợ bàn và đóng gói phụ kiện bida chất lượng xưởng.</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- SECTION 4: HỆ SINH THÁI DÒNG TIỀN (UPSELL) -->
-        <section id="he-sinh-thai" class="py-24 bg-gray-50 border-y-2 border-black">
-            <div class="max-w-7xl mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-5xl font-display font-black uppercase mb-16 tracking-tight italic">
-                    HỆ SINH THÁI <span class="text-primary">DÒNG TIỀN</span>
-                </h2>
-                
-                <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-                    <!-- Node 1 -->
-                    <div class="w-64 bg-white border-2 border-black p-6 shadow-[4px_4px_0px_0px_#1A1A1A]">
-                        <p class="text-xs font-bold text-gray-400 uppercase mb-2">Mồi câu (Low Entry)</p>
-                        <h4 class="font-bold text-lg leading-tight mb-2">KHÓA HỌC <br/> ONLINE</h4>
-                        <p class="text-primary font-black text-xl">299k - 999k</p>
-                    </div>
-                    <i data-lucide="arrow-right" class="hidden md:block w-8 h-8 text-gray-300"></i>
-                    <!-- Node 2 -->
-                    <div class="w-64 bg-white border-2 border-black p-6 shadow-[4px_4px_0px_0px_#1A1A1A] scale-110">
-                        <p class="text-xs font-bold text-gray-400 uppercase mb-2">Giá trị cao (High Ticket)</p>
-                        <h4 class="font-bold text-lg leading-tight mb-2">TƯ VẤN SETUP <br/> & TRỊ BỆNH CLB</h4>
-                        <p class="text-secondary font-black text-xl">10tr - 50tr++</p>
-                    </div>
-                    <i data-lucide="arrow-right" class="hidden md:block w-8 h-8 text-gray-300"></i>
-                    <!-- Node 3 -->
-                    <div class="w-64 bg-white border-2 border-black p-6 shadow-[4px_4px_0px_0px_#1A1A1A]">
-                        <p class="text-xs font-bold text-gray-400 uppercase mb-2">Bền vững (Infrastructure)</p>
-                        <h4 class="font-bold text-lg leading-tight mb-2">BÁN BÀN <br/> & LINH KIỆN</h4>
-                        <p class="text-green-600 font-black text-xl">Doanh thu Khủng</p>
-                    </div>
+                <div class="p-6 bg-white border-retro shadow-retro">
+                    <i data-lucide="settings-2" class="text-green-600 mb-4 w-10 h-10"></i>
+                    <h3 class="font-display font-extrabold uppercase text-lg mb-2">ANH VŨ OPS</h3>
+                    <p class="text-xs font-medium text-ink/60">Người nhạc trưởng đứng sau quản lý vận hành luồng công việc trơn tru.</p>
                 </div>
-                
-                <div class="mt-16 max-w-3xl mx-auto p-8 bg-ink text-white rounded-3xl border-2 border-white/10">
-                    <p class="text-lg italic font-medium">"Khóa học chỉ là bước đầu để chúng ta nắm giữ dữ liệu khách hàng. Ai có khách hàng, người đó có quyền định đoạt thị trường thiết bị và thi công."</p>
+                <div class="p-6 bg-white border-retro shadow-retro">
+                    <i data-lucide="cpu" class="text-accent mb-4 w-10 h-10"></i>
+                    <h3 class="font-display font-extrabold uppercase text-lg mb-2">DUY.WEB</h3>
+                    <p class="text-xs font-medium text-ink/60">Kiến trúc sư hệ thống. Xây dựng ống dẫn khách hàng tự động từ Web & SEO.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 5: MÔ HÌNH HỢP TÁC (ROLE SPLIT) -->
-        <section id="hop-tac" class="py-24 max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl md:text-5xl font-display font-black uppercase text-center italic mb-16 tracking-tighter">Phân Chia Lợi Thế Hợp Tác</h2>
-            
+        <!-- --- SECTION 5: GÓI GIẢI PHÁP ĐÓNG GÓI --- -->
+        <section id="dich-vu" class="max-w-7xl mx-auto px-4 mb-32">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-display font-black uppercase tracking-tighter">CÁC GÓI <span class="text-primary">"ĂN CHẮC MẶC BỀN"</span></h2>
+            </div>
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Role: Duy -->
-                <div class="bg-white border-4 border-black p-10 shadow-[10px_10px_0px_0px_#457B9D]">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="w-16 h-16 bg-secondary border-2 border-black rounded-full flex items-center justify-center text-white">
-                            <i data-lucide="code" class="w-8 h-8"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-2xl font-black uppercase tracking-tighter">Hệ Thống & Công Nghệ</h4>
-                            <p class="text-xs font-bold text-secondary uppercase tracking-widest">Đảm nhiệm bởi Đức Duy</p>
-                        </div>
-                    </div>
-                    <ul class="space-y-4 font-medium text-gray-600">
-                        <li class="flex gap-3"><i data-lucide="check" class="text-green-600 shrink-0"></i> Xây dựng nền tảng E-learning (Web/App) chuyên nghiệp.</li>
-                        <li class="flex gap-3"><i data-lucide="check" class="text-green-600 shrink-0"></i> Tối ưu SEO Local, Google Maps để kéo khách cho đối tác.</li>
-                        <li class="flex gap-3"><i data-lucide="check" class="text-green-600 shrink-0"></i> Chạy Marketing đa kênh (TikTok, FB) thu hút phễu học viên.</li>
-                        <li class="flex gap-3"><i data-lucide="check" class="text-green-600 shrink-0"></i> Quản lý hạ tầng số, bảo mật và lưu trữ bài giảng.</li>
+                <div class="bg-paper border-retro p-8 shadow-[8px_8px_0px_0px_#E9C46A] group">
+                    <h3 class="text-3xl font-display font-black uppercase mb-4 group-hover:text-primary transition-colors">Gói CLB Bida Toàn Diện</h3>
+                    <p class="font-medium text-ink/60 mb-6">Dành cho quán muốn chuyên nghiệp hóa quy trình đặt bàn và kéo khách từ Google Maps.</p>
+                    <ul class="space-y-3 font-bold mb-8">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="text-green-600 w-5 h-5"></i> Menu bảng giá & hình ảnh quán xịn</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="text-green-600 w-5 h-5"></i> Nút Đặt Bàn Zalo 1 chạm</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="text-green-600 w-5 h-5"></i> Tối ưu SEO Maps (Tìm là thấy ngay)</li>
                     </ul>
+                    <a href="https://zalo.me/0938415218" class="block w-full py-4 bg-ink text-paper text-center font-display font-bold uppercase border-retro shadow-retro hover:bg-primary transition-colors">Tôi Muốn Gói Này</a>
                 </div>
-
-                <!-- Role: Đối tác -->
-                <div class="bg-white border-4 border-black p-10 shadow-[10px_10px_0px_0px_#E63946]">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="w-16 h-16 bg-primary border-2 border-black rounded-full flex items-center justify-center text-white">
-                            <i data-lucide="award" class="w-8 h-8"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-2xl font-black uppercase tracking-tighter">Chuyên Môn & Vận Hành</h4>
-                            <p class="text-xs font-bold text-primary uppercase tracking-widest">Đảm nhiệm bởi Đối Tác</p>
-                        </div>
-                    </div>
-                    <ul class="space-y-4 font-medium text-gray-600">
-                        <li class="flex gap-3"><i data-lucide="check" class="text-green-600 shrink-0"></i> Biên soạn giáo trình, kỹ thuật Bida chuẩn chuyên nghiệp.</li>
-                        <li class="flex gap-3"><i data-lucide="check" class="text-green-600 shrink-0"></i> Quay video hướng dẫn, xây dựng nhân hiệu Coach.</li>
-                        <li class="flex gap-3"><i data-lucide="check" class="text-green-600 shrink-0"></i> Kết nối chuỗi cung ứng bàn, phụ kiện và đội ngũ thi công.</li>
-                        <li class="flex gap-3"><i data-lucide="check" class="text-green-600 shrink-0"></i> Trực tiếp tư vấn giải pháp thực tế cho các CLB đối tác.</li>
+                <div class="bg-paper border-retro p-8 shadow-[8px_8px_0px_0px_#457B9D] group">
+                    <h3 class="text-3xl font-display font-black uppercase mb-4 group-hover:text-secondary transition-colors">Gói Dịch Vụ & Nhân Hiệu</h3>
+                    <p class="font-medium text-ink/60 mb-6">Dành cho cá nhân/phòng khám muốn xây dựng uy tín để khách hàng tin tưởng xuống tiền.</p>
+                    <ul class="space-y-3 font-bold mb-8">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="text-green-600 w-5 h-5"></i> Trang Blog/Kiến thức chuẩn SEO</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="text-green-600 w-5 h-5"></i> Hệ thống thu thập Feedback khách</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="text-green-600 w-5 h-5"></i> Schema Y tế/Chuyên gia (Google Trust)</li>
                     </ul>
+                    <a href="https://zalo.me/0938415218" class="block w-full py-4 bg-ink text-paper text-center font-display font-bold uppercase border-retro shadow-retro hover:bg-secondary transition-colors">Tôi Muốn Gói Này</a>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 6: ROADMAP (TIMELINE) -->
-        <section class="py-24 bg-ink text-white overflow-hidden">
-            <div class="max-w-4xl mx-auto px-4">
-                <h2 class="text-3xl md:text-5xl font-display font-black uppercase text-center italic mb-16 text-primary">Lộ Trình Thống Trị 2026</h2>
-                
-                <div class="space-y-12 relative">
-                    <!-- Line -->
-                    <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-white/10 -translate-x-1/2"></div>
-                    
-                    <!-- Month 1-3 -->
-                    <div class="relative flex flex-col md:flex-row gap-8 items-start md:items-center">
-                        <div class="z-10 w-8 h-8 bg-white border-4 border-primary rounded-full absolute left-0 md:left-1/2 -translate-x-1/2"></div>
-                        <div class="md:w-1/2 md:text-right pr-12">
-                            <h4 class="text-2xl font-black uppercase text-yellow-400">Tháng 1 - 5</h4>
-                            <p class="text-sm font-bold uppercase tracking-widest text-white/50 mb-2">Chuẩn bị & Đóng gói</p>
-                            <p class="text-xs text-gray-400">Hoàn thiện 10 bài giảng gốc. Xây dựng nền tảng E-learning bản Beta. Xác lập nhân hiệu Coach trên TikTok.</p>
-                        </div>
-                        <div class="md:w-1/2"></div>
-                    </div>
-
-                    <!-- Month 4-6 -->
-                    <div class="relative flex flex-col md:flex-row gap-8 items-start md:items-center">
-                        <div class="z-10 w-8 h-8 bg-white border-4 border-secondary rounded-full absolute left-0 md:left-1/2 -translate-x-1/2"></div>
-                        <div class="md:w-1/2"></div>
-                        <div class="md:w-1/2 pl-12">
-                            <h4 class="text-2xl font-black uppercase text-secondary">Tháng 5 - 10</h4>
-                            <p class="text-sm font-bold uppercase tracking-widest text-white/50 mb-2">Bùng nổ Phễu</p>
-                            <p class="text-xs text-gray-400">Chiến dịch Marketing toàn quốc. Đạt mốc 1.000 học viên đầu tiên. Khởi động các gói tư vấn Setup CLB nhỏ.</p>
-                        </div>
-                    </div>
-
-                    <!-- Month 7-12 -->
-                    <div class="relative flex flex-col md:flex-row gap-8 items-start md:items-center">
-                        <div class="z-10 w-8 h-8 bg-white border-4 border-green-500 rounded-full absolute left-0 md:left-1/2 -translate-x-1/2"></div>
-                        <div class="md:w-1/2 md:text-right pr-12">
-                            <h4 class="text-2xl font-black uppercase text-green-400">Tháng 10 - 12</h4>
-                            <p class="text-sm font-bold uppercase tracking-widest text-white/50 mb-2">Thống trị thị trường</p>
-                            <p class="text-xs text-gray-400">Kết nối showroom bàn bida. Trở thành đơn vị số 1 về tư vấn giải pháp trọn gói cho CLB địa phương.</p>
-                        </div>
-                        <div class="md:w-1/2"></div>
-                    </div>
-                </div>
+        <!-- --- SECTION 6: SEO CONTENT BLOCK --- -->
+        <section class="max-w-4xl mx-auto px-4 mb-32 text-center">
+            <h2 class="text-2xl font-display font-black uppercase mb-8 border-b-2 border-ink inline-block text-ink/40">Về Đức Duy Web (Duy Web)</h2>
+            <div class="text-sm font-medium text-ink/60 space-y-6 leading-relaxed text-justify">
+                <p>Từ khóa <strong>"đức duy web"</strong> hay <strong>"duy web"</strong> không chỉ đại diện cho một thợ <strong>thiết kế web</strong>, mà là một lời cam kết về hiệu quả. Duy tập trung vào việc <strong>thiết kế web</strong> thực chiến, nơi mỗi pixel đều hướng tới việc giúp khách hàng địa phương chốt đơn dễ dàng hơn.</p>
+                <p>Tại sao <strong>thiết kế web</strong> lại quan trọng? Vì đó là tài sản số duy nhất anh chị sở hữu trọn đời. Hãy để Duy giúp bạn số hóa cửa hàng một cách bền vững nhất.</p>
             </div>
         </section>
 
-        <!-- SECTION 7: FINAL CTA -->
-        <section class="py-24 bg-white">
-            <div class="max-w-4xl mx-auto px-4 text-center">
-                <div class="mb-12">
-                    <i data-lucide="handshake" class="w-16 h-16 text-primary mx-auto mb-6"></i>
-                    <h2 class="text-4xl md:text-6xl font-display font-black uppercase tracking-tighter leading-none mb-6">SẴN SÀNG KIẾN TẠO <br/> <span class="gradient-text">CUỘC CHƠI?</span></h2>
-                    <p class="text-lg font-medium text-gray-600 mb-10">Tôi đã chuẩn bị sẵn sàng toàn bộ nền tảng công nghệ và quy trình. Tôi chỉ cần bạn - một đối tác có tâm và tầm với nghề Bida.</p>
-                </div>
-
-                <div class="flex flex-col sm:flex-row justify-center gap-6">
-                    <a href="https://zalo.me/0938415218" target="_blank" class="px-10 py-5 bg-primary text-white font-display font-black text-xl uppercase border-2 border-black shadow-[6px_6px_0px_0px_#000] hover:-translate-x-1 hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
-                        <i data-lucide="message-circle" class="w-6 h-6"></i> Nhắn Zalo Bàn Bạc
-                    </a>
-                    <a href="tel:0938415218" class="px-10 py-5 bg-white text-black font-display font-black text-xl uppercase border-2 border-black hover:bg-gray-50 transition-all flex items-center justify-center gap-3">
-                        <i data-lucide="phone" class="w-6 h-6"></i> Gọi Trực Tiếp
-                    </a>
-                </div>
-                
-                <p class="mt-12 text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">Đức Duy Web Architect - Thợ Xây Mặt Bằng Số Chuẩn SEO</p>
+        <!-- --- SECTION 7: FINAL CTA --- -->
+        <section class="max-w-7xl mx-auto px-4 mb-24">
+            <div class="bg-primary text-white p-12 md:p-24 border-retro shadow-retro-lg text-center relative overflow-hidden">
+                <h2 class="text-4xl md:text-8xl font-display font-black uppercase tracking-tighter mb-8 italic">Sẵn sàng để <br> Có Khách Thật?</h2>
+                <a href="https://zalo.me/0938415218" target="_blank" class="inline-flex items-center gap-4 px-12 py-6 bg-paper text-ink font-display font-black text-2xl uppercase border-retro shadow-retro hover:-translate-x-1 hover:-translate-y-1 transition-all">
+                    NHẮN ZALO CHO DUY <i data-lucide="message-circle" class="w-8 h-8"></i>
+                </a>
+                <p class="mt-8 font-bold text-xl uppercase tracking-widest">Đức Duy - Người đồng hành số của bạn</p>
             </div>
         </section>
 
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-ink text-white py-12 border-t-4 border-primary">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-white text-black border-2 border-primary flex items-center justify-center font-black">D</div>
-                <span class="font-display font-extrabold text-lg tracking-tighter uppercase">BIDA PRO LAB</span>
-            </div>
-            <p class="text-xs text-gray-500 font-bold uppercase tracking-widest">© 2026 Toàn bộ chiến lược thuộc về Đức Duy & Cộng sự.</p>
-            <div class="flex gap-4">
-                <a href="#" class="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-all"><i data-lucide="facebook" class="w-4 h-4"></i></a>
-                <a href="#" class="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-secondary transition-all"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-            </div>
+    <footer class="bg-ink text-paper py-16 border-t-8 border-accent">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="font-display font-black text-4xl tracking-tighter bg-paper text-ink px-3 py-1 transform rotate-2 inline-block mb-8">DUY.WEB</div>
+            <p class="font-bold text-sm uppercase tracking-[0.3em] opacity-50 mb-2">Thợ xây mặt bằng số - Thiết kế web & SEO</p>
+            <p class="font-medium text-xs opacity-30">© 2026. Làm việc bằng sự tử tế cùng liên minh KAME | QT | VŨ.</p>
         </div>
     </footer>
 
     <script>
-        // Khởi tạo icons
         lucide.createIcons();
-
-        // Khởi tạo biểu đồ
         window.onload = function() {
-            // Biểu đồ ROI
-            const ctxRoi = document.getElementById('roiChart').getContext('2d');
-            new Chart(ctxRoi, {
-                type: 'bar',
-                data: {
-                    labels: ['Sản Xuất', 'Dịch Vụ Offline', 'E-learning (FPT Style)'],
-                    datasets: [{
-                        label: 'Lãi Ròng Ước Tính (%)',
-                        data: [15, 25, 48],
-                        backgroundColor: ['#1A1A1A', '#457B9D', '#E63946'],
-                        borderWidth: 2,
-                        borderColor: '#000'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { legend: { display: false } },
-                    scales: {
-                        y: { beginAtZero: true, grid: { color: '#eee' } },
-                        x: { grid: { display: false } }
-                    }
-                }
-            });
-
-            // Biểu đồ Reach
-            const ctxReach = document.getElementById('reachChart').getContext('2d');
-            new Chart(ctxReach, {
+            const ctx = document.getElementById('eduChart').getContext('2d');
+            new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ['Tháng 1', 'Tháng 4', 'Tháng 8', 'Tháng 12'],
+                    labels: ['T1', 'T2', 'T3', 'T4', 'T5', 'T6'],
                     datasets: [
-                        {
-                            label: 'Offline (Tuyến tính)',
-                            data: [100, 150, 180, 200],
-                            borderColor: '#1A1A1A',
-                            borderWidth: 3,
-                            fill: false,
-                            tension: 0
-                        },
-                        {
-                            label: 'E-learning (Đột biến)',
-                            data: [50, 800, 4000, 10000],
-                            borderColor: '#E63946',
-                            borderWidth: 3,
-                            fill: false,
-                            tension: 0.1
-                        }
+                        { label: 'Chỉ làm FB/TikTok (Bấp bênh)', data: [20, 80, 40, 90, 30, 50], borderColor: '#1A1A1A', borderWidth: 3, tension: 0, fill: false },
+                        { label: 'Hệ thống Web & SEO (Bền vững)', data: [10, 30, 60, 120, 250, 500], borderColor: '#E63946', borderWidth: 4, tension: 0.3, fill: false }
                     ]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    plugins: { legend: { position: 'bottom', labels: { font: { weight: 'bold' } } } },
-                    scales: {
-                        y: { beginAtZero: true, grid: { color: '#eee' } },
-                        x: { grid: { display: false } }
-                    }
+                    plugins: { legend: { position: 'bottom', labels: { font: { weight: 'bold', family: 'Inter' } } } },
+                    scales: { y: { beginAtZero: true, grid: { color: '#eee' } }, x: { grid: { display: false } } }
                 }
             });
         };
