@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Trang chủ: Ưu tiên cao nhất -->
+  <url>
+    <loc>https://duyweb.info.vn/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Trang Hướng dẫn vận hành & Quy trình -->
+  <url>
+    <loc>https://duyweb.info.vn/chien-luoc/tu-van-hosting.html</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Các trang dịch vụ khác (Dự phòng) -->
+  <url>
+    <loc>https://duyweb.info.vn/chien-luoc/campaign.html</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
