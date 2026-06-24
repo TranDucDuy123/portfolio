@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "sass": "^1.99.0"
-  }
+  },
+  "name": "html-css-js-ai-chatbot",
+  "version": "1.0.0",
+  "type": "module"
 }
