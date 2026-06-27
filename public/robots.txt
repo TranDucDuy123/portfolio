@@ -1,0 +1,6 @@
+# Group 1: All Search Bots
+User-agent: *
+Allow: /
+
+# Reference sitemap location
+Sitemap: https://ducduyweb.vn/sitemap.xml

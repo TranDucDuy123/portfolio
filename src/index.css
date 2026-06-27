@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brand-primary: #D62828;
+  --color-brand-secondary: #F77F00;
+  --color-brand-accent: #FCBF49;
+  --color-brand-dark: #1A1A1A;
+  --color-brand-light: #F8F9FA;
+}
+
+/* Custom scrollbar and subtle transitions */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-brand-dark);
+  background-color: #FFFFFF;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Custom styles for diagrams & premium cards */
+.diagram-gradient {
+  background: radial-gradient(circle at top right, rgba(247, 127, 0, 0.08) 0%, rgba(214, 40, 40, 0.03) 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #D62828 0%, #F77F00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+

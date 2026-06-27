@@ -1,0 +1,6 @@
+{
+  "name": "Đức Duy Web",
+  "description": "Website là nền móng. Các nền tảng khác là kênh dẫn khách. Đức Duy Web - Digital Asset Hub giúp doanh nghiệp xây dựng tài sản số dài hạn.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
