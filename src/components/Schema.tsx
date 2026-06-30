@@ -29,7 +29,7 @@ export default function Schema({ type, data }: SchemaProps) {
         "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
         "@id": "https://ducduyweb.vn/#localbusiness",
         "url": "https://ducduyweb.vn",
-        "telephone": data.telephone || "0909123456",
+        "telephone": data.telephone || "0938415218",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Quận 1",
