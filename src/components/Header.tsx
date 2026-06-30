@@ -8,7 +8,7 @@ export default function Header() {
   const location = useLocation();
 
   const navigation = [
-    { name: "Trang chủ", href: "/" },
+    // { name: "Trang chủ", href: "/" },
     { name: "Dịch vụ số", href: "/services" },
     { name: "Case Study", href: "/case-study" },
     { name: "Ngành", href: "/solutions" },
