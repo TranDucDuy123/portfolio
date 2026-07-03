@@ -1,5 +1,5 @@
-import { useState, useMemo } from "react";
-import { Link } from "react-router-dom";
+import { useState, useMemo, useEffect } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { Search, Filter, BookOpen, Clock, Tag, X, HelpCircle, ArrowLeft, Send, ArrowUpRight } from "lucide-react";
 import { cafeSoArticles } from "../data/cafeSo";
 import { CafeSoArticle } from "../types";
@@ -8,10 +8,27 @@ import Meta from "../components/Meta";
 import Schema from "../components/Schema";
 
 export default function CafeSo() {
+  const { slug } = useParams();
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("Tất cả");
   const [selectedTag, setSelectedTag] = useState<string>("");
   const [activeArticle, setActiveArticle] = useState<CafeSoArticle | null>(null);
+
+  // Synchronize activeArticle with the URL slug
+  useEffect(() => {
+    if (slug) {
+      const article = cafeSoArticles.find((a) => a.slug === slug);
+      if (article) {
+        setActiveArticle(article);
+        window.scrollTo(0, 0);
+      } else {
+        setActiveArticle(null);
+      }
+    } else {
+      setActiveArticle(null);
+    }
+  }, [slug]);
 
   // Extract all unique categories
   const categories = useMemo(() => {
@@ -44,12 +61,11 @@ export default function CafeSo() {
   }, [searchQuery, selectedCategory, selectedTag]);
 
   const handleSelectArticle = (article: CafeSoArticle) => {
-    setActiveArticle(article);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate(`/cafe-so/${article.slug}`);
   };
 
   const handleBackToList = () => {
-    setActiveArticle(null);
+    navigate("/cafe-so");
   };
 
   return (
