@@ -1,5 +1,6 @@
-import { useState, useMemo } from "react";
-import { Search, Filter, BookOpen, Clock, Tag, X, Calendar, ArrowLeft, ArrowUpRight } from "lucide-react";
+import { useState, useMemo, useEffect } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import { Search, Filter, BookOpen, Clock, Tag, X, Calendar, ArrowLeft, ArrowUpRight, Copy, Check, Share2 } from "lucide-react";
 import { blogPosts } from "../data/blog";
 import { BlogPost } from "../types";
 import { socialConfig } from "../config/social";
@@ -7,10 +8,34 @@ import Meta from "../components/Meta";
 import Schema from "../components/Schema";
 
 export default function Blog() {
+  const { slug } = useParams();
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("Tất cả");
   const [selectedTag, setSelectedTag] = useState<string>("");
   const [activePost, setActivePost] = useState<BlogPost | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(window.location.href);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
+
+  // Synchronize activePost with URL slug
+  useEffect(() => {
+    if (slug) {
+      const post = blogPosts.find((p) => p.slug === slug);
+      if (post) {
+        setActivePost(post);
+        window.scrollTo(0, 0);
+      } else {
+        setActivePost(null);
+      }
+    } else {
+      setActivePost(null);
+    }
+  }, [slug]);
 
   const categories = ["Tất cả", "Website", "SEO", "Digital Assets", "Business Strategy", "Conversion", "Content Marketing", "Lead Generation"];
 
@@ -37,12 +62,11 @@ export default function Blog() {
   }, [searchQuery, selectedCategory, selectedTag]);
 
   const handleSelectPost = (post: BlogPost) => {
-    setActivePost(post);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate(`/blog/${post.slug}`);
   };
 
   const handleBackToList = () => {
-    setActivePost(null);
+    navigate("/blog");
   };
 
   return (
@@ -110,18 +134,52 @@ export default function Blog() {
                 Quay lại danh sách bài viết
               </button>
 
-              <div className="flex flex-wrap items-center gap-3 text-xs text-gray-400">
-                <span className="bg-brand-primary/10 text-brand-primary px-2.5 py-1 rounded-md font-semibold font-mono">
-                  {activePost.category}
-                </span>
-                <span className="flex items-center">
-                  <Calendar className="h-3.5 w-3.5 mr-1 text-gray-400" />
-                  {activePost.date}
-                </span>
-                <span className="flex items-center">
-                  <Clock className="h-3.5 w-3.5 mr-1 text-gray-400" />
-                  {activePost.readingTime} đọc
-                </span>
+              <div className="flex flex-wrap items-center justify-between gap-4 border-b border-gray-100 pb-4">
+                <div className="flex flex-wrap items-center gap-3 text-xs text-gray-400">
+                  <span className="bg-brand-primary/10 text-brand-primary px-2.5 py-1 rounded-md font-semibold font-mono">
+                    {activePost.category}
+                  </span>
+                  <span className="flex items-center">
+                    <Calendar className="h-3.5 w-3.5 mr-1 text-gray-400" />
+                    {activePost.date}
+                  </span>
+                  <span className="flex items-center">
+                    <Clock className="h-3.5 w-3.5 mr-1 text-gray-400" />
+                    {activePost.readingTime} đọc
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={handleCopyLink}
+                    className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-gray-100 hover:bg-brand-primary/10 hover:text-brand-primary text-gray-600 transition-all cursor-pointer"
+                    style={{ minHeight: "36px" }}
+                  >
+                    {copied ? (
+                      <>
+                        <Check className="h-3.5 w-3.5 text-green-500" />
+                        <span className="text-green-600">Đã sao chép!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="h-3.5 w-3.5" />
+                        <span>Sao chép link chia sẻ</span>
+                      </>
+                    )}
+                  </button>
+
+                  <a
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center p-1.5 rounded-lg bg-gray-100 hover:bg-[#1877F2]/10 hover:text-[#1877F2] text-gray-600 transition-all text-xs font-semibold space-x-1"
+                    style={{ minHeight: "36px" }}
+                    title="Chia sẻ Facebook"
+                  >
+                    <Share2 className="h-3.5 w-3.5" />
+                    <span>Facebook</span>
+                  </a>
+                </div>
               </div>
 
               {/* Body rendering */}
@@ -195,6 +253,43 @@ export default function Blog() {
                     #{tag}
                   </span>
                 ))}
+              </div>
+
+              {/* Bottom Share Callout */}
+              <div className="bg-brand-light border border-brand-primary/10 p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 mt-8">
+                <div className="text-left">
+                  <h4 className="font-display font-bold text-sm text-brand-dark">Bạn thấy nội dung này hữu ích?</h4>
+                  <p className="text-xs text-gray-500 mt-1">Hãy gửi tặng liên kết này cho bạn bè, đối tác hoặc chia sẻ lên mạng xã hội nhé!</p>
+                </div>
+                <div className="flex items-center gap-2.5 flex-shrink-0 w-full sm:w-auto justify-end">
+                  <button
+                    onClick={handleCopyLink}
+                    className="inline-flex items-center justify-center space-x-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-white border border-gray-200 hover:border-brand-primary text-gray-700 hover:text-brand-primary shadow-sm transition-all cursor-pointer w-full sm:w-auto"
+                    style={{ minHeight: "40px" }}
+                  >
+                    {copied ? (
+                      <>
+                        <Check className="h-3.5 w-3.5 text-green-500" />
+                        <span className="text-green-600">Đã copy link!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="h-3.5 w-3.5" />
+                        <span>Sao chép link</span>
+                      </>
+                    )}
+                  </button>
+                  <a
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center space-x-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-[#1877F2] text-white hover:bg-[#1877F2]/90 shadow-sm transition-all w-full sm:w-auto"
+                    style={{ minHeight: "40px" }}
+                  >
+                    <Share2 className="h-3.5 w-3.5" />
+                    <span>Chia sẻ</span>
+                  </a>
+                </div>
               </div>
             </div>
 
