@@ -16,6 +16,9 @@ import Blog from "./pages/Blog";
 import Resources from "./pages/Resources";
 import Services from "./pages/Services";
 import Connect from "./pages/Connect";
+import Pricing from "./pages/Pricing";
+import BaoGiaTranCong from "./pages/BaoGiaTranCong";
+
 
 export default function App() {
   return (
@@ -63,6 +66,13 @@ export default function App() {
 
             {/* Fallback route back to Home */}
             <Route path="*" element={<Navigate to="/" replace />} />
+            
+            <Route path="/bao-gia" element={<Pricing />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/bao-gia/coach-tran-cong" element={<BaoGiaTranCong />} />
+            <Route path="/bao-gia-tran-cong" element={<BaoGiaTranCong />} />
+
+
           </Routes>
         </main>
 
