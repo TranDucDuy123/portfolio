@@ -18,7 +18,7 @@ import Services from "./pages/Services";
 import Connect from "./pages/Connect";
 import Pricing from "./pages/Pricing";
 import BaoGiaTranCong from "./pages/BaoGiaTranCong";
-
+import TuVanHostingMKS from "./pages/TuVanHostingMKS";
 
 export default function App() {
   return (
@@ -63,16 +63,17 @@ export default function App() {
             <Route path="/resources" element={<Resources />} />
             <Route path="/services" element={<Services />} />
             <Route path="/connect" element={<Connect />} />
-
-            {/* Fallback route back to Home */}
-            <Route path="*" element={<Navigate to="/" replace />} />
-            
             <Route path="/bao-gia" element={<Pricing />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/bao-gia/coach-tran-cong" element={<BaoGiaTranCong />} />
             <Route path="/bao-gia-tran-cong" element={<BaoGiaTranCong />} />
+            <Route path="/tu-van-mks" element={<TuVanHostingMKS />} />
+            <Route path="/tu-van-hosting-mks" element={<TuVanHostingMKS />} />
+            <Route path="/de-xuat-mks" element={<TuVanHostingMKS />} />
+            <Route path="/van-tai-mks" element={<TuVanHostingMKS />} />
 
-
+            {/* Fallback route back to Home */}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
 

@@ -252,7 +252,8 @@ export default function Pricing() {
         </section>
 
         {/* Featured Case Study Quote Banner */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 space-y-6">
+          {/* Banner 1: Coach Trần Công */}
           <div className="bg-brand-dark text-white p-8 rounded-lg border border-gray-800 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="space-y-2">
               <span className="text-xs font-mono font-bold text-brand-accent uppercase tracking-widest block">
@@ -272,6 +273,30 @@ export default function Pricing() {
               style={{ minHeight: "44px" }}
             >
               <span>Xem Bản Đặc Tả Coach Trần Công</span>
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+
+          {/* Banner 2: Vận Tải MKS */}
+          <div className="bg-slate-900 text-white p-8 rounded-lg border-2 border-amber-500/50 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="space-y-2">
+              <span className="text-xs font-mono font-bold text-amber-400 uppercase tracking-widest block">
+                SLIDE TRÌNH CHIẾU TƯ VẤN DIRECT PITCHING
+              </span>
+              <h2 className="font-display font-bold text-2xl text-white">
+                Đề Xuất Website & Hạ Tầng Hosting Cho Vận Tải MKS
+              </h2>
+              <p className="text-xs text-gray-300 max-w-2xl leading-relaxed">
+                Hồ sơ đề xuất hạ tầng hosting 3GB, 5GB, 10GB, 20GB, công cụ tính dung lượng tương tác, phân tích bài viết SEO ngành vận tải và chế độ Slide Trình Chiếu trực tiếp.
+              </p>
+            </div>
+
+            <Link
+              to="/tu-van-mks"
+              className="inline-flex items-center space-x-2 px-6 py-3.5 rounded-sm bg-amber-500 hover:bg-amber-600 text-brand-dark font-black text-xs uppercase tracking-wider transition-all shadow-md flex-shrink-0"
+              style={{ minHeight: "44px" }}
+            >
+              <span>Xem Slide Đề Xuất Vận Tải MKS</span>
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
