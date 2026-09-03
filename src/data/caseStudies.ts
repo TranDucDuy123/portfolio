@@ -225,5 +225,108 @@ export const caseStudies: CaseStudyProposal[] = [
       "Thu hút các hợp đồng thiết kế thi công trọn gói phân khúc cao cấp biệt thự, nhà phố có biên lợi nhuận cực tốt.",
       "Kênh SEO mang lại 40-60 lead đăng ký tư vấn nội thất chất lượng cao đều đặn mỗi tháng mà không cần phụ thuộc vào quảng cáo đắt đỏ."
     ]
-  }
+  },
+  {
+  id: "cs-hoc-seo-website",
+  slug: "hoc-seo-website-tu-a-z",
+  title: "Học SEO Website từ A-Z: Từ lúc khách hàng tìm kiếm đến khi Website có khách hàng",
+  industry: "SEO & Website",
+
+  background:
+    "Nhiều chủ doanh nghiệp biết SEO quan trọng nhưng thường hiểu SEO đơn giản là viết thật nhiều bài rồi chờ Google đưa website lên Top. Thực tế, SEO là một quá trình kết hợp giữa việc hiểu khách hàng tìm kiếm gì, xây dựng cấu trúc website phù hợp, tạo nội dung hữu ích, tối ưu kỹ thuật và đo lường liên tục.",
+
+  problems: [
+    "Không biết khách hàng thực sự tìm kiếm sản phẩm hoặc dịch vụ bằng những từ khóa nào.",
+    "Viết rất nhiều bài nhưng các bài không liên kết với nhau và không phục vụ một mục tiêu kinh doanh rõ ràng.",
+    "Website có nội dung nhưng cấu trúc trang, tiêu đề, URL, hình ảnh và metadata chưa được tối ưu.",
+    "Không hiểu sự khác nhau giữa từ khóa bán hàng và từ khóa cung cấp thông tin.",
+    "Không biết Google đã thu thập và lập chỉ mục những trang nào trên website.",
+    "Có traffic nhưng không tạo được khách hàng vì nội dung và hành trình chuyển đổi chưa được thiết kế.",
+    "Không biết sử dụng dữ liệu từ Google Search Console để cải thiện SEO."
+  ],
+
+  analysis:
+    "Có thể hiểu SEO Website như một hệ thống gồm nhiều bước liên kết với nhau. Doanh nghiệp bắt đầu từ nhu cầu tìm kiếm của khách hàng, chuyển nhu cầu đó thành bộ từ khóa, xây dựng cấu trúc website, tạo nội dung phù hợp với từng ý định tìm kiếm, tối ưu kỹ thuật và cuối cùng đo lường kết quả để tiếp tục cải thiện. SEO hiệu quả không chỉ nhằm đưa một từ khóa lên Top mà phải giúp website tiếp cận đúng người, giải quyết đúng nhu cầu và tạo ra hành động kinh doanh.",
+
+  opportunities: [
+    "Xây dựng bộ từ khóa dựa trên chính câu hỏi và nhu cầu thật của khách hàng.",
+    "Phân nhóm từ khóa thành nhóm thông tin, nhóm sản phẩm/dịch vụ và nhóm có ý định chuyển đổi.",
+    "Xây dựng Topic Cluster để các bài viết hỗ trợ lẫn nhau thay vì viết nội dung rời rạc.",
+    "Tối ưu các trang dịch vụ/sản phẩm để phục vụ nhóm từ khóa có khả năng tạo khách hàng.",
+    "Dùng Blog làm kênh thu hút người đang trong giai đoạn tìm hiểu.",
+    "Dùng Case Study và dự án thực tế để tăng niềm tin sau khi khách hàng truy cập website.",
+    "Kết nối SEO với Google Business Profile, mạng xã hội và các kênh marketing khác.",
+    "Theo dõi dữ liệu tìm kiếm để liên tục cải thiện nội dung thay vì đoán nhu cầu khách hàng."
+  ],
+
+  suggestedStructure: {
+    title: "Lộ trình học và triển khai SEO Website từ A-Z",
+
+    description:
+      "Một lộ trình đơn giản giúp người mới hiểu SEO theo đúng trình tự: hiểu khách hàng → nghiên cứu từ khóa → xây cấu trúc website → tạo nội dung → tối ưu On-page → tối ưu Technical SEO → liên kết nội bộ → lập chỉ mục → đo lường → chuyển đổi.",
+
+    sections: [
+      "Bước 1 - Hiểu SEO: SEO là quá trình giúp website tiếp cận người dùng thông qua nhu cầu tìm kiếm trên công cụ tìm kiếm.",
+
+      "Bước 2 - Hiểu khách hàng: Xác định khách hàng là ai, họ đang gặp vấn đề gì và họ sẽ tìm kiếm thông tin bằng cách nào.",
+
+      "Bước 3 - Nghiên cứu từ khóa: Tập hợp các cụm từ khách hàng có thể sử dụng và phân loại theo nhu cầu tìm kiếm.",
+
+      "Bước 4 - Phân tích Search Intent: Xác định người tìm kiếm đang muốn biết thông tin, so sánh, tìm dịch vụ/sản phẩm hay thực hiện hành động.",
+
+      "Bước 5 - Xây cấu trúc Website: Phân bổ từ khóa vào Homepage, trang dịch vụ, sản phẩm, danh mục, dự án và Blog để tránh nội dung chồng chéo.",
+
+      "Bước 6 - Xây dựng Content: Mỗi bài viết cần giải quyết một nhu cầu cụ thể và dẫn người đọc đến nội dung liên quan tiếp theo.",
+
+      "Bước 7 - SEO On-page: Tối ưu Title, Description, Heading, URL, hình ảnh, nội dung, liên kết nội bộ và các thành phần cần thiết trên từng trang.",
+
+      "Bước 8 - Technical SEO: Kiểm tra khả năng thu thập dữ liệu, lập chỉ mục, tốc độ, mobile, sitemap, robots.txt, canonical và cấu trúc kỹ thuật của website.",
+
+      "Bước 9 - Internal Link: Liên kết các bài viết, trang dịch vụ, sản phẩm và Case Study để hình thành hệ thống nội dung có chủ đề rõ ràng.",
+
+      "Bước 10 - Đo lường: Theo dõi hiệu suất tìm kiếm, truy vấn, lượt hiển thị, lượt click và các trang đang có cơ hội tăng trưởng.",
+
+      "Bước 11 - Tối ưu liên tục: Cập nhật nội dung, cải thiện tiêu đề, bổ sung thông tin và xây dựng thêm nội dung hỗ trợ dựa trên dữ liệu thực tế.",
+
+      "Bước 12 - Chuyển đổi: Đưa người dùng từ kết quả tìm kiếm → bài viết → trang dịch vụ/sản phẩm → Case Study → liên hệ hoặc đăng ký tư vấn."
+    ]
+  },
+
+  businessWorkflow:
+    "Khách hàng phát sinh nhu cầu → tìm kiếm trên Google → truy cập bài viết phù hợp → đọc và tìm hiểu thêm → chuyển sang trang dịch vụ/sản phẩm → xem dự án hoặc Case Study → hình thành niềm tin → thực hiện CTA → trở thành Lead → nhân viên tư vấn → chuyển đổi thành khách hàng.",
+
+  customerJourney: [
+    "TIẾP CẬN: Khách hàng phát sinh một vấn đề và tìm kiếm câu trả lời trên Google.",
+
+    "TÌM HIỂU: Khách đọc bài viết chuyên môn, tiếp tục truy cập các bài liên quan và bắt đầu nhận diện thương hiệu.",
+
+    "CÂN NHẮC: Khách chuyển sang trang dịch vụ, sản phẩm, dự án hoặc Case Study để kiểm chứng năng lực.",
+
+    "RA QUYẾT ĐỊNH: Khách thực hiện hành động như gọi điện, nhắn Zalo, gửi form hoặc đặt lịch tư vấn."
+  ],
+
+  digitalAssetStrategy:
+    "Xây dựng Website như một thư viện kiến thức có khả năng tích lũy lâu dài. Mỗi bài viết mới không tồn tại độc lập mà liên kết với các bài cũ, trang dịch vụ, sản phẩm và Case Study. Theo thời gian, website hình thành một hệ thống nội dung chuyên sâu giúp Google hiểu rõ chủ đề website và giúp khách hàng có nhiều điểm tiếp cận thương hiệu từ công cụ tìm kiếm.",
+
+  suggestedFeatures: [
+    "Sitemap.xml giúp khai báo hệ thống URL cần được công cụ tìm kiếm biết đến.",
+    "Robots.txt hỗ trợ kiểm soát các khu vực website được phép hoặc không muốn crawler truy cập.",
+    "Meta Title và Meta Description riêng cho từng trang.",
+    "Heading H1, H2, H3 được tổ chức theo cấu trúc nội dung rõ ràng.",
+    "URL ngắn gọn, dễ hiểu và phản ánh chủ đề trang.",
+    "Hệ thống Internal Link kết nối bài viết với dịch vụ, sản phẩm và Case Study.",
+    "Schema Structured Data phù hợp với từng loại nội dung.",
+    "Tối ưu hình ảnh, kích thước và định dạng để cải thiện trải nghiệm người dùng.",
+    "Google Search Console để theo dõi hiệu suất tìm kiếm và tình trạng lập chỉ mục.",
+    "CTA trong nội dung để kết nối Traffic SEO với mục tiêu kinh doanh."
+  ],
+
+  expectedResults: [
+    "Người mới có thể hình dung được toàn bộ quy trình SEO Website thay vì chỉ hiểu SEO là viết bài.",
+    "Doanh nghiệp biết cách biến nhu cầu tìm kiếm của khách hàng thành cấu trúc nội dung trên Website.",
+    "Website hình thành hệ thống nội dung có chủ đề và liên kết rõ ràng.",
+    "SEO được kết nối trực tiếp với Website, Content, Customer Journey và hoạt động tạo Lead.",
+    "Doanh nghiệp có một quy trình để tiếp tục nghiên cứu, triển khai, đo lường và cải thiện SEO lâu dài."
+  ]
+}
 ];
