@@ -1,0 +1,256 @@
+{
+  "client": {
+    "name": "Phòng Khám Nam Khoa Sài Gòn",
+    "industry": "Chuyên khoa Nam học – Tiết niệu",
+    "location": "Bình Thạnh, TP. Hồ Chí Minh"
+  },
+  "title": "Kế hoạch vận hành đa kênh",
+  "projectName": "Biến website thành nguồn khách đặt lịch · 90 ngày đầu",
+  "preparedBy": "Đức Duy Web",
+  "preparedDate": "12/10/2026",
+  "version": "1.0",
+  "validUntil": "31/01/2027",
+
+  "summary": "Website namkhoasg.com đã hoàn thiện: đủ dịch vụ, bảng giá công khai, giấy phép hoạt động, hồ sơ bác sĩ và các nút Zalo, hotline, đặt lịch. Nhưng doanh số từ website vẫn chưa có, vì hiện chưa có kênh nào chủ động đưa khách đến website: các kênh TikTok đang chạy lẻ, fanpage Facebook bị bỏ ngỏ, còn quảng cáo thì phòng khám chưa dám chạy.\n\nKế hoạch 90 ngày này không làm thêm kênh mới và không bắt buộc chạy quảng cáo. Mục tiêu là nối các kênh đang có về một mối: TikTok và Facebook tạo niềm tin, Google mang khách đang thật sự tìm phòng khám, website giúp khách yên tâm, và Zalo chốt lịch hẹn. Song song, mọi lịch hẹn đều được ghi lại khách đến từ kênh nào, để sau 90 ngày phòng khám biết rõ kênh nào mang về doanh thu.",
+
+  "goals": [
+    { "label": "Biết khách đến từ đâu", "target": "100% lịch hẹn", "note": "Mọi cuộc gọi, tin nhắn Zalo, form đặt lịch đều được ghi nguồn từ tuần đầu tiên" },
+    { "label": "Liên hệ từ website & Google", "target": "Gấp đôi", "note": "So với mốc đo được trong 2 tuần đầu, đến hết tháng thứ 3" },
+    { "label": "Đánh giá Google Maps", "target": "+30 đánh giá", "note": "Từ bệnh nhân đã khám, xin khéo léo, không yêu cầu ghi tên bệnh" },
+    { "label": "Tốc độ phản hồi tin nhắn", "target": "Dưới 5 phút", "note": "Zalo & Messenger trong giờ làm việc. Khách nam khoa hỏi nhiều nơi, ai trả lời trước thường được chọn" }
+  ],
+
+  "diagnosis": [
+    {
+      "current": "Website đã hoàn thiện, đủ dịch vụ và bảng giá",
+      "why": "Website giống một phòng khám đẹp nằm trong hẻm: tốt nhưng chưa có biển chỉ đường. Chưa có kênh nào dẫn khách về website.",
+      "fix": "Mọi kênh đều gắn link về website hoặc Zalo. Ưu tiên Google tìm kiếm và Google Maps, nơi khách nam khoa tìm kín đáo nhiều nhất."
+    },
+    {
+      "current": "Có vài kênh TikTok do người làm thêm phụ trách",
+      "why": "Lượt xem bị chia nhỏ, không gắn với tên phòng khám và bác sĩ, không dẫn về đâu, và không biết kênh nào ra khách.",
+      "fix": "Gộp về 1 kênh chính mang tên phòng khám, có bác sĩ xuất hiện. Link ở profile dẫn về Zalo/website, có mã theo dõi riêng."
+    },
+    {
+      "current": "Fanpage Facebook bị bỏ ngỏ",
+      "why": "Khách tìm tên phòng khám trên Facebook thấy trang im ắng sẽ nghi ngờ. Tin nhắn Messenger trả lời chậm thì mất khách.",
+      "fix": "Không cần chăm như trước: giữ trang hoạt động bằng cách đăng lại video và bài viết có sẵn, và có người trực tin nhắn."
+    },
+    {
+      "current": "Ngại chạy quảng cáo",
+      "why": "Lo ngại có cơ sở: nội dung sức khoẻ tình dục bị Facebook và TikTok hạn chế, và quảng cáo dịch vụ khám chữa bệnh cần được cơ quan y tế xác nhận nội dung.",
+      "fix": "2 tháng đầu không chạy quảng cáo, tập trung kênh tự nhiên. Tháng 3 chỉ cân nhắc thử Google Search với ngân sách nhỏ khi đã đủ điều kiện."
+    },
+    {
+      "current": "Chưa ghi lại khách đến từ kênh nào",
+      "why": "Không biết công sức ở kênh nào mang về khách, nên dễ kết luận sai rằng website không hiệu quả.",
+      "fix": "Lễ tân hỏi và ghi nguồn cho mỗi lịch hẹn. Gắn đo lường cho nút Gọi, Zalo, Đặt lịch trên website."
+    }
+  ],
+
+  "channels": [
+    {
+      "type": "website",
+      "name": "Website namkhoasg.com",
+      "tier": "hub",
+      "role": "Nơi khách tìm hiểu một cách kín đáo: xem dịch vụ, bảng giá công khai, quy trình, bác sĩ, rồi nhắn Zalo hoặc đặt lịch. Website đã sẵn sàng, việc còn lại là dẫn khách về và đo lường.",
+      "audience": "Nam giới 20–50 tuổi có vấn đề về nam khoa hoặc tiết niệu, ngại hỏi trực tiếp, thường tự tìm trên Google trước",
+      "contentTypes": [
+        "Bài kiến thức trả lời đúng câu khách hay tìm: giá bao nhiêu, có đau không, mất bao lâu, có cần nghỉ làm không",
+        "Làm sâu các trang dịch vụ chủ lực: cắt bao quy đầu, xuất tinh sớm, rối loạn cương, viêm đường tiết niệu, tầm soát bệnh lây qua đường tình dục",
+        "Mục Hỏi đáp ẩn danh cùng bác sĩ",
+        "Nhúng video TikTok của bác sĩ vào bài viết liên quan"
+      ],
+      "frequency": "4 bài viết / tháng · cập nhật bảng giá khi có thay đổi",
+      "kpis": ["Số lượt bấm Gọi, Zalo, Đặt lịch", "Lượt truy cập từ Google tìm kiếm", "Thứ hạng các từ khoá dịch vụ chủ lực"],
+      "owner": "Đức Duy Web (SEO, đo lường, kỹ thuật) · Bác sĩ duyệt nội dung chuyên môn"
+    },
+    {
+      "type": "google",
+      "name": "Google Maps (Google Business Profile)",
+      "tier": "core",
+      "role": "Kênh mang khách nhanh nhất cho một phòng khám: khách tìm \"phòng khám nam khoa Bình Thạnh\" hay \"phòng khám nam khoa gần đây\" rồi gọi luôn. Đây cũng là nơi khách xem đánh giá trước khi quyết định.",
+      "audience": "Khách đang có nhu cầu khám ngay, ở gần khu vực phòng khám",
+      "contentTypes": ["Ảnh thật phòng khám: mặt tiền, quầy tiếp đón, phòng khám", "Danh sách dịch vụ kèm giá từ website", "Bài cập nhật ngắn hằng tuần", "Trả lời mọi đánh giá một cách kín đáo, không nhắc tới bệnh"],
+      "frequency": "1 bài cập nhật / tuần · trả lời đánh giá trong 24 giờ",
+      "kpis": ["Lượt gọi từ Google Maps", "Lượt chỉ đường", "Lượt bấm vào website", "Số đánh giá mới"],
+      "owner": "Đức Duy Web (tối ưu hồ sơ) · Lễ tân (xin đánh giá sau khám)"
+    },
+    {
+      "type": "tiktok",
+      "name": "TikTok – kênh chính của phòng khám",
+      "tier": "core",
+      "role": "Tạo niềm tin vào bác sĩ: mỗi video bác sĩ giải đáp một nỗi lo thường gặp, cuối video mời khách nhắn Zalo để được tư vấn riêng. Gộp các kênh lẻ hiện có về kênh này.",
+      "audience": "Nam giới 18–40 tuổi lướt TikTok, chưa sẵn sàng đi khám nhưng đang lo lắng",
+      "contentTypes": [
+        "Bác sĩ trả lời 1 câu hỏi trong mỗi video (30–60 giây)",
+        "Những hiểu lầm thường gặp về nam khoa",
+        "Quy trình khám kín đáo, giá công khai, không chi phí ẩn",
+        "Dùng từ ngữ y khoa nhẹ nhàng để tránh bị nền tảng hạn chế hiển thị"
+      ],
+      "frequency": "4–5 video / tuần",
+      "kpis": ["Lượt bấm link ở profile", "Số tin nhắn hỏi tư vấn", "Lượt xem trung bình mỗi video"],
+      "owner": "Người làm TikTok hiện tại (dựng, đăng) · Bác sĩ (quay 1 buổi/tuần) · Đức Duy Web (kịch bản tháng đầu)"
+    },
+    {
+      "type": "facebook",
+      "name": "Fanpage Facebook",
+      "tier": "support",
+      "role": "Không cần chăm như kênh chính. Chỉ cần giữ trang hoạt động để khách tìm thấy và yên tâm, và nhận tin nhắn Messenger.",
+      "audience": "Khách tìm tên phòng khám để kiểm tra trước khi đến",
+      "contentTypes": ["Đăng lại video TikTok", "Chia sẻ bài viết từ website", "Thông báo giờ làm việc, lịch nghỉ lễ"],
+      "frequency": "3 bài / tuần (dùng lại nội dung có sẵn, không sản xuất thêm)",
+      "kpis": ["Số tin nhắn Messenger", "Thời gian phản hồi"],
+      "owner": "Người làm TikTok (đăng lại) · Lễ tân (trực tin nhắn)"
+    },
+    {
+      "type": "zalo",
+      "name": "Zalo 0908 913 519",
+      "tier": "support",
+      "role": "Kênh chốt lịch: tư vấn riêng tư, báo giá, nhắc lịch hẹn và tái khám. Mọi kênh khác đều dẫn về đây.",
+      "audience": "Khách đã quan tâm và muốn hỏi riêng",
+      "contentTypes": ["Kịch bản trả lời mẫu cho 10 câu hỏi hay gặp", "Nhắc lịch trước giờ hẹn 1 ngày", "Hỏi thăm sau khám, hẹn tái khám"],
+      "frequency": "Phản hồi dưới 5 phút trong giờ làm việc",
+      "kpis": ["Tỷ lệ từ tin nhắn thành lịch hẹn", "Tỷ lệ khách đến đúng hẹn"],
+      "owner": "Lễ tân / tư vấn viên"
+    },
+    {
+      "type": "ads",
+      "name": "Quảng cáo",
+      "tier": "support",
+      "role": "Tạm thời chưa chạy. Từ tháng 3, có thể thử Google Search Ads với ngân sách nhỏ, chỉ khi nội dung quảng cáo đã được cơ quan y tế xác nhận và đã biết được tỷ lệ khách chốt lịch.",
+      "frequency": "Tuỳ chọn, từ tháng 3",
+      "kpis": ["Chi phí cho mỗi lịch hẹn thật (không tính lượt bấm)"],
+      "owner": "Đức Duy Web đề xuất · Phòng khám quyết định"
+    }
+  ],
+
+  "journey": [
+    {
+      "stage": "Có nỗi lo nhưng ngại hỏi",
+      "description": "Khách thấy dấu hiệu bất thường hoặc muốn cải thiện, nhưng không muốn hỏi người quen.",
+      "channels": ["Google", "TikTok"],
+      "action": "Tự tìm hiểu một cách kín đáo"
+    },
+    {
+      "stage": "Gặp bác sĩ trên mạng",
+      "description": "Khách xem video bác sĩ giải đáp đúng nỗi lo của mình, hoặc đọc bài viết trên website khi tìm trên Google.",
+      "channels": ["TikTok", "Website"],
+      "action": "Xem bảng giá & quy trình"
+    },
+    {
+      "stage": "Kiểm tra uy tín",
+      "description": "Khách xem Google Maps (đánh giá, ảnh thật) và fanpage để chắc phòng khám có thật và đang hoạt động.",
+      "channels": ["Google Maps", "Facebook"],
+      "action": "Yên tâm liên hệ"
+    },
+    {
+      "stage": "Hỏi riêng",
+      "description": "Khách nhắn Zalo hỏi giá, hỏi có đau không, có kín đáo không. Phản hồi nhanh và rõ ràng là điểm quyết định.",
+      "channels": ["Zalo", "Messenger"],
+      "action": "Đặt lịch khám"
+    },
+    {
+      "stage": "Đến khám & quay lại",
+      "description": "Nhắc lịch trước giờ hẹn 1 ngày. Sau khám thì hỏi thăm, hẹn tái khám và xin một đánh giá ngắn trên Google.",
+      "channels": ["Zalo", "Google Maps"],
+      "action": "Thêm đánh giá & khách giới thiệu"
+    }
+  ],
+
+  "weeklyCadence": [
+    { "day": "Thứ 2", "items": [{ "channel": "TikTok", "content": "Video bác sĩ giải đáp 1 câu hỏi" }, { "channel": "Website", "content": "Đăng 1 bài kiến thức (tuần 1 & 3)" }] },
+    { "day": "Thứ 3", "items": [{ "channel": "TikTok", "content": "Video hiểu lầm thường gặp" }, { "channel": "Facebook", "content": "Đăng lại video hôm qua" }] },
+    { "day": "Thứ 4", "items": [{ "channel": "TikTok", "content": "Video quy trình / bảng giá" }, { "channel": "Google Maps", "content": "1 bài cập nhật + ảnh mới" }] },
+    { "day": "Thứ 5", "items": [{ "channel": "TikTok", "content": "Video bác sĩ giải đáp" }, { "channel": "Facebook", "content": "Chia sẻ bài viết website" }] },
+    { "day": "Thứ 6", "items": [{ "channel": "TikTok", "content": "Video hỏi đáp nhanh" }, { "channel": "Website", "content": "Đăng 1 bài kiến thức (tuần 2 & 4)" }, { "channel": "Tổng kết", "content": "Lễ tân gửi bảng ghi nguồn khách trong tuần" }] },
+    { "day": "Thứ 7", "items": [{ "channel": "Quay video", "content": "Bác sĩ quay 1–2 giờ cho tuần sau (8–10 video)" }, { "channel": "Facebook", "content": "Đăng lại video hay nhất tuần" }] },
+    { "day": "Chủ nhật", "items": [{ "channel": "Zalo", "content": "Trực tin nhắn, nhắc lịch hẹn thứ 2" }] }
+  ],
+
+  "phases": [
+    {
+      "name": "Nối các kênh về một mối",
+      "period": "Tháng 1",
+      "focus": "Không làm thêm gì mới, chỉ nối những gì đang có về website/Zalo và bắt đầu đo lường.",
+      "deliverables": [
+        "Chọn 1 kênh TikTok chính, cập nhật tên, ảnh, link ở profile",
+        "Xác minh và hoàn thiện hồ sơ Google Maps, đồng bộ tên, địa chỉ, số điện thoại với website",
+        "Gắn đo lường cho nút Gọi, Zalo, Đặt lịch trên website",
+        "Bảng ghi nguồn khách cho lễ tân",
+        "Bộ 20 kịch bản video và 10 câu trả lời Zalo mẫu"
+      ]
+    },
+    {
+      "name": "Đăng đều đặn",
+      "period": "Tháng 2",
+      "focus": "Đăng theo lịch tuần, đẩy nội dung trên Google và bắt đầu xin đánh giá.",
+      "deliverables": ["Đủ 4 tuần đăng TikTok và Facebook theo lịch", "4 bài viết SEO cho các dịch vụ chủ lực", "15 đánh giá Google mới", "Báo cáo nguồn khách lần đầu"]
+    },
+    {
+      "name": "Tối ưu & quyết định",
+      "period": "Tháng 3",
+      "focus": "Xem kênh nào thật sự ra lịch hẹn và tập trung vào kênh đó. Cân nhắc quảng cáo một cách có kiểm soát.",
+      "deliverables": ["Báo cáo 90 ngày: lịch hẹn và doanh thu theo từng kênh", "Điều chỉnh lịch nội dung", "Đề xuất Google Search Ads thử nghiệm (nếu đủ điều kiện)", "Kế hoạch quý tiếp theo"]
+    }
+  ],
+
+  "responsibilities": [
+    {
+      "party": "Phòng Khám Nam Khoa Sài Gòn",
+      "items": [
+        "Bác sĩ dành 1–2 giờ mỗi tuần để quay video và duyệt nội dung chuyên môn",
+        "Lễ tân hỏi \"Anh biết phòng khám qua đâu?\" và ghi nguồn cho mỗi lịch hẹn",
+        "Trả lời Zalo, Messenger dưới 5 phút. Nhắc lịch và hỏi thăm sau khám",
+        "Xin đánh giá Google sau khám một cách tế nhị"
+      ]
+    },
+    {
+      "party": "Người làm TikTok hiện tại",
+      "items": [
+        "Gộp và chuyển nội dung về kênh chính",
+        "Dựng và đăng video theo lịch tuần",
+        "Đăng lại video và bài viết lên Facebook"
+      ]
+    },
+    {
+      "party": "Đức Duy Web",
+      "items": [
+        "Vận hành website, SEO và viết bài kiến thức",
+        "Tối ưu hồ sơ Google Maps",
+        "Gắn đo lường, tổng hợp số liệu từ các kênh",
+        "Soạn kịch bản video tháng đầu và câu trả lời Zalo mẫu",
+        "Báo cáo hằng tháng kèm đề xuất điều chỉnh"
+      ]
+    }
+  ],
+
+  "reporting": [
+    { "metric": "Số lịch hẹn & khách đến khám theo từng kênh", "source": "Bảng ghi nguồn của lễ tân", "frequency": "Hằng tuần" },
+    { "metric": "Lượt bấm Gọi, Zalo, Đặt lịch trên website", "source": "Google Analytics 4", "frequency": "Hằng tuần" },
+    { "metric": "Lượt truy cập & từ khoá từ Google", "source": "Google Search Console", "frequency": "Hằng tháng" },
+    { "metric": "Lượt gọi, chỉ đường, đánh giá mới", "source": "Google Business Profile", "frequency": "Hằng tháng" },
+    { "metric": "Lượt xem, lượt bấm link profile, tin nhắn", "source": "TikTok, Facebook", "frequency": "Hằng tháng" }
+  ],
+
+  "budget": {
+    "items": [
+      { "item": "Vận hành website, SEO & Google Maps", "amount": "Theo báo giá riêng" },
+      { "item": "Sản xuất video TikTok", "amount": "Giữ nhân sự hiện tại", "note": "Không phát sinh thêm, chỉ thay đổi cách làm" },
+      { "item": "Quảng cáo", "amount": "0đ (tháng 1–2)", "note": "Tháng 3 cân nhắc thử với ngân sách nhỏ, dựa trên số liệu thật" }
+    ],
+    "note": "Doanh thu tăng trước rồi mới tăng chi phí. Mọi khoản quảng cáo đều được đề xuất kèm số liệu và chỉ chạy khi phòng khám đồng ý."
+  },
+
+  "nextSteps": [
+    "Phòng khám chọn 1 kênh TikTok chính để giữ lại và cấp quyền quản trị các kênh hiện có trong tuần này.",
+    "Đức Duy Web gửi bảng ghi nguồn khách. Lễ tân bắt đầu ghi từ ngày khởi động.",
+    "Đức Duy Web xác minh hồ sơ Google Maps và gắn đo lường cho các nút liên hệ trên website.",
+    "Bác sĩ dành 1 buổi quay 10 video đầu tiên theo kịch bản Đức Duy Web soạn.",
+    "Họp 30 phút sau 2 tuần để xem số liệu đầu tiên và chốt mục tiêu chính thức."
+  ],
+  "notes": [
+    "Nội dung chuyên môn do bác sĩ duyệt trước khi đăng. Không cam kết hiệu quả tuyệt đối, không đăng hình ảnh nhạy cảm hay thông tin bệnh nhân.",
+    "Quảng cáo dịch vụ khám chữa bệnh phải tuân thủ quy định về xác nhận nội dung quảng cáo của cơ quan y tế."
+  ]
+}

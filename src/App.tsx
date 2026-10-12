@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FloatingContact from "./components/FloatingContact";
@@ -19,10 +19,33 @@ import Connect from "./pages/Connect";
 import Pricing from "./pages/Pricing";
 import BaoGiaTranCong from "./pages/BaoGiaTranCong";
 import TuVanHostingMKS from "./pages/TuVanHostingMKS";
+import KeHoachDaKenh from "./pages/KeHoachDaKenh";
 
 export default function App() {
   return (
     <Router>
+      <AppShell />
+    </Router>
+  );
+}
+
+function AppShell() {
+  const { pathname } = useLocation();
+
+  // Trang kế hoạch gửi riêng khách hàng: hiển thị độc lập, không header/footer/menu
+  if (pathname.startsWith("/ke-hoach")) {
+    return (
+      <>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/ke-hoach/:slug" element={<KeHoachDaKenh />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </>
+    );
+  }
+
+  return (
       <div className="flex flex-col min-h-screen bg-white text-brand-dark">
         {/* Scroll helper */}
         <ScrollToTop />
@@ -83,6 +106,5 @@ export default function App() {
         {/* Global Footer */}
         <Footer />
       </div>
-    </Router>
   );
 }

@@ -1,0 +1,188 @@
+{
+  "isSample": true,
+  "client": {
+    "name": "Nội Thất An Gia",
+    "industry": "Thiết kế & thi công nội thất nhà phố",
+    "location": "TP. Hồ Chí Minh"
+  },
+  "title": "Kế hoạch vận hành đa kênh",
+  "projectName": "Giai đoạn Q4/2026 – Q1/2027",
+  "preparedBy": "Đức Duy Web",
+  "preparedDate": "12/10/2026",
+  "version": "1.0",
+  "validUntil": "31/03/2027",
+
+  "summary": "Hiện tại khách của An Gia đến chủ yếu qua giới thiệu và một fanpage đăng bài không đều. Khách hỏi giá qua inbox rồi mất liên lạc, không có nơi nào cho khách xem đầy đủ dự án đã làm.\n\nKế hoạch này lấy Website làm trung tâm: mọi kênh khác (Google, Facebook, TikTok, Zalo) có nhiệm vụ đưa khách về website xem dự án thật, báo giá tham khảo, rồi để lại số điện thoại. Mỗi kênh có vai trò, tần suất và người phụ trách rõ ràng để đội ngũ vận hành đều đặn mà không bị quá tải.",
+
+  "goals": [
+    { "label": "Khách để lại liên hệ", "target": "30+ / tháng", "note": "Form website + Zalo + gọi điện, đến hết tháng thứ 3" },
+    { "label": "Dự án trên website", "target": "15 dự án", "note": "Có ảnh thật, mô tả, ngân sách tham khảo" },
+    { "label": "Đánh giá Google", "target": "40 đánh giá", "note": "Từ khách hàng đã bàn giao, điểm trung bình từ 4.7" }
+  ],
+
+  "channels": [
+    {
+      "type": "website",
+      "name": "Website angia.vn",
+      "tier": "hub",
+      "role": "Nơi khách xem dự án thật, đọc quy trình, tham khảo chi phí và để lại liên hệ. Là tài sản số doanh nghiệp tự sở hữu.",
+      "audience": "Chủ nhà phố, căn hộ đang chuẩn bị làm nội thất trong 1–6 tháng tới",
+      "contentTypes": ["Trang dự án (ảnh trước/sau, ngân sách, thời gian)", "Bài viết kinh nghiệm làm nội thất", "Trang báo giá tham khảo theo m²"],
+      "frequency": "2 dự án + 2 bài viết / tháng",
+      "kpis": ["Số liên hệ từ form & nút Zalo", "Lượt truy cập từ Google", "Thời gian xem trang dự án"],
+      "owner": "Đức Duy Web (kỹ thuật, SEO) · An Gia (cung cấp ảnh & thông tin dự án)"
+    },
+    {
+      "type": "google",
+      "name": "Google Business Profile",
+      "tier": "core",
+      "role": "Xuất hiện trên Google Maps khi khách tìm \"nội thất gần đây\"; nơi khách kiểm tra uy tín qua đánh giá.",
+      "audience": "Khách đang so sánh đơn vị thi công trong khu vực",
+      "contentTypes": ["Ảnh công trình mới", "Bài cập nhật ngắn", "Trả lời đánh giá"],
+      "frequency": "1 bài cập nhật / tuần · trả lời đánh giá trong 24 giờ",
+      "kpis": ["Lượt gọi & chỉ đường", "Số đánh giá mới", "Lượt nhấp vào website"],
+      "owner": "An Gia (đăng ảnh) · Đức Duy Web (tối ưu hồ sơ)"
+    },
+    {
+      "type": "facebook",
+      "name": "Fanpage Facebook",
+      "tier": "core",
+      "role": "Nuôi dưỡng quan tâm: chia sẻ dự án, hậu trường thi công, cảm nhận khách hàng. Mỗi bài dẫn về trang dự án trên website.",
+      "audience": "Người theo dõi, khách cũ, người được giới thiệu",
+      "contentTypes": ["Album dự án hoàn thiện", "Video ngắn tại công trình", "Cảm nhận khách hàng"],
+      "frequency": "3 bài / tuần",
+      "kpis": ["Lượt nhấp về website", "Tin nhắn hỏi tư vấn"],
+      "owner": "An Gia"
+    },
+    {
+      "type": "tiktok",
+      "name": "TikTok",
+      "tier": "core",
+      "role": "Tạo độ phủ: video ngắn trước/sau, mẹo bố trí không gian nhỏ. Kéo người xem mới về profile và website.",
+      "audience": "Người trẻ mới mua nhà, quan tâm ý tưởng nội thất",
+      "contentTypes": ["Video trước/sau 15–30 giây", "Mẹo chọn vật liệu", "Một ngày tại công trình"],
+      "frequency": "3 video / tuần",
+      "kpis": ["Lượt xem trung bình", "Lượt nhấp link ở profile"],
+      "owner": "An Gia (quay) · Đức Duy Web (kịch bản mẫu tháng đầu)"
+    },
+    {
+      "type": "zalo",
+      "name": "Zalo (OA & số tư vấn)",
+      "tier": "support",
+      "role": "Kênh chốt: tư vấn 1–1, gửi báo giá, nhắc lịch khảo sát. Mọi nút liên hệ trên website đều dẫn về đây.",
+      "audience": "Khách đã để lại liên hệ",
+      "contentTypes": ["Tin nhắn tư vấn", "Báo giá PDF", "Nhắc lịch hẹn"],
+      "frequency": "Phản hồi trong 15 phút giờ làm việc",
+      "kpis": ["Tỷ lệ khách hẹn khảo sát", "Thời gian phản hồi"],
+      "owner": "An Gia (nhân viên tư vấn)"
+    },
+    {
+      "type": "youtube",
+      "name": "YouTube",
+      "tier": "support",
+      "role": "Lưu trữ video dự án dài (3–5 phút) để nhúng vào trang dự án trên website, tăng độ tin cậy.",
+      "contentTypes": ["Video tham quan công trình hoàn thiện"],
+      "frequency": "1 video / tháng",
+      "kpis": ["Lượt xem từ website"],
+      "owner": "An Gia"
+    }
+  ],
+
+  "journey": [
+    {
+      "stage": "Nhận biết",
+      "description": "Khách lướt thấy video trước/sau trên TikTok hoặc tìm \"thi công nội thất nhà phố\" trên Google.",
+      "channels": ["TikTok", "Google"],
+      "action": "Vào profile / bấm vào website"
+    },
+    {
+      "stage": "Tìm hiểu",
+      "description": "Khách xem các dự án tương tự nhà mình trên website, đọc quy trình và chi phí tham khảo.",
+      "channels": ["Website", "YouTube"],
+      "action": "Xem 2–3 trang dự án"
+    },
+    {
+      "stage": "Kiểm tra uy tín",
+      "description": "Khách xem đánh giá Google và hoạt động gần đây trên fanpage để chắc chắn đơn vị đang hoạt động thật.",
+      "channels": ["Google Business", "Facebook"],
+      "action": "Quay lại website"
+    },
+    {
+      "stage": "Liên hệ",
+      "description": "Khách bấm nút Zalo hoặc điền form nhận báo giá trên website.",
+      "channels": ["Website", "Zalo"],
+      "action": "Hẹn lịch khảo sát"
+    },
+    {
+      "stage": "Sau bàn giao",
+      "description": "Gửi lời cảm ơn, xin đánh giá Google và xin phép chụp ảnh làm dự án mẫu.",
+      "channels": ["Zalo", "Google Business"],
+      "action": "Thành dự án mới trên website"
+    }
+  ],
+
+  "weeklyCadence": [
+    { "day": "Thứ 2", "items": [{ "channel": "Facebook", "content": "Album dự án hoàn thiện + link trang dự án" }, { "channel": "Google", "content": "Đăng ảnh công trình mới" }] },
+    { "day": "Thứ 3", "items": [{ "channel": "TikTok", "content": "Video trước/sau" }] },
+    { "day": "Thứ 4", "items": [{ "channel": "Facebook", "content": "Hậu trường thi công" }] },
+    { "day": "Thứ 5", "items": [{ "channel": "TikTok", "content": "Mẹo chọn vật liệu / bố trí" }] },
+    { "day": "Thứ 6", "items": [{ "channel": "Facebook", "content": "Cảm nhận khách hàng" }, { "channel": "Website", "content": "Kiểm tra liên hệ trong tuần, cập nhật bảng theo dõi" }] },
+    { "day": "Thứ 7", "items": [{ "channel": "TikTok", "content": "Một ngày tại công trình" }] },
+    { "day": "Chủ nhật", "items": [] }
+  ],
+
+  "phases": [
+    {
+      "name": "Nền móng",
+      "period": "Tháng 1",
+      "focus": "Hoàn thiện website và chuẩn hoá các kênh để mọi thứ trỏ về cùng một chỗ.",
+      "deliverables": ["Website với 8 dự án đầu tiên", "Tối ưu hồ sơ Google Business", "Đồng bộ thông tin liên hệ trên mọi kênh", "Bộ kịch bản 12 video TikTok"]
+    },
+    {
+      "name": "Vận hành đều",
+      "period": "Tháng 2",
+      "focus": "Đăng nội dung theo lịch tuần, bắt đầu xin đánh giá từ khách cũ.",
+      "deliverables": ["Đủ lịch đăng 4 tuần", "2 bài viết SEO", "15 đánh giá Google mới"]
+    },
+    {
+      "name": "Tối ưu",
+      "period": "Tháng 3",
+      "focus": "Xem kênh nào mang về khách thật, dồn sức cho kênh hiệu quả.",
+      "deliverables": ["Báo cáo nguồn khách theo kênh", "Điều chỉnh lịch nội dung", "Kế hoạch quý tiếp theo"]
+    }
+  ],
+
+  "responsibilities": [
+    {
+      "party": "Nội Thất An Gia",
+      "items": ["Chụp ảnh / quay video tại công trình theo danh sách gợi ý", "Cung cấp thông tin dự án: diện tích, ngân sách, thời gian", "Đăng bài Facebook, TikTok theo lịch", "Trả lời Zalo, tin nhắn và xin đánh giá sau bàn giao"]
+    },
+    {
+      "party": "Đức Duy Web",
+      "items": ["Xây dựng & vận hành kỹ thuật website", "Viết nội dung trang dự án và bài viết SEO", "Tối ưu Google Business Profile", "Gửi báo cáo số liệu và đề xuất điều chỉnh hằng tháng"]
+    }
+  ],
+
+  "reporting": [
+    { "metric": "Số khách để lại liên hệ (theo từng kênh)", "source": "Form website, Zalo, cuộc gọi", "frequency": "Hằng tuần" },
+    { "metric": "Lượt truy cập website & trang được xem nhiều", "source": "Google Analytics", "frequency": "Hằng tháng" },
+    { "metric": "Lượt gọi, chỉ đường, đánh giá mới", "source": "Google Business Profile", "frequency": "Hằng tháng" },
+    { "metric": "Lượt xem video & nhấp link", "source": "TikTok, Facebook", "frequency": "Hằng tháng" }
+  ],
+
+  "budget": {
+    "items": [
+      { "item": "Website & hosting (năm đầu)", "amount": "Theo báo giá riêng" },
+      { "item": "Vận hành nội dung & SEO", "amount": "Theo báo giá riêng", "note": "Trang dự án, bài viết, tối ưu Google Business" },
+      { "item": "Quảng cáo (không bắt buộc)", "amount": "Tuỳ chọn", "note": "Chỉ chạy khi website đã có đủ dự án mẫu" }
+    ],
+    "note": "Đây là bản mẫu. Chi phí cụ thể sẽ có trong báo giá đi kèm."
+  },
+
+  "nextSteps": [
+    "An Gia gửi ảnh và thông tin 8 dự án tiêu biểu trước ngày 20/10.",
+    "Hai bên chốt danh sách kênh và người phụ trách trong buổi họp 30 phút.",
+    "Đức Duy Web bàn giao website bản thử để An Gia xem và góp ý."
+  ],
+  "notes": ["Kế hoạch được rà soát lại vào cuối mỗi tháng dựa trên số liệu thực tế."]
+}
