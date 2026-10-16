@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -21,6 +22,9 @@ import BaoGiaTranCong from "./pages/BaoGiaTranCong";
 import TuVanHostingMKS from "./pages/TuVanHostingMKS";
 import KeHoachDaKenh from "./pages/KeHoachDaKenh";
 
+// Báo giá riêng từng khách: tách chunk, chỉ tải khi mở đúng link
+const BaoGiaKhachHang = lazy(() => import("./pages/BaoGiaKhachHang"));
+
 export default function App() {
   return (
     <Router>
@@ -31,6 +35,21 @@ export default function App() {
 
 function AppShell() {
   const { pathname } = useLocation();
+
+  // Báo giá gửi riêng khách hàng: hiển thị độc lập, không header/footer/menu
+  if (pathname.startsWith("/bao-gia-kh")) {
+    return (
+      <>
+        <ScrollToTop />
+        <Suspense fallback={<div className="min-h-screen bg-[#F4EFE6]" />}>
+          <Routes>
+            <Route path="/bao-gia-kh/:slug" element={<BaoGiaKhachHang />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </Suspense>
+      </>
+    );
+  }
 
   // Trang kế hoạch gửi riêng khách hàng: hiển thị độc lập, không header/footer/menu
   if (pathname.startsWith("/ke-hoach")) {

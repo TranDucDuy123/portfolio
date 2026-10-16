@@ -1,0 +1,258 @@
+{
+  "client": { "name": "Turn Apparel", "website": "turnapparel.vn" },
+  "title": "Đề xuất lộ trình & Báo giá khởi tạo kênh",
+  "preparedBy": "Duy Web",
+  "preparedDate": "15/10/2026",
+  "headline": {
+    "amount": 14000000,
+    "label": "Trọn gói khởi tạo 6 kênh",
+    "caption": "Kèm 1 tháng đồng hành vận hành và buổi đánh giá cùng anh/chị"
+  },
+
+  "intro": [
+    "Duy Web đề xuất trọn gói khởi tạo 6 kênh bán hàng và nhận diện cho Turn với chi phí 14.000.000đ, kèm 1 tháng đồng hành vận hành và đánh giá cùng anh/chị.",
+    "Turn đã có những thứ mà nhiều local brand mất vài năm mới có. Phần còn thiếu không nằm ở sản phẩm, mà ở đường đi để khách Việt tìm thấy, tin và mua Turn.",
+    "Bên em không đến với vai trò \"làm kênh xong rồi giao\". Bên em đồng hành như một cố vấn công nghệ: dựng kênh chuẩn, cùng chạy thử, đọc số liệu thật, rồi cùng anh/chị quyết định nên dồn lực vào đâu."
+  ],
+  "strengths": [
+    "2 dòng sản phẩm rõ chất: Retrovision & Classics",
+    "Dải sản phẩm từ áo, quần, phụ kiện đến đồ trẻ em và thú cưng",
+    "Giá định vị cao cấp: hoodie 2.200.000đ",
+    "Ứng dụng riêng trên App Store"
+  ],
+
+  "market": {
+    "lead": "Thị trường local brand Việt đang rất sôi động. Bánh còn rất lớn, và chưa ai ăn hết.",
+    "stats": [
+      { "value": 7.2, "decimals": 1, "prefix": "~", "suffix": " tỷ USD", "label": "Thị trường thời trang nội địa" },
+      { "value": 22, "prefix": "18–", "suffix": "%", "label": "Tăng trưởng local brand mỗi năm" },
+      { "value": 2, "prefix": "< ", "suffix": "%", "label": "Thị phần lớn nhất của một thương hiệu Việt" }
+    ],
+    "brands": [
+      { "name": "BOBUI", "how": "Có \"linh hồn\" rõ (hiphop, skate), chất vải dày dặn, khách trung thành vì cộng đồng", "lesson": "Câu chuyện và cộng đồng giữ khách lâu hơn giảm giá" },
+      { "name": "SWE · NOW Saigon", "how": "Hình in to, logo rõ, giá 200–450k, phủ kín học sinh, sinh viên trên TikTok và sàn", "lesson": "Nói đúng ngôn ngữ của đúng tệp khách" },
+      { "name": "Coolmate", "how": "Bán online là chính, tập trung đồ cơ bản, chính sách đổi trả dễ, làm nội dung về chất liệu", "lesson": "Khách tin khi được giải thích rõ vải và được đổi trả dễ" },
+      { "name": "DirtyCoins", "how": "Bắt trend nhanh, collab với nghệ sĩ và IP lớn, vừa có cửa hàng vừa mạnh trên sàn", "lesson": "Mỗi đợt ra mắt là một \"sự kiện\" tạo sóng" }
+    ],
+    "source": "Số liệu thị trường mang tính tham khảo, tổng hợp từ các báo cáo ngành 2025–2026."
+  },
+
+  "testLearn": {
+    "lead": "Marketing giai đoạn đầu không chỉ để bán, mà là cách rẻ và nhanh nhất để hỏi thị trường: khách Việt thật sự muốn gì từ Turn.",
+    "guess": [
+      { "title": "Sản xuất nhiều màu, nhiều size", "sub": "theo cảm tính" },
+      { "title": "Chạy quảng cáo rộng", "sub": "chưa biết ai sẽ mua" },
+      { "title": "Vài tháng sau mới biết", "sub": "mẫu nào ế, tiền đã tiêu" }
+    ],
+    "measure": [
+      { "title": "Đăng video thử vài mẫu", "sub": "TikTok, Reels, Fanpage" },
+      { "title": "Đọc phản ứng thật", "sub": "lượt lưu, tin nhắn, bình luận" },
+      { "title": "Dồn tiền vào mẫu thắng", "sub": "sản xuất và quảng cáo đúng chỗ" }
+    ],
+    "examples": [
+      { "title": "Câu hỏi lặp lại là kho báu", "text": "Nếu 10 người nhắn tin đều hỏi \"form có rộng không\", đó là nội dung video tiếp theo và dòng mô tả cần sửa ngay." },
+      { "title": "Lượt lưu nói thật hơn lượt thích", "text": "Một video phối đồ được lưu nhiều nghĩa là khách đang cân nhắc mua mẫu đó." },
+      { "title": "Khách mua ở đâu, tiền đổ về đó", "text": "Có brand bán tốt trên TikTok Shop nhưng đứng yên trên website; chỉ có số liệu mới cho biết Turn thuộc trường hợp nào." },
+      { "title": "Một mẫu \"gây sốt\" là cửa vào", "text": "Như chiếc túi Croissant của GIA Studios, một sản phẩm được chú ý có thể kéo cả thương hiệu lên; việc của giai đoạn đầu là tìm ra mẫu đó của Turn." }
+    ]
+  },
+
+  "positioning": {
+    "lead": "Với hoodie 2.200.000đ, Turn nằm trên \"khoảng trống vàng\" 400–800k của local brand, cạnh tranh trực tiếp với premium streetwear (DVRK, Grimm DC) và hàng hiệu quốc tế. Ở mức giá này, khách không mua sản phẩm, khách mua bản sắc và cảm giác chất lượng.",
+    "yAxis": "Đại chúng, theo trend → Bản sắc riêng",
+    "xAxis": "Mức giá",
+    "bands": [
+      { "label": "200–450k", "from": 0, "to": 0.26 },
+      { "label": "400–800k · khoảng trống vàng", "from": 0.26, "to": 0.5, "highlight": true },
+      { "label": "trên 1 triệu", "from": 0.5, "to": 1 }
+    ],
+    "quadrants": ["Bản sắc, giá dễ tiếp cận", "Bản sắc cao cấp", "Đại chúng giá mềm", "Theo trend, giá cao"],
+    "points": [
+      { "name": "GIA Studios · CHATS · Subtle Le Nguyen", "x": 0.59, "y": 0.16 },
+      { "name": "Copper Denim · Môi Điên", "x": 0.59, "y": 0.25 },
+      { "name": "DVRK · Grimm DC", "x": 0.55, "y": 0.34, "note": "Premium streetwear: đối thủ trực tiếp cùng tầm giá với Turn." },
+      { "name": "Turn · 2,2 triệu", "x": 0.76, "y": 0.42, "highlight": true, "note": "Nhóm bản sắc, giá cao: hình ảnh phải xứng giá." },
+      { "name": "BOBUI", "x": 0.33, "y": 0.28 },
+      { "name": "DirtyCoins", "x": 0.33, "y": 0.68 },
+      { "name": "L SEOUL · Wephobia", "x": 0.59, "y": 0.74 },
+      { "name": "SWE · NOW Saigon", "x": 0.06, "y": 0.81 }
+    ],
+    "proposal": "Định vị đề xuất cho Turn: \"comfort wear hoài niệm\" cao cấp — ấm, mềm, dễ mặc, cho cả gia đình và thú cưng. Không cạnh tranh độ \"ngầu\" với streetwear, không cạnh tranh giá với đại chúng.",
+    "question": "Turn có dòng sản phẩm nào ở mức 500–900k (áo thun, phụ kiện) để làm \"cửa vào\" cho khách mua lần đầu không?"
+  },
+
+  "channelReviews": {
+    "lead": "Mỗi kênh công nghệ có một kiểu khách và một nhiệm vụ riêng. Chọn một kênh để xem bên em đánh giá thế nào với trường hợp của Turn, hoặc chọn một tiêu chí để so sánh 6 kênh.",
+    "metrics": ["Tiếp cận khách mới", "Khả năng chốt đơn", "Hợp mức giá cao cấp", "Dễ vận hành"],
+    "channels": [
+      {
+        "type": "tiktok",
+        "name": "TikTok Shop",
+        "role": "Khám phá và bán hàng",
+        "behavior": "Khách lướt video, dừng lại vì cảm xúc, mua ngay trong video hoặc livestream.",
+        "verdict": "Kênh khám phá mạnh nhất cho Turn. Video \"phối 1 hoodie 5 cách\", cận cảnh chất vải và \"mặc đồ đôi với cún\" là cách nhanh nhất để thử mẫu nào được chú ý.",
+        "scores": [5, 4, 3, 2],
+        "setup": ["Mở TikTok Shop, đăng sản phẩm", "Kênh TikTok chuẩn hoá nhận diện", "Content mở màn & ưu đãi khai trương"],
+        "watch": "Lượt lưu video, tin nhắn hỏi hàng, đơn qua video"
+      },
+      {
+        "type": "shopee",
+        "name": "Shopee",
+        "role": "Chốt đơn cho khách quen mua sàn",
+        "behavior": "Khách tìm theo từ khoá, so giá, đọc đánh giá và xem ảnh thật trước khi bấm mua.",
+        "verdict": "Khách sàn nhạy giá, nên hoodie 2,2 triệu cần ảnh chất liệu và đánh giá thật đi kèm. Dòng 500–900k (nếu có) nên là cửa vào ở đây.",
+        "scores": [4, 5, 2, 4],
+        "setup": ["Mở shop, đăng 15–20 sản phẩm", "Chuẩn tiêu đề, ảnh, bảng size", "Xin đánh giá từ đơn đầu"],
+        "watch": "Số đơn, số đánh giá, tỉ lệ khách xem → mua"
+      },
+      {
+        "type": "website",
+        "name": "Website turnapparel.vn",
+        "role": "Trung tâm thương hiệu & dữ liệu",
+        "behavior": "Khách đã biết Turn vào để kiểm chứng: giá, chính sách đổi trả, câu chuyện thương hiệu.",
+        "verdict": "Nền Sapo đã có, nhưng còn nhiều điểm khiến khách mới chưa đủ tin. Đây là nơi giữ hình ảnh cao cấp và nơi mọi kênh khác dẫn về.",
+        "scores": [2, 3, 5, 4],
+        "setup": ["Sửa các điểm ở mục Hiện trạng", "SEO: tiêu đề, mô tả, từ khoá", "Gắn link toàn bộ kênh"],
+        "watch": "Lượt truy cập từ các kênh, đơn trên web"
+      },
+      {
+        "type": "instagram",
+        "name": "Instagram",
+        "role": "Tủ kính thương hiệu",
+        "behavior": "Khách \"thẩm định gu\": lướt lưới ảnh, xem lookbook và highlight size, feedback.",
+        "verdict": "Không phải nơi ra nhiều đơn nhất, nhưng là nơi khách quyết định Turn có xứng giá 1–2 triệu hay không.",
+        "scores": [3, 2, 5, 3],
+        "setup": ["Chuẩn hoá profile & highlight", "Lưới ảnh đồng bộ màu", "Reels phối đồ mở màn"],
+        "watch": "Follow mới, lượt lưu, tin nhắn hỏi size"
+      },
+      {
+        "type": "facebook",
+        "name": "Fanpage Facebook",
+        "role": "Chăm sóc, cộng đồng, chốt đơn",
+        "behavior": "Khách nhắn tin hỏi giá, size, đổi trả; xem album và feedback của người đã mua.",
+        "verdict": "Kênh chốt đơn qua tin nhắn và nuôi cộng đồng. Trả lời nhanh, rõ về giá, size, đổi trả là đủ tạo khác biệt.",
+        "scores": [3, 4, 3, 3],
+        "setup": ["Chuẩn hoá Fanpage", "Album bộ sưu tập & bài kể chuyện brand", "Kịch bản trả lời tin nhắn"],
+        "watch": "Tin nhắn hỏi hàng, tỉ lệ chốt qua inbox"
+      },
+      {
+        "type": "google",
+        "name": "Google Maps",
+        "role": "Uy tín khi khách tra tên",
+        "behavior": "Khách gõ tên Turn hoặc \"local brand gần đây\", xem đánh giá sao, ảnh và chỉ đường.",
+        "verdict": "Ít tốn công nhất. Một hồ sơ đầy đủ ảnh và đánh giá là bằng chứng Turn là thương hiệu thật, có địa chỉ thật.",
+        "scores": [2, 3, 4, 5],
+        "setup": ["Tạo & xác minh Google Maps", "Ảnh, giờ mở cửa, link website", "Xin đánh giá từ khách đã mua"],
+        "watch": "Lượt xem hồ sơ, số đánh giá, lượt chỉ đường"
+      }
+    ],
+    "disclaimer": "Điểm 1–5 là nhận định định tính của Duy Web cho riêng trường hợp của Turn, để hai bên trao đổi. Số liệu thật của từng kênh sẽ có sau 4 tuần chạy."
+  },
+
+  "audit": {
+    "lead": "Website đã có nền tảng bán hàng (Sapo/Bizweb) và đủ trang chính sách, nhưng còn nhiều chỗ khiến khách mới chưa đủ tin để bấm mua. Bên em ghi nhận khi xem trang ngày 15/10/2026:",
+    "items": [
+      { "issue": "Mục \"sale has started\" đang hiện \"Sản phẩm demo 1, 2, 3\"", "impact": "Trông như web chưa hoàn thiện, giảm niềm tin", "fix": "Gắn sản phẩm thật hoặc ẩn mục" },
+      { "issue": "Dòng Retrovision báo \"Sản phẩm đang được cập nhật\"", "impact": "Khách bấm từ banner chính nhưng không thấy hàng", "fix": "Đưa sản phẩm lên trước khi chạy truyền thông" },
+      { "issue": "Một số sản phẩm để giá \"Liên hệ\"", "impact": "Khách online ngại hỏi, dễ bỏ đi", "fix": "Hiển thị giá rõ ràng" },
+      { "issue": "Freeship ghi \"đơn trên $150\"", "impact": "Khách Việt phải tự quy đổi, thấy xa lạ", "fix": "Đổi sang mức VNĐ" },
+      { "issue": "Mô tả trang (SEO) trống, từ khoá ghi \"Cập nhật sau\"", "impact": "Google gần như không hiểu web bán gì", "fix": "Viết lại tiêu đề, mô tả, từ khoá" },
+      { "issue": "Nút Instagram, Lookbook, Wholesale chưa gắn link", "impact": "Khách muốn xem thêm nhưng bấm không ra", "fix": "Gắn link kênh thật" },
+      { "issue": "Chưa thấy liên kết Shopee, TikTok Shop, Facebook, Zalo, Google Maps", "impact": "Khách quen mua sàn không có đường vào", "fix": "Nối toàn bộ kênh về website" }
+    ],
+    "note": "Đây đều là việc sửa nhanh được, và nằm trong gói khởi tạo bên dưới."
+  },
+
+  "story": {
+    "line": "Đồ mặc thoải mái, ấm áp, có chút hoài niệm — cho cả bạn, gia đình và cả thú cưng.",
+    "pillars": [
+      { "title": "Màu và ánh sáng hoài niệm", "text": "Tông ấm, hạt film nhẹ, bối cảnh đời thường (ban công, quán cà phê cũ, phòng khách) — đúng tinh thần Retrovision." },
+      { "title": "Chạm được chất liệu", "text": "Cận cảnh vải, đường may, độ dày; người mặc vận động thật. Đây là cách duy nhất để khách tin mức giá 1–2 triệu qua màn hình." },
+      { "title": "Con người thật, nhiều thế hệ", "text": "Cặp đôi, bố mẹ và con, chủ và thú cưng mặc đồng bộ. Dòng Kids và Pets là \"vũ khí\" khác biệt, nên đưa ra phía trước." }
+    ],
+    "contentChannels": [
+      { "name": "Instagram", "role": "Tủ kính thương hiệu, nơi khách \"thẩm định gu\"", "content": "Lookbook theo bộ sưu tập, lưới ảnh đồng bộ màu, Reels phối đồ, highlight Size và Feedback", "tone": "Ít chữ, tinh tế, tiếng Anh xen tiếng Việt" },
+      { "name": "TikTok", "role": "Khám phá và bán hàng", "content": "Phối 1 hoodie 5 cách, cận cảnh chất vải, hậu trường, \"mặc đồ đôi với cún\", livestream ra mắt", "tone": "Gần gũi, vui, bắt trend âm thanh nhưng giữ màu hình ảnh" },
+      { "name": "Facebook", "role": "Chăm sóc, cộng đồng, chốt đơn", "content": "Album bộ sưu tập, bài kể chuyện brand, feedback khách, minigame, trả lời tin nhắn nhanh", "tone": "Thân thiện, rõ ràng về giá, size, đổi trả" }
+    ],
+    "principle": "Một bộ ảnh hoặc một video gốc được cắt ra cho cả ba kênh, để tiết kiệm chi phí sản xuất mà vẫn nhất quán."
+  },
+
+  "loop": {
+    "lead": "Thứ Turn nhận được không phải vài kênh được dựng sẵn, mà là một người đồng hành biến tương tác thành quyết định kinh doanh. Mỗi chiến dịch sinh ra số liệu cho quyết định tiếp theo, lặp lại mỗi tháng.",
+    "steps": [
+      { "title": "Đồng hành theo dõi", "text": "Tin nhắn, bình luận, lượt lưu, đơn hàng trên mọi kênh" },
+      { "title": "Đọc báo cáo", "text": "Báo cáo ngắn, dễ hiểu: kênh nào, mẫu nào đang chạy" },
+      { "title": "Cùng ra quyết định", "text": "Giữ, đổi hoặc dừng: kênh nào, sản phẩm nào, ngân sách bao nhiêu" },
+      { "title": "Ra chiến dịch", "text": "Nội dung, ưu đãi, KOC, quảng cáo dồn vào điểm đang thắng" }
+    ],
+    "focus": 2,
+    "note": "Bước 3 là trọng tâm: bên em đưa số liệu và đề xuất, Turn là người chốt. Nhờ vậy mỗi đồng ngân sách sau đó đều có lý do."
+  },
+
+  "stages": {
+    "lead": "Đơn đầu tiên khó nhất vì shop còn trống đánh giá; mỗi đơn sau đó dễ hơn nhờ review, video và dữ liệu của đơn trước. Vì vậy tương tác đa kênh được thiết kế để mở khoá từng chặng, không dàn trải.",
+    "items": [
+      { "title": "Đơn đầu tiên", "actions": ["Người quen, khách cũ", "Ưu đãi khai trương", "Livestream ra mắt", "Xin review, ảnh thật"], "doneWhen": "có review đầu" },
+      { "title": "Đơn 1 → 10", "actions": ["Video phối đồ đều", "Chốt đơn qua tin nhắn", "Minigame Facebook", "Đủ đánh giá Shopee"], "doneWhen": "shop có sao" },
+      { "title": "Đơn 10 → 50", "actions": ["Mời KOC đúng gu", "Gắn giỏ TikTok Shop", "Mã cho khách quay lại", "Đo kênh ra đơn tốt"], "doneWhen": "biết kênh thắng" },
+      { "title": "Đơn 50 → 100", "actions": ["Quảng cáo theo dữ liệu đã thu được", "Drop bản giới hạn", "Khách giới thiệu bạn"], "doneWhen": "sẵn sàng mở rộng" }
+    ],
+    "footer": "Mọi chặng: nội dung → tương tác → tin nhắn → đơn → đánh giá → nội dung mới",
+    "note": "Các mốc đơn hàng là mục tiêu cùng hướng tới, không phải cam kết doanh số; tốc độ phụ thuộc sản phẩm, giá và ngân sách quảng cáo Turn chọn. Gói khởi tạo 14.000.000đ bao chặng đầu tiên; các chặng sau đi cùng gói duy trì."
+  },
+
+  "roadmap": {
+    "lead": "Trong 4 tuần, Turn có đủ kênh và có số liệu thật để quyết định bước tiếp theo, thay vì đoán.",
+    "weeks": [
+      { "title": "Nền tảng", "items": ["Nhận tài liệu, chốt nhận diện chung", "Sửa website, SEO", "Gắn link các kênh"] },
+      { "title": "Mở sàn", "items": ["Mở Shopee, đăng 15–20 sản phẩm", "Mở TikTok Shop", "Tạo Google Maps"] },
+      { "title": "Ra mắt", "items": ["Chuẩn hoá Fanpage, Instagram, TikTok", "Đăng content mở màn", "Ưu đãi khai trương"] },
+      { "title": "Vận hành", "items": ["Cùng trả lời khách", "Theo dõi tin nhắn, đơn hàng, follow", "Ghi nhận số liệu"] }
+    ],
+    "review": "Họp đánh giá cuối tuần 4: giữ, đổi hoặc dừng từng kênh",
+    "after": { "title": "Từ tháng 2: gói duy trì 1 / 2 / 3 triệu mỗi tháng", "text": "Dồn lực vào kênh ra nhiều tin nhắn và đơn hàng nhất" },
+    "note": "Buổi đánh giá cuối tuần 4 xem ba con số cho từng kênh: số tin nhắn hỏi hàng, số đơn, số follow mới. Từ đó hai bên cùng chọn kênh dồn lực và gói duy trì phù hợp."
+  },
+
+  "pricing": {
+    "lead": "Chi phí chia hai giai đoạn: setup chuẩn một lần trước, rồi mới chọn mức vận hành dựa trên số liệu thật.",
+    "setup": {
+      "name": "Khởi tạo tổng thể",
+      "amount": 14000000,
+      "includes": "Setup chuẩn Shopee, TikTok Shop, website, Fanpage, Instagram, Google Maps; nội dung mở màn; 4 tuần đồng hành theo dõi và buổi đánh giá"
+    },
+    "monthly": {
+      "name": "Vận hành hằng tháng",
+      "options": [
+        { "amount": 1000000, "label": "Turn tự làm", "desc": "Turn tự vận hành, bên em hướng dẫn và đọc số liệu cùng" },
+        { "amount": 2000000, "label": "Cùng làm", "desc": "Bên em cùng làm nội dung và vận hành các kênh chính" },
+        { "amount": 3000000, "label": "Đẩy mạnh", "desc": "Bên em đẩy mạnh kênh đang thắng, tăng nhịp nội dung và chiến dịch" }
+      ],
+      "note": "Chốt sau khi setup xong và hai bên thống nhất hình thức làm. Mức vận hành có thể đổi theo từng tháng, không ràng buộc dài hạn."
+    },
+    "depositRate": 0.5,
+    "excluded": "Ngân sách quảng cáo, phí sàn và chi phí chụp, quay chuyên nghiệp tính riêng khi Turn cần."
+  },
+
+  "partners": [
+    { "domain": "maison-aoa.vn", "category": "Vest", "work": "Website / Fanpage / TikTok", "highlight": "Maison AOA định vị là một \"Atelier\" (xưởng may đo) chuyên nghiệp, tập trung vào dịch vụ may đo (Bespoke) vest nữ cao cấp và đồng phục doanh nghiệp cho nữ." },
+    { "domain": "outerity.com", "work": "Website / Fanpage / TikTok / Hệ thống quản lý CRM", "highlight": "Khách là học sinh cấp 2, cấp 3 và sinh viên. Phong cách trẻ trung, năng động, dễ thương và cực kỳ bắt trend — \"fast-fashion\" phiên bản nội địa." },
+    { "domain": "hafos.vn", "work": "Website / Fanpage / TikTok / Hệ thống vận hành CSKH", "highlight": "Basic, tối giản: áo thun trơn, polo, short, kaki, jeans ống suông cho nam 18–35 tuổi, đề cao sự thoải mái, lịch sự và dễ phối đồ." }
+  ],
+
+  "why": [
+    { "title": "Hiểu local brand", "text": "Bên em làm theo hành trình mua thật của khách Việt, không dựng kênh cho có." },
+    { "title": "Một đầu mối cho mọi kênh", "text": "Không phải thuê riêng người làm Shopee, người làm TikTok, người làm web." },
+    { "title": "Ra quyết định bằng số liệu", "text": "Sau 4 tuần, anh/chị biết rõ kênh nào đáng đầu tư tiếp." },
+    { "title": "Không ràng buộc dài hạn", "text": "Gói duy trì chọn theo tháng, đổi hoặc dừng khi cần." },
+    { "title": "Ưu đãi đồng hành sớm", "text": "Mức giá khởi tạo này dành cho những thương hiệu bắt đầu cùng bên em từ giai đoạn đầu." }
+  ],
+  "nextSteps": [
+    "Hẹn một buổi trao đổi 30 phút để thống nhất hạng mục và mục tiêu tháng đầu",
+    "Turn gửi tài liệu: logo, ảnh sản phẩm, bảng giá, thông tin pháp lý để mở shop",
+    "Xác nhận báo giá và thanh toán đợt 1 (50%)",
+    "Bên em bắt đầu Tuần 1 ngay sau khi nhận đủ tài liệu"
+  ],
+  "closing": "Với 14.000.000đ, Turn có đủ 6 kênh chạy được ngay, nhất quán một hình ảnh, và một người đồng hành đọc số liệu cùng anh/chị trong tháng đầu."
+}
