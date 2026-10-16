@@ -16,6 +16,7 @@ export type QuoteChannelType =
 
 export interface QuoteStat {
   value: number;
+  start?: number; // Số bắt đầu đếm (mặc định 0), vd 400 cho "400–800k"
   decimals?: number;
   prefix?: string;
   suffix?: string;
@@ -62,6 +63,7 @@ export interface ProposalQuote {
   strengths?: string[]; // Những gì khách đã có
 
   market?: {
+    title?: string; // Mặc định: "Thị trường local brand Việt"
     lead: string;
     stats: QuoteStat[];
     brands?: { name: string; how: string; lesson: string }[];

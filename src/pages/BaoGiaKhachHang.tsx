@@ -195,7 +195,7 @@ type Section = { id: string; nav: string; title: string; render: () => ReactNode
 function QuoteDocument({ quote: q }: { quote: ProposalQuote }) {
   const sections: Section[] = [];
   sections.push({ id: "mo-dau", nav: "Lời mở đầu", title: "Lời mở đầu", render: () => <IntroSection q={q} /> });
-  if (q.market) sections.push({ id: "thi-truong", nav: "Thị trường", title: "Thị trường local brand Việt", render: () => <MarketSection m={q.market!} /> });
+  if (q.market) sections.push({ id: "thi-truong", nav: "Thị trường", title: q.market.title || "Thị trường local brand Việt", render: () => <MarketSection m={q.market!} /> });
   if (q.testLearn) sections.push({ id: "do-roi-lam", nav: "Đo rồi mới làm", title: "Vì sao phải làm marketing để hiểu thị trường", render: () => <TestLearnSection t={q.testLearn!} /> });
   if (q.positioning) sections.push({ id: "doi-thu", nav: "Bản đồ đối thủ", title: `Bản đồ đối thủ và vị trí của ${q.client.name.split(" ")[0]}`, render: () => <PositioningSection p={q.positioning!} /> });
   if (q.channelReviews) sections.push({ id: "danh-gia-kenh", nav: "Đánh giá 6 kênh", title: "Đánh giá thị trường qua từng kênh công nghệ", render: () => <ChannelReviewSection c={q.channelReviews!} brand={q.client.name.split(" ")[0]} /> });
@@ -396,8 +396,8 @@ function IntroSection({ q }: { q: ProposalQuote }) {
   );
 }
 
-function CountUp({ value, decimals = 0, prefix = "", suffix = "", run }: { value: number; decimals?: number; prefix?: string; suffix?: string; run: boolean }) {
-  const [v] = useTween([run ? value : 0], 1300);
+function CountUp({ value, start = 0, decimals = 0, prefix = "", suffix = "", run }: { value: number; start?: number; decimals?: number; prefix?: string; suffix?: string; run: boolean }) {
+  const [v] = useTween([run ? value : start], 1300);
   const fmt = (n: number) => n.toLocaleString("vi-VN", { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
   return (
     <>
@@ -423,19 +423,19 @@ function MarketSection({ m }: { m: NonNullable<ProposalQuote["market"]> }) {
       <Lead>{m.lead}</Lead>
       <div ref={ref} className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
         {m.stats.map((s) => (
-          <Card key={s.label} className="p-5 sm:p-6 relative overflow-hidden">
-            <div aria-hidden className="absolute -right-6 -top-6 h-20 w-20 rounded-full bg-brand-secondary/10" />
-            <p className="font-display text-3xl sm:text-4xl font-bold tabular-nums text-brand-primary">
-              <CountUp value={s.value} decimals={s.decimals} prefix={s.prefix} suffix={s.suffix} run={seen} />
+          <Card key={s.label} className="p-5 flex flex-col">
+            <p className="font-display text-[28px] sm:text-3xl font-bold tabular-nums whitespace-nowrap text-brand-primary">
+              <CountUp value={s.value} start={s.start} decimals={s.decimals} prefix={s.prefix} suffix={s.suffix} run={seen} />
             </p>
-            <p className="mt-2 text-sm text-gray-600 leading-snug">{s.label}</p>
+            <p className="mt-1 text-sm font-semibold text-gray-800 leading-snug">{s.label}</p>
+            {s.note && <p className="mt-3 pt-3 border-t border-dashed border-gray-200 text-[13px] text-gray-600 leading-relaxed">{s.note}</p>}
           </Card>
         ))}
       </div>
 
       {m.brands?.length ? (
         <>
-          <p className="mt-10 mb-3 text-sm font-semibold text-gray-800">Những brand đi trước mỗi bên một cách, nhưng ai cũng hiểu khách của mình trước khi bán. Chạm vào từng brand để xem bài học:</p>
+          <p className="mt-10 mb-3 text-sm font-semibold text-gray-800">Mỗi thương hiệu đi trước chọn một cách riêng, điểm chung là hiểu khách trước khi bán. Chạm vào từng brand để xem điều có thể học:</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {m.brands.map((b, i) => {
               const isOpen = open === i;

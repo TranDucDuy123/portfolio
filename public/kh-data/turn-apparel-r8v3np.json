@@ -28,11 +28,12 @@
   ],
 
   "market": {
-    "lead": "Thị trường local brand Việt đang rất sôi động. Bánh còn rất lớn, và chưa ai ăn hết.",
+    "title": "Bức tranh thị trường cho thương hiệu mới",
+    "lead": "Không cần đọc hết báo cáo ngành. Với một thương hiệu mới, chỉ cần nắm vài điều cơ bản để biết mình đang bước vào sân chơi thế nào và nên đứng ở đâu.",
     "stats": [
-      { "value": 7.2, "decimals": 1, "prefix": "~", "suffix": " tỷ USD", "label": "Thị trường thời trang nội địa" },
-      { "value": 22, "prefix": "18–", "suffix": "%", "label": "Tăng trưởng local brand mỗi năm" },
-      { "value": 2, "prefix": "< ", "suffix": "%", "label": "Thị phần lớn nhất của một thương hiệu Việt" }
+      { "value": 800, "start": 400, "prefix": "400–", "suffix": "k", "label": "Mức giá khách đã quen trả cho local brand", "note": "Turn ở mức cao hơn, nên hình ảnh và chất liệu phải khiến khách thấy xứng giá." },
+      { "value": 22, "start": 18, "prefix": "18–", "suffix": "%", "label": "Local brand tăng trưởng mỗi năm", "note": "Thị trường vẫn đang mở rộng, còn chỗ cho thương hiệu mới." },
+      { "value": 2, "start": 10, "prefix": "< ", "suffix": "%", "label": "Thị phần của thương hiệu Việt lớn nhất", "note": "Chưa ai thống lĩnh: người đến sau có cơ hội nếu bản sắc đủ rõ." }
     ],
     "brands": [
       { "name": "BOBUI", "how": "Có \"linh hồn\" rõ (hiphop, skate), chất vải dày dặn, khách trung thành vì cộng đồng", "lesson": "Câu chuyện và cộng đồng giữ khách lâu hơn giảm giá" },
@@ -40,7 +41,7 @@
       { "name": "Coolmate", "how": "Bán online là chính, tập trung đồ cơ bản, chính sách đổi trả dễ, làm nội dung về chất liệu", "lesson": "Khách tin khi được giải thích rõ vải và được đổi trả dễ" },
       { "name": "DirtyCoins", "how": "Bắt trend nhanh, collab với nghệ sĩ và IP lớn, vừa có cửa hàng vừa mạnh trên sàn", "lesson": "Mỗi đợt ra mắt là một \"sự kiện\" tạo sóng" }
     ],
-    "source": "Số liệu thị trường mang tính tham khảo, tổng hợp từ các báo cáo ngành 2025–2026."
+    "source": "Số liệu mang tính định hướng, tổng hợp từ các báo cáo ngành 2025–2026, để hình dung bức tranh chung chứ không phải dự báo cho Turn."
   },
 
   "testLearn": {
