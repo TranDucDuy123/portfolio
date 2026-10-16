@@ -45,6 +45,13 @@ export interface QuoteMapPoint {
 export interface ProposalQuote {
   isSample?: boolean;
   client: { name: string; website?: string };
+  // Thẻ chia sẻ (Zalo, Facebook, Messenger): được ghi sẵn vào HTML lúc build, xem vite-plugins/privateQuoteMeta.ts
+  seo?: {
+    title: string;
+    description: string;
+    image?: string; // Đường dẫn trong public/, nên 1200×630, vd "/kh-data/og/<ma-link>.jpg"
+    imageAlt?: string;
+  };
   title: string;
   preparedBy?: string;
   preparedDate?: string;

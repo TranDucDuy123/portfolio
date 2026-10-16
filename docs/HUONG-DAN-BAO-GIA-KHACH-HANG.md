@@ -13,6 +13,26 @@ Mỗi khách = **1 file JSON** = **1 link riêng**. Trang không menu, không he
 
 Xem thử trên máy: `npm run dev` rồi mở `http://localhost:3000/bao-gia-kh/turn-apparel-r8v3np`
 
+## Ảnh & tiêu đề khi gửi link (Zalo, Facebook, Messenger)
+
+Khai báo khối `seo` trong file JSON:
+
+```json
+"seo": {
+  "title": "Báo giá <Khách> × Duy Web – …",
+  "description": "Khoảng 140–160 ký tự, nói rõ khách nhận được gì và giá.",
+  "image": "/kh-data/og/<ma-link>.jpg",
+  "imageAlt": "Mô tả ảnh"
+}
+```
+
+- Ảnh đặt trong `public/kh-data/og/`, kích thước **1200×630**, JPG dưới ~300KB.
+- Khi `npm run build`, plugin `vite-plugins/privateQuoteMeta.ts` sinh `dist/bao-gia-kh/<ma-link>.html`
+  có sẵn title / description / ảnh (vì Zalo, Facebook không chạy JS nên không đọc được thẻ do React gắn).
+  Vercel bật `cleanUrls` nên link không đuôi `.html` vẫn ra đúng file này.
+- Sau khi deploy, dán link vào https://developers.facebook.com/tools/debug/ và bấm "Scrape Again"
+  nếu Facebook/Messenger còn giữ ảnh cũ. Zalo cũng lưu đệm bản xem trước, đổi ảnh thì nên đổi cả tên file ảnh.
+
 ## Các phần trong file JSON
 
 Kiểu dữ liệu đầy đủ: `src/data/proposalQuoteTypes.ts`.

@@ -155,7 +155,11 @@ export default function BaoGiaKhachHang() {
   }, [slug]);
 
   useEffect(() => {
-    if (state.status === "ready") document.title = `${state.quote.client.name} × Duy Web — ${state.quote.title}`;
+    if (state.status === "ready") {
+      const q = state.quote;
+      document.title = q.seo?.title || `${q.client.name} × Duy Web — ${q.title}`;
+      if (q.seo?.description) document.querySelector("meta[name='description']")?.setAttribute("content", q.seo.description);
+    }
     else if (state.status === "missing") document.title = "Không tìm thấy tài liệu";
   }, [state]);
 
