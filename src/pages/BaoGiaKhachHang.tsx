@@ -22,9 +22,11 @@ import {
   RotateCcw,
   ExternalLink,
   ShieldCheck,
+  Gift,
 } from "lucide-react";
 import { socialConfig } from "../config/social";
 import type { ProposalQuote, QuoteChannelType } from "../data/proposalQuoteTypes";
+import { BrandKitSection, ChannelShowcaseSection } from "../components/quote/BrandShowcase";
 
 /*
   Trang đề xuất & báo giá gửi riêng khách hàng — không menu, không lập chỉ mục.
@@ -45,6 +47,15 @@ const CHANNEL_ICON: Record<QuoteChannelType, typeof Globe> = {
 };
 
 const vnd = (n: number) => `${Math.round(n).toLocaleString("vi-VN")}đ`;
+
+// Ưu đãi còn hiệu lực đến hết ngày deadline (giờ Việt Nam)
+function offerStatus(offer: ProposalQuote["offer"]) {
+  if (!offer) return { active: false, daysLeft: 0 };
+  const end = new Date(`${offer.deadline}T23:59:59+07:00`).getTime();
+  if (Number.isNaN(end)) return { active: false, daysLeft: 0 };
+  const ms = end - Date.now();
+  return { active: ms > 0, daysLeft: Math.max(0, Math.ceil(ms / 86_400_000)) };
+}
 
 type LoadState = { status: "loading" } | { status: "missing" } | { status: "ready"; quote: ProposalQuote };
 
@@ -203,11 +214,14 @@ function QuoteDocument({ quote: q }: { quote: ProposalQuote }) {
   if (q.channelReviews) sections.push({ id: "danh-gia-kenh", nav: "Đánh giá 6 kênh", title: "Đánh giá thị trường qua từng kênh công nghệ", render: () => <ChannelReviewSection c={q.channelReviews!} brand={q.client.name.split(" ")[0]} /> });
   if (q.audit) sections.push({ id: "hien-trang", nav: "Hiện trạng website", title: `Hiện trạng ${q.client.website || "website"}`, render: () => <AuditSection a={q.audit!} /> });
   if (q.story) sections.push({ id: "hinh-anh", nav: "Hình ảnh & câu chuyện", title: "Định hướng hình ảnh và câu chuyện", render: () => <StorySection s={q.story!} /> });
+  if (q.brandKit) sections.push({ id: "nhan-dien", nav: "Bộ nhận diện online", title: "Bộ nhận diện thương hiệu online", render: () => <BrandKitSection k={q.brandKit!} /> });
+  if (q.brandKit && q.channelShowcase) sections.push({ id: "kenh-mau", nav: "Hình ảnh mẫu theo kênh", title: "Hình ảnh mẫu trên từng kênh", render: () => <ChannelShowcaseSection s={q.channelShowcase!} k={q.brandKit!} /> });
   if (q.loop) sections.push({ id: "dong-hanh", nav: "Vòng lặp đồng hành", title: "Ưu tiên dịch vụ: đồng hành để ra quyết định đúng", render: () => <LoopSection l={q.loop!} /> });
   if (q.stages) sections.push({ id: "100-don", nav: "Đến 100 đơn", title: "Từ đơn đầu tiên đến 100 đơn", render: () => <StagesSection s={q.stages!} /> });
   if (q.roadmap) sections.push({ id: "lo-trinh", nav: "Lộ trình 4 tuần", title: `Lộ trình triển khai ${q.roadmap.weeks.length} tuần`, render: () => <RoadmapSection r={q.roadmap!} /> });
   if (q.techPartner) sections.push({ id: "doi-tac-ky-thuat", nav: "Đối tác kỹ thuật", title: "Đối tác kỹ thuật đồng hành", render: () => <TechPartnerSection t={q.techPartner!} /> });
   sections.push({ id: "chi-phi", nav: "Chi phí", title: "Chi phí", render: () => <PricingSection q={q} /> });
+  if (q.growthPath?.steps.length) sections.push({ id: "mo-rong", nav: "Lộ trình mở rộng", title: "Lộ trình mở rộng khi đã có số liệu", render: () => <GrowthPathSection g={q.growthPath!} /> });
   if (q.partners?.length) sections.push({ id: "don-vi", nav: "Đơn vị đã đồng hành", title: "Các đơn vị bên em đã đồng hành", render: () => <PartnersSection q={q} /> });
   if (q.why?.length || q.nextSteps?.length) sections.push({ id: "buoc-tiep", nav: "Bước tiếp theo", title: "Vì sao chọn Duy Web và bước tiếp theo", render: () => <NextSection q={q} /> });
 
@@ -354,6 +368,15 @@ function Cover({ q }: { q: ProposalQuote }) {
               <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">{q.headline.label}</p>
               <p className="font-display text-4xl sm:text-5xl font-bold tabular-nums text-brand-accent">{vnd(amount)}</p>
               {q.headline.caption && <p className="mt-1 text-sm text-gray-300 max-w-xs lg:ml-auto">{q.headline.caption}</p>}
+              {q.offer && offerStatus(q.offer).active && (
+                <a
+                  href="#chi-phi"
+                  className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-brand-accent/15 border border-brand-accent/40 px-3 py-1 text-[12px] font-semibold text-brand-accent hover:bg-brand-accent/25"
+                >
+                  <Gift className="h-3.5 w-3.5" /> {q.offer.title}
+                  {q.offer.deadlineLabel ? ` · đến ${q.offer.deadlineLabel}` : ""}
+                </a>
+              )}
             </div>
           )}
         </div>
@@ -1240,12 +1263,14 @@ function PricingSection({ q }: { q: ProposalQuote }) {
   const total = pr.setup.amount + (opts.length ? monthly * months : 0);
   const deposit = pr.depositRate ? pr.setup.amount * pr.depositRate : 0;
   const [tTotal, tDeposit] = useTween([total, deposit], 500);
+  const { active: offerOn, daysLeft } = offerStatus(q.offer);
 
   const message = [
     `${q.client.name} xác nhận báo giá Duy Web:`,
     `- ${pr.setup.name}: ${vnd(pr.setup.amount)} (trọn gói)`,
     opts.length ? `- ${pr.monthly!.name}: gói "${opts[opt].label}" ${vnd(monthly)}/tháng, dự kiến ${months} tháng từ tháng 2` : "",
     deposit ? `- Đợt 1 (${Math.round((pr.depositRate ?? 0) * 100)}%): ${vnd(deposit)}` : "",
+    offerOn && q.offer ? `- Áp dụng: ${q.offer.title}` : "",
     `Link báo giá: ${window.location.href}`,
   ]
     .filter(Boolean)
@@ -1281,6 +1306,8 @@ function PricingSection({ q }: { q: ProposalQuote }) {
             </div>
             <p className="relative mt-3 text-[15px] leading-relaxed text-gray-700">{pr.setup.includes}</p>
           </Card>
+
+          {offerOn && q.offer && <OfferCard offer={q.offer} daysLeft={daysLeft} />}
 
           {opts.length > 0 && (
             <Card className="p-5 sm:p-6">
@@ -1478,6 +1505,125 @@ function PartnersSection({ q }: { q: ProposalQuote }) {
           <p className="text-sm leading-relaxed text-gray-600">{p.highlight}</p>
         </Card>
       ))}
+    </div>
+  );
+}
+
+function OfferCard({ offer, daysLeft }: { offer: NonNullable<ProposalQuote["offer"]>; daysLeft: number }) {
+  return (
+    <div className="rounded-xl border-2 border-dashed border-brand-secondary/70 bg-[#FFF8EC] p-5 sm:p-6">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div className="flex items-center gap-2.5">
+          <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-secondary text-white">
+            <Gift className="h-4.5 w-4.5" />
+          </span>
+          <div>
+            <p className="font-display text-lg font-bold leading-tight">{offer.title}</p>
+            {offer.deadlineLabel && <p className="text-[13px] text-gray-600">Khi xác nhận gói khởi tạo trước hết ngày {offer.deadlineLabel}</p>}
+          </div>
+        </div>
+        <span className="rounded-full bg-brand-dark text-white px-3 py-1 font-mono text-[12px] font-semibold tabular-nums print:hidden">
+          {daysLeft <= 1 ? "Ngày cuối" : `Còn ${daysLeft} ngày`}
+        </span>
+      </div>
+      <ul className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-2">
+        {offer.gifts.map((g) => (
+          <li key={g.title} className="rounded-lg bg-white border border-black/[0.06] p-3.5">
+            <p className="flex items-start gap-1.5 text-sm font-semibold text-brand-dark">
+              <Check className="h-4 w-4 mt-0.5 text-brand-secondary shrink-0" /> {g.title}
+            </p>
+            <p className="mt-1 text-[13px] text-gray-600 leading-snug">{g.text}</p>
+          </li>
+        ))}
+      </ul>
+      {offer.note && <p className="mt-3 text-[12px] text-gray-500 leading-relaxed">{offer.note}</p>}
+    </div>
+  );
+}
+
+function GrowthPathSection({ g }: { g: NonNullable<ProposalQuote["growthPath"]> }) {
+  const start = Math.max(0, g.steps.findIndex((s) => s.current));
+  const [pick, setPick] = useState(start);
+  const step = g.steps[pick];
+  return (
+    <div>
+      <Lead>{g.lead}</Lead>
+
+      {/* Thanh bước */}
+      <ol className="mt-6 grid gap-2" style={{ gridTemplateColumns: `repeat(${g.steps.length}, minmax(0, 1fr))` }}>
+        {g.steps.map((s, i) => {
+          const on = i === pick;
+          return (
+            <li key={s.name}>
+              <button
+                onClick={() => setPick(i)}
+                aria-pressed={on}
+                className={`w-full h-full text-left rounded-xl border-2 p-3 sm:p-4 transition-all ${
+                  on
+                    ? s.current
+                      ? "border-brand-primary bg-white shadow-md"
+                      : "border-brand-dark bg-white shadow-md"
+                    : s.current
+                    ? "border-brand-primary/40 bg-white/70 hover:border-brand-primary"
+                    : "border-dashed border-gray-300 bg-white/40 hover:border-gray-400"
+                }`}
+              >
+                <p className={`font-mono text-[10px] uppercase tracking-widest ${s.current ? "text-brand-primary" : "text-gray-500"}`}>
+                  Bước {i + 1}
+                  {s.tag ? ` · ${s.tag}` : ""}
+                </p>
+                <p className="font-display text-[15px] sm:text-lg font-bold leading-tight mt-1">{s.name}</p>
+                <p className={`mt-1 text-[12px] sm:text-sm font-semibold tabular-nums ${s.current ? "text-brand-dark" : "text-gray-600"}`}>{s.price}</p>
+              </button>
+            </li>
+          );
+        })}
+      </ol>
+
+      {/* Chi tiết bước đang chọn (màn hình) */}
+      <Card key={pick} className="mt-3 p-5 sm:p-6 print:hidden">
+        <div className="grid gap-5 md:grid-cols-[1fr_1.3fr]">
+          <div className="space-y-3">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-400">Mở khi</p>
+              <p className="text-sm text-gray-800 leading-relaxed mt-0.5">{step.when}</p>
+            </div>
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-400">Mục tiêu</p>
+              <p className="text-sm text-gray-800 leading-relaxed mt-0.5">{step.goal}</p>
+            </div>
+            {step.priceNote && <p className="text-[12px] text-gray-500 leading-relaxed">{step.priceNote}</p>}
+          </div>
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-400 mb-2">{step.current ? "Bao gồm" : "Có thêm so với bước trước"}</p>
+            <ul className="space-y-1.5">
+              {step.adds.map((a) => (
+                <li key={a} className="flex gap-2 text-sm text-gray-800">
+                  <Check className={`h-4 w-4 mt-0.5 shrink-0 ${step.current ? "text-brand-primary" : "text-gray-500"}`} /> {a}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Card>
+
+      {/* Bản in: hiện đủ các bước */}
+      <div className="hidden print:grid grid-cols-3 gap-3 mt-3 text-xs">
+        {g.steps.map((s, i) => (
+          <div key={s.name}>
+            <b>Bước {i + 1} · {s.name} · {s.price}</b>
+            <p>Mở khi: {s.when}</p>
+            <ul>{s.adds.map((a) => <li key={a}>· {a}</li>)}</ul>
+          </div>
+        ))}
+      </div>
+
+      {g.credit && (
+        <p className="mt-4 flex items-start gap-2 rounded-lg bg-white border border-black/[0.06] px-4 py-3 text-sm text-gray-800">
+          <ShieldCheck className="h-4 w-4 mt-0.5 text-emerald-600 shrink-0" /> {g.credit}
+        </p>
+      )}
+      {g.note && <Note>{g.note}</Note>}
     </div>
   );
 }

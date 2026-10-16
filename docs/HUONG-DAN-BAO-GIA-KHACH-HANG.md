@@ -48,11 +48,15 @@ Bắt buộc: `client.name`, `title`, `intro`, `pricing.setup`. Phần nào khô
 | `channelReviews` | Radar từng kênh + so sánh theo tiêu chí (`scores` 1–5, cùng thứ tự `metrics`) |
 | `audit` | Danh sách lỗi website, bấm để xem "sau khi xử lý" |
 | `story` | Câu chuyện, 3 trụ hình ảnh, tab nội dung theo kênh |
+| `brandKit` | Bộ nhận diện online: logo chữ, bảng màu (bấm chép mã; màu 1 nền · 2 chữ · 3 nhấn · 4 phụ), kiểu chữ, hoạ tiết, quy tắc ảnh, giọng văn, moodboard (`reference`) |
+| `channelShowcase` | Điện thoại mô phỏng Instagram / Facebook / TikTok / Shopee dựng từ `brandKit`: `igTiles` (`wordmark`, `hoodie`, `tee`, `sun`, `text`, `texture`), `products` (giá, `kind`), caption & checklist từng kênh. Cần có `brandKit` |
 | `loop` | Vòng lặp tự chạy (`focus` = bước trọng tâm, đếm từ 0) |
 | `stages` | Các chặng mở khoá (số cuối trong `title` là mốc đơn) |
 | `roadmap` | Lộ trình theo tuần |
 | `techPartner` | Đối tác kỹ thuật (vd NASANI): giới thiệu, dịch vụ, phân vai Duy Web / đối tác, link website |
 | `pricing` | Gói khởi tạo + gói tháng (khách chọn) + bảng ước tính, nút xác nhận qua Zalo |
+| `offer` | Ưu đãi có hạn: thẻ dưới gói khởi tạo + nhãn ở bìa, đếm ngược và **tự ẩn sau `deadline`** (`YYYY-MM-DD`) |
+| `growthPath` | Lộ trình mở rộng sau tuần 4: các bước bấm xem (`current: true` = gói đang đề xuất), `credit`, `note` |
 | `partners`, `why`, `nextSteps`, `closing` | Đơn vị đã làm, lý do chọn, bước tiếp theo |
 
 `type` của kênh (quyết định icon): `website`, `shopee`, `tiktok`, `facebook`, `instagram`, `google`,
@@ -61,3 +65,10 @@ Bắt buộc: `client.name`, `title`, `intro`, `pricing.setup`. Phần nào khô
 ## Thu hồi link
 
 Xoá (hoặc đổi tên) file JSON rồi deploy lại — link cũ sẽ báo "Liên kết không hợp lệ hoặc đã hết hạn".
+
+## Upsell khéo: lộ trình mở rộng + ưu đãi
+
+- Giữ **một** lựa chọn cần quyết định ngay (gói khởi tạo). Các gói lớn hơn đặt trong `growthPath`,
+  ghi giá dạng "Thêm X đ" (phần chênh lệch) và điều kiện mở rõ ràng ("sau buổi đánh giá tuần 4").
+- `offer` chỉ gắn với gói khởi tạo; nên tặng phần việc (thiết kế, ưu tiên lịch, giữ giá nâng cấp)
+  thay vì giảm tiền.

@@ -103,10 +103,14 @@ export interface ProposalQuote {
 
   story?: {
     line: string;
+    audience?: { label: string; value: string }[]; // Chân dung khách mục tiêu
     pillars: { title: string; text: string }[];
     contentChannels?: { name: string; role: string; content: string; tone: string }[];
     principle?: string;
   };
+
+  brandKit?: BrandKit;
+  channelShowcase?: ChannelShowcase;
 
   loop?: {
     lead: string;
@@ -138,6 +142,32 @@ export interface ProposalQuote {
     excluded?: string;
   };
 
+  // Ưu đãi có hạn: hiện dưới gói khởi tạo + nhãn nhỏ ở bìa, tự ẩn sau ngày hết hạn
+  offer?: {
+    title: string; // vd "Ưu đãi chốt trong tháng 10"
+    deadline: string; // "YYYY-MM-DD", hết hạn cuối ngày (giờ Việt Nam)
+    deadlineLabel?: string; // vd "31/10/2026"
+    gifts: { title: string; text: string }[];
+    note?: string;
+  };
+
+  // Lộ trình mở rộng tham khảo: các gói cao hơn, mở sau khi có số liệu (không cần quyết định ngay)
+  growthPath?: {
+    lead: string;
+    steps: {
+      name: string;
+      tag?: string; // vd "Đang đề xuất"
+      price: string; // Hiển thị nguyên văn, vd "14.000.000đ" hoặc "Thêm 10.000.000đ"
+      priceNote?: string;
+      when: string; // Mở khi nào / điều kiện
+      goal: string; // Mục tiêu của bước
+      adds: string[]; // Có thêm gì
+      current?: boolean; // Bước khách đang được đề xuất
+    }[];
+    credit?: string; // Câu nhấn "khoản đã đầu tư được tính trọn khi nâng cấp"
+    note?: string;
+  };
+
   techPartner?: {
     name: string;
     legalName?: string;
@@ -152,4 +182,44 @@ export interface ProposalQuote {
   why?: { title: string; text: string }[];
   nextSteps?: string[];
   closing?: string;
+}
+
+// ---- Bộ nhận diện online & hình ảnh mẫu theo kênh ----
+
+export interface BrandKit {
+  lead: string;
+  wordmark: string; // Logo chữ, vd "turn"
+  tagline?: string;
+  coverImage?: string; // Ảnh nhận diện (đường dẫn trong public/)
+  colors: { name: string; hex: string; use: string }[]; // Màu 1 = nền, 2 = chữ, 3 = nhấn, 4 = phụ
+  fonts?: { name: string; use: string; sample: string }[];
+  motif?: { title: string; text: string };
+  photoRules?: { do: string[]; dont: string[] };
+  voice?: { traits: string[]; examples?: { bad: string; good: string }[] };
+  reference?: { image: string; caption: string };
+}
+
+export interface ShowcaseTile {
+  kind: "wordmark" | "hoodie" | "tee" | "sun" | "text" | "texture";
+  bg: string;
+  fg: string;
+  text?: string;
+}
+
+export interface ChannelShowcase {
+  lead: string;
+  handle: string;
+  bio?: string[];
+  highlights?: string[];
+  igTiles: ShowcaseTile[];
+  products: { name: string; price: string; color: string; tag?: string; kind?: "hoodie" | "tee" }[];
+  priceNote?: string;
+  channels: {
+    type: "instagram" | "facebook" | "tiktok" | "shopee";
+    name: string;
+    role: string;
+    caption: string;
+    hashtags?: string[];
+    rules: string[];
+  }[];
 }
