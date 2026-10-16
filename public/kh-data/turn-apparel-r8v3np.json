@@ -222,6 +222,23 @@
     "note": "Buổi đánh giá cuối tuần 4 xem ba con số cho từng kênh: số tin nhắn hỏi hàng, số đơn, số follow mới. Từ đó hai bên cùng chọn kênh dồn lực và gói duy trì phù hợp."
   },
 
+  "techPartner": {
+    "name": "NASANI",
+    "legalName": "Công ty TNHH Công nghệ Phần mềm NASANI",
+    "url": "https://nasani.vn/",
+    "intro": "Kênh bán hàng chỉ chạy tốt khi phần kỹ thuật phía sau ổn định. Duy Web phối hợp cùng NASANI — đơn vị chuyên thiết kế website, hosting, tên miền, email doanh nghiệp và hệ thống quản lý vận hành — để Turn có một đầu mối kỹ thuật đáng tin khi cần.",
+    "services": [
+      { "title": "Website & hosting ổn định", "text": "Hạ tầng lưu trữ có sao lưu, chứng chỉ SSL, tốc độ tải trang tốt khi lượng truy cập tăng theo chiến dịch." },
+      { "title": "Tên miền & email thương hiệu", "text": "Quản lý tên miền, email theo tên miền (vd hello@turnapparel.vn) để giao dịch với khách, đối tác chuyên nghiệp hơn." },
+      { "title": "Hệ thống quản lý bán lẻ", "text": "Khi đơn hàng nhiều lên: phần mềm quản lý tập trung cho bán buôn, bán lẻ, giúp vận hành gọn và đỡ sót đơn." },
+      { "title": "Đội kỹ thuật hỗ trợ", "text": "Có đội kỹ sư và đường dây kỹ thuật riêng để xử lý sự cố nhanh, không để kênh bán bị gián đoạn." }
+    ],
+    "split": [
+      { "party": "Duy Web", "items": ["Chiến lược và định vị", "Dựng, vận hành các kênh bán", "Nội dung và đọc số liệu cùng Turn"] },
+      { "party": "NASANI", "items": ["Hạ tầng website, hosting, tên miền, email", "Bảo mật và sao lưu", "Xử lý sự cố kỹ thuật"] }
+    ],
+    "note": "Phần hạ tầng chỉ triển khai khi Turn cần; chi phí phát sinh (nếu có) sẽ được báo trước để Turn duyệt."
+  },
   "pricing": {
     "lead": "Chi phí chia hai giai đoạn: setup chuẩn một lần trước, rồi mới chọn mức vận hành dựa trên số liệu thật.",
     "setup": {

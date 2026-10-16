@@ -51,6 +51,7 @@ Bắt buộc: `client.name`, `title`, `intro`, `pricing.setup`. Phần nào khô
 | `loop` | Vòng lặp tự chạy (`focus` = bước trọng tâm, đếm từ 0) |
 | `stages` | Các chặng mở khoá (số cuối trong `title` là mốc đơn) |
 | `roadmap` | Lộ trình theo tuần |
+| `techPartner` | Đối tác kỹ thuật (vd NASANI): giới thiệu, dịch vụ, phân vai Duy Web / đối tác, link website |
 | `pricing` | Gói khởi tạo + gói tháng (khách chọn) + bảng ước tính, nút xác nhận qua Zalo |
 | `partners`, `why`, `nextSteps`, `closing` | Đơn vị đã làm, lý do chọn, bước tiếp theo |
 

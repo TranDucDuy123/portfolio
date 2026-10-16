@@ -138,6 +138,16 @@ export interface ProposalQuote {
     excluded?: string;
   };
 
+  techPartner?: {
+    name: string;
+    legalName?: string;
+    url?: string;
+    intro: string;
+    services?: { title: string; text: string }[];
+    split?: { party: string; items: string[] }[]; // Phân vai: ai lo phần nào
+    note?: string;
+  };
+
   partners?: { domain: string; category?: string; work?: string; highlight: string }[];
   why?: { title: string; text: string }[];
   nextSteps?: string[];

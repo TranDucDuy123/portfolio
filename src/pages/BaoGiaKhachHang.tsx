@@ -20,6 +20,8 @@ import {
   Sparkles,
   Wrench,
   RotateCcw,
+  ExternalLink,
+  ShieldCheck,
 } from "lucide-react";
 import { socialConfig } from "../config/social";
 import type { ProposalQuote, QuoteChannelType } from "../data/proposalQuoteTypes";
@@ -204,6 +206,7 @@ function QuoteDocument({ quote: q }: { quote: ProposalQuote }) {
   if (q.loop) sections.push({ id: "dong-hanh", nav: "Vòng lặp đồng hành", title: "Ưu tiên dịch vụ: đồng hành để ra quyết định đúng", render: () => <LoopSection l={q.loop!} /> });
   if (q.stages) sections.push({ id: "100-don", nav: "Đến 100 đơn", title: "Từ đơn đầu tiên đến 100 đơn", render: () => <StagesSection s={q.stages!} /> });
   if (q.roadmap) sections.push({ id: "lo-trinh", nav: "Lộ trình 4 tuần", title: `Lộ trình triển khai ${q.roadmap.weeks.length} tuần`, render: () => <RoadmapSection r={q.roadmap!} /> });
+  if (q.techPartner) sections.push({ id: "doi-tac-ky-thuat", nav: "Đối tác kỹ thuật", title: "Đối tác kỹ thuật đồng hành", render: () => <TechPartnerSection t={q.techPartner!} /> });
   sections.push({ id: "chi-phi", nav: "Chi phí", title: "Chi phí", render: () => <PricingSection q={q} /> });
   if (q.partners?.length) sections.push({ id: "don-vi", nav: "Đơn vị đã đồng hành", title: "Các đơn vị bên em đã đồng hành", render: () => <PartnersSection q={q} /> });
   if (q.why?.length || q.nextSteps?.length) sections.push({ id: "buoc-tiep", nav: "Bước tiếp theo", title: "Vì sao chọn Duy Web và bước tiếp theo", render: () => <NextSection q={q} /> });
@@ -1368,6 +1371,85 @@ function PricingSection({ q }: { q: ProposalQuote }) {
           </div>
         </aside>
       </div>
+    </div>
+  );
+}
+
+function TechPartnerSection({ t }: { t: NonNullable<ProposalQuote["techPartner"]> }) {
+  const [hover, setHover] = useState<number | null>(null);
+  return (
+    <div>
+      <Card className="p-5 sm:p-7 relative overflow-hidden">
+        <div aria-hidden className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-sky-100/70 blur-2xl" />
+        <div className="relative flex flex-wrap items-start justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <span className="h-12 w-12 rounded-xl bg-gradient-to-br from-sky-600 to-blue-800 text-white font-display text-xl font-bold flex items-center justify-center shadow-md shadow-sky-700/20">
+              {t.name[0]}
+            </span>
+            <div>
+              <p className="font-display text-2xl font-bold leading-tight">{t.name}</p>
+              {t.legalName && <p className="text-[13px] text-gray-500">{t.legalName}</p>}
+            </div>
+          </div>
+          {t.url && (
+            <a
+              href={t.url}
+              target="_blank"
+              rel="noopener"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-sky-200 bg-sky-50 px-3.5 py-2 text-[13px] font-semibold text-sky-800 hover:bg-sky-100 transition-colors"
+            >
+              {t.url.replace(/^https?:\/\//, "").replace(/\/$/, "")} <ExternalLink className="h-3.5 w-3.5" />
+            </a>
+          )}
+        </div>
+        <p className="relative mt-5 text-[15px] sm:text-base leading-relaxed text-gray-700 max-w-3xl">{t.intro}</p>
+
+        {t.services?.length ? (
+          <div className="relative mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {t.services.map((s) => (
+              <div key={s.title} className="flex gap-3 rounded-lg bg-[#F8F5EF] p-4 hover:bg-sky-50 transition-colors">
+                <ShieldCheck className="h-5 w-5 text-sky-700 shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">{s.title}</p>
+                  <p className="mt-0.5 text-[13px] leading-relaxed text-gray-600">{s.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : null}
+      </Card>
+
+      {t.split?.length ? (
+        <div className="mt-4">
+          <p className="mb-3 text-sm font-semibold text-gray-800">Ai lo phần nào, để Turn chỉ cần một đầu mối:</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {t.split.map((p, i) => {
+              const tech = i % 2 === 1;
+              return (
+                <div
+                  key={p.party}
+                  onMouseEnter={() => setHover(i)}
+                  onMouseLeave={() => setHover(null)}
+                  className={`rounded-xl border p-5 transition-all duration-300 ${
+                    hover === i ? "-translate-y-1 shadow-lg" : ""
+                  } ${tech ? "bg-white border-sky-200" : "bg-brand-dark text-white border-brand-dark"}`}
+                >
+                  <p className={`font-mono text-[10px] uppercase tracking-widest ${tech ? "text-sky-700" : "text-brand-accent"}`}>{tech ? "Kỹ thuật & hạ tầng" : "Chiến lược & vận hành kênh"}</p>
+                  <p className="font-display text-xl font-bold mt-1 mb-3">{p.party}</p>
+                  <ul className="space-y-1.5">
+                    {p.items.map((x) => (
+                      <li key={x} className={`flex gap-2 text-sm ${tech ? "text-gray-700" : "text-gray-200"}`}>
+                        <Check className={`h-4 w-4 mt-0.5 shrink-0 ${tech ? "text-sky-700" : "text-brand-accent"}`} /> {x}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ) : null}
+      {t.note && <Note>{t.note}</Note>}
     </div>
   );
 }
