@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="theme-color" content="#123B3A">
+<title>Sổ tay đăng bài · Mắt Kính Long An Optic</title>
+<meta name="description" content="Đăng gì, mở đầu thế nào, gắn hashtag nào, quay hình gì. Sổ tay content dài hạn cho Mắt Kính Long An Optic, mở ra xem lại mỗi lần đăng bài.">
+<meta property="og:title" content="Sổ tay đăng bài · Mắt Kính Long An Optic">
+<meta property="og:description" content="Đăng gì, mở đầu thế nào, gắn hashtag nào, quay hình gì. Mở ra xem lại mỗi lần đăng bài.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="Đức Duy Web">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --deep:#123B3A; --deep-2:#1D5250;
+  --accent:#D9822B; --bg:#F6F4EF; --paper:#FFFFFF; --ink:#16201F; --muted:#66706E; --line:#E3E0D8;
+  --soft:color-mix(in srgb,var(--accent) 10%,var(--paper));
+  --p1:#2A7F7A; --p2:#C0603A; --p3:#7A5BA8; --p4:#3C6FB0; --p5:#D9822B;
+  --radius:18px;
+  --font:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px}
+button{font:inherit;color:inherit}
+
+.hero{background:var(--deep);color:#fff;padding:44px 0 52px;position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:1}
+.hero:before,.hero:after{content:"";position:absolute;border:14px solid rgba(255,255,255,.07);border-radius:50%;width:220px;height:220px;top:-40px}
+.hero:before{right:150px}.hero:after{right:-70px}
+.eyebrow{font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
+.hero h1{font-size:clamp(28px,5.6vw,46px);line-height:1.15;margin:10px 0 12px;font-weight:800;max-width:720px}
+.hero p{font-size:17px;opacity:.85;max-width:640px;margin:0}
+.formula{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.formula span{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:8px 12px;font-size:14px}
+.formula b{font-family:var(--mono);color:var(--accent);margin-right:6px}
+
+.toc{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.toc .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
+.toc a{white-space:nowrap;font-size:13px;text-decoration:none;padding:6px 12px;border-radius:999px;background:var(--paper);border:1px solid var(--line)}
+.toc a:hover{border-color:var(--deep-2)}
+
+section.block{padding:48px 0;border-bottom:1px solid var(--line);scroll-margin-top:52px}
+.num{font-family:var(--mono);font-weight:700;color:var(--accent);font-size:14px}
+h2{font-size:clamp(23px,3.6vw,32px);line-height:1.2;margin:4px 0 12px;font-weight:800}
+h3{font-size:17px;margin:0 0 6px;line-height:1.35}
+.intro{color:var(--muted);max-width:740px;margin:0 0 22px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+.label{font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}
+.foot{font-size:13px;color:var(--muted);margin-top:16px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:1px}
+.chip{display:inline-block;font-size:12px;padding:3px 10px;border-radius:999px;background:var(--soft);margin:2px 4px 2px 0;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent)}
+
+/* pillar overview */
+.mix{display:flex;height:16px;border-radius:999px;overflow:hidden;margin:6px 0 4px}
+.mix i{display:block;height:100%}
+.pcard{border-top:5px solid var(--c);cursor:pointer;text-align:left;width:100%;transition:transform .15s}
+.pcard:hover{transform:translateY(-2px)}
+.pcard .pct{font-family:var(--mono);font-weight:700;font-size:26px;color:var(--c);line-height:1}
+.pcard .goal{font-size:14px;color:var(--muted);margin:6px 0 0}
+
+/* week */
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.day{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 8px;min-height:118px;font-size:13px}
+.day .d{font-family:var(--mono);font-weight:700;font-size:12px;color:var(--muted)}
+.day .t{display:block;margin-top:8px;font-weight:700;line-height:1.3}
+.day .f{display:block;margin-top:4px;color:var(--muted);font-size:12px}
+.day.on{border-color:var(--c);box-shadow:inset 0 4px 0 var(--c)}
+.day.rest{background:transparent;border-style:dashed}
+@media (max-width:640px){
+  .week{grid-template-columns:1fr}
+  .day{min-height:0;display:grid;grid-template-columns:44px 1fr;column-gap:10px;align-items:baseline}
+  .day.on{box-shadow:inset 4px 0 0 var(--c)}
+  .day .t{margin-top:0}
+  .day .f{grid-column:2}
+}
+
+/* filter tabs */
+.tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin-bottom:16px;padding-bottom:2px}
+.tab{font-size:14px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--paper);cursor:pointer;white-space:nowrap}
+.tab[aria-selected="true"]{background:var(--deep);color:#fff;border-color:var(--deep)}
+
+/* pillar detail */
+.phead{display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap;justify-content:space-between;border-left:5px solid var(--c);padding-left:14px;margin-bottom:16px}
+.phead h3{font-size:21px}
+.meta{display:flex;gap:6px;flex-wrap:wrap}
+.meta span{font-size:13px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:4px 10px}
+.idea{display:flex;flex-direction:column}
+.idea .no{font-family:var(--mono);font-size:12px;color:var(--c);font-weight:700}
+.hook{background:color-mix(in srgb,var(--c) 9%,var(--paper));border-left:3px solid var(--c);border-radius:8px;padding:10px 12px;font-weight:600;margin:8px 0 2px;position:relative}
+.media{font-size:14px;margin:0;padding-left:18px}
+.media li{margin:3px 0}
+.fmt{font-size:12px;font-family:var(--mono);color:var(--muted)}
+.cap{white-space:pre-line;font-size:14px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px;margin:0}
+.copy{font-size:12px;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:4px 10px;cursor:pointer}
+.copy:hover{border-color:var(--deep-2)}
+.copy.ok{background:var(--deep);color:#fff;border-color:var(--deep)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+
+/* roadmap */
+.phase{border-top:5px solid var(--deep-2)}
+.phase .when{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.months{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:10px}
+.month{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px}
+.month .m{font-family:var(--mono);font-weight:700;color:var(--accent);font-size:13px}
+.month.hot{border-color:var(--accent);background:var(--soft)}
+
+/* hooks bank */
+.hooks{display:grid;gap:8px}
+.hk{display:flex;gap:10px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:12px;padding:12px 12px 12px 14px}
+.hk p{margin:0;flex:1;font-weight:600}
+.hk small{display:block;font-weight:400;color:var(--muted);font-size:12px;margin-top:2px}
+
+/* hashtags */
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 10px}
+.tags span{font-family:var(--mono);font-size:13px;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+
+/* media spec */
+.spec{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
+.frame{border:2px solid var(--deep);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:700;color:var(--deep)}
+
+/* checklist */
+.check label{display:flex;gap:12px;align-items:flex-start;padding:12px 4px;border-bottom:1px solid var(--line);cursor:pointer}
+.check input{width:20px;height:20px;accent-color:var(--deep);margin-top:2px;flex:none}
+.check label:has(input:checked) span{color:var(--muted);text-decoration:line-through}
+.progress{font-family:var(--mono);font-weight:700;color:var(--deep-2)}
+
+.dont li{margin:6px 0}
+footer{padding:36px 0 60px;color:var(--muted);font-size:14px}
+.btn{display:inline-block;background:#0068FF;color:#fff;text-decoration:none;font-weight:700;border-radius:12px;padding:12px 18px;margin-top:10px}
+@media print{.toc,.copy,.tabs,.btn{display:none!important}section.block{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Sổ tay đăng bài · Mắt Kính Long An Optic</div>
+    <h1>Mỗi lần đăng bài, mở trang này ra xem lại</h1>
+    <p>Hôm nay đăng chủ đề gì, câu mở đầu ra sao, gắn hashtag nào, quay hình gì. Có sẵn câu mẫu, bấm “Chép” là dán được vào Facebook, TikTok hay Zalo.</p>
+    <div class="formula" aria-label="Công thức một bài đăng">
+      <span><b>1</b>Câu hook: 3 giây đầu</span>
+      <span><b>2</b>Một ý chính duy nhất</span>
+      <span><b>3</b>Hình/video thật tại tiệm</span>
+      <span><b>4</b>Lời mời: nhắn, gọi, ghé tiệm</span>
+      <span><b>5</b>3–5 hashtag</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Mục lục">
+  <div class="wrap">
+    <a href="#tru-cot">5 trụ cột</a>
+    <a href="#lich-tuan">Lịch tuần</a>
+    <a href="#chi-tiet">Ý tưởng từng trụ cột</a>
+    <a href="#duong-dai">Lộ trình 12 tháng</a>
+    <a href="#hook">Kho câu hook</a>
+    <a href="#hashtag">Hashtag</a>
+    <a href="#hinh-video">Hình & video</a>
+    <a href="#truoc-khi-dang">Trước khi đăng</a>
+  </div>
+</nav>
+
+<main>
+  <section class="block" id="tru-cot">
+    <div class="wrap">
+      <div class="num">01</div>
+      <h2>5 trụ cột nội dung</h2>
+      <p class="intro">Mọi bài đăng đều thuộc một trong 5 nhóm dưới đây. Đăng xen kẽ đều đặn thì khách vừa thấy tiệm có chuyên môn, vừa thấy tin được, rồi mới tới lúc mua. Số % là tỉ lệ nên giữ trong một tháng. Bấm vào từng thẻ để xem ý tưởng.</p>
+      <div class="mix" id="mixBar" aria-hidden="true"></div>
+      <p class="foot" style="margin:0 0 16px">Bài bán hàng chỉ chiếm 10%. Phần còn lại là bài giúp khách trước, để khi cần làm kính họ nhớ tới tiệm mình đầu tiên.</p>
+      <div class="grid g3" id="pillarCards"></div>
+    </div>
+  </section>
+
+  <section class="block" id="lich-tuan">
+    <div class="wrap">
+      <div class="num">02</div>
+      <h2>Lịch đăng một tuần</h2>
+      <p class="intro">4 bài mỗi tuần, cộng story hằng ngày (ảnh khách lấy kính, gọng mới về, giờ mở cửa). Bận quá thì giữ tối thiểu 3 bài: thứ Hai, thứ Năm, thứ Bảy. Giờ đăng tốt: <b>11h30–12h30</b> hoặc <b>19h30–21h</b>.</p>
+      <div class="week" id="week"></div>
+    </div>
+  </section>
+
+  <section class="block" id="chi-tiet">
+    <div class="wrap">
+      <div class="num">03</div>
+      <h2>Ý tưởng bài cho từng trụ cột</h2>
+      <p class="intro">Mỗi ý tưởng có sẵn câu hook, hình hoặc video cần quay, và định dạng nên dùng. Đổi tên, giá, số liệu cho đúng với tiệm trước khi đăng.</p>
+      <div class="tabs" role="tablist" id="pillarTabs"></div>
+      <div id="pillarDetail"></div>
+    </div>
+  </section>
+
+  <section class="block" id="duong-dai">
+    <div class="wrap">
+      <div class="num">04</div>
+      <h2>Lộ trình dài hạn: 3 chặng, 12 tháng</h2>
+      <p class="intro">Content không cần hiệu quả ngay tuần đầu. Mục tiêu là sau một năm, người Long An nghĩ tới đo mắt, làm kính là nghĩ tới Long An Optic. Mỗi chặng đổi tỉ lệ trụ cột cho hợp mục tiêu.</p>
+      <div class="grid g3" id="phases"></div>
+      <div class="label" style="margin-top:28px">Chủ đề theo mùa, tháng nào đăng gì</div>
+      <div class="months" id="months"></div>
+      <p class="foot">Ô màu cam là mùa cao điểm của ngành kính (tựu trường, Tết). Nên chuẩn bị hình và ưu đãi trước 2–3 tuần.</p>
+    </div>
+  </section>
+
+  <section class="block" id="hook">
+    <div class="wrap">
+      <div class="num">05</div>
+      <h2>Kho câu hook</h2>
+      <p class="intro">Câu hook là câu đầu tiên, hoặc chữ to hiện ở 3 giây đầu video. Người lướt chỉ dừng lại nếu câu này nói đúng vấn đề của họ. Chọn một câu, sửa cho hợp bài, rồi chép.</p>
+      <div class="tabs" role="tablist" id="hookTabs"></div>
+      <div class="hooks" id="hookList"></div>
+      <div class="card" style="margin-top:18px">
+        <h3>5 kiểu hook dễ dùng nhất</h3>
+        <div class="grid g2" style="margin-top:8px" id="hookTypes"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="hashtag">
+    <div class="wrap">
+      <div class="num">06</div>
+      <h2>Bộ hashtag</h2>
+      <p class="intro">Mỗi bài chỉ gắn <b>3–5 hashtag</b>: 1 thương hiệu + 1–2 địa phương + 1–2 chủ đề. Gắn quá nhiều trông như spam và không giúp bài lên nhiều hơn.</p>
+      <div class="grid g2" id="tagSets"></div>
+      <div class="card" style="margin-top:12px">
+        <div class="row"><h3 style="margin:0">Ví dụ một bài “Chọn kính hợp mặt”</h3><button class="copy" data-copy="#LongAnOptic #MatKinhLongAn #TanAn #GongKinhDep #KinhMatTronMat">Chép</button></div>
+        <div class="tags"><span>#LongAnOptic</span><span>#MatKinhLongAn</span><span>#TanAn</span><span>#GongKinhDep</span><span>#KinhMatTronMat</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="hinh-video">
+    <div class="wrap">
+      <div class="num">07</div>
+      <h2>Hình & video đi kèm</h2>
+      <p class="intro">Chỉ cần điện thoại. Ảnh thật tại tiệm luôn đáng tin hơn ảnh mạng. Gọng kính phản chiếu nhiều, nên chú ý ánh sáng.</p>
+      <div class="grid g3">
+        <div class="card spec"><div class="frame" style="width:44px;height:78px">9:16</div><div><h3>Video ngắn (Reels, TikTok)</h3><p class="fmt">15–45 giây · quay dọc</p><p style="margin:6px 0 0;font-size:14px">Chữ hook to ở giữa trên, 3 giây đầu phải có chuyển động: đeo kính lên, lật gọng, đưa tròng ra ánh đèn.</p></div></div>
+        <div class="card spec"><div class="frame" style="width:52px;height:65px">4:5</div><div><h3>Ảnh lẻ & bộ ảnh lướt</h3><p class="fmt">1080×1350 · 3–7 ảnh</p><p style="margin:6px 0 0;font-size:14px">Ảnh đầu là câu hook trên nền sạch, các ảnh sau mỗi ảnh một ý. Ảnh cuối: địa chỉ + số Zalo.</p></div></div>
+        <div class="card spec"><div class="frame" style="width:44px;height:78px;border-style:dashed">Story</div><div><h3>Story hằng ngày</h3><p class="fmt">Không cần chỉnh chu</p><p style="margin:6px 0 0;font-size:14px">Khách lấy kính (xin phép trước), gọng mới về, hộp kính đóng gói, bảng giờ mở cửa.</p></div></div>
+      </div>
+      <div class="grid g2" style="margin-top:12px">
+        <div class="card">
+          <h3>Mẹo quay gọng kính đẹp</h3>
+          <ul class="media">
+            <li>Đứng gần cửa sổ, ánh sáng chiếu nghiêng 45°. Không dùng đèn flash.</li>
+            <li>Lót nền trơn (giấy kraft, vải trắng, mặt gỗ) cho ảnh gọng đặt bàn.</li>
+            <li>Lau tròng và gọng trước khi quay, dấu vân tay hiện rất rõ.</li>
+            <li>Quay góc 3/4 mặt khi khách đeo thử, không quay thẳng vào tròng để tránh chói.</li>
+            <li>Giữ máy bằng hai tay hoặc kê lên kệ, mỗi cảnh 2–4 giây là đủ.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Bộ cảnh nên quay sẵn, dùng dần</h3>
+          <ul class="media">
+            <li>Mặt tiền tiệm buổi sáng và buổi tối khi lên đèn</li>
+            <li>Kệ gọng toàn cảnh, rồi cận từng dòng gọng</li>
+            <li>Máy đo khúc xạ, bảng đo thị lực, máy mài lắp tròng đang chạy</li>
+            <li>Tay kỹ thuật viên chỉnh càng kính, siết ốc, lau kính</li>
+            <li>Khoảnh khắc khách đeo kính mới, nhìn ra và cười</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="truoc-khi-dang">
+    <div class="wrap">
+      <div class="num">08</div>
+      <h2>Soát lại trước khi bấm đăng</h2>
+      <p class="intro">Đánh dấu từng dòng. Trang tự nhớ trên máy này, bấm “Làm lại” cho bài tiếp theo.</p>
+      <div class="grid g2">
+        <div class="card check">
+          <div class="row"><span class="progress" id="progress">0/8</span><button class="copy" id="resetCheck">Làm lại</button></div>
+          <div id="checklist"></div>
+        </div>
+        <div class="card">
+          <h3>Tránh những điều này</h3>
+          <ul class="media dont">
+            <li><b>Không hứa chữa khỏi cận, loạn hay viễn.</b> Kính giúp nhìn rõ và đỡ mỏi mắt, không chữa bệnh. Nội dung sức khỏe mắt nên ghi “đo khám để biết chính xác”.</li>
+            <li><b>Không đăng mặt khách khi chưa hỏi.</b> Với trẻ em, hỏi phụ huynh trước.</li>
+            <li><b>Không lấy ảnh, video của tiệm khác hay ảnh hãng</b> rồi để như ảnh của mình.</li>
+            <li><b>Không chê tiệm khác.</b> Chỉ nói điều mình làm tốt.</li>
+            <li><b>Không để bài trống lời mời.</b> Bài nào cũng cần một câu: nhắn Zalo, gọi, hoặc ghé tiệm.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Cần ý tưởng cho bài sắp tới, hoặc muốn chỉnh sổ tay này cho hợp với tiệm hơn? Nhắn cho Duy Web.</p>
+    <a class="btn" href="https://zalo.me/0938415218" target="_blank" rel="noopener">Nhắn Zalo cho Duy Web</a>
+    <p class="foot">Sổ tay soạn bởi Duy Web cho Mắt Kính Long An Optic · cập nhật 18/10/2026. Câu mẫu, giá và số liệu ở đây là ví dụ, sửa lại cho đúng với tiệm trước khi đăng.</p>
+  </div>
+</footer>
+
+<script>
+var PILLARS=[
+ {id:"cham-mat",name:"Chăm mắt đúng cách",short:"Kiến thức mắt",pct:30,color:"var(--p1)",
+  goal:"Cho thấy tiệm hiểu về mắt, không chỉ bán gọng. Đây là nhóm bài hay được lưu và chia sẻ nhất.",
+  freq:"1–2 bài/tuần",formats:["Video ngắn","Bộ ảnh lướt"],
+  ideas:[
+   {t:"Dấu hiệu con bị cận mà ba mẹ hay bỏ qua",hook:"Con hay nheo mắt khi xem tivi? Đừng nghĩ là thói quen.",fmt:"Video 30s",media:["Cảnh bé nheo mắt, ngồi sát tivi (dựng lại, con của người quen)","5 dấu hiệu hiện chữ lần lượt","Cảnh bé đo mắt tại tiệm"]},
+   {t:"Bao lâu nên đo mắt lại một lần",hook:"Kính đeo 2 năm chưa đổi: mắt bạn có thể đã khác.",fmt:"Bộ ảnh 5 tấm",media:["Ảnh 1: câu hook trên nền trơn","Ảnh 2–4: học sinh / người đi làm / người trên 40 tuổi","Ảnh 5: lịch mở cửa + số Zalo"]},
+   {t:"Ánh sáng xanh và mỏi mắt khi dùng điện thoại",hook:"Nhìn điện thoại 6 tiếng mỗi ngày, mắt bạn đang chịu điều này.",fmt:"Video 30s",media:["Cảnh lướt điện thoại trong phòng tối","So sánh tròng thường và tròng lọc ánh sáng xanh dưới đèn","Mẹo 20-20-20 hiện chữ"]},
+   {t:"Hiểu nhanh độ cận, độ loạn trên đơn kính",hook:"Cầm đơn kính mà không hiểu số nào là gì? 30 giây là hiểu.",fmt:"Video 30–45s",media:["Cận cảnh một đơn kính mẫu (che tên khách)","Khoanh tròn từng ô: SPH, CYL, AX","Kỹ thuật viên giải thích ngắn"]}
+  ],
+  caption:"Con hay nheo mắt khi xem tivi? Đừng nghĩ là thói quen.\n\n5 dấu hiệu ba mẹ nên để ý:\n1. Nheo mắt, nghiêng đầu khi nhìn xa\n2. Ngồi sát tivi, cúi sát vở\n3. Hay dụi mắt, kêu mỏi\n4. Chép bài trên bảng chậm\n5. Hay đau đầu sau giờ học\n\nCó 1–2 dấu hiệu trên thì nên cho bé đo mắt để biết chính xác.\n📍 Long An Optic đo mắt cho bé, nhắn Zalo để giữ giờ.",
+  tags:["#ChamSocMat","#CanThiHocSinh","#DoMatTreEm"]},
+ {id:"chon-kinh",name:"Chọn kính hợp mặt",short:"Tư vấn phong cách",pct:25,color:"var(--p2)",
+  goal:"Giúp khách tự hình dung mình đeo gọng nào đẹp. Nhóm này kéo người trẻ và dân văn phòng.",
+  freq:"1 bài/tuần",formats:["Video ngắn","Bộ ảnh lướt"],
+  ideas:[
+   {t:"Mặt tròn, mặt vuông, mặt dài: chọn gọng nào",hook:"Mặt tròn đừng chọn gọng tròn. Thử kiểu này xem.",fmt:"Video 30s",media:["Một bạn mặt tròn thử lần lượt 3 gọng","Chữ “Trước / Sau” khi đổi gọng","Kết bằng gọng hợp nhất, cận mặt cười"]},
+   {t:"1 người, 5 gọng, 5 phong cách",hook:"Cùng một khuôn mặt, đổi gọng là đổi luôn khí chất.",fmt:"Video 20s, cắt theo nhịp nhạc",media:["Cùng góc máy, cùng ánh sáng","Mỗi gọng 2–3 giây, chữ tên kiểu: thanh lịch, năng động, cổ điển…"]},
+   {t:"Gọng kính đi làm trông chuyên nghiệp",hook:"Đi phỏng vấn, đeo gọng nào để trông đáng tin hơn?",fmt:"Bộ ảnh 4 tấm",media:["Ảnh đeo kính mặc áo sơ mi","Cận từng gọng đặt trên nền trơn","Ảnh cuối: khoảng giá + mời ghé thử"]},
+   {t:"Màu gọng hợp màu da",hook:"Da ngăm đeo gọng đen sẽ bị nặng mặt. Thử màu này.",fmt:"Video 30s",media:["Hai bạn khác màu da thử cùng 3 màu gọng","Chữ chốt màu hợp từng người"]}
+  ],
+  caption:"Mặt tròn đừng chọn gọng tròn. Thử kiểu này xem.\n\nMặt tròn hợp gọng có góc cạnh: chữ nhật, vuông bo nhẹ, mắt mèo. Đường gọng cứng giúp khuôn mặt trông thon và sắc nét hơn.\n\nKhông chắc mặt mình thuộc dạng nào? Ghé tiệm thử thoải mái, nhân viên chọn giúp 3 gọng hợp nhất.\n📍 Long An Optic · nhắn Zalo để hỏi mẫu.",
+  tags:["#GongKinhDep","#ChonKinhTheoKhuonMat","#KinhCanThoiTrang"]},
+ {id:"khach-that",name:"Khách thật tại tiệm",short:"Niềm tin",pct:20,color:"var(--p3)",
+  goal:"Người thật, chuyện thật. Khách mới tin lời khách cũ hơn tin quảng cáo.",
+  freq:"1 bài/tuần",formats:["Video ngắn","Ảnh lẻ"],
+  ideas:[
+   {t:"Khoảnh khắc đeo kính mới lần đầu",hook:"Lần đầu đeo kính đúng độ, cô nói: “Sao giờ nhìn rõ quá vậy con.”",fmt:"Video 15–20s",media:["Cận mặt khách lúc đeo kính vào","Khách nhìn ra đường, phản ứng thật","Xin phép trước, có thể che mặt nếu khách ngại"]},
+   {t:"Khách hỏi gì, tiệm trả lời",hook:"Khách hỏi: “Tròng kính 300 nghìn với 3 triệu khác gì nhau?”",fmt:"Video 30–45s",media:["Kỹ thuật viên nói thẳng vào máy","Chèn cận cảnh 2 loại tròng"]},
+   {t:"Đánh giá của khách",hook:"Đây là điều khách nói sau 1 tháng đeo kính ở tiệm.",fmt:"Ảnh lẻ",media:["Chụp màn hình đánh giá Google Maps hoặc tin nhắn (che tên)","Đặt trên khung màu thương hiệu"]},
+   {t:"Gia đình cùng đo mắt",hook:"Ba đi làm kính lão, con đi đo cận: cả nhà một buổi chiều.",fmt:"Ảnh + video ngắn",media:["Ảnh cả nhà trước quầy","Cảnh từng người đo mắt"]}
+  ],
+  caption:"Lần đầu đeo kính đúng độ, cô nói: “Sao giờ nhìn rõ quá vậy con.” 🥹\n\nCô đeo kính cũ 4 năm, độ đã tăng mà không biết. Hôm nay đo lại, làm tròng mới, cô vui cả buổi.\n\nCảm ơn cô đã tin Long An Optic ❤️\nKính đeo lâu năm thì nên ghé đo lại một lần nha.",
+  tags:["#KhachHangLongAnOptic","#FeedbackThat","#KinhLao"]},
+ {id:"hau-truong",name:"Bên trong tiệm",short:"Hậu trường & dịch vụ",pct:15,color:"var(--p4)",
+  goal:"Cho thấy cách tiệm làm việc: đo kỹ, lắp chuẩn, bảo hành rõ. Đây là lý do khách chọn tiệm mình thay vì mua online.",
+  freq:"2 bài/tháng",formats:["Video ngắn"],
+  ideas:[
+   {t:"Một cặp kính được làm ra thế nào",hook:"Từ lúc đo mắt tới lúc cầm kính trên tay: 45 phút ở tiệm.",fmt:"Video 30s, tua nhanh",media:["Đo khúc xạ","Chọn gọng","Máy mài lắp tròng","Chỉnh càng, lau, đóng hộp"]},
+   {t:"Chỉnh kính miễn phí",hook:"Kính bị lệch, tuột? Mang ra tiệm, chỉnh 5 phút, không tốn đồng nào.",fmt:"Video 20s",media:["Cận tay chỉnh càng kính","Khách đeo lại, gật đầu"]},
+   {t:"Đo mắt kỹ khác đo nhanh chỗ nào",hook:"Đo mắt 2 phút và đo mắt 15 phút: kết quả khác nhau nhiều đấy.",fmt:"Video 30–45s",media:["Các bước đo tại tiệm","Kỹ thuật viên giải thích ngắn từng bước"]},
+   {t:"Một ngày ở tiệm",hook:"7 giờ sáng ở Long An Optic trông như thế này.",fmt:"Video 30s",media:["Mở cửa, lau kệ","Đón khách đầu tiên","Đóng cửa buổi tối, lên đèn"]}
+  ],
+  caption:"Từ lúc đo mắt tới lúc cầm kính trên tay: 45 phút ở tiệm. ⏱️\n\n1️⃣ Đo khúc xạ, đo thị lực kỹ từng mắt\n2️⃣ Tư vấn gọng hợp mặt, hợp công việc\n3️⃣ Mài lắp tròng ngay tại tiệm\n4️⃣ Chỉnh càng, đệm mũi cho vừa khít\n\nCó độ sẵn thì lấy kính trong ngày. Kính mua ở tiệm được chỉnh miễn phí trọn đời.\n📍 Long An Optic",
+  tags:["#HauTruong","#CatKinhLayLien","#DoMatMienPhi"]},
+ {id:"mau-moi",name:"Mẫu mới & ưu đãi",short:"Bán hàng",pct:10,color:"var(--p5)",
+  goal:"Bài bán hàng rõ ràng: mẫu gì, giá bao nhiêu, ưu đãi tới khi nào, liên hệ thế nào.",
+  freq:"2–3 bài/tháng",formats:["Bộ ảnh lướt","Video ngắn"],
+  ideas:[
+   {t:"Gọng mới về",hook:"Vừa về 12 mẫu gọng, có 3 mẫu chỉ còn 1 chiếc.",fmt:"Video 15s + bộ ảnh",media:["Mở hộp hàng mới","Lướt nhanh từng mẫu trên kệ","Ảnh cận từng mẫu kèm giá"]},
+   {t:"Combo theo mùa",hook:"Tựu trường: combo gọng + tròng cho học sinh, chỉ từ 590.000đ.",fmt:"Bộ ảnh 4 tấm",media:["Ảnh học sinh đeo kính mặc đồng phục","Ảnh gọng trong combo","Ảnh điều kiện + hạn ưu đãi"]},
+   {t:"Kính râm chống tia UV",hook:"Nắng Long An 37 độ, mắt bạn cũng cần “kem chống nắng”.",fmt:"Video 20s",media:["Cảnh nắng gắt ngoài đường","Đeo kính râm lên, cảnh dịu lại","Kệ kính râm + giá"]},
+   {t:"Đếm ngược ưu đãi",hook:"Còn 3 ngày: đo mắt miễn phí, giảm 20% tròng chống ánh sáng xanh.",fmt:"Ảnh lẻ / story",media:["Ảnh tiêu đề số ngày to","Story đếm ngược mỗi ngày"]}
+  ],
+  caption:"Tựu trường rồi: combo kính học sinh chỉ từ 590.000đ 🎒\n\n✅ Đo mắt kỹ, miễn phí\n✅ Gọng dẻo, chịu va đập\n✅ Tròng chống ánh sáng xanh\n✅ Chỉnh kính miễn phí cả năm học\n\n⏰ Áp dụng tới 31/8\n📍 Long An Optic · nhắn Zalo để giữ giờ đo cho bé.",
+  tags:["#GongKinhMoi","#UuDaiMatKinh","#KinhHocSinh"]}
+];
+var WEEK=[
+ {d:"T2",p:"cham-mat",f:"Video ngắn"},
+ {d:"T3",rest:"Story"},
+ {d:"T4",p:"chon-kinh",f:"Bộ ảnh / video"},
+ {d:"T5",p:"khach-that",f:"Video / ảnh"},
+ {d:"T6",rest:"Story"},
+ {d:"T7",p:"hau-truong",alt:"mau-moi",f:"Xen kẽ mỗi tuần"},
+ {d:"CN",rest:"Story · trả lời bình luận"}
+];
+var PHASES=[
+ {n:"Chặng 1",when:"Tháng 1–3",t:"Được biết đến",d:"Giới thiệu tiệm, con người, dịch vụ. Đăng đều đặn quan trọng hơn đăng hay.",mix:[35,30,10,20,5],kpi:"Đăng đủ 4 bài/tuần · có 30+ ảnh và video thật trong kho"},
+ {n:"Chặng 2",when:"Tháng 4–6",t:"Được tin",d:"Đẩy mạnh khách thật và đánh giá. Xin đánh giá Google Maps sau mỗi lần khách lấy kính.",mix:[30,20,30,15,5],kpi:"20+ đánh giá Google · bài khách thật mỗi tuần"},
+ {n:"Chặng 3",when:"Tháng 7–12",t:"Được chọn",d:"Đã có người theo dõi và niềm tin, giờ mới tăng bài bán hàng theo mùa: tựu trường, Tết.",mix:[25,25,20,10,20],kpi:"Đếm số khách nói “thấy trên Facebook/TikTok”"}
+];
+var MONTHS=[
+ {m:"Tháng 11",t:"Làm quen",d:"Giới thiệu tiệm và đội ngũ, chương trình đo mắt miễn phí tháng đầu."},
+ {m:"Tháng 12",t:"Quà cuối năm",d:"Kính làm quà cho ba mẹ, kính chống chói cho người chạy xe đêm."},
+ {m:"Tháng 1–2",t:"Kính mới đón Tết",hot:1,d:"Gọng mới đi chơi Tết, kính râm du xuân, lịch nghỉ Tết của tiệm."},
+ {m:"Tháng 3–4",t:"Mùa ôn thi",d:"Mắt học sinh học khuya, dân văn phòng mỏi mắt, ánh sáng xanh."},
+ {m:"Tháng 5–6",t:"Nắng nóng",d:"Kính râm UV400, tròng đổi màu, bảo vệ mắt khi đi nắng."},
+ {m:"Tháng 7–8",t:"Tựu trường",hot:1,d:"Kiểm tra mắt đầu năm học, combo kính học sinh. Mùa đông khách nhất."},
+ {m:"Tháng 9",t:"Ba mẹ & ông bà",d:"Kính lão, tròng đa tròng, chăm mắt người trên 40 tuổi."},
+ {m:"Tháng 10",t:"Ngày Thị giác Thế giới",d:"Thứ Năm tuần 2 tháng 10: đo mắt cộng đồng, nhìn lại 1 năm của tiệm."}
+];
+var HOOK_TYPES=[
+ {t:"Gọi đúng người",e:"“Ai đang đeo kính trên 2 năm chưa đổi…”"},
+ {t:"Đặt câu hỏi",e:"“Tròng 300 nghìn với 3 triệu khác gì nhau?”"},
+ {t:"Nói ngược điều quen thuộc",e:"“Mặt tròn đừng chọn gọng tròn.”"},
+ {t:"Con số cụ thể",e:"“45 phút từ lúc đo mắt tới lúc cầm kính.”"},
+ {t:"Trước / Sau",e:"“Cùng một khuôn mặt, đổi gọng là đổi khí chất.”"}
+];
+var EXTRA_HOOKS=[
+ {p:"cham-mat",h:"Đeo kính sai độ lâu ngày, mắt sẽ phải gồng thế này.",n:"Kiến thức"},
+ {p:"cham-mat",h:"3 thói quen làm mắt con cận nhanh hơn, nhà nào cũng có.",n:"Liệt kê"},
+ {p:"cham-mat",h:"Kính cận có nên đeo suốt ngày không? Câu trả lời đây.",n:"Hỏi đáp"},
+ {p:"chon-kinh",h:"Gọng này bán chạy nhất tiệm tháng này, và đây là lý do.",n:"Tò mò"},
+ {p:"chon-kinh",h:"Đeo kính mà vẫn trông trẻ ra 5 tuổi? Chọn gọng kiểu này.",n:"Lợi ích"},
+ {p:"khach-that",h:"Anh khách này chạy 20 cây số chỉ để chỉnh lại cái kính.",n:"Câu chuyện"},
+ {p:"khach-that",h:"Bé 7 tuổi, đo ra cận 2 độ. Ba mẹ đã làm gì tiếp theo?",n:"Câu chuyện"},
+ {p:"hau-truong",h:"Cái máy này giúp tròng kính khít gọng tới từng milimét.",n:"Hậu trường"},
+ {p:"hau-truong",h:"Kính mua online bị lệch tâm tròng: đây là điều xảy ra với mắt.",n:"Cảnh báo nhẹ"},
+ {p:"mau-moi",h:"Chỉ 3 ngày: mua gọng tặng tròng chống ánh sáng xanh.",n:"Khẩn cấp"},
+ {p:"mau-moi",h:"Dưới 500 nghìn mà có kính đẹp thế này ở Long An.",n:"Giá"}
+];
+var TAG_SETS=[
+ {t:"Thương hiệu",d:"Luôn có, chọn 1",tags:["#LongAnOptic","#MatKinhLongAnOptic"]},
+ {t:"Địa phương",d:"Chọn 1–2, để người gần tiệm thấy bài",tags:["#MatKinhLongAn","#LongAn","#TanAn","#KinhMatTanAn"]},
+ {t:"Theo trụ cột",d:"Chọn 1–2 theo chủ đề bài",tags:null},
+ {t:"TikTok thêm",d:"Chỉ 1 thẻ chung, không gắn #xuhuong hàng loạt",tags:["#ReviewKinh","#KinhCan"]}
+];
+var CHECK=[
+ "Câu hook nằm ở dòng đầu hoặc 3 giây đầu video",
+ "Bài chỉ nói một ý chính",
+ "Hình/video là ảnh thật tại tiệm, đủ sáng, tròng không bị chói",
+ "Mặt khách trong ảnh đã được đồng ý",
+ "Giá, ưu đãi, hạn chương trình đúng với hiện tại",
+ "Có lời mời rõ: nhắn Zalo, gọi, hoặc ghé tiệm",
+ "3–5 hashtag: thương hiệu + địa phương + chủ đề",
+ "Đọc lại một lần trên điện thoại, không sai chính tả"
+];
+
+var byId={};PILLARS.forEach(function(p){byId[p.id]=p});
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function $(s){return document.querySelector(s)}
+function copyBtn(text,label){return '<button class="copy" data-copy="'+esc(text)+'">'+(label||"Chép")+'</button>'}
+
+$("#mixBar").innerHTML=PILLARS.map(function(p){return '<i style="width:'+p.pct+'%;background:'+p.color+'"></i>'}).join("");
+$("#pillarCards").innerHTML=PILLARS.map(function(p,i){
+ return '<button class="card pcard" style="--c:'+p.color+'" data-goto="'+p.id+'"><div class="row"><span class="fmt">TRỤ CỘT '+(i+1)+' · '+esc(p.short.toUpperCase())+'</span><span class="pct">'+p.pct+'%</span></div><h3 style="margin-top:10px">'+esc(p.name)+'</h3><p class="goal">'+esc(p.goal)+'</p><p class="fmt" style="margin:10px 0 0">'+esc(p.freq)+'</p></button>'}).join("");
+
+$("#week").innerHTML=WEEK.map(function(w){
+ if(w.rest)return '<div class="day rest"><span class="d">'+w.d+'</span><span class="t" style="font-weight:500;color:var(--muted)">'+esc(w.rest)+'</span></div>';
+ var p=byId[w.p],a=w.alt&&byId[w.alt];
+ return '<div class="day on" style="--c:'+p.color+'"><span class="d">'+w.d+'</span><span class="t"><span class="dot" style="background:'+p.color+'"></span>'+esc(p.name)+(a?' <span style="font-weight:500">hoặc</span> <span class="dot" style="background:'+a.color+'"></span>'+esc(a.name):'')+'</span><span class="f">'+esc(w.f)+'</span></div>'}).join("");
+
+function renderTabs(el,onPick,withAll){
+ var items=(withAll?[{id:"all",name:"Tất cả"}]:[]).concat(PILLARS);
+ el.innerHTML=items.map(function(p,i){return '<button class="tab" role="tab" aria-selected="'+(i===0)+'" data-id="'+p.id+'">'+(p.color?'<span class="dot" style="background:'+p.color+'"></span>':'')+esc(p.name)+'</button>'}).join("");
+ el.addEventListener("click",function(e){var b=e.target.closest(".tab");if(!b)return;
+  el.querySelectorAll(".tab").forEach(function(t){t.setAttribute("aria-selected",t===b)});onPick(b.dataset.id)});
+}
+function showPillar(id){
+ var p=byId[id];
+ $("#pillarDetail").innerHTML='<div style="--c:'+p.color+'">'+
+  '<div class="phead"><div><h3>'+esc(p.name)+'</h3><p class="intro" style="margin:0">'+esc(p.goal)+'</p></div><div class="meta"><span>'+p.pct+'% bài trong tháng</span><span>'+esc(p.freq)+'</span><span>'+p.formats.map(esc).join(" · ")+'</span></div></div>'+
+  '<div class="grid g2">'+p.ideas.map(function(it,i){return '<div class="card idea"><span class="no">Ý TƯỞNG '+(i+1)+' · '+esc(it.fmt.toUpperCase())+'</span><h3 style="margin-top:4px">'+esc(it.t)+'</h3><div class="label" style="margin-top:6px">Câu hook</div><div class="hook">'+esc(it.hook)+'</div><div style="text-align:right">'+copyBtn(it.hook,"Chép hook")+'</div><div class="label">Hình / video đi kèm</div><ul class="media">'+it.media.map(function(m){return '<li>'+esc(m)+'</li>'}).join("")+'</ul></div>'}).join("")+'</div>'+
+  '<div class="grid g2" style="margin-top:12px"><div class="card"><div class="row"><h3 style="margin:0">Caption mẫu</h3>'+copyBtn(p.caption)+'</div><p class="cap" style="margin-top:10px">'+esc(p.caption)+'</p></div>'+
+  '<div class="card"><div class="row"><h3 style="margin:0">Hashtag cho trụ cột này</h3>'+copyBtn("#LongAnOptic #MatKinhLongAn "+p.tags.join(" "))+'</div><div class="tags"><span>#LongAnOptic</span><span>#MatKinhLongAn</span>'+p.tags.map(function(t){return '<span>'+esc(t)+'</span>'}).join("")+'</div><p class="foot" style="margin-top:4px">Chọn 3–5 thẻ trong này, không cần dùng hết.</p></div></div></div>';
+}
+renderTabs($("#pillarTabs"),showPillar,false);showPillar(PILLARS[0].id);
+$("#pillarCards").addEventListener("click",function(e){var b=e.target.closest("[data-goto]");if(!b)return;
+ var t=$('#pillarTabs .tab[data-id="'+b.dataset.goto+'"]');t.click();$("#chi-tiet").scrollIntoView()});
+
+var ALL_HOOKS=[];PILLARS.forEach(function(p){p.ideas.forEach(function(it){ALL_HOOKS.push({p:p.id,h:it.hook,n:it.t})})});ALL_HOOKS=ALL_HOOKS.concat(EXTRA_HOOKS);
+function showHooks(id){
+ $("#hookList").innerHTML=ALL_HOOKS.filter(function(x){return id==="all"||x.p===id}).map(function(x){var p=byId[x.p];
+  return '<div class="hk" style="--c:'+p.color+'"><p>'+esc(x.h)+'<small>'+esc(p.name)+' · '+esc(x.n)+'</small></p>'+copyBtn(x.h)+'</div>'}).join("");
+}
+renderTabs($("#hookTabs"),showHooks,true);showHooks("all");
+$("#hookTypes").innerHTML=HOOK_TYPES.map(function(h,i){return '<div><b><span class="num" style="font-size:13px">'+(i+1)+'.</span> '+esc(h.t)+'</b><div style="color:var(--muted);font-size:14px">'+esc(h.e)+'</div></div>'}).join("");
+
+$("#phases").innerHTML=PHASES.map(function(ph){
+ return '<div class="card phase"><span class="when">'+esc(ph.n.toUpperCase())+' · '+esc(ph.when)+'</span><h3 style="margin-top:6px;font-size:20px">'+esc(ph.t)+'</h3><p style="font-size:14px;margin:0 0 10px">'+esc(ph.d)+'</p>'+
+  '<div class="mix" style="height:12px">'+ph.mix.map(function(v,i){return '<i style="width:'+v+'%;background:'+PILLARS[i].color+'" title="'+esc(PILLARS[i].name)+' '+v+'%"></i>'}).join("")+'</div>'+
+  '<div style="font-size:12px;color:var(--muted);line-height:1.7">'+ph.mix.map(function(v,i){return '<span style="white-space:nowrap;margin-right:8px"><span class="dot" style="background:'+PILLARS[i].color+';width:8px;height:8px"></span>'+esc(PILLARS[i].short)+' '+v+'%</span>'}).join("")+'</div>'+
+  '<div class="label">Dấu hiệu đi đúng hướng</div><p style="font-size:14px;margin:0">'+esc(ph.kpi)+'</p></div>'}).join("");
+$("#months").innerHTML=MONTHS.map(function(m){return '<div class="month'+(m.hot?' hot':'')+'"><div class="m">'+esc(m.m)+(m.hot?' · CAO ĐIỂM':'')+'</div><h3 style="margin-top:4px">'+esc(m.t)+'</h3><p style="margin:0;font-size:14px;color:var(--muted)">'+esc(m.d)+'</p></div>'}).join("");
+
+$("#tagSets").innerHTML=TAG_SETS.map(function(s){
+ var body=s.tags?'<div class="tags">'+s.tags.map(function(t){return '<span>'+esc(t)+'</span>'}).join("")+'</div>':
+  '<div style="margin-top:8px">'+PILLARS.map(function(p){return '<div style="font-size:13px;margin:6px 0"><span class="dot" style="background:'+p.color+'"></span><b>'+esc(p.name)+':</b> <span style="font-family:var(--mono)">'+p.tags.map(esc).join(" ")+'</span></div>'}).join("")+'</div>';
+ return '<div class="card"><div class="row"><h3 style="margin:0">'+esc(s.t)+'</h3>'+(s.tags?copyBtn(s.tags.join(" ")):"")+'</div><p class="foot" style="margin:2px 0 0">'+esc(s.d)+'</p>'+body+'</div>'}).join("");
+
+var KEY="lao-content-check";
+function loadCheck(){try{return JSON.parse(localStorage.getItem(KEY))||[]}catch(e){return[]}}
+function saveCheck(v){try{localStorage.setItem(KEY,JSON.stringify(v))}catch(e){}}
+function renderCheck(){var done=loadCheck();
+ $("#checklist").innerHTML=CHECK.map(function(c,i){return '<label><input type="checkbox" data-i="'+i+'"'+(done.indexOf(i)>-1?" checked":"")+'><span>'+esc(c)+'</span></label>'}).join("");
+ $("#progress").textContent=done.length+"/"+CHECK.length+(done.length===CHECK.length?" · sẵn sàng đăng ✓":"");}
+$("#checklist").addEventListener("change",function(){var v=[];document.querySelectorAll("#checklist input").forEach(function(x){if(x.checked)v.push(+x.dataset.i)});saveCheck(v);renderCheck()});
+$("#resetCheck").addEventListener("click",function(){saveCheck([]);renderCheck()});
+renderCheck();
+
+document.addEventListener("click",function(e){var b=e.target.closest("[data-copy]");if(!b)return;
+ var text=b.getAttribute("data-copy"),old=b.textContent;
+ function ok(){b.textContent="Đã chép ✓";b.classList.add("ok");setTimeout(function(){b.textContent=old;b.classList.remove("ok")},1500)}
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(ok,fallback)}else fallback();
+ function fallback(){var t=document.createElement("textarea");t.value=text;t.style.position="fixed";t.style.opacity="0";document.body.appendChild(t);t.select();try{document.execCommand("copy");ok()}catch(err){}document.body.removeChild(t)}
+});
+</script>
+<script src="/quote-track.js" data-version="content" defer></script>
+</body>
+</html>
