@@ -52,6 +52,11 @@ export interface ProposalQuote {
     description: string;
     image?: string; // Đường dẫn trong public/, nên 1200×630, vd "/kh-data/og/<ma-link>.jpg"
     imageAlt?: string;
+    // Icon khi khách "Thêm vào MH chính" (iPhone/Android): PNG nền đặc, không trong suốt
+    icon?: string; // 180×180 (apple-touch-icon)
+    iconLarge?: string; // 512×512 (Android)
+    favicon?: string; // 32×32 (tab trình duyệt)
+    appTitle?: string; // Tên dưới icon, nên ≤ 12 ký tự
   };
   title: string;
   preparedBy?: string;

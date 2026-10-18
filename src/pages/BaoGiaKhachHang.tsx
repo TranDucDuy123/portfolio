@@ -170,8 +170,40 @@ export default function BaoGiaKhachHang() {
   useEffect(() => {
     if (state.status === "ready") {
       const q = state.quote;
+      // Đo hành vi để so sánh với báo giá kiểu mới (/de-xuat/) — xem public/quote-track.js
+      if (!document.querySelector("script[src='/quote-track.js']")) {
+        const s = document.createElement("script");
+        s.src = "/quote-track.js";
+        s.defer = true;
+        s.setAttribute("data-version", "v1");
+        document.body.appendChild(s);
+      }
       document.title = q.seo?.title || `${q.client.name} × Duy Web — ${q.title}`;
       if (q.seo?.description) document.querySelector("meta[name='description']")?.setAttribute("content", q.seo.description);
+      // Bản build đã có sẵn các thẻ này trong HTML; đặt lại ở đây cho môi trường dev
+      const setLink = (rel: string, href?: string, sizes?: string) => {
+        if (!href) return;
+        const sel = `link[rel='${rel}']${sizes ? `[sizes='${sizes}']` : ""}`;
+        let el = document.head.querySelector<HTMLLinkElement>(sel);
+        if (!el) {
+          el = document.createElement("link");
+          el.rel = rel;
+          if (sizes) el.setAttribute("sizes", sizes);
+          document.head.appendChild(el);
+        }
+        el.href = href;
+      };
+      setLink("apple-touch-icon", q.seo?.icon, "180x180");
+      setLink("icon", q.seo?.favicon);
+      if (q.seo?.appTitle) {
+        let m = document.head.querySelector<HTMLMetaElement>("meta[name='apple-mobile-web-app-title']");
+        if (!m) {
+          m = document.createElement("meta");
+          m.name = "apple-mobile-web-app-title";
+          document.head.appendChild(m);
+        }
+        m.content = q.seo.appTitle;
+      }
     }
     else if (state.status === "missing") document.title = "Không tìm thấy tài liệu";
   }, [state]);

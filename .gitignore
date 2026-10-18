@@ -6,3 +6,6 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Ghi chú nội bộ báo giá (giá sàn, kịch bản chốt) — chỉ giữ trên máy
+bao-gia-xuat/*-noi-bo.md

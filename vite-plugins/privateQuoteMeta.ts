@@ -19,6 +19,10 @@ interface QuoteSeo {
   description: string;
   image?: string;
   imageAlt?: string;
+  icon?: string;
+  iconLarge?: string;
+  favicon?: string;
+  appTitle?: string;
 }
 
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -56,6 +60,20 @@ export function renderQuoteHtml(base: string, slug: string, seo: QuoteSeo) {
     ["name", "twitter:image", seo.image && abs(seo.image)],
   ];
   for (const [attr, key, value] of metas) if (value) html = setMeta(html, attr, key, value);
+
+  // Icon khi lưu ra màn hình chính: iOS chỉ đọc apple-touch-icon có sẵn trong HTML
+  if (seo.appTitle) {
+    html = setMeta(html, "name", "apple-mobile-web-app-title", seo.appTitle);
+    html = setMeta(html, "name", "application-name", seo.appTitle);
+  }
+  const links: string[] = [];
+  if (seo.favicon) links.push(`<link rel="icon" type="image/png" sizes="32x32" href="${esc(seo.favicon)}" />`);
+  if (seo.iconLarge) links.push(`<link rel="icon" type="image/png" sizes="512x512" href="${esc(seo.iconLarge)}" />`);
+  if (seo.icon) links.push(`<link rel="apple-touch-icon" sizes="180x180" href="${esc(seo.icon)}" />`);
+  if (links.length) {
+    html = html.replace(/\s*<link\s+rel="(?:icon|shortcut icon|apple-touch-icon)"[^>]*>/gi, "");
+    html = html.replace("</head>", `    ${links.join("\n    ")}\n  </head>`);
+  }
   return html;
 }
 

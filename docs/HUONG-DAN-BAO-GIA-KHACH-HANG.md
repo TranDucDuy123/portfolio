@@ -27,6 +27,9 @@ Khai báo khối `seo` trong file JSON:
 ```
 
 - Ảnh đặt trong `public/kh-data/og/`, kích thước **1200×630**, JPG dưới ~300KB.
+- Icon khi khách bấm **Chia sẻ → Thêm vào MH chính** trên iPhone (và Android): thêm vào `seo`
+  `"icon"` (PNG 180×180), `"iconLarge"` (512×512), `"favicon"` (32×32) và `"appTitle"` (tên dưới icon, ≤ 12 ký tự).
+  PNG phải **nền đặc** — iOS tô đen phần trong suốt. Không khai báo thì iPhone lấy ảnh chụp trang làm icon.
 - Khi `npm run build`, plugin `vite-plugins/privateQuoteMeta.ts` sinh `dist/bao-gia-kh/<ma-link>.html`
   có sẵn title / description / ảnh (vì Zalo, Facebook không chạy JS nên không đọc được thẻ do React gắn).
   Vercel bật `cleanUrls` nên link không đuôi `.html` vẫn ra đúng file này.
@@ -72,3 +75,42 @@ Xoá (hoặc đổi tên) file JSON rồi deploy lại — link cũ sẽ báo "L
   ghi giá dạng "Thêm X đ" (phần chênh lệch) và điều kiện mở rõ ràng ("sau buổi đánh giá tuần 4").
 - `offer` chỉ gắn với gói khởi tạo; nên tặng phần việc (thiết kế, ưu tiên lịch, giữ giá nâng cấp)
   thay vì giảm tiền.
+
+## Báo giá kiểu mới (/de-xuat/) và so sánh hiệu quả
+
+Hai kiểu báo giá chạy song song, không đụng nhau:
+
+| | Kiểu cũ (v1) | Kiểu mới (v2) |
+|---|---|---|
+| Đường dẫn | `/bao-gia-kh/<ma-link>` | `/de-xuat/<ma-link>` |
+| Dựng bằng | Trang React đọc `public/kh-data/<ma-link>.json` | Skill `duyweb-bao-gia` → 1 file HTML |
+| Nơi để file | `public/kh-data/` | Làm việc ở `bao-gia-xuat/`, đưa lên `public/de-xuat/` |
+
+### Đưa một báo giá kiểu mới lên site
+
+1. Dựng bằng skill, để `<ma-link>.html` (và `<ma-link>.json`) trong `bao-gia-xuat/`.
+   Muốn có ảnh khi gửi qua Zalo/Facebook: thêm `bao-gia-xuat/<ma-link>-og.jpg` (1200×630).
+2. Chạy `npm run de-xuat -- <ma-link>` (bỏ `<ma-link>` để đưa lên tất cả).
+   Script chép sang `public/de-xuat/`, thêm link chuẩn, noindex, ảnh chia sẻ và bộ đo hành vi.
+3. Commit và deploy. Gửi khách: `https://ducduyweb.vn/de-xuat/<ma-link>`
+
+Ghi chú nội bộ `bao-gia-xuat/*-noi-bo.md` (giá sàn, kịch bản chốt) **không commit** — đã có trong `.gitignore`.
+
+### Đo để biết kiểu nào hiệu quả
+
+`public/quote-track.js` gắn vào cả hai kiểu, mỗi sự kiện có `quote_version` (v1/v2) và `quote_slug`:
+
+| Sự kiện | Nghĩa là |
+|---|---|
+| `quote_view` | Khách mở báo giá |
+| `quote_engaged_30s`, `_2m`, `_5m` | Thực sự đọc (chỉ tính lúc tab đang mở trước mặt) |
+| `quote_scroll_50`, `quote_scroll_90` | Đọc tới nửa trang / gần hết |
+| `quote_select_package` | Bấm chọn gói (kèm tên gói) |
+| `quote_zalo`, `quote_call`, `quote_copy`, `quote_print` | Bấm Zalo, gọi, chép, in |
+
+**Cần làm một lần:** điền ID Google Analytics 4 (`ga4: "G-..."`) ở đầu `public/quote-track.js`
+(có thể thêm `fbPixel` nếu có Pixel thật). Chưa điền thì sự kiện chỉ hiện trong console trình duyệt, không gửi đi đâu.
+
+So sánh trong GA4: Báo cáo → Sự kiện → `quote_zalo` (hoặc sự kiện khác), thêm chiều `quote_version`.
+Chỉ số nên xem: tỉ lệ `quote_zalo` / `quote_view` và tỉ lệ `quote_engaged_2m` / `quote_view` theo từng phiên bản.
+Vì mỗi khách chỉ xem một kiểu, nên ghi thêm kết quả thật (chốt / chưa chốt, gói nào) cho từng mã link để đối chiếu.
