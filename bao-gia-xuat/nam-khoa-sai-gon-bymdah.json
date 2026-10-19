@@ -1,0 +1,238 @@
+{
+  "meta": {
+    "slug": "nam-khoa-sai-gon-bymdah",
+    "client_name": "Phòng Khám Nam Khoa Sài Gòn",
+    "client_short": "Nam Khoa Sài Gòn",
+    "title": "Báo giá Nam Khoa Sài Gòn × Duy Web – Từ lượt xem đến bệnh nhân đến khám",
+    "description": "Nối Facebook, TikTok, YouTube, Google Maps, website và Zalo thành một đường đặt lịch đo được. Khởi tạo 14.000.000đ, đồng hành từ 1.000.000đ/tháng.",
+    "date": "19/10/2026",
+    "valid_until": "31/10/2026"
+  },
+  "theme": { "accent": "#2A378D", "bg": "#F4F6FB", "ink": "#141A2E", "muted": "#626B80" },
+  "hero": {
+    "eyebrow": "Báo giá · Phòng Khám Nam Khoa Sài Gòn × Duy Web",
+    "headline": "Từ lượt xem đến bệnh nhân đến khám",
+    "sub": "Phòng khám đã có kênh, có nội dung, có website. Việc còn thiếu là một đường nối để khách đi từ video đến ghế khám, và con số cho biết đường nào đang ra bệnh nhân.",
+    "total_label": "Khởi tạo · rồi đồng hành từ",
+    "total_value": "14.000.000đ + 1.000.000đ/tháng"
+  },
+  "sections": [
+    {
+      "type": "intro",
+      "title": "Lời mở đầu",
+      "nav": "Mở đầu",
+      "lead": "Bên em đề xuất gói xây dựng 1 năm: 14.000.000đ khởi tạo một lần để biến namkhoasg.com thành cổng đặt lịch nối mọi kênh, rồi đồng hành từ 1.000.000đ/tháng (hosting, bảo trì và đặc quyền marketing đã gồm trong đó).",
+      "paragraphs": [
+        "Bác sĩ Tuấn đã làm được những việc nhiều phòng khám chưa làm: website công khai bảng giá và giấy phép, TikTok có người làm nội dung chuyên nghiệp, từng chạy quảng cáo Facebook và Google. Nhưng số người đến phòng khám vẫn chưa tương xứng với công sức. Vấn đề không nằm ở thiếu kênh. Khách xem video, nhắn tin, vào web, rồi rơi rụng ở giữa đường, và hiện chưa có con số nào cho biết họ rơi ở đâu.",
+        "Bên em không đề xuất làm thêm kênh. Bên em đề xuất nối các kênh đang có thành một đường duy nhất: thấy bác sĩ, nhận ra vấn đề của mình, đặt lịch, đến khám. Mỗi bước đều được đo. Sau mỗi tháng, bên em ngồi cùng bác sĩ đọc số liệu: tháng này bao nhiêu người đặt lịch, từ kênh nào, và một bệnh nhân đến khám tốn bao nhiêu tiền quảng cáo."
+      ]
+    },
+    {
+      "type": "why",
+      "title": "Vì sao có tương tác mà chưa có bệnh nhân",
+      "nav": "Nỗi đau",
+      "intro": "Khách nam khoa có một đặc điểm: rất ngại. Họ xem nhiều, hỏi nhiều nơi, nhưng chỉ đặt lịch khi thấy kín đáo, rõ giá và được dẫn dắt từng bước. Mỗi chỗ đứt trên đường đi là một bệnh nhân đi sang phòng khám khác.",
+      "flow_title": "Hôm nay mỗi kênh chạy riêng, khách tự tìm đường. Sau khi làm, mọi kênh đổ về một đường đặt lịch",
+      "old_label": "Hiện tại",
+      "new_label": "Sau khi làm",
+      "steps": [
+        { "title": "Thấy bác sĩ", "sub": "TikTok, Facebook, YouTube, Google" },
+        { "title": "Tự kiểm tra vấn đề", "sub": "bài tự kiểm tra 2 phút, ẩn danh trên web" },
+        { "title": "Đặt lịch hoặc nhắn Zalo", "sub": "chọn giờ, nhận xác nhận ngay" },
+        { "title": "Đến khám, quay lại", "sub": "nhắc lịch, hỏi thăm, đánh giá Google Maps" }
+      ],
+      "result": "mỗi lượt xem, tin nhắn và lượt đặt lịch đều biết đến từ kênh nào, nên biết tiền quảng cáo nên đổ vào đâu.",
+      "tips": [
+        { "title": "Facebook: có tin nhắn, mất khách vì thiếu kịch bản", "body": "Quảng cáo 3 triệu/tháng mang về tin nhắn, nhưng khách hỏi giá xong im lặng, hoặc hỏi 3 phòng khám cùng lúc. Cần kịch bản trả lời trong 5 phút, hỏi đúng 2–3 câu để hiểu vấn đề, rồi mời sang Zalo hoặc chọn giờ khám. Không có kịch bản thì tiền quảng cáo đổi được tin nhắn, chưa đổi được bệnh nhân." },
+        { "title": "TikTok: có lượt xem, không biết kết quả nằm đâu", "body": "Video thu hút được người xem, nhưng người xem xong không có chỗ để đi tiếp, hoặc đi tiếp mà không ai biết. Mỗi video cần một lời mời cụ thể (\"làm bài tự kiểm tra ở link trên trang\") và link riêng cho TikTok, để biết video nào thật sự ra lịch hẹn." },
+        { "title": "Website: có form, có nút gọi, nhưng không đo", "body": "Bên em xem mã trang namkhoasg.com ngày 19/10/2026, không thấy Google Analytics, Google Tag Manager hay mã đo chuyển đổi nào của Google Ads hoặc Facebook. Nghĩa là không ai biết bao nhiêu người vào web, bấm Zalo bao nhiêu lần, và quảng cáo Google trước đây đã đem về bao nhiêu khách." },
+        { "title": "Khách ngại thì cần đường đi kín đáo", "body": "Người đang lo về cương dương hay xuất tinh sớm sẽ không gọi điện ngay. Họ cần tự đọc, tự kiểm tra, thấy giá rõ, rồi mới nhắn tin. Đường đi càng kín đáo và ít bước, càng nhiều người đi hết." }
+      ]
+    },
+    {
+      "type": "audit",
+      "title": "Hiện trạng namkhoasg.com và các kênh",
+      "nav": "Hiện trạng",
+      "intro": "Website đã có nền tốt: đủ dịch vụ, bảng giá niêm yết, giấy phép 08210/HCM-GPHĐ, giờ mở cửa rõ, nút gọi, Zalo, Messenger luôn hiện. Bên em ghi nhận khi xem trang ngày 19/10/2026, cùng những gì phòng khám chia sẻ về các kênh:",
+      "items": [
+        { "issue": "Không thấy mã Google Analytics, Tag Manager, Google Ads hay Facebook Pixel trong mã trang", "impact": "Không biết web có bao nhiêu người xem, từ đâu, bấm gì. Quảng cáo Google không học được ai là khách thật nên tốn tiền hơn", "fix": "Gắn bộ đo đầy đủ, đo từng nút Gọi, Zalo, Messenger, form đặt lịch" },
+        { "issue": "Form \"Đăng ký khám\" và \"Gửi yêu cầu tư vấn\" chỉ gửi đi, chưa chọn được ngày giờ", "impact": "Khách gửi xong không biết bao giờ được gọi lại, dễ đi hỏi nơi khác", "fix": "Đặt lịch chọn ngày giờ, xác nhận ngay qua Zalo, nhắc lịch trước 1 ngày" },
+        { "issue": "Trang chưa có link Facebook, TikTok, YouTube của bác sĩ", "impact": "Khách vào web không thấy video của bác sĩ, mất một lớp niềm tin quan trọng", "fix": "Nhúng video bác sĩ vào trang dịch vụ, gắn link đủ các kênh" },
+        { "issue": "Chỉ có chỉ số \"99% Bệnh nhân hài lòng\", chưa có đánh giá thật", "impact": "Con số không có nguồn khó tạo niềm tin bằng đánh giá có thật", "fix": "Hiện đánh giá Google Maps ngay trên web, xin đánh giá sau mỗi lần khám" },
+        { "issue": "Quảng cáo Facebook đã chạy rồi tắt, TikTok chưa có link đo riêng", "impact": "Không so được kênh nào ra bệnh nhân, nên dễ tắt nhầm kênh tốt", "fix": "Mỗi kênh một trang đích và một link đo riêng" }
+      ],
+      "footnote": "Mọi điểm trên đều nằm trong gói khởi tạo bên dưới."
+    },
+    {
+      "type": "custom",
+      "title": "Luồng ra bệnh nhân: 5 bước, mỗi bước một con số",
+      "nav": "Luồng bệnh nhân",
+      "intro": "Đây là đường một người đi từ lúc lướt thấy bác sĩ đến lúc ngồi trong phòng khám. Mỗi kênh giữ đúng một vai, và mỗi bước có một con số để biết đường đi đang thông hay tắc.",
+      "html": "<div class='grid' style='gap:10px'><div class='card' style='border-left:5px solid var(--accent)'><div style='display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap'><b>1 · Độ phủ: được thấy</b><span><span class='chip'>TikTok</span><span class='chip'>Facebook</span><span class='chip'>YouTube</span></span></div><p style='margin:6px 0 0;font-size:15px'>Video bác sĩ giải đáp một nỗi lo thường gặp. Quảng cáo Facebook đưa video tốt nhất tới nam giới quanh Bình Thạnh và các quận gần.</p><div class='label'>Đo bằng</div><p style='margin:0;font-size:14px;color:var(--muted)'>Lượt xem, lượt xem hết video, chi phí cho 1.000 người thấy</p></div><div class='card' style='border-left:5px solid var(--accent)'><div style='display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap'><b>2 · Kích quan tâm: bấm để tìm hiểu</b><span><span class='chip'>Link riêng từng kênh</span><span class='chip'>Website</span></span></div><p style='margin:6px 0 0;font-size:15px'>Cuối video có lời mời cụ thể. Mỗi kênh dẫn về một trang đích riêng trên namkhoasg.com, nói đúng chủ đề video vừa xem.</p><div class='label'>Đo bằng</div><p style='margin:0;font-size:14px;color:var(--muted)'>Lượt vào web theo từng kênh, thời gian đọc</p></div><div class='card' style='border-left:5px solid var(--accent)'><div style='display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap'><b>3 · Phát hiện vấn đề: tự kiểm tra kín đáo</b><span><span class='chip'>Bài tự kiểm tra 2 phút</span></span></div><p style='margin:6px 0 0;font-size:15px'>Khách trả lời 5–7 câu hỏi ẩn danh, không cần để lại tên. Kết quả gợi ý mức độ và lời khuyên nên đi khám, kèm giá khám công khai. Đây là bước biến người xem thành người muốn khám.</p><div class='label'>Đo bằng</div><p style='margin:0;font-size:14px;color:var(--muted)'>Số người làm bài, số người làm xong, chủ đề nào được làm nhiều nhất</p></div><div class='card' style='border-left:5px solid var(--accent)'><div style='display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap'><b>4 · Đặt lịch tư vấn khám</b><span><span class='chip'>Đặt lịch trên web</span><span class='chip'>Zalo</span><span class='chip'>Messenger</span><span class='chip'>Gọi</span></span></div><p style='margin:6px 0 0;font-size:15px'>Khách chọn ngày giờ trên web, hoặc nhắn Zalo theo kịch bản tư vấn. Phòng khám nhận thông báo ngay, khách nhận xác nhận và lời nhắc trước 1 ngày.</p><div class='label'>Đo bằng</div><p style='margin:0;font-size:14px;color:var(--muted)'>Số lịch hẹn theo từng kênh, tỉ lệ từ tin nhắn thành lịch hẹn</p></div><div class='card' style='border-left:5px solid var(--accent)'><div style='display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap'><b>5 · Đến khám, quay lại, giới thiệu</b><span><span class='chip'>Google Maps</span><span class='chip'>Zalo</span></span></div><p style='margin:6px 0 0;font-size:15px'>Google Maps chỉ đường và cho khách xem đánh giá trước khi đến. Sau khám, Zalo hỏi thăm, hẹn tái khám, mời đánh giá kín đáo không cần ghi tên bệnh.</p><div class='label'>Đo bằng</div><p style='margin:0;font-size:14px;color:var(--muted)'>Tỉ lệ đến đúng hẹn, bệnh nhân theo nguồn (lễ tân ghi), số đánh giá mới</p></div></div><p class='foot'>Google Maps và tìm kiếm Google là đường tắt: người đang cần khám ngay sẽ tìm \"phòng khám nam khoa Bình Thạnh\" và đi thẳng tới bước 4. Vì vậy hồ sơ Google Maps được chuẩn hoá ngay trong gói khởi tạo.</p>"
+    },
+    {
+      "type": "custom",
+      "title": "Website đo được gì, và quy đổi ra giá trị thế nào",
+      "nav": "Đo lường",
+      "intro": "Câu hỏi \"khách có vào web không\" sẽ có câu trả lời bằng số mỗi tuần. Bác sĩ không cần đọc bảng biểu phức tạp: mỗi tháng bên em gửi một trang tóm tắt với 5 con số dưới đây.",
+      "html": "<div class='grid g2'><div class='card'><div class='label' style='margin-top:0'>5 con số bác sĩ nhận mỗi tháng</div><ul class='clean'><li><b>Người vào web</b>, tách theo nguồn: TikTok, Facebook, YouTube, Google, Google Maps</li><li><b>Lượt bấm liên hệ</b>: Gọi, Zalo, Messenger, mỗi nút đếm riêng</li><li><b>Bài tự kiểm tra</b>: bao nhiêu người làm, bao nhiêu người làm xong</li><li><b>Lịch hẹn</b> theo từng kênh, kể cả lịch chốt qua Zalo</li><li><b>Bệnh nhân đến khám</b> theo nguồn, do lễ tân ghi một dòng sau mỗi ca</li></ul><p class='foot'>Từ đó tính được con số quan trọng nhất: <b>một bệnh nhân đến khám tốn bao nhiêu tiền quảng cáo</b>, theo từng kênh.</p></div><div class='card'><div class='label' style='margin-top:0'>Ví dụ quy đổi với 3.000.000đ quảng cáo Facebook/tháng</div><div style='display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr);gap:8px 10px;font-size:14px;align-items:center'><span></span><b style='font-size:12px;color:var(--muted);text-align:right'>Chưa có kịch bản</b><b style='font-size:12px;color:var(--accent);text-align:right'>Có kịch bản, nhắc lịch</b><span>Tin nhắn nhận được</span><span style='text-align:right'>60</span><span style='text-align:right'>60</span><span>Thành lịch hẹn</span><span style='text-align:right'>6 (10%)</span><span style='text-align:right'>15 (25%)</span><span>Đến khám đúng hẹn</span><span style='text-align:right'>4</span><span style='text-align:right'>12</span><span style='border-top:1px solid var(--line);padding-top:6px'><b>Tiền quảng cáo cho 1 bệnh nhân</b></span><b style='text-align:right;border-top:1px solid var(--line);padding-top:6px'>750.000đ</b><b style='text-align:right;border-top:1px solid var(--line);padding-top:6px;color:var(--accent)'>250.000đ</b></div><p class='foot'>Cùng một khoản tiền quảng cáo, phần khác biệt nằm ở khâu tư vấn và nhắc lịch, không phải ở quảng cáo. Đây là con số ví dụ để thấy cách tính, không phải cam kết. Số thật của phòng khám sẽ có sau 4 tuần đo.</p></div></div>"
+    },
+    {
+      "type": "channels",
+      "title": "Mỗi kênh giữ một vai",
+      "nav": "Kênh",
+      "intro": "Không kênh nào phải làm hết mọi việc. Chọn một kênh để xem vai của nó trong luồng bệnh nhân, hoặc chọn một tiêu chí để so sánh.",
+      "criteria": ["Tiếp cận người mới", "Tạo niềm tin vào bác sĩ", "Ra lịch hẹn nhanh", "Đo được kết quả"],
+      "channels": [
+        { "name": "TikTok", "tag": "Độ phủ và niềm tin", "scores": [5, 4, 2, 3], "customer": "Nam giới 18–40 tuổi, đang lo nhưng chưa sẵn sàng đi khám, lướt video vào buổi tối.", "assessment": "Kênh đang làm tốt nhất về nội dung. Phần thiếu là điểm đến sau khi xem: thêm lời mời làm bài tự kiểm tra, link riêng ở trang cá nhân, và đếm được video nào ra lịch hẹn.", "in_package": ["Trang đích riêng cho TikTok", "Gắn mã đo TikTok trên web", "Gợi ý lời mời cuối video cho người làm nội dung"], "measure": "Lượt bấm link trang cá nhân, lượt làm bài tự kiểm tra, lịch hẹn từ TikTok" },
+        { "name": "Facebook", "tag": "Quảng cáo ra tin nhắn", "scores": [4, 3, 4, 4], "customer": "Nam giới 25–50 tuổi quanh TP.HCM, nhắn tin hỏi giá, hỏi có kín đáo không.", "assessment": "Kênh ra tin nhắn nhanh nhất với 3.000.000đ/tháng, nhưng chỉ đáng tiền khi có kịch bản tư vấn và đường chuyển sang Zalo. Nội dung quảng cáo dịch vụ khám chữa bệnh cần có giấy xác nhận của Sở Y tế trước khi chạy.", "in_package": ["Kịch bản tư vấn Messenger → Zalo → lịch hẹn", "Gắn Facebook Pixel đo lịch hẹn thật", "Trang đích riêng cho quảng cáo Facebook"], "measure": "Tin nhắn, tỉ lệ thành lịch hẹn, tiền quảng cáo cho 1 bệnh nhân" },
+        { "name": "YouTube", "tag": "Kho video lâu dài", "scores": [3, 5, 2, 3], "customer": "Người tìm hiểu kỹ, xem video dài, tìm \"điều trị xuất tinh sớm có lâu không\".", "assessment": "Dùng lại video TikTok và quay thêm video hỏi đáp dài. Video YouTube nhúng vào trang dịch vụ giúp khách tin bác sĩ trước khi đặt lịch.", "in_package": ["Gắn kênh YouTube vào web", "Nhúng video vào trang dịch vụ liên quan"], "measure": "Lượt vào web từ YouTube, lượt xem video trên web" },
+        { "name": "Google Maps & tìm kiếm", "tag": "Người đang cần khám ngay", "scores": [3, 4, 5, 4], "customer": "Người tìm \"phòng khám nam khoa gần đây\", xem đánh giá rồi gọi hoặc chỉ đường.", "assessment": "Đường ngắn nhất tới lịch hẹn. Hồ sơ cần đủ ảnh thật, giờ mở cửa, dịch vụ và giá, nút đặt lịch dẫn về web, và đánh giá đều đặn.", "in_package": ["Chuẩn hoá hồ sơ Google Maps", "Nút đặt lịch trỏ về web", "Mã QR xin đánh giá tại quầy"], "measure": "Lượt gọi, chỉ đường, bấm vào web, số đánh giá mới" },
+        { "name": "Website", "tag": "Trạm trung tâm", "scores": [2, 4, 4, 5], "customer": "Khách đã quan tâm, vào để xem giá, bác sĩ, quy trình và tự kiểm tra một cách kín đáo.", "assessment": "Nơi mọi kênh đổ về và là nơi duy nhất đo được trọn đường đi. Web đã có nền tốt, cần thêm đặt lịch, bài tự kiểm tra, trang đích từng kênh và bộ đo.", "in_package": ["Đặt lịch chọn ngày giờ", "Bài tự kiểm tra 2 phút", "Bộ đo đầy đủ và trang tóm tắt số liệu"], "measure": "Người vào theo nguồn, lượt bấm liên hệ, lịch hẹn" },
+        { "name": "Zalo", "tag": "Chốt lịch và chăm sóc", "scores": [1, 4, 5, 3], "customer": "Khách muốn hỏi riêng, kín đáo, và cần được nhắc lịch.", "assessment": "Mọi kênh kết thúc ở đây. Kịch bản trả lời mẫu, xác nhận lịch, nhắc trước 1 ngày, hỏi thăm sau khám và hẹn tái khám.", "in_package": ["Bộ câu trả lời mẫu cho 10 câu hay gặp", "Mẫu tin xác nhận, nhắc lịch, hỏi thăm"], "measure": "Tỉ lệ từ tin nhắn thành lịch hẹn, tỉ lệ đến đúng hẹn" }
+      ],
+      "footnote": "Điểm 1–5 là nhận định định tính của bên em cho riêng Nam Khoa Sài Gòn. Số liệu thật của từng kênh sẽ có sau 4 tuần đo."
+    },
+    {
+      "type": "custom",
+      "title": "Khách sẽ thấy gì trên điện thoại",
+      "nav": "Minh hoạ",
+      "intro": "Trang đích mà người xem TikTok hoặc quảng cáo Facebook bấm vào: một chủ đề, một bài tự kiểm tra, một nút đặt lịch.",
+      "html": "<div class='grid g2' style='align-items:start'><div style='display:flex;justify-content:center'><div style='width:270px;border-radius:34px;background:#111;padding:9px;box-shadow:0 18px 40px -16px rgba(0,0,0,.45)'><div style='border-radius:26px;overflow:hidden;background:#fff;font-size:12px;color:#141A2E'><div style='background:var(--accent);color:#fff;padding:20px 14px 14px'><div style='font-size:10px;opacity:.8;letter-spacing:.08em'>NAM KHOA SÀI GÒN · BS. VŨ ANH TUẤN</div><div style='font-weight:800;font-size:16px;line-height:1.3;margin-top:6px'>Xuất tinh sớm: tự kiểm tra kín đáo trong 2 phút</div><div style='opacity:.85;font-size:11px;margin-top:6px'>Không cần để lại tên · Kết quả hiện ngay</div></div><div style='padding:12px'><div style='font-weight:700;font-size:11px;color:#626B80'>CÂU 3/6</div><div style='font-weight:700;margin:4px 0 8px'>Tình trạng này kéo dài bao lâu rồi?</div><div style='display:grid;gap:6px'><span style='border:1px solid #E1E5EF;border-radius:10px;padding:8px 10px'>Dưới 3 tháng</span><span style='border:2px solid var(--accent);border-radius:10px;padding:8px 10px;font-weight:700'>3–12 tháng</span><span style='border:1px solid #E1E5EF;border-radius:10px;padding:8px 10px'>Trên 1 năm</span></div><div style='height:6px;border-radius:9px;background:#E1E5EF;margin:12px 0 4px'><div style='width:50%;height:100%;border-radius:9px;background:var(--accent)'></div></div></div><div style='margin:0 12px 10px;padding:10px;border-radius:12px;background:#F4F6FB'><div style='font-weight:700'>📅 Đặt lịch tư vấn khám</div><div style='display:flex;gap:6px;margin-top:6px;flex-wrap:wrap'><span class='chip'>Hôm nay 18:30</span><span class='chip'>Mai 09:00</span><span class='chip'>Mai 19:00</span></div><div style='color:#626B80;font-size:11px;margin-top:6px'>Phí khám 200.000–500.000đ · Bảo mật thông tin</div></div><div style='display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:8px 12px 14px;border-top:1px solid #E1E5EF'><span style='text-align:center;background:#0068FF;color:#fff;border-radius:8px;padding:8px 0;font-weight:800'>💬 Zalo</span><span style='text-align:center;background:var(--accent);color:#fff;border-radius:8px;padding:8px 0;font-weight:800'>📞 Gọi</span></div></div></div></div><div class='card'><div class='label' style='margin-top:0'>Vì sao trang này ra lịch hẹn</div><ul class='clean'><li>Nói đúng chủ đề video khách vừa xem, không bắt khách tìm lại từ trang chủ</li><li>Bài tự kiểm tra ẩn danh: khách ngại hỏi vẫn có thể bắt đầu</li><li>Kết quả kèm giá khám công khai và giờ trống gần nhất</li><li>Một chạm sang Zalo, câu hỏi đầu đã điền sẵn, không phải gõ lại</li><li>Mỗi bước đều được đếm, biết khách dừng ở câu nào</li></ul><div class='label'>Các trang đích trong gói khởi tạo</div><p style='margin:0;font-size:14px'><span class='chip'>Xuất tinh sớm</span><span class='chip'>Rối loạn cương</span><span class='chip'>Bao quy đầu</span><span class='chip'>Viêm nhiễm, bệnh lây qua đường tình dục</span></p></div></div><p class='foot'>Hình minh hoạ định hướng · không phải ảnh thật. Câu hỏi trong bài tự kiểm tra do bác sĩ duyệt, kết quả chỉ mang tính gợi ý, không thay cho chẩn đoán.</p>"
+    },
+    {
+      "type": "loop",
+      "title": "Mỗi tháng một vòng: đo, đọc, chỉnh",
+      "nav": "Đồng hành",
+      "intro": "Gói đồng hành không phải trả tiền để giữ web chạy. Đó là một vòng lặp hằng tháng để đường đặt lịch ngày càng thông hơn.",
+      "steps": [
+        { "title": "Đo", "body": "Bộ đo tự ghi người vào web, lượt bấm liên hệ, bài tự kiểm tra, lịch hẹn theo từng kênh. Lễ tân ghi nguồn bệnh nhân đến khám." },
+        { "title": "Đọc", "body": "Bên em gửi trang tóm tắt 5 con số, chỉ ra chỗ khách đang rơi nhiều nhất." },
+        { "title": "Cùng quyết định", "body": "30 phút với bác sĩ: tháng sau dồn quảng cáo vào kênh nào, video chủ đề gì, sửa câu tư vấn nào.", "focus": true },
+        { "title": "Chỉnh", "body": "Bên em sửa trang đích, kịch bản Zalo, đối tượng quảng cáo theo quyết định chung." }
+      ],
+      "note": "Bác sĩ chốt hướng đi. Bên em đưa số liệu, đề xuất và làm phần kỹ thuật."
+    },
+    {
+      "type": "milestones",
+      "title": "Các chặng trong năm đầu",
+      "nav": "Các chặng",
+      "intro": "Ba chặng, mỗi chặng có một dấu hiệu cho biết đã đến lúc đi tiếp.",
+      "stages": [
+        { "name": "Tháng 1 · Nối và đo", "items": ["Web đặt lịch, bài tự kiểm tra, trang đích từng kênh chạy", "Bộ đo hoạt động, có con số đầu tiên", "Kịch bản tư vấn Zalo và Messenger được dùng"], "done_when": "Biết được tuần này bao nhiêu lịch hẹn, từ kênh nào" },
+        { "name": "Tháng 2–4 · Chạy và so sánh", "items": ["Bật lại quảng cáo Facebook 3.000.000đ/tháng khi đã có giấy xác nhận nội dung", "TikTok gắn lời mời và link đo", "So tiền quảng cáo cho 1 bệnh nhân theo từng kênh"], "done_when": "Biết kênh nào ra bệnh nhân rẻ nhất" },
+        { "name": "Tháng 5–12 · Dồn sức vào kênh thắng", "items": ["Tăng ngân sách cho kênh thắng, giảm kênh yếu", "Thêm trang đích cho dịch vụ được hỏi nhiều", "Đều đặn đánh giá Google Maps và tái khám"], "done_when": "Lịch hẹn mỗi tháng ổn định và tăng dần" }
+      ],
+      "loop_line": "Mỗi tháng: đo → đọc → cùng quyết định → chỉnh",
+      "footnote": "Các chặng là mục tiêu cùng hướng tới, không phải cam kết số lượng bệnh nhân hay doanh thu."
+    },
+    {
+      "type": "timeline",
+      "title": "4 tuần khởi tạo",
+      "nav": "Lộ trình",
+      "intro": "Web vẫn chạy bình thường trong lúc làm. Phần mới được bật dần, không gián đoạn khách đang xem.",
+      "weeks": [
+        { "label": "T1", "name": "Gắn đo lường, chuẩn hoá Google Maps", "tasks": ["Gắn Google Analytics, Tag Manager, Facebook Pixel, TikTok Pixel, mã đo Google Ads", "Đếm từng nút Gọi, Zalo, Messenger, form", "Chuẩn hoá hồ sơ Google Maps, mã QR đánh giá"] },
+        { "label": "T2", "name": "Đặt lịch và nối kênh", "tasks": ["Đặt lịch chọn ngày giờ, báo về Zalo phòng khám", "Gắn link Facebook, TikTok, YouTube, nhúng video bác sĩ", "Hiện đánh giá Google Maps trên web"] },
+        { "label": "T3", "name": "Trang đích và bài tự kiểm tra", "tasks": ["4 trang đích theo chủ đề, mỗi kênh một link đo riêng", "Bài tự kiểm tra 2 phút, câu hỏi do bác sĩ duyệt", "Kịch bản tư vấn Messenger → Zalo → lịch hẹn"] },
+        { "label": "T4", "name": "Chạy thử và bàn giao", "tasks": ["Thử trọn đường đi trên điện thoại", "Hướng dẫn lễ tân ghi nguồn bệnh nhân (1 dòng mỗi ca)", "Buổi đọc số liệu đầu tiên với bác sĩ"] }
+      ],
+      "after": { "title": "Sau tuần 4", "body": "Chuyển sang gói đồng hành. Hosting, bảo trì và các đặc quyền marketing chạy theo tháng, có buổi đọc số liệu định kỳ." }
+    },
+    { "type": "partner" },
+    {
+      "type": "pricing",
+      "title": "Chi phí gói xây dựng 1 năm",
+      "nav": "Chi phí",
+      "intro": "Gồm hai phần: khởi tạo một lần ở tháng đầu, rồi gói đồng hành theo tháng. Gói đồng hành đã gồm hosting, tên miền, bảo trì, nên phòng khám không phải lo thêm khoản kỹ thuật nào. Mức tháng càng cao thì bên em làm marketing cùng phòng khám càng nhiều.",
+      "setup": {
+        "label": "Tháng 1 · Khởi tạo một lần",
+        "row_label": "Tháng 1",
+        "options": [
+          {
+            "name": "Website đặt lịch nối đa kênh",
+            "price": 14000000,
+            "price_note": "trọn gói, chi phí cứng",
+            "recommended": true,
+            "desc": "Nâng cấp namkhoasg.com thành cổng đặt lịch, nối Facebook, TikTok, YouTube, Google Maps và Zalo về một đường đi, đo được từng bước.",
+            "includes": [
+              "Đặt lịch chọn ngày giờ, xác nhận và nhắc lịch qua Zalo",
+              "Bài tự kiểm tra 2 phút, ẩn danh",
+              "4 trang đích theo chủ đề, mỗi kênh một link đo riêng",
+              "Bộ đo đầy đủ: Analytics, Tag Manager, Pixel Facebook, TikTok, Google Ads",
+              "Kịch bản tư vấn Messenger → Zalo → lịch hẹn",
+              "Chuẩn hoá Google Maps, mã QR đánh giá",
+              "Nhúng video bác sĩ, hiện đánh giá thật trên web",
+              "4 tuần đồng hành và buổi đọc số liệu đầu tiên"
+            ],
+            "why": "Hiện tiền quảng cáo và công làm TikTok đã bỏ ra nhưng chưa đo được kết quả. Khoản này làm một lần để mọi đồng quảng cáo về sau đều biết nó ra bao nhiêu bệnh nhân."
+          }
+        ]
+      },
+      "offer": {
+        "title": "Ưu đãi xác nhận trong tháng 10",
+        "condition": "Khi xác nhận gói khởi tạo trước hết ngày 31/10/2026",
+        "deadline": "2026-10-31",
+        "items": [
+          { "title": "Thêm 2 trang đích", "body": "Ngoài 4 trang trong gói, bên em làm thêm 2 trang cho dịch vụ bác sĩ muốn đẩy." },
+          { "title": "Bộ kịch bản 10 video", "body": "10 ý tưởng video có lời mời cuối video, gửi cho người làm TikTok dùng ngay." },
+          { "title": "Hỗ trợ hồ sơ quảng cáo", "body": "Soạn sẵn nội dung quảng cáo để phòng khám nộp xin xác nhận tại Sở Y tế." }
+        ],
+        "note": "Ưu đãi đi kèm gói khởi tạo, không quy đổi thành tiền mặt."
+      },
+      "monthly": {
+        "label": "Tháng 2–12 · Gói đồng hành (đã gồm hosting và bảo trì)",
+        "options": [
+          { "name": "Duy trì & đo lường", "price": 1000000, "desc": "Hosting, tên miền, bảo trì, sao lưu. Trang tóm tắt 5 con số mỗi tháng. Cập nhật Google Maps. Phòng khám tự vận hành kênh, bên em đọc số liệu cùng." },
+          { "name": "Đồng hành chuyển đổi", "price": 2000000, "recommended": true, "desc": "Gồm gói 1 · Quản lý quảng cáo Facebook (ngân sách 3 triệu phòng khám trả riêng) · Chỉnh kịch bản tư vấn và trang đích theo số liệu · 2 bài web từ video TikTok · Họp 30 phút mỗi tháng." },
+          { "name": "Tăng tốc đa kênh", "price": 3000000, "desc": "Gồm gói 2 · Thêm quản lý quảng cáo Google tìm kiếm · 4 bài web mỗi tháng · Thêm trang đích mới · Báo cáo 2 tuần một lần." }
+        ],
+        "note": "Mức tháng đổi được theo từng tháng, không ràng buộc dài hạn. Dừng gói thì web vẫn là của phòng khám, bên em bàn giao toàn bộ."
+      },
+      "months_default": 11,
+      "deposit_percent": 50,
+      "exclusions": "Chưa gồm: ngân sách quảng cáo Facebook, Google, TikTok (phòng khám trả trực tiếp cho nền tảng); lệ phí xin xác nhận nội dung quảng cáo tại Sở Y tế (nếu có); quay chụp chuyên nghiệp; sản xuất video TikTok (người làm nội dung hiện tại tiếp tục phụ trách)."
+    },
+    {
+      "type": "roadmap",
+      "title": "Năm thứ hai trở đi",
+      "nav": "Năm 2",
+      "intro": "Sau 12 tháng, phòng khám đã có số liệu thật để chọn cách đi tiếp.",
+      "steps": [
+        { "name": "Gói xây dựng năm đầu", "price_label": "14tr + từ 1tr/tháng", "current": true, "open_when": "Bây giờ", "goal": "Nối kênh, đo được tiền quảng cáo cho một bệnh nhân" },
+        { "name": "Duy trì theo năm", "price_label": "Giữ mức tháng đang dùng", "open_when": "Sau tháng 12, nếu đường đặt lịch đã ổn", "goal": "Giữ web, hosting, bộ đo và đặc quyền marketing chạy đều, không phải khởi tạo lại" },
+        { "name": "Mở rộng dịch vụ hoặc chi nhánh", "price_label": "Báo giá khi cần", "open_when": "Khi một dịch vụ hoặc khu vực có số liệu tốt", "goal": "Nhân đường đặt lịch đã chạy tốt sang dịch vụ hoặc cơ sở mới" }
+      ],
+      "note": "Lộ trình tham khảo, không phải cam kết mua thêm."
+    },
+    {
+      "type": "portfolio",
+      "title": "Các đơn vị bên em đã đồng hành",
+      "nav": "Dự án",
+      "items": [
+        { "domain": "hafos.vn", "industry": "Thời trang nam basic", "services": ["Website", "Fanpage", "TikTok", "Hệ thống vận hành CSKH"], "desc": "Đồ tối giản cho nam 18–35 tuổi, cùng nhóm khách với phòng khám." },
+        { "domain": "outerity.com", "industry": "Thời trang trẻ", "services": ["Website", "Fanpage", "TikTok", "Hệ thống quản lý CRM"], "desc": "Nối kênh TikTok, fanpage và web, quản lý khách bằng CRM." },
+        { "domain": "maison-aoa.vn", "industry": "Vest may đo", "services": ["Website", "Fanpage", "TikTok"], "desc": "Dịch vụ cần đặt lịch hẹn đo, tư vấn riêng từng khách." }
+      ]
+    },
+    {
+      "type": "closing",
+      "title": "Vì sao chọn Duy Web và bước tiếp theo",
+      "nav": "Bước tiếp theo",
+      "summary": "Với 14.000.000đ khởi tạo và từ 1.000.000đ/tháng, phòng khám có một đường đặt lịch nối mọi kênh, và mỗi tháng biết chính xác một bệnh nhân đến từ đâu, tốn bao nhiêu.",
+      "reasons": [
+        { "title": "Không làm lại từ đầu", "body": "Giữ website, kênh TikTok và người làm nội dung đang có. Bên em chỉ nối và đo, nên chi phí thấp và nhanh có kết quả." },
+        { "title": "Biết tiền đi đâu", "body": "Không còn cảnh chạy quảng cáo rồi tắt vì không biết có hiệu quả hay không. Mỗi tháng có con số, quyết định bằng con số." },
+        { "title": "Hiểu khách nam khoa", "body": "Đường đi kín đáo, giá rõ, ít bước, đúng tâm lý người ngại hỏi." },
+        { "title": "Một đầu mối kỹ thuật", "body": "Hosting, tên miền, bảo trì, đo lường, quảng cáo đều qua bên em, bác sĩ chỉ cần tập trung khám." },
+        { "title": "Không ràng buộc", "body": "Gói tháng đổi hoặc dừng khi cần. Web và dữ liệu luôn là của phòng khám." }
+      ],
+      "next_steps": [
+        "Hẹn 30 phút với bác sĩ Tuấn để chốt 4 chủ đề trang đích và dịch vụ muốn đẩy trước",
+        "Phòng khám cấp quyền quản trị website, Google Maps, trang Facebook, tài khoản quảng cáo",
+        "Xác nhận báo giá và thanh toán đợt 1 (50% phần khởi tạo)",
+        "Bên em bắt đầu Tuần 1: gắn đo lường để có con số ngay tuần đầu"
+      ]
+    }
+  ]
+}
