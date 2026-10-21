@@ -35,16 +35,37 @@
       "old_label": "Mặt đường",
       "new_label": "Trong hẻm",
       "steps": [
-        { "title": "Thấy tiệm trên mạng", "sub": "Facebook, TikTok, Google" },
-        { "title": "Vào web xem cho chắc", "sub": "giá tròng, đo mắt, bảo hành, ảnh thật" },
-        { "title": "Nhắn Zalo, hỏi đường", "sub": "Google Maps dẫn tới tận cửa hẻm" },
-        { "title": "Quay lại lần sau", "sub": "Zalo OA nhắc đo mắt, khách giới thiệu thêm" }
+        {
+          "title": "Thấy tiệm trên mạng",
+          "sub": "Facebook, TikTok, Google"
+        },
+        {
+          "title": "Vào web xem cho chắc",
+          "sub": "giá tròng, đo mắt, bảo hành, ảnh thật"
+        },
+        {
+          "title": "Nhắn Zalo, hỏi đường",
+          "sub": "Google Maps dẫn tới tận cửa hẻm"
+        },
+        {
+          "title": "Quay lại lần sau",
+          "sub": "Zalo OA nhắc đo mắt, khách giới thiệu thêm"
+        }
       ],
       "result": "khách tìm đến vì tin chuyên môn kính thuốc, không phải vì tình cờ đi ngang.",
       "tips": [
-        { "title": "Kính thuốc là món phải tin mới mua", "body": "Người cận, loạn, lão thị lo nhất là đo sai độ, tròng kém, đeo bị nhức. Họ chọn tiệm có chuyên môn chứ không chọn tiệm gần nhất. Nội dung cho thấy cách anh đo mắt và lắp tròng đáng giá hơn mọi chương trình giảm giá." },
-        { "title": "Đường vào hẻm phải dễ như ngoài mặt đường", "body": "Một video 20 giây quay đường từ đầu hẻm vào tiệm, đặt trên web, Google Maps và Zalo. Khách không ngại vào hẻm, khách ngại bị lạc." },
-        { "title": "Khách cũ là nguồn rẻ nhất", "body": "Người đã làm kính ở tiệm sẽ cần đo lại sau 1–2 năm, cần kính cho con, cho ba mẹ. Giữ được liên lạc qua Zalo OA thì mỗi khách cũ là một nguồn khách quay lại, không tốn tiền quảng cáo." }
+        {
+          "title": "Kính thuốc là món phải tin mới mua",
+          "body": "Người cận, loạn, lão thị lo nhất là đo sai độ, tròng kém, đeo bị nhức. Họ chọn tiệm có chuyên môn chứ không chọn tiệm gần nhất. Nội dung cho thấy cách anh đo mắt và lắp tròng đáng giá hơn mọi chương trình giảm giá."
+        },
+        {
+          "title": "Đường vào hẻm phải dễ như ngoài mặt đường",
+          "body": "Một video 20 giây quay đường từ đầu hẻm vào tiệm, đặt trên web, Google Maps và Zalo. Khách không ngại vào hẻm, khách ngại bị lạc."
+        },
+        {
+          "title": "Khách cũ là nguồn rẻ nhất",
+          "body": "Người đã làm kính ở tiệm sẽ cần đo lại sau 1–2 năm, cần kính cho con, cho ba mẹ. Giữ được liên lạc qua Zalo OA thì mỗi khách cũ là một nguồn khách quay lại, không tốn tiền quảng cáo."
+        }
       ]
     },
     {
@@ -66,13 +87,100 @@
       "title": "Vai của từng kênh với tiệm kính thuốc",
       "nav": "Kênh",
       "intro": "Chọn một kênh để xem nhận định, hoặc chọn một tiêu chí để so sánh.",
-      "criteria": ["Tiếp cận khách mới", "Tạo niềm tin chuyên môn", "Giữ khách cũ", "Chi phí thấp"],
+      "criteria": [
+        "Tiếp cận khách mới",
+        "Tạo niềm tin chuyên môn",
+        "Giữ khách cũ",
+        "Chi phí thấp"
+      ],
       "channels": [
-        { "name": "Website", "tag": "Nhà chính", "scores": [3, 5, 3, 4], "customer": "Người đã nghe về tiệm, vào xem giá tròng, quy trình đo, bảo hành trước khi đi.", "assessment": "Nơi trình bày đầy đủ nhất về kính thuốc và là nơi duy nhất đo được khách đến từ đâu. Đây là phần nên đầu tư trước.", "in_package": ["Website kính thuốc 6 trang", "Video đường vào hẻm", "Mã đo Facebook, TikTok, Google"], "measure": "Lượt vào web theo nguồn, lượt bấm Zalo và gọi" },
-        { "name": "Google Maps", "tag": "Bảng hiệu mới", "scores": [4, 4, 2, 5], "customer": "Người tìm \"cắt kính gần đây\" và muốn đi ngay.", "assessment": "Quan trọng nhất sau khi vào hẻm. Miễn phí, mang khách đang có nhu cầu thật.", "in_package": ["Chuẩn hoá hồ sơ, ghim đúng vị trí", "Ảnh đầu hẻm, mặt tiền, quầy đo", "Mã QR xin đánh giá"], "measure": "Lượt chỉ đường, gọi, bấm vào web, số đánh giá" },
-        { "name": "Facebook", "tag": "Quảng cáo khu vực", "scores": [5, 3, 3, 2], "customer": "Người sống, làm việc quanh tiệm, lướt Facebook mỗi ngày.", "assessment": "Kênh mang khách nhanh nhất khi cần, nhưng chỉ đáng tiền khi dẫn về web và Zalo để giữ lại.", "in_package": ["Gắn mã đo Facebook trên web", "Mẫu bài quảng cáo kính thuốc"], "measure": "Tin nhắn, lượt vào web, khách nói thấy trên Facebook" },
-        { "name": "TikTok", "tag": "Cho thấy tay nghề", "scores": [4, 5, 1, 4], "customer": "Người trẻ và phụ huynh lướt video, thích xem cảnh làm thật.", "assessment": "Hợp để khoe tay nghề đo mắt, lắp tròng. Không cần trả tiền, cần đều đặn.", "in_package": ["Link riêng dẫn về web", "10 ý tưởng video kính thuốc"], "measure": "Lượt bấm link, video nào ra tin nhắn" },
-        { "name": "Zalo OA", "tag": "Giữ khách cũ", "scores": [1, 3, 5, 4], "customer": "Khách đã làm kính ở tiệm và người thân của họ.", "assessment": "Rẻ và hiệu quả để khách quay lại. Dùng gói miễn phí trước, chỉ bật tính năng trả phí khi cần.", "in_package": ["Thiết lập OA, menu, tin chào", "Mẫu tin: kính xong, nhắc đo mắt, bảo hành"], "measure": "Số người quan tâm OA, khách quay lại sau tin nhắc" }
+        {
+          "name": "Website",
+          "tag": "Nhà chính",
+          "scores": [
+            3,
+            5,
+            3,
+            4
+          ],
+          "customer": "Người đã nghe về tiệm, vào xem giá tròng, quy trình đo, bảo hành trước khi đi.",
+          "assessment": "Nơi trình bày đầy đủ nhất về kính thuốc và là nơi duy nhất đo được khách đến từ đâu. Đây là phần nên đầu tư trước.",
+          "in_package": [
+            "Website kính thuốc 6 trang",
+            "Video đường vào hẻm",
+            "Mã đo Facebook, TikTok, Google"
+          ],
+          "measure": "Lượt vào web theo nguồn, lượt bấm Zalo và gọi"
+        },
+        {
+          "name": "Google Maps",
+          "tag": "Bảng hiệu mới",
+          "scores": [
+            4,
+            4,
+            2,
+            5
+          ],
+          "customer": "Người tìm \"cắt kính gần đây\" và muốn đi ngay.",
+          "assessment": "Quan trọng nhất sau khi vào hẻm. Miễn phí, mang khách đang có nhu cầu thật.",
+          "in_package": [
+            "Chuẩn hoá hồ sơ, ghim đúng vị trí",
+            "Ảnh đầu hẻm, mặt tiền, quầy đo",
+            "Mã QR xin đánh giá"
+          ],
+          "measure": "Lượt chỉ đường, gọi, bấm vào web, số đánh giá"
+        },
+        {
+          "name": "Facebook",
+          "tag": "Quảng cáo khu vực",
+          "scores": [
+            5,
+            3,
+            3,
+            2
+          ],
+          "customer": "Người sống, làm việc quanh tiệm, lướt Facebook mỗi ngày.",
+          "assessment": "Kênh mang khách nhanh nhất khi cần, nhưng chỉ đáng tiền khi dẫn về web và Zalo để giữ lại.",
+          "in_package": [
+            "Gắn mã đo Facebook trên web",
+            "Mẫu bài quảng cáo kính thuốc"
+          ],
+          "measure": "Tin nhắn, lượt vào web, khách nói thấy trên Facebook"
+        },
+        {
+          "name": "TikTok",
+          "tag": "Cho thấy tay nghề",
+          "scores": [
+            4,
+            5,
+            1,
+            4
+          ],
+          "customer": "Người trẻ và phụ huynh lướt video, thích xem cảnh làm thật.",
+          "assessment": "Hợp để khoe tay nghề đo mắt, lắp tròng. Không cần trả tiền, cần đều đặn.",
+          "in_package": [
+            "Link riêng dẫn về web",
+            "10 ý tưởng video kính thuốc"
+          ],
+          "measure": "Lượt bấm link, video nào ra tin nhắn"
+        },
+        {
+          "name": "Zalo OA",
+          "tag": "Giữ khách cũ",
+          "scores": [
+            1,
+            3,
+            5,
+            4
+          ],
+          "customer": "Khách đã làm kính ở tiệm và người thân của họ.",
+          "assessment": "Rẻ và hiệu quả để khách quay lại. Dùng gói miễn phí trước, chỉ bật tính năng trả phí khi cần.",
+          "in_package": [
+            "Thiết lập OA, menu, tin chào",
+            "Mẫu tin: kính xong, nhắc đo mắt, bảo hành"
+          ],
+          "measure": "Số người quan tâm OA, khách quay lại sau tin nhắc"
+        }
       ],
       "footnote": "Điểm 1–5 là nhận định định tính của bên em cho riêng Mắt Kính Đại Quang. Số liệu thật có sau 4 tuần chạy."
     },
@@ -91,15 +199,35 @@
       "html": "<div class='grid g2' style='align-items:start'><div style='display:flex;justify-content:center'><div style='width:270px;border-radius:34px;background:#111;padding:9px;box-shadow:0 18px 40px -16px rgba(0,0,0,.45)'><div style='border-radius:26px;overflow:hidden;background:#fff;font-size:12px;color:#141414'><div style='background:var(--accent);color:#fff;padding:20px 14px 14px'><div style='font-weight:800;font-size:16px'>MẮT KÍNH ĐẠI QUANG</div><div style='opacity:.9;font-size:11px'>Chuyên kính thuốc · Đo mắt kỹ · Lấy nhanh</div><div style='margin-top:10px;background:#fff;color:#141414;border-radius:10px;padding:8px 10px;font-weight:700'>👓 Đặt giờ đo mắt miễn phí</div></div><div style='padding:10px 12px;display:grid;grid-template-columns:1fr 1fr;gap:8px'><div style='border:1px solid var(--line);border-radius:10px;padding:8px'><div style='font-size:20px'>🔍</div><b>Kính cận, loạn</b><div style='color:#888;font-size:10px'>Tròng từ 350.000đ</div></div><div style='border:1px solid var(--line);border-radius:10px;padding:8px'><div style='font-size:20px'>💻</div><b>Chống ánh sáng xanh</b><div style='color:#888;font-size:10px'>Dân văn phòng</div></div><div style='border:1px solid var(--line);border-radius:10px;padding:8px'><div style='font-size:20px'>🎒</div><b>Kính học sinh</b><div style='color:#888;font-size:10px'>Gọng dẻo, bền</div></div><div style='border:1px solid var(--line);border-radius:10px;padding:8px'><div style='font-size:20px'>👴</div><b>Kính lão, đa tròng</b><div style='color:#888;font-size:10px'>Tư vấn kỹ</div></div></div><div style='margin:2px 12px 8px;height:62px;border-radius:10px;background:#1b1b1b;color:#fff;display:flex;align-items:center;gap:10px;padding:0 12px;font-size:11px'><span style='font-size:22px'>▶</span><span><b>Đường vào tiệm trong 20 giây</b><br>Từ đầu hẻm tới cửa tiệm</span></div><div style='margin:0 12px 8px;padding:8px 10px;border-radius:10px;background:var(--soft);font-size:11px'>✅ Đo khúc xạ kỹ · 🔧 Chỉnh gọng miễn phí · 🛡️ Bảo hành tròng</div><div style='display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:8px 12px 14px;border-top:1px solid var(--line)'><span style='text-align:center;background:#0068FF;color:#fff;border-radius:8px;padding:8px 0;font-weight:800'>💬 Zalo</span><span style='text-align:center;background:var(--accent);color:#fff;border-radius:8px;padding:8px 0;font-weight:800'>📍 Chỉ đường</span></div></div></div></div><div class='card'><div class='label' style='margin-top:0'>6 trang chính</div><ul class='clean'><li><b>Trang chủ:</b> kính thuốc là thế mạnh, đặt giờ đo mắt, đường vào tiệm</li><li><b>Kính thuốc:</b> các loại tròng, ai hợp loại nào, giá tham khảo</li><li><b>Đo mắt:</b> quy trình từng bước, mất bao lâu</li><li><b>Bảo hành & dịch vụ:</b> chỉnh gọng, thay ốc, bảo hành tròng</li><li><b>Kiến thức:</b> bài viết trả lời câu khách hay tìm, mang khách từ Google</li><li><b>Liên hệ:</b> bản đồ, video đường vào hẻm, Zalo OA, giờ mở cửa</li></ul></div></div><p class='foot'>Hình minh hoạ định hướng · không phải ảnh thật. Giá và dịch vụ chỉ là ví dụ, khi làm thật dùng giá và ảnh của tiệm.</p>"
     },
     {
+      "type": "custom",
+      "title": "Khách tiếp cận tiệm qua website như thế nào: 9 điểm chạm",
+      "nav": "Hành trình khách",
+      "intro": "Bảng này đi theo đúng đường một người cần làm kính thuốc: từ lúc tìm trên điện thoại đến lúc quay lại lần sau. Mỗi dòng là một chỗ website làm việc thay anh, và một con số để biết chỗ đó có chạy hay không.",
+      "html": "<style>.jt{display:grid;gap:10px}.jt-h,.jt-r{display:grid;grid-template-columns:150px 1.1fr 1.3fr 1.2fr 1fr;gap:14px;align-items:start}.jt-h{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:0 16px}.jt-r{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:14px;padding:14px 16px;font-size:14px;opacity:0;transform:translateY(12px);animation:jtIn .5s ease forwards}.jt-r:hover{box-shadow:0 10px 24px -14px rgba(0,0,0,.35);transform:translateY(-2px)}.jt-s b{display:block;font-size:15px}.jt-n{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:700}.jt-r .k{display:none;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}.jt-w{font-weight:600}.jt-m{color:var(--muted)}@keyframes jtIn{to{opacity:1;transform:none}}@media (max-width:760px){.jt-h{display:none}.jt-r{grid-template-columns:1fr;gap:8px}.jt-r .k{display:block}}@media print{.jt-r{opacity:1;transform:none;animation:none}}</style><div style='display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px'><span class='chip'>1 · Tìm thấy</span><span class='chip'>2 · Từ mạng xã hội</span><span class='chip'>3 · Tìm hiểu</span><span class='chip'>4 · Tin tưởng</span><span class='chip'>5 · Hỏi riêng</span><span class='chip'>6 · Đặt giờ đo mắt</span><span class='chip'>7 · Tìm đường vào hẻm</span><span class='chip'>8 · Sau khi mua</span><span class='chip'>9 · Quay lại</span></div><div class='jt'><div class='jt-h'><span>Bước</span><span>Khách làm gì</span><span>Website có gì</span><span>Hiệu quả cho tiệm</span><span>Đo bằng</span></div><div class='jt-r' style='animation-delay:0.00s'><div class='jt-s'><span class='jt-n'>01</span><b>Tìm thấy</b></div><div><span class='k'>Khách làm gì</span>Gõ trên Google: “cắt kính cận gần đây”, “đo mắt cho trẻ em”</div><div class='jt-w'><span class='k'>Website có gì</span>Bài viết kiến thức (SEO), nút “Trang web” trên Google Maps</div><div><span class='k'>Hiệu quả cho tiệm</span>Có khách mới mỗi ngày mà không trả tiền cho từng lượt</div><div class='jt-m'><span class='k'>Đo bằng</span>Lượt vào web từ Google</div></div><div class='jt-r' style='animation-delay:0.08s'><div class='jt-s'><span class='jt-n'>02</span><b>Từ mạng xã hội</b></div><div><span class='k'>Khách làm gì</span>Xem video TikTok hoặc quảng cáo Facebook, bấm link</div><div class='jt-w'><span class='k'>Website có gì</span>Trang riêng theo chủ đề video: kính cho con, tròng chống ánh sáng xanh, kính lão</div><div><span class='k'>Hiệu quả cho tiệm</span>Biết video và quảng cáo nào mang khách thật, bỏ loại chỉ có lượt xem</div><div class='jt-m'><span class='k'>Đo bằng</span>Lượt vào web theo từng kênh, từng video</div></div><div class='jt-r' style='animation-delay:0.16s'><div class='jt-s'><span class='jt-n'>03</span><b>Tìm hiểu</b></div><div><span class='k'>Khách làm gì</span>Xem các loại tròng, giá, ai hợp loại nào</div><div class='jt-w'><span class='k'>Website có gì</span>Trang kính thuốc, bảng giá tròng, công cụ “Chọn tròng hợp với tôi” 3 câu hỏi</div><div><span class='k'>Hiệu quả cho tiệm</span>Khách đến tiệm đã biết mình cần gì, tư vấn nhanh, ít mặc cả</div><div class='jt-m'><span class='k'>Đo bằng</span>Số người dùng công cụ chọn tròng</div></div><div class='jt-r' style='animation-delay:0.24s'><div class='jt-s'><span class='jt-n'>04</span><b>Tin tưởng</b></div><div><span class='k'>Khách làm gì</span>Xem ảnh thật, quy trình đo mắt, đánh giá của khách</div><div class='jt-w'><span class='k'>Website có gì</span>Trang đo mắt từng bước, video lắp tròng, đánh giá Google hiện ngay trên web</div><div><span class='k'>Hiệu quả cho tiệm</span>Bớt nghi ngại tiệm trong hẻm, khách tin chuyên môn kính thuốc</div><div class='jt-m'><span class='k'>Đo bằng</span>Thời gian đọc, lượt xem video</div></div><div class='jt-r' style='animation-delay:0.32s'><div class='jt-s'><span class='jt-n'>05</span><b>Hỏi riêng</b></div><div><span class='k'>Khách làm gì</span>Bấm Zalo hoặc gọi, không phải gõ lại câu hỏi</div><div class='jt-w'><span class='k'>Website có gì</span>Nút Zalo, gọi luôn hiện; câu hỏi điền sẵn theo trang khách đang xem</div><div><span class='k'>Hiệu quả cho tiệm</span>Tin nhắn đến có sẵn ngữ cảnh, trả lời nhanh và đúng ý</div><div class='jt-m'><span class='k'>Đo bằng</span>Lượt bấm Zalo, gọi</div></div><div class='jt-r' style='animation-delay:0.40s'><div class='jt-s'><span class='jt-n'>06</span><b>Đặt giờ đo mắt</b></div><div><span class='k'>Khách làm gì</span>Chọn ngày giờ trống</div><div class='jt-w'><span class='k'>Website có gì</span>Đặt lịch đo mắt, xác nhận qua Zalo, nhắc trước 1 ngày</div><div><span class='k'>Hiệu quả cho tiệm</span>Tiệm chủ động xếp người, khách không phải chờ, ít bỏ hẹn</div><div class='jt-m'><span class='k'>Đo bằng</span>Số lịch hẹn mỗi tuần</div></div><div class='jt-r' style='animation-delay:0.48s'><div class='jt-s'><span class='jt-n'>07</span><b>Tìm đường vào hẻm</b></div><div><span class='k'>Khách làm gì</span>Mở video đường vào tiệm, bấm chỉ đường</div><div class='jt-w'><span class='k'>Website có gì</span>Video 20 giây từ đầu hẻm, nút mở Google Maps</div><div><span class='k'>Hiệu quả cho tiệm</span>Khách không lạc, không quay về giữa chừng</div><div class='jt-m'><span class='k'>Đo bằng</span>Lượt bấm chỉ đường</div></div><div class='jt-r' style='animation-delay:0.56s'><div class='jt-s'><span class='jt-n'>08</span><b>Sau khi mua</b></div><div><span class='k'>Khách làm gì</span>Quét mã QR trên hộp kính</div><div class='jt-w'><span class='k'>Website có gì</span>Trang bảo hành của khách, nút quan tâm Zalo OA, nút đánh giá</div><div><span class='k'>Hiệu quả cho tiệm</span>Giữ liên lạc với khách cũ, thêm đánh giá thật cho Google Maps</div><div class='jt-m'><span class='k'>Đo bằng</span>Số người quan tâm OA, số đánh giá mới</div></div><div class='jt-r' style='animation-delay:0.64s'><div class='jt-s'><span class='jt-n'>09</span><b>Quay lại</b></div><div><span class='k'>Khách làm gì</span>Nhận tin nhắc đo mắt sau 12 tháng, mùa tựu trường</div><div class='jt-w'><span class='k'>Website có gì</span>Tin Zalo OA dẫn về trang đặt lịch, ưu đãi cho người thân</div><div><span class='k'>Hiệu quả cho tiệm</span>Doanh thu lặp lại từ khách cũ, không tốn tiền quảng cáo</div><div class='jt-m'><span class='k'>Đo bằng</span>Lịch hẹn đến từ Zalo OA</div></div></div><p class='foot'>Mọi con số ở cột “Đo bằng” nằm trong trang tóm tắt bên em gửi anh mỗi tháng. Công cụ chọn tròng và trang bảo hành qua mã QR là phần thêm trong gói Nối kênh trở lên.</p>"
+    },
+    {
       "type": "loop",
       "title": "Anh tự làm, bên em kèm bên cạnh",
       "nav": "Đồng hành",
       "intro": "Anh đang học marketing, nên cách làm hợp nhất là anh tự cầm lái, bên em ngồi ghế phụ: chỉ đường, đọc số liệu, sửa phần kỹ thuật.",
       "steps": [
-        { "title": "Anh đăng và chạy", "body": "Anh đăng video, bài viết, chạy quảng cáo theo lịch đã thống nhất." },
-        { "title": "Bên em đọc số", "body": "Mỗi tháng tóm tắt: bao nhiêu người vào web, từ kênh nào, bao nhiêu người nhắn Zalo." },
-        { "title": "Cùng quyết định", "body": "30 phút: tháng sau dồn sức cho kênh nào, làm video gì, có nên bật thêm tính năng Zalo trả phí không.", "focus": true },
-        { "title": "Bên em chỉnh kỹ thuật", "body": "Cập nhật web, viết bài SEO, chỉnh mã đo, mẫu tin Zalo." }
+        {
+          "title": "Anh đăng và chạy",
+          "body": "Anh đăng video, bài viết, chạy quảng cáo theo lịch đã thống nhất."
+        },
+        {
+          "title": "Bên em đọc số",
+          "body": "Mỗi tháng tóm tắt: bao nhiêu người vào web, từ kênh nào, bao nhiêu người nhắn Zalo."
+        },
+        {
+          "title": "Cùng quyết định",
+          "body": "30 phút: tháng sau dồn sức cho kênh nào, làm video gì, có nên bật thêm tính năng Zalo trả phí không.",
+          "focus": true
+        },
+        {
+          "title": "Bên em chỉnh kỹ thuật",
+          "body": "Cập nhật web, viết bài SEO, chỉnh mã đo, mẫu tin Zalo."
+        }
       ],
       "note": "Anh chốt mọi khoản chi. Bên em đưa số liệu và đề xuất."
     },
@@ -108,14 +236,51 @@
       "title": "4 tuần khởi tạo",
       "nav": "Lộ trình",
       "weeks": [
-        { "label": "T1", "name": "Google Maps và đường vào hẻm", "tasks": ["Chuẩn hoá Google Maps, ghim đúng vị trí", "Quay video đường vào tiệm, chụp ảnh đầu hẻm, quầy đo", "Thống nhất bảng giá tròng và dịch vụ đưa lên web"] },
-        { "label": "T2", "name": "Dựng website kính thuốc", "tasks": ["6 trang chính, nút Zalo, gọi, chỉ đường", "Gắn mã đo Google, Facebook, TikTok", "Tên miền và máy chủ qua đối tác NASANI"] },
-        { "label": "T3", "name": "Nối kênh và Zalo OA", "tasks": ["Thiết lập Zalo OA, menu, tin chào, mẫu tin", "Gắn link web vào Facebook, TikTok, Zalo", "4 bài SEO đầu tiên"] },
-        { "label": "T4", "name": "Hướng dẫn và chạy thử", "tasks": ["Buổi hướng dẫn 2 giờ: đọc số liệu, chạy quảng cáo cơ bản, đăng bài", "Sổ tay đăng bài cho tiệm", "Chạy thử quảng cáo nhỏ, đọc số liệu đầu tiên"] }
+        {
+          "label": "T1",
+          "name": "Google Maps và đường vào hẻm",
+          "tasks": [
+            "Chuẩn hoá Google Maps, ghim đúng vị trí",
+            "Quay video đường vào tiệm, chụp ảnh đầu hẻm, quầy đo",
+            "Thống nhất bảng giá tròng và dịch vụ đưa lên web"
+          ]
+        },
+        {
+          "label": "T2",
+          "name": "Dựng website kính thuốc",
+          "tasks": [
+            "6 trang chính, nút Zalo, gọi, chỉ đường",
+            "Gắn mã đo Google, Facebook, TikTok",
+            "Tên miền và máy chủ qua đối tác NASANI"
+          ]
+        },
+        {
+          "label": "T3",
+          "name": "Nối kênh và Zalo OA",
+          "tasks": [
+            "Thiết lập Zalo OA, menu, tin chào, mẫu tin",
+            "Gắn link web vào Facebook, TikTok, Zalo",
+            "4 bài SEO đầu tiên"
+          ]
+        },
+        {
+          "label": "T4",
+          "name": "Hướng dẫn và chạy thử",
+          "tasks": [
+            "Buổi hướng dẫn 2 giờ: đọc số liệu, chạy quảng cáo cơ bản, đăng bài",
+            "Sổ tay đăng bài cho tiệm",
+            "Chạy thử quảng cáo nhỏ, đọc số liệu đầu tiên"
+          ]
+        }
       ],
-      "after": { "title": "Sau tuần 4", "body": "Anh tự vận hành, bên em kèm theo gói tháng anh chọn. Gói tháng đã gồm duy trì web." }
+      "after": {
+        "title": "Sau tuần 4",
+        "body": "Anh tự vận hành, bên em kèm theo gói tháng anh chọn. Gói tháng đã gồm duy trì web."
+      }
     },
-    { "type": "partner" },
+    {
+      "type": "partner"
+    },
     {
       "type": "pricing",
       "title": "Chi phí",
@@ -125,9 +290,49 @@
         "label": "Khởi tạo · một lần",
         "row_label": "Tháng 1",
         "options": [
-          { "name": "Nền tảng", "price": 7500000, "price_note": "trọn gói", "desc": "Website kính thuốc và Google Maps, đủ để khách tìm thấy tiệm và tìm được đường vào hẻm.", "includes": ["Website 6 trang, nút Zalo, gọi, chỉ đường", "Chuẩn hoá Google Maps, mã QR đánh giá", "Video đường vào tiệm", "Tên miền và máy chủ năm đầu"], "why": "Hợp nếu anh muốn bắt đầu thật gọn, tự lo các kênh mạng xã hội." },
-          { "name": "Nối kênh", "price": 11000000, "price_note": "trọn gói", "recommended": true, "desc": "Nền tảng, cộng nối Facebook, TikTok, Zalo OA về web và đo được khách đến từ đâu, kèm buổi hướng dẫn cho anh.", "includes": ["Toàn bộ gói Nền tảng", "Mã đo Facebook, TikTok, Google trên web", "Thiết lập Zalo OA, menu, mẫu tin nhắc khách cũ", "4 bài SEO đầu tiên", "Buổi hướng dẫn 2 giờ và sổ tay đăng bài", "4 tuần đồng hành"], "why": "Anh đã định chạy quảng cáo và làm TikTok. Gói này đảm bảo mỗi đồng quảng cáo đều dẫn về nơi giữ được khách, và anh hiểu số liệu để tự quyết." },
-          { "name": "Tăng tốc", "price": 15000000, "price_note": "trọn gói", "desc": "Nối kênh, cộng bên em trực tiếp chạy quảng cáo tháng đầu và chuẩn bị nội dung mở màn.", "includes": ["Toàn bộ gói Nối kênh", "Bên em quản lý quảng cáo Facebook tháng đầu", "10 kịch bản video kính thuốc", "8 bài SEO thay vì 4"], "why": "Hợp nếu anh muốn có khách nhanh trong tháng đầu và chưa có thời gian tự chạy quảng cáo." }
+          {
+            "name": "Nền tảng",
+            "price": 7500000,
+            "price_note": "trọn gói",
+            "desc": "Website kính thuốc và Google Maps, đủ để khách tìm thấy tiệm và tìm được đường vào hẻm.",
+            "includes": [
+              "Website 6 trang, nút Zalo, gọi, chỉ đường",
+              "Chuẩn hoá Google Maps, mã QR đánh giá",
+              "Video đường vào tiệm",
+              "Tên miền và máy chủ năm đầu"
+            ],
+            "why": "Hợp nếu anh muốn bắt đầu thật gọn, tự lo các kênh mạng xã hội."
+          },
+          {
+            "name": "Nối kênh",
+            "price": 11000000,
+            "price_note": "trọn gói",
+            "recommended": true,
+            "desc": "Nền tảng, cộng nối Facebook, TikTok, Zalo OA về web và đo được khách đến từ đâu, kèm buổi hướng dẫn cho anh.",
+            "includes": [
+              "Toàn bộ gói Nền tảng",
+              "Mã đo Facebook, TikTok, Google trên web",
+              "Thiết lập Zalo OA, menu, mẫu tin nhắc khách cũ",
+              "4 bài SEO đầu tiên",
+              "Công cụ chọn tròng 3 câu hỏi, trang bảo hành qua mã QR trên hộp kính",
+              "Buổi hướng dẫn 2 giờ và sổ tay đăng bài",
+              "4 tuần đồng hành"
+            ],
+            "why": "Anh đã định chạy quảng cáo và làm TikTok. Gói này đảm bảo mỗi đồng quảng cáo đều dẫn về nơi giữ được khách, và anh hiểu số liệu để tự quyết."
+          },
+          {
+            "name": "Tăng tốc",
+            "price": 15000000,
+            "price_note": "trọn gói",
+            "desc": "Nối kênh, cộng bên em trực tiếp chạy quảng cáo tháng đầu và chuẩn bị nội dung mở màn.",
+            "includes": [
+              "Toàn bộ gói Nối kênh",
+              "Bên em quản lý quảng cáo Facebook tháng đầu",
+              "10 kịch bản video kính thuốc",
+              "8 bài SEO thay vì 4"
+            ],
+            "why": "Hợp nếu anh muốn có khách nhanh trong tháng đầu và chưa có thời gian tự chạy quảng cáo."
+          }
         ]
       },
       "offer": {
@@ -135,18 +340,40 @@
         "condition": "Khi xác nhận gói khởi tạo trước hết ngày 31/10/2026",
         "deadline": "2026-10-31",
         "items": [
-          { "title": "Bảng hiệu đầu hẻm", "body": "Bên em thiết kế bảng chỉ đường đầu hẻm có mã QR mở Google Maps (chưa gồm in ấn)." },
-          { "title": "Thêm 1 buổi hướng dẫn", "body": "Buổi thứ hai sau 1 tháng để anh hỏi những gì gặp khi tự chạy." },
-          { "title": "Mẫu tin nhắc khách cũ", "body": "Bộ 5 mẫu tin Zalo cho khách đã làm kính: kính xong, nhắc đo mắt, mùa tựu trường." }
+          {
+            "title": "Bảng hiệu đầu hẻm",
+            "body": "Bên em thiết kế bảng chỉ đường đầu hẻm có mã QR mở Google Maps (chưa gồm in ấn)."
+          },
+          {
+            "title": "Thêm 1 buổi hướng dẫn",
+            "body": "Buổi thứ hai sau 1 tháng để anh hỏi những gì gặp khi tự chạy."
+          },
+          {
+            "title": "Mẫu tin nhắc khách cũ",
+            "body": "Bộ 5 mẫu tin Zalo cho khách đã làm kính: kính xong, nhắc đo mắt, mùa tựu trường."
+          }
         ],
         "note": "Ưu đãi đi kèm gói khởi tạo, không quy đổi thành tiền mặt."
       },
       "monthly": {
         "label": "Từ tháng 2 · Gói tháng (đã gồm duy trì web)",
         "options": [
-          { "name": "Tự làm, có người kèm", "price": 1000000, "recommended": true, "desc": "Duy trì web, tóm tắt số liệu mỗi tháng, 30 phút cùng quyết định, trả lời khi anh vướng." },
-          { "name": "Cùng làm", "price": 2000000, "desc": "Gồm gói 1, cộng 2 bài SEO mỗi tháng, chỉnh quảng cáo cùng anh, cập nhật Zalo OA." },
-          { "name": "Bên em làm", "price": 3000000, "desc": "Gồm gói 2, cộng bên em quản lý quảng cáo Facebook, 4 bài SEO mỗi tháng." }
+          {
+            "name": "Tự làm, có người kèm",
+            "price": 1000000,
+            "recommended": true,
+            "desc": "Duy trì web, tóm tắt số liệu mỗi tháng, 30 phút cùng quyết định, trả lời khi anh vướng."
+          },
+          {
+            "name": "Cùng làm",
+            "price": 2000000,
+            "desc": "Gồm gói 1, cộng 2 bài SEO mỗi tháng, chỉnh quảng cáo cùng anh, cập nhật Zalo OA."
+          },
+          {
+            "name": "Bên em làm",
+            "price": 3000000,
+            "desc": "Gồm gói 2, cộng bên em quản lý quảng cáo Facebook, 4 bài SEO mỗi tháng."
+          }
         ],
         "note": "Đổi mức hoặc dừng theo từng tháng, không ràng buộc dài hạn. Dừng gói thì web vẫn là của tiệm."
       },
@@ -159,9 +386,25 @@
       "title": "Đi tiếp khi có số liệu",
       "nav": "Mở rộng",
       "steps": [
-        { "name": "Nối kênh", "price_label": "11.000.000đ", "current": true, "open_when": "Bây giờ", "goal": "Khách tìm thấy tiệm trong hẻm, biết khách đến từ đâu" },
-        { "name": "Bật Zalo trả phí", "price_label": "Theo bảng giá Zalo", "open_when": "Khi có từ 200 khách cũ quan tâm OA", "goal": "Nhắc đo mắt định kỳ, khách cũ quay lại đều" },
-        { "name": "Bán kính online", "price_label": "Báo giá khi cần", "open_when": "Khi khách ở xa hỏi mua gọng, kính râm nhiều", "goal": "Thêm nguồn doanh thu không cần mặt bằng" }
+        {
+          "name": "Nối kênh",
+          "price_label": "11.000.000đ",
+          "current": true,
+          "open_when": "Bây giờ",
+          "goal": "Khách tìm thấy tiệm trong hẻm, biết khách đến từ đâu"
+        },
+        {
+          "name": "Bật Zalo trả phí",
+          "price_label": "Theo bảng giá Zalo",
+          "open_when": "Khi có từ 200 khách cũ quan tâm OA",
+          "goal": "Nhắc đo mắt định kỳ, khách cũ quay lại đều"
+        },
+        {
+          "name": "Bán kính online",
+          "price_label": "Báo giá khi cần",
+          "open_when": "Khi khách ở xa hỏi mua gọng, kính râm nhiều",
+          "goal": "Thêm nguồn doanh thu không cần mặt bằng"
+        }
       ],
       "note": "Lộ trình tham khảo, không phải cam kết mua thêm."
     },
@@ -170,9 +413,38 @@
       "title": "Các đơn vị bên em đã đồng hành",
       "nav": "Dự án",
       "items": [
-        { "domain": "maison-aoa.vn", "industry": "Vest may đo", "services": ["Website", "Fanpage", "TikTok"], "desc": "Dịch vụ cần đo riêng từng khách, giống đo mắt cắt kính." },
-        { "domain": "hafos.vn", "industry": "Thời trang nam basic", "services": ["Website", "Fanpage", "TikTok", "Hệ thống vận hành CSKH"], "desc": "Nối kênh mạng xã hội về web và chăm sóc khách cũ." },
-        { "domain": "outerity.com", "industry": "Thời trang trẻ", "services": ["Website", "Fanpage", "TikTok", "Hệ thống quản lý CRM"], "desc": "Quản lý khách và nối nhiều kênh về một mối." }
+        {
+          "domain": "maison-aoa.vn",
+          "industry": "Vest may đo",
+          "services": [
+            "Website",
+            "Fanpage",
+            "TikTok"
+          ],
+          "desc": "Dịch vụ cần đo riêng từng khách, giống đo mắt cắt kính."
+        },
+        {
+          "domain": "hafos.vn",
+          "industry": "Thời trang nam basic",
+          "services": [
+            "Website",
+            "Fanpage",
+            "TikTok",
+            "Hệ thống vận hành CSKH"
+          ],
+          "desc": "Nối kênh mạng xã hội về web và chăm sóc khách cũ."
+        },
+        {
+          "domain": "outerity.com",
+          "industry": "Thời trang trẻ",
+          "services": [
+            "Website",
+            "Fanpage",
+            "TikTok",
+            "Hệ thống quản lý CRM"
+          ],
+          "desc": "Quản lý khách và nối nhiều kênh về một mối."
+        }
       ]
     },
     {
@@ -181,10 +453,22 @@
       "nav": "Bước tiếp theo",
       "summary": "Với 11.000.000đ, tiệm có website kính thuốc, Google Maps dẫn vào tận hẻm, các kênh nối về một mối, và anh hiểu đủ để tự vận hành.",
       "reasons": [
-        { "title": "Hợp với tiệm đang tiết kiệm", "body": "Không bắt buộc gói tháng lớn. Anh tự làm, bên em kèm 1.000.000đ/tháng, đã gồm duy trì web." },
-        { "title": "Anh hiểu thứ mình trả tiền", "body": "Có tài liệu và buổi hướng dẫn, nên anh tự đọc được số liệu, không phụ thuộc người làm." },
-        { "title": "Không mất khách khi tắt quảng cáo", "body": "Web, Google Maps và Zalo OA giữ khách lại, kể cả tháng không chạy quảng cáo." },
-        { "title": "Chỉ trả cho cái cần", "body": "Zalo OA dùng gói miễn phí trước, không làm mini app, bật trả phí khi có lý do." }
+        {
+          "title": "Hợp với tiệm đang tiết kiệm",
+          "body": "Không bắt buộc gói tháng lớn. Anh tự làm, bên em kèm 1.000.000đ/tháng, đã gồm duy trì web."
+        },
+        {
+          "title": "Anh hiểu thứ mình trả tiền",
+          "body": "Có tài liệu và buổi hướng dẫn, nên anh tự đọc được số liệu, không phụ thuộc người làm."
+        },
+        {
+          "title": "Không mất khách khi tắt quảng cáo",
+          "body": "Web, Google Maps và Zalo OA giữ khách lại, kể cả tháng không chạy quảng cáo."
+        },
+        {
+          "title": "Chỉ trả cho cái cần",
+          "body": "Zalo OA dùng gói miễn phí trước, không làm mini app, bật trả phí khi có lý do."
+        }
       ],
       "next_steps": [
         "Hẹn 30 phút để chốt bảng giá tròng, dịch vụ và khu vực khách chính",
