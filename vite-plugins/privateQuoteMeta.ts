@@ -71,7 +71,8 @@ export function renderQuoteHtml(base: string, slug: string, seo: QuoteSeo) {
   if (seo.iconLarge) links.push(`<link rel="icon" type="image/png" sizes="512x512" href="${esc(seo.iconLarge)}" />`);
   if (seo.icon) links.push(`<link rel="apple-touch-icon" sizes="180x180" href="${esc(seo.icon)}" />`);
   if (links.length) {
-    html = html.replace(/\s*<link\s+rel="(?:icon|shortcut icon|apple-touch-icon)"[^>]*>/gi, "");
+    // Bỏ cả manifest của trang chủ, để Android không lấy icon Duy Web cho báo giá
+    html = html.replace(/\s*<link\s+rel="(?:icon|shortcut icon|apple-touch-icon|manifest)"[^>]*>/gi, "");
     html = html.replace("</head>", `    ${links.join("\n    ")}\n  </head>`);
   }
   return html;

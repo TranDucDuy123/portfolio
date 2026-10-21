@@ -1,0 +1,23 @@
+{
+  "name": "Phúc Ân",
+  "short_name": "Phúc Ân",
+  "start_url": "/de-xuat/xe-dien-phuc-an-k7m2q9",
+  "scope": "/de-xuat/xe-dien-phuc-an-k7m2q9",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#E4572E",
+  "icons": [
+    {
+      "src": "/de-xuat/icon/xe-dien-phuc-an-k7m2q9-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/de-xuat/icon/xe-dien-phuc-an-k7m2q9-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

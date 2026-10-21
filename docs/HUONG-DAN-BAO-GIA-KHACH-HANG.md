@@ -90,8 +90,12 @@ Hai kiểu báo giá chạy song song, không đụng nhau:
 
 1. Dựng bằng skill, để `<ma-link>.html` (và `<ma-link>.json`) trong `bao-gia-xuat/`.
    Muốn có ảnh khi gửi qua Zalo/Facebook: thêm `bao-gia-xuat/<ma-link>-og.jpg` (1200×630).
+   Muốn icon riêng khi khách "Thêm vào màn hình chính": thêm `bao-gia-xuat/<ma-link>-icon.png` (hoặc .jpg),
+   ảnh vuông, nên từ 512×512 trở lên, logo nằm gọn ở giữa. Không có ảnh thì script tự tạo icon
+   chữ viết tắt tên khách (lấy `meta.client_short`) trên màu `theme.accent` của báo giá.
 2. Chạy `npm run de-xuat -- <ma-link>` (bỏ `<ma-link>` để đưa lên tất cả).
-   Script chép sang `public/de-xuat/`, thêm link chuẩn, noindex, ảnh chia sẻ và bộ đo hành vi.
+   Script chép sang `public/de-xuat/`, thêm link chuẩn, noindex, ảnh chia sẻ, icon màn hình chính
+   (`public/de-xuat/icon/`) và bộ đo hành vi. Cần Python có Pillow để tạo icon.
 3. Commit và deploy. Gửi khách: `https://ducduyweb.vn/de-xuat/<ma-link>`
 
 Ghi chú nội bộ `bao-gia-xuat/*-noi-bo.md` (giá sàn, kịch bản chốt) **không commit** — đã có trong `.gitignore`.

@@ -1,0 +1,23 @@
+{
+  "name": "Mắt Kính Long An Optic",
+  "short_name": "Mắt Kính Long An Optic",
+  "start_url": "/de-xuat/mat-kinh-long-an-optic-content-co8wi2",
+  "scope": "/de-xuat/mat-kinh-long-an-optic-content-co8wi2",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#D9822B",
+  "icons": [
+    {
+      "src": "/de-xuat/icon/mat-kinh-long-an-optic-content-co8wi2-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/de-xuat/icon/mat-kinh-long-an-optic-content-co8wi2-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

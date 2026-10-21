@@ -1,0 +1,23 @@
+{
+  "name": "Nam Khoa Sài Gòn",
+  "short_name": "Nam Khoa Sài Gòn",
+  "start_url": "/de-xuat/nam-khoa-sai-gon-bymdah",
+  "scope": "/de-xuat/nam-khoa-sai-gon-bymdah",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#2A378D",
+  "icons": [
+    {
+      "src": "/de-xuat/icon/nam-khoa-sai-gon-bymdah-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/de-xuat/icon/nam-khoa-sai-gon-bymdah-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
