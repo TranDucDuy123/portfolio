@@ -6,6 +6,7 @@ import { CafeSoArticle } from "../types";
 import { socialConfig } from "../config/social";
 import Meta from "../components/Meta";
 import Schema from "../components/Schema";
+import { RelatedVideos } from "../components/VideoBlocks";
 
 export default function CafeSo() {
   const { slug } = useParams();
@@ -156,6 +157,9 @@ export default function CafeSo() {
                   </div>
                 </div>
               </div>
+
+              {/* Video YouTube trỏ về bài này (nếu có) */}
+              <RelatedVideos articleHref={`/cafe-so/${activeArticle.slug}`} />
 
               {/* Rich Content Render */}
               <div className="prose max-w-none text-gray-800 text-sm sm:text-base leading-relaxed space-y-4">

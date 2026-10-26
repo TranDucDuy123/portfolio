@@ -10,6 +10,7 @@ export default function Header() {
   // Mỗi mục gom các trang cũ liên quan để menu gọn, link cũ vẫn sống
   const navigation = [
     { name: "Kiến thức", href: "/kien-thuc", match: ["/kien-thuc", "/cafe-so", "/blog"] },
+    { name: "Video", href: "/videos", match: ["/videos"] },
     { name: "Checklist", href: "/resources", match: ["/resources"] },
     { name: "Về Duy", href: "/about", match: ["/about"] },
     { name: "Làm việc cùng Duy", href: "/services", match: ["/services", "/bao-gia", "/pricing", "/connect", "/solutions", "/case-study", "/projects"] }

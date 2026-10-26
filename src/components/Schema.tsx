@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 interface SchemaProps {
-  type: "LocalBusiness" | "Article" | "FAQ" | "Project" | "CaseStudy" | "BreadcrumbList";
+  type: "LocalBusiness" | "Article" | "FAQ" | "Project" | "CaseStudy" | "BreadcrumbList" | "Video";
   data: Record<string, any>;
 }
 
@@ -126,6 +126,17 @@ export default function Schema({ type, data }: SchemaProps) {
           "@type": "Organization",
           "name": "Đức Duy Web"
         }
+      };
+    } else if (type === "Video") {
+      schemaObject = {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": data.title,
+        "description": data.description || data.title,
+        "thumbnailUrl": data.thumbnail,
+        "uploadDate": data.published,
+        "contentUrl": data.url,
+        "embedUrl": `https://www.youtube.com/embed/${data.id}`
       };
     } else if (type === "BreadcrumbList") {
       schemaObject = {

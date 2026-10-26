@@ -23,6 +23,7 @@ import TuVanHostingMKS from "./pages/TuVanHostingMKS";
 import KeHoachDaKenh from "./pages/KeHoachDaKenh";
 import KienThuc from "./pages/KienThuc";
 import VideoFeed from "./pages/VideoFeed";
+import Videos from "./pages/Videos";
 
 // Báo giá riêng từng khách: tách chunk, chỉ tải khi mở đúng link
 const BaoGiaKhachHang = lazy(() => import("./pages/BaoGiaKhachHang"));
@@ -110,6 +111,9 @@ function AppShell() {
             {/* Blog routes */}
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<Blog />} />
+
+            {/* Mục video: clip YouTube + bài viết liên quan */}
+            <Route path="/videos" element={<Videos />} />
 
             {/* Single landing assets */}
             <Route path="/resources" element={<Resources />} />

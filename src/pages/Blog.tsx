@@ -6,6 +6,7 @@ import { BlogPost } from "../types";
 import { socialConfig } from "../config/social";
 import Meta from "../components/Meta";
 import Schema from "../components/Schema";
+import { RelatedVideos } from "../components/VideoBlocks";
 
 export default function Blog() {
   const { slug } = useParams();
@@ -181,6 +182,9 @@ export default function Blog() {
                   </a>
                 </div>
               </div>
+
+              {/* Video YouTube trỏ về bài này (nếu có) */}
+              <RelatedVideos articleHref={`/blog/${activePost.slug}`} />
 
               {/* Body rendering */}
               <div className="prose max-w-none text-gray-800 text-sm sm:text-base leading-relaxed space-y-5 pt-4">
