@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Reference sitemap location
-Sitemap: https://ducduyweb.vn/sitemap.xml
+Sitemap: https://duyweb.info.vn/sitemap.xml

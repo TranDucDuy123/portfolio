@@ -1,6 +1,6 @@
 // Kiểu dữ liệu cho trang "Kế hoạch vận hành đa kênh" gửi riêng cho từng khách hàng.
 // Mỗi kế hoạch là 1 file JSON đặt trong: public/kh-data/<ma-link>.json
-// Link gửi khách: https://ducduyweb.vn/ke-hoach/<ma-link>
+// Link gửi khách: https://duyweb.info.vn/ke-hoach/<ma-link>
 
 export type ChannelType =
   | "website"

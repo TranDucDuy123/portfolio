@@ -27,8 +27,8 @@ export default function Schema({ type, data }: SchemaProps) {
         "@type": "ProfessionalService",
         "name": "Đức Duy Web",
         "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-        "@id": "https://ducduyweb.vn/#localbusiness",
-        "url": "https://ducduyweb.vn",
+        "@id": "https://duyweb.info.vn/#localbusiness",
+        "url": "https://duyweb.info.vn",
         "telephone": data.telephone || "0938415218",
         "address": {
           "@type": "PostalAddress",
@@ -82,7 +82,7 @@ export default function Schema({ type, data }: SchemaProps) {
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": `https://ducduyweb.vn/cafe-so/${data.slug}`
+          "@id": `https://duyweb.info.vn/cafe-so/${data.slug}`
         }
       };
     } else if (type === "FAQ") {
@@ -135,7 +135,7 @@ export default function Schema({ type, data }: SchemaProps) {
           "@type": "ListItem",
           "position": idx + 1,
           "name": item.name,
-          "item": `https://ducduyweb.vn${item.url}`
+          "item": `https://duyweb.info.vn${item.url}`
         }))
       };
     }

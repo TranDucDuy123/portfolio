@@ -970,7 +970,7 @@ export default function TuVanHostingMKS() {
                   </div>
                   <div>
                     <span className="block text-gray-500">Website chính thức:</span>
-                    <strong className="text-amber-400">ducduyweb.vn</strong>
+                    <strong className="text-amber-400">duyweb.info.vn</strong>
                   </div>
                   <div>
                     <span className="block text-gray-500">Email liên hệ:</span>

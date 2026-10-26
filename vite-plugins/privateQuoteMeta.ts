@@ -11,7 +11,7 @@ import type { Plugin, ResolvedConfig } from "vite";
   nên link vẫn chạy app như thường; mã không có file thì rơi về index.html.
 */
 
-const SITE = "https://ducduyweb.vn";
+const SITE = "https://duyweb.info.vn";
 const ROUTE = "bao-gia-kh";
 
 interface QuoteSeo {

@@ -14,7 +14,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
-const SITE = "https://ducduyweb.vn";
+const SITE = "https://duyweb.info.vn";
 const ROUTE = "de-xuat";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const srcDir = path.join(root, "bao-gia-xuat");

@@ -43,7 +43,7 @@ export default function Meta({
       "og:title": title ? `${title} | ${baseTitle}` : `${baseTitle} - Chuyện web cho chủ doanh nghiệp`,
       "og:description": description,
       "og:image": ogImage,
-      "og:url": `https://ducduyweb.vn${slug ? `/${slug}` : ""}`,
+      "og:url": `https://duyweb.info.vn${slug ? `/${slug}` : ""}`,
       "og:type": "website",
       "twitter:title": title ? `${title} | ${baseTitle}` : `${baseTitle} - Chuyện web cho chủ doanh nghiệp`,
       "twitter:description": description,

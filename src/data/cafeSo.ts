@@ -28,7 +28,7 @@ Khi bạn xây dựng Website:
     category: "Cơ bản",
     tags: ["Domain", "Tên miền", "Thương hiệu"],
     readingTime: "3 phút",
-    analogy: "Tên miền chính là địa chỉ nhà của bạn trên bản đồ Internet (ví dụ: ducduyweb.vn). Nếu không có địa chỉ, khách hàng dù biết bạn có nhà đẹp cũng không cách nào tìm đến đúng nơi.",
+    analogy: "Tên miền chính là địa chỉ nhà của bạn trên bản đồ Internet (ví dụ: duyweb.info.vn). Nếu không có địa chỉ, khách hàng dù biết bạn có nhà đẹp cũng không cách nào tìm đến đúng nơi.",
     summary: "Cách hoạt động của tên miền và tầm quan trọng của việc chọn lựa tên miền phù hợp với định vị thương hiệu doanh nghiệp.",
     content: `### Địa chỉ dẫn đường cho khách hàng
 

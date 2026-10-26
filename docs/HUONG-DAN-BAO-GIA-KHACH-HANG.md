@@ -9,7 +9,7 @@ Mỗi khách = **1 file JSON** = **1 link riêng**. Trang không menu, không he
 2. Đổi tên file thành mã link mới, **luôn kèm 6 ký tự ngẫu nhiên**: `ten-khach-abc123.json`
    (chỉ chữ thường không dấu, số và dấu `-`).
 3. Sửa nội dung. Thêm `"isSample": true` nếu muốn hiện nhãn "Bản mẫu".
-4. Deploy, rồi gửi khách link: `https://ducduyweb.vn/bao-gia-kh/ten-khach-abc123`
+4. Deploy, rồi gửi khách link: `https://duyweb.info.vn/bao-gia-kh/ten-khach-abc123`
 
 Xem thử trên máy: `npm run dev` rồi mở `http://localhost:3000/bao-gia-kh/turn-apparel-r8v3np`
 
@@ -96,7 +96,7 @@ Hai kiểu báo giá chạy song song, không đụng nhau:
 2. Chạy `npm run de-xuat -- <ma-link>` (bỏ `<ma-link>` để đưa lên tất cả).
    Script chép sang `public/de-xuat/`, thêm link chuẩn, noindex, ảnh chia sẻ, icon màn hình chính
    (`public/de-xuat/icon/`) và bộ đo hành vi. Cần Python có Pillow để tạo icon.
-3. Commit và deploy. Gửi khách: `https://ducduyweb.vn/de-xuat/<ma-link>`
+3. Commit và deploy. Gửi khách: `https://duyweb.info.vn/de-xuat/<ma-link>`
 
 Ghi chú nội bộ `bao-gia-xuat/*-noi-bo.md` (giá sàn, kịch bản chốt) **không commit** — đã có trong `.gitignore`.
 

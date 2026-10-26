@@ -1,6 +1,6 @@
 // Kiểu dữ liệu cho trang "Đề xuất & báo giá" gửi riêng cho từng khách hàng.
 // Mỗi báo giá là 1 file JSON đặt trong: public/kh-data/<ma-link>.json
-// Link gửi khách: https://ducduyweb.vn/bao-gia-kh/<ma-link>
+// Link gửi khách: https://duyweb.info.vn/bao-gia-kh/<ma-link>
 // Bắt buộc: client.name, title, intro, pricing. Phần nào không có thì trang tự ẩn.
 
 export type QuoteChannelType =

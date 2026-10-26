@@ -10,7 +10,7 @@ không xuất hiện trong sitemap và gắn `noindex` để Google không lập
    `ten-khach-abc123.json` (chỉ dùng chữ thường không dấu, số và dấu `-`).
 3. Sửa nội dung trong file. Xoá dòng `"isSample": true` để bỏ nhãn "Bản mẫu".
 4. Deploy (đẩy lên Vercel như bình thường).
-5. Gửi khách link: `https://ducduyweb.vn/ke-hoach/ten-khach-abc123`
+5. Gửi khách link: `https://duyweb.info.vn/ke-hoach/ten-khach-abc123`
 
 Xem thử trên máy: `npm run dev` rồi mở `http://localhost:3000/ke-hoach/noi-that-an-gia-x7k2p9`
 
