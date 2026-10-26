@@ -11,14 +11,14 @@ interface MetaProps {
 export default function Meta({
   title,
   description,
-  keywords = ["đức duy web", "tài sản số", "thiết kế website", "tối ưu seo", "digital asset hub", "seo tphcm", "profile doanh nghiep"],
+  keywords = ["đức duy web", "tài sản số", "thiết kế website", "tối ưu seo", "chuyện web cho chủ doanh nghiệp", "seo tphcm", "profile doanh nghiep"],
   ogImage = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
   slug = ""
 }: MetaProps) {
   useEffect(() => {
     // Dynamic document title update
     const baseTitle = "Đức Duy Web";
-    document.title = title ? `${title} | ${baseTitle}` : `${baseTitle} - Digital Asset Hub`;
+    document.title = title ? `${title} | ${baseTitle}` : `${baseTitle} - Chuyện web cho chủ doanh nghiệp`;
 
     // Update Meta Description
     let metaDescription = document.querySelector("meta[name='description']");
@@ -40,12 +40,12 @@ export default function Meta({
 
     // Update Open Graph (OG) tags
     const ogTags = {
-      "og:title": title ? `${title} | ${baseTitle}` : `${baseTitle} - Digital Asset Hub`,
+      "og:title": title ? `${title} | ${baseTitle}` : `${baseTitle} - Chuyện web cho chủ doanh nghiệp`,
       "og:description": description,
       "og:image": ogImage,
       "og:url": `https://ducduyweb.vn${slug ? `/${slug}` : ""}`,
       "og:type": "website",
-      "twitter:title": title ? `${title} | ${baseTitle}` : `${baseTitle} - Digital Asset Hub`,
+      "twitter:title": title ? `${title} | ${baseTitle}` : `${baseTitle} - Chuyện web cho chủ doanh nghiệp`,
       "twitter:description": description,
       "twitter:image": ogImage,
       "twitter:card": "summary_large_image"

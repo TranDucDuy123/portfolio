@@ -7,25 +7,16 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
+  // Mỗi mục gom các trang cũ liên quan để menu gọn, link cũ vẫn sống
   const navigation = [
-    // { name: "Trang chủ", href: "/" },
-    { name: "Dịch vụ số", href: "/services" },
-    { name: "Case Study", href: "/case-study" },
-    { name: "Ngành", href: "/solutions" },
-    { name: "Dự án", href: "/projects" },
-    { name: "Cafe Số", href: "/cafe-so" },
-    { name: "Blog", href: "/blog" },
-    { name: "Tài nguyên", href: "/resources" },
-    { name: "Giới thiệu", href: "/about" },
-    { name: "Kết nối", href: "/connect" }
+    { name: "Kiến thức", href: "/kien-thuc", match: ["/kien-thuc", "/cafe-so", "/blog"] },
+    { name: "Checklist", href: "/resources", match: ["/resources"] },
+    { name: "Về Duy", href: "/about", match: ["/about"] },
+    { name: "Làm việc cùng Duy", href: "/services", match: ["/services", "/bao-gia", "/pricing", "/connect", "/solutions", "/case-study", "/projects"] }
   ];
 
-  const isActive = (path: string) => {
-    if (path === "/") {
-      return location.pathname === "/";
-    }
-    return location.pathname.startsWith(path);
-  };
+  const isActive = (paths: string[]) =>
+    paths.some((path) => location.pathname.startsWith(path));
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-xs">
@@ -41,21 +32,21 @@ export default function Header() {
                 <span className="font-display font-black text-xl tracking-tighter leading-none uppercase text-brand-dark group-hover:text-brand-primary transition-colors">
                   Đức Duy Web
                 </span>
-                <span className="text-[9px] uppercase font-mono tracking-[0.2em] text-gray-500 font-bold leading-none mt-0.5">
-                  Digital Asset Hub
+                <span className="text-[9px] uppercase font-mono tracking-[0.12em] text-gray-500 font-bold leading-none mt-0.5">
+                  Chuyện web cho chủ doanh nghiệp
                 </span>
               </div>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex space-x-1">
+          <nav className="hidden lg:flex space-x-2">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
                 className={`px-3 py-1.5 rounded-sm text-xs font-bold uppercase tracking-wider transition-all duration-150 border-b-2 ${
-                  isActive(item.href)
+                  isActive(item.match)
                     ? "text-brand-primary border-brand-primary bg-brand-primary/5 font-bold"
                     : "text-gray-600 border-transparent hover:text-brand-primary hover:bg-gray-50/50"
                 }`}
@@ -73,7 +64,7 @@ export default function Header() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-6 py-2.5 rounded-sm text-xs font-bold uppercase tracking-widest text-white bg-brand-dark hover:bg-brand-primary transition-colors duration-200"
             >
-              Tư vấn ngay
+              Nhắn Duy qua Zalo
               <ArrowUpRight className="ml-1 h-3.5 w-3.5" />
             </a>
           </div>
@@ -105,7 +96,7 @@ export default function Header() {
                 to={item.href}
                 onClick={() => setIsOpen(false)}
                 className={`block px-4 py-3 rounded-sm text-sm font-bold uppercase tracking-wider transition-all ${
-                  isActive(item.href)
+                  isActive(item.match)
                     ? "text-brand-primary bg-brand-primary/5 font-bold border-l-4 border-brand-primary pl-3"
                     : "text-gray-600 hover:text-brand-primary hover:bg-gray-50"
                 }`}
@@ -122,7 +113,7 @@ export default function Header() {
                 className="w-full flex items-center justify-center px-4 py-3.5 rounded-sm text-xs font-bold uppercase tracking-widest text-white bg-brand-dark hover:bg-brand-primary transition-all shadow-sm"
                 style={{ minHeight: "44px" }}
               >
-                Tư vấn tài sản số qua Zalo
+                Nhắn Duy qua Zalo
                 <ArrowUpRight className="ml-1.5 h-4 w-4" />
               </a>
             </div>

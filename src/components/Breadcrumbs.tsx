@@ -15,7 +15,8 @@ export default function Breadcrumbs() {
 
   // Custom mapping for Vietnamese translations of our routes
   const routeNameMap: Record<string, string> = {
-    "about": "Giới thiệu",
+    "about": "Về Duy",
+    "kien-thuc": "Kiến thức",
     "cafe-so": "Cafe Số",
     "case-study": "Thư viện Case Study",
     "projects": "Dự án",
@@ -23,7 +24,7 @@ export default function Breadcrumbs() {
     "blog": "Blog",
     "resources": "Tài nguyên tải về",
     "connect": "Cổng kết nối",
-    "services": "Giải pháp tài sản số",
+    "services": "Làm việc cùng Duy",
     
     // Sub-routes or tags (optional, generic translation if not matched)
     "quang-cao": "Ngành Quảng cáo",

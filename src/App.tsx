@@ -21,6 +21,7 @@ import Pricing from "./pages/Pricing";
 import BaoGiaTranCong from "./pages/BaoGiaTranCong";
 import TuVanHostingMKS from "./pages/TuVanHostingMKS";
 import KeHoachDaKenh from "./pages/KeHoachDaKenh";
+import KienThuc from "./pages/KienThuc";
 
 // Báo giá riêng từng khách: tách chunk, chỉ tải khi mở đúng link
 const BaoGiaKhachHang = lazy(() => import("./pages/BaoGiaKhachHang"));
@@ -81,6 +82,9 @@ function AppShell() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             
+            {/* Thư viện kiến thức gộp Cafe Số + Blog */}
+            <Route path="/kien-thuc" element={<KienThuc />} />
+
             {/* Cafe Số routes */}
             <Route path="/cafe-so" element={<CafeSo />} />
             <Route path="/cafe-so/:slug" element={<CafeSo />} />

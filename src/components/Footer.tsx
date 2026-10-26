@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, ArrowUpRight, Github, Youtube, Facebook, Send } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowUpRight, Youtube, Facebook } from "lucide-react";
 import { socialConfig } from "../config/social";
 
 export default function Footer() {
@@ -19,13 +19,13 @@ export default function Footer() {
                 <span className="font-display font-black text-xl tracking-tighter leading-none uppercase text-white group-hover:text-brand-primary transition-colors">
                   Đức Duy Web
                 </span>
-                <span className="text-[9px] uppercase font-mono tracking-[0.2em] text-gray-400 font-bold leading-none mt-0.5">
-                  Digital Asset Hub
+                <span className="text-[9px] uppercase font-mono tracking-[0.12em] text-gray-400 font-bold leading-none mt-0.5">
+                  Chuyện web cho chủ doanh nghiệp
                 </span>
               </div>
             </Link>
             <p className="text-xs text-gray-400 mt-2 leading-relaxed">
-              Website là nền móng tài sản số dài hạn của doanh nghiệp. Các kênh mạng xã hội khác là kênh dẫn dắt và thu hút sự chú ý.
+              Mình là Đức Duy, người làm web. Ở đây mình kể lại chuyện web, SEO, tên miền, hosting bằng lời dễ hiểu, để chủ doanh nghiệp tự quyết định đúng mà không cần biết code.
             </p>
             <div className="flex space-x-2 pt-2">
               <a
@@ -49,64 +49,59 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
+          {/* Column 2: Đọc */}
           <div>
             <h3 className="font-display text-white font-bold text-base mb-4 tracking-tight border-l-4 border-brand-primary pl-3">
-              Mạng Lưới Tài Sản
+              Đọc & dùng thử
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/services" className="hover:text-brand-accent hover:underline transition-all">
-                  → Dịch vụ Tài sản số
+                <Link to="/kien-thuc" className="hover:text-brand-accent hover:underline transition-all">
+                  → Thư viện kiến thức
                 </Link>
               </li>
               <li>
-                <Link to="/case-study" className="hover:text-brand-accent hover:underline transition-all">
-                  → Thư viện Case Study
+                <Link to="/cafe-so" className="hover:text-brand-accent hover:underline transition-all">
+                  → Cafe Số: hiểu web trong 5 phút
                 </Link>
               </li>
               <li>
-                <Link to="/solutions" className="hover:text-brand-accent hover:underline transition-all">
-                  → Giải pháp ngành dọc
-                </Link>
-              </li>
-              <li>
-                <Link to="/projects" className="hover:text-brand-accent hover:underline transition-all">
-                  → Portfolio dự án
+                <Link to="/blog" className="hover:text-brand-accent hover:underline transition-all">
+                  → Blog chiến lược & SEO
                 </Link>
               </li>
               <li>
                 <Link to="/resources" className="hover:text-brand-accent hover:underline transition-all">
-                  → Checklists tải về
+                  → Checklist tự kiểm tra website
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Cafe Số & Blog */}
+          {/* Column 3: Làm việc cùng Duy */}
           <div>
             <h3 className="font-display text-white font-bold text-base mb-4 tracking-tight border-l-4 border-brand-primary pl-3">
-              Kiến Thức & Cafe Số
+              Làm việc cùng Duy
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/cafe-so" className="hover:text-brand-accent hover:underline transition-all">
-                  → Cafe Số - Giải mã Web
+                <Link to="/services" className="hover:text-brand-accent hover:underline transition-all">
+                  → Mình làm những gì
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="hover:text-brand-accent hover:underline transition-all">
-                  → Blog Chiến lược SEO
+                <Link to="/bao-gia" className="hover:text-brand-accent hover:underline transition-all">
+                  → Bảng giá tham khảo
                 </Link>
               </li>
               <li>
                 <Link to="/about" className="hover:text-brand-accent hover:underline transition-all">
-                  → Về Đức Duy
+                  → Về Duy
                 </Link>
               </li>
               <li>
                 <Link to="/connect" className="hover:text-brand-accent hover:underline transition-all">
-                  → Cổng Kết nối Trực tiếp
+                  → Liên hệ trực tiếp
                 </Link>
               </li>
             </ul>
@@ -115,7 +110,7 @@ export default function Footer() {
           {/* Column 4: Contact info */}
           <div className="flex flex-col space-y-4">
             <h3 className="font-display text-white font-bold text-base mb-4 tracking-tight border-l-4 border-brand-primary pl-3">
-              Trụ Sở Đăng Ký
+              Liên hệ
             </h3>
             <div className="space-y-3 text-sm text-gray-400">
               <div className="flex items-start space-x-2.5">
@@ -135,24 +130,18 @@ export default function Footer() {
                 </a>
               </div>
             </div>
-            {/* Newsletter signup */}
+            {/* Nhận bài mới: dùng Zalo vì chưa có hệ thống email */}
             <div className="pt-2">
-              <h4 className="text-xs uppercase tracking-wider text-brand-accent font-bold mb-2">Nhận bản tin Cafe Số</h4>
-              <form onSubmit={(e) => e.preventDefault()} className="flex">
-                <input
-                  type="email"
-                  placeholder="Nhập email của bạn..."
-                  className="bg-gray-800 text-white px-3 py-2 text-xs rounded-l-sm focus:outline-hidden focus:ring-1 focus:ring-brand-primary w-full border border-gray-700"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="bg-brand-primary hover:bg-brand-secondary text-white px-3 py-2 rounded-r-sm flex items-center justify-center transition-colors cursor-pointer"
-                  aria-label="Đăng ký nhận bản tin"
-                >
-                  <Send className="h-3 w-3" />
-                </button>
-              </form>
+              <h4 className="text-xs uppercase tracking-wider text-brand-accent font-bold mb-2">Nhận bài mới</h4>
+              <a
+                href={socialConfig.zalo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2.5 rounded-sm text-xs font-bold text-white bg-brand-primary hover:bg-brand-secondary transition-colors"
+              >
+                Nhắn Zalo "nhận bài" để Duy gửi bài mới
+                <ArrowUpRight className="ml-1.5 h-3.5 w-3.5" />
+              </a>
             </div>
           </div>
         </div>
