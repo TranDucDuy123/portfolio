@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, LayoutGrid, ChevronRight, TrendingUp, Database, CheckSquare, BookOpen } from "lucide-react";
+import { ArrowRight, LayoutGrid, ChevronRight, TrendingUp, Database, CheckSquare, BookOpen, Play } from "lucide-react";
 import { blogPosts } from "../data/blog";
 import { resourceChecklists } from "../data/resources";
 import { startHereItems } from "../data/knowledge";
+import { videoFeed } from "../data/videoFeed";
 import { socialConfig } from "../config/social";
 import Meta from "../components/Meta";
 
@@ -86,6 +87,46 @@ export default function Home() {
                 <span className="mt-5 inline-flex items-center text-xs font-bold uppercase tracking-wider text-brand-primary">
                   Đọc bài · {item.readingTime}
                   <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Lối vào feed video ngắn /video */}
+      <section className="py-14 bg-brand-dark text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-center">
+          <div className="max-w-xl">
+            <span className="text-[10px] font-mono font-black uppercase tracking-[0.25em] text-brand-accent">🎬 VIDEO NGẮN</span>
+            <h2 className="font-display font-black text-2xl sm:text-3xl mt-2 tracking-tight uppercase">Lười đọc? Lướt video 1 phút</h2>
+            <p className="mt-3 text-sm text-gray-300 leading-relaxed">
+              Mỗi video một câu hỏi chủ doanh nghiệp hay gặp, kèm ý chính và câu tự kiểm tra 10 giây. Lướt như TikTok.
+            </p>
+            <Link
+              to="/video"
+              className="mt-6 inline-flex items-center justify-center px-6 py-3.5 rounded-sm text-xs font-bold uppercase tracking-widest text-white bg-brand-primary hover:bg-brand-secondary transition-colors"
+              style={{ minHeight: "48px" }}
+            >
+              <Play className="mr-2 h-4 w-4" />
+              Xem video
+            </Link>
+          </div>
+          <div className="flex gap-3">
+            {videoFeed.slice(0, 3).map((v, i) => (
+              <Link
+                key={v.id}
+                to={`/video#${v.id}`}
+                className={`group relative w-24 sm:w-28 aspect-[9/16] rounded-lg overflow-hidden bg-black ${i === 2 ? "hidden sm:block" : ""}`}
+              >
+                <img
+                  src={`https://i.ytimg.com/vi/${v.youtubeId}/hqdefault.jpg`}
+                  alt=""
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity"
+                />
+                <span className="absolute inset-x-0 bottom-0 p-2 bg-gradient-to-t from-black/90 to-transparent text-[10px] font-bold leading-tight line-clamp-3">
+                  {v.hook}
                 </span>
               </Link>
             ))}

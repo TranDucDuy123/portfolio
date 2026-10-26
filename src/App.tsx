@@ -22,6 +22,7 @@ import BaoGiaTranCong from "./pages/BaoGiaTranCong";
 import TuVanHostingMKS from "./pages/TuVanHostingMKS";
 import KeHoachDaKenh from "./pages/KeHoachDaKenh";
 import KienThuc from "./pages/KienThuc";
+import VideoFeed from "./pages/VideoFeed";
 
 // Báo giá riêng từng khách: tách chunk, chỉ tải khi mở đúng link
 const BaoGiaKhachHang = lazy(() => import("./pages/BaoGiaKhachHang"));
@@ -63,6 +64,11 @@ function AppShell() {
         </Routes>
       </>
     );
+  }
+
+  // Feed video kiểu TikTok (thử nghiệm): toàn màn hình, không header/footer
+  if (pathname === "/video") {
+    return <VideoFeed />;
   }
 
   return (

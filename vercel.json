@@ -5,6 +5,10 @@
   ],
   "headers": [
     {
+      "source": "/video",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
+    },
+    {
       "source": "/ke-hoach/(.*)",
       "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" }]
     },
@@ -19,6 +23,10 @@
     {
       "source": "/kh-data/(.*)",
       "headers": [
+    {
+      "source": "/video",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
+    },
         { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" },
         { "key": "Cache-Control", "value": "no-cache" }
       ]
