@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 
+const SITE_URL = "https://duyweb.info.vn";
+
 interface MetaProps {
   title: string;
   description: string;
@@ -18,7 +20,22 @@ export default function Meta({
   useEffect(() => {
     // Dynamic document title update
     const baseTitle = "Đức Duy Web";
-    document.title = title ? `${title} | ${baseTitle}` : `${baseTitle} - Chuyện web cho chủ doanh nghiệp`;
+    // Tiêu đề đã có sẵn tên thương hiệu thì không gắn thêm, tránh "… - Đức Duy Web | Đức Duy Web"
+    const fullTitle = !title
+      ? `${baseTitle} - Chuyện web cho chủ doanh nghiệp`
+      : title.includes(baseTitle) ? title : `${title} | ${baseTitle}`;
+    document.title = fullTitle;
+
+    // Canonical theo đúng trang đang xem; index.html chỉ có canonical của trang chủ
+    const path = slug ? `/${slug}` : window.location.pathname.replace(/\/+$/, "");
+    const pageUrl = `${SITE_URL}${path || "/"}`;
+    let canonical = document.querySelector("link[rel='canonical']");
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", pageUrl);
 
     // Update Meta Description
     let metaDescription = document.querySelector("meta[name='description']");
@@ -40,12 +57,12 @@ export default function Meta({
 
     // Update Open Graph (OG) tags
     const ogTags = {
-      "og:title": title ? `${title} | ${baseTitle}` : `${baseTitle} - Chuyện web cho chủ doanh nghiệp`,
+      "og:title": fullTitle,
       "og:description": description,
       "og:image": ogImage,
-      "og:url": `https://duyweb.info.vn${slug ? `/${slug}` : ""}`,
+      "og:url": pageUrl,
       "og:type": "website",
-      "twitter:title": title ? `${title} | ${baseTitle}` : `${baseTitle} - Chuyện web cho chủ doanh nghiệp`,
+      "twitter:title": fullTitle,
       "twitter:description": description,
       "twitter:image": ogImage,
       "twitter:card": "summary_large_image"

@@ -178,6 +178,7 @@ function VideoSlide({ item, isActive, shouldMount, muted, onUnmute }: VideoSlide
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [paused, setPaused] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   // Player YouTube cần chút thời gian mới nhận lệnh, nên gửi lại vài lần
   const sync = useCallback(() => {
@@ -198,7 +199,11 @@ function VideoSlide({ item, isActive, shouldMount, muted, onUnmute }: VideoSlide
     const url = `${window.location.origin}/video#${item.id}`;
     try {
       if (navigator.share) await navigator.share({ title: item.hook, url });
-      else await navigator.clipboard.writeText(url);
+      else {
+        await navigator.clipboard.writeText(url);
+        setCopied(true);
+        window.setTimeout(() => setCopied(false), 2000);
+      }
     } catch { /* người dùng huỷ chia sẻ */ }
   };
 
@@ -239,7 +244,7 @@ function VideoSlide({ item, isActive, shouldMount, muted, onUnmute }: VideoSlide
         <div className="lg:hidden absolute right-3 bottom-40 z-20 flex flex-col items-center gap-5">
           <RailButton label="Hỏi Duy" href={socialConfig.zalo}><MessageCircle className="h-6 w-6" /></RailButton>
           {item.article && <RailButton label="Đọc bài" to={item.article.href}><BookOpen className="h-6 w-6" /></RailButton>}
-          <RailButton label="Chia sẻ" onClick={share}><Share2 className="h-6 w-6" /></RailButton>
+          <RailButton label={copied ? "Đã chép" : "Chia sẻ"} onClick={share}><Share2 className="h-6 w-6" /></RailButton>
           {muted && <RailButton label="Bật tiếng" onClick={onUnmute}><VolumeX className="h-6 w-6" /></RailButton>}
         </div>
 
@@ -274,7 +279,7 @@ function VideoSlide({ item, isActive, shouldMount, muted, onUnmute }: VideoSlide
           </a>
           <button type="button" onClick={share} className="inline-flex items-center rounded-full border border-white/30 hover:bg-white/10 px-5 py-3 text-sm font-bold cursor-pointer">
             <Share2 className="h-4 w-4 mr-2" />
-            Chia sẻ
+            {copied ? "Đã chép link" : "Chia sẻ"}
           </button>
           <button
             type="button"
