@@ -17,6 +17,8 @@ export default function Breadcrumbs() {
   const routeNameMap: Record<string, string> = {
     "about": "Về Duy",
     "kien-thuc": "Kiến thức",
+    "van-hanh-facebook-tiktok": "Vận hành Facebook & TikTok",
+    "videos": "Video",
     "cafe-so": "Cafe Số",
     "case-study": "Thư viện Case Study",
     "projects": "Dự án",
@@ -54,7 +56,7 @@ export default function Breadcrumbs() {
           const isLast = index === breadcrumbs.length - 1;
 
           return (
-            <div key={crumb.url} className="flex items-center">
+            <div key={crumb.url} className={`flex items-center ${isLast ? "min-w-0" : "shrink-0"}`}>
               {index > 0 && <ChevronRight className="h-4 w-4 text-gray-400 mx-2 flex-shrink-0" />}
               {isLast ? (
                 <span className="text-brand-primary font-semibold truncate max-w-[200px] sm:max-w-none">
