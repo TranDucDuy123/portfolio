@@ -24,7 +24,7 @@ import KeHoachDaKenh from "./pages/KeHoachDaKenh";
 import KienThuc from "./pages/KienThuc";
 import VideoFeed from "./pages/VideoFeed";
 import Videos from "./pages/Videos";
-import SocialGuide from "./pages/SocialGuide";
+import GuidePage from "./pages/GuidePage";
 
 // Báo giá riêng từng khách: tách chunk, chỉ tải khi mở đúng link
 const BaoGiaKhachHang = lazy(() => import("./pages/BaoGiaKhachHang"));
@@ -92,7 +92,7 @@ function AppShell() {
             
             {/* Thư viện kiến thức gộp Cafe Số + Blog */}
             <Route path="/kien-thuc" element={<KienThuc />} />
-            <Route path="/kien-thuc/van-hanh-facebook-tiktok" element={<SocialGuide />} />
+            <Route path="/kien-thuc/:slug" element={<GuidePage />} />
 
             {/* Cafe Số routes */}
             <Route path="/cafe-so" element={<CafeSo />} />

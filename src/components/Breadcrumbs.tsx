@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { ChevronRight, Home } from "lucide-react";
 import Schema from "./Schema";
+import { guides } from "../data/guides";
 
 interface BreadcrumbItem {
   name: string;
@@ -17,7 +18,7 @@ export default function Breadcrumbs() {
   const routeNameMap: Record<string, string> = {
     "about": "Về Duy",
     "kien-thuc": "Kiến thức",
-    "van-hanh-facebook-tiktok": "Vận hành Facebook & TikTok",
+    ...Object.fromEntries(guides.map((g) => [g.slug, g.breadcrumb])),
     "videos": "Video",
     "cafe-so": "Cafe Số",
     "case-study": "Thư viện Case Study",

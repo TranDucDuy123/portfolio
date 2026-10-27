@@ -1,6 +1,6 @@
 import { cafeSoArticles } from "./cafeSo";
 import { blogPosts } from "./blog";
-import { socialGuideSlug } from "./socialGuide";
+import { guides } from "./guides";
 
 // Gộp Cafe Số và Blog thành một thư viện kiến thức chung theo chủ đề chủ doanh nghiệp hay hỏi
 export type KnowledgeTopic = "Hiểu cơ bản" | "Chọn kênh" | "Để khách tìm thấy" | "Chiến lược & chốt khách";
@@ -33,16 +33,16 @@ const blogTopic: Record<string, KnowledgeTopic> = {
 
 export const knowledgeItems: KnowledgeItem[] = [
   // Cẩm nang là trang riêng (không nằm trong Cafe Số / Blog)
-  {
-    slug: socialGuideSlug,
-    title: "Vận hành Facebook, TikTok không dính vi phạm cộng đồng",
-    summary: "Những lỗi hay bị gỡ bài, khoá kênh nhất, checklist 30 giây trước khi đăng và cách xử lý khi bị hạn chế.",
-    topic: "Chọn kênh",
-    source: "Cẩm nang",
-    href: `/kien-thuc/${socialGuideSlug}`,
-    readingTime: "8 phút",
-    date: "2026-10-27"
-  },
+  ...guides.map((g) => ({
+    slug: g.slug,
+    title: g.title,
+    summary: g.summary,
+    topic: "Chọn kênh" as const,
+    source: "Cẩm nang" as const,
+    href: `/kien-thuc/${g.slug}`,
+    readingTime: g.readingTime,
+    date: g.date
+  })),
   ...cafeSoArticles.map((a) => ({
     slug: a.slug,
     title: a.title,
