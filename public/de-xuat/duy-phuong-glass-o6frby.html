@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chăm web Duy Phương Glass · Duy Web</title>
+<meta name="description" content="Đề xuất cho anh Phượng: giữ nguyên web matdungkinhtphcm.vn, giải thích SEO từ nghĩa đen, gói trọn gói 14 triệu gồm 3 tháng chăm SEO và công cụ để anh tự chăm.">
+<style>
+:root{
+  --bg:#f6f5f1; --surface:#ffffff; --ink:#1c1c19; --muted:#5d5c55; --line:#e3e1da;
+  --accent:#0f766e; --accent-ink:#ffffff;
+  --soft:color-mix(in srgb,var(--accent) 9%,var(--surface));
+  --radius:14px; --gutter:16px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#121210;--surface:#1c1c19;--ink:#f0eee7;--muted:#a9a79d;--line:#33322c}
+}
+:root[data-theme="dark"]{--bg:#121210;--surface:#1c1c19;--ink:#f0eee7;--muted:#a9a79d;--line:#33322c}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;padding-bottom:84px}
+.wrap{max-width:920px;margin:0 auto;padding:0 var(--gutter)}
+h1,h2,h3,p,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+
+/* top bar */
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 12px;padding:18px 0 6px;font-size:14px;color:var(--muted)}
+.top>span:first-child{white-space:nowrap}
+.top b{color:var(--ink);font-weight:650}
+
+/* hero */
+.hero{margin-top:10px;padding:28px 22px;border-radius:calc(var(--radius) + 6px);background:var(--soft);border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line))}
+.eyebrow{font-size:13px;font-weight:650;letter-spacing:.04em;text-transform:uppercase;color:var(--accent)}
+.hero h1{margin-top:8px;font-size:clamp(1.65rem,5.2vw,2.5rem);line-height:1.18;letter-spacing:-.01em}
+.hero .sub{margin-top:12px;font-size:1.06rem;color:var(--muted);max-width:60ch}
+.chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:8px;margin-top:20px}
+.chip{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.chip b{display:block;font-size:1.15rem;color:var(--accent)}
+.chip span{display:block;font-size:13px;line-height:1.35;color:var(--muted)}
+
+/* sections */
+.sec{margin-top:44px}
+.sec>h2{font-size:clamp(1.3rem,3.8vw,1.75rem);line-height:1.25;letter-spacing:-.01em}
+.sec>.lead{margin-top:8px;color:var(--muted);max-width:64ch}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+
+/* understand */
+.quote{margin-top:16px;padding:16px 18px;border-left:4px solid var(--accent);background:var(--surface);border-radius:0 var(--radius) var(--radius) 0;font-size:1.08rem;font-style:italic}
+.quote small{display:block;margin-top:6px;font-style:normal;font-size:13px;color:var(--muted)}
+.points{display:grid;gap:10px;margin-top:16px}
+.point{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.point:first-child{border-top:0}
+.point b{color:var(--accent);font-size:14px}
+
+/* approach */
+.map{display:grid;gap:12px;margin-top:18px}
+.row{display:grid;grid-template-columns:1fr;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.row>div{padding:14px 16px}
+.row .need{background:color-mix(in srgb,var(--muted) 8%,var(--surface))}
+.tag{display:block;font-size:12px;font-weight:650;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.row .sol .tag,.row .ben .tag{color:var(--accent)}
+.row .ben{border-top:1px dashed var(--line);font-weight:600}
+@media(min-width:760px){
+  .row{grid-template-columns:1fr 1.25fr}
+  .row .ben{grid-column:1/-1}
+}
+
+/* plans */
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:18px;align-items:stretch}
+@media(min-width:620px){.plans.two{grid-template-columns:repeat(2,1fr)}}
+.plan{position:relative;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 18px}
+.plan.rec{border:2px solid var(--accent);box-shadow:0 8px 28px color-mix(in srgb,var(--accent) 18%,transparent)}
+.badge{position:absolute;top:-12px;left:16px;background:var(--accent);color:var(--accent-ink);font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px}
+.plan h3{font-size:1.15rem}
+.plan .tl{color:var(--muted);font-size:14px;margin-top:2px}
+.price{margin-top:12px;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.price b{font-size:1.7rem;letter-spacing:-.01em}
+.price span{color:var(--muted);font-size:14px}
+.for{margin-top:10px;font-size:14px;color:var(--muted)}
+.feat{margin-top:14px;display:grid;gap:8px;flex:1}
+.feat li{position:relative;padding-left:26px;font-size:15px}
+.feat li::before{content:"";position:absolute;left:0;top:.35em;width:16px;height:16px;border-radius:50%;background:var(--accent);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3 3 7-7' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3 3 7-7' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.feat li.no{color:var(--muted);text-decoration:line-through;text-decoration-color:color-mix(in srgb,var(--muted) 50%,transparent)}
+.feat li.con{color:var(--ink)}
+.analogy{margin-top:8px;padding:8px 12px;border-radius:10px;background:var(--soft);font-size:14px;color:var(--ink)}
+.feat li.no::before,.feat li.con::before{background:var(--muted);opacity:.45;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 4l8 8M12 4l-8 8' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 4l8 8M12 4l-8 8' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.deliv{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.fine{margin-top:12px;font-size:14px;color:var(--muted)}
+
+/* running costs */
+.costs{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.cost{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:6px 14px;padding:14px 16px;border-top:1px solid var(--line);align-items:baseline}
+.cost:first-child{border-top:0}
+.cost b{font-weight:650}
+.cost small{display:block;color:var(--muted);font-size:13px}
+.cost .who{color:var(--muted);font-size:14px}
+.cost .amt{font-weight:650}
+@media(max-width:620px){.cost{grid-template-columns:1fr auto}.cost .who{grid-column:1/-1}}
+
+/* total */
+.total{margin-top:22px;border-radius:var(--radius);background:var(--ink);color:var(--bg);padding:20px 18px}
+.total h3{font-size:1.05rem;font-weight:650}
+.total .ln{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid color-mix(in srgb,var(--bg) 22%,transparent);font-size:15px}
+.total .sum{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding-top:14px}
+.total .sum b{font-size:1.7rem;letter-spacing:-.01em}
+.total .nt{margin-top:10px;font-size:13px;opacity:.8}
+
+/* timeline */
+.steps{margin-top:18px;display:grid;gap:0;counter-reset:s}
+.step{position:relative;padding:0 0 22px 52px}
+.step::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-weight:700;font-size:15px}
+.step::after{content:"";position:absolute;left:16px;top:38px;bottom:4px;width:2px;background:var(--line)}
+.step:last-child{padding-bottom:0}.step:last-child::after{display:none}
+.step b{display:block}
+.step .when{font-size:13px;color:var(--accent);font-weight:650}
+.step .me{font-size:14px;color:var(--muted);margin-top:2px}
+
+/* grids of small cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:18px}
+.cards .card h3{font-size:1.02rem}
+.cards .card p{margin-top:6px;color:var(--muted);font-size:15px}
+
+/* terms / faq */
+.terms{margin-top:14px;display:grid;gap:8px}
+.terms li{position:relative;padding-left:20px;font-size:15px;color:var(--muted)}
+.terms li::before{content:"";position:absolute;left:4px;top:.65em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-top:10px}
+summary{cursor:pointer;font-weight:650;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--accent);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:var(--muted);font-size:15px}
+
+/* CTA */
+.cta{margin-top:48px;padding:30px 22px;border-radius:calc(var(--radius) + 6px);background:var(--accent);color:var(--accent-ink);text-align:center}
+.cta h2{font-size:clamp(1.4rem,4.5vw,2rem)}
+.cta p{margin:10px auto 0;max-width:52ch;opacity:.95}
+.btn{display:inline-block;margin-top:18px;padding:14px 26px;border-radius:99px;background:var(--accent-ink);color:var(--accent);font-weight:700;text-decoration:none;font-size:16px;min-height:48px}
+.cta .nt{margin-top:12px;font-size:13px;opacity:.9}
+.foot{padding:26px 0 8px;text-align:center;font-size:13px;color:var(--muted)}
+
+/* sticky bar (phone) */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:10;background:var(--surface);border-top:1px solid var(--line);padding:10px var(--gutter);display:flex;gap:12px;align-items:center;justify-content:space-between}
+.sticky .t{font-size:13px;color:var(--muted);line-height:1.3;min-width:0}
+.sticky .t b{display:block;color:var(--ink);font-size:15px}
+.sticky .btn{margin:0;padding:11px 20px;background:var(--accent);color:var(--accent-ink);white-space:nowrap}
+@media(min-width:900px){.sticky{display:none}body{padding-bottom:0}}
+.sample{background:#b45309;color:#fff;text-align:center;font-size:13px;padding:6px var(--gutter)}
+
+@media print{
+  body{background:#fff;color:#000;padding:0}.sticky,.cta .btn{display:none}
+  .plan,.row,.card,details{break-inside:avoid}.hero,.cta,.total{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  details:not([open])>*:not(summary){display:block}
+}
+</style>
+<link rel="canonical" href="https://duyweb.info.vn/de-xuat/duy-phuong-glass-o6frby">
+<meta property="og:url" content="https://duyweb.info.vn/de-xuat/duy-phuong-glass-o6frby">
+</head>
+<body>
+<noscript><p style="padding:20px">Trang báo giá cần bật JavaScript để hiển thị.</p></noscript>
+<div id="app"></div>
+<script type="application/json" id="data">{
+  "meta": {
+    "slug": "duy-phuong-glass-o6frby",
+    "client_short": "Duy Phương",
+    "title": "Chăm web Duy Phương Glass",
+    "brand": "Duy Web",
+    "client": "anh Phượng · Duy Phương Glass",
+    "clientCall": "anh",
+    "date": "28/10/2026",
+    "validUntil": "11/11/2026",
+    "accent": "#0074E2",
+    "contact": "Duy Web · Zalo 0938 415 218 · duyweb.info.vn"
+  },
+  "hero": {
+    "eyebrow": "Đề xuất riêng cho anh Phượng · Duy Phương Glass",
+    "headline": "Không làm lại web. Giúp anh hiểu và tự chăm được web của mình.",
+    "sub": "Web matdungkinhtphcm.vn đã có những công trình đáng để kể. Cái thiếu là người chăm và một cách làm SEO anh hiểu được. Trang này giải thích SEO từ nghĩa đen, rồi đến chi phí cụ thể và hướng em đề xuất.",
+    "highlights": [
+      {
+        "value": "14 triệu",
+        "label": "trọn gói, trả một lần"
+      },
+      {
+        "value": "3 tháng",
+        "label": "em chăm SEO cùng anh"
+      },
+      {
+        "value": "Từ 1 triệu",
+        "label": "mỗi tháng nếu anh muốn em chăm tiếp"
+      }
+    ]
+  },
+  "understand": {
+    "title": "Em hiểu tình hình của anh thế này",
+    "points": [
+      {
+        "label": "Hiện tại",
+        "text": "Web đã có 10 bài công trình (Bệnh viện 175, MB Bank, Kho bạc Long An, Kho bạc Bình Dương…), nhưng bài mới nhất từ 04/10/2025. Hơn một năm nay web không có ai chăm."
+      },
+      {
+        "label": "Vướng ở đâu",
+        "text": "Anh nghe nói nhiều về SEO nhưng chưa rõ nó là gì, làm thế nào, và làm rồi thì đo kết quả ở đâu."
+      },
+      {
+        "label": "Mục tiêu",
+        "text": "Anh hiểu đủ để tự điều khiển marketing cho công ty. Sau này mở rộng thì có người làm theo đúng cách đó, không phụ thuộc vào ai."
+      }
+    ]
+  },
+  "explain": {
+    "title": "SEO là gì: từ nghĩa đen đến cách làm",
+    "intro": "SEO là viết tắt của Search Engine Optimization, dịch sát nghĩa là \"tối ưu cho công cụ tìm kiếm\". Nói theo nghề của anh: web là showroom, Google là người chỉ đường. SEO là làm sao để khi có người hỏi đường tới \"vách kính mặt dựng\", Google chỉ về showroom của anh.",
+    "items": [
+      {
+        "name": "1. Google đọc web thế nào",
+        "analogy": "Giống kỹ sư đọc bản vẽ: không có tiêu đề, không có chú thích thì đọc không ra. Google đọc chữ, không nhìn được ảnh đẹp hay xấu.",
+        "good": [
+          "Mỗi trang có một tiêu đề chính nói rõ trang làm gì",
+          "Ảnh có chú thích bằng chữ, ví dụ \"mặt dựng kính Kho bạc Long An\""
+        ],
+        "bad": [
+          "Trang chủ hiện chưa có tiêu đề chính",
+          "16/25 ảnh trang chủ chưa có chú thích"
+        ]
+      },
+      {
+        "name": "2. Biển hiệu trên Google",
+        "analogy": "Kết quả tìm kiếm là dãy biển hiệu. Biển ghi rõ \"Thi công vách kính mặt dựng TP.HCM\" thì khách mới bấm vào.",
+        "good": [
+          "Viết tiêu đề và đoạn mô tả riêng cho từng trang",
+          "Trang Liên hệ gọn gàng, số điện thoại và email đúng"
+        ],
+        "bad": [
+          "Trang chủ chưa có đoạn mô tả, Google tự cắt chữ để hiện",
+          "Trang Liên hệ đang lộ một đoạn mã ra ngoài, email ghi \"@gmail.com.vn\" khách gửi có thể không tới"
+        ]
+      },
+      {
+        "name": "3. Nội dung khách đang tìm",
+        "analogy": "Khách không gõ tên công ty anh. Họ gõ \"giá vách kính mặt dựng bao nhiêu 1m2\", \"cửa nhôm kính hay uPVC bền hơn\". Trang nào trả lời đúng câu đó, trang đó được chỉ đường.",
+        "good": [
+          "Mỗi công trình là một bài: hạng mục, vật liệu, khó khăn, ảnh thật",
+          "Bài hỏi đáp từ câu khách hay hỏi anh qua điện thoại"
+        ],
+        "bad": [
+          "Hơn một năm không có bài mới",
+          "Hai bài \"Hệ thống vách kính – mặt dựng\" trùng nhau, Google không biết chọn bài nào"
+        ]
+      },
+      {
+        "name": "4. Đo để biết có hiệu quả",
+        "analogy": "Như nghiệm thu công trình: phải có số đo. Google có công cụ miễn phí cho biết web hiện ra bao nhiêu lần, bao nhiêu người bấm, họ gõ chữ gì.",
+        "good": [
+          "Cài Google Search Console và Google Analytics",
+          "Mỗi tháng đọc số cùng anh, quyết định viết gì tiếp"
+        ],
+        "bad": [
+          "Còn phần giỏ hàng, thanh toán, cửa hàng của web bán lẻ, trong khi anh làm theo công trình",
+          "Chưa khai báo cho Google thông tin công ty và 4 chi nhánh"
+        ]
+      }
+    ],
+    "note": "Dấu ✓ là việc bên em làm cho web anh. Dấu ✗ là điều bên em thấy trên web hiện tại khi xem ngày 28/10/2026."
+  },
+  "approach": {
+    "title": "Hướng giải quyết em đề xuất",
+    "intro": "Em không bắt anh làm web mới. Em giữ web hiện tại, sửa chỗ hỏng, rồi trao cho anh công cụ và cách làm để tự chăm.",
+    "items": [
+      {
+        "need": "Web có mà không ai chăm",
+        "solution": "3 tháng đầu bên em chăm SEO, vừa làm vừa chỉ anh từng bước",
+        "benefit": "Web có bài mới đều, anh thấy tận mắt cách làm thay vì nghe lý thuyết"
+      },
+      {
+        "need": "Chưa hiểu SEO, không biết bắt đầu từ đâu",
+        "solution": "Công cụ hướng dẫn chăm web do Duy Web làm: việc cần làm mỗi tuần, mẫu viết bài công trình, cách đọc số liệu",
+        "benefit": "Anh tự quyết được nên viết gì, và biết bài nào mang khách về"
+      },
+      {
+        "need": "Sợ phải làm lại web, tốn tiền mà chưa chắc hơn",
+        "solution": "Giữ nguyên web WordPress hiện tại, chỉ sửa lỗi và chăm thêm nội dung",
+        "benefit": "Không mất công trình, bài viết đã có; không tốn tiền làm web mới"
+      },
+      {
+        "need": "Sau này mở rộng, cần có người làm",
+        "solution": "Quy trình và tài liệu viết sẵn; giao cho nhân viên, hoặc bên em chăm tiếp theo tháng",
+        "benefit": "Marketing chạy theo một cách làm chung, không phụ thuộc một người"
+      }
+    ]
+  },
+  "packages": {
+    "title": "Gói trọn gói",
+    "note": "Trả một lần, đã gồm 3 tháng chăm SEO. Không phải làm web mới.",
+    "items": [
+      {
+        "name": "Chăm & Hướng dẫn",
+        "tagline": "Sửa web, chăm SEO 3 tháng, trao công cụ để anh tự làm",
+        "price": "14.000.000đ",
+        "unit": "trọn gói",
+        "recommended": true,
+        "badge": "Duy đề xuất",
+        "forWho": "Cho chủ doanh nghiệp muốn hiểu và tự điều khiển marketing của mình",
+        "features": [
+          "Giữ nguyên web hiện tại, không làm lại",
+          "Sửa lỗi nền: tiêu đề, mô tả, chú thích ảnh, trang Liên hệ, bài trùng, dọn phần giỏ hàng không dùng",
+          "Công cụ hướng dẫn chăm web do Duy Web làm, kèm công cụ theo dõi vận hành",
+          "Cài Google Search Console và Google Analytics",
+          "Chăm SEO 3 tháng: bên em làm cùng anh, anh xem và thử từng bước",
+          "Buổi hướng dẫn vận hành và tài liệu dễ hiểu",
+          "Báo cáo mỗi tháng bằng lời thường, không thuật ngữ",
+          "Buổi đánh giá cuối tháng thứ 3 để chọn hướng tiếp"
+        ],
+        "delivery": "Đồng hành 3 tháng · Tài khoản web và tên miền anh vẫn giữ"
+      }
+    ]
+  },
+  "running": {
+    "title": "Kinh phí anh cần có, rõ từ đầu",
+    "intro": "Ngoài gói 14 triệu, đây là các khoản liên quan và ai trả.",
+    "rows": [
+      {
+        "item": "Tên miền matdungkinhtphcm.vn",
+        "cost": "Như hiện tại",
+        "period": "",
+        "payer": "Anh giữ, gia hạn như cũ",
+        "note": "Đứng tên công ty anh"
+      },
+      {
+        "item": "Hosting tháng 1–3",
+        "cost": "Như hiện tại",
+        "period": "",
+        "payer": "Anh trả như đang trả",
+        "note": "Chưa cần đổi trong 3 tháng đầu"
+      },
+      {
+        "item": "Hosting từ tháng 4",
+        "cost": "Đã gồm",
+        "period": "",
+        "payer": "Trong gói tháng",
+        "note": "Nếu anh chọn một gói tháng bên dưới"
+      },
+      {
+        "item": "Google Search Console, Google Analytics",
+        "cost": "Miễn phí",
+        "period": "",
+        "payer": "Google",
+        "note": "Công cụ đo của Google"
+      }
+    ]
+  },
+  "care": {
+    "title": "Từ tháng thứ 4: anh chọn",
+    "intro": "Sau 3 tháng anh có thể tự chăm hoàn toàn, không trả thêm cho bên em. Nếu muốn có người làm cùng, có 3 mức, đổi được từng tháng.",
+    "items": [
+      {
+        "name": "Anh chăm, em kèm",
+        "tagline": "Anh tự làm theo công cụ, em theo sát",
+        "price": "1.000.000đ",
+        "unit": "/tháng",
+        "recommended": true,
+        "badge": "Hợp nhất sau 3 tháng",
+        "features": [
+          "Hosting, sao lưu, cập nhật bảo mật web",
+          "Theo dõi web chạy ổn mỗi ngày",
+          "Anh vướng chỗ nào thì hỏi, em trả lời",
+          "Đọc số liệu cùng anh mỗi tháng"
+        ]
+      },
+      {
+        "name": "Cùng làm",
+        "tagline": "Chia việc: anh cung cấp, em viết",
+        "price": "2.000.000đ",
+        "unit": "/tháng",
+        "features": [
+          "Mọi thứ trong gói 1 triệu",
+          "Bên em cùng viết và đăng bài công trình, bài hỏi đáp",
+          "Anh chỉ cần gửi ảnh và vài dòng về công trình"
+        ]
+      },
+      {
+        "name": "Giao hẳn cho em",
+        "tagline": "Anh tập trung thi công, em lo web",
+        "price": "3.000.000đ",
+        "unit": "/tháng",
+        "features": [
+          "Mọi thứ trong gói 2 triệu",
+          "Bên em làm toàn bộ nội dung và SEO",
+          "Báo cáo kết quả, đề xuất việc tiếp theo"
+        ]
+      }
+    ],
+    "fine": "Không ràng buộc dài hạn. Muốn tăng, giảm hay dừng thì báo trước tháng sau."
+  },
+  "total": {
+    "title": "Năm đầu tiên theo hướng em đề xuất",
+    "lines": [
+      {
+        "label": "Gói Chăm & Hướng dẫn (gồm 3 tháng chăm SEO)",
+        "value": "14.000.000đ"
+      },
+      {
+        "label": "Tháng 4 đến 12: gói 1 triệu × 9 tháng (đã gồm hosting)",
+        "value": "9.000.000đ"
+      }
+    ],
+    "sum": "23.000.000đ",
+    "note": "Nếu sau 3 tháng anh tự chăm hoàn toàn: 14.000.000đ cộng tiền hosting, tên miền anh đang trả. Nếu chọn gói 2 triệu: 32.000.000đ năm đầu. Gói 3 triệu: 41.000.000đ năm đầu."
+  },
+  "timeline": {
+    "title": "Các bước làm",
+    "steps": [
+      {
+        "step": "Xem kỹ web và sửa lỗi nền",
+        "when": "Tuần 1–2",
+        "clientDo": "cấp quyền quản trị web, gửi ảnh công trình đang có"
+      },
+      {
+        "step": "Bàn giao công cụ hướng dẫn và buổi hướng dẫn vận hành",
+        "when": "Tuần 3",
+        "clientDo": "dành khoảng 1–2 tiếng ngồi cùng em"
+      },
+      {
+        "step": "Chăm SEO cùng anh: bài công trình, bài hỏi đáp, báo cáo tháng",
+        "when": "Tháng 1–3",
+        "clientDo": "gửi ảnh và vài dòng mỗi khi có công trình mới"
+      },
+      {
+        "step": "Buổi đánh giá: đọc số liệu 3 tháng, chọn tự làm hay gói tháng",
+        "when": "Cuối tháng 3",
+        "clientDo": "quyết định hướng tiếp theo"
+      }
+    ]
+  },
+  "why": {
+    "title": "Vì sao em không đề nghị làm web mới",
+    "items": [
+      {
+        "title": "Web cũ đang có tài sản",
+        "text": "10 công trình như Bệnh viện 175, MB Bank, kho bạc Long An và Bình Dương là bằng chứng mà nhiều đối thủ không có. Google đã biết các trang này, làm lại từ đầu là bỏ phí."
+      },
+      {
+        "title": "Chăm web dựng sẵn rất cực",
+        "text": "Web WordPress dựng sẵn có nhiều lớp giao diện và plugin, chăm cho đúng thì ngay cả bên em làm nghề cũng mất công. Vì vậy em làm công cụ chỉ đúng việc cần làm, thay vì để anh tự mò."
+      },
+      {
+        "title": "Anh là người hiểu nghề nhất",
+        "text": "Kiến thức thi công và cách nói chuyện với chủ đầu tư, nhà thầu, chủ nhà là thứ không ai viết thay anh được. Bài viết có kiến thức thật thì cả Google lẫn khách đều tin hơn."
+      },
+      {
+        "title": "Công nghệ web của bên em có sẵn công cụ",
+        "text": "Công cụ hỗ trợ và theo dõi vận hành có sẵn trong cách bên em làm web. Khi anh mở rộng hay cần web mới, nền đã sẵn sàng."
+      }
+    ]
+  },
+  "terms": [
+    "Đặt cọc 50% khi xác nhận, 50% còn lại khi bàn giao công cụ và buổi hướng dẫn.",
+    "Tài khoản quản trị web, tên miền và toàn bộ nội dung vẫn thuộc về anh.",
+    "Việc ngoài phạm vi (làm web mới, chạy quảng cáo, chụp ảnh công trình) báo giá riêng bằng văn bản trước khi làm.",
+    "Tiến độ lùi tương ứng nếu ảnh, thông tin hoặc quyền truy cập đến chậm.",
+    "Báo giá có hiệu lực đến 11/11/2026."
+  ],
+  "faq": [
+    {
+      "q": "Làm xong web có lên top Google không?",
+      "a": "Không ai hứa trước được thứ hạng, vì Google tự quyết. Em cam kết làm đúng những việc Google cần, và mỗi tháng gửi anh số thật: web hiện ra bao nhiêu lần, bao nhiêu người bấm, họ tìm bằng chữ gì."
+    },
+    {
+      "q": "Anh bận thi công, có tự chăm nổi không?",
+      "a": "Công cụ chia việc thành từng phần nhỏ theo tuần. Tuần nào anh không làm được thì việc vẫn còn đó, không mất gì. Nếu bận lâu dài, anh chuyển sang gói tháng để bên em làm thay."
+    },
+    {
+      "q": "Sau 3 tháng có bắt buộc đăng ký gói tháng không?",
+      "a": "Không. Anh có thể tự chăm hoàn toàn. Gói tháng chỉ dành cho khi anh muốn có người làm cùng."
+    }
+  ],
+  "cta": {
+    "headline": "Anh muốn bắt đầu theo hướng nào?",
+    "text": "Anh nhắn em qua Zalo, mình hẹn 15 phút để em mở web và chỉ trực tiếp các chỗ cần sửa.",
+    "button": "Nhắn Zalo cho Duy",
+    "href": "https://zalo.me/0938415218",
+    "note": "Báo giá có hiệu lực đến 11/11/2026"
+  }
+}</script>
+<script>
+(function(){
+  var root=document.getElementById('app');
+  var D;
+  try{D=JSON.parse(document.getElementById('data').textContent)}catch(e){root.textContent='Dữ liệu báo giá không hợp lệ.';return}
+  var M=D.meta||{};
+
+  function $(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null&&x!=='')e.textContent=x;return e}
+  function put(p){for(var i=1;i<arguments.length;i++){if(arguments[i])p.appendChild(arguments[i])}return p}
+  function safeHref(h){return /^(https?:|tel:|mailto:)/i.test(h||'')?h:'#'}
+  function lum(hex){
+    var m=/^#?([0-9a-f]{6})$/i.exec(hex||'');if(!m)return 0;
+    var n=parseInt(m[1],16),c=[(n>>16)&255,(n>>8)&255,n&255].map(function(v){v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)});
+    return .2126*c[0]+.7152*c[1]+.0722*c[2];
+  }
+  if(M.accent&&/^#[0-9a-f]{6}$/i.test(M.accent)){
+    document.documentElement.style.setProperty('--accent',M.accent);
+    document.documentElement.style.setProperty('--accent-ink',lum(M.accent)>0.42?'#111111':'#ffffff');
+  }
+  document.title=M.title||('Báo giá '+(M.client||''));
+
+  function section(id,title,intro){
+    var s=$('section','sec');if(id)s.id=id;
+    if(title)put(s,$('h2',null,title));
+    if(intro)put(s,$('p','lead',intro));
+    return s;
+  }
+
+  function planCard(p){
+    var a=$('article','plan'+(p.recommended?' rec':''));
+    if(p.recommended)put(a,$('div','badge',p.badge||'Khuyên dùng'));
+    put(a,$('h3',null,p.name));
+    if(p.tagline)put(a,$('p','tl',p.tagline));
+    var pr=$('div','price');put(pr,$('b',null,p.price));if(p.unit)put(pr,$('span',null,p.unit));put(a,pr);
+    if(p.forWho)put(a,$('p','for',p.forWho));
+    var ul=$('ul','feat');
+    (p.features||[]).forEach(function(f){
+      var t=typeof f==='string'?f:f.text,inc=typeof f==='string'?true:f.included!==false;
+      put(ul,$('li',inc?'':'no',t));
+    });
+    put(a,ul);
+    if(p.delivery)put(a,$('p','deliv',p.delivery));
+    return a;
+  }
+
+  var app=$('div');
+
+  if(M.sample){put(app,$('div','sample','Dữ liệu minh họa — thay bằng thông tin khách thật trước khi gửi'))}
+
+  var wrap=$('div','wrap');
+  put(app,wrap);
+
+  // top
+  var top=$('div','top');
+  put(top,put($('span'),$('b',null,M.brand||'')));
+  var meta=[];if(M.client)meta.push('Dành cho '+M.client);if(M.date)meta.push(M.date);
+  put(top,$('span',null,meta.join(' · ')));
+  put(wrap,top);
+
+  // hero
+  var H=D.hero||{};
+  var hero=$('header','hero');
+  if(H.eyebrow)put(hero,$('p','eyebrow',H.eyebrow));
+  if(H.headline)put(hero,$('h1',null,H.headline));
+  if(H.sub)put(hero,$('p','sub',H.sub));
+  if(H.highlights&&H.highlights.length){
+    var ch=$('div','chips');
+    H.highlights.forEach(function(h){put(ch,put($('div','chip'),$('b',null,h.value),$('span',null,h.label)))});
+    put(hero,ch);
+  }
+  put(wrap,hero);
+
+  // understand
+  var U=D.understand;
+  if(U){
+    var s=section('hieu',U.title||'Chúng tôi hiểu điều bạn cần');
+    if(U.quote){var q=$('blockquote','quote',U.quote);if(U.quoteBy)put(q,$('small',null,U.quoteBy));put(s,q)}
+    if(U.points&&U.points.length){
+      var pts=$('div','points card');
+      U.points.forEach(function(p){put(pts,put($('div','point'),$('b',null,p.label),$('span',null,p.text)))});
+      put(s,pts);
+    }
+    put(wrap,s);
+  }
+
+  // explain (giải thích các lựa chọn bằng ví dụ đời thường, ví dụ các loại hosting)
+  var X=D.explain;
+  if(X&&X.items&&X.items.length){
+    var sx=section('giaithich',X.title||'Hiểu nhanh các lựa chọn',X.intro);
+    var gx=$('div','plans'+(X.items.length===4?' two':''));
+    X.items.forEach(function(it){
+      var a=$('article','plan'+(it.recommended?' rec':''));
+      if(it.badge)put(a,$('div','badge',it.badge));
+      put(a,$('h3',null,it.name));
+      if(it.analogy)put(a,$('p','analogy',it.analogy));
+      var ul=$('ul','feat');
+      (it.good||[]).forEach(function(t){put(ul,$('li',null,t))});
+      (it.bad||[]).forEach(function(t){put(ul,$('li','con',t))});
+      put(a,ul);
+      if(it.fit)put(a,$('p','for','Hợp với: '+it.fit));
+      if(it.cost)put(a,$('p','deliv','Chi phí tham khảo: '+it.cost));
+      put(gx,a);
+    });
+    put(sx,gx);
+    if(X.note)put(sx,$('p','fine',X.note));
+    put(wrap,sx);
+  }
+
+  // approach
+  var A=D.approach;
+  if(A&&A.items&&A.items.length){
+    var s2=section('giaiphap',A.title||'Hướng giải quyết',A.intro);
+    var map=$('div','map');
+    A.items.forEach(function(it){
+      var r=$('div','row');
+      put(r,put($('div','need'),$('span','tag','Anh cần'),$('span',null,it.need)));
+      put(r,put($('div','sol'),$('span','tag','Bên em làm'),$('span',null,it.solution)));
+      if(it.benefit)put(r,put($('div','ben'),$('span','tag','Anh nhận được'),$('span',null,it.benefit)));
+      put(map,r);
+    });
+    put(s2,map);put(wrap,s2);
+  }
+
+  // packages
+  var P=D.packages;
+  if(P&&P.items&&P.items.length){
+    var s3=section('goi',P.title||'Chọn gói phù hợp',P.note);
+    var pl=$('div','plans');
+    P.items.forEach(function(p){put(pl,planCard(p))});
+    put(s3,pl);put(wrap,s3);
+  }
+
+  // running
+  var R=D.running;
+  if(R&&R.rows&&R.rows.length){
+    var s4=section('chiphi',R.title||'Hosting và vận hành',R.intro);
+    var cs=$('div','costs');
+    R.rows.forEach(function(r){
+      var c=$('div','cost');
+      var a1=$('div');put(a1,$('b',null,r.item));if(r.note)put(a1,$('small',null,r.note));
+      var a2=$('div','amt',(r.cost||'')+(r.period?' '+r.period:''));
+      var a3=$('div','who',r.payer||'');
+      put(c,a1,a2,a3);put(cs,c);
+    });
+    put(s4,cs);
+    var C=D.care;
+    if(C&&C.items&&C.items.length){
+      var ch2=$('div');ch2.style.marginTop='30px';
+      put(ch2,$('h2',null,C.title||'Gói chăm sóc hàng tháng'));ch2.firstChild.style.fontSize='clamp(1.2rem,3.4vw,1.5rem)';
+      if(C.intro)put(ch2,$('p','lead',C.intro));
+      var cp=$('div','plans');C.items.forEach(function(p){put(cp,planCard(p))});
+      put(ch2,cp);
+      if(C.fine)put(ch2,$('p','fine',C.fine));
+      put(s4,ch2);
+    }
+    put(wrap,s4);
+  }
+
+  // total
+  var T=D.total;
+  if(T&&T.sum){
+    var tb=$('div','total');
+    put(tb,$('h3',null,T.title||'Tổng chi phí'));
+    (T.lines||[]).forEach(function(l){put(tb,put($('div','ln'),$('span',null,l.label),$('span',null,l.value)))});
+    put(tb,put($('div','sum'),$('span',null,'Tổng'),$('b',null,T.sum)));
+    if(T.note)put(tb,$('p','nt',T.note));
+    var tw=$('section','sec');tw.style.marginTop='24px';put(tw,tb);put(wrap,tw);
+  }
+
+  // timeline
+  var TL=D.timeline;
+  if(TL&&TL.steps&&TL.steps.length){
+    var s5=section('quytrinh',TL.title||'Quy trình');
+    var st=$('ol','steps');
+    TL.steps.forEach(function(x){
+      var li=$('li','step');
+      put(li,$('b',null,x.step));
+      if(x.when)put(li,$('span','when',x.when));
+      if(x.clientDo)put(li,$('p','me','Phía anh: '+x.clientDo));
+      put(st,li);
+    });
+    put(s5,st);put(wrap,s5);
+  }
+
+  // why + proof
+  [['why',D.why,'Vì sao chọn chúng tôi'],['proof',D.proof,'Dự án đã thực hiện']].forEach(function(g){
+    var X=g[1];if(!X||!X.items||!X.items.length)return;
+    var s6=section(g[0],X.title||g[2]);
+    var cd=$('div','cards');
+    X.items.forEach(function(it){put(cd,put($('div','card'),$('h3',null,it.title),$('p',null,it.text)))});
+    put(s6,cd);put(wrap,s6);
+  });
+
+  // terms
+  if(D.terms&&D.terms.length){
+    var s7=section('dieukhoan','Điều khoản chính');
+    var tu=$('ul','terms');D.terms.forEach(function(t){put(tu,$('li',null,t))});
+    put(s7,tu);put(wrap,s7);
+  }
+
+  // faq
+  if(D.faq&&D.faq.length){
+    var s8=section('hoidap','Câu hỏi thường gặp');
+    D.faq.forEach(function(f){
+      var d=$('details');put(d,put($('summary'),$('span',null,f.q)),$('p',null,f.a));put(s8,d);
+    });
+    put(wrap,s8);
+  }
+
+  // CTA
+  var K=D.cta||{};
+  var cta=$('section','cta');cta.id='chot';
+  put(cta,$('h2',null,K.headline||'Sẵn sàng bắt đầu?'));
+  if(K.text)put(cta,$('p',null,K.text));
+  var b=$('a','btn',K.button||'Liên hệ xác nhận');b.href=safeHref(K.href);
+  if(/^https?:/i.test(b.href)){b.target='_blank';b.rel='noopener'}
+  put(cta,b);
+  if(K.note)put(cta,$('p','nt',K.note));
+  put(wrap,cta);
+
+  var ft=[];if(M.contact)ft.push(M.contact);if(M.validUntil)ft.push('Báo giá có hiệu lực đến '+M.validUntil);
+  put(wrap,$('div','foot',ft.join(' · ')));
+
+  // sticky
+  var rec=null;((D.packages||{}).items||[]).forEach(function(p){if(p.recommended&&!rec)rec=p});
+  var sb=$('div','sticky');
+  var tx=$('div','t');
+  if(rec){put(tx,$('b',null,rec.price));put(tx,document.createTextNode('Gói '+rec.name+(rec.unit?' · '+rec.unit:'')))}
+  else put(tx,$('b',null,M.client||'Báo giá'));
+  var b2=$('a','btn',K.button||'Liên hệ');b2.href=safeHref(K.href);
+  if(/^https?:/i.test(b2.href)){b2.target='_blank';b2.rel='noopener'}
+  put(sb,tx,b2);put(app,sb);
+
+  root.appendChild(app);
+})();
+</script>
+<script src="/quote-track.js" data-version="v2" defer></script>
+</body>
+</html>

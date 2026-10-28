@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "slug": "duy-phuong-glass-o6frby",
+    "client_short": "Duy Phương",
+    "title": "Chăm web Duy Phương Glass",
+    "brand": "Duy Web",
+    "client": "anh Phượng · Duy Phương Glass",
+    "clientCall": "anh",
+    "date": "28/10/2026",
+    "validUntil": "11/11/2026",
+    "accent": "#0074E2",
+    "contact": "Duy Web · Zalo 0938 415 218 · duyweb.info.vn"
+  },
+  "hero": {
+    "eyebrow": "Đề xuất riêng cho anh Phượng · Duy Phương Glass",
+    "headline": "Không làm lại web. Giúp anh hiểu và tự chăm được web của mình.",
+    "sub": "Web matdungkinhtphcm.vn đã có những công trình đáng để kể. Cái thiếu là người chăm và một cách làm SEO anh hiểu được. Trang này giải thích SEO từ nghĩa đen, rồi đến chi phí cụ thể và hướng em đề xuất.",
+    "highlights": [
+      { "value": "14 triệu", "label": "trọn gói, trả một lần" },
+      { "value": "3 tháng", "label": "em chăm SEO cùng anh" },
+      { "value": "Từ 1 triệu", "label": "mỗi tháng nếu anh muốn em chăm tiếp" }
+    ]
+  },
+  "understand": {
+    "title": "Em hiểu tình hình của anh thế này",
+    "points": [
+      { "label": "Hiện tại", "text": "Web đã có 10 bài công trình (Bệnh viện 175, MB Bank, Kho bạc Long An, Kho bạc Bình Dương…), nhưng bài mới nhất từ 04/10/2025. Hơn một năm nay web không có ai chăm." },
+      { "label": "Vướng ở đâu", "text": "Anh nghe nói nhiều về SEO nhưng chưa rõ nó là gì, làm thế nào, và làm rồi thì đo kết quả ở đâu." },
+      { "label": "Mục tiêu", "text": "Anh hiểu đủ để tự điều khiển marketing cho công ty. Sau này mở rộng thì có người làm theo đúng cách đó, không phụ thuộc vào ai." }
+    ]
+  },
+  "explain": {
+    "title": "SEO là gì: từ nghĩa đen đến cách làm",
+    "intro": "SEO là viết tắt của Search Engine Optimization, dịch sát nghĩa là \"tối ưu cho công cụ tìm kiếm\". Nói theo nghề của anh: web là showroom, Google là người chỉ đường. SEO là làm sao để khi có người hỏi đường tới \"vách kính mặt dựng\", Google chỉ về showroom của anh.",
+    "items": [
+      {
+        "name": "1. Google đọc web thế nào",
+        "analogy": "Giống kỹ sư đọc bản vẽ: không có tiêu đề, không có chú thích thì đọc không ra. Google đọc chữ, không nhìn được ảnh đẹp hay xấu.",
+        "good": ["Mỗi trang có một tiêu đề chính nói rõ trang làm gì", "Ảnh có chú thích bằng chữ, ví dụ \"mặt dựng kính Kho bạc Long An\""],
+        "bad": ["Trang chủ hiện chưa có tiêu đề chính", "16/25 ảnh trang chủ chưa có chú thích"]
+      },
+      {
+        "name": "2. Biển hiệu trên Google",
+        "analogy": "Kết quả tìm kiếm là dãy biển hiệu. Biển ghi rõ \"Thi công vách kính mặt dựng TP.HCM\" thì khách mới bấm vào.",
+        "good": ["Viết tiêu đề và đoạn mô tả riêng cho từng trang", "Trang Liên hệ gọn gàng, số điện thoại và email đúng"],
+        "bad": ["Trang chủ chưa có đoạn mô tả, Google tự cắt chữ để hiện", "Trang Liên hệ đang lộ một đoạn mã ra ngoài, email ghi \"@gmail.com.vn\" khách gửi có thể không tới"]
+      },
+      {
+        "name": "3. Nội dung khách đang tìm",
+        "analogy": "Khách không gõ tên công ty anh. Họ gõ \"giá vách kính mặt dựng bao nhiêu 1m2\", \"cửa nhôm kính hay uPVC bền hơn\". Trang nào trả lời đúng câu đó, trang đó được chỉ đường.",
+        "good": ["Mỗi công trình là một bài: hạng mục, vật liệu, khó khăn, ảnh thật", "Bài hỏi đáp từ câu khách hay hỏi anh qua điện thoại"],
+        "bad": ["Hơn một năm không có bài mới", "Hai bài \"Hệ thống vách kính – mặt dựng\" trùng nhau, Google không biết chọn bài nào"]
+      },
+      {
+        "name": "4. Đo để biết có hiệu quả",
+        "analogy": "Như nghiệm thu công trình: phải có số đo. Google có công cụ miễn phí cho biết web hiện ra bao nhiêu lần, bao nhiêu người bấm, họ gõ chữ gì.",
+        "good": ["Cài Google Search Console và Google Analytics", "Mỗi tháng đọc số cùng anh, quyết định viết gì tiếp"],
+        "bad": ["Còn phần giỏ hàng, thanh toán, cửa hàng của web bán lẻ, trong khi anh làm theo công trình", "Chưa khai báo cho Google thông tin công ty và 4 chi nhánh"]
+      }
+    ],
+    "note": "Dấu ✓ là việc bên em làm cho web anh. Dấu ✗ là điều bên em thấy trên web hiện tại khi xem ngày 28/10/2026."
+  },
+  "approach": {
+    "title": "Hướng giải quyết em đề xuất",
+    "intro": "Em không bắt anh làm web mới. Em giữ web hiện tại, sửa chỗ hỏng, rồi trao cho anh công cụ và cách làm để tự chăm.",
+    "items": [
+      {
+        "need": "Web có mà không ai chăm",
+        "solution": "3 tháng đầu bên em chăm SEO, vừa làm vừa chỉ anh từng bước",
+        "benefit": "Web có bài mới đều, anh thấy tận mắt cách làm thay vì nghe lý thuyết"
+      },
+      {
+        "need": "Chưa hiểu SEO, không biết bắt đầu từ đâu",
+        "solution": "Công cụ hướng dẫn chăm web do Duy Web làm: việc cần làm mỗi tuần, mẫu viết bài công trình, cách đọc số liệu",
+        "benefit": "Anh tự quyết được nên viết gì, và biết bài nào mang khách về"
+      },
+      {
+        "need": "Sợ phải làm lại web, tốn tiền mà chưa chắc hơn",
+        "solution": "Giữ nguyên web WordPress hiện tại, chỉ sửa lỗi và chăm thêm nội dung",
+        "benefit": "Không mất công trình, bài viết đã có; không tốn tiền làm web mới"
+      },
+      {
+        "need": "Sau này mở rộng, cần có người làm",
+        "solution": "Quy trình và tài liệu viết sẵn; giao cho nhân viên, hoặc bên em chăm tiếp theo tháng",
+        "benefit": "Marketing chạy theo một cách làm chung, không phụ thuộc một người"
+      }
+    ]
+  },
+  "packages": {
+    "title": "Gói trọn gói",
+    "note": "Trả một lần, đã gồm 3 tháng chăm SEO. Không phải làm web mới.",
+    "items": [
+      {
+        "name": "Chăm & Hướng dẫn",
+        "tagline": "Sửa web, chăm SEO 3 tháng, trao công cụ để anh tự làm",
+        "price": "14.000.000đ",
+        "unit": "trọn gói",
+        "recommended": true,
+        "badge": "Duy đề xuất",
+        "forWho": "Cho chủ doanh nghiệp muốn hiểu và tự điều khiển marketing của mình",
+        "features": [
+          "Giữ nguyên web hiện tại, không làm lại",
+          "Sửa lỗi nền: tiêu đề, mô tả, chú thích ảnh, trang Liên hệ, bài trùng, dọn phần giỏ hàng không dùng",
+          "Công cụ hướng dẫn chăm web do Duy Web làm, kèm công cụ theo dõi vận hành",
+          "Cài Google Search Console và Google Analytics",
+          "Chăm SEO 3 tháng: bên em làm cùng anh, anh xem và thử từng bước",
+          "Buổi hướng dẫn vận hành và tài liệu dễ hiểu",
+          "Báo cáo mỗi tháng bằng lời thường, không thuật ngữ",
+          "Buổi đánh giá cuối tháng thứ 3 để chọn hướng tiếp"
+        ],
+        "delivery": "Đồng hành 3 tháng · Tài khoản web và tên miền anh vẫn giữ"
+      }
+    ]
+  },
+  "running": {
+    "title": "Kinh phí anh cần có, rõ từ đầu",
+    "intro": "Ngoài gói 14 triệu, đây là các khoản liên quan và ai trả.",
+    "rows": [
+      { "item": "Tên miền matdungkinhtphcm.vn", "cost": "Như hiện tại", "period": "", "payer": "Anh giữ, gia hạn như cũ", "note": "Đứng tên công ty anh" },
+      { "item": "Hosting tháng 1–3", "cost": "Như hiện tại", "period": "", "payer": "Anh trả như đang trả", "note": "Chưa cần đổi trong 3 tháng đầu" },
+      { "item": "Hosting từ tháng 4", "cost": "Đã gồm", "period": "", "payer": "Trong gói tháng", "note": "Nếu anh chọn một gói tháng bên dưới" },
+      { "item": "Google Search Console, Google Analytics", "cost": "Miễn phí", "period": "", "payer": "Google", "note": "Công cụ đo của Google" }
+    ]
+  },
+  "care": {
+    "title": "Từ tháng thứ 4: anh chọn",
+    "intro": "Sau 3 tháng anh có thể tự chăm hoàn toàn, không trả thêm cho bên em. Nếu muốn có người làm cùng, có 3 mức, đổi được từng tháng.",
+    "items": [
+      {
+        "name": "Anh chăm, em kèm",
+        "tagline": "Anh tự làm theo công cụ, em theo sát",
+        "price": "1.000.000đ",
+        "unit": "/tháng",
+        "recommended": true,
+        "badge": "Hợp nhất sau 3 tháng",
+        "features": [
+          "Hosting, sao lưu, cập nhật bảo mật web",
+          "Theo dõi web chạy ổn mỗi ngày",
+          "Anh vướng chỗ nào thì hỏi, em trả lời",
+          "Đọc số liệu cùng anh mỗi tháng"
+        ]
+      },
+      {
+        "name": "Cùng làm",
+        "tagline": "Chia việc: anh cung cấp, em viết",
+        "price": "2.000.000đ",
+        "unit": "/tháng",
+        "features": [
+          "Mọi thứ trong gói 1 triệu",
+          "Bên em cùng viết và đăng bài công trình, bài hỏi đáp",
+          "Anh chỉ cần gửi ảnh và vài dòng về công trình"
+        ]
+      },
+      {
+        "name": "Giao hẳn cho em",
+        "tagline": "Anh tập trung thi công, em lo web",
+        "price": "3.000.000đ",
+        "unit": "/tháng",
+        "features": [
+          "Mọi thứ trong gói 2 triệu",
+          "Bên em làm toàn bộ nội dung và SEO",
+          "Báo cáo kết quả, đề xuất việc tiếp theo"
+        ]
+      }
+    ],
+    "fine": "Không ràng buộc dài hạn. Muốn tăng, giảm hay dừng thì báo trước tháng sau."
+  },
+  "total": {
+    "title": "Năm đầu tiên theo hướng em đề xuất",
+    "lines": [
+      { "label": "Gói Chăm & Hướng dẫn (gồm 3 tháng chăm SEO)", "value": "14.000.000đ" },
+      { "label": "Tháng 4 đến 12: gói 1 triệu × 9 tháng (đã gồm hosting)", "value": "9.000.000đ" }
+    ],
+    "sum": "23.000.000đ",
+    "note": "Nếu sau 3 tháng anh tự chăm hoàn toàn: 14.000.000đ cộng tiền hosting, tên miền anh đang trả. Nếu chọn gói 2 triệu: 32.000.000đ năm đầu. Gói 3 triệu: 41.000.000đ năm đầu."
+  },
+  "timeline": {
+    "title": "Các bước làm",
+    "steps": [
+      { "step": "Xem kỹ web và sửa lỗi nền", "when": "Tuần 1–2", "clientDo": "cấp quyền quản trị web, gửi ảnh công trình đang có" },
+      { "step": "Bàn giao công cụ hướng dẫn và buổi hướng dẫn vận hành", "when": "Tuần 3", "clientDo": "dành khoảng 1–2 tiếng ngồi cùng em" },
+      { "step": "Chăm SEO cùng anh: bài công trình, bài hỏi đáp, báo cáo tháng", "when": "Tháng 1–3", "clientDo": "gửi ảnh và vài dòng mỗi khi có công trình mới" },
+      { "step": "Buổi đánh giá: đọc số liệu 3 tháng, chọn tự làm hay gói tháng", "when": "Cuối tháng 3", "clientDo": "quyết định hướng tiếp theo" }
+    ]
+  },
+  "why": {
+    "title": "Vì sao em không đề nghị làm web mới",
+    "items": [
+      { "title": "Web cũ đang có tài sản", "text": "10 công trình như Bệnh viện 175, MB Bank, kho bạc Long An và Bình Dương là bằng chứng mà nhiều đối thủ không có. Google đã biết các trang này, làm lại từ đầu là bỏ phí." },
+      { "title": "Chăm web dựng sẵn rất cực", "text": "Web WordPress dựng sẵn có nhiều lớp giao diện và plugin, chăm cho đúng thì ngay cả bên em làm nghề cũng mất công. Vì vậy em làm công cụ chỉ đúng việc cần làm, thay vì để anh tự mò." },
+      { "title": "Anh là người hiểu nghề nhất", "text": "Kiến thức thi công và cách nói chuyện với chủ đầu tư, nhà thầu, chủ nhà là thứ không ai viết thay anh được. Bài viết có kiến thức thật thì cả Google lẫn khách đều tin hơn." },
+      { "title": "Công nghệ web của bên em có sẵn công cụ", "text": "Công cụ hỗ trợ và theo dõi vận hành có sẵn trong cách bên em làm web. Khi anh mở rộng hay cần web mới, nền đã sẵn sàng." }
+    ]
+  },
+  "terms": [
+    "Đặt cọc 50% khi xác nhận, 50% còn lại khi bàn giao công cụ và buổi hướng dẫn.",
+    "Tài khoản quản trị web, tên miền và toàn bộ nội dung vẫn thuộc về anh.",
+    "Việc ngoài phạm vi (làm web mới, chạy quảng cáo, chụp ảnh công trình) báo giá riêng bằng văn bản trước khi làm.",
+    "Tiến độ lùi tương ứng nếu ảnh, thông tin hoặc quyền truy cập đến chậm.",
+    "Báo giá có hiệu lực đến 11/11/2026."
+  ],
+  "faq": [
+    { "q": "Làm xong web có lên top Google không?", "a": "Không ai hứa trước được thứ hạng, vì Google tự quyết. Em cam kết làm đúng những việc Google cần, và mỗi tháng gửi anh số thật: web hiện ra bao nhiêu lần, bao nhiêu người bấm, họ tìm bằng chữ gì." },
+    { "q": "Anh bận thi công, có tự chăm nổi không?", "a": "Công cụ chia việc thành từng phần nhỏ theo tuần. Tuần nào anh không làm được thì việc vẫn còn đó, không mất gì. Nếu bận lâu dài, anh chuyển sang gói tháng để bên em làm thay." },
+    { "q": "Sau 3 tháng có bắt buộc đăng ký gói tháng không?", "a": "Không. Anh có thể tự chăm hoàn toàn. Gói tháng chỉ dành cho khi anh muốn có người làm cùng." }
+  ],
+  "cta": {
+    "headline": "Anh muốn bắt đầu theo hướng nào?",
+    "text": "Anh nhắn em qua Zalo, mình hẹn 15 phút để em mở web và chỉ trực tiếp các chỗ cần sửa.",
+    "button": "Nhắn Zalo cho Duy",
+    "href": "https://zalo.me/0938415218",
+    "note": "Báo giá có hiệu lực đến 11/11/2026"
+  }
+}
