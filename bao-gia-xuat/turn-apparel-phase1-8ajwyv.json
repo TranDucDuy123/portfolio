@@ -1,0 +1,365 @@
+{
+  "meta": {
+    "slug": "turn-apparel-phase1-8ajwyv",
+    "client_short": "TURN",
+    "title": "TURN × Duy Web · Phase 1",
+    "brand": "Duy Web",
+    "client": "TURN Apparel",
+    "clientCall": "TURN",
+    "date": "30/10/2026",
+    "validUntil": "13/11/2026",
+    "accent": "#C2410C",
+    "contact": "Duy Web · Zalo 0938 415 218 · duyweb.info.vn"
+  },
+  "hero": {
+    "eyebrow": "Chốt phạm vi & báo giá Phase 1 · TURN Apparel × Duy Web\nScope confirmation & Phase 1 quote",
+    "headline": "Sapo lo vận hành. Duy Web lo website và marketing.\nSapo runs operations. Duy Web runs web and marketing.",
+    "sub": "Tổng hợp từ buổi trao đổi và hợp đồng Sapo Omni V3 của TURN: phần nào Sapo đã có, phần nào Duy Web nhận, chi phí từng phần và các mốc thanh toán.\nA summary of our discussion and TURN's Sapo Omni V3 contract: what Sapo covers, what Duy Web takes on, the cost of each part and payment milestones.",
+    "highlights": [
+      {
+        "value": "14 triệu",
+        "label": "Phí setup Phase 1, trả một lần"
+      },
+      {
+        "value": "2 triệu",
+        "label": "/tháng Digital Care, gói khuyên dùng"
+      },
+      {
+        "value": "0đ",
+        "label": "hosting cộng thêm, đã có trong Sapo"
+      }
+    ]
+  },
+  "understand": {
+    "title": "Những gì hai bên đã thống nhất\nWhat we have agreed",
+    "points": [
+      {
+        "label": "Sapo đã có\nSapo covers",
+        "text": "Sapo Omni V3, 36 tháng (mua 24 tặng 12): 15 gian hàng sàn (Shopee, Lazada, TikTok Shop, Tiki), 5 trang kết nối, website 5 GB, 30 tài khoản nhân viên, 2 chi nhánh, SSL, 100 điểm AI/tháng trong 3 tháng đầu.\n36-month Sapo Omni V3: marketplace stores, connected pages, website, staff accounts, branches, SSL and AI points."
+      },
+      {
+        "label": "Còn thiếu\nStill missing",
+        "text": "Phần website và marketing: trình bày sản phẩm, SEO, nhận diện đồng bộ giữa các kênh, đo lường và nội dung để TURN được nhìn thấy tại Việt Nam.\nWeb and marketing: product presentation, SEO, consistent identity, tracking and content."
+      },
+      {
+        "label": "Nguyên tắc\nPrinciples",
+        "text": "TURN quyết định sản phẩm, định vị và ngân sách. Chỉ mở rộng khi có dữ liệu. Không hứa trước tương tác, đơn hàng hay doanh thu.\nTURN decides; data comes first; no promised numbers."
+      }
+    ]
+  },
+  "explain": {
+    "title": "Ai làm phần nào\nWho does what",
+    "intro": "Bốn nhóm việc, tách rõ để TURN biết mình trả tiền cho cái gì.\nFour groups, kept separate so TURN knows exactly what it pays for.",
+    "items": [
+      {
+        "name": "Sapo (đã ký)\nSapo (contracted)",
+        "analogy": "Hệ thống bán hàng: đơn, kho, gian hàng, hạ tầng website.\nThe sales system: orders, stock, stores, website hosting.",
+        "good": [
+          "Quản lý bán hàng đa kênh",
+          "Hosting website 5 GB, SSL",
+          "Trang kết nối Facebook, Instagram, Zalo, TikTok",
+          "Tùy biến giao diện website theo hợp đồng"
+        ],
+        "bad": []
+      },
+      {
+        "name": "Duy Web · Phase 1",
+        "analogy": "Phần TURN được nhìn thấy: website, kênh, nhận diện, đo lường.\nHow TURN gets seen: website, channels, identity, tracking.",
+        "good": [
+          "Tối ưu website Sapo hiện có, SEO nền tảng, blog",
+          "Mở shop trên các kênh liên kết Sapo, 30 sản phẩm mỗi kênh",
+          "Chuẩn hoá nhận diện trên 5 kênh",
+          "Tracking, báo cáo, nội dung mở màn"
+        ],
+        "bad": []
+      },
+      {
+        "name": "Báo giá & duyệt riêng\nScoped and approved separately",
+        "analogy": "Chỉ làm khi TURN đã xem phạm vi và duyệt ngân sách.\nOnly after TURN reviews the scope and approves the budget.",
+        "good": [],
+        "bad": [
+          "Ngân sách quảng cáo",
+          "Sản xuất nội dung, chụp, quay",
+          "Hợp tác KOC",
+          "Dịch vụ chuyên môn khác, phí nền tảng và đối tác"
+        ]
+      },
+      {
+        "name": "TURN quyết định\nTURN decides",
+        "analogy": "Những điều Duy Web không tự quyết thay TURN.\nDecisions Duy Web never makes on TURN's behalf.",
+        "good": [
+          "Khách hàng mục tiêu và định vị",
+          "Dòng sản phẩm ưu tiên, giá và chính sách",
+          "Bộ nhận diện gốc",
+          "Ngân sách và việc đặt dịch vụ"
+        ],
+        "bad": []
+      }
+    ],
+    "note": "Dấu ✓ là phần đã có hoặc đã nằm trong phạm vi. Dấu ✗ là phần không nằm trong phí setup, báo giá riêng khi TURN cần.\n✓ = covered or in scope. ✗ = outside the setup fee, quoted separately when needed."
+  },
+  "approach": {
+    "title": "Phạm vi Duy Web nhận trong Phase 1\nDuy Web's Phase 1 scope",
+    "intro": "Không xây lại website. Dùng nền Sapo TURN đã trả, xây phần website và marketing lên trên.\nNo rebuild. We build web and marketing on the Sapo platform TURN already pays for.",
+    "items": [
+      {
+        "need": "Website Sapo chưa được tối ưu\nThe Sapo website is not optimised yet",
+        "solution": "Rà soát và điều phối cải thiện: thiết kế, SEO nền tảng, trình bày sản phẩm, blog để làm SEO\nReview and improve design, SEO basics, product pages and an SEO blog",
+        "benefit": "Website làm trung tâm thương hiệu, không tốn chi phí làm lại\nA brand hub without redevelopment costs"
+      },
+      {
+        "need": "Chưa có shop trên các kênh\nNo stores on the channels yet",
+        "solution": "Mở shop liên kết Sapo theo điều kiện thực tế (Shopee, TikTok Shop…), 30 sản phẩm mỗi kênh\nOpen Sapo-linked stores, 30 products per channel",
+        "benefit": "Đơn từ mọi kênh về Sapo quản lý một chỗ\nOrders from every channel land in Sapo"
+      },
+      {
+        "need": "Mỗi kênh một kiểu hình ảnh\nEach channel looks different",
+        "solution": "Chuẩn hoá logo, ảnh bìa, màu, mẫu ảnh sản phẩm, giọng văn, thông tin trên Website, Facebook, Instagram, TikTok, Shopee\nAdapt the master identity to all five channels",
+        "benefit": "TURN nhất quán ở mọi điểm chạm\nOne consistent TURN everywhere"
+      },
+      {
+        "need": "Chưa đo được khách quan tâm gì\nNo way to read the market yet",
+        "solution": "Tracking và báo cáo: tìm kiếm, nội dung, hành vi trên web, phản hồi khách\nTracking and reports across search, content, site behaviour and feedback",
+        "benefit": "Quyết định Phase 2 bằng dữ liệu thật\nPhase 2 decided on real data"
+      },
+      {
+        "need": "Cần bắt đầu xuất hiện\nTURN needs to start showing up",
+        "solution": "Đăng nội dung mở màn, giới thiệu sản phẩm, thu tín hiệu ban đầu\nLaunch content and first product introductions",
+        "benefit": "Biết sớm sản phẩm, màu, giá, thông điệp nào được quan tâm\nEarly signals on products, colours, prices and messages"
+      }
+    ]
+  },
+  "packages": {
+    "title": "Phí setup Phase 1\nPhase 1 setup fee",
+    "note": "Trả một lần, chia hai đợt. Chưa gồm thuê bao Sapo, phí sàn và ngân sách bên thứ ba.\nOne-time, paid in two instalments. Excludes Sapo, marketplace fees and third-party budgets.",
+    "items": [
+      {
+        "name": "Build the Foundation",
+        "tagline": "Xây nền tảng số đồng bộ để TURN xuất hiện tại Việt Nam\nA consistent digital foundation for TURN in Vietnam",
+        "price": "14.000.000đ",
+        "unit": "một lần · one-time",
+        "recommended": true,
+        "badge": "Phạm vi đã chốt",
+        "forWho": "Gồm 6 nhóm công việc · 6 work groups",
+        "features": [
+          "Website: tối ưu website Sapo, SEO nền tảng, blog",
+          "Shop trên các kênh liên kết Sapo, 30 sản phẩm mỗi kênh",
+          "Chuẩn hoá thông tin sản phẩm, hình ảnh, nội dung",
+          "Bộ nhận diện áp dụng cho Website, Facebook, Instagram, TikTok, Shopee",
+          "Tracking (Analytics) và hệ thống báo cáo",
+          "Đăng nội dung mở màn, thu tín hiệu ban đầu",
+          "Buổi đánh giá cuối Phase 1, đề xuất Phase 2",
+          {
+            "text": "Ngân sách quảng cáo, sản xuất nội dung, KOC",
+            "included": false
+          },
+          {
+            "text": "Phí hosting riêng (đã có trong Sapo)",
+            "included": false
+          }
+        ],
+        "delivery": "Cọc 50% khi xác nhận · 50% khi nghiệm thu setup\n50% deposit on confirmation · 50% on sign-off"
+      }
+    ]
+  },
+  "running": {
+    "title": "Toàn bộ chi phí, ai trả cho ai\nEvery cost, and who pays whom",
+    "intro": "Ba nhóm chi phí tách riêng: phí setup, phí chăm sóc định kỳ, và ngân sách của bên thứ ba.\nThree separate groups: setup, ongoing care, and third-party budgets.",
+    "rows": [
+      {
+        "item": "Thuê bao Sapo Omni V3 (36 tháng)",
+        "cost": "Theo hợp đồng Sapo",
+        "period": "",
+        "payer": "TURN trả Sapo (đã ký)",
+        "note": "Gồm hosting website và SSL, Duy Web không thu thêm"
+      },
+      {
+        "item": "Phí setup Phase 1",
+        "cost": "14.000.000đ",
+        "period": "một lần",
+        "payer": "TURN trả Duy Web",
+        "note": "Cọc 50%, nghiệm thu 50%"
+      },
+      {
+        "item": "Chăm sóc định kỳ (từ tháng 2)",
+        "cost": "1, 2 hoặc 3 triệu",
+        "period": "/tháng",
+        "payer": "TURN trả Duy Web",
+        "note": "TURN chọn mức, đổi được theo tháng"
+      },
+      {
+        "item": "Phí sàn (Shopee, TikTok Shop…)",
+        "cost": "Theo từng sàn",
+        "period": "",
+        "payer": "Sàn thu trên đơn hàng",
+        "note": "Theo chính sách của sàn"
+      },
+      {
+        "item": "Quảng cáo, KOC, sản xuất nội dung",
+        "cost": "Báo giá riêng",
+        "period": "",
+        "payer": "TURN duyệt trước khi làm",
+        "note": "Không nằm trong phí dịch vụ của Duy Web"
+      },
+      {
+        "item": "Google Analytics",
+        "cost": "Miễn phí",
+        "period": "",
+        "payer": "Google",
+        "note": "Công cụ đo lường"
+      }
+    ]
+  },
+  "care": {
+    "title": "Chăm sóc hằng tháng sau Phase 1\nMonthly care after Phase 1",
+    "intro": "Website nằm trên Sapo nên phí chăm sóc chỉ là phần dịch vụ, không cộng hosting.\nThe website runs on Sapo, so care fees cover service only, no hosting.",
+    "items": [
+      {
+        "name": "Website Care",
+        "tagline": "Website ổn định, có người hỗ trợ kỹ thuật",
+        "price": "1.000.000đ",
+        "unit": "/tháng",
+        "features": [
+          "Kiểm tra, hỗ trợ kỹ thuật website",
+          "2 yêu cầu nội dung nhỏ mỗi tháng",
+          "Báo cáo hằng tháng",
+          {
+            "text": "Kiểm tra SEO, trang sản phẩm",
+            "included": false
+          },
+          {
+            "text": "Theo dõi chỉ số website và kênh",
+            "included": false
+          },
+          {
+            "text": "Buổi định hướng hằng tháng",
+            "included": false
+          }
+        ]
+      },
+      {
+        "name": "Digital Care",
+        "tagline": "Duy trì website và được định hướng hoạt động digital",
+        "price": "2.000.000đ",
+        "unit": "/tháng",
+        "recommended": true,
+        "badge": "Khuyên dùng",
+        "features": [
+          "Mọi thứ trong Website Care",
+          "4 yêu cầu nội dung nhỏ mỗi tháng",
+          "Kiểm tra SEO, trang sản phẩm",
+          "Theo dõi chỉ số website và kênh",
+          "1 buổi định hướng mỗi tháng"
+        ]
+      },
+      {
+        "name": "Digital Growth Partner",
+        "tagline": "Một đầu mối theo dõi website và điều phối marketing",
+        "price": "3.000.000đ",
+        "unit": "/tháng",
+        "features": [
+          "Mọi thứ trong Digital Care",
+          "6 yêu cầu nội dung nhỏ mỗi tháng",
+          "Quản lý yêu cầu, kế hoạch tháng sau",
+          "Tìm và giới thiệu đối tác chuyên môn"
+        ]
+      }
+    ],
+    "fine": "Báo giá riêng: bài SEO mới, thiết kế lại, chức năng mới, quảng cáo, video, KOC, phí nền tảng và đối tác. \"Yêu cầu nhỏ\" và thời gian xử lý ghi rõ trong hợp đồng. Đối tác ở gói 3 chỉ là tìm và giới thiệu, phần đối tác làm báo giá riêng.\nQuoted separately: new SEO articles, redesign, new features, ads, video, KOC, platform and partner fees."
+  },
+  "total": {
+    "title": "Chi phí Duy Web năm đầu, theo đề xuất\nYear-one Duy Web cost, as proposed",
+    "lines": [
+      {
+        "label": "Phí setup Phase 1",
+        "value": "14.000.000đ"
+      },
+      {
+        "label": "Digital Care 2.000.000đ × 11 tháng",
+        "value": "22.000.000đ"
+      }
+    ],
+    "sum": "36.000.000đ",
+    "note": "Nếu chọn Website Care: 25.000.000đ. Nếu chọn Growth Partner: 47.000.000đ. Chưa gồm thuê bao Sapo (TURN đã ký), phí sàn và ngân sách quảng cáo, KOC, nội dung.\nWebsite Care: 25,000,000đ · Growth Partner: 47,000,000đ. Excludes Sapo, marketplace fees and third-party budgets."
+  },
+  "timeline": {
+    "title": "Các bước và mốc thanh toán\nSteps and payment milestones",
+    "steps": [
+      {
+        "step": "Thống nhất Product Direction\nAgree on Product Direction",
+        "when": "Trước khi bắt đầu",
+        "clientDo": "chốt khách hàng mục tiêu, định vị, dòng sản phẩm ưu tiên, thông điệp, giá và chính sách"
+      },
+      {
+        "step": "Xác nhận phạm vi và đặt cọc 50%\nConfirm scope, 50% deposit",
+        "when": "Khởi động",
+        "clientDo": "xác nhận báo giá, cấp quyền Sapo theo vai trò, gửi logo, ảnh sản phẩm, thông tin pháp lý để mở shop"
+      },
+      {
+        "step": "Xây nền tảng số\nBuild the foundation",
+        "when": "Phase 1",
+        "clientDo": "duyệt bộ nhận diện áp dụng cho từng kênh và nội dung mở màn"
+      },
+      {
+        "step": "Duyệt chiến lược vận hành, nghiệm thu, thanh toán 50% còn lại\nApprove operating plan, sign-off, final 50%",
+        "when": "Cuối Phase 1",
+        "clientDo": "nghiệm thu setup, chọn gói chăm sóc hằng tháng"
+      },
+      {
+        "step": "Phase 2 và Phase 3\nValidate & Optimize · Scale & Grow",
+        "when": "Khi có dữ liệu",
+        "clientDo": "duyệt kênh, KPI, đối tác và ngân sách trước mỗi bước"
+      }
+    ]
+  },
+  "why": {
+    "title": "TURN không bị phụ thuộc\nNo lock-in for TURN",
+    "items": [
+      {
+        "title": "Tài khoản đứng tên TURN",
+        "text": "Website, fanpage, TikTok, Shopee, Analytics đều do TURN làm chủ sở hữu.\nAll accounts are owned by TURN."
+      },
+      {
+        "title": "Nền tảng phổ biến",
+        "text": "Sapo, Meta, TikTok, Shopee, Google: đơn vị nào cũng tiếp quản được.\nMainstream platforms any team can take over."
+      },
+      {
+        "title": "Bàn giao đầy đủ",
+        "text": "Quyền quản trị, tài liệu hướng dẫn, bộ nhận diện và dữ liệu báo cáo.\nAdmin rights, guides, brand kit and report data."
+      },
+      {
+        "title": "Phân quyền thu hồi được",
+        "text": "Duy Web được cấp quyền theo vai trò, TURN thu hồi bất cứ lúc nào.\nRole-based access TURN can revoke anytime."
+      }
+    ]
+  },
+  "terms": [
+    "Phí setup chia hai đợt: cọc 50% khi xác nhận, 50% còn lại khi nghiệm thu setup.",
+    "Phí setup, phí chăm sóc định kỳ và ngân sách bên thứ ba là ba nhóm tách riêng; ngân sách bên thứ ba chỉ chi khi TURN đã duyệt.",
+    "Việc ngoài phạm vi trên được báo giá riêng bằng văn bản trước khi làm.",
+    "Duy Web không cam kết trước số lượng tương tác, đơn hàng hay doanh thu khi chưa có ngân sách, kế hoạch nội dung và dữ liệu cơ sở.",
+    "Tiến độ lùi tương ứng nếu tài liệu, quyền truy cập hoặc phê duyệt đến chậm.",
+    "Báo giá có hiệu lực đến 13/11/2026."
+  ],
+  "faq": [
+    {
+      "q": "Vì sao không có phí hosting?\nWhy no hosting fee?",
+      "a": "Website của TURN nằm trên Sapo, hosting và SSL đã thuộc thuê bao Sapo TURN đang trả. Duy Web không tính hai lần.\nTURN's website runs on Sapo, which already includes hosting and SSL."
+    },
+    {
+      "q": "Có phải làm lại website không?\nDo we need a new website?",
+      "a": "Không. Duy Web đánh giá website Sapo trước; nếu Sapo đáp ứng nhu cầu kinh doanh thì tiếp tục dùng và tối ưu.\nNo. If Sapo meets TURN's needs, we keep and optimise it."
+    },
+    {
+      "q": "Sau Phase 1 có bắt buộc gói tháng không?\nIs a monthly plan required?",
+      "a": "Không bắt buộc. TURN chọn mức phù hợp sau buổi đánh giá, đổi được theo tháng, không ràng buộc dài hạn.\nNo. TURN picks a level after the review and can change it monthly."
+    }
+  ],
+  "cta": {
+    "headline": "Xác nhận phạm vi để bắt đầu Phase 1\nConfirm the scope to start Phase 1",
+    "text": "TURN nhắn xác nhận qua Zalo, hai bên hẹn buổi thống nhất Product Direction, rồi Duy Web gửi hợp đồng và đề nghị đặt cọc.\nConfirm on Zalo, we schedule the Product Direction session, then send the contract and deposit request.",
+    "button": "Xác nhận qua Zalo",
+    "href": "https://zalo.me/0938415218",
+    "note": "Báo giá có hiệu lực đến 13/11/2026"
+  }
+}
