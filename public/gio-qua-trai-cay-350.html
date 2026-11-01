@@ -1,0 +1,987 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="theme-color" content="#1F5A3C">
+<title>Tự sắp giỏ quà · Trái Cây 350</title>
+<meta name="description" content="Tự chọn giỏ, trái cây, nơ và thiệp, xem ngay giỏ quà trông thế nào rồi gửi mẫu cho tiệm.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F5A3C'/%3E%3Ccircle cx='32' cy='36' r='16' fill='%23E9B44C'/%3E%3Cpath d='M32 20c2-7 8-9 12-8-1 6-6 9-12 8z' fill='%23BFE3C8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1B2A22; --muted:#66726B; --line:#E5E0D3; --bg:#F8F4EA; --paper:#FFFFFF;
+  --green:#1F5A3C; --green-soft:#E6EFE8; --gold:#B98A2E; --gold-soft:#F6ECD3; --red:#B3322A;
+  --radius:14px;
+  --font:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;padding:0}
+button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+h1,h2,h3,p{margin:0}
+
+/* Thanh trên */
+.top{background:var(--green);color:#fff}
+.top .in{max-width:1180px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.top b{font-size:16px;font-weight:700}
+.top span{font-size:12px;opacity:.85;text-align:right}
+
+/* Bố cục */
+.app{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr}
+.stage-wrap{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.stage{position:relative;height:44svh;min-height:280px}
+#scene{display:block;width:100%;height:100%;user-select:none;-webkit-user-select:none}
+.tools{display:flex;align-items:center;gap:6px;padding:6px 12px 8px;min-height:46px;flex-wrap:wrap}
+.tools .sel-name{font-weight:600;font-size:13px;margin-right:auto}
+.tools .hint{font-size:12px;color:var(--muted);margin-right:auto}
+.chip{height:32px;padding:0 11px;border:1px solid var(--line);border-radius:999px;background:var(--paper);font-size:12.5px;font-weight:500;white-space:nowrap}
+.chip:hover{border-color:var(--green)}
+.chip.danger{color:var(--red)}
+
+.panel{padding:12px 16px 24px;min-width:0}
+.lead h1{font-size:20px;line-height:1.3;font-weight:800}
+.lead p{color:var(--muted);font-size:13.5px;margin-top:3px}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin:12px 0;background:#EFE9DA;padding:4px;border-radius:12px;position:sticky}
+.tab{height:38px;border-radius:9px;font-size:13px;font-weight:600;color:var(--muted)}
+.tab[aria-selected="true"]{background:var(--paper);color:var(--green);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.pane[hidden]{display:none}
+.label{font-size:13px;font-weight:700;margin:16px 0 8px}
+.label:first-child{margin-top:0}
+.sub{font-weight:400;color:var(--muted)}
+
+/* Mẫu sẵn */
+.presets{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.preset{background:var(--paper);border:1.5px solid var(--line);border-radius:var(--radius);padding:8px 10px 11px;text-align:left}
+.preset:hover{border-color:var(--green)}
+.preset[aria-pressed="true"]{border-color:var(--green);background:var(--green-soft)}
+.preset svg{display:block;width:100%;height:auto;aspect-ratio:800/620;pointer-events:none}
+.preset b{display:block;font-size:14px;line-height:1.3;margin-top:4px}
+.preset small{display:block;color:var(--muted);font-size:12px}
+.preset .price{color:var(--green);font-weight:700;font-size:13px;margin-top:2px}
+
+/* Lựa chọn */
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.opt{background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:9px 6px;font-size:13px;font-weight:600;text-align:center;min-height:44px}
+.opt small{display:block;font-weight:400;color:var(--muted);font-size:11.5px}
+.opt[aria-pressed="true"]{border-color:var(--green);background:var(--green-soft);color:var(--green)}
+.opts.two{grid-template-columns:repeat(2,1fr)}
+.opts.four{grid-template-columns:repeat(4,1fr)}
+.swatches{display:flex;gap:10px;flex-wrap:wrap}
+.swatch{width:40px;height:40px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1.5px var(--line)}
+.swatch[aria-pressed="true"]{box-shadow:0 0 0 2.5px var(--green)}
+
+/* Danh sách trái */
+.fruits{display:grid;grid-template-columns:1fr;gap:8px}
+.fruit{display:flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:6px 8px 6px 6px}
+.fruit.on{border-color:var(--green)}
+.fruit svg{width:48px;height:48px;flex:none}
+.fruit .t{min-width:0;flex:1}
+.fruit .t b{display:block;font-size:14px;font-weight:600;line-height:1.3}
+.fruit .t small{color:var(--muted);font-size:12px}
+.step{display:flex;align-items:center;gap:2px;flex:none}
+.step button{width:40px;height:40px;border-radius:10px;font-size:20px;font-weight:600;line-height:1;background:var(--green-soft);color:var(--green)}
+.step button:disabled{opacity:.35;cursor:default}
+.step output{width:24px;text-align:center;font-weight:700;font-size:14px}
+
+/* Thiệp */
+.field{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;font-size:16px;background:var(--paper);color:var(--ink)}
+textarea.field{resize:none;height:66px}
+.pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.note{font-size:12.5px;color:var(--muted);margin-top:12px;background:var(--gold-soft);border-radius:10px;padding:9px 11px}
+
+/* Thanh đáy */
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--paper);border-top:1px solid var(--line);z-index:10;padding-bottom:env(safe-area-inset-bottom)}
+.bar .in{max-width:1180px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:14px}
+.sum{flex:1;min-width:0}
+.sum b{font-size:18px;font-weight:800;color:var(--green);line-height:1.2}
+.sum small{font-size:11.5px;color:var(--muted);margin-left:4px}
+.meter{height:6px;background:#EEE9DB;border-radius:9px;margin-top:5px;overflow:hidden}
+.meter i{display:block;height:100%;background:var(--green);border-radius:9px;transition:width .25s}
+.meter.full i{background:var(--gold)}
+.mtext{font-size:11.5px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:46px;padding:0 18px;background:var(--green);color:#fff;border-radius:12px;font-weight:700;font-size:14.5px;text-decoration:none;white-space:nowrap}
+.btn:disabled{opacity:.4;cursor:default}
+.btn.light{background:var(--green-soft);color:var(--green)}
+
+/* Hộp thoại */
+dialog{border:0;border-radius:18px;padding:0;width:min(520px,calc(100vw - 24px));max-height:calc(100dvh - 24px);color:var(--ink)}
+dialog::backdrop{background:rgba(15,30,20,.55)}
+.dlg-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff}
+.dlg-head h3{font-size:17px}
+.x{width:40px;height:40px;font-size:22px;border-radius:10px;background:#F2EFE7}
+.dlg-body{padding:14px 16px 18px}
+.dlg-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.dlg-row label{font-size:13px;font-weight:600;display:block}
+.dlg-row .field,.dlg-row .step{margin-top:4px}
+.msg{white-space:pre-wrap;background:#F7F5EE;border-radius:10px;padding:11px 12px;font-size:13.5px;line-height:1.55;overflow-wrap:anywhere}
+.acts{display:grid;gap:8px;margin-top:12px}
+.hint-send{font-size:12.5px;color:var(--muted);margin-top:8px}
+
+.toast{position:fixed;left:50%;bottom:92px;transform:translate(-50%,12px);background:#1B2A22;color:#fff;padding:9px 14px;border-radius:10px;font-size:13px;z-index:20;opacity:0;pointer-events:none;transition:.2s;width:max-content;max-width:calc(100vw - 32px)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* Trái trong giỏ */
+.pc{cursor:grab;touch-action:none;transition:transform .38s cubic-bezier(.2,.9,.3,1.12)}
+.pc.drag{cursor:grabbing;transition:none}
+.pc .drop{animation:drop .42s cubic-bezier(.3,1.3,.5,1)}
+@keyframes drop{from{transform:translateY(-130px);opacity:0}to{transform:none;opacity:1}}
+#scene.shake{animation:shake .32s}
+@keyframes shake{25%{transform:translateX(-6px)}60%{transform:translateX(5px)}}
+@media (prefers-reduced-motion:reduce){.pc{transition:none}.pc .drop,#scene.shake{animation:none}}
+
+@media (min-width:560px){
+  .fruits{grid-template-columns:repeat(2,1fr)}
+  .presets{grid-template-columns:repeat(4,1fr)}
+}
+@media (min-width:920px){
+  .app{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:8px;padding-top:12px}
+  .stage-wrap{top:12px;align-self:start;border:1px solid var(--line);border-radius:18px;margin-left:16px;background:var(--paper);overflow:hidden}
+  .stage{height:calc(100vh - 190px);max-height:680px}
+  .presets{grid-template-columns:repeat(2,1fr)}
+  .fruits{grid-template-columns:repeat(2,1fr)}
+  .panel{padding-top:4px}
+  .lead h1{font-size:24px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="in"><b>Trái Cây 350</b><span>350 Vĩnh Viễn, Quận 10</span></div>
+</header>
+
+<main class="app">
+  <div class="stage-wrap">
+    <div class="stage">
+      <svg id="scene" viewBox="0 0 800 760" role="img" aria-labelledby="sceneDesc" xmlns="http://www.w3.org/2000/svg">
+        <title id="sceneDesc">Giỏ quà đang sắp</title>
+        <defs id="defs"></defs>
+        <rect x="-800" y="-400" width="2400" height="1560" fill="#FAF6EA"/>
+        <rect x="-800" y="660" width="2400" height="500" fill="url(#gBg)"/>
+        <ellipse cx="400" cy="704" rx="340" ry="30" fill="#000" opacity=".08"/>
+        <g id="lyBack"></g>
+        <g id="lyPieces"></g>
+        <g id="lyFront" pointer-events="none"></g>
+        <g id="lyRing" pointer-events="none" data-ui></g>
+      </svg>
+    </div>
+    <div class="tools" id="tools"></div>
+  </div>
+
+  <div class="panel">
+    <div class="lead">
+      <h1>Sắp thử giỏ quà trước khi đặt</h1>
+      <p>Đổi giỏ, thêm bớt trái, chọn nơ và thiệp, giỏ đổi theo ngay.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Các bước sắp giỏ">
+      <button class="tab" role="tab" data-tab="mau" id="tab-mau" aria-controls="pane-mau">Mẫu sẵn</button>
+      <button class="tab" role="tab" data-tab="gio" id="tab-gio" aria-controls="pane-gio">Giỏ</button>
+      <button class="tab" role="tab" data-tab="trai" id="tab-trai" aria-controls="pane-trai">Trái cây</button>
+      <button class="tab" role="tab" data-tab="goi" id="tab-goi" aria-controls="pane-goi">Gói, thiệp</button>
+    </div>
+
+    <section class="pane" id="pane-mau" role="tabpanel" aria-labelledby="tab-mau">
+      <div class="presets" id="presets"></div>
+    </section>
+
+    <section class="pane" id="pane-gio" role="tabpanel" aria-labelledby="tab-gio" hidden>
+      <div class="label">Loại giỏ</div>
+      <div class="opts" id="optVessel"></div>
+      <div class="label">Cỡ</div>
+      <div class="opts" id="optSize"></div>
+    </section>
+
+    <section class="pane" id="pane-trai" role="tabpanel" aria-labelledby="tab-trai" hidden>
+      <div class="fruits" id="fruits"></div>
+    </section>
+
+    <section class="pane" id="pane-goi" role="tabpanel" aria-labelledby="tab-goi" hidden>
+      <div class="label">Bọc ngoài</div>
+      <div class="opts two" id="optWrap"></div>
+      <div class="label">Màu nơ</div>
+      <div class="swatches" id="optRibbon"></div>
+      <div class="label">Hoa điểm <span class="sub" id="flowerPrice"></span></div>
+      <div class="opts four" id="optFlower"></div>
+      <div class="label"><label for="card">Lời trên thiệp</label></div>
+      <textarea class="field" id="card" maxlength="54" placeholder="Ví dụ: Kính chúc cô luôn mạnh khoẻ"></textarea>
+      <div class="pills" id="cardPills"></div>
+    </section>
+
+    <p class="note">Bản dựng thử. Trái cây là hình vẽ minh hoạ, giá là số ví dụ. Giỏ thật sẽ theo hàng về trong ngày, tiệm xác nhận lại trước khi làm.</p>
+  </div>
+</main>
+
+<div class="bar">
+  <div class="in">
+    <div class="sum">
+      <b id="total"></b><small>giá ví dụ</small>
+      <div class="meter" id="meter"><i id="meterFill"></i></div>
+      <div class="mtext" id="meterText" aria-live="polite"></div>
+    </div>
+    <button type="button" class="btn" id="openSend">Gửi cho tiệm</button>
+  </div>
+</div>
+
+<dialog id="sendDlg" aria-labelledby="sendTitle">
+  <div class="dlg-head"><h3 id="sendTitle">Gửi mẫu giỏ này cho tiệm</h3><button type="button" class="x" id="closeSend" aria-label="Đóng">×</button></div>
+  <div class="dlg-body">
+    <div class="dlg-row">
+      <div><label id="qtyLabel">Số giỏ</label>
+        <div class="step" role="group" aria-labelledby="qtyLabel"><button type="button" id="qtyMinus" aria-label="Bớt một giỏ">−</button><output id="qty">1</output><button type="button" id="qtyPlus" aria-label="Thêm một giỏ">+</button></div>
+      </div>
+      <div><label for="needDate">Ngày cần nhận</label><input class="field" type="date" id="needDate"></div>
+    </div>
+    <div class="msg" id="msg"></div>
+    <div class="acts" id="sendActs"></div>
+    <p class="hint-send" id="sendHint"></p>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+// Sửa thông tin tiệm ở đây. Có số thì nút Zalo và Gọi tự hiện.
+const SHOP = {
+  name: "Trái Cây 350",
+  address: "350 Vĩnh Viễn, Quận 10",
+  zalo: "",   // ví dụ "0912345678"
+  phone: "",  // ví dụ "0912345678"
+};
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const vnd = n => n.toLocaleString("vi-VN") + "đ";
+const SVGNS = "http://www.w3.org/2000/svg";
+
+// Số giả ngẫu nhiên cố định, để trang trí không nhảy mỗi lần vẽ lại
+function rng(seed) { let s = seed >>> 0 || 1; return () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296; }
+
+/* ---------- Bảng màu SVG ---------- */
+const radial = (id, stops, fx = 35, fy = 30) =>
+  `<radialGradient id="${id}" cx="50%" cy="50%" r="62%" fx="${fx}%" fy="${fy}%">${stops.map(([o, c]) => `<stop offset="${o}%" stop-color="${c}"/>`).join("")}</radialGradient>`;
+const linear = (id, stops, h = false) =>
+  `<linearGradient id="${id}" x1="0" y1="0" x2="${h ? 1 : 0}" y2="${h ? 0 : 1}">${stops.map(([o, c, a]) => `<stop offset="${o}%" stop-color="${c}"${a != null ? ` stop-opacity="${a}"` : ""}/>`).join("")}</linearGradient>`;
+
+$("#defs").innerHTML = [
+  linear("gBg", [[0, "#F0E6CF"], [100, "#DCCDA9"]]),
+  radial("gApple", [[0, "#F2685A"], [45, "#C9252B"], [100, "#7E0F1A"]]),
+  radial("gAppleG", [[0, "#DDEB84"], [50, "#9CC63F"], [100, "#5D8A22"]]),
+  radial("gPear", [[0, "#F6EDA0"], [50, "#D9CB55"], [100, "#A09A2B"]]),
+  radial("gOrange", [[0, "#FFC26B"], [50, "#F4901E"], [100, "#BE5A08"]]),
+  radial("gPers", [[0, "#FFB25A"], [50, "#EE7A1C"], [100, "#B34A0B"]]),
+  radial("gMelon", [[0, "#E8EFC8"], [55, "#BCCB8F"], [100, "#7E9860"]]),
+  radial("gPomelo", [[0, "#EAF0A0"], [55, "#BFD05C"], [100, "#7E9A30"]]),
+  radial("gKiwiSkin", [[0, "#A98455"], [100, "#5F4326"]]),
+  radial("gKiwiG", [[0, "#D8E89A"], [55, "#8FBE3F"], [100, "#5C9226"]], 50, 50),
+  radial("gKiwiY", [[0, "#FFF3A8"], [55, "#F1D23E"], [100, "#C9A21E"]], 50, 50),
+  radial("gGrapeD", [[0, "#7C6795"], [45, "#3C2A58"], [100, "#1C1230"]]),
+  radial("gGrapeG", [[0, "#EEF4AE"], [50, "#BBD35F"], [100, "#7FA032"]]),
+  radial("gStraw", [[0, "#F4675B"], [55, "#D3222C"], [100, "#8D0E1C"]]),
+  radial("gCherry", [[0, "#C53B48"], [45, "#7E0F21"], [100, "#3F0410"]]),
+  linear("gLeaf", [[0, "#6FA34C"], [100, "#2F6B34"]]),
+  linear("gWicker", [[0, "#D7A566"], [100, "#9A6432"]]),
+  linear("gWood", [[0, "#D9B382"], [100, "#A87B4C"]]),
+  linear("gVelvet", [[0, "#B51F2A"], [100, "#74101A"]]),
+  linear("gLid", [[0, "#8C1720"], [100, "#A81C27"]]),
+  linear("gGold", [[0, "#F4DC8D"], [50, "#C9A24B"], [100, "#E7CB76"]], true),
+  linear("gShade", [[0, "#000", .3], [18, "#000", 0], [82, "#000", 0], [100, "#000", .3]], true),
+  `<pattern id="pWeave" width="28" height="16" patternUnits="userSpaceOnUse">
+     <rect width="28" height="16" fill="#000" opacity=".16"/>
+     <rect x="1" y="1" width="12" height="6" rx="3" fill="#E9BE82" opacity=".75"/>
+     <rect x="15" y="1" width="12" height="6" rx="3" fill="#C99252" opacity=".75"/>
+     <rect x="-6" y="9" width="12" height="6" rx="3" fill="#C99252" opacity=".75"/>
+     <rect x="8" y="9" width="12" height="6" rx="3" fill="#E9BE82" opacity=".75"/>
+     <rect x="22" y="9" width="12" height="6" rx="3" fill="#C99252" opacity=".75"/>
+   </pattern>`,
+  `<pattern id="pDiamond" width="34" height="34" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+     <rect x="0" y="0" width="34" height="34" fill="none" stroke="#E7CB76" stroke-width="1" opacity=".3"/>
+   </pattern>`,
+].join("");
+
+/* ---------- Vẽ trái (tâm 0,0, bán kính khoảng 50) ---------- */
+const shine = (x = -16, y = -20, rx = 13, ry = 8) => `<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="#fff" opacity=".32" transform="rotate(-32 ${x} ${y})"/>`;
+const shadow = `<ellipse cx="2" cy="44" rx="42" ry="10" fill="#000" opacity=".13"/>`;
+const leaf = (x, y, rot = 0, s = 1) => `<path transform="translate(${x} ${y}) rotate(${rot}) scale(${s})" d="M0 0C10-14 26-13 32-8 26 3 11 6 0 0Z" fill="url(#gLeaf)"/>`;
+
+function drawApple(fill) {
+  return `${shadow}<path d="M0-34C14-50 50-46 50-6 50 28 24 50 6 48 2 47-2 47-6 48-24 50-50 28-50-6-50-46-14-50 0-34Z" fill="url(#${fill})"/>
+  <path d="M-11-35C-5-29 5-29 11-35" fill="none" stroke="#000" stroke-opacity=".25" stroke-width="3" stroke-linecap="round"/>
+  <path d="M0-33C0-44 3-50 7-56" fill="none" stroke="#5B3A1E" stroke-width="4.5" stroke-linecap="round"/>
+  ${leaf(3, -42, -8, .95)}${shine()}`;
+}
+function drawPear() {
+  const r = rng(11); let dots = "";
+  for (let i = 0; i < 28; i++) dots += `<circle cx="${(r() * 72 - 36).toFixed(1)}" cy="${(r() * 62 - 8).toFixed(1)}" r="1" fill="#7A6F1E" opacity=".45"/>`;
+  return `${shadow}<path d="M0-56C10-56 14-44 16-30 20-14 44-2 44 22 44 44 24 54 0 54-24 54-44 44-44 22-44-2-20-14-16-30-14-44-10-56 0-56Z" fill="url(#gPear)"/>${dots}
+  <path d="M0-55C0-61 2-65 5-68" fill="none" stroke="#5B3A1E" stroke-width="4.5" stroke-linecap="round"/>${shine(-13, -2, 9, 15)}`;
+}
+function drawOrange() {
+  const r = rng(23); let dots = "";
+  for (let i = 0; i < 36; i++) { const a = r() * 6.28, d = r() * 42; dots += `<circle cx="${(Math.cos(a) * d).toFixed(1)}" cy="${(Math.sin(a) * d).toFixed(1)}" r=".9" fill="#A84B05" opacity=".4"/>`; }
+  return `${shadow}<circle r="48" fill="url(#gOrange)"/>${dots}<path d="M0-43l3-5 3 5 5-1-3 5 2 4-5-1-3 4-3-4-5 1 2-4-3-5 5 1z" fill="#587A2A"/>${shine()}`;
+}
+function drawPers() {
+  return `${shadow}<path d="M0-40C28-44 50-26 50 0 50 28 28 44 0 44-28 44-50 28-50 0-50-26-28-44 0-40Z" fill="url(#gPers)"/>
+  <path d="M0-36C-4-44-20-48-26-42-22-36-16-32-12-31-20-28-22-20-16-16-10-20-5-26 0-30 5-26 10-20 16-16 22-20 20-28 12-31 16-32 22-36 26-42 20-48 4-44 0-36Z" fill="#3F6A2A"/>
+  <circle cy="-35" r="3.5" fill="#2A4A1C"/>${shine(-22, 4, 8, 15)}`;
+}
+function drawKiwi(face) {
+  const seed = rng(5); let seeds = "";
+  for (let i = 0; i < 16; i++) {
+    const a = i / 16 * 6.283, d = 15 + seed() * 4;
+    seeds += `<ellipse cx="${(Math.cos(a) * d).toFixed(1)}" cy="${(Math.sin(a) * d * .9).toFixed(1)}" rx="2.6" ry="1.5" fill="#1D1A12" transform="rotate(${(a * 57.3).toFixed(0)} ${(Math.cos(a) * d).toFixed(1)} ${(Math.sin(a) * d * .9).toFixed(1)})"/>`;
+  }
+  return `${shadow}<ellipse cx="7" cy="2" rx="46" ry="42" fill="url(#gKiwiSkin)"/>
+  <ellipse cx="-4" cy="0" rx="40" ry="37" fill="url(#${face})" stroke="#7B5B34" stroke-width="2"/>
+  <g transform="translate(-4 0)"><ellipse rx="9" ry="8" fill="#FBF8DF"/>${seeds}</g>`;
+}
+function berry(x, y, s, rot) {
+  const seeds = [[-8, -5], [0, -7], [8, -5], [-10, 3], [-3, 2], [4, 3], [11, 2], [-6, 10], [1, 10], [7, 10], [-1, 18]]
+    .map(([a, b]) => `<ellipse cx="${a}" cy="${b}" rx="1.1" ry="1.8" fill="#F8DE7E"/>`).join("");
+  return `<g transform="translate(${x} ${y}) rotate(${rot}) scale(${s})">
+    <path d="M0-14C14-17 23-8 19 6 15 18 5 26 0 28-5 26-15 18-19 6-23-8-14-17 0-14Z" fill="url(#gStraw)"/>${seeds}
+    <path d="M0-15L-14-20-7-13-15-8-5-10-2-4 0-10 2-4 5-10 15-8 7-13 14-20Z" fill="#4C8A36"/></g>`;
+}
+function drawStraw() {
+  return `${shadow}${berry(-23, -14, 1.28, -22)}${berry(24, -16, 1.28, 20)}${berry(0, 8, 1.5, 3)}`;
+}
+function drawCherry() {
+  return `${shadow}<g fill="none" stroke="#5F7A2A" stroke-width="3" stroke-linecap="round">
+    <path d="M-22-6C-18-30-4-46 6-52"/><path d="M22-4C18-28 12-44 6-52"/><path d="M0 14C0-14 2-38 6-52"/></g>
+    ${leaf(6, -52, -22, .8)}
+    <circle cx="-24" cy="8" r="23" fill="url(#gCherry)"/><circle cx="24" cy="10" r="23" fill="url(#gCherry)"/><circle cx="0" cy="26" r="24" fill="url(#gCherry)"/>
+    <ellipse cx="-32" cy="0" rx="5" ry="3" fill="#fff" opacity=".35"/><ellipse cx="16" cy="2" rx="5" ry="3" fill="#fff" opacity=".35"/><ellipse cx="-8" cy="17" rx="5" ry="3" fill="#fff" opacity=".35"/>`;
+}
+function drawGrapes(fill) {
+  const rows = [[5, -30], [6, -16], [5, -2], [4, 12], [3, 26], [2, 39], [1, 50]];
+  let out = `<path d="M0-34C0-44 2-50 6-56" fill="none" stroke="#6B5A2A" stroke-width="4" stroke-linecap="round"/>${leaf(1, -40, -160, 1)}`;
+  rows.forEach(([n, y]) => {
+    for (let i = 0; i < n; i++) out += `<circle cx="${(i - (n - 1) / 2) * 15}" cy="${y}" r="9.5" fill="url(#${fill})"/>`;
+  });
+  return out;
+}
+function drawMelon() {
+  let net = "";
+  [12, 26, 38].forEach(rx => net += `<ellipse rx="${rx}" ry="47" fill="none" stroke="#F3F4DF" stroke-width="1.5" opacity=".85"/>`);
+  [-30, -12, 8, 28].forEach(y => { const rx = Math.sqrt(47 * 47 - y * y); net += `<path d="M${-rx} ${y}Q0 ${y + 11} ${rx} ${y}" fill="none" stroke="#F3F4DF" stroke-width="1.5" opacity=".85"/>`; });
+  return `${shadow}<circle r="48" fill="url(#gMelon)"/>${net}<path d="M-5-44C-4-53-3-58-9-63L4-63C2-57 3-52 5-44Z" fill="#7B8A4A"/>`;
+}
+function drawPomelo() {
+  const r = rng(31); let dots = "";
+  for (let i = 0; i < 44; i++) { const a = r() * 6.28, d = r() * 42; dots += `<circle cx="${(Math.cos(a) * d).toFixed(1)}" cy="${(Math.sin(a) * d + 4).toFixed(1)}" r=".9" fill="#5D7A22" opacity=".45"/>`; }
+  return `${shadow}<path d="M0-52C12-52 16-44 26-38 44-28 50-12 50 8 50 34 28 50 0 50-28 50-50 34-50 8-50-12-44-28-26-38-16-44-12-52 0-52Z" fill="url(#gPomelo)"/>${dots}
+  <circle cy="-51" r="4" fill="#6B7A2A"/>${shine(-20, -12, 12, 8)}`;
+}
+
+/* Giá là số ví dụ, thay theo bảng giá tiệm. vol: độ chiếm chỗ trong giỏ. */
+const FRUITS = [
+  { id: "tao", name: "Táo đỏ", unit: "1 trái", price: 45000, r: 45, vol: 2, draw: () => drawApple("gApple") },
+  { id: "taox", name: "Táo xanh", unit: "1 trái", price: 40000, r: 44, vol: 2, draw: () => drawApple("gAppleG") },
+  { id: "le", name: "Lê", unit: "1 trái", price: 40000, r: 46, vol: 2, draw: drawPear },
+  { id: "cam", name: "Cam", unit: "1 trái", price: 35000, r: 43, vol: 2, draw: drawOrange },
+  { id: "hong", name: "Hồng giòn", unit: "1 trái", price: 40000, r: 41, vol: 2, draw: drawPers },
+  { id: "kiwix", name: "Kiwi xanh New Zealand", unit: "1 trái", price: 30000, r: 32, vol: 1, draw: () => drawKiwi("gKiwiG") },
+  { id: "kiwiv", name: "Kiwi vàng New Zealand", unit: "1 trái", price: 40000, r: 32, vol: 1, draw: () => drawKiwi("gKiwiY") },
+  { id: "dau", name: "Dâu", unit: "1 khay nhỏ", price: 95000, r: 38, vol: 2, draw: drawStraw },
+  { id: "cherry", name: "Cherry đỏ Mỹ", unit: "1 túi nhỏ", price: 120000, r: 36, vol: 2, draw: drawCherry },
+  { id: "nhod", name: "Nho đen Mỹ", unit: "1 chùm", price: 180000, r: 60, vol: 3, draw: () => drawGrapes("gGrapeD") },
+  { id: "nhox", name: "Nho xanh", unit: "1 chùm", price: 160000, r: 60, vol: 3, draw: () => drawGrapes("gGrapeG") },
+  { id: "dua", name: "Dưa lưới", unit: "1 trái", price: 220000, r: 70, vol: 5, draw: drawMelon },
+  { id: "buoi", name: "Bưởi", unit: "1 trái", price: 120000, r: 72, vol: 5, draw: drawPomelo },
+];
+const F = Object.fromEntries(FRUITS.map(f => [f.id, f]));
+const fruitArt = {};
+const art = id => fruitArt[id] || (fruitArt[id] = F[id].draw());
+
+const VESSELS = {
+  gio: { name: "Giỏ mây", prices: { s: 60000, m: 90000, l: 130000 } },
+  go: { name: "Hộp gỗ", prices: { s: 90000, m: 130000, l: 170000 } },
+  nhung: { name: "Hộp nhung đỏ", prices: { s: 120000, m: 160000, l: 220000 } },
+};
+const SIZES = {
+  s: { name: "Nhỏ", W: 330, H: 165, cap: 14 },
+  m: { name: "Vừa", W: 400, H: 185, cap: 22 },
+  l: { name: "Lớn", W: 470, H: 205, cap: 32 },
+};
+const RIBBONS = {
+  do: { name: "đỏ", a: "#C8262E", b: "#8E141C" },
+  vang: { name: "vàng đồng", a: "#D7AE4E", b: "#A17C26" },
+  xanh: { name: "xanh rêu", a: "#2F6B46", b: "#1B4A2E" },
+  hong: { name: "hồng phấn", a: "#E7A2AE", b: "#BE6E7E" },
+};
+const FLOWERS = { none: { name: "Không" }, hong: { name: "Hồng đỏ" }, cuc: { name: "Cúc vàng" }, baby: { name: "Baby trắng" } };
+const WRAP_PRICE = 20000, FLOWER_PRICE = 80000;
+
+const PRESETS = [
+  { id: "tri-an", name: "Tri ân thầy cô", tag: "Dịp 20/11", v: "gio", s: "m", wrap: true, ribbon: "do", flower: "hong", card: "Kính chúc cô luôn mạnh khoẻ", items: { nhox: 1, tao: 3, le: 2, hong: 2, kiwiv: 2, dau: 1 } },
+  { id: "sum-vay", name: "Sum vầy ngày Tết", tag: "Hộp lớn biếu Tết", v: "nhung", s: "l", wrap: false, ribbon: "vang", flower: "cuc", card: "Chúc mừng năm mới an khang", items: { buoi: 1, nhod: 1, tao: 4, cam: 3, hong: 2, cherry: 2 } },
+  { id: "tham-benh", name: "Thăm hỏi sức khoẻ", tag: "Gọn, dễ dùng", v: "go", s: "s", wrap: false, ribbon: "xanh", flower: "none", card: "Mau khoẻ nhé", items: { cam: 2, taox: 1, le: 1, kiwix: 3 } },
+  { id: "khai-truong", name: "Chúc mừng khai trương", tag: "Giỏ lớn, nhiều hoa", v: "gio", s: "l", wrap: true, ribbon: "vang", flower: "baby", card: "Khai trương hồng phát", items: { dua: 1, nhod: 1, tao: 3, hong: 3, cam: 2, kiwiv: 3 } },
+];
+const CARD_IDEAS = ["Kính chúc cô luôn mạnh khoẻ", "Tri ân thầy cô", "Chúc mừng năm mới", "Mau khoẻ nhé", "Khai trương hồng phát"];
+
+/* ---------- Dữ liệu giỏ đang sắp ---------- */
+let uidSeq = 1;
+function makePiece(id) {
+  const u = uidSeq++, j = rng(u * 7919);
+  return { u, id, x: 400, y: 400, rot: Math.round((j() - .5) * 30), jx: j() - .5, jy: j() - .5, manual: false };
+}
+const state = { v: "gio", s: "m", wrap: false, ribbon: "do", flower: "none", card: "", pieces: [], preset: "" };
+let selected = 0, qty = 1;
+
+function geom(st) {
+  const size = SIZES[st.s], bottom = 690, rim = bottom - size.H;
+  return { cx: 400, W: size.W, H: size.H, cap: size.cap, bottom, rim, l: 400 - size.W / 2, r: 400 + size.W / 2, front: rim + (st.v === "gio" ? 24 : 14) };
+}
+const usedVol = st => st.pieces.reduce((n, p) => n + F[p.id].vol, 0);
+
+// Xếp trái thành vòm: trái nhỏ hàng trước, trái to hàng sau, loại lớn nhất mỗi hàng ở giữa
+function arrange(st) {
+  const g = geom(st);
+  const groups = {};
+  st.pieces.filter(p => !p.manual).forEach(p => (groups[p.id] = groups[p.id] || []).push(p));
+  const mixed = [], lists = Object.values(groups);
+  while (lists.some(l => l.length)) lists.forEach(l => l.length && mixed.push(l.shift()));
+  mixed.sort((a, b) => F[a.id].r - F[b.id].r);
+  let i = 0, row = 0, base = g.front;
+  while (i < mixed.length) {
+    const maxW = Math.max(g.W * .94 - row * g.W * .13, 130);
+    const items = []; let used = 0;
+    while (i < mixed.length) {
+      const d = F[mixed[i].id].r * 1.72;
+      if (items.length && used + d > maxW) break;
+      items.push(mixed[i]); used += d; i++;
+    }
+    const ordered = [];
+    [...items].reverse().forEach((p, k) => k % 2 ? ordered.push(p) : ordered.unshift(p));
+    let x = g.cx - used / 2;
+    ordered.forEach(p => {
+      const r = F[p.id].r, d = r * 1.72;
+      x += d / 2;
+      p.x = Math.round(x + p.jx * 10);
+      const k = (x - g.cx) / (g.W / 2);
+      const edge = row === 0 && st.v === "gio" ? g.rim + 26 * Math.sqrt(Math.max(0, 1 - k * k)) : base;
+      p.y = Math.round(Math.max(r + 6, edge - r * (row ? .42 : .6) + p.jy * 10));
+      x += d / 2;
+    });
+    base -= F[items[items.length - 1].id].r * 1.06;
+    row++;
+  }
+  return base;
+}
+const pieceTf = p => { const s = F[p.id].r / 50; return { x: p.x, y: p.y, r: p.rot, s: +s.toFixed(3) }; };
+const styleTf = t => `translate(${t.x}px,${t.y}px) rotate(${t.r}deg) scale(${t.s})`;
+const attrTf = t => `translate(${t.x} ${t.y}) rotate(${t.r}) scale(${t.s})`;
+
+/* ---------- Vẽ giỏ ---------- */
+function straw(g, st) {
+  const r = rng(77), tone = st.v === "nhung" ? ["#E7CB76", "#F2DE9F", "#C9A24B"] : ["#E5C98B", "#CFAE6B", "#F0DFB2"];
+  let out = "";
+  for (let i = 0; i < 90; i++) {
+    const a = r() * 6.283, d = Math.sqrt(r()), x = g.cx + Math.cos(a) * d * (g.W / 2 - 16), y = g.rim + 2 + Math.sin(a) * d * 22;
+    const dx = (r() - .5) * 46, dy = (r() - .5) * 18;
+    out += `<path d="M${x.toFixed(0)} ${y.toFixed(0)}q${(dx / 2).toFixed(0)} ${(dy - 6).toFixed(0)} ${dx.toFixed(0)} ${dy.toFixed(0)}" fill="none" stroke="${tone[i % 3]}" stroke-width="2" stroke-linecap="round"/>`;
+  }
+  return out;
+}
+function backLeaves(g) {
+  const pts = [[-.46, -8, 200], [-.3, -38, 225], [-.1, -56, 260], [.12, -56, 285], [.32, -36, 315], [.46, -8, 340]];
+  return pts.map(([k, dy, rot]) => `<g transform="translate(${g.cx + k * g.W} ${g.rim + dy}) rotate(${rot}) scale(1.9)"><path d="M0 0C10-14 26-13 32-8 26 3 11 6 0 0Z" fill="url(#gLeaf)"/></g>`).join("");
+}
+function flowerAt(kind, x, y, s, seed) {
+  const r = rng(seed);
+  if (kind === "hong") {
+    let petals = "";
+    for (let a = 0; a < 360; a += 72) petals += `<circle cx="17" r="17" fill="#A3131F" stroke="#7F0D18" stroke-width="1" transform="rotate(${a})"/>`;
+    for (let a = 36; a < 396; a += 90) petals += `<circle cx="9" r="13" fill="#C7202C" stroke="#8E141C" stroke-width="1" transform="rotate(${a})"/>`;
+    return `<g transform="translate(${x} ${y}) scale(${s}) rotate(${Math.round(r() * 90)})">${petals}
+      <circle r="9" fill="#DE3B44"/><path d="M-6 1C-5-7 6-7 6 0 6 5-1 6-2 2-2 0 1-1 2 1" fill="none" stroke="#7F0D18" stroke-width="1.6" stroke-linecap="round"/></g>`;
+  }
+  if (kind === "cuc") {
+    let petals = "";
+    for (let a = 0; a < 360; a += 24) petals += `<ellipse cx="0" cy="-20" rx="6.5" ry="15" fill="${a % 48 ? "#F2BE2C" : "#E5A91B"}" transform="rotate(${a})"/>`;
+    return `<g transform="translate(${x} ${y}) scale(${s})">${petals}<circle r="11" fill="#B9791A"/></g>`;
+  }
+  let out = "";
+  for (let i = 0; i < 16; i++) {
+    const a = r() * 6.28, d = r() * 28;
+    out += `<circle cx="${(Math.cos(a) * d).toFixed(0)}" cy="${(Math.sin(a) * d).toFixed(0)}" r="${(3.5 + r() * 2.5).toFixed(1)}" fill="#fff" stroke="#E6E4D5" stroke-width=".8"/>`;
+  }
+  return `<g transform="translate(${x} ${y}) scale(${s})"><path d="M0 34V-5M-14 30L-3-6M14 30L3-6" stroke="#7FA05C" stroke-width="1.6" fill="none"/>${out}</g>`;
+}
+function flowers(st, g, pileTop) {
+  if (st.flower === "none") return "";
+  const n = { s: 7, m: 9, l: 11 }[st.s];
+  const rise = Math.max(60, g.rim - pileTop - 4);
+  let out = "";
+  [[.5, .62, n - 3, .82], [.44, 1, n, .95]].forEach(([wk, hk, count, scale], ring) => {
+    for (let i = 0; i < count; i++) {
+      const a = Math.PI * (1.03 + .94 * i / (count - 1));
+      const x = g.cx + Math.cos(a) * g.W * wk, y = g.rim + 6 + Math.sin(a) * rise * hk;
+      out += flowerAt(st.flower, x.toFixed(0), y.toFixed(0), scale + (i % 2) * .12, ring * 20 + i + 3);
+    }
+  });
+  return out;
+}
+function vesselBack(st, g) {
+  const { cx, W, l, r, rim } = g;
+  if (st.v === "gio") {
+    const top = rim - 380;
+    const handle = `<path d="M${l + 14} ${rim}C${l + 8} ${top} ${r - 8} ${top} ${r - 14} ${rim}" fill="none" stroke="#7A4C22" stroke-width="18" stroke-linecap="round"/>
+      <path d="M${l + 14} ${rim}C${l + 8} ${top} ${r - 8} ${top} ${r - 14} ${rim}" fill="none" stroke="#C99252" stroke-width="13" stroke-dasharray="14 8" stroke-linecap="butt"/>`;
+    return `${handle}<ellipse cx="${cx}" cy="${rim}" rx="${W / 2}" ry="26" fill="#5C3A1B"/>`;
+  }
+  if (st.v === "go") {
+    return `<path d="M${l + 16} ${rim - 28}H${r - 16}L${r} ${rim + 14}H${l}Z" fill="#6F4C2A"/>
+      <path d="M${l + 16} ${rim - 28}H${r - 16}" stroke="#B48A5A" stroke-width="7"/>`;
+  }
+  const lid = 200;
+  return `<rect x="${l + 12}" y="${rim - lid}" width="${W - 24}" height="${lid + 14}" rx="6" fill="url(#gLid)"/>
+    <rect x="${l + 12}" y="${rim - lid}" width="${W - 24}" height="${lid + 14}" rx="6" fill="url(#pDiamond)"/>
+    <rect x="${l + 22}" y="${rim - lid + 10}" width="${W - 44}" height="${lid}" rx="3" fill="none" stroke="#E7CB76" stroke-width="2.5"/>
+    <path d="M${l + 12} ${rim - 22}H${r - 12}L${r} ${rim + 14}H${l}Z" fill="#4E0910"/>`;
+}
+function ribbonBow(x, y, c, s = 1) {
+  return `<g transform="translate(${x} ${y}) scale(${s})">
+    <path d="M-5 6L-30 54-16 48-6 60 3 8ZM5 6L30 54 16 48 6 60-3 8Z" fill="${c.b}"/>
+    <path d="M0 0C-16-26-52-30-56-10-58 8-24 12 0 0Z" fill="${c.a}"/><path d="M0 0C16-26 52-30 56-10 58 8 24 12 0 0Z" fill="${c.a}"/>
+    <path d="M0 0C-16-12-38-16-44-8-36-4-16-2 0 0ZM0 0C16-12 38-16 44-8 36-4 16-2 0 0Z" fill="${c.b}" opacity=".6"/>
+    <rect x="-9" y="-9" width="18" height="18" rx="5" fill="${c.b}"/></g>`;
+}
+function vesselFront(st, g) {
+  const { cx, W, l, r, rim, bottom } = g;
+  const c = RIBBONS[st.ribbon], taper = W * .1;
+  let body = "", bandL = l, bandR = r;
+  const bandY = rim + 62;
+  if (st.v === "gio") {
+    const d = `M${l} ${rim}A${W / 2} 26 0 0 0 ${r} ${rim}L${r - taper} ${bottom - 12}Q${r - taper} ${bottom} ${r - taper - 14} ${bottom}L${l + taper + 14} ${bottom}Q${l + taper} ${bottom} ${l + taper} ${bottom - 12}Z`;
+    const k = (bandY - rim) / (bottom - rim);
+    bandL = l + taper * k; bandR = r - taper * k;
+    body = `<path d="${d}" fill="url(#gWicker)"/><path d="${d}" fill="url(#pWeave)"/><path d="${d}" fill="url(#gShade)"/>
+      <path d="M${l} ${rim}A${W / 2} 26 0 0 0 ${r} ${rim}" fill="none" stroke="#8A5A2B" stroke-width="15" stroke-linecap="round"/>
+      <path d="M${l} ${rim}A${W / 2} 26 0 0 0 ${r} ${rim}" fill="none" stroke="#DDAF74" stroke-width="10" stroke-dasharray="15 7"/>`;
+  } else if (st.v === "go") {
+    const top = rim + 14, h = bottom - top, n = 4, slat = h / n;
+    let slats = "";
+    for (let i = 0; i < n; i++) slats += `<rect x="${l}" y="${top + i * slat + 1}" width="${W}" height="${slat - 3}" rx="2" fill="url(#gWood)"/>
+      <path d="M${l + 12} ${top + i * slat + slat * .4}C${cx - 60} ${top + i * slat + slat * .2} ${cx + 60} ${top + i * slat + slat * .75} ${r - 12} ${top + i * slat + slat * .45}" fill="none" stroke="#8F6538" stroke-width="1.2" opacity=".55"/>
+      <circle cx="${l + 11}" cy="${top + i * slat + slat / 2}" r="2.6" fill="#5C4326"/><circle cx="${r - 11}" cy="${top + i * slat + slat / 2}" r="2.6" fill="#5C4326"/>`;
+    body = `<rect x="${l - 2}" y="${top - 2}" width="${W + 4}" height="${h + 4}" rx="4" fill="#6F4C2A"/>${slats}<rect x="${l}" y="${top}" width="${W}" height="${h}" fill="url(#gShade)"/>`;
+  } else {
+    const top = rim + 14, h = bottom - top;
+    body = `<rect x="${l}" y="${top}" width="${W}" height="${h}" rx="7" fill="url(#gVelvet)"/>
+      <rect x="${l}" y="${top}" width="${W}" height="${h}" rx="7" fill="url(#pDiamond)"/>
+      <rect x="${l}" y="${top}" width="${W}" height="${h}" rx="7" fill="url(#gShade)"/>
+      <rect x="${l}" y="${top}" width="${W}" height="9" fill="url(#gGold)"/>
+      <rect x="${l + 12}" y="${top + 19}" width="${W - 24}" height="${h - 31}" rx="3" fill="none" stroke="#E7CB76" stroke-width="2"/>`;
+  }
+  let out = body;
+  if (!st.wrap) {
+    out += `<rect x="${bandL}" y="${bandY}" width="${bandR - bandL}" height="20" fill="${c.a}"/><rect x="${bandL}" y="${bandY + 15}" width="${bandR - bandL}" height="5" fill="${c.b}" opacity=".6"/>`;
+    out += ribbonBow(cx - W * .24, bandY + 10, c);
+  }
+  // Sợi rơm rủ qua miệng giỏ
+  const s = rng(9);
+  for (let i = 0; i < 16; i++) {
+    const x = l + 26 + s() * (W - 52);
+    const k = (x - cx) / (W / 2), edge = st.v === "gio" ? rim + 26 * Math.sqrt(Math.max(0, 1 - k * k)) - 5 : rim + 8;
+    out += `<path d="M${x.toFixed(0)} ${edge.toFixed(0)}q${(s() * 16 - 8).toFixed(0)} 6 ${(s() * 24 - 12).toFixed(0)} ${(2 + s() * 10).toFixed(0)}" fill="none" stroke="#EAD49B" stroke-width="2" stroke-linecap="round"/>`;
+  }
+  return out;
+}
+function wrapLayer(st, g) {
+  if (!st.wrap) return "";
+  const { cx, l, r, rim, bottom } = g, top = 34, c = RIBBONS[st.ribbon];
+  const d = `M${l - 10} ${bottom - 2}C${l - 76} ${rim - 40} ${cx - 240} ${top + 130} ${cx - 15} ${top + 46}L${cx - 42} ${top}L${cx - 14} ${top + 14}L${cx} ${top - 8}L${cx + 14} ${top + 14}L${cx + 42} ${top}L${cx + 15} ${top + 46}C${cx + 240} ${top + 130} ${r + 76} ${rim - 40} ${r + 10} ${bottom - 2}Q${cx} ${bottom + 16} ${l - 10} ${bottom - 2}Z`;
+  return `<path d="${d}" fill="#EAF6FA" fill-opacity=".16" stroke="#fff" stroke-opacity=".9" stroke-width="2.5"/>
+    <path d="M${l - 28} ${rim + 60}C${l - 56} ${rim - 60} ${cx - 190} ${top + 170} ${cx - 90} ${top + 112}" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="7" stroke-linecap="round"/>
+    <path d="M${r + 18} ${rim + 90}C${r + 36} ${rim} ${cx + 170} ${top + 200} ${cx + 110} ${top + 130}" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="5" stroke-linecap="round"/>
+    <path d="M${cx - 12} ${top + 54}L${cx - 30} ${top + 130}M${cx + 12} ${top + 54}L${cx + 34} ${top + 124}M${cx} ${top + 54}V${top + 150}" stroke="#fff" stroke-opacity=".55" stroke-width="2"/>
+    ${ribbonBow(cx, top + 46, c, 1.05)}`;
+}
+function cardLayer(st, g) {
+  const text = st.card.trim();
+  if (!text) return "";
+  const lines = []; let cur = "";
+  text.split(/\s+/).forEach(w => {
+    if ((cur + " " + w).trim().length > 18 && cur) { lines.push(cur); cur = w; } else cur = (cur + " " + w).trim();
+  });
+  if (cur) lines.push(cur);
+  const shown = lines.slice(0, 3), h = 34 + shown.length * 21, x = g.cx + g.W * .06, y = g.bottom - h - 8;
+  const rows = shown.map((t, i) => `<text x="87" y="${29 + i * 21}" text-anchor="middle" font-family="'Be Vietnam Pro',Georgia,serif" font-size="15.5" font-weight="500" fill="#3A2A12">${esc(t)}</text>`).join("");
+  return `<g transform="translate(${x} ${y}) rotate(-3)">
+    <rect x="3" y="4" width="174" height="${h}" rx="6" fill="#000" opacity=".18"/>
+    <rect width="174" height="${h}" rx="6" fill="#FFFBEF" stroke="#C9A24B" stroke-width="2"/>
+    <rect x="6" y="6" width="162" height="${h - 12}" rx="3" fill="none" stroke="#C9A24B" stroke-width=".8"/>${rows}</g>`;
+}
+function backMarkup(st, pileTop) {
+  const g = geom(st);
+  return vesselBack(st, g) + backLeaves(g) + flowers(st, g, pileTop) + straw(g, st);
+}
+const frontMarkup = st => { const g = geom(st); return vesselFront(st, g) + cardLayer(st, g) + wrapLayer(st, g); };
+function pileTopOf(st) {
+  const g = geom(st);
+  return st.pieces.reduce((t, p) => Math.min(t, p.y - F[p.id].r), g.rim - 40);
+}
+
+/* ---------- Đồng bộ lên màn hình ---------- */
+const lyPieces = $("#lyPieces"), nodes = new Map();
+function newNode(p, animate) {
+  const g = document.createElementNS(SVGNS, "g");
+  g.setAttribute("class", "pc");
+  g.dataset.u = p.u;
+  g.innerHTML = `<g${animate ? ' class="drop"' : ""}>${art(p.id)}</g>`;
+  g.style.transform = styleTf(pieceTf(p));
+  nodes.set(p.u, g);
+  return g;
+}
+function syncPieces(animate) {
+  const list = [...state.pieces].sort((a, b) => a.y - b.y);
+  const keep = new Set(list.map(p => p.u));
+  nodes.forEach((n, u) => { if (!keep.has(u)) { n.remove(); nodes.delete(u); } });
+  list.forEach((p, i) => {
+    const n = nodes.get(p.u) || newNode(p, animate);
+    if (lyPieces.children[i] !== n) lyPieces.insertBefore(n, lyPieces.children[i] || null);
+  });
+  lyPieces.getBoundingClientRect(); // chốt vị trí cũ để hiệu ứng trượt chạy sau khi đổi thứ tự
+  list.forEach(p => { nodes.get(p.u).style.transform = styleTf(pieceTf(p)); });
+}
+function drawRing() {
+  const p = state.pieces.find(x => x.u === selected);
+  $("#lyRing").innerHTML = p ? `<circle cx="${p.x}" cy="${p.y}" r="${F[p.id].r + 8}" fill="none" stroke="#1F5A3C" stroke-width="3.5" stroke-dasharray="8 7"/>` : "";
+}
+function totalPrice(st) {
+  return VESSELS[st.v].prices[st.s] + st.pieces.reduce((n, p) => n + F[p.id].price, 0) + (st.wrap ? WRAP_PRICE : 0) + (st.flower !== "none" ? FLOWER_PRICE : 0);
+}
+function drawScene(animate) {
+  arrange(state);
+  syncPieces(animate);
+  $("#lyBack").innerHTML = backMarkup(state, pileTopOf(state));
+  $("#lyFront").innerHTML = frontMarkup(state);
+  drawRing();
+}
+
+function refreshUI() {
+  const g = geom(state), used = usedVol(state), left = g.cap - used;
+  $("#total").textContent = vnd(totalPrice(state));
+  $("#meterFill").style.width = Math.min(100, used / g.cap * 100) + "%";
+  $("#meter").classList.toggle("full", left < 1);
+  const count = state.pieces.length;
+  $("#meterText").textContent = !count ? "Giỏ đang trống" : left < 1 ? "Giỏ đã đầy" : left < 2 ? `${count} món, chỉ còn chỗ cho một trái kiwi` : `${count} món, còn chỗ cho khoảng ${Math.floor(left / 2)} trái`;
+  $("#openSend").disabled = !count;
+
+  FRUITS.forEach(f => {
+    const n = state.pieces.filter(p => p.id === f.id).length;
+    const row = document.getElementById("f-" + f.id);
+    row.classList.toggle("on", n > 0);
+    row.querySelector("output").textContent = n;
+    row.querySelector("[data-minus]").disabled = !n;
+  });
+  const press = (sel, attr, val) => document.querySelectorAll(`${sel} [data-${attr}]`).forEach(b => b.setAttribute("aria-pressed", b.dataset[attr] === String(val)));
+  press("#optVessel", "v", state.v); press("#optSize", "s", state.s); press("#optWrap", "w", state.wrap);
+  press("#optRibbon", "r", state.ribbon); press("#optFlower", "f", state.flower); press("#presets", "p", state.preset);
+  document.querySelectorAll("#optSize [data-s]").forEach(b => { b.querySelector("small").textContent = vnd(VESSELS[state.v].prices[b.dataset.s]); });
+  const cardBox = $("#card"); if (document.activeElement !== cardBox) cardBox.value = state.card;
+  drawTools();
+  $("#sceneDesc").textContent = `${VESSELS[state.v].name} cỡ ${SIZES[state.s].name.toLowerCase()}: ${summary(state) || "chưa có trái"}`;
+  saveHash();
+}
+function render(animate) { drawScene(animate); refreshUI(); }
+
+function summary(st) {
+  const c = {}; st.pieces.forEach(p => c[p.id] = (c[p.id] || 0) + 1);
+  return FRUITS.filter(f => c[f.id]).map(f => `${f.name} x${c[f.id]}`).join(", ");
+}
+function drawTools() {
+  const p = state.pieces.find(x => x.u === selected), box = $("#tools");
+  if (p) {
+    box.innerHTML = `<span class="sel-name">${esc(F[p.id].name)}</span><button class="chip" data-tool="rotate">Xoay</button><button class="chip danger" data-tool="remove">Bỏ trái này</button><button class="chip" data-tool="done">Xong</button>`;
+  } else {
+    const moved = state.pieces.some(x => x.manual);
+    box.innerHTML = `<span class="hint">${state.pieces.length ? "Kéo từng trái để đổi chỗ" : "Qua mục Trái cây để thêm vào giỏ"}</span>
+      ${moved ? '<button class="chip" data-tool="tidy">Xếp lại gọn</button>' : ""}
+      ${state.pieces.length ? '<button class="chip" data-tool="clear">Bỏ hết</button><button class="chip" data-tool="save">Lưu ảnh</button>' : ""}`;
+  }
+}
+
+/* ---------- Thao tác ---------- */
+let toastT;
+function toast(msg) {
+  const t = $("#toast"); t.textContent = msg; t.classList.add("show");
+  clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("show"), 2600);
+}
+function shake() { const s = $("#scene"); s.classList.remove("shake"); void s.getBoundingClientRect(); s.classList.add("shake"); }
+function addFruit(id) {
+  const g = geom(state);
+  if (usedVol(state) + F[id].vol > g.cap) {
+    shake();
+    toast(state.s === "l" ? "Giỏ đã đầy, bỏ bớt vài trái để thêm." : "Giỏ đã đầy. Đổi sang cỡ lớn hơn ở mục Giỏ.");
+    return;
+  }
+  state.pieces.push(makePiece(id)); state.preset = "";
+  render(true);
+}
+function removeFruit(id) {
+  const list = state.pieces.filter(p => p.id === id);
+  const p = list.reverse().find(x => !x.manual) || list[0];
+  if (!p) return;
+  state.pieces = state.pieces.filter(x => x !== p);
+  if (selected === p.u) selected = 0;
+  state.preset = "";
+  render();
+}
+function setSize(s) {
+  if (usedVol(state) > SIZES[s].cap) { shake(); toast(`Giỏ đang nhiều hơn sức chứa cỡ ${SIZES[s].name.toLowerCase()}. Bớt vài trái rồi đổi nhé.`); return; }
+  state.s = s; state.preset = "";
+  state.pieces.forEach(p => { p.manual = false; });
+  render();
+}
+function piecesFrom(items) {
+  const out = [];
+  Object.entries(items).forEach(([id, n]) => { for (let i = 0; i < n; i++) out.push(makePiece(id)); });
+  return out;
+}
+function loadPreset(pr) {
+  Object.assign(state, { v: pr.v, s: pr.s, wrap: pr.wrap, ribbon: pr.ribbon, flower: pr.flower, card: pr.card, preset: pr.id, pieces: piecesFrom(pr.items) });
+  selected = 0;
+  render(true);
+}
+
+/* Kéo trái trong giỏ */
+const scene = $("#scene");
+let drag = null;
+function toScene(e) {
+  const m = scene.getScreenCTM().inverse();
+  return { x: m.a * e.clientX + m.c * e.clientY + m.e, y: m.b * e.clientX + m.d * e.clientY + m.f };
+}
+scene.addEventListener("pointerdown", e => {
+  const n = e.target.closest(".pc");
+  if (!n) { if (selected) { selected = 0; drawRing(); drawTools(); } return; }
+  const p = state.pieces.find(x => x.u === +n.dataset.u), at = toScene(e);
+  drag = { p, n, dx: p.x - at.x, dy: p.y - at.y, moved: false, sx: e.clientX, sy: e.clientY };
+  scene.setPointerCapture(e.pointerId);
+  e.preventDefault();
+});
+scene.addEventListener("pointermove", e => {
+  if (!drag) return;
+  if (!drag.moved && Math.hypot(e.clientX - drag.sx, e.clientY - drag.sy) < 5) return;
+  drag.moved = true; drag.n.classList.add("drag");
+  const g = geom(state), at = toScene(e), r = F[drag.p.id].r;
+  drag.p.x = Math.round(Math.min(g.r + 10, Math.max(g.l - 10, at.x + drag.dx)));
+  drag.p.y = Math.round(Math.min(g.front - r * .2, Math.max(r + 6, at.y + drag.dy)));
+  drag.n.style.transform = styleTf(pieceTf(drag.p));
+  if (selected === drag.p.u) drawRing();
+});
+function endDrag() {
+  if (!drag) return;
+  const { p, n, moved } = drag; drag = null;
+  n.classList.remove("drag");
+  if (moved) { p.manual = true; state.preset = ""; render(); }
+  else { selected = selected === p.u ? 0 : p.u; drawRing(); drawTools(); }
+}
+scene.addEventListener("pointerup", endDrag);
+scene.addEventListener("pointercancel", endDrag);
+
+$("#tools").addEventListener("click", async e => {
+  const t = e.target.closest("[data-tool]"); if (!t) return;
+  const p = state.pieces.find(x => x.u === selected);
+  switch (t.dataset.tool) {
+    case "rotate": p.rot += 30; p.manual = true; render(); break;
+    case "remove": state.pieces = state.pieces.filter(x => x !== p); selected = 0; state.preset = ""; render(); break;
+    case "done": selected = 0; drawRing(); drawTools(); break;
+    case "tidy": state.pieces.forEach(x => { x.manual = false; }); render(); break;
+    case "clear": state.pieces = []; selected = 0; state.preset = ""; render(); showTab("trai"); break;
+    case "save": await saveImage(); break;
+  }
+});
+
+/* Lưu giỏ thành ảnh */
+async function saveImage() {
+  const clone = scene.cloneNode(true);
+  clone.querySelectorAll("[data-ui]").forEach(n => n.remove());
+  const list = [...state.pieces].sort((a, b) => a.y - b.y);
+  clone.querySelector("#lyPieces").innerHTML = list.map(p => `<g transform="${attrTf(pieceTf(p))}">${art(p.id)}</g>`).join("");
+  clone.removeAttribute("class");
+  clone.setAttribute("width", 1200); clone.setAttribute("height", 1140);
+  const url = URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(clone)], { type: "image/svg+xml;charset=utf-8" }));
+  try {
+    const img = new Image();
+    await new Promise((ok, fail) => { img.onload = ok; img.onerror = fail; img.src = url; });
+    const cv = document.createElement("canvas"); cv.width = 1200; cv.height = 1140;
+    cv.getContext("2d").drawImage(img, 0, 0, 1200, 1140);
+    const blob = await new Promise(ok => cv.toBlob(ok, "image/png"));
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob); a.download = "gio-qua-trai-cay-350.png";
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+    toast("Đã lưu ảnh giỏ quà.");
+  } catch (err) {
+    toast("Máy này chưa lưu được ảnh, bạn chụp màn hình giúp nhé.");
+  } finally { URL.revokeObjectURL(url); }
+}
+
+/* Lưu giỏ vào link để gửi lại đúng mẫu */
+let hashT;
+function saveHash() {
+  clearTimeout(hashT);
+  hashT = setTimeout(() => { try { history.replaceState(null, "", "#" + encodeState()); } catch (e) {} }, 200);
+}
+function encodeState() {
+  const c = {}, tokens = [];
+  state.pieces.forEach(p => {
+    if (p.manual) tokens.push(`${p.id}@${p.x}_${p.y}_${p.rot}`);
+    else c[p.id] = (c[p.id] || 0) + 1;
+  });
+  Object.entries(c).forEach(([id, n]) => tokens.unshift(`${id}*${n}`));
+  const q = new URLSearchParams({ v: state.v, s: state.s, w: state.wrap ? 1 : 0, r: state.ribbon, f: state.flower, i: tokens.join(",") });
+  if (state.card.trim()) q.set("c", state.card.trim());
+  return q.toString();
+}
+function restoreState() {
+  const q = new URLSearchParams(location.hash.slice(1));
+  if (!q.has("i")) return false;
+  if (VESSELS[q.get("v")]) state.v = q.get("v");
+  if (SIZES[q.get("s")]) state.s = q.get("s");
+  if (RIBBONS[q.get("r")]) state.ribbon = q.get("r");
+  if (FLOWERS[q.get("f")]) state.flower = q.get("f");
+  state.wrap = q.get("w") === "1";
+  state.card = (q.get("c") || "").slice(0, 54);
+  const cap = SIZES[state.s].cap; let vol = 0;
+  state.pieces = [];
+  q.get("i").split(",").filter(Boolean).forEach(tk => {
+    const [head, pos] = tk.split("@"), [id, n] = head.split("*");
+    if (!F[id]) return;
+    for (let k = 0; k < Math.min(+n || 1, 40); k++) {
+      if (vol + F[id].vol > cap) return;
+      vol += F[id].vol;
+      const p = makePiece(id);
+      if (pos) {
+        const [x, y, rot] = pos.split("_").map(Number);
+        if ([x, y, rot].every(Number.isFinite)) { p.x = x; p.y = y; p.rot = rot; p.manual = true; }
+      }
+      state.pieces.push(p);
+    }
+  });
+  return true;
+}
+
+/* Gửi cho tiệm */
+function buildMessage() {
+  const r = RIBBONS[state.ribbon], extras = [`nơ ${r.name}`];
+  if (state.wrap) extras.unshift("bọc màng kính");
+  if (state.flower !== "none") extras.push(`hoa ${FLOWERS[state.flower].name.toLowerCase()}`);
+  const lines = [
+    `Chào ${SHOP.name}, mình muốn đặt giỏ quà như sau:`,
+    `- Giỏ: ${VESSELS[state.v].name}, cỡ ${SIZES[state.s].name.toLowerCase()}, ${extras.join(", ")}`,
+    `- Trái cây: ${summary(state)}`,
+  ];
+  if (state.card.trim()) lines.push(`- Thiệp: "${state.card.trim()}"`);
+  lines.push(`- Số giỏ: ${qty}`);
+  const d = $("#needDate").value;
+  if (d) lines.push(`- Ngày cần nhận: ${d.split("-").reverse().join("/")}`);
+  lines.push(`- Tạm tính trên trang: ${vnd(totalPrice(state) * qty)}`);
+  lines.push(`Xem lại giỏ: ${location.origin}${location.pathname}#${encodeState()}`);
+  return lines.join("\n");
+}
+function drawSend() {
+  $("#qty").textContent = qty;
+  $("#qtyMinus").disabled = qty <= 1;
+  $("#msg").textContent = buildMessage();
+  const acts = [];
+  if (SHOP.zalo) acts.push(`<button type="button" class="btn" id="sendZalo">Chép nội dung và mở Zalo tiệm</button>`);
+  acts.push(`<button type="button" class="btn${SHOP.zalo ? " light" : ""}" id="sendCopy">Chép nội dung</button>`);
+  acts.push(`<button type="button" class="btn light" id="sendImg">Lưu ảnh giỏ để gửi kèm</button>`);
+  if (SHOP.phone) acts.push(`<a class="btn light" href="tel:${esc(SHOP.phone)}">Gọi tiệm ${esc(SHOP.phone)}</a>`);
+  $("#sendActs").innerHTML = acts.join("");
+  $("#sendHint").textContent = SHOP.zalo ? "Mở Zalo xong, bạn dán nội dung vào khung chat." : "Dán nội dung vào tin nhắn gửi Fanpage của tiệm. Trong link có sẵn giỏ bạn vừa sắp.";
+}
+async function copyText(t) {
+  try { await navigator.clipboard.writeText(t); }
+  catch (e) {
+    const a = document.createElement("textarea"); a.value = t; document.body.appendChild(a); a.select();
+    try { document.execCommand("copy"); } catch (e2) {}
+    a.remove();
+  }
+  toast("Đã chép nội dung.");
+}
+$("#openSend").addEventListener("click", () => {
+  selected = 0; drawRing(); drawTools();
+  $("#needDate").min = new Date().toISOString().slice(0, 10);
+  drawSend(); $("#sendDlg").showModal();
+});
+$("#closeSend").addEventListener("click", () => $("#sendDlg").close());
+$("#sendDlg").addEventListener("click", e => { if (e.target === e.currentTarget) e.currentTarget.close(); });
+$("#qtyMinus").addEventListener("click", () => { qty = Math.max(1, qty - 1); drawSend(); });
+$("#qtyPlus").addEventListener("click", () => { qty = Math.min(500, qty + 1); drawSend(); });
+$("#needDate").addEventListener("change", drawSend);
+$("#sendActs").addEventListener("click", async e => {
+  const id = e.target.id;
+  if (id === "sendCopy") await copyText(buildMessage());
+  if (id === "sendImg") await saveImage();
+  if (id === "sendZalo") { await copyText(buildMessage()); window.open(`https://zalo.me/${SHOP.zalo}`, "_blank", "noopener"); }
+});
+
+/* Dựng phần chọn */
+function showTab(name) {
+  document.querySelectorAll("[data-tab]").forEach(b => b.setAttribute("aria-selected", b.dataset.tab === name));
+  document.querySelectorAll(".pane").forEach(p => { p.hidden = p.id !== "pane-" + name; });
+}
+document.querySelector(".tabs").addEventListener("click", e => { const t = e.target.closest("[data-tab]"); if (t) showTab(t.dataset.tab); });
+
+function presetThumb(pr) {
+  const st = { ...pr, pieces: piecesFrom(pr.items) };
+  arrange(st);
+  const body = [...st.pieces].sort((a, b) => a.y - b.y).map(p => `<g transform="${attrTf(pieceTf(p))}">${art(p.id)}</g>`).join("");
+  return { svg: `<svg viewBox="0 100 800 620" aria-hidden="true">${backMarkup(st, pileTopOf(st))}${body}${frontMarkup({ ...st, card: "" })}</svg>`, price: totalPrice(st) };
+}
+$("#presets").innerHTML = PRESETS.map(pr => {
+  const t = presetThumb(pr);
+  return `<button type="button" class="preset" data-p="${pr.id}" aria-pressed="false">${t.svg}<b>${esc(pr.name)}</b><small>${esc(pr.tag)}</small><div class="price">${vnd(t.price)}</div></button>`;
+}).join("");
+$("#presets").addEventListener("click", e => {
+  const b = e.target.closest("[data-p]"); if (b) loadPreset(PRESETS.find(p => p.id === b.dataset.p));
+});
+
+$("#optVessel").innerHTML = Object.entries(VESSELS).map(([k, v]) => `<button type="button" class="opt" data-v="${k}">${esc(v.name)}</button>`).join("");
+$("#optSize").innerHTML = Object.entries(SIZES).map(([k, v]) => `<button type="button" class="opt" data-s="${k}">${esc(v.name)}<small></small></button>`).join("");
+$("#optWrap").innerHTML = `<button type="button" class="opt" data-w="false">Không bọc<small>Thấy rõ giỏ</small></button><button type="button" class="opt" data-w="true">Màng kính trong<small>+${vnd(WRAP_PRICE)}</small></button>`;
+$("#optRibbon").innerHTML = Object.entries(RIBBONS).map(([k, v]) => `<button type="button" class="swatch" data-r="${k}" style="background:${v.a}" aria-label="Nơ ${esc(v.name)}"></button>`).join("");
+$("#optFlower").innerHTML = Object.entries(FLOWERS).map(([k, v]) => `<button type="button" class="opt" data-f="${k}">${esc(v.name)}</button>`).join("");
+$("#flowerPrice").textContent = `+${vnd(FLOWER_PRICE)}`;
+$("#cardPills").innerHTML = CARD_IDEAS.map(c => `<button type="button" class="chip" data-card="${esc(c)}">${esc(c)}</button>`).join("");
+$("#fruits").innerHTML = FRUITS.map(f => `<div class="fruit" id="f-${f.id}">
+    <svg viewBox="-68 -72 136 136" aria-hidden="true">${art(f.id)}</svg>
+    <div class="t"><b>${esc(f.name)}</b><small>${esc(f.unit)} · ${vnd(f.price)}</small></div>
+    <div class="step"><button type="button" data-minus="${f.id}" aria-label="Bớt ${esc(f.name)}">−</button><output>0</output><button type="button" data-plus="${f.id}" aria-label="Thêm ${esc(f.name)}">+</button></div>
+  </div>`).join("");
+
+$("#fruits").addEventListener("click", e => {
+  const a = e.target.closest("[data-plus]"), b = e.target.closest("[data-minus]");
+  if (a) addFruit(a.dataset.plus);
+  if (b) removeFruit(b.dataset.minus);
+});
+const changeOpt = fn => e => { fn(e.target.closest("button")); };
+$("#optVessel").addEventListener("click", changeOpt(b => { if (b) { state.v = b.dataset.v; state.preset = ""; render(); } }));
+$("#optSize").addEventListener("click", changeOpt(b => { if (b) setSize(b.dataset.s); }));
+$("#optWrap").addEventListener("click", changeOpt(b => { if (b) { state.wrap = b.dataset.w === "true"; state.preset = ""; render(); } }));
+$("#optRibbon").addEventListener("click", changeOpt(b => { if (b) { state.ribbon = b.dataset.r; state.preset = ""; render(); } }));
+$("#optFlower").addEventListener("click", changeOpt(b => { if (b) { state.flower = b.dataset.f; state.preset = ""; render(); } }));
+$("#card").addEventListener("input", e => { state.card = e.target.value; state.preset = ""; $("#lyFront").innerHTML = frontMarkup(state); saveHash(); });
+$("#cardPills").addEventListener("click", e => {
+  const b = e.target.closest("[data-card]"); if (!b) return;
+  state.card = b.dataset.card; $("#card").value = state.card; state.preset = ""; render();
+});
+
+/* Khởi động: mở lại giỏ trong link, không có thì hiện mẫu đầu tiên */
+if (restoreState()) { render(); showTab("trai"); }
+else { loadPreset(PRESETS[0]); showTab("mau"); }
+</script>
+</body>
+</html>

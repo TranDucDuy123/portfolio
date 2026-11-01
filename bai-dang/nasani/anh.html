@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Ảnh bài NASANI</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A1A3A;--navy2:#132A57;--blue:#2F7BF6;--sky:#8FB8FF;--red:#E23A3A;--ink:#0A1A3A;--muted:#5A6785;--paper:#F4F7FD;--line:#DCE4F3}
+*{box-sizing:border-box;margin:0}
+body{background:#888;font-family:"Be Vietnam Pro",sans-serif;-webkit-font-smoothing:antialiased}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;display:none;flex-direction:column}
+body.all .s{display:flex;margin:0 auto 20px}
+.s.on{display:flex}
+.dark{background:radial-gradient(1200px 700px at 85% -10%,#21418A 0%,transparent 60%),var(--navy);color:#fff}
+.light{background:var(--paper);color:var(--ink)}
+.pad{padding:84px 84px 0}
+.tag{display:inline-flex;align-items:center;gap:12px;font-weight:700;font-size:26px;letter-spacing:.14em;text-transform:uppercase}
+.dark .tag{color:var(--sky)}
+.light .tag{color:var(--blue)}
+.dot{width:12px;height:12px;border-radius:50%;background:var(--red)}
+.foot{margin-top:auto;padding:0 84px 64px;display:flex;justify-content:space-between;align-items:center;font-size:26px;font-weight:600}
+.dark .foot{color:rgba(255,255,255,.7)}
+.light .foot{color:var(--muted)}
+.foot b{color:inherit;font-weight:800}
+.pg{font-variant-numeric:tabular-nums;letter-spacing:.08em}
+.dw{display:flex;align-items:center;gap:12px}
+.dw i{width:40px;height:40px;border-radius:10px;background:var(--red);display:grid;place-items:center;font-style:normal;color:#fff;font-weight:900;font-size:20px}
+
+/* Slide 1 */
+.h1{font-size:80px;line-height:1.1;font-weight:900;letter-spacing:-.025em;margin-top:40px}
+.h1 em{font-style:normal;color:var(--sky)}
+.sub{font-size:36px;line-height:1.45;color:rgba(255,255,255,.78);margin-top:36px;max-width:860px}
+.pairs{display:flex;align-items:center;gap:28px;margin-top:70px}
+.chipbig{border-radius:28px;padding:34px 40px;font-weight:900;font-size:58px;letter-spacing:.02em}
+.c-dw{background:#fff;color:var(--navy)}
+.c-dw span{color:var(--red)}
+.c-na{background:var(--blue);color:#fff}
+.plus{font-size:64px;font-weight:300;color:rgba(255,255,255,.6)}
+.roles{display:flex;gap:28px;margin-top:22px;font-size:25px;color:rgba(255,255,255,.65);font-weight:500;line-height:1.4}
+.roles div:first-child{width:336px}
+.ring{position:absolute;border:3px solid rgba(143,184,255,.18);border-radius:50%}
+
+/* Slide 2 */
+.h2{font-size:64px;line-height:1.1;font-weight:900;letter-spacing:-.02em;margin-top:28px}
+.h2 em{font-style:normal;color:var(--blue)}
+.dark .h2 em{color:var(--sky)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:56px;padding:0 84px}
+.card{background:#fff;border:2px solid var(--line);border-radius:30px;padding:40px 36px;display:flex;flex-direction:column;gap:14px;min-height:330px}
+.ic{width:84px;height:84px;border-radius:22px;background:#E8F0FF;display:grid;place-items:center}
+.ic svg{width:46px;height:46px;stroke:var(--blue);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:38px;font-weight:800;line-height:1.2;margin-top:8px}
+.card p{font-size:27px;line-height:1.45;color:var(--muted)}
+
+/* Slide 3 */
+.inds{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:64px;padding:0 84px}
+.ind{background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.12);border-radius:28px;padding:32px 34px;display:flex;flex-direction:column;align-items:flex-start;gap:16px;font-size:36px;font-weight:700;line-height:1.2;min-height:176px}
+.ind span{font-size:58px;line-height:1}
+.note3{margin:56px 84px 0;font-size:32px;line-height:1.5;color:rgba(255,255,255,.75);border-left:6px solid var(--red);padding-left:28px}
+.note3 b{color:#fff}
+
+/* Slide 4 */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:60px;padding:0 84px}
+.col{border-radius:30px;padding:48px 36px}
+.col.dwc{background:#fff;border:2px solid var(--line)}
+.col.nac{background:var(--navy);color:#fff}
+.col h4{font-size:44px;font-weight:900;margin-bottom:24px}
+.col.dwc h4 span{color:var(--red)}
+.col ul{list-style:none;padding:0;display:grid;gap:20px}
+.col li{font-size:29px;line-height:1.35;padding-left:42px;position:relative;font-weight:500}
+.col li:before{content:"";position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--red)}
+.col.nac li:before{background:var(--blue)}
+.cta{margin:40px 84px 0;background:var(--blue);color:#fff;border-radius:30px;padding:44px 44px}
+.cta b{display:block;font-size:42px;font-weight:900;line-height:1.2}
+.cta p{font-size:30px;margin-top:16px;opacity:.95;line-height:1.5}
+.cta .contact{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px}
+.cta .contact span{background:rgba(255,255,255,.16);border-radius:999px;padding:10px 22px;font-size:27px;font-weight:700}
+</style>
+</head>
+<body>
+
+<!-- 1. Bìa -->
+<section class="s dark" data-s="1">
+  <div class="ring" style="width:760px;height:760px;right:-260px;top:-220px"></div>
+  <div class="ring" style="width:520px;height:520px;right:-140px;top:-100px"></div>
+  <div class="pad" style="position:relative">
+    <div class="tag"><span class="dot"></span>Đối tác kỹ thuật</div>
+    <div class="h1">Web đẹp là chưa đủ.<br><em>Phần chạy phía sau</em><br>mới giữ được khách.</div>
+    <p class="sub">Duy Web làm cùng NASANI để kênh bán của anh chị luôn có người chuyên lo hạ tầng, tên miền, email và bảo mật.</p>
+    <div class="pairs">
+      <div class="chipbig c-dw">Duy<span>Web</span></div>
+      <div class="plus">+</div>
+      <div class="chipbig c-na">NASANI</div>
+    </div>
+    <div class="roles"><div>Chiến lược, kênh bán,<br>nội dung</div><div>Website, hosting,<br>tên miền, email</div></div>
+  </div>
+  <div class="foot"><div class="dw"><i>D</i>duyweb.info.vn</div><div class="pg">01 / 04</div></div>
+</section>
+
+<!-- 2. Dịch vụ -->
+<section class="s light" data-s="2">
+  <div class="pad">
+    <div class="tag"><span class="dot"></span>NASANI làm gì</div>
+    <div class="h2">Bốn thứ giữ website<br><em>luôn chạy ổn định</em></div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8M12 18v3"/></svg></div>
+      <h3>Thiết kế website</h3>
+      <p>Chuẩn SEO, chạy mượt trên điện thoại, có giỏ hàng, đặt lịch, thanh toán.</p>
+    </div>
+    <div class="card">
+      <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h.01M7 17.5h.01"/></svg></div>
+      <h3>Hosting</h3>
+      <p>Có sao lưu, bảo mật, chịu tải khi chạy quảng cáo đông người vào.</p>
+    </div>
+    <div class="card">
+      <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+      <h3>Tên miền</h3>
+      <p>Đăng ký và gia hạn .vn, .com… giữ thương hiệu không bị người khác lấy mất.</p>
+    </div>
+    <div class="card">
+      <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+      <h3>Email doanh nghiệp</h3>
+      <p>Email theo tên miền riêng, gửi báo giá cho khách trông chuyên nghiệp hơn.</p>
+    </div>
+  </div>
+  <div class="foot"><div class="dw"><i>D</i>duyweb.info.vn</div><div class="pg">02 / 04</div></div>
+</section>
+
+<!-- 3. Hệ thống quản lý -->
+<section class="s dark" data-s="3">
+  <div class="pad">
+    <div class="tag"><span class="dot"></span>Hệ thống quản lý</div>
+    <div class="h2">Đơn nhiều lên,<br><em>quản lý vẫn gọn</em></div>
+  </div>
+  <div class="inds">
+    <div class="ind"><span>🍜</span>Ăn uống, giải trí</div>
+    <div class="ind"><span>🛍️</span>Buôn bán, bán lẻ</div>
+    <div class="ind"><span>💅</span>Làm đẹp</div>
+    <div class="ind"><span>🏨</span>Lưu trú</div>
+    <div class="ind"><span>🚚</span>Vận tải nội địa</div>
+    <div class="ind"><span>✈️</span>Chuyển phát quốc tế</div>
+  </div>
+  <p class="note3">Phần mềm quản lý tập trung làm riêng cho từng ngành: <b>bán hàng, kho, khách hàng</b> nằm chung một chỗ, đỡ sót đơn khi cửa hàng đông.</p>
+  <div class="foot"><div class="dw"><i>D</i>duyweb.info.vn</div><div class="pg">03 / 04</div></div>
+</section>
+
+<!-- 4. Chia việc + liên hệ -->
+<section class="s light" data-s="4">
+  <div class="pad">
+    <div class="tag"><span class="dot"></span>Làm việc thế nào</div>
+    <div class="h2">Một đầu mối,<br><em>hai đội chuyên trách</em></div>
+  </div>
+  <div class="split">
+    <div class="col dwc">
+      <h4>Duy<span>Web</span></h4>
+      <ul>
+        <li>Chiến lược, định vị</li>
+        <li>Dựng và vận hành kênh bán: web, Fanpage, TikTok, Google Maps</li>
+        <li>Nội dung, đọc số liệu cùng anh chị</li>
+      </ul>
+    </div>
+    <div class="col nac">
+      <h4>NASANI</h4>
+      <ul>
+        <li>Hạ tầng website, hosting</li>
+        <li>Tên miền, email doanh nghiệp</li>
+        <li>Bảo mật, sao lưu, xử lý sự cố</li>
+      </ul>
+    </div>
+  </div>
+  <div class="cta">
+    <b>Cần làm web, đổi hosting hay lập email doanh nghiệp?</b>
+    <p>Nhắn Duy Web để được tư vấn trọn gói.</p>
+    <div class="contact"><span>duyweb.info.vn</span><span>nasani.vn</span><span>028.3715.4879</span></div>
+  </div>
+  <div class="foot"><div class="dw"><i>D</i>duyweb.info.vn</div><div class="pg">04 / 04</div></div>
+</section>
+
+<script>
+const s = new URLSearchParams(location.search).get("s");
+if (s) document.querySelector(`[data-s="${s}"]`).classList.add("on");
+else document.body.classList.add("all");
+</script>
+</body>
+</html>

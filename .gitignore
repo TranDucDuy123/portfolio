@@ -9,3 +9,5 @@ coverage/
 
 # Ghi chú nội bộ báo giá (giá sàn, kịch bản chốt) — chỉ giữ trên máy
 bao-gia-xuat/*-noi-bo.md
+# Ảnh chụp kênh của khách khi tiếp cận: đã nhúng sẵn trong trang, ảnh gốc có thể lộ thông tin riêng
+bao-gia-xuat/anh-tiep-can/
