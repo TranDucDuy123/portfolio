@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Báo giá dịch vụ</title>
+<style>
+:root{
+  --bg:#f6f5f1; --surface:#ffffff; --ink:#1c1c19; --muted:#5d5c55; --line:#e3e1da;
+  --accent:#0f766e; --accent-ink:#ffffff;
+  --soft:color-mix(in srgb,var(--accent) 9%,var(--surface));
+  --radius:14px; --gutter:16px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#121210;--surface:#1c1c19;--ink:#f0eee7;--muted:#a9a79d;--line:#33322c}
+}
+:root[data-theme="dark"]{--bg:#121210;--surface:#1c1c19;--ink:#f0eee7;--muted:#a9a79d;--line:#33322c}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;padding-bottom:84px}
+.wrap{max-width:920px;margin:0 auto;padding:0 var(--gutter)}
+h1,h2,h3,p,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+
+/* top bar */
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 12px;padding:18px 0 6px;font-size:14px;color:var(--muted)}
+.top>span:first-child{white-space:nowrap}
+.top b{color:var(--ink);font-weight:650}
+
+/* hero */
+.hero{margin-top:10px;padding:28px 22px;border-radius:calc(var(--radius) + 6px);background:var(--soft);border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line))}
+.eyebrow{font-size:13px;font-weight:650;letter-spacing:.04em;text-transform:uppercase;color:var(--accent)}
+.hero h1{margin-top:8px;font-size:clamp(1.65rem,5.2vw,2.5rem);line-height:1.18;letter-spacing:-.01em}
+.hero .sub{margin-top:12px;font-size:1.06rem;color:var(--muted);max-width:60ch}
+.chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:8px;margin-top:20px}
+.chip{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.chip b{display:block;font-size:1.15rem;color:var(--accent)}
+.chip span{display:block;font-size:13px;line-height:1.35;color:var(--muted)}
+
+/* sections */
+.sec{margin-top:44px}
+.sec>h2{font-size:clamp(1.3rem,3.8vw,1.75rem);line-height:1.25;letter-spacing:-.01em}
+.sec>.lead{margin-top:8px;color:var(--muted);max-width:64ch}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+
+/* understand */
+.quote{margin-top:16px;padding:16px 18px;border-left:4px solid var(--accent);background:var(--surface);border-radius:0 var(--radius) var(--radius) 0;font-size:1.08rem;font-style:italic}
+.quote small{display:block;margin-top:6px;font-style:normal;font-size:13px;color:var(--muted)}
+.points{display:grid;gap:10px;margin-top:16px}
+.point{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.point:first-child{border-top:0}
+.point b{color:var(--accent);font-size:14px}
+
+/* approach */
+.map{display:grid;gap:12px;margin-top:18px}
+.row{display:grid;grid-template-columns:1fr;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.row>div{padding:14px 16px}
+.row .need{background:color-mix(in srgb,var(--muted) 8%,var(--surface))}
+.tag{display:block;font-size:12px;font-weight:650;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.row .sol .tag,.row .ben .tag{color:var(--accent)}
+.row .ben{border-top:1px dashed var(--line);font-weight:600}
+@media(min-width:760px){
+  .row{grid-template-columns:1fr 1.25fr}
+  .row .ben{grid-column:1/-1}
+}
+
+/* plans */
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:18px;align-items:stretch}
+@media(min-width:620px){.plans.two{grid-template-columns:repeat(2,1fr)}}
+.plan{position:relative;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 18px}
+.plan.rec{border:2px solid var(--accent);box-shadow:0 8px 28px color-mix(in srgb,var(--accent) 18%,transparent)}
+.badge{position:absolute;top:-12px;left:16px;background:var(--accent);color:var(--accent-ink);font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px}
+.plan h3{font-size:1.15rem}
+.plan .tl{color:var(--muted);font-size:14px;margin-top:2px}
+.price{margin-top:12px;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.price b{font-size:1.7rem;letter-spacing:-.01em}
+.price span{color:var(--muted);font-size:14px}
+.for{margin-top:10px;font-size:14px;color:var(--muted)}
+.feat{margin-top:14px;display:grid;gap:8px;flex:1}
+.feat li{position:relative;padding-left:26px;font-size:15px}
+.feat li::before{content:"";position:absolute;left:0;top:.35em;width:16px;height:16px;border-radius:50%;background:var(--accent);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3 3 7-7' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3 3 7-7' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.feat li.no{color:var(--muted);text-decoration:line-through;text-decoration-color:color-mix(in srgb,var(--muted) 50%,transparent)}
+.feat li.con{color:var(--ink)}
+.analogy{margin-top:8px;padding:8px 12px;border-radius:10px;background:var(--soft);font-size:14px;color:var(--ink)}
+.feat li.no::before,.feat li.con::before{background:var(--muted);opacity:.45;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 4l8 8M12 4l-8 8' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 4l8 8M12 4l-8 8' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.deliv{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.fine{margin-top:12px;font-size:14px;color:var(--muted)}
+
+/* running costs */
+.costs{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.cost{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:6px 14px;padding:14px 16px;border-top:1px solid var(--line);align-items:baseline}
+.cost:first-child{border-top:0}
+.cost b{font-weight:650}
+.cost small{display:block;color:var(--muted);font-size:13px}
+.cost .who{color:var(--muted);font-size:14px}
+.cost .amt{font-weight:650}
+@media(max-width:620px){.cost{grid-template-columns:1fr auto}.cost .who{grid-column:1/-1}}
+
+/* total */
+.total{margin-top:22px;border-radius:var(--radius);background:var(--ink);color:var(--bg);padding:20px 18px}
+.total h3{font-size:1.05rem;font-weight:650}
+.total .ln{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid color-mix(in srgb,var(--bg) 22%,transparent);font-size:15px}
+.total .sum{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding-top:14px}
+.total .sum b{font-size:1.7rem;letter-spacing:-.01em}
+.total .nt{margin-top:10px;font-size:13px;opacity:.8}
+
+/* timeline */
+.steps{margin-top:18px;display:grid;gap:0;counter-reset:s}
+.step{position:relative;padding:0 0 22px 52px}
+.step::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-weight:700;font-size:15px}
+.step::after{content:"";position:absolute;left:16px;top:38px;bottom:4px;width:2px;background:var(--line)}
+.step:last-child{padding-bottom:0}.step:last-child::after{display:none}
+.step b{display:block}
+.step .when{font-size:13px;color:var(--accent);font-weight:650}
+.step .me{font-size:14px;color:var(--muted);margin-top:2px}
+
+/* grids of small cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:18px}
+.cards .card h3{font-size:1.02rem}
+.cards .card p{margin-top:6px;color:var(--muted);font-size:15px}
+
+/* terms / faq */
+.terms{margin-top:14px;display:grid;gap:8px}
+.terms li{position:relative;padding-left:20px;font-size:15px;color:var(--muted)}
+.terms li::before{content:"";position:absolute;left:4px;top:.65em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-top:10px}
+summary{cursor:pointer;font-weight:650;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--accent);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:var(--muted);font-size:15px}
+
+/* CTA */
+.cta{margin-top:48px;padding:30px 22px;border-radius:calc(var(--radius) + 6px);background:var(--accent);color:var(--accent-ink);text-align:center}
+.cta h2{font-size:clamp(1.4rem,4.5vw,2rem)}
+.cta p{margin:10px auto 0;max-width:52ch;opacity:.95}
+.btn{display:inline-block;margin-top:18px;padding:14px 26px;border-radius:99px;background:var(--accent-ink);color:var(--accent);font-weight:700;text-decoration:none;font-size:16px;min-height:48px}
+.cta .nt{margin-top:12px;font-size:13px;opacity:.9}
+.foot{padding:26px 0 8px;text-align:center;font-size:13px;color:var(--muted)}
+
+/* sticky bar (phone) */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:10;background:var(--surface);border-top:1px solid var(--line);padding:10px var(--gutter);display:flex;gap:12px;align-items:center;justify-content:space-between}
+.sticky .t{font-size:13px;color:var(--muted);line-height:1.3;min-width:0}
+.sticky .t b{display:block;color:var(--ink);font-size:15px}
+.sticky .btn{margin:0;padding:11px 20px;background:var(--accent);color:var(--accent-ink);white-space:nowrap}
+@media(min-width:900px){.sticky{display:none}body{padding-bottom:0}}
+.sample{background:#b45309;color:#fff;text-align:center;font-size:13px;padding:6px var(--gutter)}
+
+@media print{
+  body{background:#fff;color:#000;padding:0}.sticky,.cta .btn{display:none}
+  .plan,.row,.card,details{break-inside:avoid}.hero,.cta,.total{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  details:not([open])>*:not(summary){display:block}
+}
+</style>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link rel="canonical" href="https://duyweb.info.vn/de-xuat/thien-phuc-ads-seo-r4n8tz">
+<meta property="og:url" content="https://duyweb.info.vn/de-xuat/thien-phuc-ads-seo-r4n8tz">
+</head>
+<body>
+<noscript><p style="padding:20px">Trang báo giá cần bật JavaScript để hiển thị.</p></noscript>
+<div id="app"></div>
+<script type="application/json" id="data">{
+  "meta": {
+    "slug": "thien-phuc-ads-seo-r4n8tz",
+    "client_short": "Thiên Phúc",
+    "title": "Ads và SEO Thiên Phúc",
+    "brand": "Duy Web",
+    "client": "Nội Thất Nhựa Thiên Phúc",
+    "clientCall": "anh/chị",
+    "date": "03/11/2026",
+    "validUntil": "17/11/2026",
+    "accent": "#0074E2",
+    "contact": "Duy Web · Zalo 0938 415 218 · duyweb.info.vn"
+  },
+  "hero": {
+    "eyebrow": "Đề xuất riêng cho Nội Thất Nhựa Thiên Phúc",
+    "headline": "Quảng cáo mang khách hôm nay. SEO giữ khách cho những năm sau.",
+    "sub": "Trang hiện tại vẫn chạy Google Ads được, bên em làm được ngay. Nhưng chỉ quảng cáo thì dễ thua đối thủ và không giữ lại được gì từ tiền đã chi. Build lại web là bước khởi đầu SEO, để khách tự tìm thấy Thiên Phúc mà không tốn tiền cho từng lượt bấm.",
+    "highlights": [
+      {
+        "value": "12 triệu",
+        "label": "build lại web, khởi đầu SEO"
+      },
+      {
+        "value": "3 triệu",
+        "label": "mỗi năm hosting + tên miền"
+      },
+      {
+        "value": "2–3 triệu",
+        "label": "mỗi tháng nếu muốn đẩy SEO mạnh hơn"
+      }
+    ]
+  },
+  "understand": {
+    "title": "Bên em hiểu anh/chị đang cần gì",
+    "points": [
+      {
+        "label": "Mục tiêu",
+        "text": "Có khách gọi, nhắn Zalo đều đặn từ Google, bắt đầu bằng quảng cáo để có khách ngay."
+      },
+      {
+        "label": "Hiện tại",
+        "text": "Web chạy ổn, nhưng hơn 80 trên 129 trang chưa có tiêu đề, chỉ 2 trang có mô tả. Google gần như không biết mỗi trang bán gì."
+      },
+      {
+        "label": "Băn khoăn",
+        "text": "Chưa có nhân viên rảnh để chăm web, và không muốn tốn thêm khoản nào không ra khách."
+      }
+    ]
+  },
+  "explain": {
+    "title": "Chạy Ads trên trang hiện tại, hay build lại kèm SEO?",
+    "intro": "Cả hai đều đưa web Thiên Phúc lên Google. Khác nhau ở chỗ khách đến bằng tiền mỗi ngày, hay đến vì web đủ tốt để Google tự giới thiệu.",
+    "items": [
+      {
+        "name": "Chỉ chạy Ads trên trang hiện tại",
+        "analogy": "Giống thuê biển quảng cáo dẫn khách tới một cửa hàng chưa bày biện xong: khách tới được, nhưng nhiều người quay ra.",
+        "good": [
+          "Trang vẫn dùng được, bên em chạy được ngay",
+          "Không tốn khoản build ban đầu",
+          "Chọn được khu vực, giờ chạy"
+        ],
+        "bad": [
+          "Tỉ lệ thua cao: Google chấm điểm trang đích, trang yếu thì dễ thua đối thủ khi đấu giá và nhiều lượt bấm không thành cuộc gọi",
+          "Không tận dụng được: khách bấm xong rời đi, web không giữ lại gì cho Google",
+          "Trả tiền cho từng lượt bấm, dừng ngân sách là dừng khách"
+        ],
+        "fit": "Hợp khi cần khách gấp trong thời gian ngắn",
+        "cost": "Ngân sách quảng cáo trả Google mỗi ngày"
+      },
+      {
+        "name": "Ads kèm SEO",
+        "analogy": "Vẫn thuê biển quảng cáo, nhưng đồng thời mở cửa hàng mặt tiền của chính mình. Biển tắt, cửa hàng vẫn đón khách.",
+        "good": [
+          "Ads vẫn mang khách ngay như cũ",
+          "Trang tốt hơn giúp quảng cáo hiệu quả hơn",
+          "Khách tự tìm thấy qua Google, không tốn tiền mỗi lượt",
+          "Từ khóa khách gõ khi bấm quảng cáo chỉ đường cho bài SEO"
+        ],
+        "bad": [
+          "SEO cần vài tháng mới thấy rõ",
+          "Cần một khoản build lại ban đầu"
+        ],
+        "fit": "Hợp với nội thất: khách tìm hiểu, so sánh nhiều lần trước khi gọi",
+        "cost": "12 triệu build lại, 3 triệu/năm hosting + tên miền, cộng ngân sách Ads",
+        "recommended": true,
+        "badge": "Duy đề xuất"
+      }
+    ],
+    "note": "Google chấm điểm trang mà quảng cáo dẫn tới (trang có đúng nội dung khách tìm không, tải nhanh không). Vì vậy việc sửa web cho SEO cũng là việc làm cho Ads chạy tốt hơn, không phải hai khoản tách rời."
+  },
+  "approach": {
+    "title": "Hướng giải quyết cho từng nhu cầu",
+    "intro": "Hai hướng đi cùng lúc: tối ưu trang cũ để chạy Ads ngay, làm mới mã nguồn để SEO dễ hơn về lâu dài.",
+    "items": [
+      {
+        "need": "Có khách sớm từ Google",
+        "solution": "Tối ưu lại các trang đang chạy Ads, mỗi nhóm sản phẩm (tủ bếp, tủ quần áo, giường, kệ tivi…) dẫn về đúng trang của nó, giới hạn khu vực",
+        "benefit": "Khách bấm quảng cáo thấy ngay đúng món mình tìm, dễ gọi hơn"
+      },
+      {
+        "need": "Biết quảng cáo nào ra khách thật",
+        "solution": "Gắn đo cuộc gọi, Zalo và form liên hệ; bên em theo dõi và tối ưu để tăng chuyển đổi",
+        "benefit": "Tiền quảng cáo dồn vào nhóm có cuộc gọi, bớt nhóm chỉ có lượt bấm"
+      },
+      {
+        "need": "Bớt phụ thuộc vào tiền quảng cáo",
+        "solution": "Làm mới mã nguồn: đủ tiêu đề và mô tả cho từng trang, gộp đường dẫn trùng, nén ảnh, khai báo sản phẩm và địa chỉ cửa hàng cho Google",
+        "benefit": "Google hiểu từng trang bán gì, đưa web lên khi khách tự tìm"
+      },
+      {
+        "need": "Không có người rảnh để chăm web",
+        "solution": "Build lại là bước khởi đầu SEO. Muốn đẩy mạnh hơn thì chọn gói chăm 2 hoặc 3 triệu/tháng; khi bên anh/chị có nhân viên rảnh thì bàn giao để tự chăm",
+        "benefit": "Anh/chị chủ động mức đầu tư, lúc nào tự làm cũng được"
+      }
+    ]
+  },
+  "packages": {
+    "title": "Build lại web, khởi đầu SEO",
+    "note": "Trả một lần. Ngân sách quảng cáo anh/chị trả thẳng cho Google, không qua bên em.",
+    "items": [
+      {
+        "name": "Build lại + khởi đầu SEO",
+        "tagline": "Tối ưu trang cũ chạy Ads ngay, làm mới mã nguồn để SEO",
+        "price": "12.000.000đ",
+        "unit": "trọn gói",
+        "recommended": true,
+        "badge": "Duy đề xuất",
+        "forWho": "Cho Thiên Phúc: giữ Ads để có khách, xây SEO để giảm dần chi phí mỗi khách",
+        "features": [
+          "Tối ưu các trang đang chạy Ads: đúng nội dung từng nhóm sản phẩm, nút gọi và Zalo luôn hiện",
+          "Gắn đo cuộc gọi, Zalo, form liên hệ cho Google Ads",
+          "Làm mới mã nguồn web, giữ sản phẩm và nội dung đang có",
+          "Tiêu đề và mô tả riêng cho toàn bộ trang (hiện hơn 80 trang đang trống)",
+          "Gộp đường dẫn trùng, chuyển hướng trang cũ để không mất khách đang vào",
+          "Nén ảnh, thêm chú thích ảnh, ảnh tải dần để web nhanh trên điện thoại",
+          "Khai báo sản phẩm, địa chỉ cửa hàng, đường dẫn cho Google",
+          "Kế hoạch từ khóa theo 4 nhóm: mua ngay, theo khu vực, so sánh, tên thương hiệu",
+          "Cài Google Search Console để đo web hiện ra bao nhiêu lần"
+        ],
+        "delivery": "Có báo cáo hiện trạng trước khi sửa để so sánh về sau"
+      }
+    ]
+  },
+  "running": {
+    "title": "Các khoản chi, rõ từ đầu",
+    "intro": "Ngoài gói 12 triệu, đây là các khoản liên quan và ai trả.",
+    "rows": [
+      {
+        "item": "Duy trì: hosting + tên miền",
+        "cost": "3.000.000đ",
+        "period": "/năm",
+        "payer": "Duy Web",
+        "note": "Tên miền đứng tên Thiên Phúc. Hết năm thì gia hạn, nâng gói khi có nhu cầu, hoặc dừng khi hết hạn"
+      },
+      {
+        "item": "Ngân sách Google Ads",
+        "cost": "Anh/chị quyết",
+        "period": "",
+        "payer": "Trả thẳng cho Google",
+        "note": "Tài khoản quảng cáo đứng tên Thiên Phúc"
+      },
+      {
+        "item": "Quản lý, tối ưu Ads tăng chuyển đổi",
+        "cost": "Báo riêng",
+        "period": "",
+        "payer": "Duy Web",
+        "note": "Theo ngân sách anh/chị chọn"
+      },
+      {
+        "item": "Google Search Console, Google Analytics",
+        "cost": "Miễn phí",
+        "period": "",
+        "payer": "Google",
+        "note": "Công cụ đo của Google"
+      }
+    ]
+  },
+  "care": {
+    "title": "Muốn đẩy SEO mạnh hơn (tùy chọn)",
+    "intro": "Build lại là bước khởi đầu. Nếu muốn bên em triển khai SEO đều đặn mỗi tháng, có 2 mức. Khi bên anh/chị có nhân viên rảnh, bên em bàn giao để tự chăm.",
+    "items": [
+      {
+        "name": "Chăm SEO",
+        "tagline": "Bên em viết bài, theo dõi số liệu",
+        "price": "2.000.000đ",
+        "unit": "/tháng",
+        "recommended": true,
+        "features": [
+          "2 bài SEO mỗi tháng, chủ đề chọn theo từ khóa khách gõ khi bấm quảng cáo",
+          "Sao lưu, theo dõi web chạy ổn",
+          "Báo cáo bằng lời thường: web hiện ra bao nhiêu lần, bao nhiêu cuộc gọi, Zalo"
+        ]
+      },
+      {
+        "name": "Đẩy mạnh SEO",
+        "tagline": "Thêm bài, thêm trang, tối ưu chuyển đổi",
+        "price": "3.000.000đ",
+        "unit": "/tháng",
+        "features": [
+          "Mọi thứ trong gói 2 triệu",
+          "4 bài SEO mỗi tháng",
+          "Thêm trang theo khu vực, so sánh sản phẩm",
+          "Đề xuất việc tiếp theo dựa trên số liệu Ads và Google"
+        ]
+      }
+    ],
+    "fine": "Không ràng buộc dài hạn. Muốn tăng, giảm hay dừng thì báo trước tháng sau."
+  },
+  "total": {
+    "title": "Năm đầu tiên theo hướng em đề xuất",
+    "lines": [
+      {
+        "label": "Build lại web, khởi đầu SEO (một lần)",
+        "value": "12.000.000đ"
+      },
+      {
+        "label": "Duy trì năm đầu: hosting + tên miền",
+        "value": "3.000.000đ"
+      }
+    ],
+    "sum": "15.000.000đ",
+    "note": "Chưa gồm ngân sách Google Ads, phí quản lý Ads và gói chăm SEO tùy chọn (2 hoặc 3 triệu mỗi tháng anh/chị chọn). Từ năm thứ hai: 3.000.000đ/năm hosting + tên miền."
+  },
+  "timeline": {
+    "title": "Các bước làm",
+    "steps": [
+      {
+        "step": "Tối ưu trang cũ, gắn đo cuộc gọi và Zalo, chạy Ads theo từng nhóm sản phẩm",
+        "when": "Tuần 1–2",
+        "clientDo": "cấp quyền quản trị web và tài khoản Google Ads"
+      },
+      {
+        "step": "Làm mới mã nguồn: tiêu đề, mô tả, đường dẫn, ảnh, khai báo sản phẩm và cửa hàng",
+        "when": "Tuần 3–6",
+        "clientDo": "gửi ảnh công trình, xác nhận giá và thông tin sản phẩm"
+      },
+      {
+        "step": "Chuyển sang nền mới, chuyển hướng trang cũ, khai báo với Google",
+        "when": "Tuần 7",
+        "clientDo": "duyệt bản xem trước"
+      },
+      {
+        "step": "Nếu chọn gói chăm: viết bài SEO hằng tháng, đọc báo cáo Ads để chọn bài tiếp theo",
+        "when": "Từ tháng 3",
+        "clientDo": "trả lời vài câu hỏi khi bên em viết bài"
+      }
+    ]
+  },
+  "why": {
+    "title": "Vì sao chọn bên em",
+    "items": [
+      {
+        "title": "Đã soi sẵn 129 trang",
+        "text": "Bên em đã kiểm tra toàn bộ web Thiên Phúc, biết chính xác chỗ nào cần sửa, nên bắt đầu được ngay."
+      },
+      {
+        "title": "Một đầu mối cho Ads và web",
+        "text": "Người chạy quảng cáo cũng là người sửa trang đích, không phải chuyển qua lại giữa hai bên."
+      },
+      {
+        "title": "Số thật, lời thường",
+        "text": "Báo cáo nói bằng cuộc gọi, tin nhắn Zalo, lượt hiện trên Google, không thuật ngữ."
+      }
+    ]
+  },
+  "terms": [
+    "Đặt cọc 50% khi xác nhận, 50% còn lại khi bàn giao nền tảng mới.",
+    "Tài khoản quản trị web, tên miền, tài khoản Google Ads và toàn bộ nội dung thuộc về Thiên Phúc.",
+    "Bên em cam kết công việc hoàn thành và số liệu theo dõi được, không cam kết thứ hạng cụ thể trên Google.",
+    "Việc ngoài phạm vi (chụp ảnh, viết thêm bài, tính năng mới) báo giá riêng bằng văn bản trước khi làm.",
+    "Tiến độ lùi tương ứng nếu ảnh, thông tin hoặc quyền truy cập đến chậm.",
+    "Báo giá có hiệu lực đến 17/11/2026."
+  ],
+  "faq": [
+    {
+      "q": "Chạy Ads luôn trên trang hiện tại được không?",
+      "a": "Được, trang vẫn dùng được và bên em chạy được ngay. Em chỉ lưu ý: trang chưa tối ưu thì tỉ lệ thua cao, dễ thua đối thủ khi đấu giá và nhiều lượt bấm không thành cuộc gọi. Chỉ quảng cáo thì cũng không tận dụng được, vì khách bấm xong rời đi là web không giữ lại gì."
+    },
+    {
+      "q": "Đang chạy Ads có khách rồi, sao phải làm SEO?",
+      "a": "Ads giống thuê biển quảng cáo: ngừng trả là ngừng khách. SEO là để khách vẫn tìm thấy Thiên Phúc khi anh/chị giảm hoặc tạm dừng quảng cáo. Thêm nữa, trang được sửa cho SEO cũng là trang Google chấm điểm khi chạy Ads."
+    },
+    {
+      "q": "Làm SEO bao lâu thì lên top?",
+      "a": "Không ai hứa trước được thứ hạng, vì Google tự quyết. SEO thường cần vài tháng mới thấy rõ, nên trong thời gian đó Ads vẫn mang khách. Mỗi tháng bên em gửi số thật để anh/chị tự thấy web đi lên thế nào."
+    },
+    {
+      "q": "Làm mới mã nguồn có mất trang cũ, mất khách đang tìm không?",
+      "a": "Không. Mỗi đường dẫn cũ được chuyển về trang mới tương ứng, nên khách và Google vào link cũ vẫn tới đúng chỗ."
+    }
+  ],
+  "cta": {
+    "headline": "Anh/chị muốn bắt đầu từ tuần nào?",
+    "text": "Nhắn em qua Zalo, mình hẹn 15 phút để em mở web và chỉ trực tiếp những trang đang làm quảng cáo kém hiệu quả.",
+    "button": "Nhắn Zalo cho Duy",
+    "href": "https://zalo.me/0938415218",
+    "note": "Báo giá có hiệu lực đến 17/11/2026"
+  }
+}</script>
+<script>
+(function(){
+  var root=document.getElementById('app');
+  var D;
+  try{D=JSON.parse(document.getElementById('data').textContent)}catch(e){root.textContent='Dữ liệu báo giá không hợp lệ.';return}
+  var M=D.meta||{};
+
+  function $(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null&&x!=='')e.textContent=x;return e}
+  function put(p){for(var i=1;i<arguments.length;i++){if(arguments[i])p.appendChild(arguments[i])}return p}
+  function safeHref(h){return /^(https?:|tel:|mailto:)/i.test(h||'')?h:'#'}
+  function lum(hex){
+    var m=/^#?([0-9a-f]{6})$/i.exec(hex||'');if(!m)return 0;
+    var n=parseInt(m[1],16),c=[(n>>16)&255,(n>>8)&255,n&255].map(function(v){v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)});
+    return .2126*c[0]+.7152*c[1]+.0722*c[2];
+  }
+  if(M.accent&&/^#[0-9a-f]{6}$/i.test(M.accent)){
+    document.documentElement.style.setProperty('--accent',M.accent);
+    document.documentElement.style.setProperty('--accent-ink',lum(M.accent)>0.42?'#111111':'#ffffff');
+  }
+  document.title=M.title||('Báo giá '+(M.client||''));
+
+  function section(id,title,intro){
+    var s=$('section','sec');if(id)s.id=id;
+    if(title)put(s,$('h2',null,title));
+    if(intro)put(s,$('p','lead',intro));
+    return s;
+  }
+
+  function planCard(p){
+    var a=$('article','plan'+(p.recommended?' rec':''));
+    if(p.recommended)put(a,$('div','badge',p.badge||'Khuyên dùng'));
+    put(a,$('h3',null,p.name));
+    if(p.tagline)put(a,$('p','tl',p.tagline));
+    var pr=$('div','price');put(pr,$('b',null,p.price));if(p.unit)put(pr,$('span',null,p.unit));put(a,pr);
+    if(p.forWho)put(a,$('p','for',p.forWho));
+    var ul=$('ul','feat');
+    (p.features||[]).forEach(function(f){
+      var t=typeof f==='string'?f:f.text,inc=typeof f==='string'?true:f.included!==false;
+      put(ul,$('li',inc?'':'no',t));
+    });
+    put(a,ul);
+    if(p.delivery)put(a,$('p','deliv',p.delivery));
+    return a;
+  }
+
+  var app=$('div');
+
+  if(M.sample){put(app,$('div','sample','Dữ liệu minh họa — thay bằng thông tin khách thật trước khi gửi'))}
+
+  var wrap=$('div','wrap');
+  put(app,wrap);
+
+  // top
+  var top=$('div','top');
+  put(top,put($('span'),$('b',null,M.brand||'')));
+  var meta=[];if(M.client)meta.push('Dành cho '+M.client);if(M.date)meta.push(M.date);
+  put(top,$('span',null,meta.join(' · ')));
+  put(wrap,top);
+
+  // hero
+  var H=D.hero||{};
+  var hero=$('header','hero');
+  if(H.eyebrow)put(hero,$('p','eyebrow',H.eyebrow));
+  if(H.headline)put(hero,$('h1',null,H.headline));
+  if(H.sub)put(hero,$('p','sub',H.sub));
+  if(H.highlights&&H.highlights.length){
+    var ch=$('div','chips');
+    H.highlights.forEach(function(h){put(ch,put($('div','chip'),$('b',null,h.value),$('span',null,h.label)))});
+    put(hero,ch);
+  }
+  put(wrap,hero);
+
+  // understand
+  var U=D.understand;
+  if(U){
+    var s=section('hieu',U.title||'Chúng tôi hiểu điều bạn cần');
+    if(U.quote){var q=$('blockquote','quote',U.quote);if(U.quoteBy)put(q,$('small',null,U.quoteBy));put(s,q)}
+    if(U.points&&U.points.length){
+      var pts=$('div','points card');
+      U.points.forEach(function(p){put(pts,put($('div','point'),$('b',null,p.label),$('span',null,p.text)))});
+      put(s,pts);
+    }
+    put(wrap,s);
+  }
+
+  // explain (giải thích các lựa chọn bằng ví dụ đời thường, ví dụ các loại hosting)
+  var X=D.explain;
+  if(X&&X.items&&X.items.length){
+    var sx=section('giaithich',X.title||'Hiểu nhanh các lựa chọn',X.intro);
+    var gx=$('div','plans'+(X.items.length===4?' two':''));
+    X.items.forEach(function(it){
+      var a=$('article','plan'+(it.recommended?' rec':''));
+      if(it.badge)put(a,$('div','badge',it.badge));
+      put(a,$('h3',null,it.name));
+      if(it.analogy)put(a,$('p','analogy',it.analogy));
+      var ul=$('ul','feat');
+      (it.good||[]).forEach(function(t){put(ul,$('li',null,t))});
+      (it.bad||[]).forEach(function(t){put(ul,$('li','con',t))});
+      put(a,ul);
+      if(it.fit)put(a,$('p','for','Hợp với: '+it.fit));
+      if(it.cost)put(a,$('p','deliv','Chi phí tham khảo: '+it.cost));
+      put(gx,a);
+    });
+    put(sx,gx);
+    if(X.note)put(sx,$('p','fine',X.note));
+    put(wrap,sx);
+  }
+
+  // approach
+  var A=D.approach;
+  if(A&&A.items&&A.items.length){
+    var s2=section('giaiphap',A.title||'Hướng giải quyết',A.intro);
+    var map=$('div','map');
+    A.items.forEach(function(it){
+      var r=$('div','row');
+      put(r,put($('div','need'),$('span','tag','Bạn cần'),$('span',null,it.need)));
+      put(r,put($('div','sol'),$('span','tag','Chúng tôi làm'),$('span',null,it.solution)));
+      if(it.benefit)put(r,put($('div','ben'),$('span','tag','Bạn nhận được'),$('span',null,it.benefit)));
+      put(map,r);
+    });
+    put(s2,map);put(wrap,s2);
+  }
+
+  // packages
+  var P=D.packages;
+  if(P&&P.items&&P.items.length){
+    var s3=section('goi',P.title||'Chọn gói phù hợp',P.note);
+    var pl=$('div','plans');
+    P.items.forEach(function(p){put(pl,planCard(p))});
+    put(s3,pl);put(wrap,s3);
+  }
+
+  // running
+  var R=D.running;
+  if(R&&R.rows&&R.rows.length){
+    var s4=section('chiphi',R.title||'Hosting và vận hành',R.intro);
+    var cs=$('div','costs');
+    R.rows.forEach(function(r){
+      var c=$('div','cost');
+      var a1=$('div');put(a1,$('b',null,r.item));if(r.note)put(a1,$('small',null,r.note));
+      var a2=$('div','amt',(r.cost||'')+(r.period?' '+r.period:''));
+      var a3=$('div','who',r.payer||'');
+      put(c,a1,a2,a3);put(cs,c);
+    });
+    put(s4,cs);
+    var C=D.care;
+    if(C&&C.items&&C.items.length){
+      var ch2=$('div');ch2.style.marginTop='30px';
+      put(ch2,$('h2',null,C.title||'Gói chăm sóc hàng tháng'));ch2.firstChild.style.fontSize='clamp(1.2rem,3.4vw,1.5rem)';
+      if(C.intro)put(ch2,$('p','lead',C.intro));
+      var cp=$('div','plans');C.items.forEach(function(p){put(cp,planCard(p))});
+      put(ch2,cp);
+      if(C.fine)put(ch2,$('p','fine',C.fine));
+      put(s4,ch2);
+    }
+    put(wrap,s4);
+  }
+
+  // total
+  var T=D.total;
+  if(T&&T.sum){
+    var tb=$('div','total');
+    put(tb,$('h3',null,T.title||'Tổng chi phí'));
+    (T.lines||[]).forEach(function(l){put(tb,put($('div','ln'),$('span',null,l.label),$('span',null,l.value)))});
+    put(tb,put($('div','sum'),$('span',null,'Tổng'),$('b',null,T.sum)));
+    if(T.note)put(tb,$('p','nt',T.note));
+    var tw=$('section','sec');tw.style.marginTop='24px';put(tw,tb);put(wrap,tw);
+  }
+
+  // timeline
+  var TL=D.timeline;
+  if(TL&&TL.steps&&TL.steps.length){
+    var s5=section('quytrinh',TL.title||'Quy trình');
+    var st=$('ol','steps');
+    TL.steps.forEach(function(x){
+      var li=$('li','step');
+      put(li,$('b',null,x.step));
+      if(x.when)put(li,$('span','when',x.when));
+      if(x.clientDo)put(li,$('p','me','Phía bạn: '+x.clientDo));
+      put(st,li);
+    });
+    put(s5,st);put(wrap,s5);
+  }
+
+  // why + proof
+  [['why',D.why,'Vì sao chọn chúng tôi'],['proof',D.proof,'Dự án đã thực hiện']].forEach(function(g){
+    var X=g[1];if(!X||!X.items||!X.items.length)return;
+    var s6=section(g[0],X.title||g[2]);
+    var cd=$('div','cards');
+    X.items.forEach(function(it){put(cd,put($('div','card'),$('h3',null,it.title),$('p',null,it.text)))});
+    put(s6,cd);put(wrap,s6);
+  });
+
+  // terms
+  if(D.terms&&D.terms.length){
+    var s7=section('dieukhoan','Điều khoản chính');
+    var tu=$('ul','terms');D.terms.forEach(function(t){put(tu,$('li',null,t))});
+    put(s7,tu);put(wrap,s7);
+  }
+
+  // faq
+  if(D.faq&&D.faq.length){
+    var s8=section('hoidap','Câu hỏi thường gặp');
+    D.faq.forEach(function(f){
+      var d=$('details');put(d,put($('summary'),$('span',null,f.q)),$('p',null,f.a));put(s8,d);
+    });
+    put(wrap,s8);
+  }
+
+  // CTA
+  var K=D.cta||{};
+  var cta=$('section','cta');cta.id='chot';
+  put(cta,$('h2',null,K.headline||'Sẵn sàng bắt đầu?'));
+  if(K.text)put(cta,$('p',null,K.text));
+  var b=$('a','btn',K.button||'Liên hệ xác nhận');b.href=safeHref(K.href);
+  if(/^https?:/i.test(b.href)){b.target='_blank';b.rel='noopener'}
+  put(cta,b);
+  if(K.note)put(cta,$('p','nt',K.note));
+  put(wrap,cta);
+
+  var ft=[];if(M.contact)ft.push(M.contact);if(M.validUntil)ft.push('Báo giá có hiệu lực đến '+M.validUntil);
+  put(wrap,$('div','foot',ft.join(' · ')));
+
+  // sticky
+  var rec=null;((D.packages||{}).items||[]).forEach(function(p){if(p.recommended&&!rec)rec=p});
+  var sb=$('div','sticky');
+  var tx=$('div','t');
+  if(rec){put(tx,$('b',null,rec.price));put(tx,document.createTextNode('Gói '+rec.name+(rec.unit?' · '+rec.unit:'')))}
+  else put(tx,$('b',null,M.client||'Báo giá'));
+  var b2=$('a','btn',K.button||'Liên hệ');b2.href=safeHref(K.href);
+  if(/^https?:/i.test(b2.href)){b2.target='_blank';b2.rel='noopener'}
+  put(sb,tx,b2);put(app,sb);
+
+  root.appendChild(app);
+})();
+</script>
+<script src="/quote-track.js" data-version="v2" defer></script>
+</body>
+</html>
