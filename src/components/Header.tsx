@@ -1,23 +1,44 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ArrowUpRight, ShieldCheck } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Menu, X, ArrowUpRight, BookOpen, PlayCircle, ListChecks, UserRound, BriefcaseBusiness } from "lucide-react";
 import { socialConfig } from "../config/social";
+import { LiquidNavbar, type NimbusFx } from "./ui/liquid-glass-navbar";
+
+const iconProps = { size: 18, strokeWidth: 1.8, "aria-hidden": true } as const;
+
+// Màn lg (1024–1279px) không đủ chỗ cho cả chữ: menu nước chỉ hiện icon
+function useWideNav() {
+  const query = "(min-width: 1280px)";
+  const [wide, setWide] = useState(() => typeof window !== "undefined" && window.matchMedia(query).matches);
+  useEffect(() => {
+    const mq = window.matchMedia(query);
+    const onChange = () => setWide(mq.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+  return wide;
+}
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const wideNav = useWideNav();
 
   // Mỗi mục gom các trang cũ liên quan để menu gọn, link cũ vẫn sống
   const navigation = [
-    { name: "Kiến thức", href: "/kien-thuc", match: ["/kien-thuc", "/cafe-so", "/blog"] },
-    { name: "Video", href: "/videos", match: ["/videos"] },
-    { name: "Checklist", href: "/resources", match: ["/resources"] },
-    { name: "Về Duy", href: "/about", match: ["/about"] },
-    { name: "Làm việc cùng Duy", href: "/services", match: ["/services", "/bao-gia", "/pricing", "/connect", "/solutions", "/case-study", "/projects"] }
+    { name: "Kiến thức", href: "/kien-thuc", match: ["/kien-thuc", "/cafe-so", "/blog"], icon: <BookOpen {...iconProps} />, fx: "glow" as NimbusFx },
+    { name: "Video", href: "/videos", match: ["/videos"], icon: <PlayCircle {...iconProps} />, fx: "spin" as NimbusFx },
+    { name: "Checklist", href: "/resources", match: ["/resources"], icon: <ListChecks {...iconProps} />, fx: "drop" as NimbusFx },
+    { name: "Về Duy", href: "/about", match: ["/about"], icon: <UserRound {...iconProps} />, fx: "wave" as NimbusFx },
+    { name: "Làm việc cùng Duy", href: "/services", match: ["/services", "/bao-gia", "/pricing", "/connect", "/solutions", "/case-study", "/projects"], icon: <BriefcaseBusiness {...iconProps} />, fx: "pop" as NimbusFx }
   ];
 
   const isActive = (paths: string[]) =>
     paths.some((path) => location.pathname.startsWith(path));
+
+  // Trang chủ hoặc trang ngoài menu: -1, giọt nước ẩn
+  const activeIndex = navigation.findIndex((item) => isActive(item.match));
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-xs">
@@ -40,22 +61,17 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex space-x-2">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`px-3 py-1.5 rounded-sm text-xs font-bold uppercase tracking-wider transition-all duration-150 border-b-2 ${
-                  isActive(item.match)
-                    ? "text-brand-primary border-brand-primary bg-brand-primary/5 font-bold"
-                    : "text-gray-600 border-transparent hover:text-brand-primary hover:bg-gray-50/50"
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
+          {/* Desktop Navigation: thanh menu "nước" (WebGL, tự lùi về CSS nếu máy không hỗ trợ) */}
+          <div className="hidden lg:flex rounded-full bg-gradient-to-r from-sky-100 via-blue-50 to-orange-50">
+            <LiquidNavbar
+              tone="light"
+              compact={!wideNav}
+              active={activeIndex}
+              onNavigate={(href) => navigate(href)}
+              items={navigation.map((item) => ({ label: item.name, href: item.href, icon: item.icon, fx: item.fx }))}
+              style={{ fontFamily: "inherit" }}
+            />
+          </div>
 
           {/* Call to Action Button */}
           <div className="hidden lg:flex items-center space-x-4">
