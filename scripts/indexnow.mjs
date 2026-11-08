@@ -13,13 +13,17 @@ if (!paths.length) {
   console.error("Cách dùng: node scripts/indexnow.mjs /blog/ten-bai [/cafe-so/bai-khac ...]");
   process.exit(1);
 }
-const urlList = paths.map((p) => (p.startsWith("http") ? p : `${SITE}${p.startsWith("/") ? "" : "/"}${p}`));
+// Git Bash tự đổi "/cafe-so/x" thành "C:/Program Files/Git/cafe-so/x": cắt phần ổ đĩa đó đi
+const clean = (p) => p.replace(/^[A-Za-z]:[\\/].*?[\\/]Git(?=[\\/])/i, "").replace(/\\/g, "/");
+const urlList = paths.map((p) => (p.startsWith("http") ? p : `${SITE}/${clean(p).replace(/^\/+/, "")}`));
 
-// Kiểm tra trang đã lên thật chưa, tránh báo một link còn lỗi 404
+// Kiểm tra trang đã lên thật và đúng là trang bài: link sai vẫn trả 200 (rơi về trang chủ),
+// nên phải thấy canonical của chính link đó trong HTML
 for (const u of urlList) {
-  const r = await fetch(u, { method: "HEAD" });
-  if (!r.ok) {
-    console.error(`${u} trả về ${r.status}, chưa báo. Đợi Vercel deploy xong rồi chạy lại.`);
+  const r = await fetch(u);
+  const html = r.ok ? await r.text() : "";
+  if (!html.includes(`rel="canonical" href="${u}"`)) {
+    console.error(`${u} chưa phải trang bài (mã ${r.status}, không thấy canonical đúng), chưa báo. Kiểm tra lại link hoặc đợi Vercel deploy xong.`);
     process.exit(1);
   }
 }
