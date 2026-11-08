@@ -3,10 +3,11 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 import privateQuoteMeta from './vite-plugins/privateQuoteMeta';
+import staticPages from './vite-plugins/staticPages';
 
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss(), privateQuoteMeta()],
+    plugins: [react(), tailwindcss(), privateQuoteMeta(), staticPages()],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

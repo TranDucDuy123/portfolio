@@ -2,9 +2,10 @@ import { useState, useMemo, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { Search, Filter, BookOpen, Clock, Tag, X, HelpCircle, ArrowLeft, Send, ArrowUpRight } from "lucide-react";
 import { cafeSoArticles } from "../data/cafeSo";
-import { CafeSoArticle } from "../types";
+import type { CafeSoEntry } from "../lib/content";
 import { socialConfig } from "../config/social";
 import Meta from "../components/Meta";
+import { markdownToHtml } from "../lib/markdown";
 import Schema from "../components/Schema";
 import { RelatedVideos } from "../components/VideoBlocks";
 
@@ -14,7 +15,8 @@ export default function CafeSo() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("Tất cả");
   const [selectedTag, setSelectedTag] = useState<string>("");
-  const [activeArticle, setActiveArticle] = useState<CafeSoArticle | null>(null);
+  const [activeArticle, setActiveArticle] = useState<CafeSoEntry | null>(null);
+  const articleHtml = useMemo(() => (activeArticle ? markdownToHtml(activeArticle.content) : ""), [activeArticle]);
 
   // Synchronize activeArticle with the URL slug
   useEffect(() => {
@@ -61,7 +63,7 @@ export default function CafeSo() {
     });
   }, [searchQuery, selectedCategory, selectedTag]);
 
-  const handleSelectArticle = (article: CafeSoArticle) => {
+  const handleSelectArticle = (article: CafeSoEntry) => {
     navigate(`/cafe-so/${article.slug}`);
   };
 
@@ -159,37 +161,14 @@ export default function CafeSo() {
               </div>
 
               {/* Video YouTube trỏ về bài này (nếu có) */}
+              {activeArticle.image && (
+                <img src={activeArticle.image} alt={activeArticle.title} width={1200} height={630} className="w-full h-auto rounded-2xl border border-gray-100" />
+              )}
+
               <RelatedVideos articleHref={`/cafe-so/${activeArticle.slug}`} />
 
               {/* Rich Content Render */}
-              <div className="prose max-w-none text-gray-800 text-sm sm:text-base leading-relaxed space-y-4">
-                {activeArticle.content.split("\n\n").map((para, idx) => {
-                  if (para.startsWith("###")) {
-                    return (
-                      <h3 key={idx} className="font-display font-bold text-lg sm:text-xl text-brand-dark pt-4 border-b border-gray-100 pb-2">
-                        {para.replace("###", "").trim()}
-                      </h3>
-                    );
-                  }
-                  if (para.startsWith("*")) {
-                    return (
-                      <ul key={idx} className="list-disc pl-5 space-y-2 text-xs sm:text-sm text-gray-600">
-                        {para.split("\n").map((li, lIdx) => (
-                          <li key={lIdx}>{li.replace("*", "").trim()}</li>
-                        ))}
-                      </ul>
-                    );
-                  }
-                  if (para.startsWith(">")) {
-                    return (
-                      <div key={idx} className="bg-gray-50 border-l-4 border-brand-primary p-3 rounded-r-lg text-xs italic font-medium text-brand-primary">
-                        {para.replace(">", "").trim()}
-                      </div>
-                    );
-                  }
-                  return <p key={idx}>{para}</p>;
-                })}
-              </div>
+              <div className="article-body" dangerouslySetInnerHTML={{ __html: articleHtml }} />
 
               {/* Tags block */}
               <div className="pt-6 border-t border-gray-100 flex flex-wrap gap-2">

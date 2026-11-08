@@ -2,9 +2,11 @@ import { useState, useMemo, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { Search, Filter, BookOpen, Clock, Tag, X, Calendar, ArrowLeft, ArrowUpRight, Copy, Check, Share2 } from "lucide-react";
 import { blogPosts } from "../data/blog";
-import { BlogPost } from "../types";
+import type { BlogPost } from "../types";
+import type { BlogEntry } from "../lib/content";
 import { socialConfig } from "../config/social";
 import Meta from "../components/Meta";
+import { markdownToHtml } from "../lib/markdown";
 import Schema from "../components/Schema";
 import { RelatedVideos } from "../components/VideoBlocks";
 
@@ -14,7 +16,7 @@ export default function Blog() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("Tất cả");
   const [selectedTag, setSelectedTag] = useState<string>("");
-  const [activePost, setActivePost] = useState<BlogPost | null>(null);
+  const [activePost, setActivePost] = useState<BlogEntry | null>(null);
   const [copied, setCopied] = useState(false);
 
   const handleCopyLink = () => {
@@ -37,6 +39,8 @@ export default function Blog() {
       setActivePost(null);
     }
   }, [slug]);
+
+  const articleHtml = useMemo(() => (activePost ? markdownToHtml(activePost.content) : ""), [activePost]);
 
   const categories = ["Tất cả", "Website", "SEO", "Digital Assets", "Business Strategy", "Conversion", "Content Marketing", "Lead Generation"];
 
@@ -184,70 +188,14 @@ export default function Blog() {
               </div>
 
               {/* Video YouTube trỏ về bài này (nếu có) */}
+              {activePost.image && (
+                <img src={activePost.image} alt={activePost.title} width={1200} height={630} className="w-full h-auto rounded-2xl border border-gray-100" />
+              )}
+
               <RelatedVideos articleHref={`/blog/${activePost.slug}`} />
 
               {/* Body rendering */}
-              <div className="prose max-w-none text-gray-800 text-sm sm:text-base leading-relaxed space-y-5 pt-4">
-                {activePost.content.split("\n\n").map((para, idx) => {
-                  if (para.startsWith("###")) {
-                    return (
-                      <h3 key={idx} className="font-display font-bold text-lg sm:text-xl text-brand-dark pt-4 border-b border-gray-150 pb-2">
-                        {para.replace("###", "").trim()}
-                      </h3>
-                    );
-                  }
-                  if (para.startsWith("####")) {
-                    return (
-                      <h4 key={idx} className="font-display font-bold text-base text-brand-dark pt-3">
-                        {para.replace("####", "").trim()}
-                      </h4>
-                    );
-                  }
-                  if (para.startsWith("*") || para.startsWith("-")) {
-                    return (
-                      <ul key={idx} className="list-disc pl-5 space-y-2 text-xs sm:text-sm text-gray-600">
-                        {para.split("\n").map((li, lIdx) => (
-                          <li key={lIdx}>{li.replace(/^[*-]\s*/, "").trim()}</li>
-                        ))}
-                      </ul>
-                    );
-                  }
-                  if (para.startsWith("|")) {
-                    // Render simple table
-                    const rows = para.split("\n").filter(r => r.trim());
-                    return (
-                      <div key={idx} className="overflow-x-auto my-6 border border-gray-200 rounded-xl">
-                        <table className="w-full text-left border-collapse text-xs">
-                          <thead>
-                            <tr className="bg-gray-50 border-b border-gray-200">
-                              {rows[0].split("|").filter(c => c.trim()).map((cell, cIdx) => (
-                                <th key={cIdx} className="p-3 font-semibold text-brand-dark">{cell.trim()}</th>
-                              ))}
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {rows.slice(2).map((row, rIdx) => (
-                              <tr key={rIdx} className="border-b border-gray-100 last:border-0 hover:bg-gray-50">
-                                {row.split("|").filter(c => c.trim()).map((cell, cIdx) => (
-                                  <td key={cIdx} className="p-3 text-gray-600">{cell.trim()}</td>
-                                ))}
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
-                      </div>
-                    );
-                  }
-                  if (para.startsWith(">")) {
-                    return (
-                      <div key={idx} className="bg-brand-primary/5 border-l-4 border-brand-primary p-4 rounded-r-lg text-xs font-semibold italic text-brand-dark leading-relaxed">
-                        {para.replace(">", "").trim()}
-                      </div>
-                    );
-                  }
-                  return <p key={idx}>{para}</p>;
-                })}
-              </div>
+              <div className="article-body pt-4" dangerouslySetInnerHTML={{ __html: articleHtml }} />
 
               {/* Tags block */}
               <div className="pt-6 border-t border-gray-100 flex flex-wrap gap-2">
