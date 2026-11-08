@@ -144,7 +144,7 @@ export default function Pricing() {
                 href={socialConfig.zalo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 px-6 py-3 rounded-sm bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-bold uppercase tracking-wider transition-all border border-gray-700"
+                className="inline-flex items-center space-x-2 px-6 py-3 rounded-sm bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider transition-all border border-white/20"
                 style={{ minHeight: "44px" }}
               >
                 <MessageSquare className="h-4 w-4 text-brand-accent" />
@@ -278,9 +278,9 @@ export default function Pricing() {
           </div>
 
           {/* Banner 2: Vận Tải MKS */}
-          <div className="bg-slate-900 text-white p-8 rounded-lg border-2 border-amber-500/50 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="bg-brand-dark text-white p-8 rounded-lg border-2 border-brand-accent/50 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="space-y-2">
-              <span className="text-xs font-mono font-bold text-amber-400 uppercase tracking-widest block">
+              <span className="text-xs font-mono font-bold text-brand-accent uppercase tracking-widest block">
                 SLIDE TRÌNH CHIẾU TƯ VẤN DIRECT PITCHING
               </span>
               <h2 className="font-display font-bold text-2xl text-white">
@@ -293,7 +293,7 @@ export default function Pricing() {
 
             <Link
               to="/tu-van-mks"
-              className="inline-flex items-center space-x-2 px-6 py-3.5 rounded-sm bg-amber-500 hover:bg-amber-600 text-brand-dark font-black text-xs uppercase tracking-wider transition-all shadow-md flex-shrink-0"
+              className="inline-flex items-center space-x-2 px-6 py-3.5 rounded-sm bg-brand-primary hover:bg-brand-secondary text-white font-black text-xs uppercase tracking-wider transition-all shadow-md flex-shrink-0"
               style={{ minHeight: "44px" }}
             >
               <span>Xem Slide Đề Xuất Vận Tải MKS</span>

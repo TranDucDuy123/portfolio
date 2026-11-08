@@ -46,23 +46,23 @@ export default function Header() {
         <div className="flex justify-between items-center h-20">
           {/* Logo & Brand Identity */}
           <div className="flex-shrink-0 flex flex-col justify-center">
-            <Link to="/" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 bg-brand-primary flex items-center justify-center rounded-sm transition-all duration-300 transform group-hover:bg-brand-secondary group-hover:rotate-12 flex-shrink-0 shadow-sm">
-                <div className="w-5 h-5 border-2 border-white rotate-45"></div>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-display font-black text-xl tracking-tighter leading-none uppercase text-brand-dark group-hover:text-brand-primary transition-colors">
-                  Đức Duy Web
-                </span>
-                <span className="text-[9px] uppercase font-mono tracking-[0.12em] text-gray-500 font-bold leading-none mt-0.5">
-                  Chuyện web cho chủ doanh nghiệp
-                </span>
-              </div>
+            {/* Logo ngang bản nền sáng, giữ đúng tỉ lệ và vùng trống của bộ nhận diện */}
+            <Link to="/" className="flex flex-col items-start gap-1 group" aria-label="Duy Web, về trang chủ">
+              <img
+                src="/brand/duyweb-lockup-horizontal-light.svg"
+                alt="Duy Web"
+                width={168}
+                height={36}
+                className="h-8 sm:h-9 w-auto transition-opacity group-hover:opacity-85"
+              />
+              <span className="hidden sm:block text-[10px] font-medium tracking-[0.04em] text-gray-500 leading-none pl-[2px]">
+                Chuyện web cho chủ doanh nghiệp
+              </span>
             </Link>
           </div>
 
           {/* Desktop Navigation: thanh menu "nước" (WebGL, tự lùi về CSS nếu máy không hỗ trợ) */}
-          <div className="hidden lg:flex rounded-full bg-gradient-to-r from-sky-100 via-blue-50 to-orange-50">
+          <div className="hidden lg:flex rounded-full bg-gradient-to-r from-neutral-100 via-white to-red-50">
             <LiquidNavbar
               tone="light"
               compact={!wideNav}

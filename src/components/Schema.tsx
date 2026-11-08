@@ -26,7 +26,7 @@ export default function Schema({ type, data }: SchemaProps) {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "Đức Duy Web",
-        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+        "image": "https://duyweb.info.vn/og-image.jpg",
         "@id": "https://duyweb.info.vn/#localbusiness",
         "url": "https://duyweb.info.vn",
         "telephone": data.telephone || "0938415218",
@@ -65,7 +65,7 @@ export default function Schema({ type, data }: SchemaProps) {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": data.title,
-        "image": data.image || "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+        "image": data.image || "https://duyweb.info.vn/og-image.jpg",
         "datePublished": data.date || "2026-06-25",
         "description": data.summary,
         "author": {
@@ -77,7 +77,7 @@ export default function Schema({ type, data }: SchemaProps) {
           "name": "Đức Duy Web",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+            "url": "https://duyweb.info.vn/brand/duyweb-logo-1024.png"
           }
         },
         "mainEntityOfPage": {

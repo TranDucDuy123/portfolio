@@ -751,10 +751,10 @@ function Radar({ labels, values, size = 260 }: { labels: string[]; values: numbe
         const [x, y] = pt(i, 5);
         return <line key={i} x1={c} y1={c} x2={x} y2={y} stroke="#E5E1D8" />;
       })}
-      <polygon points={poly} fill="rgba(214,40,40,0.18)" stroke="#D62828" strokeWidth={2} strokeLinejoin="round" />
+      <polygon points={poly} fill="rgba(188,2,2,0.18)" stroke="#BC0202" strokeWidth={2} strokeLinejoin="round" />
       {values.map((v, i) => {
         const [x, y] = pt(i, v);
-        return <circle key={i} cx={x} cy={y} r={4} fill="#D62828" stroke="#fff" strokeWidth={1.5} />;
+        return <circle key={i} cx={x} cy={y} r={4} fill="#BC0202" stroke="#fff" strokeWidth={1.5} />;
       })}
       {labels.map((l, i) => {
         const [x, y] = pt(i, 5.9);
@@ -950,7 +950,7 @@ function AuditSection({ a }: { a: NonNullable<ProposalQuote["audit"]> }) {
             <div className="h-3 rounded-full bg-gray-100 overflow-hidden">
               <div
                 className="h-full rounded-full transition-colors duration-500"
-                style={{ width: `${Math.max(4, meter)}%`, background: meter < 40 ? "#D62828" : meter < 80 ? "#F77F00" : "#16a34a" }}
+                style={{ width: `${Math.max(4, meter)}%`, background: meter < 40 ? "#BC0202" : meter < 80 ? "#F77F00" : "#16a34a" }}
               />
             </div>
             <p className="mt-2 text-sm text-gray-600">
@@ -1083,7 +1083,7 @@ function LoopSection({ l }: { l: NonNullable<ProposalQuote["loop"]> }) {
               cy="100"
               r="78"
               fill="none"
-              stroke="#D62828"
+              stroke="#BC0202"
               strokeWidth="3"
               strokeLinecap="round"
               strokeDasharray={`${(2 * Math.PI * 78) / n} ${2 * Math.PI * 78}`}

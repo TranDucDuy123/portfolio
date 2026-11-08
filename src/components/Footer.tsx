@@ -32,7 +32,8 @@ export default function Footer() {
     <div onClickCapture={onClickCapture}>
       <DoodleCrewFooter
         wordmark="Đức Duy Web"
-        brand="Đức Duy Web"
+        brand="Duy Web"
+        logo={<img src="/brand/duyweb-mark-red-bright.svg" alt="" width={40} height={40} />}
         blurb="Mình là Đức Duy, người làm web. Ở đây mình kể lại chuyện web, SEO, tên miền, hosting bằng lời dễ hiểu, để chủ doanh nghiệp tự quyết định đúng mà không cần biết code."
         tagline="Chuyện web cho chủ doanh nghiệp: đất của mình, không phải đất thuê."
         columns={[
@@ -80,8 +81,8 @@ export default function Footer() {
         backToTopLabel="Lên đầu trang"
         crew={crew}
         preset="night"
-        palette={{ background: "#1A1A1A", ink: "#F8F9FA", accent: "#F77F00" }}
-        serifFamily='"Space Grotesk", ui-sans-serif, system-ui, sans-serif'
+        palette={{ background: "#000000", ink: "#F5F2F1", accent: "#FF0000" }}
+        serifFamily='"Inter", ui-sans-serif, system-ui, sans-serif'
         height="720px"
       />
     </div>

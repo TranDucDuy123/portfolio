@@ -229,6 +229,8 @@ export interface DoodleCrewFooterProps {
   wordmark?: string
   /** Brand name, top left. */
   brand?: string
+  /** Replaces the doodle badge next to the brand name (e.g. a logo mark). */
+  logo?: React.ReactNode
   /** One or two sentences under the brand. */
   blurb?: string
   /** The line under the wordmark. */
@@ -582,7 +584,8 @@ const Link = ({ link, className }: { link: FooterLink; className?: string }) => 
 export default function DoodleCrewFooter({
   wordmark = "MISCHIEF",
   brand = "mischief",
-  blurb = "We draw every frame by hand and ship a new chapter every season. Come make a little trouble with us.",
+  logo,
+  blurb ="We draw every frame by hand and ship a new chapter every season. Come make a little trouble with us.",
   tagline = "A hand-drawn world for the troublemaker in all of us.",
   columns = DEFAULT_COLUMNS,
   actions = DEFAULT_ACTIONS,
@@ -1018,6 +1021,9 @@ export default function DoodleCrewFooter({
 
       <div className="dcf-top dcf-rise" style={{ "--d": "0ms" } as React.CSSProperties}>
         <div className="dcf-brand">
+          {logo ? (
+            <span className="dcf-logo dcf-logo-custom" aria-hidden="true">{logo}</span>
+          ) : (
           <span className="dcf-logo" aria-hidden="true">
             <svg viewBox="-60 -150 120 120" width="30" height="30">
               <g className="dcf-art">
@@ -1030,6 +1036,7 @@ export default function DoodleCrewFooter({
               </g>
             </svg>
           </span>
+          )}
           <span className="dcf-brandname">{brand}</span>
         </div>
         {blurb && <p className="dcf-blurb">{blurb}</p>}
@@ -1265,6 +1272,8 @@ const CSS =
   ".dcf-brand{display:flex;align-items:center;gap:10px;grid-column:1;grid-row:1}" +
   ".dcf-logo{display:grid;place-items:center;width:40px;height:40px;border-radius:999px;border:2px solid var(--dcf-ink);background:var(--dcf-bg);transform:rotate(-6deg);transition:transform .35s cubic-bezier(.3,1.6,.5,1)}" +
   ".dcf-brand:hover .dcf-logo{transform:rotate(8deg) scale(1.06)}" +
+  ".dcf-logo-custom{border:0;border-radius:10px;background:transparent;transform:none}.dcf-logo-custom img{display:block;width:100%;height:100%}" +
+  ".dcf-brand:hover .dcf-logo-custom{transform:none}" +
   ".dcf-brandname{font-weight:800;font-size:19px;letter-spacing:-.02em}" +
   ".dcf-blurb{grid-column:1;grid-row:2;font-family:var(--dcf-serif);font-size:15px;line-height:1.55;color:var(--dcf-soft);max-width:34ch}" +
   ".dcf-cols{grid-column:2;grid-row:1/span 2;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}" +

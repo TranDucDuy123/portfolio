@@ -17,24 +17,28 @@
     <meta property="og:url" content="https://duyweb.info.vn/" />
     <meta property="og:title" content="Đức Duy Web - Chuyện web cho chủ doanh nghiệp" />
     <meta property="og:description" content="Mình là Đức Duy, người làm web. Mình giải thích website, tên miền, hosting, SEO bằng lời dễ hiểu để chủ doanh nghiệp tự quyết định đúng, và đồng hành làm web khi bạn cần." />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&h=630&q=80" />
+    <meta property="og:image" content="https://duyweb.info.vn/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Duy Web · Website, Marketing, Giải pháp số" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://duyweb.info.vn/" />
     <meta name="twitter:title" content="Đức Duy Web - Chuyện web cho chủ doanh nghiệp" />
     <meta name="twitter:description" content="Mình là Đức Duy, người làm web. Mình giải thích website, tên miền, hosting, SEO bằng lời dễ hiểu để chủ doanh nghiệp tự quyết định đúng, và đồng hành làm web khi bạn cần." />
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&h=630&q=80" />
+    <meta name="twitter:image" content="https://duyweb.info.vn/og-image.jpg" />
     
     <meta name="google-site-verification" content="8gU5ve40Ts7XvusqLRKgtogS-O19RiOdsND2m1amsUI" />
     
     <!-- Favicon and Theme Color -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/duy-web-32.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/duy-web-180.png" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/duyweb-favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="apple-mobile-web-app-title" content="Duy Web" />
     <meta name="application-name" content="Duy Web" />
-    <meta name="theme-color" content="#1E293B" />
+    <meta name="theme-color" content="#000000" />
 
     
 
@@ -47,7 +51,8 @@
         "description": "Đức Duy viết kiến thức web dễ hiểu cho chủ doanh nghiệp và đồng hành làm website, SEO, kế hoạch đa kênh.",
         "founder": { "@type": "Person", "name": "Đức Duy", "url": "https://duyweb.info.vn/about" },
         "url": "https://duyweb.info.vn/",
-        "logo": "https://duyweb.info.vn/assets/logo.png",
+        "logo": "https://duyweb.info.vn/brand/duyweb-logo-1024.png",
+        "image": "https://duyweb.info.vn/og-image.jpg",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Thành phố Hồ Chí Minh",
@@ -71,6 +76,55 @@
     
   </head>
   <body>
+    <!-- Màn chào khi vào trang: hiện ngay từ HTML, React gỡ đi khi trang và font đã sẵn sàng -->
+    <style>
+      #boot{position:fixed;inset:0;z-index:9999;overflow:hidden;display:grid;place-items:center;background:#000;
+        background-image:radial-gradient(60% 50% at 70% 50%,rgba(188,2,2,.38),transparent 70%),
+          linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+        background-size:auto,32px 32px,32px 32px;transition:opacity .45s ease,visibility .45s ease}
+      #boot.boot-out{opacity:0;visibility:hidden}
+      #boot .boot-stage{position:relative;display:flex;flex-direction:column;align-items:center;gap:22px;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+      #boot.boot-out .boot-stage{transform:scale(1.06)}
+      #boot .boot-mark{position:relative;width:96px;height:96px;overflow:hidden}
+      #boot .boot-mark svg{display:block;width:100%;height:100%;animation:bootReveal .8s cubic-bezier(.65,0,.35,1) both}
+      #boot .boot-scan{position:absolute;top:8%;bottom:8%;left:0;width:3px;background:#fff;box-shadow:0 0 14px 4px rgba(255,0,0,.9);
+        animation:bootScan .8s cubic-bezier(.65,0,.35,1) both}
+      #boot .boot-lines{position:absolute;inset:0;pointer-events:none}
+      #boot .boot-lines i{position:absolute;right:-40vw;height:1px;width:42vw;background:linear-gradient(90deg,transparent,rgba(255,0,0,.75));
+        animation:bootLine 1.1s cubic-bezier(.2,.7,.2,1) both}
+      #boot .boot-lines i:nth-child(1){top:22%;animation-delay:.05s}
+      #boot .boot-lines i:nth-child(2){top:46%;animation-delay:.15s}
+      #boot .boot-lines i:nth-child(3){top:70%;animation-delay:.25s}
+      #boot .boot-bar{width:120px;height:2px;border-radius:2px;background:rgba(255,255,255,.12);overflow:hidden}
+      #boot .boot-bar b{display:block;height:100%;width:40%;background:#FF0000;border-radius:2px;animation:bootBar 1.1s ease-in-out .5s infinite}
+      #boot .boot-name{font:600 13px/1 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.72);
+        animation:bootFade .6s ease .45s both}
+      @keyframes bootReveal{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+      @keyframes bootScan{0%{transform:translateX(0);opacity:1}90%{opacity:1}100%{transform:translateX(96px);opacity:0}}
+      @keyframes bootLine{from{transform:translateX(0);opacity:0}to{transform:translateX(-62vw);opacity:1}}
+      @keyframes bootBar{0%{transform:translateX(-100%)}100%{transform:translateX(250%)}}
+      @keyframes bootFade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+      @media (prefers-reduced-motion:reduce){
+        #boot,#boot .boot-stage{transition-duration:.01s}
+        #boot *{animation:none!important}
+        #boot .boot-scan,#boot .boot-lines{display:none}
+      }
+    </style>
+    <div id="boot" role="status" aria-label="Đang tải Duy Web">
+      <div class="boot-lines" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="boot-stage" aria-hidden="true">
+        <div class="boot-mark">
+          <svg viewBox="30 32 196 192" xmlns="http://www.w3.org/2000/svg"><path fill="#FF0000" d="M74 40L112 40L112 216L74 216ZM130 40L146.62 41.58L153.39 43.17L158.52 44.75L162.78 46.33L166.48 47.92L169.77 49.5L172.75 51.08L175.49 52.67L178.01 54.25L180.36 55.83L182.55 57.42L184.62 59L186.56 60.58L188.39 62.17L190.13 63.75L191.78 65.33L193.35 66.92L194.84 68.5L196.25 70.08L197.61 71.67L198.89 73.25L200.12 74.83L201.3 76.42L202.42 78L108 78L108 76.42L108 74.83L108 73.25L108 71.67L108 70.08L108 68.5L108 66.92L108 65.33L108 63.75L108 62.17L108 60.58L108 59L108 57.42L108 55.83L108 54.25L108 52.67L108 51.08L108 49.5L108 47.92L108 46.33L108 44.75L108 43.17L108 41.58L108 40ZM207.33 86L208.17 87.58L208.97 89.17L209.73 90.75L210.45 92.33L211.13 93.92L211.78 95.5L212.39 97.08L212.97 98.67L213.51 100.25L214.02 101.83L214.5 103.42L214.94 105L215.35 106.58L215.74 108.17L216.09 109.75L216.41 111.33L216.7 112.92L216.96 114.5L217.19 116.08L217.39 117.67L217.56 119.25L217.71 120.83L217.82 122.42L217.91 124L179.84 124L179.69 122.42L179.48 120.83L179.23 119.25L178.92 117.67L178.56 116.08L178.14 114.5L177.67 112.92L177.14 111.33L176.55 109.75L175.9 108.17L175.18 106.58L174.4 105L173.54 103.42L172.61 101.83L171.59 100.25L170.49 98.67L169.3 97.08L168 95.5L166.58 93.92L165.04 92.33L163.35 90.75L161.5 89.17L159.44 87.58L157.13 86ZM217.91 132L217.82 133.58L217.71 135.17L217.56 136.75L217.39 138.33L217.19 139.92L216.96 141.5L216.7 143.08L216.41 144.67L216.09 146.25L215.74 147.83L215.35 149.42L214.94 151L214.5 152.58L214.02 154.17L213.51 155.75L212.97 157.33L212.39 158.92L211.78 160.5L211.13 162.08L210.45 163.67L209.73 165.25L208.97 166.83L208.17 168.42L207.33 170L157.13 170L159.44 168.42L161.5 166.83L163.35 165.25L165.04 163.67L166.58 162.08L168 160.5L169.3 158.92L170.49 157.33L171.59 155.75L172.61 154.17L173.54 152.58L174.4 151L175.18 149.42L175.9 147.83L176.55 146.25L177.14 144.67L177.67 143.08L178.14 141.5L178.56 139.92L178.92 138.33L179.23 136.75L179.48 135.17L179.69 133.58L179.84 132ZM202.42 178L201.3 179.58L200.12 181.17L198.89 182.75L197.61 184.33L196.25 185.92L194.84 187.5L193.35 189.08L191.78 190.67L190.13 192.25L188.39 193.83L186.56 195.42L184.62 197L182.55 198.58L180.36 200.17L178.01 201.75L175.49 203.33L172.75 204.92L169.77 206.5L166.48 208.08L162.78 209.67L158.52 211.25L153.39 212.83L146.62 214.42L130 216L108 216L108 214.42L108 212.83L108 211.25L108 209.67L108 208.08L108 206.5L108 204.92L108 203.33L108 201.75L108 200.17L108 198.58L108 197L108 195.42L108 193.83L108 192.25L108 190.67L108 189.08L108 187.5L108 185.92L108 184.33L108 182.75L108 181.17L108 179.58L108 178ZM38 114L74 114L74 142L38 142Z"/></svg>
+          <span class="boot-scan"></span>
+        </div>
+        <span class="boot-name">Duy Web</span>
+        <span class="boot-bar"><b></b></span>
+      </div>
+    </div>
+    <script>
+      // Lưới an toàn: nếu app lỗi hoặc tải quá lâu, vẫn gỡ màn chào sau 4 giây
+      setTimeout(function(){var b=document.getElementById("boot");if(b){b.classList.add("boot-out");setTimeout(function(){b.remove()},500)}},4000);
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

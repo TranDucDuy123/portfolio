@@ -14,7 +14,7 @@ export default function Meta({
   title,
   description,
   keywords = ["đức duy web", "tài sản số", "thiết kế website", "tối ưu seo", "chuyện web cho chủ doanh nghiệp", "seo tphcm", "profile doanh nghiep"],
-  ogImage = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+  ogImage = "https://duyweb.info.vn/og-image.jpg",
   slug = ""
 }: MetaProps) {
   useEffect(() => {
