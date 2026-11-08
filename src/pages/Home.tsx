@@ -28,8 +28,8 @@ export default function Home() {
               👋 Mình là Đức Duy, người làm web
             </span>
 
-            <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl text-brand-dark tracking-tighter uppercase leading-[1.05] mb-8">
-              Chuyện web, kể cho <span className="text-brand-primary relative inline-block border-b-4 border-brand-secondary px-1">chủ doanh nghiệp</span> dễ hiểu.
+            <h1 className="font-display font-black text-[28px] sm:text-5xl md:text-6xl text-brand-dark tracking-tighter uppercase leading-[1.05] mb-8">
+              Chuyện web, kể cho <span className="text-brand-primary relative inline-block border-b-4 border-brand-secondary px-1 mb-2 sm:mb-3">chủ doanh nghiệp</span> <span className="whitespace-nowrap">dễ hiểu.</span>
             </h1>
 
             <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
