@@ -1,7 +1,21 @@
 {
   "cleanUrls": true,
+  "redirects": [
+    { "source": "/pricing", "destination": "/bao-gia", "permanent": true },
+    { "source": "/chien-luoc/tu-van-hosting.html", "destination": "/cafe-so/hosting-la-gi", "permanent": true },
+    { "source": "/chien-luoc/tu-van-hosting", "destination": "/cafe-so/hosting-la-gi", "permanent": true }
+  ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+    { "source": "/projects/:slug", "destination": "/" },
+    { "source": "/bao-gia/coach-tran-cong", "destination": "/" },
+    { "source": "/bao-gia-tran-cong", "destination": "/" },
+    { "source": "/tu-van-mks", "destination": "/" },
+    { "source": "/tu-van-hosting-mks", "destination": "/" },
+    { "source": "/de-xuat-mks", "destination": "/" },
+    { "source": "/van-tai-mks", "destination": "/" },
+    { "source": "/video", "destination": "/" },
+    { "source": "/ke-hoach/:slug", "destination": "/" },
+    { "source": "/bao-gia-kh/:slug", "destination": "/" }
   ],
   "headers": [
     {

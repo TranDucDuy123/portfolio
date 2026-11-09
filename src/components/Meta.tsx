@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { isServer, ssrStore } from "../lib/ssr";
 
 const SITE_URL = "https://duyweb.info.vn";
 
@@ -17,13 +18,18 @@ export default function Meta({
   ogImage = "https://duyweb.info.vn/og-image.jpg",
   slug = ""
 }: MetaProps) {
+  const baseTitle = "Đức Duy Web";
+  // Tiêu đề đã có sẵn tên thương hiệu thì không gắn thêm, tránh "… - Đức Duy Web | Đức Duy Web"
+  const fullTitle = !title
+    ? `${baseTitle} - Chuyện web cho chủ doanh nghiệp`
+    : title.includes(baseTitle) ? title : `${title} | ${baseTitle}`;
+
+  // Dựng phía máy chủ lúc build: ghi lại để đặt vào <head> của HTML sinh sẵn
+  if (isServer) {
+    ssrStore.meta = { title: fullTitle, description, keywords, ogImage, canonical: slug ? `${SITE_URL}/${slug}` : "" };
+  }
+
   useEffect(() => {
-    // Dynamic document title update
-    const baseTitle = "Đức Duy Web";
-    // Tiêu đề đã có sẵn tên thương hiệu thì không gắn thêm, tránh "… - Đức Duy Web | Đức Duy Web"
-    const fullTitle = !title
-      ? `${baseTitle} - Chuyện web cho chủ doanh nghiệp`
-      : title.includes(baseTitle) ? title : `${title} | ${baseTitle}`;
     document.title = fullTitle;
 
     // Canonical theo đúng trang đang xem; index.html chỉ có canonical của trang chủ

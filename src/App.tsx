@@ -25,6 +25,7 @@ import KienThuc from "./pages/KienThuc";
 import VideoFeed from "./pages/VideoFeed";
 import Videos from "./pages/Videos";
 import GuidePage from "./pages/GuidePage";
+import NotFound from "./pages/NotFound";
 
 // Báo giá riêng từng khách: tách chunk, chỉ tải khi mở đúng link
 const BaoGiaKhachHang = lazy(() => import("./pages/BaoGiaKhachHang"));
@@ -37,7 +38,8 @@ export default function App() {
   );
 }
 
-function AppShell() {
+// Dùng chung cho trình duyệt (BrowserRouter ở trên) và bản dựng sẵn lúc build (StaticRouter trong entry-server)
+export function AppShell() {
   const { pathname } = useLocation();
 
   // Báo giá gửi riêng khách hàng: hiển thị độc lập, không header/footer/menu
@@ -130,8 +132,8 @@ function AppShell() {
             <Route path="/de-xuat-mks" element={<TuVanHostingMKS />} />
             <Route path="/van-tai-mks" element={<TuVanHostingMKS />} />
 
-            {/* Fallback route back to Home */}
-            <Route path="*" element={<Navigate to="/" replace />} />
+            {/* Link không tồn tại: báo 404 thay vì âm thầm về trang chủ */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
 

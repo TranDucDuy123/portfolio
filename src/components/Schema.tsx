@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { isServer, ssrStore } from "../lib/ssr";
 
 interface SchemaProps {
   type: "LocalBusiness" | "Article" | "FAQ" | "Project" | "CaseStudy" | "BreadcrumbList" | "Video";
@@ -6,6 +7,9 @@ interface SchemaProps {
 }
 
 export default function Schema({ type, data }: SchemaProps) {
+  // Dựng phía máy chủ lúc build: ghi lại để đặt vào <head> của HTML sinh sẵn
+  if (isServer) ssrStore.schemas.push(buildSchema(type, data));
+
   useEffect(() => {
     // Generate unique ID for this script to avoid duplicating schemas on page navigate
     const scriptId = `schema-${type}-${data.id || data.slug || "global"}`;
@@ -19,139 +23,7 @@ export default function Schema({ type, data }: SchemaProps) {
       document.head.appendChild(script);
     }
 
-    let schemaObject: Record<string, any> = {};
-
-    if (type === "LocalBusiness") {
-      schemaObject = {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Đức Duy Web",
-        "image": "https://duyweb.info.vn/og-image.jpg",
-        "@id": "https://duyweb.info.vn/#localbusiness",
-        "url": "https://duyweb.info.vn",
-        "telephone": data.telephone || "0938415218",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Quận 1",
-          "addressLocality": "Thành phố Hồ Chí Minh",
-          "addressCountry": "VN"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 10.7769,
-          "longitude": 106.7009
-        },
-        "sameAs": [
-          data.facebookPersonal || "https://facebook.com/ducduy.web",
-          data.facebookFanpage || "https://facebook.com/ducduyweb.hub",
-          data.youtube || "https://youtube.com/@ducduyweb"
-        ],
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday"
-          ],
-          "opens": "08:00",
-          "closes": "18:00"
-        }
-      };
-    } else if (type === "Article") {
-      schemaObject = {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "headline": data.title,
-        "image": data.image || "https://duyweb.info.vn/og-image.jpg",
-        "datePublished": data.date || "2026-06-25",
-        "description": data.summary,
-        "author": {
-          "@type": "Person",
-          "name": "Đức Duy"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Đức Duy Web",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://duyweb.info.vn/brand/duyweb-logo-1024.png"
-          }
-        },
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": `https://duyweb.info.vn/cafe-so/${data.slug}`
-        }
-      };
-    } else if (type === "FAQ") {
-      schemaObject = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": (data.questions || []).map((q: any) => ({
-          "@type": "Question",
-          "name": q.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": q.answer
-          }
-        }))
-      };
-    } else if (type === "Project") {
-      schemaObject = {
-        "@context": "https://schema.org",
-        "@type": "CreativeWork",
-        "name": data.title,
-        "description": data.description,
-        "genre": data.categoryLabel,
-        "audience": {
-          "@type": "Audience",
-          "audienceType": data.industry
-        },
-        "creator": {
-          "@type": "Organization",
-          "name": "Đức Duy Web"
-        }
-      };
-    } else if (type === "CaseStudy") {
-      schemaObject = {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": data.title,
-        "description": data.background,
-        "genre": "Digital Consulting Case Study",
-        "dependencies": data.suggestedFeatures ? data.suggestedFeatures.join(", ") : "",
-        "author": {
-          "@type": "Organization",
-          "name": "Đức Duy Web"
-        }
-      };
-    } else if (type === "Video") {
-      schemaObject = {
-        "@context": "https://schema.org",
-        "@type": "VideoObject",
-        "name": data.title,
-        "description": data.description || data.title,
-        "thumbnailUrl": data.thumbnail,
-        "uploadDate": data.published,
-        "contentUrl": data.url,
-        "embedUrl": `https://www.youtube.com/embed/${data.id}`
-      };
-    } else if (type === "BreadcrumbList") {
-      schemaObject = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": (data.items || []).map((item: any, idx: number) => ({
-          "@type": "ListItem",
-          "position": idx + 1,
-          "name": item.name,
-          "item": `https://duyweb.info.vn${item.url}`
-        }))
-      };
-    }
-
-    script.textContent = JSON.stringify(schemaObject, null, 2);
+    script.textContent = JSON.stringify(buildSchema(type, data), null, 2);
 
     // Clean up on unmount to prevent head bloat
     return () => {
@@ -163,4 +35,139 @@ export default function Schema({ type, data }: SchemaProps) {
   }, [type, data]);
 
   return null;
+}
+
+function buildSchema(type: SchemaProps["type"], data: Record<string, any>) {
+  let schemaObject: Record<string, any> = {};
+
+  if (type === "LocalBusiness") {
+    schemaObject = {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Đức Duy Web",
+      "image": "https://duyweb.info.vn/og-image.jpg",
+      "@id": "https://duyweb.info.vn/#localbusiness",
+      "url": "https://duyweb.info.vn",
+      "telephone": data.telephone || "0938415218",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Quận 1",
+        "addressLocality": "Thành phố Hồ Chí Minh",
+        "addressCountry": "VN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 10.7769,
+        "longitude": 106.7009
+      },
+      "sameAs": [
+        data.facebookPersonal || "https://facebook.com/ducduy.web",
+        data.facebookFanpage || "https://facebook.com/ducduyweb.hub",
+        data.youtube || "https://youtube.com/@ducduyweb"
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    };
+  } else if (type === "Article") {
+    schemaObject = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": data.title,
+      "image": data.image || "https://duyweb.info.vn/og-image.jpg",
+      "datePublished": data.date || "2026-06-25",
+      "description": data.summary,
+      "author": {
+        "@type": "Person",
+        "name": "Đức Duy"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Đức Duy Web",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://duyweb.info.vn/brand/duyweb-logo-1024.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://duyweb.info.vn/cafe-so/${data.slug}`
+      }
+    };
+  } else if (type === "FAQ") {
+    schemaObject = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": (data.questions || []).map((q: any) => ({
+        "@type": "Question",
+        "name": q.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": q.answer
+        }
+      }))
+    };
+  } else if (type === "Project") {
+    schemaObject = {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": data.title,
+      "description": data.description,
+      "genre": data.categoryLabel,
+      "audience": {
+        "@type": "Audience",
+        "audienceType": data.industry
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Đức Duy Web"
+      }
+    };
+  } else if (type === "CaseStudy") {
+    schemaObject = {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": data.title,
+      "description": data.background,
+      "genre": "Digital Consulting Case Study",
+      "dependencies": data.suggestedFeatures ? data.suggestedFeatures.join(", ") : "",
+      "author": {
+        "@type": "Organization",
+        "name": "Đức Duy Web"
+      }
+    };
+  } else if (type === "Video") {
+    schemaObject = {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": data.title,
+      "description": data.description || data.title,
+      "thumbnailUrl": data.thumbnail,
+      "uploadDate": data.published,
+      "contentUrl": data.url,
+      "embedUrl": `https://www.youtube.com/embed/${data.id}`
+    };
+  } else if (type === "BreadcrumbList") {
+    schemaObject = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": (data.items || []).map((item: any, idx: number) => ({
+        "@type": "ListItem",
+        "position": idx + 1,
+        "name": item.name,
+        "item": `https://duyweb.info.vn${item.url}`
+      }))
+    };
+  }
+  return schemaObject;
 }

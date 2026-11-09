@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "prebuild": "node scripts/sync-youtube.mjs",
-    "build": "vite build",
+    "build": "vite build && vite build --ssr src/entry-server.tsx --outDir node_modules/.ssr-build --emptyOutDir && node scripts/prerender.mjs",
     "sync-youtube": "node scripts/sync-youtube.mjs",
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",

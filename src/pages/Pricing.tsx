@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { socialConfig } from "../config/social";
 import Schema from "../components/Schema";
+import Meta from "../components/Meta";
 
 export default function Pricing() {
   const [billingCycle, setBillingCycle] = useState<"one_time">("one_time");
@@ -107,6 +108,12 @@ export default function Pricing() {
 
   return (
     <>
+      <Meta
+        title="Bảng giá thiết kế website và giải pháp tài sản số"
+        description="Bảng giá tham khảo làm website doanh nghiệp, landing page, website chuyên gia đặt lịch và khoá học: phạm vi từng gói, thời gian bàn giao, bảo hành 12 tháng."
+        keywords={["bảng giá thiết kế website", "chi phí làm website", "giá landing page", "website doanh nghiệp"]}
+        slug="bao-gia"
+      />
       <Schema
         type="LocalBusiness"
         data={{
