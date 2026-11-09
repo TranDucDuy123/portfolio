@@ -1,6 +1,7 @@
 ---
 title: "Website và SEO không chỉ là \"làm xong rồi chờ có khách\""
 summary: "Hiểu đúng về sự kết hợp hoàn hảo giữa nền tảng Công nghệ vững chãi và chiến lược Marketing thực chiến để biến Website thành cỗ máy tự động thu hút khách hàng."
+image: "/blog-images/website-va-seo-khong-chi-la-lam-xong-roi-cho-khach/cover.png"
 category: "Website"
 tags: ["Website", "SEO", "Vận hành", "Digital Marketing"]
 date: "2026-07-13"

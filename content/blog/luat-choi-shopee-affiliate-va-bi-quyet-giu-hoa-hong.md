@@ -1,6 +1,7 @@
 ---
 title: "Luật chơi Shopee Affiliate ngầm: 7 quy tắc xương máu để tránh bị cướp hoa hồng"
 summary: "Thấu hiểu các quy tắc cookie 7 ngày, Last Click Wins, ghi đè livestream, hoa hồng Extra và cách xây dựng trang Web cá nhân để bảo toàn nguồn thu nhập thụ động."
+image: "/blog-images/luat-choi-shopee-affiliate-va-bi-quyet-giu-hoa-hong/cover.png"
 category: "Conversion"
 tags: ["Shopee Affiliate", "Tối ưu chuyển đổi", "Kinh doanh online", "Website"]
 date: "2026-07-03"

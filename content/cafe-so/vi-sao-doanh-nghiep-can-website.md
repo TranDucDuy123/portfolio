@@ -1,6 +1,7 @@
 ---
 title: "Vì sao doanh nghiệp cần website? Tài sản số dài hạn trong kỷ nguyên mới"
 summary: "Đúc kết tầm nhìn của Đức Duy Web về nền tảng số bền vững. Website chính là bộ mặt, là trái tim của hệ sinh thái tiếp thị số doanh nghiệp."
+image: "/blog-images/vi-sao-doanh-nghiep-can-website/cover.png"
 analogy: "Doanh nghiệp không có website giống như một công ty lớn nhưng không có số điện thoại cố định và không có trụ sở văn phòng thực tế, toàn bộ hoạt động giao dịch đều phải ra quán cafe lề đường bàn bạc. Rất thiếu chuyên nghiệp và không thể đi đường dài."
 category: "Chiến lược"
 tags: ["Tài sản số", "Doanh nghiệp", "Tương lai"]

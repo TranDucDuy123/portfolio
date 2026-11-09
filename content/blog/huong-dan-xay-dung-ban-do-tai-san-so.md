@@ -1,6 +1,7 @@
 ---
 title: "Hướng dẫn xây dựng Bản đồ Tài sản số cho Doanh nghiệp vừa và nhỏ"
 summary: "Xác định rõ vai trò của Website như một trung tâm dữ liệu và các kênh mạng xã hội đóng vai trò thu hút sự chú ý ngắn hạn."
+image: "/blog-images/huong-dan-xay-dung-ban-do-tai-san-so/cover.png"
 category: "Digital Assets"
 tags: ["Tài sản số", "Chiến lược", "Doanh nghiệp"]
 date: "2026-06-20"

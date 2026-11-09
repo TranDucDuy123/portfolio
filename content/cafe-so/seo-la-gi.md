@@ -1,6 +1,7 @@
 ---
 title: "SEO là gì? Cỗ máy tự động đưa khách hàng tự tìm đến bạn"
 summary: "Tối ưu hóa công cụ tìm kiếm giúp website của bạn đứng top Google khi khách hàng có nhu cầu thực sự. Giảm 90% chi phí chạy quảng cáo bám đuổi."
+image: "/blog-images/seo-la-gi/cover.png"
 analogy: "SEO (Search Engine Optimization) giống như việc bạn thiết lập bảng hiệu thật nổi bật và tối ưu sơ đồ cửa hàng sao cho khi cảnh sát dẫn đường (Google) nhận được câu hỏi từ người đi đường, họ sẽ ngay lập tức chỉ tay về phía cửa hiệu của bạn đầu tiên."
 category: "Tiếp thị"
 tags: ["SEO", "Google", "Khách hàng tự tìm đến"]

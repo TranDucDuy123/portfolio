@@ -1,6 +1,7 @@
 ---
 title: "Landing Page là gì? Sát thủ chốt đơn một mục tiêu"
 summary: "Sự khác biệt giữa Website đa mục tiêu và Landing Page đơn mục tiêu. Khi nào nên dùng Landing Page để tối đa hóa hiệu quả chạy quảng cáo?"
+image: "/blog-images/landing-page-la-gi/cover.png"
 analogy: "Landing Page giống như một nhân viên bán hàng xuất sắc được đào tạo chỉ để nói về duy nhất một sản phẩm hot nhất của bạn. Người này không lan man giới thiệu lịch sử công ty hay các sản phẩm khác, mà chỉ tập trung dẫn dắt khách hàng đi từ tò mò đến mua ngay lập tức."
 category: "Tiếp thị"
 tags: ["Landing Page", "Chuyển đổi", "Quảng cáo"]

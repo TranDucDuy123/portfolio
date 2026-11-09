@@ -1,6 +1,7 @@
 ---
 title: "Google Business (Google Maps) là gì? Khẳng định chủ quyền địa phương"
 summary: "Lợi ích khổng lồ từ việc tối ưu địa điểm doanh nghiệp trên bản đồ Google. Tạo uy tín tức thì đối với khách hàng địa phương."
+image: "/blog-images/google-business-la-gi/cover.png"
 analogy: "Google Business giống như việc bạn đăng ký định vị cửa hàng lên bản đồ chính thức của thành phố và cắm một cột mốc chỉ đường khổng lồ ngay tại ngã tư sầm uất nhất khu vực bạn hoạt động."
 category: "Cơ bản"
 tags: ["Google Maps", "Google Business", "Địa phương"]

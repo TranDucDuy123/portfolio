@@ -1,6 +1,7 @@
 ---
 title: "5 bước tối ưu tỷ lệ chuyển đổi (CRO) giúp Landing Page nhân đôi doanh số"
 summary: "Loại bỏ những yếu tố gây nhiễu, thiết lập tiêu đề thu hút (Hook) và sắp xếp nút kêu gọi hành động (CTA) kích thích khách hàng hành động."
+image: "/blog-images/toi-uu-ti-le-chuyen-doi-cho-landing-page/cover.png"
 category: "Conversion"
 tags: ["Landing Page", "Tối ưu chuyển đổi", "Quảng cáo"]
 date: "2026-06-15"

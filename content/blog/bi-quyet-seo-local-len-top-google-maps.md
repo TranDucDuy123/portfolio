@@ -1,6 +1,7 @@
 ---
 title: "Bí quyết SEO Local đưa cửa hàng lên Top Google Maps trong 30 ngày"
 summary: "Cách đăng ký, tối ưu hóa hồ sơ Google Business Profile kết hợp website giúp khách hàng địa phương tự động tìm đến cửa hàng của bạn."
+image: "/blog-images/bi-quyet-seo-local-len-top-google-maps/cover.png"
 category: "SEO"
 tags: ["SEO Local", "Google Maps", "Khách hàng tự tìm đến"]
 date: "2026-06-18"

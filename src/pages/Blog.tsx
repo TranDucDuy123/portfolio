@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { Search, Filter, BookOpen, Clock, Tag, X, Calendar, ArrowLeft, ArrowUpRight, Copy, Check, Share2 } from "lucide-react";
 import { blogPosts } from "../data/blog";
@@ -6,7 +6,9 @@ import type { BlogPost } from "../types";
 import type { BlogEntry } from "../lib/content";
 import { socialConfig } from "../config/social";
 import Meta from "../components/Meta";
-import { markdownToHtml } from "../lib/markdown";
+import { markdownToHtml, headingsOf } from "../lib/markdown";
+import { ArticleToc, ReadingProgress } from "../components/ui/article-reading";
+import { FeaturedPosts } from "../components/ui/blog-posts";
 import Schema from "../components/Schema";
 import { RelatedVideos } from "../components/VideoBlocks";
 
@@ -41,6 +43,8 @@ export default function Blog() {
   }, [slug]);
 
   const articleHtml = useMemo(() => (activePost ? markdownToHtml(activePost.content) : ""), [activePost]);
+  const headings = useMemo(() => (activePost ? headingsOf(activePost.content) : []), [activePost]);
+  const bodyRef = useRef<HTMLDivElement>(null);
 
   const categories = ["Tất cả", "Website", "SEO", "Digital Assets", "Business Strategy", "Conversion", "Content Marketing", "Lead Generation"];
 
@@ -125,6 +129,15 @@ export default function Blog() {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        {!activePost && (
+          <FeaturedPosts
+            title="Bài mới nhất"
+            description="Ba bài mình vừa viết. Đọc bài trên cùng trước nếu bạn chỉ có 5 phút."
+            backgroundLabel="BLOG"
+            className="mb-10"
+            posts={blogPosts.slice(0, 3).map((p) => ({ id: p.id, title: p.title, category: p.category, href: `/blog/${p.slug}`, readTime: p.readingTime, date: p.date, summary: p.summary }))}
+          />
+        )}
         {activePost ? (
           /* READ BLOG POST */
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
@@ -195,7 +208,9 @@ export default function Blog() {
               <RelatedVideos articleHref={`/blog/${activePost.slug}`} />
 
               {/* Body rendering */}
-              <div className="article-body pt-4" dangerouslySetInnerHTML={{ __html: articleHtml }} />
+              <ReadingProgress target={bodyRef} />
+              <ArticleToc headings={headings} className="lg:hidden" collapsible />
+              <div ref={bodyRef} className="article-body pt-4" dangerouslySetInnerHTML={{ __html: articleHtml }} />
 
               {/* Tags block */}
               <div className="pt-6 border-t border-gray-100 flex flex-wrap gap-2">
@@ -245,8 +260,9 @@ export default function Blog() {
               </div>
             </div>
 
-            {/* Sidebar info */}
-            <div className="space-y-6">
+            {/* Sidebar info: mục lục dính theo khi cuộn */}
+            <div className="space-y-6 lg:sticky lg:top-24 lg:self-start">
+              <ArticleToc headings={headings} className="hidden lg:block" />
               <div className="border border-gray-200 rounded-2xl p-5 bg-gray-50">
                 <h3 className="font-display font-bold text-sm text-brand-dark mb-4 uppercase tracking-wider">Bài viết phổ biến</h3>
                 <div className="space-y-4">

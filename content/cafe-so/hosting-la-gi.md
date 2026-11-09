@@ -1,6 +1,7 @@
 ---
 title: "Hosting là gì? Móng nhà vững thì nhà mới cao"
 summary: "Tìm hiểu về nơi lưu trữ toàn bộ dữ liệu website của bạn. Tại sao chất lượng hosting quyết định tốc độ load trang và doanh số bán hàng?"
+image: "/blog-images/hosting-la-gi/cover.png"
 analogy: "Hosting giống như mảnh đất mà bạn thuê để đặt ngôi nhà lên đó. Mảnh đất rộng rãi, bằng phẳng, điện nước đầy đủ (băng thông lớn, cấu hình mạnh) thì ngôi nhà mới đón được hàng nghìn khách ghé thăm cùng lúc mà không bị sập."
 category: "Hạ tầng"
 tags: ["Hosting", "Hạ tầng", "Tốc độ"]

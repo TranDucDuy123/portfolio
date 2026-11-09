@@ -66,7 +66,42 @@ function renderTable(rows: string[]): string {
   );
 }
 
-export function markdownToHtml(md: string): string {
+// Neo cho tiêu đề mục: bỏ dấu tiếng Việt, chữ thường, nối bằng "-"; trùng thì thêm -2, -3…
+function slugify(text: string) {
+  return text
+    .replace(/[*_`[\]()]/g, "")
+    .normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D")
+    .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60) || "muc";
+}
+
+function makeIds() {
+  const used = new Map<string, number>();
+  return (text: string) => {
+    const base = slugify(text);
+    const n = (used.get(base) || 0) + 1;
+    used.set(base, n);
+    return n === 1 ? base : `${base}-${n}`;
+  };
+}
+
+export interface MdHeading {
+  level: number;
+  text: string;
+  id: string;
+}
+
+// Danh sách mục lớn của bài (## và ###, hoặc ### và #### với bài cũ) để dựng mục lục; id khớp với markdownToHtml
+export function headingsOf(md: string): MdHeading[] {
+  const nextId = makeIds();
+  const all = md.replace(/\r\n/g, "\n").split("\n")
+    .map((l) => l.match(/^(#{1,6})\s+(.*)$/))
+    .filter((m): m is RegExpMatchArray => !!m)
+    .map((m) => ({ level: m[1].length, text: m[2].replace(/[*_`]/g, "").trim(), id: nextId(m[2].trim()) }));
+  const top = Math.min(...all.map((h) => h.level));
+  return all.filter((h) => h.level <= top + 1);
+}
+
+export function markdownToHtml(md: string, nextId = makeIds()): string {
   const lines = md.replace(/\r\n/g, "\n").split("\n");
   const out: string[] = [];
   let i = 0;
@@ -75,14 +110,14 @@ export function markdownToHtml(md: string): string {
     if (!line.trim()) { i++; continue; }
 
     const h = line.match(/^(#{1,6})\s+(.*)$/);
-    if (h) { out.push(`<h${h[1].length}>${inline(h[2].trim())}</h${h[1].length}>`); i++; continue; }
+    if (h) { out.push(`<h${h[1].length} id="${nextId(h[2].trim())}">${inline(h[2].trim())}</h${h[1].length}>`); i++; continue; }
 
     if (/^\s*(-{3,}|\*{3,})\s*$/.test(line)) { out.push("<hr />"); i++; continue; }
 
     if (/^\s*>/.test(line)) {
       const quote: string[] = [];
       while (i < lines.length && /^\s*>/.test(lines[i])) quote.push(lines[i++].replace(/^\s*>\s?/, ""));
-      out.push(`<blockquote>${markdownToHtml(quote.join("\n"))}</blockquote>`);
+      out.push(`<blockquote>${markdownToHtml(quote.join("\n"), nextId)}</blockquote>`);
       continue;
     }
 

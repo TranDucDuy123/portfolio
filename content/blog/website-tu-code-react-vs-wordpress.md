@@ -1,6 +1,7 @@
 ---
 title: "Website tự code React/Vite vs WordPress: Lựa chọn nào tối ưu cho doanh nghiệp dài hạn?"
 summary: "So sánh chi tiết tốc độ load, tính bảo mật, khả năng tùy biến và hiệu quả tối ưu hóa SEO của hai trường phái xây dựng website phổ biến nhất."
+image: "/blog-images/website-tu-code-react-vs-wordpress/cover.png"
 category: "Website"
 tags: ["React", "WordPress", "Công nghệ"]
 date: "2026-06-10"

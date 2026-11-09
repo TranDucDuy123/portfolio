@@ -1,6 +1,7 @@
 ---
 title: "Domain (Tên miền) là gì? Chọn tên miền sao cho đúng tầm?"
 summary: "Cách hoạt động của tên miền và tầm quan trọng của việc chọn lựa tên miền phù hợp với định vị thương hiệu doanh nghiệp."
+image: "/blog-images/domain-la-gi/cover.png"
 analogy: "Tên miền chính là địa chỉ nhà của bạn trên bản đồ Internet (ví dụ: duyweb.info.vn). Nếu không có địa chỉ, khách hàng dù biết bạn có nhà đẹp cũng không cách nào tìm đến đúng nơi."
 category: "Cơ bản"
 tags: ["Domain", "Tên miền", "Thương hiệu"]

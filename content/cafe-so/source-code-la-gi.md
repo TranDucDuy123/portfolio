@@ -1,6 +1,7 @@
 ---
 title: "Source Code (Mã nguồn) là gì? Bản thiết kế và linh hồn của Website"
 summary: "Sự khác biệt giữa code tay tối ưu và các nền tảng dựng sẵn mì ăn liền. Tại sao mã nguồn sạch lại giúp website SEO tốt hơn?"
+image: "/blog-images/source-code-la-gi/cover.png"
 analogy: "Source Code giống như bản vẽ kỹ thuật chi tiết cùng toàn bộ gạch đá, xi măng xây dựng nên ngôi nhà. Bản vẽ chuẩn chỉnh, vật liệu tốt thì ngôi nhà mới bền vững, dễ sửa chữa và nâng cấp về sau."
 category: "Hạ tầng"
 tags: ["Source Code", "Mã nguồn", "Công nghệ"]

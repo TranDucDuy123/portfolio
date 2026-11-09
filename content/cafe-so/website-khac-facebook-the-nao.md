@@ -1,6 +1,7 @@
 ---
 title: "Website khác Facebook thế nào? Đất thổ cư vs Đất thuê"
 summary: "Đừng xây lâu đài trên cát đất của người khác. Phân tích chi tiết mô hình Đất thổ cư vs Đất thuê trong kinh doanh online."
+image: "/blog-images/website-khac-facebook-the-nao/cover.png"
 analogy: "Xây dựng Fanpage Facebook giống như việc bạn thuê một ki-ốt trong trung tâm thương mại lớn. Còn Website là bạn tự mua đất xây tòa nhà văn phòng riêng. Thuê ki-ốt thì đông người qua lại sẵn, nhưng chủ nhà muốn đuổi bạn lúc nào hay tăng giá, đổi luật chơi là quyền của họ."
 category: "So sánh"
 tags: ["Website", "Facebook", "Chiến lược"]

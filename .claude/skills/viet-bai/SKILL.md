@@ -88,3 +88,5 @@ Viết lần lượt, bài sau link tới bài trước khi liên quan. Có th�
 - Property Search Console: dạng URL `https://duyweb.info.vn/` (cùng tài khoản Google còn có property hungthinhfoods.vn, đừng chọn nhầm). Duy đăng nhập sẵn trong trình duyệt của app.
 - Sitemap `sitemap.xml` đã khai báo, trạng thái Thành công (gửi lại 09/11/2026 sau khi đăng bài đầu tiên).
 - Bài đã đăng qua skill: `/cafe-so/ten-mien-vn-hay-com` (08/11/2026, đã yêu cầu lập chỉ mục 09/11/2026, IndexNow 200).
+- 09/11/2026 sau khi dựng sẵn HTML cho 21 trang chính: đã yêu cầu lập chỉ mục `/`, `/services`, `/bao-gia`, `/about`, `/kien-thuc`, `/blog`, `/cafe-so`, `/resources`, `/case-study`, `/solutions`. Còn chờ gửi (mỗi ngày ~10 link): 5 trang `/case-study/*`, 5 trang `/solutions/*`, `/videos`, `/projects`, `/connect`, 2 cẩm nang `/kien-thuc/*`, 17 bài Blog và Cafe Số cũ (ưu tiên bài có lượt hiển thị).
+- Mẹo thao tác Search Console: vào trang Tổng quan, đợi 5 giây rồi mới bấm kính lúp (bấm sớm ô tìm không mở). Sau khi kiểm tra URL, tìm nút theo chữ "Yêu cầu lại" và bấm ref của nút (bấm theo toạ độ hay trượt). Google chạy kiểm tra trực tiếp khoảng 30–60 giây rồi mới hiện khung "Đã yêu cầu lập chỉ mục".

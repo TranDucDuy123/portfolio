@@ -1,6 +1,7 @@
 ---
 title: "Website khác TikTok thế nào? Sự chú ý ngắn hạn vs Giá trị dài hạn"
 summary: "Mổ xẻ bản chất chuyển đổi hành vi người dùng trên TikTok và Website để phân bổ ngân sách marketing hợp lý."
+image: "/blog-images/website-khac-tiktok-the-nao/cover.png"
 analogy: "TikTok giống như một rạp xiếc ngoài quảng trường trung tâm đầy sôi động. Website giống như phòng tư vấn VIP ấm cúng, sang trọng phía sau. Bạn diễn trò ở rạp xiếc để thu hút người ta đứng xem, nhưng để họ ký hợp đồng tiền tỷ, bạn phải mời họ vào phòng VIP nói chuyện nghiêm túc."
 category: "So sánh"
 tags: ["Website", "TikTok", "Chuyển đổi"]

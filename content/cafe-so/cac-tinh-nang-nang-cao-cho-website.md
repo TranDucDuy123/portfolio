@@ -1,6 +1,7 @@
 ---
 title: "Các tính năng nâng cao giúp website hữu ích hơn"
 summary: "Những tính năng nâng cao đáng cân nhắc và cách xác định tính năng nào phù hợp với khách hàng."
+image: "/blog-images/cac-tinh-nang-nang-cao-cho-website/cover.png"
 analogy: "Website giống một cửa hàng: ngoài bảng hiệu đẹp, khách còn cần tìm món dễ dàng, gọi món thuận tiện và được phục vụ đúng nhu cầu."
 category: "Chiến lược"
 tags: ["Tính năng website", "Trải nghiệm khách hàng", "Nâng cấp website"]

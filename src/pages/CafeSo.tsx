@@ -1,11 +1,13 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { Search, Filter, BookOpen, Clock, Tag, X, HelpCircle, ArrowLeft, Send, ArrowUpRight } from "lucide-react";
 import { cafeSoArticles } from "../data/cafeSo";
 import type { CafeSoEntry } from "../lib/content";
 import { socialConfig } from "../config/social";
 import Meta from "../components/Meta";
-import { markdownToHtml } from "../lib/markdown";
+import { markdownToHtml, headingsOf } from "../lib/markdown";
+import { ArticleToc, ReadingProgress } from "../components/ui/article-reading";
+import { FeaturedPosts } from "../components/ui/blog-posts";
 import Schema from "../components/Schema";
 import { RelatedVideos } from "../components/VideoBlocks";
 
@@ -17,6 +19,8 @@ export default function CafeSo() {
   const [selectedTag, setSelectedTag] = useState<string>("");
   const [activeArticle, setActiveArticle] = useState<CafeSoEntry | null>(null);
   const articleHtml = useMemo(() => (activeArticle ? markdownToHtml(activeArticle.content) : ""), [activeArticle]);
+  const headings = useMemo(() => (activeArticle ? headingsOf(activeArticle.content) : []), [activeArticle]);
+  const bodyRef = useRef<HTMLDivElement>(null);
 
   // Synchronize activeArticle with the URL slug
   useEffect(() => {
@@ -122,6 +126,16 @@ export default function CafeSo() {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        {!activeArticle && (
+          <FeaturedPosts
+            title="Mới làm quen? Đọc 3 bài này trước"
+            description="Ba khái niệm nền: website, tên miền, hosting. Hiểu ba thứ này là đọc được mọi báo giá làm web."
+            backgroundLabel="CAFE"
+            backgroundPosition="right"
+            className="mb-10"
+            posts={cafeSoArticles.slice(0, 3).map((a) => ({ id: a.id, title: a.title, category: a.category, href: `/cafe-so/${a.slug}`, readTime: a.readingTime, summary: a.summary }))}
+          />
+        )}
         {activeArticle ? (
           /* SINGLE ARTICLE READER VIEW */
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
@@ -168,7 +182,9 @@ export default function CafeSo() {
               <RelatedVideos articleHref={`/cafe-so/${activeArticle.slug}`} />
 
               {/* Rich Content Render */}
-              <div className="article-body" dangerouslySetInnerHTML={{ __html: articleHtml }} />
+              <ReadingProgress target={bodyRef} />
+              <ArticleToc headings={headings} className="lg:hidden" collapsible />
+              <div ref={bodyRef} className="article-body pt-4" dangerouslySetInnerHTML={{ __html: articleHtml }} />
 
               {/* Tags block */}
               <div className="pt-6 border-t border-gray-100 flex flex-wrap gap-2">
@@ -205,8 +221,9 @@ export default function CafeSo() {
               </div>
             </div>
 
-            {/* Sidebar with related articles */}
-            <div className="space-y-6">
+            {/* Sidebar: mục lục dính theo khi cuộn + bài liên quan */}
+            <div className="space-y-6 lg:sticky lg:top-24 lg:self-start">
+              <ArticleToc headings={headings} className="hidden lg:block" />
               <div className="border border-gray-200 rounded-xl p-5 bg-gray-50">
                 <h3 className="font-display font-bold text-sm text-brand-dark mb-4 uppercase tracking-wider">Đọc thêm Cafe Số</h3>
                 <div className="space-y-4">

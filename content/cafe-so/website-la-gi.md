@@ -1,6 +1,7 @@
 ---
 title: "Website là gì? Bản chất thật sự dưới góc nhìn tài sản số"
 summary: "Hiểu đúng về Website dưới góc nhìn kinh doanh: Không chỉ là trang tin, mà là mảnh đất cắm dùi duy nhất của doanh nghiệp trên Internet."
+image: "/blog-images/website-la-gi/cover.png"
 analogy: "Website giống như một ngôi nhà (hoặc trụ sở văn phòng) do chính bạn sở hữu trên môi trường Internet. Bạn có toàn quyền thiết kế, trang trí, tiếp khách và lưu trữ dữ liệu mà không sợ ai đuổi đi."
 category: "Cơ bản"
 tags: ["Website", "Tài sản số", "Nền móng"]
