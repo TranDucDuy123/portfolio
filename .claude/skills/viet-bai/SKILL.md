@@ -70,11 +70,12 @@ Chỉ hỏi lại khi thiếu chủ đề. Mọi thứ khác tự quyết theo h
 ### 7. Báo công cụ tìm kiếm
 - **Bing và các công cụ dùng IndexNow**: `node scripts/indexnow.mjs /<blog|cafe-so>/<slug>`. Kết quả 200 hoặc 202 là đã nhận.
 - **Google Search Console**, bằng trình duyệt trong app (tải skill `anthropic-skills:built-in-browser` trước):
-  1. Mở `https://search.google.com/search-console/inspect?resource_id=https%3A%2F%2Fduyweb.info.vn%2F&id=<URL bài đã mã hoá>`. Không mở được property đó thì thử `resource_id=sc-domain%3Aduyweb.info.vn`. Property nào chạy được thì ghi vào mục "Ghi nhớ" cuối file này.
+  1. Mở `https://search.google.com/search-console?resource_id=https%3A%2F%2Fduyweb.info.vn%2F` (link thẳng vào trang inspect bị 404). Khung trình duyệt hẹp thì ô "Kiểm tra mọi URL" bị ẩn: bấm biểu tượng kính lúp trên thanh trên cùng, dán link bài, Enter.
   2. Gặp trang đăng nhập Google thì dừng, nhờ Duy tự đăng nhập trong khung trình duyệt. Không bao giờ tự nhập mật khẩu, mã xác minh.
-  3. Đợi kết quả kiểm tra. URL chưa có trên Google thì bấm **Yêu cầu lập chỉ mục** (Request indexing). Đã có thì ghi lại tình trạng, không gửi thừa.
+  3. Đợi kết quả kiểm tra. URL chưa có trên Google thì bấm **Yêu cầu lập chỉ mục** (Request indexing). Đã có thì ghi lại tình trạng, không gửi thừa. Trang có sẵn vài nút "Yêu cầu lập chỉ mục" ẩn: bấm nút đang hiện (tìm theo chữ, chọn ref mới nhất), đợi khung "Đã yêu cầu lập chỉ mục" hiện ra mới tính là xong.
   4. Google giới hạn số lần yêu cầu mỗi ngày. Gặp thông báo vượt hạn mức thì dừng, báo Duy gửi lại hôm sau.
-  5. Lần đầu dùng skill này: vào **Sơ đồ trang web**, khai báo `sitemap.xml` nếu chưa có, ghi lại vào "Ghi nhớ".
+  5. Sitemap đã khai báo sẵn, Google tự đọc lại định kỳ. Khi đăng nhiều bài một lúc có thể gửi lại `sitemap.xml` ở `https://search.google.com/search-console/sitemaps?resource_id=https%3A%2F%2Fduyweb.info.vn%2F` để Google đọc sớm hơn.
+- **Bing**: chạy `indexnow.mjs` từ Bash có thể bị Git Bash đổi `/cafe-so/x` thành đường dẫn ổ đĩa; script đã tự sửa, và chỉ gửi khi trang trả về đúng canonical của bài.
 - Không dùng Indexing API của Google cho bài blog.
 
 ### 8. Báo lại Duy
@@ -84,5 +85,6 @@ Ngắn gọn: link bài, tiêu đề và mô tả, từ khoá chính, ảnh đã
 Viết lần lượt, bài sau link tới bài trước khi liên quan. Có thể gom vào một commit. Search Console ưu tiên gửi bài quan trọng nhất, phần còn lại báo Duy gửi hôm sau vì hạn mức.
 
 ## Ghi nhớ (cập nhật khi biết thêm)
-- Property Search Console: chưa xác định (site có thẻ xác minh `google-site-verification` trong `index.html`, có thể là property dạng URL `https://duyweb.info.vn/`).
-- Sitemap đã khai báo trên Search Console: chưa kiểm tra.
+- Property Search Console: dạng URL `https://duyweb.info.vn/` (cùng tài khoản Google còn có property hungthinhfoods.vn, đừng chọn nhầm). Duy đăng nhập sẵn trong trình duyệt của app.
+- Sitemap `sitemap.xml` đã khai báo, trạng thái Thành công (gửi lại 09/11/2026 sau khi đăng bài đầu tiên).
+- Bài đã đăng qua skill: `/cafe-so/ten-mien-vn-hay-com` (08/11/2026, đã yêu cầu lập chỉ mục 09/11/2026, IndexNow 200).
