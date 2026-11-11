@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="description" content="Tài liệu nội bộ Duy Web về ba kênh của một website: code, tên miền, hosting, kèm bài test.">
+<link rel="icon" href="/duyweb-favicon.svg" type="image/svg+xml">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Code · Tên miền · Hosting</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Lexend:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: tài liệu nội bộ hai chế độ (Tài liệu / Bài test), cột đọc 760px, ba kênh mang ba màu cố định xuyên suốt */
+:root{
+  --bg:#f5f7f9; --surface:#ffffff; --sunk:#edf0f3; --fg:#17212b; --muted:#5a6673; --line:#d9dfe5;
+  --code:#2459d6; --domain:#a86a12; --host:#0d8574;
+  --ok:#1b7a43; --bad:#bf3328;
+  --f-display:"Lexend","Be Vietnam Pro",system-ui,sans-serif;
+  --f-body:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1318; --surface:#161d24; --sunk:#1c252e; --fg:#e4e9ee; --muted:#98a4b0; --line:#2a3540;
+  --code:#7ea3ff; --domain:#e2ad4f; --host:#3fcbb3; --ok:#4cc27e; --bad:#ff7a6e; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1318; --surface:#161d24; --sunk:#1c252e; --fg:#e4e9ee; --muted:#98a4b0; --line:#2a3540;
+  --code:#7ea3ff; --domain:#e2ad4f; --host:#3fcbb3; --ok:#4cc27e; --bad:#ff7a6e; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:400 16px/1.65 var(--f-body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.25;margin:0}
+h1{font-size:clamp(1.9rem,5vw,2.7rem);font-weight:700;letter-spacing:-.01em}
+h2{font-size:1.5rem;font-weight:600}
+h3{font-size:1.1rem;font-weight:600}
+p{margin:0}
+code,.mono{font-family:var(--f-mono);font-size:.88em}
+a{color:var(--code)}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--code);outline-offset:2px;border-radius:6px}
+
+.wrap{max-width:820px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.c-code{--k:var(--code)} .c-domain{--k:var(--domain)} .c-host{--k:var(--host)}
+.tint{background:color-mix(in srgb,var(--k) 10%,var(--surface))}
+
+/* thanh trên */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:16px;min-height:56px;flex-wrap:wrap;padding-block:6px}
+.brand{font-family:var(--f-display);font-weight:600;font-size:.95rem;display:flex;gap:6px;align-items:center;margin-right:auto}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--k);display:inline-block}
+.tabs{display:flex;gap:4px;background:var(--sunk);padding:4px;border-radius:10px}
+.tabs a{padding:6px 14px;border-radius:7px;text-decoration:none;color:var(--muted);font-weight:600;font-size:.92rem}
+.tabs a[aria-current="page"]{background:var(--surface);color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0/.12)}
+
+main{padding-block:36px 80px}
+section{margin-top:56px;display:grid;gap:18px}
+section:first-child{margin-top:0}
+.eyebrow{font-size:.75rem;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.lead{font-size:1.1rem;color:var(--muted);max-width:62ch}
+.prose{max-width:66ch;display:grid;gap:12px}
+
+/* ba thẻ khái niệm */
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:720px){.trio{grid-template-columns:1fr}}
+.concept{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--k);border-radius:12px;padding:18px;display:grid;gap:10px;align-content:start;min-width:0}
+.concept h3{color:var(--k)}
+.concept .like{font-weight:600}
+.concept dl{margin:0;display:grid;gap:8px;font-size:.92rem}
+.concept dt{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.concept dd{margin:0}
+
+.analogy{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;display:grid;gap:10px}
+.analogy ul{margin:0;padding-left:1.1em;display:grid;gap:6px}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:.8rem;font-weight:700;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);white-space:nowrap}
+
+/* mô phỏng tắt kênh */
+.sim{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.switches{display:flex;flex-wrap:wrap;gap:8px;padding:14px;border-bottom:1px solid var(--line);background:var(--sunk)}
+.sw{display:flex;align-items:center;gap:8px;padding:6px 12px 6px 6px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-weight:600;font-size:.9rem}
+.sw .knob{width:34px;height:20px;border-radius:999px;background:var(--line);position:relative;transition:background .2s}
+.sw .knob::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:var(--surface);transition:transform .2s;box-shadow:0 1px 2px rgb(0 0 0/.25)}
+.sw[aria-pressed="true"] .knob{background:var(--k)}
+.sw[aria-pressed="true"] .knob::after{transform:translateX(14px)}
+.browser{margin:14px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.bar{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--sunk);border-bottom:1px solid var(--line);font-family:var(--f-mono);font-size:.82rem;min-width:0}
+.bar .lock{font-weight:700}
+.bar .url{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.screen{min-height:170px;padding:22px;display:grid;gap:8px;align-content:center}
+.screen.err{color:var(--muted)}
+.screen .big{font-family:var(--f-display);font-size:1.25rem;font-weight:600;color:var(--fg)}
+.screen .why{font-size:.92rem;border-left:3px solid var(--k,var(--line));padding-left:10px}
+.mock-site{display:grid;gap:10px}
+.mock-site .hero{height:52px;border-radius:8px;background:linear-gradient(90deg,color-mix(in srgb,var(--code) 30%,transparent),color-mix(in srgb,var(--host) 30%,transparent))}
+.mock-site .ln{height:10px;border-radius:5px;background:var(--line)}
+
+/* luồng truy cập */
+.flow{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:14px}
+.lanes{display:flex;gap:8px;flex-wrap:wrap}
+.lane{flex:1 1 120px;border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center;font-weight:600;font-size:.88rem;transition:all .25s;opacity:.5}
+.lane small{display:block;font-weight:400;color:var(--muted);font-size:.78rem}
+.lane.on{opacity:1;border-color:var(--k);background:color-mix(in srgb,var(--k) 12%,var(--surface));transform:translateY(-2px)}
+.lane.c-browser{--k:var(--fg)}
+.step-box{display:grid;gap:6px;min-height:96px}
+.step-box .n{font-family:var(--f-mono);font-size:.8rem;color:var(--muted)}
+.step-ctrl{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 14px;font-weight:600;font-size:.92rem}
+.btn:hover{background:var(--sunk)}
+.btn.primary{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.btn.primary:hover{opacity:.9}
+.btn:disabled{opacity:.4;cursor:default}
+.pips{display:flex;gap:6px;margin-left:auto}
+.pips i{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.pips i.on{background:var(--fg)}
+
+/* tam giác mối nối */
+.links{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:720px){.links{grid-template-columns:1fr}}
+.tri{width:100%;max-width:300px;height:auto;justify-self:center}
+.tri text{font-family:var(--f-display);font-weight:600;font-size:15px;fill:var(--fg)}
+.tri .edge{stroke:var(--line);stroke-width:10;stroke-linecap:round;cursor:pointer;transition:stroke .2s}
+.tri .edge:hover{stroke:var(--muted)}
+.tri .edge.on{stroke:var(--fg)}
+.tri .edge-l{font-family:var(--f-body);font-size:12px;font-weight:600;fill:var(--muted);pointer-events:none}
+.tri circle{stroke:var(--surface);stroke-width:4}
+.link-pick{display:flex;flex-wrap:wrap;gap:6px}
+.link-pick button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 12px;font-size:.88rem;font-weight:600}
+.link-pick button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.link-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;gap:10px;min-width:0}
+.link-card ul{margin:0;padding-left:1.1em;display:grid;gap:4px}
+
+/* bảng */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:.92rem}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.74rem;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:700;background:var(--sunk)}
+tr:last-child td{border-bottom:0}
+.dns td:first-child{font-family:var(--f-mono);font-weight:600}
+
+.records{background:var(--sunk);border-radius:10px;padding:12px 14px;font-family:var(--f-mono);font-size:.84rem;overflow-x:auto;white-space:pre;line-height:1.7}
+
+.life{display:grid;gap:0;counter-reset:s;border-left:2px solid var(--line);margin-left:8px}
+.life li{list-style:none;position:relative;padding:0 0 16px 22px}
+.life li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--k,var(--fg));border:2px solid var(--bg)}
+.life b{display:block}
+.life span{color:var(--muted);font-size:.92rem}
+ol.life{padding:0;margin:0}
+
+.callout{border:1px solid var(--line);border-left:4px solid var(--bad);background:var(--surface);border-radius:10px;padding:14px 16px;display:grid;gap:6px}
+.callout.good{border-left-color:var(--ok)}
+.callout ul{margin:0;padding-left:1.1em;display:grid;gap:4px}
+
+/* bài test */
+.tprog{position:sticky;top:calc(env(safe-area-inset-top,0px) + 57px);z-index:4;background:var(--bg);padding-block:10px;display:grid;gap:6px}
+.tprog .row{display:flex;justify-content:space-between;gap:12px;font-size:.88rem;font-variant-numeric:tabular-nums;flex-wrap:wrap}
+.meter{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.meter i{display:block;height:100%;background:var(--fg);width:0;transition:width .3s}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.q .qn{font-family:var(--f-mono);font-size:.78rem;color:var(--muted)}
+.q .qt{font-weight:600}
+.q .ctx{font-size:.93rem;color:var(--muted);background:var(--sunk);border-radius:8px;padding:10px 12px}
+.opts{display:grid;gap:8px}
+.opt{text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:9px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;line-height:1.45}
+.opt:hover:not(:disabled){border-color:var(--muted)}
+.opt .k{font-family:var(--f-mono);font-size:.8rem;font-weight:600;min-width:1.4em;color:var(--muted);padding-top:1px}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 10%,var(--surface))}
+.opt.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 9%,var(--surface))}
+.opt.dim{opacity:.55}
+.fb{font-size:.92rem;border-radius:8px;padding:10px 12px;background:var(--sunk)}
+.fb b.okt{color:var(--ok)} .fb b.badt{color:var(--bad)}
+.sort{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.sort .qt{flex:1 1 260px;min-width:0}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 12px;font-size:.86rem;font-weight:600;color:var(--k)}
+.chip:hover:not(:disabled){background:color-mix(in srgb,var(--k) 10%,var(--surface))}
+.chip.right{background:var(--ok);border-color:var(--ok);color:var(--surface)}
+.chip.wrong{background:var(--bad);border-color:var(--bad);color:var(--surface)}
+.chip:disabled{cursor:default}
+.chip:disabled:not(.right):not(.wrong){opacity:.45}
+.result{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:grid;gap:14px}
+.score{font-family:var(--f-display);font-size:2.6rem;font-weight:700;font-variant-numeric:tabular-nums;line-height:1}
+.parts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+@media (max-width:520px){.parts{grid-template-columns:1fr}}
+.part{background:var(--sunk);border-radius:9px;padding:10px 12px;font-size:.88rem;font-variant-numeric:tabular-nums}
+.part b{display:block;font-size:1.15rem;font-family:var(--f-display)}
+.field{display:grid;gap:4px;font-size:.88rem;font-weight:600}
+.field input{font:inherit;font-weight:400;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--fg);max-width:360px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;font-family:var(--f-mono);font-size:.82rem;white-space:pre-wrap;word-break:break-word}
+.verdict{font-weight:600}
+.view[hidden]{display:none!important}
+.top .wrap{flex-wrap:nowrap}
+@media (max-width:440px){.brand .t2{display:none}.tabs a{padding:6px 10px}}
+.small{font-size:.86rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><span class="dot c-code"></span><span class="dot c-domain"></span><span class="dot c-host"></span>&nbsp;Duy Web<span class="t2">&nbsp;· Nội bộ</span></div>
+    <nav class="tabs" aria-label="Chế độ">
+      <a href="#tai-lieu" data-view="tai-lieu">Tài liệu</a>
+      <a href="#bai-test" data-view="bai-test">Bài test</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ===================== TÀI LIỆU ===================== -->
+<div class="view" id="v-tai-lieu">
+
+<section>
+  <div class="eyebrow">Tài liệu nội bộ · Nền tảng vận hành website</div>
+  <h1>Code, tên miền, hosting: ba thứ làm nên một website</h1>
+  <p class="lead">Mọi website khách giao cho mình đều đứng trên ba chân. Hiểu rõ chân nào làm việc gì thì báo giá đúng, bàn giao gọn và khi khách gọi báo lỗi sẽ biết ngay phải mở chỗ nào.</p>
+</section>
+
+<section>
+  <h2>Ví dụ dễ nhớ: mở một tiệm cà phê</h2>
+  <div class="analogy">
+    <ul>
+      <li><span class="tag c-domain">Tên miền</span> là <b>biển hiệu và địa chỉ đã đăng ký</b>. Khách nhớ tên tiệm, tra ra địa chỉ rồi tìm tới. Không có địa chỉ thì tiệm có đẹp mấy cũng không ai tới được.</li>
+      <li><span class="tag c-host">Hosting</span> là <b>mặt bằng thuê</b>, có điện, có nước, mở cửa 24/7. Hết tiền thuê thì bị khóa cửa, đồ đạc bên trong vẫn có thể còn nhưng khách vào không được.</li>
+      <li><span class="tag c-code">Source code</span> là <b>nội thất, menu và cách bố trí quầy</b>. Đổi món, đổi màu sơn là sửa ở đây. Bản vẽ gốc phải cất kỹ để dọn sang mặt bằng khác vẫn dựng lại y hệt.</li>
+    </ul>
+    <p class="small">Ba thứ thuê và trả tiền ở ba nơi khác nhau, có ba hạn gia hạn khác nhau. Đó là lý do phải ghi chép riêng từng kênh cho mỗi khách.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Ba khái niệm, nói cho đúng</h2>
+  <div class="trio">
+    <article class="concept c-code">
+      <h3>Source code</h3>
+      <p class="like">Các file tạo nên giao diện và chức năng: HTML, CSS, JavaScript, PHP, ảnh, bài viết Markdown.</p>
+      <dl>
+        <div><dt>Ví dụ</dt><dd>Repo <code>portfolio</code> của duyweb.info.vn: thư mục <code>src/</code>, <code>content/</code>, <code>public/</code>.</dd></div>
+        <div><dt>Cất ở đâu</dt><dd>Kho Git (GitHub). Máy mình chỉ là bản làm việc, hosting chỉ là bản đang chạy.</dd></div>
+        <div><dt>Chi phí</dt><dd>Công làm. Không có phí gia hạn.</dd></div>
+        <div><dt>Mất thì sao</dt><dd>Phải làm lại từ đầu hoặc chép ngược từ hosting (thường thiếu bản gốc chưa build).</dd></div>
+      </dl>
+    </article>
+    <article class="concept c-domain">
+      <h3>Tên miền</h3>
+      <p class="like">Cái tên người ta gõ vào trình duyệt, kèm bộ <b>bản ghi DNS</b> nói cho cả thế giới biết tên đó trỏ về đâu.</p>
+      <dl>
+        <div><dt>Ví dụ</dt><dd><code>duyweb.info.vn</code>, <code>cbenergy.vn</code>. Bản ghi A, CNAME, MX, TXT.</dd></div>
+        <div><dt>Mua ở đâu</dt><dd>Nhà đăng ký tên miền. Tên miền .vn phải đăng ký qua nhà đăng ký được VNNIC công nhận.</dd></div>
+        <div><dt>Chi phí</dt><dd>Gia hạn theo năm. Quá hạn là web và email chết cùng lúc.</dd></div>
+        <div><dt>Mất thì sao</dt><dd>Người khác có thể mua lại tên đó. Rất khó lấy về.</dd></div>
+      </dl>
+    </article>
+    <article class="concept c-host">
+      <h3>Hosting</h3>
+      <p class="like">Máy chủ luôn bật, giữ bản web đang chạy và trả trang cho mỗi người truy cập.</p>
+      <dl>
+        <div><dt>Ví dụ</dt><dd>Vercel (đang chạy duyweb.info.vn), Netlify, Cloudflare Pages, hosting cPanel, VPS.</dd></div>
+        <div><dt>Lo việc gì</dt><dd>Chạy code, cấp và gia hạn SSL, database, sao lưu, log lỗi, băng thông.</dd></div>
+        <div><dt>Chi phí</dt><dd>Theo tháng hoặc năm, hoặc gói miễn phí có giới hạn.</dd></div>
+        <div><dt>Mất thì sao</dt><dd>Web ngừng chạy. Có code gốc thì dựng lại ở hosting khác trong vài giờ.</dd></div>
+      </dl>
+    </article>
+  </div>
+</section>
+
+<section>
+  <h2>Thử tắt từng kênh</h2>
+  <p class="prose">Bật tắt ba công tắc để xem khách thấy gì khi một kênh có vấn đề. Đây là ba kiểu lỗi mình sẽ gặp nhiều nhất khi khách gọi.</p>
+  <div class="sim">
+    <div class="switches" role="group" aria-label="Trạng thái các kênh">
+      <button class="sw c-domain" id="sw-domain" aria-pressed="true"><span class="knob"></span>Tên miền còn hạn, DNS đúng</button>
+      <button class="sw c-host" id="sw-host" aria-pressed="true"><span class="knob"></span>Hosting đang chạy</button>
+      <button class="sw c-code" id="sw-code" aria-pressed="true"><span class="knob"></span>Code không lỗi</button>
+    </div>
+    <div class="browser">
+      <div class="bar"><span class="lock" id="sim-lock">🔒</span><span class="url">https://tiemcaphe-vidu.vn</span></div>
+      <div class="screen" id="sim-screen" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Một lượt truy cập chạy qua những đâu</h2>
+  <p class="prose">Từ lúc khách gõ tên miền đến lúc trang hiện ra mất chưa tới một giây, nhưng đi qua đủ cả ba kênh theo thứ tự này.</p>
+  <div class="flow">
+    <div class="lanes">
+      <div class="lane c-browser" data-lane="b">Trình duyệt<small>máy của khách</small></div>
+      <div class="lane c-domain" data-lane="d">DNS<small>của tên miền</small></div>
+      <div class="lane c-host" data-lane="h">Hosting<small>máy chủ</small></div>
+      <div class="lane c-code" data-lane="c">Code<small>đã build</small></div>
+    </div>
+    <div class="step-box" aria-live="polite">
+      <div class="n" id="st-n"></div>
+      <h3 id="st-t"></h3>
+      <p id="st-d"></p>
+    </div>
+    <div class="step-ctrl">
+      <button class="btn" id="st-prev">Bước trước</button>
+      <button class="btn primary" id="st-next">Bước tiếp</button>
+      <div class="pips" id="st-pips"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Ba mối nối giữa ba kênh</h2>
+  <p class="prose">Mỗi cặp kênh nối với nhau bằng một thao tác cụ thể. Lỗi hay nằm ở mối nối hơn là ở bản thân từng kênh. Bấm vào một cạnh của tam giác.</p>
+  <div class="links">
+    <svg class="tri" viewBox="0 0 300 270" role="img" aria-label="Tam giác ba kênh và ba mối nối">
+      <line class="edge" data-link="ch" x1="60" y1="215" x2="240" y2="215"/>
+      <line class="edge" data-link="dh" x1="150" y1="55" x2="240" y2="215"/>
+      <line class="edge" data-link="cd" x1="150" y1="55" x2="60" y2="215"/>
+      <text class="edge-l" x="150" y="245" text-anchor="middle">Deploy</text>
+      <text class="edge-l" x="212" y="128" text-anchor="start">DNS</text>
+      <text class="edge-l" x="88" y="128" text-anchor="end">Cấu hình</text>
+      <circle cx="150" cy="55" r="20" fill="var(--domain)"/>
+      <circle cx="60" cy="215" r="20" fill="var(--code)"/>
+      <circle cx="240" cy="215" r="20" fill="var(--host)"/>
+      <text x="150" y="22" text-anchor="middle">Tên miền</text>
+      <text x="40" y="262" text-anchor="middle">Code</text>
+      <text x="260" y="262" text-anchor="middle">Hosting</text>
+    </svg>
+    <div style="display:grid;gap:10px;min-width:0">
+      <div class="link-pick" role="group" aria-label="Chọn mối nối">
+        <button data-link="ch">Code ↔ Hosting</button>
+        <button data-link="dh">Tên miền ↔ Hosting</button>
+        <button data-link="cd">Code ↔ Tên miền</button>
+      </div>
+      <div class="link-card" id="link-card" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Bản ghi DNS cần nhớ</h2>
+  <div class="tbl">
+    <table class="dns">
+      <thead><tr><th>Bản ghi</th><th>Dùng để</th><th>Ví dụ</th><th>Hay gặp khi</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>Trỏ tên miền về một địa chỉ IP</td><td><code>@ → 203.0.113.10</code></td><td>Gắn tên miền gốc vào hosting</td></tr>
+        <tr><td>CNAME</td><td>Trỏ một tên phụ về một tên khác</td><td><code>www → cname.vercel-dns.com</code></td><td>Gắn www, gắn vào Vercel/Netlify</td></tr>
+        <tr><td>MX</td><td>Chỉ nơi nhận email của tên miền</td><td><code>@ → mx của Google/Zoho</code></td><td>Làm email @tenmien cho khách</td></tr>
+        <tr><td>TXT</td><td>Ghi chú để dịch vụ khác xác minh</td><td><code>google-site-verification=…</code></td><td>Search Console, SPF chống email rác</td></tr>
+        <tr><td>NS</td><td>Giao quyền quản lý DNS cho ai</td><td><code>ns1.cloudflare.com</code></td><td>Chuyển DNS sang Cloudflare</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small">TTL là thời gian các máy khác được nhớ tạm bản ghi cũ. Sửa DNS có thể mất từ vài phút đến 24–48 giờ mới thấy khắp nơi. Trước khi chuyển hosting, hạ TTL xuống 300 giây trước một ngày.</p>
+</section>
+
+<section>
+  <h2>Vòng đời một website khách</h2>
+  <ol class="life">
+    <li class="c-domain" style="--k:var(--domain)"><b>Đăng ký tên miền, đứng tên khách</b><span>Tài khoản ở nhà đăng ký mang email của khách, mình được cấp quyền quản trị.</span></li>
+    <li style="--k:var(--host)"><b>Chọn hosting theo loại web</b><span>Web tĩnh, landing page: Vercel, Netlify. WordPress, PHP: hosting cPanel. Có app riêng: VPS.</span></li>
+    <li style="--k:var(--code)"><b>Làm code, đẩy lên GitHub</b><span>Mỗi lần sửa là một commit có ghi chú rõ ràng, để quay lại được.</span></li>
+    <li style="--k:var(--host)"><b>Deploy lên hosting, xem bằng link tạm</b><span>Kiểm tra giao diện, form, tốc độ trên link tạm trước khi gắn tên thật.</span></li>
+    <li style="--k:var(--domain)"><b>Trỏ DNS về hosting</b><span>Thêm bản ghi A hoặc CNAME theo hướng dẫn của hosting.</span></li>
+    <li style="--k:var(--host)"><b>Bật SSL, ép https</b><span>Hosting tự cấp chứng chỉ sau khi DNS đã trỏ đúng.</span></li>
+    <li style="--k:var(--fg)"><b>Vận hành hằng tháng</b><span>Sửa nội dung, sao lưu, theo dõi lỗi, nhắc gia hạn tên miền và hosting trước 30 ngày.</span></li>
+  </ol>
+</section>
+
+<section>
+  <h2>Việc vận hành thường ngày thuộc kênh nào</h2>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Việc</th><th>Kênh</th><th>Làm ở đâu</th><th>Tần suất</th></tr></thead>
+      <tbody>
+        <tr><td>Sửa chữ, giá, ảnh, thêm bài viết</td><td><span class="tag c-code">Code</span></td><td>Sửa trong repo, push, chờ deploy (hoặc trang quản trị nếu là WordPress)</td><td>Theo yêu cầu</td></tr>
+        <tr><td>Kiểm tra lượt deploy thành công</td><td><span class="tag c-host">Hosting</span></td><td>Trang Deployments của hosting</td><td>Sau mỗi lần push</td></tr>
+        <tr><td>Sao lưu file và database</td><td><span class="tag c-host">Hosting</span></td><td>Tính năng backup của hosting, tải một bản về lưu riêng</td><td>Hằng tuần</td></tr>
+        <tr><td>Gia hạn tên miền</td><td><span class="tag c-domain">Tên miền</span></td><td>Tài khoản nhà đăng ký</td><td>Hằng năm, nhắc trước 30 ngày</td></tr>
+        <tr><td>Gia hạn hosting</td><td><span class="tag c-host">Hosting</span></td><td>Tài khoản hosting</td><td>Theo gói</td></tr>
+        <tr><td>Làm email @tenmien, xác minh Search Console</td><td><span class="tag c-domain">Tên miền</span></td><td>Nơi đang quản lý DNS (xem bản ghi NS)</td><td>Một lần</td></tr>
+        <tr><td>Cập nhật plugin, theme WordPress</td><td><span class="tag c-code">Code</span></td><td>Trang quản trị, sao lưu trước khi cập nhật</td><td>Hằng tháng</td></tr>
+        <tr><td>Xem lỗi 500, web chậm</td><td><span class="tag c-host">Hosting</span></td><td>Log lỗi, biểu đồ tài nguyên</td><td>Khi có sự cố</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Khách gọi báo lỗi: mở kênh nào trước</h2>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Khách thấy</th><th>Nghi kênh</th><th>Kiểm tra gì</th></tr></thead>
+      <tbody>
+        <tr><td>“Không thể truy cập trang web”, lỗi <code>DNS_PROBE_FINISHED_NXDOMAIN</code></td><td><span class="tag c-domain">Tên miền</span></td><td>Tên miền còn hạn không, bản ghi A/CNAME còn đúng không</td></tr>
+        <tr><td>Quay mãi rồi báo hết thời gian, lỗi 502, 503, 521</td><td><span class="tag c-host">Hosting</span></td><td>Hosting còn hạn không, có bị khóa vì quá tài nguyên không</td></tr>
+        <tr><td>Trang trắng, lỗi 500, vỡ giao diện sau khi sửa</td><td><span class="tag c-code">Code</span></td><td>Lần sửa gần nhất, log lỗi; quay về bản deploy trước nếu gấp</td></tr>
+        <tr><td>“Kết nối không riêng tư”, mất ổ khóa</td><td><span class="tag c-host">Hosting</span> + <span class="tag c-domain">Tên miền</span></td><td>SSL đã cấp cho đúng tên miền chưa, DNS trỏ xong chưa</td></tr>
+        <tr><td>Đã sửa nhưng web vẫn hiện bản cũ</td><td><span class="tag c-code">Code</span> + <span class="tag c-host">Hosting</span></td><td>Lượt deploy có lỗi build không, xóa cache trình duyệt và CDN</td></tr>
+        <tr><td>Web vẫn chạy nhưng email không nhận thư</td><td><span class="tag c-domain">Tên miền</span></td><td>Bản ghi MX, nhất là ngay sau khi đổi nameserver</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Quy tắc bàn giao cho khách</h2>
+  <div class="callout good">
+    <b>Ba tài khoản, ba người giữ chìa</b>
+    <ul>
+      <li><b>Tên miền:</b> đứng tên khách, email khách. Mình chỉ được ủy quyền quản trị. Ghi lại ngày hết hạn.</li>
+      <li><b>Hosting:</b> tài khoản riêng cho từng khách, không gộp chung vào tài khoản của mình nếu khách muốn tự giữ.</li>
+      <li><b>Code:</b> repo riêng trên GitHub, có file README ghi cách deploy và nơi đặt DNS.</li>
+      <li>Phiếu bàn giao ghi đủ: nhà đăng ký, nơi quản lý DNS, hosting, repo, hai ngày gia hạn. Mật khẩu gửi qua kênh riêng, không ghi trong phiếu.</li>
+    </ul>
+  </div>
+  <div class="callout">
+    <b>Những lỗi không được để xảy ra</b>
+    <ul>
+      <li>Hủy hosting cũ khi DNS chưa trỏ xong sang hosting mới.</li>
+      <li>Đổi nameserver mà không chép lại bản ghi MX, TXT cũ, làm khách mất email.</li>
+      <li>Sửa thẳng file trên hosting mà không đưa ngược về GitHub. Lần deploy sau sẽ xóa mất bản sửa đó.</li>
+      <li>Đăng ký tên miền bằng tài khoản cá nhân của mình rồi quên chuyển cho khách.</li>
+    </ul>
+  </div>
+  <p><a href="#bai-test" class="btn primary" style="text-decoration:none;display:inline-block">Làm bài test</a></p>
+</section>
+
+</div>
+
+<!-- ===================== BÀI TEST ===================== -->
+<div class="view" id="v-bai-test" hidden>
+  <section>
+    <div class="eyebrow">Bài test nội bộ · 28 câu · khoảng 15 phút</div>
+    <h1>Kiểm tra: Code, tên miền, hosting</h1>
+    <p class="lead">Ba phần: khái niệm, phân loại việc vào đúng kênh, và xử lý tình huống thật. Chọn xong là hiện đáp án và giải thích ngay. Đạt từ 80% trở lên là đủ để tự nhận việc vận hành web khách.</p>
+  </section>
+
+  <div class="tprog">
+    <div class="row"><span id="p-done">Đã làm 0/28</span><span id="p-right">Đúng 0</span></div>
+    <div class="meter"><i id="p-bar"></i></div>
+  </div>
+
+  <section>
+    <h2>Phần A · Khái niệm</h2>
+    <div id="part-a" style="display:grid;gap:12px"></div>
+  </section>
+
+  <section>
+    <h2>Phần B · Việc này thuộc kênh nào</h2>
+    <p class="small">Chọn kênh chịu trách nhiệm chính cho từng việc.</p>
+    <div id="part-b" style="display:grid;gap:10px"></div>
+  </section>
+
+  <section>
+    <h2>Phần C · Tình huống</h2>
+    <div id="part-c" style="display:grid;gap:12px"></div>
+  </section>
+
+  <section>
+    <h2>Kết quả</h2>
+    <div class="result">
+      <div style="display:flex;gap:16px;align-items:baseline;flex-wrap:wrap">
+        <div class="score" id="r-score">0/28</div>
+        <div class="verdict" id="r-verdict"></div>
+      </div>
+      <div class="parts">
+        <div class="part">Phần A · Khái niệm<b id="r-a">0/10</b></div>
+        <div class="part">Phần B · Phân loại<b id="r-b">0/12</b></div>
+        <div class="part">Phần C · Tình huống<b id="r-c">0/6</b></div>
+      </div>
+      <label class="field" for="r-name">Họ tên người làm bài
+        <input id="r-name" type="text" placeholder="Nhập tên để gửi kết quả" autocomplete="name">
+      </label>
+      <div class="out" id="r-out"></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn primary" id="r-copy">Sao chép kết quả</button>
+        <button class="btn" id="r-reset">Làm lại từ đầu</button>
+      </div>
+      <p class="small" id="r-msg">Kết quả chỉ lưu trên trình duyệt này. Sao chép rồi gửi qua Zalo nhóm.</p>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<script>
+(function(){
+/* ---------- chuyển chế độ theo hash ---------- */
+const views={"tai-lieu":document.getElementById("v-tai-lieu"),"bai-test":document.getElementById("v-bai-test")};
+function route(){
+  const h=(location.hash||"").slice(1); const v=views[h]?h:"tai-lieu";
+  for(const k in views) views[k].hidden=(k!==v);
+  document.querySelectorAll(".tabs a").forEach(a=>a.setAttribute("aria-current",a.dataset.view===v?"page":"false"));
+  if(views[h]) window.scrollTo(0,0);
+}
+addEventListener("hashchange",route); route();
+
+/* ---------- mô phỏng tắt kênh ---------- */
+const sw={domain:document.getElementById("sw-domain"),host:document.getElementById("sw-host"),code:document.getElementById("sw-code")};
+const scr=document.getElementById("sim-screen"), lock=document.getElementById("sim-lock");
+function sim(){
+  const d=sw.domain.getAttribute("aria-pressed")==="true", h=sw.host.getAttribute("aria-pressed")==="true", c=sw.code.getAttribute("aria-pressed")==="true";
+  scr.className="screen"; scr.style.removeProperty("--k");
+  if(!d){
+    scr.classList.add("err"); scr.style.setProperty("--k","var(--domain)"); lock.textContent="ⓘ";
+    scr.innerHTML='<div class="big">Không thể truy cập trang web này</div><div class="mono">DNS_PROBE_FINISHED_NXDOMAIN</div><div class="why">Trình duyệt hỏi DNS mà không ai trả lời được tên này ở đâu. Hosting và code có thể vẫn nguyên vẹn, chỉ là không ai tìm đường tới được. Kiểm tra ngày hết hạn tên miền và bản ghi A/CNAME.</div>';
+  } else if(!h){
+    scr.classList.add("err"); scr.style.setProperty("--k","var(--host)"); lock.textContent="ⓘ";
+    scr.innerHTML='<div class="big">Trang web phản hồi quá lâu</div><div class="mono">ERR_CONNECTION_TIMED_OUT · 502 · 521</div><div class="why">DNS vẫn chỉ đúng địa chỉ, nhưng máy chủ ở địa chỉ đó không mở cửa: hết hạn, bị khóa vì quá tài nguyên, hoặc đang bảo trì. Code có trong GitHub thì dựng lại ở hosting khác được.</div>';
+  } else if(!c){
+    scr.classList.add("err"); scr.style.setProperty("--k","var(--code)"); lock.textContent="🔒";
+    scr.innerHTML='<div class="big">500 Internal Server Error</div><div class="mono">hoặc trang trắng, vỡ bố cục, nút bấm không chạy</div><div class="why">Tên miền và hosting đều ổn, ổ khóa https vẫn còn. Lỗi nằm trong lần sửa code gần nhất. Xem log lỗi trên hosting và quay về bản deploy trước nếu cần gấp.</div>';
+  } else {
+    lock.textContent="🔒";
+    scr.innerHTML='<div class="mock-site"><div class="hero"></div><div class="ln" style="width:70%"></div><div class="ln" style="width:90%"></div><div class="ln" style="width:55%"></div></div><div class="why" style="--k:var(--ok);border-left-color:var(--ok)">Cả ba kênh đều ổn: tên miền dẫn đường, hosting mở cửa, code dựng trang đúng.</div>';
+  }
+}
+Object.values(sw).forEach(b=>b.addEventListener("click",()=>{b.setAttribute("aria-pressed",b.getAttribute("aria-pressed")==="true"?"false":"true");sim();}));
+sim();
+
+/* ---------- luồng truy cập ---------- */
+const steps=[
+  {l:["b"],t:"Khách gõ tiemcaphe-vidu.vn",d:"Trình duyệt chỉ biết cái tên. Để kết nối, nó cần một địa chỉ IP, giống như cần số nhà chứ không chỉ tên tiệm."},
+  {l:["b","d"],t:"Hỏi DNS: tên này ở địa chỉ nào?",d:"Máy chủ DNS của tên miền đọc bản ghi A hoặc CNAME và trả lời, ví dụ 203.0.113.10. Tên miền hết hạn hoặc bản ghi sai thì dừng ở đây."},
+  {l:["b","h"],t:"Gõ cửa hosting ở địa chỉ đó",d:"Trình duyệt kết nối tới máy chủ, kiểm tra chứng chỉ SSL có đúng cho tên miền này không. Đúng thì hiện ổ khóa https."},
+  {l:["h","c"],t:"Hosting tìm đúng web và lấy code ra",d:"Một máy chủ chứa nhiều web, nó nhận ra web nào nhờ tên miền gửi kèm. Web tĩnh thì trả file đã build sẵn, WordPress thì chạy PHP và đọc database rồi mới trả."},
+  {l:["b","c"],t:"Trình duyệt dựng trang từ HTML, CSS, JS",d:"Code tới tay khách và được vẽ thành trang. Lỗi giao diện, nút không bấm được nằm ở bước này."},
+  {l:["c","h"],t:"Còn khi mình sửa web thì sao?",d:"Mình sửa code trên máy, commit rồi push lên GitHub. Hosting nhận tín hiệu, build lại và thay bản đang chạy. Tên miền không cần đụng tới."}
+];
+let si=0;
+const pips=document.getElementById("st-pips"); steps.forEach(()=>pips.appendChild(document.createElement("i")));
+function step(){
+  const s=steps[si];
+  document.getElementById("st-n").textContent="Bước "+(si+1)+"/"+steps.length;
+  document.getElementById("st-t").textContent=s.t; document.getElementById("st-d").textContent=s.d;
+  document.querySelectorAll(".lane").forEach(el=>el.classList.toggle("on",s.l.includes(el.dataset.lane)));
+  [...pips.children].forEach((p,i)=>p.classList.toggle("on",i===si));
+  document.getElementById("st-prev").disabled=si===0;
+  document.getElementById("st-next").textContent=si===steps.length-1?"Xem lại từ đầu":"Bước tiếp";
+}
+document.getElementById("st-prev").onclick=()=>{if(si>0){si--;step();}};
+document.getElementById("st-next").onclick=()=>{si=si===steps.length-1?0:si+1;step();};
+step();
+
+/* ---------- mối nối ---------- */
+const links={
+  ch:{t:"Code ↔ Hosting: Deploy",d:"Đưa code mới lên hosting để thay bản đang chạy.",li:["Kiểu Git: push lên GitHub, hosting (Vercel, Netlify) tự build và đưa bản mới lên. Mỗi lần deploy có link riêng, quay về bản cũ được.","Kiểu tải file: nén và tải qua File Manager hoặc FTP của cPanel. Phải tự giữ bản cũ để quay lại.","Lỗi thường gặp: build hỏng nên web vẫn chạy bản cũ; sửa thẳng trên hosting rồi bị lần deploy sau ghi đè."]},
+  dh:{t:"Tên miền ↔ Hosting: DNS",d:"Bản ghi DNS chỉ đường từ tên miền tới máy chủ. Hosting cũng phải được khai báo là đang phục vụ tên miền đó.",li:["Hai phía đều phải làm: thêm tên miền trong bảng điều khiển hosting, và thêm bản ghi A/CNAME ở nơi quản lý DNS.","SSL được cấp ở bước này. DNS chưa trỏ đúng thì hosting chưa cấp được chứng chỉ.","Chuyển hosting = dựng web ở chỗ mới, rồi đổi bản ghi DNS. Code không đổi, tên miền không đổi."]},
+  cd:{t:"Code ↔ Tên miền: Cấu hình",d:"Code không kết nối trực tiếp với tên miền, nhưng có ghi tên miền ở nhiều chỗ.",li:["Đường dẫn canonical, sitemap.xml, robots.txt, thẻ Open Graph đều ghi tên miền đầy đủ.","Đổi tên miền thì phải sửa các chỗ này trong code, rồi đặt chuyển hướng 301 từ tên cũ.","File xác minh (ví dụ của Search Console) có thể đặt trong code thay cho bản ghi TXT."]}
+};
+const card=document.getElementById("link-card");
+function pick(k){
+  const L=links[k];
+  card.innerHTML="<h3>"+L.t+"</h3><p>"+L.d+"</p><ul>"+L.li.map(x=>"<li>"+x+"</li>").join("")+"</ul>";
+  document.querySelectorAll("[data-link]").forEach(el=>{
+    if(el.tagName==="line") el.classList.toggle("on",el.dataset.link===k);
+    else el.setAttribute("aria-pressed",el.dataset.link===k?"true":"false");
+  });
+}
+document.querySelectorAll("[data-link]").forEach(el=>el.addEventListener("click",()=>pick(el.dataset.link)));
+pick("ch");
+
+/* ---------- bài test ---------- */
+const A=[
+  {q:"Trong ví dụ tiệm cà phê, tên miền giống với thứ nào nhất?",o:["Nội thất và menu","Mặt bằng thuê","Biển hiệu và địa chỉ đã đăng ký","Hóa đơn tiền điện"],a:2,w:"Tên miền giúp khách tìm tới. Mặt bằng là hosting, nội thất là code."},
+  {q:"Hosting là gì?",o:["Phần mềm để viết code","Máy chủ luôn bật, giữ bản web đang chạy và trả trang cho người xem","Tên người ta gõ trên thanh địa chỉ","Tài khoản GitHub"],a:1,w:"Hosting là nơi web chạy. Viết code dùng trình soạn thảo, còn GitHub là kho cất code."},
+  {q:"Bản gốc an toàn nhất của source code nên nằm ở đâu?",o:["Chỉ trên hosting","Chỉ trên máy tính của người làm","Trong kho Git (GitHub) có lịch sử từng lần sửa","Gửi file nén qua Zalo cho khách"],a:2,w:"GitHub giữ lịch sử, ai trong nhóm cũng lấy về được, hosting có thể deploy thẳng từ đó."},
+  {q:"Bản ghi DNS nào trỏ tên miền về một địa chỉ IP?",o:["A","MX","TXT","NS"],a:0,w:"A trỏ về IP. CNAME trỏ về một tên khác. MX dành cho email."},
+  {q:"Bản ghi nào quyết định email @tenmien của khách được gửi về đâu?",o:["CNAME","MX","A","TXT"],a:1,w:"MX (mail exchange) chỉ máy chủ nhận thư. Xóa hoặc quên chép MX là khách mất email."},
+  {q:"Vừa sửa bản ghi DNS. Bao lâu thì mọi nơi thấy thay đổi?",o:["Ngay lập tức","Từ vài phút đến khoảng 24–48 giờ, tùy TTL","Đúng 7 ngày","Chỉ khi khởi động lại hosting"],a:1,w:"Các máy khác nhớ tạm bản ghi cũ trong thời gian TTL. Hạ TTL trước khi đổi để rút ngắn."},
+  {q:"Khách quên gia hạn tên miền nhưng hosting vẫn còn hạn. Chuyện gì xảy ra?",o:["Web vẫn vào bình thường","Gõ tên miền không vào được, nhưng file web trên hosting vẫn còn","Hosting tự xóa toàn bộ code","Chỉ mất ổ khóa https"],a:1,w:"Mất đường dẫn chứ không mất nhà. Nhưng phải gia hạn gấp, để lâu người khác có thể mua mất tên miền."},
+  {q:"Chứng chỉ SSL (ổ khóa https) gắn với cái gì?",o:["Được cấp cho một tên miền, cài và phục vụ ở phía hosting","Nằm trong file CSS","Do trình duyệt của khách tự tạo","Chỉ cần khi có bán hàng online"],a:0,w:"SSL cấp theo tên miền, hosting giữ và gia hạn. Vì vậy lỗi SSL thường phải xem cả hai kênh."},
+  {q:"“Deploy” nghĩa là gì?",o:["Mua thêm tên miền","Đưa code mới lên hosting để thay bản đang chạy","Sao lưu database","Đổi nameserver"],a:1,w:"Deploy là mối nối giữa code và hosting."},
+  {q:"Đổi nameserver của tên miền sang Cloudflare nghĩa là gì?",o:["Chuyển code sang Cloudflare","Từ giờ bản ghi DNS sửa ở Cloudflare, không sửa ở nhà đăng ký nữa","Gia hạn tên miền tại Cloudflare","Xóa hết bản ghi email"],a:1,w:"Nameserver chỉ ai giữ sổ DNS. Tên miền vẫn đăng ký ở chỗ cũ, nhưng bản ghi giờ nằm ở Cloudflare."}
+];
+const CH={code:"Code",domain:"Tên miền",host:"Hosting"};
+const B=[
+  {q:"Gia hạn tên miền tiemcaphe-vidu.vn thêm 1 năm",a:"domain",w:"Làm ở nhà đăng ký tên miền."},
+  {q:"Sửa giá món trên trang chủ của web tĩnh",a:"code",w:"Nội dung nằm trong code, sửa xong push để deploy."},
+  {q:"Nâng gói vì web chậm khi đông người vào",a:"host",w:"Tài nguyên máy chủ là chuyện của hosting."},
+  {q:"Thêm bản ghi MX để làm email Google Workspace",a:"domain",w:"MX là bản ghi DNS của tên miền."},
+  {q:"Nút “Gọi ngay” trên điện thoại bấm không được",a:"code",w:"Lỗi chức năng trong HTML/JS."},
+  {q:"Bật https và cấp chứng chỉ SSL",a:"host",w:"Hosting cấp và gia hạn chứng chỉ, sau khi DNS đã trỏ đúng."},
+  {q:"Sao lưu database hằng tuần",a:"host",w:"Database nằm trên máy chủ."},
+  {q:"Xác minh Search Console bằng bản ghi TXT",a:"domain",w:"TXT là bản ghi DNS."},
+  {q:"Thêm trang “Chính sách đổi trả”",a:"code",w:"Trang mới là file mới trong code."},
+  {q:"Xem log khi web báo lỗi 500",a:"host",w:"Log lỗi được ghi trên máy chủ. Nguyên nhân thường nằm trong code, nhưng chỗ xem là hosting."},
+  {q:"Commit và push bản sửa lên GitHub",a:"code",w:"Thao tác với kho code."},
+  {q:"Lấy mã chuyển (auth code/EPP) để chuyển tên miền sang nhà đăng ký khác",a:"domain",w:"Mã chuyển do nhà đăng ký tên miền cấp."}
+];
+const C=[
+  {t:"Web không vào được",x:"Sáng nay khách nhắn: vào web thấy “Không thể truy cập trang web này”, mã DNS_PROBE_FINISHED_NXDOMAIN. Hôm qua vẫn bình thường.",q:"Việc đầu tiên cần kiểm tra?",o:["Mở code tìm lỗi JavaScript","Kiểm tra tên miền còn hạn và bản ghi DNS còn đúng","Nâng gói hosting","Xóa cache trình duyệt của khách"],a:1,w:"NXDOMAIN nghĩa là DNS không trả lời được tên này ở đâu. Nguyên nhân hay gặp nhất là tên miền vừa hết hạn."},
+  {t:"Sửa rồi mà không đổi",x:"Bạn sửa câu giới thiệu, commit và push lên GitHub. 10 phút sau web vẫn hiện chữ cũ.",q:"Nên kiểm tra theo thứ tự nào?",o:["Đổi bản ghi DNS","Xem lượt deploy trên hosting có lỗi build không, sau đó xóa cache","Gọi nhà đăng ký tên miền","Push lại thêm vài lần"],a:1,w:"Build hỏng thì hosting giữ nguyên bản cũ. Build thành công mà vẫn cũ thì là cache."},
+  {t:"Chuyển hosting",x:"Khách muốn chuyển web từ hosting cũ sang hosting mới, không được gián đoạn.",q:"Thứ tự nào đúng?",o:["Hủy hosting cũ → đổi DNS → dựng web ở chỗ mới","Đổi DNS → dựng web ở chỗ mới → hủy hosting cũ","Dựng và kiểm tra web ở chỗ mới bằng link tạm → hạ TTL → đổi DNS → theo dõi vài ngày → hủy hosting cũ","Đổi tên miền mới cho chắc"],a:2,w:"Hosting cũ phải chạy song song cho tới khi DNS đã trỏ hết sang chỗ mới."},
+  {t:"Mất email sau khi đổi nameserver",x:"Bạn chuyển nameserver tên miền của khách sang Cloudflare để tăng tốc. Web chạy tốt, nhưng từ chiều email công ty không nhận được thư nào.",q:"Nguyên nhân khả năng cao nhất?",o:["Code bị lỗi form liên hệ","Bản ghi MX cũ chưa được chép sang Cloudflare","Hosting hết dung lượng","SSL hết hạn"],a:1,w:"Đổi nameserver là đổi sổ DNS. Bản ghi nào không chép sang sổ mới thì mất, MX là cái hay bị quên nhất."},
+  {t:"Lỗi 500 sau khi sửa",x:"Web WordPress của khách báo 500 Internal Server Error ngay sau khi bạn sửa file functions.php.",q:"Xử lý thế nào?",o:["Đổi tên miền","Xem log lỗi trên hosting, sửa hoặc trả file về bản trước","Gia hạn hosting","Đợi 24 giờ cho DNS cập nhật"],a:1,w:"Tên miền và hosting vẫn ổn. Lỗi nằm ở lần sửa code vừa rồi, log trên hosting chỉ đúng dòng lỗi."},
+  {t:"Mất ổ khóa",x:"Vừa gắn tên miền mới cho web trên Vercel. Mở bằng https thì trình duyệt báo “Kết nối không riêng tư”.",q:"Giải thích nào hợp lý nhất?",o:["Code thiếu thẻ meta","SSL chưa được cấp cho tên miền mới vì DNS chưa trỏ xong hoặc chưa khai báo tên miền trên hosting","Tên miền bị trùng","Khách dùng điện thoại cũ"],a:1,w:"Hosting chỉ cấp được chứng chỉ khi DNS đã trỏ đúng về nó. Kiểm tra bản ghi và trạng thái tên miền trong bảng điều khiển hosting."}
+];
+const TOTAL=A.length+B.length+C.length;
+const KEY="cdh-test-v1";
+let S={a:{},b:{},c:{},name:""};
+try{const r=localStorage.getItem(KEY); if(r) S=Object.assign(S,JSON.parse(r));}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+const L="ABCD";
+
+function mcq(host,list,part,isCase){
+  host.innerHTML="";
+  list.forEach((it,i)=>{
+    const box=document.createElement("div"); box.className="q";
+    box.innerHTML='<div class="qn">'+part.toUpperCase()+(i+1)+(isCase?" · "+it.t:"")+'</div>'+(isCase?'<div class="ctx">'+it.x+'</div>':'')+'<div class="qt">'+it.q+'</div><div class="opts"></div>';
+    const opts=box.querySelector(".opts");
+    it.o.forEach((o,j)=>{
+      const b=document.createElement("button"); b.className="opt"; b.type="button";
+      b.innerHTML='<span class="k">'+L[j]+'</span><span>'+o+'</span>';
+      b.onclick=()=>{S[part][i]=j; save(); mcq(host,list,part,isCase); tally();};
+      opts.appendChild(b);
+    });
+    const ch=S[part][i];
+    if(ch!==undefined){
+      [...opts.children].forEach((b,j)=>{b.disabled=true; if(j===it.a) b.classList.add("right"); else if(j===ch) b.classList.add("wrong"); else b.classList.add("dim");});
+      const fb=document.createElement("div"); fb.className="fb";
+      fb.innerHTML=(ch===it.a?'<b class="okt">Đúng.</b> ':'<b class="badt">Chưa đúng.</b> Đáp án '+L[it.a]+'. ')+it.w;
+      box.appendChild(fb);
+    }
+    host.appendChild(box);
+  });
+}
+function sorts(){
+  const host=document.getElementById("part-b"); host.innerHTML="";
+  B.forEach((it,i)=>{
+    const box=document.createElement("div"); box.className="q";
+    box.innerHTML='<div class="sort"><div class="qt"><span class="qn">B'+(i+1)+'</span>&nbsp; '+it.q+'</div><div class="chips"></div></div>';
+    const chips=box.querySelector(".chips"), ch=S.b[i];
+    Object.keys(CH).forEach(k=>{
+      const b=document.createElement("button"); b.type="button"; b.className="chip c-"+k; b.textContent=CH[k];
+      if(ch!==undefined){b.disabled=true; if(k===it.a) b.classList.add("right"); else if(k===ch) b.classList.add("wrong");}
+      else b.onclick=()=>{S.b[i]=k; save(); sorts(); tally();};
+      chips.appendChild(b);
+    });
+    if(ch!==undefined){
+      const fb=document.createElement("div"); fb.className="fb";
+      fb.innerHTML=(ch===it.a?'<b class="okt">Đúng.</b> ':'<b class="badt">Chưa đúng.</b> Thuộc kênh '+CH[it.a]+'. ')+it.w;
+      box.appendChild(fb);
+    }
+    host.appendChild(box);
+  });
+}
+function count(part,list){let d=0,r=0; list.forEach((it,i)=>{const v=S[part][i]; if(v!==undefined){d++; if(v===it.a) r++;}}); return {d,r};}
+function tally(){
+  const a=count("a",A), b=count("b",B), c=count("c",C);
+  const done=a.d+b.d+c.d, right=a.r+b.r+c.r;
+  document.getElementById("p-done").textContent="Đã làm "+done+"/"+TOTAL;
+  document.getElementById("p-right").textContent="Đúng "+right;
+  document.getElementById("p-bar").style.width=(done/TOTAL*100)+"%";
+  document.getElementById("r-score").textContent=right+"/"+TOTAL;
+  document.getElementById("r-a").textContent=a.r+"/"+A.length;
+  document.getElementById("r-b").textContent=b.r+"/"+B.length;
+  document.getElementById("r-c").textContent=c.r+"/"+C.length;
+  const pct=Math.round(right/TOTAL*100);
+  let v;
+  if(done<TOTAL) v="Còn "+(TOTAL-done)+" câu chưa làm";
+  else if(pct>=80) v="Đạt ("+pct+"%). Đủ để tự nhận việc vận hành.";
+  else if(pct>=60) v="Gần đạt ("+pct+"%). Đọc lại phần Mối nối và bảng xử lý lỗi.";
+  else v="Chưa đạt ("+pct+"%). Đọc lại tài liệu rồi làm lại.";
+  document.getElementById("r-verdict").textContent=v;
+  const nm=(S.name||"").trim()||"(chưa nhập tên)";
+  const today=new Date().toLocaleDateString("vi-VN");
+  document.getElementById("r-out").textContent=
+    "Bài test Code · Tên miền · Hosting\n"+nm+" · "+today+"\nTổng: "+right+"/"+TOTAL+" ("+pct+"%) · đã làm "+done+"/"+TOTAL+
+    "\nA Khái niệm "+a.r+"/"+A.length+" · B Phân loại "+b.r+"/"+B.length+" · C Tình huống "+c.r+"/"+C.length+"\n"+v;
+}
+function renderTest(){mcq(document.getElementById("part-a"),A,"a",false); sorts(); mcq(document.getElementById("part-c"),C,"c",true); tally();}
+
+const nameEl=document.getElementById("r-name"); nameEl.value=S.name||"";
+nameEl.addEventListener("input",()=>{S.name=nameEl.value; save(); tally();});
+const msg=document.getElementById("r-msg");
+document.getElementById("r-copy").onclick=()=>{
+  const txt=document.getElementById("r-out").textContent;
+  const sel=()=>{const r=document.createRange(); r.selectNodeContents(document.getElementById("r-out")); const s=getSelection(); s.removeAllRanges(); s.addRange(r); msg.textContent="Không sao chép tự động được. Đã bôi đen sẵn, bấm Ctrl+C để chép.";};
+  try{navigator.clipboard.writeText(txt).then(()=>{msg.textContent="Đã sao chép. Dán vào Zalo nhóm để gửi.";},sel);}catch(e){sel();}
+};
+let armed=false; const rb=document.getElementById("r-reset");
+rb.onclick=()=>{
+  if(!armed){armed=true; rb.textContent="Bấm lần nữa để xóa hết đáp án"; setTimeout(()=>{armed=false; rb.textContent="Làm lại từ đầu";},4000); return;}
+  armed=false; rb.textContent="Làm lại từ đầu";
+  S.a={}; S.b={}; S.c={}; save(); renderTest(); msg.textContent="Đã xóa đáp án. Làm lại từ Phần A."; document.getElementById("part-a").scrollIntoView({behavior:"smooth"});
+};
+renderTest();
+})();
+</script>
+</body>
+</html>
