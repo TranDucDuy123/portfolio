@@ -48,7 +48,11 @@
     },
     {
       "source": "/noi-bo/(.*)",
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" }]
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" },
+        { "key": "Cache-Control", "value": "no-store" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "no-referrer" }
+      ]
     },
     {
       "source": "/kh-data/(.*)",

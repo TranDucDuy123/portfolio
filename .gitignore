@@ -11,3 +11,13 @@ coverage/
 bao-gia-xuat/*-noi-bo.md
 # Ảnh chụp kênh của khách khi tiếp cận: đã nhúng sẵn trong trang, ảnh gốc có thể lộ thông tin riêng
 bao-gia-xuat/anh-tiep-can/
+
+.image-search/
+
+# Gói zip để upload lên hosting DirectAdmin
+deploy/
+
+# Trang nội bộ có tài khoản: nội dung thật và mật khẩu chỉ giữ trên máy (repo public).
+# Chỉ commit khung.html, app.js, HUONG-DAN.md; bản public/noi-bo/*.html đã mã hóa.
+noi-bo-src/*/noi-dung/
+noi-bo-src/*/tai-khoan.json
