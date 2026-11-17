@@ -1,0 +1,262 @@
+{
+  "meta": {
+    "slug": "tich-xanh-nhan-hieu-v3k8pm",
+    "client_short": "Tích xanh",
+    "title": "Tích xanh và nhân hiệu",
+    "brand": "Duy Web",
+    "client": "Chủ doanh nghiệp, chuyên gia lâu năm",
+    "clientCall": "anh/chị",
+    "date": "17/11/2026",
+    "validUntil": "01/12/2026",
+    "accent": "#1877F2",
+    "contact": "Duy Web · Zalo 0938 415 218 · duyweb.info.vn"
+  },
+  "theme": { "accent": "#1877F2" },
+  "hero": {
+    "eyebrow": "Đề xuất cho người đã có nghề, có tiếng",
+    "headline": "Tích xanh cho khách thấy anh/chị là người thật. Nội dung mới cho khách thấy anh/chị làm giỏi.",
+    "sub": "Tích xanh là bước nên có, và bên em lo trọn phần đăng ký. Nhưng khách chỉ đặt lịch khi họ thấy công việc, thấy kết quả, thấy anh/chị xuất hiện đều đặn. Nên em đề xuất đi tiếp: website làm nhà, Facebook làm chỗ gặp khách, TikTok nếu muốn thêm một cửa.",
+    "highlights": [
+      { "value": "2 triệu", "label": "chuẩn bị hồ sơ và đăng ký tích xanh" },
+      { "value": "12 triệu", "label": "website + Facebook nhân hiệu (gói gợi ý)" },
+      { "value": "1–3 triệu", "label": "mỗi tháng nếu muốn bên em chăm kênh" }
+    ]
+  },
+  "understand": {
+    "title": "Bên em hiểu anh/chị đang nghĩ gì",
+    "points": [
+      { "label": "Mục tiêu", "text": "Có tích xanh để người lạ nhìn vào là tin, thấy ngay mình là người có thâm niên, có uy tín trong nghề." },
+      { "label": "Hiện tại", "text": "Đã có tên tuổi, có khách quen, nhưng trang Facebook chưa kể được những năm làm nghề đó cho người mới biết đến." },
+      { "label": "Băn khoăn", "text": "Bận việc chuyên môn, không có thời gian ngồi viết bài, quay video hay chăm trang mỗi ngày." }
+    ]
+  },
+  "explain": {
+    "title": "Tích xanh làm được gì, và không làm được gì",
+    "intro": "Tích xanh của Facebook (Meta Verified) xác nhận tài khoản là của đúng người, đúng tên trên giấy tờ. Nó giống tấm biển tên gắn trước cửa: khách biết đây đúng là anh/chị. Còn khách có bước vào hay không phụ thuộc vào những gì họ thấy bên trong.",
+    "items": [
+      {
+        "name": "Chỉ đăng ký tích xanh",
+        "analogy": "Giống gắn biển tên đẹp trước một văn phòng đóng cửa: ai đi ngang cũng biết đúng chỗ, nhưng không ai biết bên trong làm gì.",
+        "good": [
+          "Chứng minh tài khoản là thật, bớt bị giả mạo",
+          "Có hỗ trợ tài khoản từ Facebook khi gặp sự cố",
+          "Nhanh, chi phí thấp"
+        ],
+        "bad": [
+          "Phải đủ điều kiện mới được duyệt: tên khớp giấy tờ, bật bảo mật hai lớp, có lịch sử đăng bài, không vi phạm",
+          "Trả phí Facebook theo tháng hoặc năm, ngừng trả là mất tích",
+          "Tích xanh ngày càng phổ biến, nên chỉ có tích thì chưa khác người cùng nghề",
+          "Không tự mang khách mới đến: người chưa biết anh/chị vẫn không thấy anh/chị"
+        ],
+        "fit": "Hợp khi đã có kênh đông người theo dõi, chỉ thiếu dấu xác nhận",
+        "cost": "2 triệu phí làm + phí Facebook hằng tháng/năm"
+      },
+      {
+        "name": "Tích xanh + kênh nội dung",
+        "analogy": "Biển tên vẫn gắn, nhưng cửa mở, tủ kính bày sẵn công việc, bằng cấp, lời khách khen. Người đi ngang dừng lại vì thấy, không chỉ vì biển.",
+        "good": [
+          "Tích xanh làm khách tin, nội dung làm khách nhớ và nhắn",
+          "Facebook cá nhân kể chuyện nghề, fanpage giới thiệu dịch vụ rõ ràng",
+          "Website giữ toàn bộ uy tín ở một chỗ, Google tìm thấy được",
+          "Mỗi kênh thêm là một điểm khách chạm vào anh/chị"
+        ],
+        "bad": [
+          "Cần vài tháng đăng đều mới thấy rõ",
+          "Cần anh/chị dành chút thời gian kể chuyện, góp ảnh, góp video"
+        ],
+        "fit": "Hợp với người có nghề, có câu chuyện, muốn khách mới tự tìm đến",
+        "cost": "12 triệu một lần (gồm tích xanh) + chăm kênh tùy chọn",
+        "recommended": true,
+        "badge": "Duy đề xuất"
+      }
+    ],
+    "note": "Tích xanh là trả theo kỳ, phí trả thẳng cho Facebook. Facebook có thể cho đăng ký ngay hoặc đưa vào danh sách chờ tùy tài khoản và khu vực; bên em chuẩn bị đủ điều kiện để hồ sơ không bị trả về, nhưng quyết định duyệt cuối cùng là của Facebook."
+  },
+  "approach": {
+    "title": "Mỗi kênh một tác dụng",
+    "intro": "Không cần làm hết một lúc. Bắt đầu từ website và Facebook, kênh nào chạy ổn rồi mới thêm kênh tiếp theo.",
+    "items": [
+      {
+        "need": "Được xác nhận, bớt bị giả mạo",
+        "solution": "Rà điều kiện, chỉnh tên và ảnh khớp giấy tờ, bật bảo mật hai lớp, dọn bài cũ dễ bị đánh giá vi phạm, rồi đăng ký tích xanh",
+        "benefit": "Người lạ nhìn vào biết ngay đúng là anh/chị"
+      },
+      {
+        "need": "Khách thấy con người và thâm niên",
+        "solution": "Facebook cá nhân thể hiện nhân hiệu: ảnh bìa, phần giới thiệu, mục nổi bật kể chặng đường nghề; bài chia sẻ kinh nghiệm, hậu trường công việc",
+        "benefit": "Khách tin người trước, rồi mới tin dịch vụ"
+      },
+      {
+        "need": "Khách hiểu dịch vụ và biết cách đặt",
+        "solution": "Fanpage chuyên chia sẻ về dịch vụ: từng dịch vụ làm gì, cho ai, kết quả khách đã nhận, câu hỏi hay gặp; nút nhắn tin và đặt lịch",
+        "benefit": "Khách tự đọc, tự hiểu, nhắn đến là đã sẵn sàng đặt"
+      },
+      {
+        "need": "Một chỗ giữ uy tín lâu dài",
+        "solution": "Website riêng: giới thiệu, dịch vụ, công việc đã làm, lời khách, bài viết, nút Zalo; dễ tìm thấy trên Google",
+        "benefit": "Không phụ thuộc một mạng xã hội; gửi một link là khách thấy đủ"
+      },
+      {
+        "need": "Thêm người biết đến (nếu muốn)",
+        "solution": "TikTok: dựng lại nội dung đã đăng thành video ngắn, hoặc quay mới nếu anh/chị muốn làm",
+        "benefit": "Thêm một cửa cho người chưa biết anh/chị, không tốn thêm nhiều thời gian"
+      }
+    ]
+  },
+  "packages": {
+    "title": "Các gói làm một lần",
+    "note": "Phí tích xanh hằng tháng hoặc năm anh/chị trả thẳng cho Facebook, không qua bên em.",
+    "items": [
+      {
+        "name": "Tích xanh",
+        "tagline": "Đủ điều kiện và đăng ký xác minh",
+        "price": "2.000.000đ",
+        "unit": "trọn gói",
+        "forWho": "Đã có kênh đông người theo dõi, chỉ thiếu dấu xác nhận",
+        "features": [
+          "Rà điều kiện tài khoản, chỉ ra chỗ cần sửa",
+          "Chỉnh tên, ảnh khớp giấy tờ; bật bảo mật hai lớp",
+          "Hướng dẫn và cùng làm hồ sơ đăng ký Meta Verified",
+          "Theo dõi đến khi có kết quả, xử lý nếu bị trả hồ sơ",
+          { "text": "Làm mới trang cá nhân và fanpage", "included": false },
+          { "text": "Website nhân hiệu", "included": false }
+        ],
+        "delivery": "Thường 3–7 ngày, tùy thời gian Facebook xét"
+      },
+      {
+        "name": "Nhân hiệu: Website + Facebook",
+        "tagline": "Tích xanh, trang cá nhân, fanpage và website",
+        "price": "12.000.000đ",
+        "unit": "trọn gói",
+        "recommended": true,
+        "badge": "Duy đề xuất",
+        "forWho": "Người có nghề, muốn khách mới nhìn vào là tin và tự đặt lịch",
+        "features": [
+          "Toàn bộ gói Tích xanh",
+          "Làm mới Facebook cá nhân: ảnh bìa, giới thiệu, mục nổi bật kể chặng đường nghề",
+          "Dựng hoặc làm mới fanpage dịch vụ: thông tin, nút đặt lịch, tin nhắn chào tự động",
+          "Website nhân hiệu: giới thiệu, dịch vụ, công việc đã làm, lời khách, bài viết, nút Zalo",
+          "Website xem tốt trên điện thoại, dễ tìm thấy trên Google",
+          "Kế hoạch nội dung 30 ngày đầu cho trang cá nhân và fanpage",
+          { "text": "Kênh TikTok", "included": false }
+        ],
+        "delivery": "Khoảng 3–4 tuần sau khi nhận đủ ảnh và thông tin"
+      },
+      {
+        "name": "Ba kênh: thêm TikTok",
+        "tagline": "Website + Facebook + TikTok",
+        "price": "16.000.000đ",
+        "unit": "trọn gói",
+        "forWho": "Muốn tiếp cận thêm người trẻ, người chưa biết mình",
+        "features": [
+          "Toàn bộ gói Nhân hiệu",
+          "Thiết lập kênh TikTok đồng bộ nhận diện",
+          "Mẫu video ngắn dựng lại từ nội dung Facebook",
+          "Hướng dẫn quay nhanh bằng điện thoại nếu muốn làm video mới",
+          "Liên kết ba kênh về website và Zalo"
+        ],
+        "delivery": "Khoảng 4–5 tuần"
+      }
+    ]
+  },
+  "running": {
+    "title": "Các khoản chi, rõ từ đầu",
+    "intro": "Ngoài phí làm một lần, đây là các khoản liên quan và ai trả.",
+    "rows": [
+      { "item": "Phí tích xanh Meta Verified", "cost": "Theo giá Facebook", "period": "/tháng hoặc /năm", "payer": "Trả thẳng cho Facebook", "note": "Đăng ký trên web thường rẻ hơn trong ứng dụng. Em xem đúng giá trong tài khoản của anh/chị trước khi đăng ký" },
+      { "item": "Hosting + tên miền website", "cost": "3.000.000đ", "period": "/năm", "payer": "Duy Web", "note": "Tên miền đứng tên anh/chị" },
+      { "item": "Quảng cáo Facebook, TikTok", "cost": "Anh/chị quyết", "period": "", "payer": "Trả thẳng cho nền tảng", "note": "Không bắt buộc; chỉ chạy khi có bài tốt cần đẩy thêm" }
+    ]
+  },
+  "care": {
+    "title": "Chăm kênh hằng tháng (tùy chọn)",
+    "intro": "Tích xanh và website là nền. Khách nhớ đến anh/chị nhờ xuất hiện đều đặn. Nếu không có thời gian, bên em làm thay.",
+    "items": [
+      {
+        "name": "Anh/chị đăng, em kèm",
+        "tagline": "Lịch bài và góp ý",
+        "price": "1.000.000đ",
+        "unit": "/tháng",
+        "features": [
+          "Lịch nội dung hằng tháng cho trang cá nhân và fanpage",
+          "Góp ý bài trước khi đăng",
+          "Sao lưu, cập nhật website"
+        ]
+      },
+      {
+        "name": "Em chăm Facebook",
+        "tagline": "Trang cá nhân + fanpage",
+        "price": "2.000.000đ",
+        "unit": "/tháng",
+        "recommended": true,
+        "features": [
+          "8 bài mỗi tháng cho trang cá nhân và fanpage",
+          "Bên em viết từ câu chuyện, ảnh anh/chị gửi",
+          "Trả lời bình luận, tin nhắn cơ bản theo kịch bản anh/chị duyệt",
+          "Báo cáo lời thường: bao nhiêu người thấy, bao nhiêu người nhắn"
+        ]
+      },
+      {
+        "name": "Em chăm ba kênh",
+        "tagline": "Facebook + TikTok + website",
+        "price": "3.000.000đ",
+        "unit": "/tháng",
+        "features": [
+          "Mọi thứ trong gói 2 triệu",
+          "4 video ngắn mỗi tháng dựng lại từ nội dung đã có",
+          "1 bài viết website mỗi tháng",
+          "Đề xuất bài nên chạy quảng cáo dựa trên số liệu"
+        ]
+      }
+    ],
+    "fine": "Không ràng buộc dài hạn. Muốn tăng, giảm hay dừng thì báo trước tháng sau."
+  },
+  "total": {
+    "title": "Năm đầu theo gói em đề xuất",
+    "lines": [
+      { "label": "Gói Nhân hiệu: Website + Facebook (một lần)", "value": "12.000.000đ" },
+      { "label": "Hosting + tên miền năm đầu", "value": "3.000.000đ" }
+    ],
+    "sum": "15.000.000đ",
+    "note": "Chưa gồm phí tích xanh trả thẳng cho Facebook, quảng cáo (nếu chạy) và gói chăm tháng tùy chọn. Từ năm thứ hai: 3.000.000đ/năm hosting + tên miền."
+  },
+  "timeline": {
+    "title": "Các bước làm",
+    "steps": [
+      { "step": "Rà điều kiện, sửa tài khoản, đăng ký tích xanh", "when": "Tuần 1", "clientDo": "chuẩn bị CCCD, có mặt khi đăng nhập xác minh" },
+      { "step": "Làm mới trang cá nhân và fanpage, lên kế hoạch nội dung 30 ngày", "when": "Tuần 1–2", "clientDo": "gửi ảnh chân dung, ảnh công việc, kể chặng đường nghề 20–30 phút" },
+      { "step": "Dựng website, đưa dịch vụ, công việc và lời khách lên", "when": "Tuần 2–4", "clientDo": "duyệt bản xem trước" },
+      { "step": "Đăng theo kế hoạch; thêm TikTok nếu chọn gói ba kênh", "when": "Từ tuần 4", "clientDo": "góp ý vài câu khi bên em viết bài" }
+    ]
+  },
+  "why": {
+    "title": "Vì sao làm cùng bên em",
+    "items": [
+      { "title": "Nói thật về tích xanh", "text": "Bên em không hứa duyệt 100%, vì Facebook mới là bên quyết. Bên em làm đủ điều kiện để hồ sơ có cơ hội tốt nhất." },
+      { "title": "Một đầu mối cho mọi kênh", "text": "Người làm website cũng là người làm Facebook và TikTok, nên hình ảnh, lời giới thiệu thống nhất." },
+      { "title": "Tài khoản là của anh/chị", "text": "Tên miền, website, trang và kênh đều đứng tên anh/chị. Bên em chỉ được cấp quyền quản trị." }
+    ]
+  },
+  "terms": [
+    "Đặt cọc 50% khi xác nhận, 50% còn lại khi bàn giao.",
+    "Phí tích xanh trả thẳng cho Facebook. Việc duyệt hay không do Facebook quyết; bên em hoàn phí làm gói Tích xanh nếu tài khoản bị từ chối vì lý do không sửa được.",
+    "Tên miền, website, trang Facebook, kênh TikTok và toàn bộ nội dung thuộc về anh/chị.",
+    "Bên em cam kết công việc hoàn thành đúng mô tả, không cam kết số người theo dõi, lượt xem hay doanh số.",
+    "2 vòng chỉnh sửa cho mỗi phần. Việc ngoài phạm vi báo giá riêng bằng văn bản trước khi làm.",
+    "Tiến độ lùi tương ứng nếu ảnh, thông tin hoặc quyền truy cập đến chậm.",
+    "Báo giá có hiệu lực đến 01/12/2026."
+  ],
+  "faq": [
+    { "q": "Có tích xanh rồi khách có tự đến không?", "a": "Tích xanh giúp khách tin là đúng anh/chị, nhưng không đưa anh/chị đến trước mặt người chưa biết. Người mới biết đến anh/chị qua bài viết, video, tìm kiếm Google. Vì vậy em đề xuất làm tích xanh cùng kênh nội dung." },
+    { "q": "Tích xanh trả một lần là xong không?", "a": "Không. Meta Verified là gói trả theo kỳ, ngừng trả thì dấu tích mất. Em sẽ cùng anh/chị chọn kỳ trả và cách đăng ký có giá tốt nhất trong tài khoản." },
+    { "q": "Bị đưa vào danh sách chờ thì sao?", "a": "Tùy tài khoản và khu vực, Facebook có thể duyệt ngay hoặc xếp hàng chờ. Trong lúc chờ, bên em vẫn làm trang cá nhân, fanpage và website, nên không mất thời gian." },
+    { "q": "Tôi bận, không có thời gian đăng bài?", "a": "Anh/chị chỉ cần kể chuyện nghề 20–30 phút và gửi ảnh. Bên em viết, lên lịch, và chọn gói chăm tháng nếu muốn giao hẳn." }
+  ],
+  "cta": {
+    "headline": "Anh/chị muốn bắt đầu từ tích xanh hay làm luôn cả nhân hiệu?",
+    "text": "Nhắn em qua Zalo, mình hẹn 15 phút để em xem tài khoản Facebook hiện tại và nói luôn đủ điều kiện tích xanh chưa.",
+    "button": "Nhắn Zalo cho Duy",
+    "href": "https://zalo.me/0938415218",
+    "note": "Báo giá có hiệu lực đến 01/12/2026"
+  }
+}
