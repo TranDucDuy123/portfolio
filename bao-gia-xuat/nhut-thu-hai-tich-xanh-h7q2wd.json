@@ -1,0 +1,301 @@
+{
+  "meta": {
+    "slug": "nhut-thu-hai-tich-xanh-h7q2wd",
+    "client_short": "Nhứt Thứ Hai",
+    "title": "Tích xanh Nhứt Thứ Hai",
+    "brand": "Duy Web",
+    "client": "Anh Nhứt Thứ Hai · Âm thanh, Ánh sáng & Xây dựng",
+    "clientCall": "anh",
+    "date": "17/11/2026",
+    "validUntil": "01/12/2026",
+    "accent": "#1877F2",
+    "contact": "Duy Web · Zalo 0938 415 218 · duyweb.info.vn"
+  },
+  "theme": { "accent": "#1877F2" },
+  "hero": {
+    "eyebrow": "Đề xuất riêng cho anh Nhứt Thứ Hai",
+    "headline": "Gần 7 năm làm sân khấu, công trình. Giờ để khách mới nhìn một lần là thấy.",
+    "sub": "Tích xanh giúp khách biết đúng là anh Nhứt, bên em lo trọn phần đăng ký. Nhưng ban tổ chức, chủ quán, chủ nhà chọn anh vì thấy sân khấu anh dựng, nghe âm anh chỉnh, xem công trình anh làm. Nên em đề xuất đi tiếp: website làm hồ sơ năng lực, Facebook làm chỗ gặp khách, TikTok để video sân khấu tới thêm người.",
+    "highlights": [
+      { "value": "2 triệu", "label": "chuẩn bị hồ sơ và đăng ký tích xanh" },
+      { "value": "12 triệu", "label": "website + Facebook nhân hiệu (gói gợi ý)" },
+      { "value": "1–3 triệu", "label": "mỗi tháng nếu muốn bên em chăm kênh" }
+    ]
+  },
+  "understand": {
+    "title": "Em đã xem trang Facebook của anh",
+    "points": [
+      { "label": "Thâm niên", "text": "Làm âm thanh, ánh sáng từ tháng 2/2020, gần 7 năm. Đi công trình xa tận Phú Quốc, làm việc cùng ca sĩ. Đây là vốn mà người mới vào nghề không có." },
+      { "label": "Điểm mạnh", "text": "Ảnh bìa đã rất bài bản: tên, đủ dịch vụ, hotline, email, khẩu hiệu \"Chuyên nghiệp, Uy tín, Hiệu quả\". Anh đăng gần như mỗi ngày, có ảnh đội thợ đồ bảo hộ, giàn giáo, video test loa thật." },
+      { "label": "Khách mới thấy gì?", "text": "Bài công việc đang xen với bài cà phê, nhạc, câu chuyện đời. Người quen thích vậy. Nhưng một ban tổ chức lần đầu vào trang, lướt 5 bài đầu, có thấy ngay anh dựng được sân khấu cỡ nào không?" },
+      { "label": "Nhiều mảng", "text": "Âm thanh, ánh sáng, màn LED, khung sân khấu; xây nhà, thi công; sửa điện nước, camera, máy lạnh; bán loa. Khách nhớ anh là \"anh Nhứt âm thanh\" hay \"anh Nhứt xây dựng\"?" },
+      { "label": "Tích xanh", "text": "Tích xanh của Facebook cần tên trên trang khớp CCCD. Tên đang để là \"Nhứt Thứ Hai\": có trùng tên trên giấy tờ của anh không? Nếu không, mình cần tính cách đặt tên trước khi đăng ký." },
+      { "label": "Chưa có", "text": "Trang cá nhân 979 bạn, chưa thấy fanpage, website hay chế độ người theo dõi. Khi khách hỏi \"có hồ sơ năng lực không\", anh chưa có một đường link để gửi." }
+    ]
+  },
+  "insight": {
+    "title": "Nhìn từ ngành của anh",
+    "intro": "Vài điều đang thay đổi trong cách khách tìm và chọn người làm sự kiện, công trình. Số liệu có ghi nguồn để anh tự kiểm.",
+    "items": [
+      {
+        "title": "Tích xanh không còn hiếm",
+        "text": "Từ cuối tháng 7/2026 Facebook bắt đầu phát tích trắng miễn phí cho tài khoản cá nhân, chỉ cần quay video selfie. Ai cũng sắp có dấu xác minh. Thứ làm anh khác người cùng nghề là sân khấu, công trình anh đưa ra cho khách xem.",
+        "source": "CafeF 02/08/2026; Meta, Introducing Facebook Verified (07/2026)"
+      },
+      {
+        "title": "Khách sợ lừa trước khi chuyển cọc",
+        "text": "Lừa đảo mạo danh trên Facebook đang nhiều; Nghị định 174/2026 từ 01/07/2026 tăng mức phạt giả mạo tài khoản, fanpage. Thuê thiết bị, làm nhà đều phải cọc trước, nên khách cần chắc đúng người thật, có địa chỉ, có công trình thật.",
+        "source": "Báo Pháp luật Việt Nam (lsvn.vn), 2026"
+      },
+      {
+        "title": "Âm thanh ánh sáng: khách chọn bằng mắt và tai",
+        "text": "Lời quảng cáo ai cũng viết được. Một đoạn video 30 giây sân khấu lên đèn, âm chạy thật nói được nhiều hơn. Video là bằng chứng mạnh nhất của nghề anh, và cũng là thứ Reels, TikTok ưu tiên đưa tới người lạ.",
+        "source": "Nhận định của Duy Web"
+      },
+      {
+        "title": "Ngành sự kiện đang sôi động",
+        "text": "Concert, lễ hội âm nhạc, sự kiện văn hóa lớn nở rộ hai năm qua. Doanh nghiệp ngày càng tìm đối tác lo được trọn phần kỹ thuật, không chỉ người dựng sân khấu. Ai có hồ sơ năng lực rõ ràng sẽ được gọi trước.",
+        "source": "Brands Vietnam, Ngành sự kiện Việt Nam 2026–2035"
+      },
+      {
+        "title": "Khách của anh đều ở trên mạng",
+        "text": "Việt Nam có khoảng 79 triệu tài khoản mạng xã hội, bằng 77,6% dân số. TikTok có khoảng 40,9 triệu người dùng từ 18 tuổi. Khách đặt sự kiện hay sửa nhà đều có thể tìm ra anh ở đây, nếu anh xuất hiện đúng chỗ.",
+        "source": "DataReportal, Digital 2026 Vietnam (10/2025) và Digital 2025 Vietnam"
+      },
+      {
+        "title": "Xây dựng, sửa nhà: lời khách là vàng",
+        "text": "Chủ nhà lo nhất là làm dở dang, không bảo hành. Ảnh trước và sau, lời khách cũ, địa chỉ công trình làm khách yên tâm hơn mọi khẩu hiệu.",
+        "source": "Nhận định của Duy Web"
+      }
+    ]
+  },
+  "explain": {
+    "title": "Tích xanh làm được gì, và không làm được gì",
+    "intro": "Tích xanh của Facebook (Meta Verified) xác nhận tài khoản là của đúng người, đúng tên trên giấy tờ. Nó giống tấm biển tên gắn trước kho thiết bị: khách biết đúng là anh Nhứt. Còn khách có thuê hay không là nhờ những gì họ thấy bên trong.",
+    "items": [
+      {
+        "name": "Chỉ đăng ký tích xanh",
+        "analogy": "Giống gắn biển tên đẹp trước một kho thiết bị đóng cửa: ai đi ngang cũng biết đúng chỗ, nhưng không ai thấy bên trong có gì.",
+        "good": [
+          "Chứng minh tài khoản là thật, bớt bị giả mạo",
+          "Có hỗ trợ tài khoản từ Facebook khi gặp sự cố",
+          "Nhanh, chi phí thấp"
+        ],
+        "bad": [
+          "Phải đủ điều kiện mới được duyệt: tên khớp CCCD, bật bảo mật hai lớp, có lịch sử đăng bài, không vi phạm",
+          "Trả phí Facebook theo kỳ, ngừng trả là mất tích",
+          "Tích ngày càng phổ biến, nên chỉ có tích thì chưa khác người cùng nghề",
+          "Không tự mang khách mới đến"
+        ],
+        "fit": "Hợp khi đã có kênh đông người theo dõi, chỉ thiếu dấu xác nhận",
+        "cost": "2 triệu phí làm + phí Facebook theo kỳ"
+      },
+      {
+        "name": "Tích xanh + kênh nội dung",
+        "analogy": "Biển tên vẫn gắn, nhưng cửa kho mở, sân khấu đã dựng chiếu lên màn LED, công trình đã làm treo trên tường. Khách dừng lại vì thấy, không chỉ vì biển.",
+        "good": [
+          "Tích xanh làm khách tin, video và công trình làm khách gọi",
+          "Trang cá nhân kể con người anh Nhứt, fanpage bày rõ dịch vụ",
+          "Website là hồ sơ năng lực, gửi một link là đủ",
+          "Mỗi kênh thêm là một điểm khách chạm vào anh"
+        ],
+        "bad": [
+          "Cần vài tháng đăng đều mới thấy rõ",
+          "Anh cần gửi ảnh, video công trình (anh đang có sẵn rất nhiều)"
+        ],
+        "fit": "Hợp với anh: có nghề lâu năm, có nhiều hình ảnh thật, đang đăng đều",
+        "cost": "12 triệu một lần (gồm tích xanh) + chăm kênh tùy chọn",
+        "recommended": true,
+        "badge": "Duy đề xuất"
+      }
+    ],
+    "note": "Phí tích xanh trả thẳng cho Facebook. Facebook có thể duyệt ngay hoặc xếp vào danh sách chờ tùy tài khoản; bên em chuẩn bị đủ điều kiện để hồ sơ không bị trả về, nhưng quyết định duyệt là của Facebook."
+  },
+  "approach": {
+    "title": "Mỗi kênh một tác dụng",
+    "intro": "Không cần làm hết một lúc. Làm website và Facebook trước, chạy ổn rồi mới thêm TikTok.",
+    "items": [
+      {
+        "need": "Được xác nhận, khách yên tâm chuyển cọc",
+        "solution": "Rà điều kiện, xử lý tên cho khớp giấy tờ, bật bảo mật hai lớp, rồi đăng ký tích xanh",
+        "benefit": "Khách lạ biết ngay đúng là anh Nhứt, không phải trang giả"
+      },
+      {
+        "need": "Khách thấy con người và thâm niên",
+        "solution": "Trang cá nhân giữ chất anh Nhứt: hậu trường công trình, đi tỉnh, làm cùng ca sĩ. Sửa phần giới thiệu, ghim bài, mục nổi bật kể chặng đường gần 7 năm",
+        "benefit": "Khách tin người trước, rồi mới tin dịch vụ"
+      },
+      {
+        "need": "Khách hiểu anh làm gì, thuê thế nào",
+        "solution": "Fanpage Nhứt Thứ Hai Âm thanh & Ánh sáng: sự kiện đã làm, thiết bị cho thuê, gói theo quy mô; mảng xây dựng, sửa chữa có album riêng",
+        "benefit": "Khách tự xem, nhắn đến là đã biết mình cần gì"
+      },
+      {
+        "need": "Một link làm hồ sơ năng lực",
+        "solution": "Website: giới thiệu, dịch vụ âm thanh ánh sáng, xây dựng, sự kiện và công trình đã làm, lời khách, nút gọi và Zalo; dễ tìm thấy trên Google",
+        "benefit": "Gửi doanh nghiệp, ban tổ chức một link là đủ, không phụ thuộc Facebook"
+      },
+      {
+        "need": "Thêm người lạ biết đến",
+        "solution": "TikTok: dựng lại video sân khấu, test loa, công trình anh đang có thành video ngắn",
+        "benefit": "Nghề anh đẹp lên video, nên đây là kênh hợp nhất để tới khách mới"
+      }
+    ]
+  },
+  "packages": {
+    "title": "Các gói làm một lần",
+    "note": "Phí tích xanh theo kỳ anh trả thẳng cho Facebook, không qua bên em.",
+    "items": [
+      {
+        "name": "Tích xanh",
+        "tagline": "Đủ điều kiện và đăng ký xác minh",
+        "price": "2.000.000đ",
+        "unit": "trọn gói",
+        "forWho": "Khi chỉ cần dấu xác nhận cho trang cá nhân",
+        "features": [
+          "Rà điều kiện tài khoản, chỉ ra chỗ cần sửa",
+          "Xử lý tên cho khớp CCCD; bật bảo mật hai lớp",
+          "Cùng anh làm hồ sơ đăng ký Meta Verified",
+          "Theo dõi đến khi có kết quả, xử lý nếu bị trả hồ sơ",
+          { "text": "Làm mới trang cá nhân, dựng fanpage", "included": false },
+          { "text": "Website hồ sơ năng lực", "included": false }
+        ],
+        "delivery": "Thường 3–7 ngày, tùy thời gian Facebook xét"
+      },
+      {
+        "name": "Nhân hiệu: Website + Facebook",
+        "tagline": "Tích xanh, trang cá nhân, fanpage và website",
+        "price": "12.000.000đ",
+        "unit": "trọn gói",
+        "recommended": true,
+        "badge": "Duy đề xuất",
+        "forWho": "Cho anh Nhứt: khách mới nhìn vào là thấy năng lực, tự nhắn hỏi giá",
+        "features": [
+          "Toàn bộ gói Tích xanh",
+          "Làm mới trang cá nhân: giới thiệu, ghim bài, mục nổi bật gần 7 năm làm nghề",
+          "Dựng fanpage Âm thanh & Ánh sáng: dịch vụ, album sự kiện, album công trình, nút nhắn tin",
+          "Website hồ sơ năng lực: âm thanh ánh sáng, xây dựng sửa chữa, sự kiện đã làm, lời khách, nút gọi và Zalo",
+          "Website xem tốt trên điện thoại, dễ tìm thấy trên Google",
+          "Kế hoạch nội dung 30 ngày, tách bài công việc và bài đời thường",
+          { "text": "Kênh TikTok", "included": false }
+        ],
+        "delivery": "Khoảng 3–4 tuần sau khi nhận đủ ảnh, video và thông tin"
+      },
+      {
+        "name": "Ba kênh: thêm TikTok",
+        "tagline": "Website + Facebook + TikTok",
+        "price": "16.000.000đ",
+        "unit": "trọn gói",
+        "forWho": "Muốn video sân khấu, test loa tới thêm khách lạ",
+        "features": [
+          "Toàn bộ gói Nhân hiệu",
+          "Thiết lập kênh TikTok đồng bộ với ảnh bìa hiện có",
+          "Dựng video ngắn từ kho video sân khấu, công trình của anh",
+          "Hướng dẫn quay nhanh tại công trình bằng điện thoại",
+          "Nối ba kênh về website và Zalo"
+        ],
+        "delivery": "Khoảng 4–5 tuần"
+      }
+    ]
+  },
+  "running": {
+    "title": "Các khoản chi, rõ từ đầu",
+    "intro": "Ngoài phí làm một lần, đây là các khoản liên quan và ai trả.",
+    "rows": [
+      { "item": "Phí tích xanh Meta Verified", "cost": "Theo giá Facebook", "period": "/kỳ", "payer": "Trả thẳng cho Facebook", "note": "Đăng ký trên web thường rẻ hơn trong ứng dụng. Em xem đúng giá trong tài khoản của anh trước khi đăng ký" },
+      { "item": "Hosting + tên miền website", "cost": "3.000.000đ", "period": "/năm", "payer": "Duy Web", "note": "Tên miền đứng tên anh" },
+      { "item": "Quảng cáo Facebook, TikTok", "cost": "Anh quyết", "period": "", "payer": "Trả thẳng cho nền tảng", "note": "Không bắt buộc; chỉ chạy khi có video tốt cần đẩy thêm, ví dụ mùa cưới, cuối năm" }
+    ]
+  },
+  "care": {
+    "title": "Chăm kênh hằng tháng (tùy chọn)",
+    "intro": "Anh đang đăng đều, đó là lợi thế. Bên em giúp mỗi bài công việc rõ hơn và đúng chỗ hơn, hoặc làm thay khi anh đi công trình.",
+    "items": [
+      {
+        "name": "Anh đăng, em kèm",
+        "tagline": "Lịch bài và góp ý",
+        "price": "1.000.000đ",
+        "unit": "/tháng",
+        "features": [
+          "Lịch nội dung hằng tháng cho trang cá nhân và fanpage",
+          "Góp ý bài trước khi đăng",
+          "Sao lưu, cập nhật website"
+        ]
+      },
+      {
+        "name": "Em chăm Facebook",
+        "tagline": "Trang cá nhân + fanpage",
+        "price": "2.000.000đ",
+        "unit": "/tháng",
+        "recommended": true,
+        "features": [
+          "8 bài công việc mỗi tháng cho trang cá nhân và fanpage",
+          "Bên em viết từ ảnh, video anh gửi từ công trình",
+          "Cập nhật sự kiện, công trình mới lên website",
+          "Báo cáo lời thường: bao nhiêu người thấy, bao nhiêu người nhắn"
+        ]
+      },
+      {
+        "name": "Em chăm ba kênh",
+        "tagline": "Facebook + TikTok + website",
+        "price": "3.000.000đ",
+        "unit": "/tháng",
+        "features": [
+          "Mọi thứ trong gói 2 triệu",
+          "4 video ngắn mỗi tháng dựng từ video anh quay",
+          "1 bài viết website mỗi tháng",
+          "Đề xuất video nên chạy quảng cáo theo mùa sự kiện"
+        ]
+      }
+    ],
+    "fine": "Không ràng buộc dài hạn. Muốn tăng, giảm hay dừng thì báo trước tháng sau."
+  },
+  "total": {
+    "title": "Năm đầu theo gói em đề xuất",
+    "lines": [
+      { "label": "Gói Nhân hiệu: Website + Facebook (một lần)", "value": "12.000.000đ" },
+      { "label": "Hosting + tên miền năm đầu", "value": "3.000.000đ" }
+    ],
+    "sum": "15.000.000đ",
+    "note": "Chưa gồm phí tích xanh trả thẳng cho Facebook, quảng cáo (nếu chạy) và gói chăm tháng tùy chọn. Từ năm thứ hai: 3.000.000đ/năm hosting + tên miền."
+  },
+  "timeline": {
+    "title": "Các bước làm",
+    "steps": [
+      { "step": "Rà điều kiện, xử lý tên, đăng ký tích xanh", "when": "Tuần 1", "clientDo": "chuẩn bị CCCD, đăng nhập xác minh cùng em" },
+      { "step": "Làm mới trang cá nhân, dựng fanpage, lên kế hoạch nội dung 30 ngày", "when": "Tuần 1–2", "clientDo": "gửi ảnh, video sự kiện và công trình đã làm; kể chặng đường nghề 20–30 phút" },
+      { "step": "Dựng website hồ sơ năng lực", "when": "Tuần 2–4", "clientDo": "chọn sự kiện, công trình tiêu biểu; duyệt bản xem trước" },
+      { "step": "Đăng theo kế hoạch; thêm TikTok nếu chọn gói ba kênh", "when": "Từ tuần 4", "clientDo": "gửi ảnh, video mỗi khi xong một công trình" }
+    ]
+  },
+  "why": {
+    "title": "Vì sao làm cùng bên em",
+    "items": [
+      { "title": "Nói thật về tích xanh", "text": "Bên em không hứa duyệt 100%, vì Facebook mới là bên quyết. Bên em làm đủ điều kiện để hồ sơ có cơ hội tốt nhất." },
+      { "title": "Một đầu mối cho mọi kênh", "text": "Người làm website cũng là người làm Facebook và TikTok, nên ảnh bìa, lời giới thiệu, màu sắc thống nhất với bộ nhận diện anh đang có." },
+      { "title": "Tài khoản là của anh", "text": "Tên miền, website, trang và kênh đều đứng tên anh. Bên em chỉ được cấp quyền quản trị." }
+    ]
+  },
+  "terms": [
+    "Đặt cọc 50% khi xác nhận, 50% còn lại khi bàn giao.",
+    "Phí tích xanh trả thẳng cho Facebook. Việc duyệt hay không do Facebook quyết; bên em hoàn phí làm gói Tích xanh nếu tài khoản bị từ chối vì lý do không sửa được.",
+    "Tên miền, website, trang Facebook, kênh TikTok và toàn bộ nội dung thuộc về anh.",
+    "Bên em cam kết công việc hoàn thành đúng mô tả, không cam kết số người theo dõi, lượt xem hay số khách.",
+    "2 vòng chỉnh sửa cho mỗi phần. Việc ngoài phạm vi báo giá riêng bằng văn bản trước khi làm.",
+    "Tiến độ lùi tương ứng nếu ảnh, thông tin hoặc quyền truy cập đến chậm.",
+    "Báo giá có hiệu lực đến 01/12/2026."
+  ],
+  "faq": [
+    { "q": "Có tích xanh rồi khách có tự đến không?", "a": "Tích xanh giúp khách tin là đúng anh, nhưng không đưa anh tới trước mặt người chưa biết. Người mới biết đến anh qua video sân khấu, bài công trình, tìm kiếm Google. Vì vậy em đề xuất làm tích xanh cùng kênh nội dung." },
+    { "q": "Tên Facebook của anh không giống trên CCCD thì sao?", "a": "Meta Verified cần tên khớp giấy tờ. Mình có thể để tên thật trên trang cá nhân, còn tên Nhứt Thứ Hai Âm thanh & Ánh sáng đặt cho fanpage. Em xem tài khoản của anh rồi tư vấn cách ít ảnh hưởng nhất." },
+    { "q": "Anh làm cả âm thanh lẫn xây dựng, có cần tách ra không?", "a": "Không cần tách thương hiệu. Website và fanpage chia thành hai mục rõ ràng, khách tìm sự kiện thấy phần sự kiện, khách sửa nhà thấy phần công trình. Tên Nhứt Thứ Hai vẫn là một." },
+    { "q": "Anh hay đi công trình, không có thời gian đăng bài?", "a": "Anh chỉ cần chụp, quay tại công trình rồi gửi Zalo. Bên em viết, dựng video, lên lịch. Anh vẫn giữ các bài đời thường của mình trên trang cá nhân." }
+  ],
+  "cta": {
+    "headline": "Anh muốn bắt đầu từ tích xanh hay làm luôn cả nhân hiệu?",
+    "text": "Anh nhắn em qua Zalo, mình hẹn 15 phút. Em xem tài khoản cùng anh, nói luôn đủ điều kiện tích xanh chưa và cần sửa gì trước.",
+    "button": "Nhắn Zalo cho Duy",
+    "href": "https://zalo.me/0938415218",
+    "note": "Báo giá có hiệu lực đến 01/12/2026"
+  }
+}
