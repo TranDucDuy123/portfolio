@@ -7,7 +7,8 @@ import { series, videosForArticle, type SiteVideo } from "../data/videos";
 // Chỉ hiện ảnh bìa, bấm mới tải iframe YouTube: trang nhẹ hơn nhiều khi có nhiều video
 export function YouTubeLite({ video }: { video: SiteVideo }) {
   const [playing, setPlaying] = useState(false);
-  const ratio = video.isShort ? "aspect-[9/16] max-h-[70vh] mx-auto" : "aspect-video";
+  // Short: khung dọc 9:16, giới hạn bề ngang để chiều cao không vượt màn hình (giới hạn chiều cao làm méo tỉ lệ)
+  const ratio = video.isShort ? "aspect-[9/16] max-w-[min(340px,40vh)] mx-auto" : "aspect-video";
 
   return (
     <div className={`relative w-full overflow-hidden rounded-xl bg-black ${ratio}`}>
@@ -65,8 +66,9 @@ export function VideoCard({ video }: { video: SiteVideo }) {
 }
 
 // Đặt trong trang bài viết: tự hiện video nào trỏ về bài này, không có thì không hiện gì
-export function RelatedVideos({ articleHref }: { articleHref: string }) {
-  const list = videosForArticle(articleHref);
+// exclude: video đã nhúng trong thân bài thì không lặp lại ở đây
+export function RelatedVideos({ articleHref, exclude = [] }: { articleHref: string; exclude?: string[] }) {
+  const list = videosForArticle(articleHref).filter((v) => !exclude.includes(v.id));
   if (!list.length) return null;
 
   return (

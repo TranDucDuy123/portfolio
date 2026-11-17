@@ -22,7 +22,8 @@ export type SeriesId = keyof typeof series;
 
 // youtubeId -> bài liên quan / seri (khi mô tả YouTube chưa có link)
 export const videoLinks: Record<string, { article?: string; series?: SeriesId }> = {
-  "3ey191O8MRw": { series: "muon-nghe", article: "/blog/luat-choi-shopee-affiliate-va-bi-quyet-giu-hoa-hong" }
+  "3ey191O8MRw": { series: "muon-nghe", article: "/blog/luat-choi-shopee-affiliate-va-bi-quyet-giu-hoa-hong" },
+  "SBEJW80PQ3s": { article: "/blog/dang-ky-shopee-affiliate" }
 };
 
 export interface RelatedArticle {
@@ -67,7 +68,7 @@ export const videos: SiteVideo[] = youtubeVideos.flatMap((v) => {
   if (!article) return [];
   return [{
     id: v.id,
-    title: v.title,
+    title: v.title.replace(/(\s+#[\p{L}\p{N}_]+)+\s*$/u, "").trim(), // hashtag cuối tiêu đề YouTube không hiện trên site
     description: v.description,
     published: v.published,
     isShort: v.isShort,

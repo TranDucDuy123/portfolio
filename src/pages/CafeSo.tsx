@@ -5,7 +5,7 @@ import { cafeSoArticles } from "../data/cafeSo";
 import type { CafeSoEntry } from "../lib/content";
 import { socialConfig } from "../config/social";
 import Meta from "../components/Meta";
-import { markdownToHtml, headingsOf } from "../lib/markdown";
+import { markdownToHtml, headingsOf, embeddedYouTubeIds, enableYouTubeEmbeds } from "../lib/markdown";
 import { ArticleToc, ReadingProgress } from "../components/ui/article-reading";
 import { FeaturedPosts } from "../components/ui/blog-posts";
 import Schema from "../components/Schema";
@@ -21,6 +21,8 @@ export default function CafeSo() {
   const articleHtml = useMemo(() => (activeArticle ? markdownToHtml(activeArticle.content) : ""), [activeArticle]);
   const headings = useMemo(() => (activeArticle ? headingsOf(activeArticle.content) : []), [activeArticle]);
   const bodyRef = useRef<HTMLDivElement>(null);
+  const embeddedVideos = useMemo(() => (activeArticle ? embeddedYouTubeIds(activeArticle.content) : []), [activeArticle]);
+  useEffect(() => (bodyRef.current ? enableYouTubeEmbeds(bodyRef.current) : undefined), [articleHtml]);
 
   // Synchronize activeArticle with the URL slug
   useEffect(() => {
@@ -179,7 +181,7 @@ export default function CafeSo() {
                 <img src={activeArticle.image} alt={activeArticle.title} width={1200} height={630} className="w-full h-auto rounded-2xl border border-gray-100" />
               )}
 
-              <RelatedVideos articleHref={`/cafe-so/${activeArticle.slug}`} />
+              <RelatedVideos articleHref={`/cafe-so/${activeArticle.slug}`} exclude={embeddedVideos} />
 
               {/* Rich Content Render */}
               <ReadingProgress target={bodyRef} />

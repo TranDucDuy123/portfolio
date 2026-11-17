@@ -141,6 +141,22 @@ body {
 }
 .article-body hr { border: 0; height: 1px; background: linear-gradient(90deg, transparent, #e5e7eb, transparent); margin: 2.2em 0; }
 .article-body img { max-width: 100%; height: auto; border-radius: 12px; margin-inline: auto; }
+/* Ảnh từng bước cắt từ video: ảnh dọc điện thoại không cao quá màn hình */
+.article-body figure { margin: 1.4em 0; text-align: center; }
+.article-body figure img { max-height: min(78vh, 720px); width: auto; border: 1px solid #e5e7eb; }
+.article-body figcaption { margin-top: 0.5em; font-size: 0.86em; color: #6b7280; line-height: 1.5; }
+.article-body figcaption .fig-link { display: block; margin-top: 0.15em; font-weight: 600; }
+.article-body .fig-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1.4em 0; align-items: start; }
+.article-body .fig-grid figure { margin: 0; }
+.article-body .fig-grid figure img { width: 100%; max-height: none; }
+/* Video YouTube nhúng trong bài: ảnh bìa + nút phát, bấm mới tải trình phát */
+.article-body .yt-embed { position: relative; margin: 1.4em auto; aspect-ratio: 16 / 9; width: 100%; overflow: hidden; border-radius: 12px; background: #000; }
+.article-body .yt-embed.yt-short { aspect-ratio: 9 / 16; max-width: min(340px, 45vh); }
+.article-body .yt-embed a, .article-body .yt-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.article-body .yt-embed img { width: 100%; height: 100%; object-fit: cover; border-radius: 0; margin: 0; }
+.article-body .yt-play { position: absolute; top: 50%; left: 50%; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 9999px; background: var(--color-brand-primary); box-shadow: 0 6px 20px rgba(0,0,0,.35); }
+.article-body .yt-play::after { content: ""; position: absolute; top: 50%; left: 54%; transform: translate(-50%, -50%); border-style: solid; border-width: 12px 0 12px 20px; border-color: transparent transparent transparent #fff; }
+.article-body .yt-embed a:hover .yt-play { background: var(--color-brand-secondary); }
 .article-body .md-table { overflow-x: auto; border: 1px solid #e5e7eb; border-radius: 12px; }
 .article-body table { width: 100%; border-collapse: collapse; font-size: 0.86em; text-align: left; }
 .article-body th { background: var(--color-brand-light); font-weight: 600; color: var(--color-brand-dark); }

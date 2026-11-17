@@ -6,7 +6,7 @@ import type { BlogPost } from "../types";
 import type { BlogEntry } from "../lib/content";
 import { socialConfig } from "../config/social";
 import Meta from "../components/Meta";
-import { markdownToHtml, headingsOf } from "../lib/markdown";
+import { markdownToHtml, headingsOf, embeddedYouTubeIds, enableYouTubeEmbeds } from "../lib/markdown";
 import { ArticleToc, ReadingProgress } from "../components/ui/article-reading";
 import { FeaturedPosts } from "../components/ui/blog-posts";
 import Schema from "../components/Schema";
@@ -45,6 +45,8 @@ export default function Blog() {
   const articleHtml = useMemo(() => (activePost ? markdownToHtml(activePost.content) : ""), [activePost]);
   const headings = useMemo(() => (activePost ? headingsOf(activePost.content) : []), [activePost]);
   const bodyRef = useRef<HTMLDivElement>(null);
+  const embeddedVideos = useMemo(() => (activePost ? embeddedYouTubeIds(activePost.content) : []), [activePost]);
+  useEffect(() => (bodyRef.current ? enableYouTubeEmbeds(bodyRef.current) : undefined), [articleHtml]);
 
   const categories = ["Tất cả", "Website", "SEO", "Digital Assets", "Business Strategy", "Conversion", "Content Marketing", "Lead Generation"];
 
@@ -205,7 +207,7 @@ export default function Blog() {
                 <img src={activePost.image} alt={activePost.title} width={1200} height={630} className="w-full h-auto rounded-2xl border border-gray-100" />
               )}
 
-              <RelatedVideos articleHref={`/blog/${activePost.slug}`} />
+              <RelatedVideos articleHref={`/blog/${activePost.slug}`} exclude={embeddedVideos} />
 
               {/* Body rendering */}
               <ReadingProgress target={bodyRef} />

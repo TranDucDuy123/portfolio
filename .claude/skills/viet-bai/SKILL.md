@@ -1,6 +1,6 @@
 ---
 name: viet-bai
-description: "Viết và đăng bài chuẩn SEO lên duyweb.info.vn (Blog hoặc Cafe Số): viết file Markdown trong content/, làm ảnh bìa và thẻ trích dẫn theo bộ nhận diện hoặc nén ảnh Duy gửi, xem trước, commit, push, kiểm tra bài trên web thật, báo IndexNow và yêu cầu lập chỉ mục trên Google Search Console. Dùng khi Duy nói /viet-bai, viết bài, lên bài, đăng bài cho site của Duy."
+description: "Viết và đăng bài chuẩn SEO lên duyweb.info.vn (Blog hoặc Cafe Số): viết file Markdown trong content/, làm ảnh bìa và thẻ trích dẫn theo bộ nhận diện hoặc nén ảnh Duy gửi, làm bài hướng dẫn từ clip quay màn hình (cắt ảnh từng bước theo ghi chú giây, gắn video YouTube), xem trước, commit, push, kiểm tra bài trên web thật, báo IndexNow và yêu cầu lập chỉ mục trên Google Search Console. Dùng khi Duy nói /viet-bai, viết bài, lên bài, đăng bài cho site của Duy."
 ---
 
 # Viết và đăng bài lên duyweb.info.vn
@@ -14,6 +14,7 @@ Ví dụ: `/viet-bai Cafe Số: tên miền .vn hay .com cho tiệm nhỏ. Ý: k
 - **Chủ đề hoặc từ khoá** (bắt buộc). Có thể kèm ý chính, kinh nghiệm thật, ví dụ khách thật đã ẩn tên.
 - **Loại bài**: "Cafe Số" (giải thích khái niệm bằng ví dụ đời thường, ngắn 500–900 chữ) hoặc "Blog" (chiến lược, hướng dẫn, 900–1600 chữ). Không nói thì tự chọn theo chủ đề và ghi rõ đã chọn.
 - **Ảnh**: Duy gửi kèm (đường dẫn file hoặc ảnh dán vào chat), hoặc để trống thì tự làm ảnh.
+- **Clip hướng dẫn + ghi chú giây**: Duy gửi đường dẫn clip quay màn hình và ghi chú "giây nào nói gì", có thể kèm link YouTube. Khi đó làm theo mục **Bài hướng dẫn từ video** bên dưới.
 - **"Đăng luôn"**: bỏ bước chờ duyệt, viết xong đăng thẳng. Không có chữ này thì để bản nháp cho Duy xem trước.
 
 Chỉ hỏi lại khi thiếu chủ đề. Mọi thứ khác tự quyết theo hướng dẫn dưới đây, ghi rõ trong báo cáo.
@@ -80,6 +81,33 @@ Chỉ hỏi lại khi thiếu chủ đề. Mọi thứ khác tự quyết theo h
 
 ### 8. Báo lại Duy
 Ngắn gọn: link bài, tiêu đề và mô tả, từ khoá chính, ảnh đã dùng, link nội bộ, kết quả IndexNow, trạng thái Search Console, việc còn lại (nếu có).
+
+## Bài hướng dẫn từ video (mẫu chuẩn)
+
+Dùng khi Duy gửi clip hướng dẫn. Mục tiêu: người đọc làm theo được bằng ảnh từng bước, khỏi tua video; ai muốn xem thì bấm thẳng vào đúng đoạn trên YouTube. Bài mẫu: `content/blog/dang-ky-shopee-affiliate.md`.
+
+### Duy gửi gì
+- Đường dẫn clip (mp4, mov…). Clip **không** đưa vào repo, chỉ ảnh cắt ra.
+- Ghi chú giây, viết kiểu gì cũng được, vd `0:12 bấm nút ba chấm`, `1:05 điền thông tin, che tên`. Video chia mấy phần thì ghi phần nào bắt đầu ở giây nào.
+- ID hoặc link YouTube nếu đã up (chưa up thì làm bài trước, thêm link sau).
+
+### Các bước
+1. **Chuyển ghi chú thành file chuẩn** trong scratchpad, mỗi dòng một ảnh: `giây | tên-ảnh | chú thích | che=x,y,rộng,cao`. Tên ảnh đặt theo phần (`fb-1`, `sp-1`, `tt-1`…), chú thích viết thành câu hướng dẫn hoàn chỉnh (cũng là alt ảnh).
+2. **Cắt ảnh**: `node scripts/video-frames.mjs <slug> <clip> <ghi-chu.txt> --youtube <id>` (bỏ `--youtube` khi chưa có). Ảnh vào `public/blog-images/<slug>/`, Markdown in ra để dán vào bài: mỗi ảnh có chú thích và link "▶ Xem đoạn này trong video (m:ss)" mở YouTube đúng giây.
+3. **Xem từng ảnh (Read)**:
+   - Màn hình chưa chuyển xong, mờ do đang lướt, bị thông báo che: lùi hoặc tiến 0,5–1 giây trong ghi chú rồi chạy lại.
+   - Có tên thật, SĐT, email, CCCD, số tài khoản, mã số thuế, số tiền hoa hồng, ID tài khoản, mặt người khác: thêm `che=` (phần trăm khung hình, nhiều vùng cách nhau `;`) rồi chạy lại, mở ảnh xem đã che kín chưa. Không chắc có nên che không thì hỏi Duy.
+4. **Bố cục bài**:
+   - Mở bài 2–3 câu có từ khoá, nói bài đi theo mấy phần của video.
+   - `## Video hướng dẫn trọn bộ`: bảng `Mốc | Phần`, tên phần là link tới mục trong bài (`#id`: bỏ dấu, chữ thường, nối `-`, như `src/lib/markdown.ts` tạo).
+   - Mỗi phần của video là một `##`, trong đó các bước đánh số, mỗi bước kèm ảnh vừa cắt. Câu chữ đi theo lời Duy nói trong video, gọn lại.
+   - Ảnh dọc điện thoại: viết 2–3 dòng ảnh liền nhau (không dòng trống ở giữa) thì bài tự xếp thành lưới 3 cột trên máy tính, 1 cột trên điện thoại. Đặt lưới sau 2–3 bước tương ứng; danh sách số sau ảnh viết tiếp `3.`, `4.` sẽ đánh số tiếp, không quay về 1.
+   - Duy không gửi ghi chú giây: tự xem clip bằng bảng ảnh thu nhỏ (ffmpeg `fps=1/2,…,drawtext=…%{pts\:hms},tile=8x3`), chọn khung đứng yên (tránh lúc đang chuyển màn hình, đang tải), rồi viết ghi chú như bước 1.
+   - Phần nhắc lại kiến thức đã có thì tóm 3–5 câu và link sang bài cũ, không viết lại.
+   - Cuối: lỗi hay gặp, câu hỏi thường gặp, lời mời.
+5. **Nhúng video vào thân bài**: viết link YouTube (watch, youtu.be hoặc shorts) **đứng riêng một dòng**, có dòng trống trước và sau, vd `https://youtube.com/shorts/SBEJW80PQ3s`. Bài tự hiện khung video (Short thì khung dọc), chỉ tải ảnh bìa, bấm mới phát; khối "Xem video của bài này" dưới ảnh bìa tự ẩn video đã nhúng để không trùng. Đặt video ở mục `## Video hướng dẫn…` đầu bài, kèm bảng "Trong video | Đọc trong bài". Bài khác trong chuỗi muốn giới thiệu video thì cũng nhúng bằng một dòng như vậy.
+6. **Gắn bài vào video trên YouTube**: soạn sẵn cho Duy mô tả YouTube gồm dòng `Đọc bài đầy đủ: https://duyweb.info.vn/<blog|cafe-so>/<slug>` và danh sách mốc (dòng đầu phải là `0:00`, ít nhất 3 mốc, mỗi phần dài ≥ 10 giây thì YouTube mới tự chia chương). Video public xong, `npm run sync-youtube` (lúc build cũng tự chạy) kéo video về và khung video tự hiện dưới ảnh bìa bài. Chưa thấy thì khai tay trong `videoLinks` ở `src/data/videos.ts`.
+7. Xem trước như bước 4 chung, chú ý ảnh dọc điện thoại không cao quá màn hình và link "Xem đoạn này" mở đúng giây.
 
 ## Viết nhiều bài một lần
 Viết lần lượt, bài sau link tới bài trước khi liên quan. Có thể gom vào một commit. Search Console ưu tiên gửi bài quan trọng nhất, phần còn lại báo Duy gửi hôm sau vì hạn mức.
