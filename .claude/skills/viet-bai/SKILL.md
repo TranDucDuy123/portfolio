@@ -113,8 +113,8 @@ Dùng khi Duy gửi clip hướng dẫn. Mục tiêu: người đọc làm theo 
 Viết lần lượt, bài sau link tới bài trước khi liên quan. Có thể gom vào một commit. Search Console ưu tiên gửi bài quan trọng nhất, phần còn lại báo Duy gửi hôm sau vì hạn mức.
 
 ## Ghi nhớ (cập nhật khi biết thêm)
-- Property Search Console: dạng URL `https://duyweb.info.vn/` (cùng tài khoản Google còn có property hungthinhfoods.vn, đừng chọn nhầm). Duy đăng nhập sẵn trong trình duyệt của app.
+- Property Search Console: dạng URL `https://duyweb.info.vn/` (cùng tài khoản Google còn có property hungthinhfoods.vn, đừng chọn nhầm). Từ 17/11/2026 trình duyệt trong app bị đăng xuất Google; dùng **Claude in Chrome** (Chrome thật của Duy, đã đăng nhập). Trình duyệt trong app vẫn dùng để xem trước localhost.
 - Sitemap `sitemap.xml` đã khai báo, trạng thái Thành công (gửi lại 09/11/2026 sau khi đăng bài đầu tiên).
-- Bài đã đăng qua skill: `/cafe-so/ten-mien-vn-hay-com` (08/11/2026, đã yêu cầu lập chỉ mục 09/11/2026, IndexNow 200).
+- Bài đã đăng qua skill: `/cafe-so/ten-mien-vn-hay-com` (08/11/2026, đã yêu cầu lập chỉ mục 09/11/2026, IndexNow 200); `/blog/dang-ky-shopee-affiliate` và `/cafe-so/affiliate-la-gi` (17/11/2026, IndexNow 200, đã yêu cầu lập chỉ mục cùng ngày). Bài Shopee còn thiếu ảnh Phần 2 (đăng ký trên affiliate.shopee.vn) và Phần 5 (thanh toán), chờ clip của Duy.
 - 09/11/2026 sau khi dựng sẵn HTML cho 21 trang chính: đã yêu cầu lập chỉ mục `/`, `/services`, `/bao-gia`, `/about`, `/kien-thuc`, `/blog`, `/cafe-so`, `/resources`, `/case-study`, `/solutions`. Còn chờ gửi (mỗi ngày ~10 link): 5 trang `/case-study/*`, 5 trang `/solutions/*`, `/videos`, `/projects`, `/connect`, 2 cẩm nang `/kien-thuc/*`, 17 bài Blog và Cafe Số cũ (ưu tiên bài có lượt hiển thị).
 - Mẹo thao tác Search Console: vào trang Tổng quan, đợi 5 giây rồi mới bấm kính lúp (bấm sớm ô tìm không mở). Sau khi kiểm tra URL, tìm nút theo chữ "Yêu cầu lại" và bấm ref của nút (bấm theo toạ độ hay trượt). Google chạy kiểm tra trực tiếp khoảng 30–60 giây rồi mới hiện khung "Đã yêu cầu lập chỉ mục".
