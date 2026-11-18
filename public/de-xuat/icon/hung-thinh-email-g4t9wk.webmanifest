@@ -1,0 +1,23 @@
+{
+  "name": "Hưng Thịnh",
+  "short_name": "Hưng Thịnh",
+  "start_url": "/de-xuat/hung-thinh-email-g4t9wk",
+  "scope": "/de-xuat/hung-thinh-email-g4t9wk",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#E4572E",
+  "icons": [
+    {
+      "src": "/de-xuat/icon/hung-thinh-email-g4t9wk-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/de-xuat/icon/hung-thinh-email-g4t9wk-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

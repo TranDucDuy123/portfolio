@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="theme-color" content="#1E293B">
+<title>Email doanh nghiệp Hưng Thịnh Foods × Duy Web – Hosting NASANI hay Google Workspace</title>
+<meta name="description" content="So sánh đặt email ketoan@ và hotro@hungthinhfoods.vn trên hosting NASANI hay Google Workspace: nhu cầu, dung lượng, chi phí, điểm mạnh, hạn chế và đề xuất của Duy Web.">
+<meta property="og:title" content="Email doanh nghiệp Hưng Thịnh Foods – Hosting NASANI hay Google Workspace?">
+<meta property="og:description" content="Từ nhu cầu ketoan@ và hotro@hungthinhfoods.vn: so sánh chi phí, điểm mạnh, hạn chế và phương án Duy Web đề xuất.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="Đức Duy Web">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --slate:#1E293B; --slate-2:#334155;
+  --accent:#E4572E; --bg:#F7F5F0; --paper:#FFFFFF; --ink:#141414; --muted:#5F6368; --line:#E6E1D8;
+  --soft:color-mix(in srgb,var(--accent) 9%,var(--paper));
+  --g:#1A73E8; --g-soft:color-mix(in srgb,#1A73E8 9%,#fff);
+  --ok:#188038; --warn:#B3261E;
+  --font:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:#0F172A;color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;line-height:1.5}
+/* ===== deck ===== */
+.deck{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.slide{position:absolute;width:min(100vw,calc(100vh*16/9));height:min(100vh,calc(100vw*9/16));
+  background:var(--bg);padding:3.4% 5.5%;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .35s ease;
+  font-size:min(1.55vw,2.75vh);overflow:hidden}
+.slide.on{opacity:1;visibility:visible}
+.slide.dark{background:var(--slate);color:#fff}
+.slide .kicker{font-family:var(--mono);font-weight:700;color:var(--accent);font-size:.82em;letter-spacing:.06em}
+.slide h1{font-size:2.9em;line-height:1.1;margin:.3em 0 .35em;font-weight:800}
+.slide h2{font-size:1.85em;line-height:1.15;margin:.15em 0 .5em;font-weight:800}
+.slide h3{font-size:1.08em;margin:0 0 .35em}
+.slide p{margin:0 0 .6em}
+.muted{color:var(--muted)} .dark .muted{color:#CBD5E1}
+.foot{margin-top:auto;font-size:.72em;color:var(--muted);display:flex;justify-content:space-between;gap:1em;padding-top:.8em}
+.dark .foot{color:#94A3B8}
+.brand{font-weight:800}.brand span{color:var(--accent)}
+.grid{display:grid;gap:1.1em}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:.9em;padding:1em 1.15em}
+.dark .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}
+.card.g{border-color:color-mix(in srgb,var(--g) 40%,var(--line));background:var(--g-soft)}
+.card.n{border-color:color-mix(in srgb,var(--accent) 35%,var(--line));background:var(--soft)}
+ul.c{list-style:none;padding:0;margin:0}
+ul.c li{padding:.22em 0 .22em 1.4em;position:relative}
+ul.c li:before{content:"";position:absolute;left:.15em;top:.72em;width:.5em;height:.5em;border-radius:2px;background:var(--accent)}
+ul.ok li:before{content:"✓";background:none;color:var(--ok);font-weight:800;top:.2em;width:auto;height:auto}
+ul.no li:before{content:"!";background:none;color:var(--warn);font-weight:800;top:.2em;left:.35em;width:auto;height:auto}
+.tag{display:inline-block;font-size:.72em;font-weight:700;padding:.2em .7em;border-radius:999px;background:var(--soft);color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent)}
+.tag.g{background:var(--g-soft);color:var(--g);border-color:color-mix(in srgb,var(--g) 30%,transparent)}
+.big{font-family:var(--mono);font-weight:700;font-size:1.9em;line-height:1.1;color:var(--accent)}
+.big.g{color:var(--g)}
+.mail{font-family:var(--mono);font-weight:700}
+table{width:100%;border-collapse:collapse;font-size:.86em;background:var(--paper);border-radius:.8em;overflow:hidden}
+th,td{padding:.38em .75em;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--slate);color:#fff;font-weight:700}
+td b{font-family:var(--mono)}
+tr.hl td{background:var(--soft);font-weight:700}
+.win{font-weight:800}.win.g{color:var(--g)}.win.n{color:var(--accent)}
+/* flow */
+.flow{display:flex;align-items:stretch;gap:.7em}
+.flow .card{flex:1}
+.arrow{align-self:center;font-size:1.6em;color:var(--accent);font-weight:800}
+/* bars */
+.bars{display:flex;flex-direction:column;gap:.5em}
+.bar{display:grid;grid-template-columns:15em 1fr 7.5em;align-items:center;gap:.8em}
+.bar .t{height:1.5em;border-radius:.35em;background:var(--accent)}
+.bar .t.g{background:var(--g)} .bar .t.m{background:linear-gradient(90deg,var(--accent) 0 var(--w2),var(--g) var(--w2) 100%)}
+.bar b{font-family:var(--mono);text-align:right}
+.step{display:flex;gap:.8em;align-items:flex-start;margin-bottom:.32em}
+.step i{font-style:normal;font-family:var(--mono);font-weight:700;background:var(--accent);color:#fff;border-radius:50%;min-width:1.8em;height:1.8em;display:flex;align-items:center;justify-content:center;font-size:.85em}
+.btn{display:inline-block;padding:.6em 1.2em;border-radius:.6em;font-weight:700;text-decoration:none;background:var(--accent);color:#fff;margin-right:.6em}
+.btn.alt{background:transparent;border:1px solid rgba(255,255,255,.4)}
+.circle{position:absolute;right:-8%;top:-14%;width:38%;aspect-ratio:1;border-radius:50%;background:var(--accent);opacity:.16;pointer-events:none}
+/* ===== controls ===== */
+.ctrl{position:fixed;bottom:14px;right:14px;display:flex;gap:6px;align-items:center;z-index:9;font-family:var(--mono);font-size:13px;color:#fff}
+.ctrl button{background:rgba(15,23,42,.75);color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:8px;width:38px;height:38px;font-size:17px;cursor:pointer}
+.ctrl button:hover{background:var(--accent)}
+.ctrl .n{background:rgba(15,23,42,.75);padding:9px 10px;border-radius:8px}
+.prog{position:fixed;left:0;top:0;height:4px;background:var(--accent);z-index:9;transition:width .3s}
+/* ===== điện thoại / màn dọc: cuộn từng slide ===== */
+@media (max-width:820px),(orientation:portrait){
+  html,body{height:auto}
+  body{background:var(--bg)}
+  .deck{position:static;display:block;overflow:visible}
+  .slide{position:relative;width:100%;height:auto;min-height:0;opacity:1;visibility:visible;font-size:15px;padding:36px 16px 30px;border-bottom:6px solid #0F172A}
+  .slide h1{font-size:30px}.slide h2{font-size:24px}
+  .g2,.g3,.g4{grid-template-columns:1fr}
+  .flow{flex-direction:column}.arrow{transform:rotate(90deg)}
+  .bar{grid-template-columns:1fr 6.5em}.bar span{grid-column:1/-1}
+  table{font-size:13px;display:block;overflow-x:auto}
+  .ctrl,.prog{display:none}
+}
+@media print{
+  @page{size:1280px 720px;margin:0}
+  body{background:#fff}
+  .deck{position:static;display:block}
+  .slide{position:relative;width:1280px;height:720px;opacity:1;visibility:visible;font-size:19.8px;page-break-after:always;break-after:page}
+  .ctrl,.prog{display:none}
+}
+</style>
+<link rel="canonical" href="https://duyweb.info.vn/de-xuat/hung-thinh-email-g4t9wk">
+<meta property="og:url" content="https://duyweb.info.vn/de-xuat/hung-thinh-email-g4t9wk">
+<meta name="apple-mobile-web-app-title" content="Hưng Thịnh">
+<meta name="application-name" content="Hưng Thịnh">
+<link rel="icon" type="image/png" sizes="32x32" href="/de-xuat/icon/hung-thinh-email-g4t9wk-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/de-xuat/icon/hung-thinh-email-g4t9wk-180.png">
+<link rel="manifest" href="/de-xuat/icon/hung-thinh-email-g4t9wk.webmanifest">
+</head>
+<body>
+<div class="prog" id="prog"></div>
+<main class="deck" id="deck">
+
+<!-- 1. Bìa -->
+<section class="slide dark">
+  <div class="circle"></div>
+  <div class="kicker">ĐỀ XUẤT EMAIL DOANH NGHIỆP · 18/11/2026</div>
+  <h1>Email cho Hưng Thịnh Foods:<br>giữ trên hosting NASANI<br>hay dùng Google Workspace?</h1>
+  <p class="muted" style="font-size:1.15em;max-width:38em">Từ nhu cầu thật của <span class="mail">ketoan@</span> và <span class="mail">hotro@hungthinhfoods.vn</span>, so sánh dung lượng, chi phí, điểm mạnh, hạn chế, rồi chọn phương án hợp lý nhất.</p>
+  <div class="grid g3" style="margin-top:1.4em;max-width:46em">
+    <div class="card"><div class="muted" style="font-size:.8em">Hộp thư 1</div><div class="mail">ketoan@hungthinhfoods.vn</div></div>
+    <div class="card"><div class="muted" style="font-size:.8em">Hộp thư 2</div><div class="mail">hotro@hungthinhfoods.vn</div></div>
+    <div class="card"><div class="muted" style="font-size:.8em">Thời gian làm</div><b>1–2 ngày</b></div>
+  </div>
+  <div class="foot"><span class="brand">Đức Duy <span>Web</span></span><span>Bấm → hoặc vuốt để xem tiếp</span></div>
+</section>
+
+<!-- 2. Nhu cầu -->
+<section class="slide">
+  <div class="kicker">01 · NHU CẦU</div>
+  <h2>Hai hộp thư, hai vai trò khác nhau</h2>
+  <div class="grid g2">
+    <div class="card n">
+      <span class="tag">Quan trọng nhất</span>
+      <h3 style="margin-top:.5em" class="mail">ketoan@hungthinhfoods.vn</h3>
+      <ul class="c">
+        <li>Nhận <b>hóa đơn điện tử</b> (PDF + XML) của nhà cung cấp mỗi ngày</li>
+        <li>Thư từ ngân hàng, cơ quan thuế, đối tác thanh toán</li>
+        <li>Chứng từ phải <b>lưu nhiều năm</b>, không được thất lạc</li>
+        <li>Hay bị nhắm tới bởi thư lừa "đổi số tài khoản nhận tiền"</li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="tag">Chăm khách</span>
+      <h3 style="margin-top:.5em" class="mail">hotro@hungthinhfoods.vn</h3>
+      <ul class="c">
+        <li>Khách hỏi giá, đặt hàng, đại lý liên hệ</li>
+        <li>Có thể <b>1–2 người cùng xem</b> và trả lời</li>
+        <li>Cần trả lời nhanh trên <b>điện thoại</b></li>
+        <li>Thư gửi đi phải vào hộp thư đến của khách, không rơi vào Spam</li>
+      </ul>
+    </div>
+  </div>
+  <p style="margin-top:1em"><b>Nên ưu tiên:</b> thư không mất, không vào Spam, chống giả mạo, dùng tiện trên điện thoại. Chi phí hợp lý.</p>
+  <div class="foot"><span class="brand">Đức Duy <span>Web</span></span><span>2 / 12</span></div>
+</section>
+
+<!-- 3. Cách email chạy -->
+<section class="slide">
+  <div class="kicker">02 · EMAIL TÊN MIỀN CHẠY THẾ NÀO</div>
+  <h2>Website và email có thể đặt ở hai nơi khác nhau</h2>
+  <div class="flow">
+    <div class="card"><h3>Tên miền</h3><p class="mail">hungthinhfoods.vn</p><p class="muted" style="font-size:.85em">Công ty đang sở hữu</p></div>
+    <div class="arrow">→</div>
+    <div class="card"><h3>Bản ghi DNS</h3><p style="font-size:.85em;margin:0"><b>A</b>: website ở đâu<br><b>MX</b>: thư đến đi về đâu<br><b>SPF · DKIM · DMARC</b>: chống giả mạo, chống Spam</p></div>
+    <div class="arrow">→</div>
+    <div class="card n"><h3>Website</h3><p style="font-size:.85em;margin:0">Hosting NASANI<br><span class="muted">máy chủ tại Việt Nam</span></p></div>
+    <div class="card g"><h3>Hộp thư</h3><p style="font-size:.85em;margin:0">Hosting NASANI <b>hoặc</b><br>Google Workspace</p></div>
+  </div>
+  <div class="card" style="margin-top:1.2em">
+    <b>Điểm mấu chốt:</b> chỉ cần đổi bản ghi <b>MX</b> là email chuyển sang Google, còn website vẫn ở NASANI như cũ. Hai bên không ảnh hưởng nhau. Từ năm 2024, Gmail và Yahoo bắt buộc thư gửi tới phải có SPF, DKIM, DMARC. Thiếu là dễ vào Spam, dù đặt mail ở đâu.
+  </div>
+  <div class="foot"><span class="brand">Đức Duy <span>Web</span></span><span>3 / 12</span></div>
+</section>
+
+<!-- 4. Dung lượng -->
+<section class="slide">
+  <div class="kicker">03 · HỘP THƯ KẾ TOÁN ĐẦY NHANH CỠ NÀO</div>
+  <h2>Ước tính: 3–5GB mỗi năm chỉ riêng ketoan@</h2>
+  <div class="grid g4">
+    <div class="card"><div class="big">200–500KB</div><p class="muted" style="font-size:.85em">mỗi thư hóa đơn (PDF + XML)</p></div>
+    <div class="card"><div class="big">15–20</div><p class="muted" style="font-size:.85em">hóa đơn và chứng từ mỗi ngày làm việc</p></div>
+    <div class="card"><div class="big">+ ảnh, file</div><p class="muted" style="font-size:.85em">báo giá, hợp đồng, sao kê ngân hàng</p></div>
+    <div class="card n"><div class="big">3–5GB</div><p style="font-size:.85em"><b>mỗi năm</b>, cộng dồn qua các năm vì phải lưu</p></div>
+  </div>
+  <div class="grid g2" style="margin-top:1.2em">
+    <div class="card"><h3>Trên hosting dùng chung</h3><p style="margin:0">Mail <b>dùng chung dung lượng với website</b>. Hết chỗ thì thư mới bị trả về, website có thể lỗi khi cập nhật hoặc sao lưu. Vì vậy gói hosting nền thường <b>phải nâng</b>.</p></div>
+    <div class="card g"><h3>Trên Google Workspace</h3><p style="margin:0">Mỗi người có <b>30GB riêng</b> cho mail và Drive, không đụng tới dung lượng website. Dùng được nhiều năm trước khi cần dọn hoặc nâng gói.</p></div>
+  </div>
+  <div class="foot"><span>Số liệu là ước tính theo mức trung bình, chưa đo trên hộp thư thực tế của Hưng Thịnh Foods.</span><span>4 / 12</span></div>
+</section>
+
+<!-- 5. Phương án A -->
+<section class="slide">
+  <div class="kicker">04 · PHƯƠNG ÁN A</div>
+  <h2>Email trên hosting NASANI: nâng gói nền để đủ chỗ</h2>
+  <table>
+    <tr><th>Gói hosting</th><th>Giá/tháng</th><th>Giá/năm</th><th>Địa chỉ mail</th><th>Băng thông</th><th>Phù hợp</th></tr>
+    <tr><td>2GB</td><td><b>214.920đ</b></td><td><b>2.579.040đ</b></td><td>60</td><td>40GB</td><td>Chỉ website, mail rất ít</td></tr>
+    <tr><td>3GB</td><td><b>301.320đ</b></td><td><b>3.615.840đ</b></td><td>120</td><td>70GB</td><td>Web + mail dùng khoảng 6 tháng</td></tr>
+    <tr><td>4GB</td><td><b>378.000đ</b></td><td><b>4.536.000đ</b></td><td>240</td><td>110GB</td><td>Web + mail dùng khoảng 1 năm</td></tr>
+    <tr class="hl"><td>5GB</td><td><b>438.480đ</b></td><td><b>5.261.760đ</b></td><td>Không giới hạn</td><td>Không giới hạn</td><td>Mức tối thiểu nên chọn nếu để mail trên host</td></tr>
+    <tr><td>10GB</td><td><b>648.000đ</b></td><td><b>7.776.000đ</b></td><td>Không giới hạn</td><td>Không giới hạn</td><td>Web + mail dùng 2–3 năm</td></tr>
+  </table>
+  <p style="margin-top:.9em"><b>Ví dụ:</b> web đang ở gói 2GB, dùng khoảng 1GB. Thêm hộp thư kế toán thì vài tháng là đầy, nên phải lên gói <b>5GB</b>. Như vậy mỗi năm trả thêm <b>khoảng 2,68 triệu</b> chỉ vì email.</p>
+  <div class="foot"><span>Giá theo bảng niêm yết tại nasani.vn/bang-gia-hosting.html, xem ngày 18/11/2026.</span><span>5 / 12</span></div>
+</section>
+
+<!-- 6. Phương án B -->
+<section class="slide">
+  <div class="kicker">05 · PHƯƠNG ÁN B</div>
+  <h2>Google Workspace Business Starter: hộp thư riêng, chạy bằng Gmail</h2>
+  <div class="grid g3">
+    <div class="card g"><div class="big g">~7–8,4 USD</div><p style="font-size:.85em;margin:0">mỗi người mỗi tháng, tức <b>khoảng 185–220 nghìn đồng</b> (ký năm rẻ hơn trả theo tháng)</p></div>
+    <div class="card g"><div class="big g">30GB</div><p style="font-size:.85em;margin:0">mỗi người, gồm mail và Drive, <b>tách hẳn khỏi website</b></p></div>
+    <div class="card g"><div class="big g">0đ</div><p style="font-size:.85em;margin:0">cho <span class="mail">hotro@</span> khi làm <b>bí danh</b> (alias) của tài khoản có sẵn, mỗi tài khoản có tới 30 bí danh</p></div>
+  </div>
+  <div class="grid g2" style="margin-top:1.1em">
+    <div class="card"><h3>Đi kèm</h3><ul class="c"><li>Ứng dụng Gmail trên điện thoại, quen thuộc, không cần học lại</li><li>Google Drive, Meet, Lịch, Danh bạ dùng chung</li><li>Xác minh 2 bước, trang quản trị khóa hoặc chuyển tài khoản khi nhân sự nghỉ</li></ul></div>
+    <div class="card"><h3>Cách tổ chức đề xuất</h3><ul class="c"><li><span class="mail">ketoan@</span>: <b>1 tài khoản trả phí</b></li><li><span class="mail">hotro@</span>: bí danh hoặc Nhóm Google, chuyển thư tới người phụ trách và trả lời được bằng tên hotro@</li><li>Sau này có người trực hỗ trợ riêng thì mới thêm tài khoản thứ 2</li></ul></div>
+  </div>
+  <div class="foot"><span>Giá chính thức của Google tính bằng USD. Giá VND thay đổi theo tỷ giá và đại lý, sẽ chốt khi báo giá.</span><span>6 / 12</span></div>
+</section>
+
+<!-- 7. So sánh tiêu chí -->
+<section class="slide">
+  <div class="kicker">06 · SO SÁNH THEO NHU CẦU</div>
+  <h2>Đặt cạnh nhau theo từng tiêu chí</h2>
+  <table>
+    <tr><th style="width:24%">Tiêu chí</th><th>Mail trên hosting NASANI</th><th>Google Workspace</th><th style="width:11%">Lợi hơn</th></tr>
+    <tr><td>Thư gửi đi vào hộp thư đến</td><td>Khá, nhưng IP máy chủ dùng chung với khách khác, dễ bị nghi spam</td><td>Rất tốt, máy chủ Google được các hệ thống mail tin cậy</td><td class="win g">Google</td></tr>
+    <tr><td>Lọc spam, chống lừa đảo</td><td>SpamAssassin, lọc cơ bản</td><td>Lọc thông minh, cảnh báo thư giả mạo, quét virus</td><td class="win g">Google</td></tr>
+    <tr><td>Dung lượng</td><td>Chung với website, phải nâng gói</td><td>30GB riêng mỗi người</td><td class="win g">Google</td></tr>
+    <tr><td>Web lỗi hoặc bị tấn công</td><td>Mail ngừng theo</td><td>Mail vẫn chạy bình thường</td><td class="win g">Google</td></tr>
+    <tr><td>Dùng trên điện thoại</td><td>Cài tay vào ứng dụng mail, webmail Roundcube</td><td>Ứng dụng Gmail, đăng nhập là dùng</td><td class="win g">Google</td></tr>
+    <tr><td>Nhiều nhân viên cần email</td><td>Không tính theo đầu người</td><td>Mỗi người một khoản phí</td><td class="win n">NASANI</td></tr>
+    <tr><td>Hóa đơn VAT, hỗ trợ tiếng Việt</td><td>Có sẵn, gọi là có người</td><td>Qua đại lý hoặc Duy Web hỗ trợ</td><td class="win n">NASANI</td></tr>
+    <tr><td>Một nơi quản lý</td><td>Web và mail chung một hóa đơn</td><td>Thêm một dịch vụ riêng</td><td class="win n">NASANI</td></tr>
+  </table>
+  <div class="foot"><span class="brand">Đức Duy <span>Web</span></span><span>7 / 12</span></div>
+</section>
+
+<!-- 8. Chi phí -->
+<section class="slide">
+  <div class="kicker">07 · CHI PHÍ 1 NĂM</div>
+  <h2>Chi phí ngang nhau, nhưng mail Google ổn định hơn</h2>
+  <p class="muted">Giả định web đang ở gói 2GB (2.579.040đ/năm). So sánh <b>tổng tiền 1 năm cho cả web và mail</b>.</p>
+  <div class="bars" style="margin-top:.6em">
+    <div class="bar"><span>A. NASANI nâng lên 5GB<br><small class="muted">web + mail chung</small></span><div class="t" style="width:68%"></div><b>5,26tr</b></div>
+    <div class="bar"><span>B1. Web 2GB + Google 1 tài khoản<br><small class="muted">hotro@ là bí danh</small></span><div class="t m" style="width:64%;--w2:52%"></div><b>~5tr</b></div>
+    <div class="bar"><span>B2. Web 2GB + Google 2 tài khoản<br><small class="muted">2 hộp thư riêng</small></span><div class="t m" style="width:95%;--w2:35%"></div><b>~7,4tr</b></div>
+    <div class="bar"><span>A2. NASANI 10GB<br><small class="muted">dư chỗ 2–3 năm</small></span><div class="t" style="width:100%"></div><b>7,78tr</b></div>
+  </div>
+  <p style="margin:.7em 0 .3em;font-size:.85em"><span class="tag">cam</span> NASANI &nbsp; <span class="tag g">xanh</span> Google Workspace (khoảng 2,2–2,6tr mỗi tài khoản mỗi năm)</p>
+  <p style="font-size:.95em"><b>Đọc nhanh:</b> nếu chỉ <b>1 tài khoản Google</b> thì tổng tiền ngang, thậm chí thấp hơn việc nâng gói hosting. Nếu cần <b>nhiều hộp thư riêng</b> thì hosting NASANI rẻ hơn.</p>
+  <div class="foot"><span>Giá Google quy đổi theo tỷ giá khoảng 26.000đ/USD, gói ký năm. Chưa gồm phí cài đặt.</span><span>8 / 12</span></div>
+</section>
+
+<!-- 9. Khi nào chọn NASANI -->
+<section class="slide">
+  <div class="kicker">08 · KHI NÀO NÊN CHỌN HOSTING NASANI</div>
+  <h2>NASANI là chỗ tốt cho website, và cho email trong vài trường hợp</h2>
+  <div class="grid g2">
+    <div class="card n">
+      <h3>Website: nên giữ ở NASANI</h3>
+      <ul class="c ok">
+        <li>Máy chủ đặt tại Việt Nam, khách trong nước vào web nhanh</li>
+        <li>Sao lưu định kỳ, có bảng quản trị DirectAdmin</li>
+        <li>Hỗ trợ kỹ thuật tiếng Việt 24/7, xuất hóa đơn VAT dễ</li>
+        <li>Duy Web làm đầu mối, có việc chỉ cần nhắn một người</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Email: chọn NASANI khi…</h3>
+      <ul class="c ok">
+        <li>Công ty cần <b>nhiều hộp thư</b> (từ 5–6 người trở lên) và muốn giữ chi phí cố định</li>
+        <li>Mail chủ yếu <b>nhận trong nội bộ</b>, ít gửi ra ngoài cho khách lạ</li>
+        <li>Muốn <b>một hóa đơn</b> cho cả web và mail</li>
+      </ul>
+      <p class="label" style="margin:.6em 0 .2em;font-weight:700">Hạn chế cần chấp nhận</p>
+      <ul class="c no">
+        <li>Phải nâng gói khi hộp thư lớn dần</li>
+        <li>Thư gửi ra ngoài dễ vào Spam hơn</li>
+        <li>Web có sự cố thì mail cũng ảnh hưởng</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">Đức Duy <span>Web</span></span><span>9 / 12</span></div>
+</section>
+
+<!-- 10. Vì sao Google -->
+<section class="slide">
+  <div class="kicker">09 · VÌ SAO NÊN CHỌN GOOGLE WORKSPACE CHO EMAIL</div>
+  <h2>Với Hưng Thịnh Foods, email nên chạy trên Google</h2>
+  <div class="grid g3">
+    <div class="card g"><h3>1. Hóa đơn không thất lạc</h3><p style="margin:0;font-size:.92em">30GB riêng, không bao giờ "đầy chung với web". Thư hóa đơn của nhà cung cấp luôn vào được hộp thư kế toán.</p></div>
+    <div class="card g"><h3>2. Thư gửi đi tới nơi</h3><p style="margin:0;font-size:.92em">Báo giá, xác nhận đơn hàng gửi từ hotro@ vào thẳng hộp thư đến của khách và đối tác, không rơi vào Spam.</p></div>
+    <div class="card g"><h3>3. Chống lừa đảo cho kế toán</h3><p style="margin:0;font-size:.92em">Google cảnh báo thư giả danh nhà cung cấp, chặn file độc hại, có xác minh 2 bước khi đăng nhập.</p></div>
+    <div class="card g"><h3>4. Tách rủi ro khỏi website</h3><p style="margin:0;font-size:.92em">Web bảo trì, đổi giao diện hay chuyển hosting thì mail vẫn chạy, không gián đoạn giao dịch.</p></div>
+    <div class="card g"><h3>5. Dùng ngay trên điện thoại</h3><p style="margin:0;font-size:.92em">Ứng dụng Gmail ai cũng quen. Nhân viên nghỉ việc thì chủ doanh nghiệp đổi mật khẩu, giữ lại toàn bộ thư.</p></div>
+    <div class="card g"><h3>6. Không tốn hơn</h3><p style="margin:0;font-size:.92em">Chỉ 1 tài khoản trả phí, hotro@ là bí danh. Tổng chi phí ngang việc nâng gói hosting.</p></div>
+  </div>
+  <div class="foot"><span class="brand">Đức Duy <span>Web</span></span><span>10 / 12</span></div>
+</section>
+
+<!-- 11. Đề xuất -->
+<section class="slide">
+  <div class="kicker">10 · ĐỀ XUẤT CỦA DUY WEB</div>
+  <h2>Kết hợp: website ở NASANI, email ở Google Workspace</h2>
+  <div class="grid g2">
+    <div class="card">
+      <div class="grid g2" style="gap:.7em">
+        <div class="card n" style="padding:.8em"><span class="tag">Website</span><p style="margin:.4em 0 0"><b>Giữ gói hosting NASANI hiện tại</b>, không cần nâng vì mail không còn chiếm chỗ.</p></div>
+        <div class="card g" style="padding:.8em"><span class="tag g">Email</span><p style="margin:.4em 0 0"><b>Google Workspace Starter</b>: 1 tài khoản <span class="mail">ketoan@</span>, kèm bí danh <span class="mail">hotro@</span>.</p></div>
+      </div>
+      <p style="margin:.9em 0 0;font-size:.92em">Khi cần thêm người trực hỗ trợ, tách <span class="mail">hotro@</span> thành tài khoản riêng chỉ mất vài phút. Toàn bộ thư cũ vẫn còn.</p>
+    </div>
+    <div class="card">
+      <h3>Các bước triển khai (1–2 ngày)</h3>
+      <div class="step"><i>1</i><span>Chốt phương án và đăng ký Google Workspace đứng tên công ty</span></div>
+      <div class="step"><i>2</i><span>Xác minh tên miền, tạo <span class="mail">ketoan@</span> và bí danh <span class="mail">hotro@</span></span></div>
+      <div class="step"><i>3</i><span>Trỏ MX, cài SPF, DKIM, DMARC, <b>giữ nguyên bản ghi của website</b></span></div>
+      <div class="step"><i>4</i><span>Gửi thư thử tới Gmail, Outlook, Yahoo, kiểm tra không vào Spam</span></div>
+      <div class="step"><i>5</i><span>Cài Gmail trên điện thoại và máy tính, làm chữ ký email theo thương hiệu</span></div>
+      <div class="step"><i>6</i><span>Bàn giao <b>tài khoản quản trị cho chủ doanh nghiệp</b></span></div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">Đức Duy <span>Web</span></span><span>11 / 12</span></div>
+</section>
+
+<!-- 12. Liên hệ -->
+<section class="slide dark">
+  <div class="circle"></div>
+  <div class="kicker">BƯỚC TIẾP THEO</div>
+  <h1>Chọn phương án,<br>Duy Web lo phần kỹ thuật</h1>
+  <p class="muted" style="font-size:1.1em;max-width:36em">Anh/chị nhắn lại phương án muốn dùng: <b style="color:#fff">kết hợp NASANI + Google</b> (đề xuất) hoặc <b style="color:#fff">để cả web và mail trên NASANI</b>. Bên em gửi báo giá chốt kèm phí cài đặt trong ngày.</p>
+  <div style="margin-top:1.2em">
+    <a class="btn" href="https://zalo.me/0938415218" target="_blank" rel="noopener">Nhắn Zalo 0938.415.218</a>
+    <a class="btn alt" href="tel:0938415218">Gọi ngay</a>
+  </div>
+  <p class="muted" style="margin-top:1.2em">contact@ducduyweb.vn · duyweb.info.vn</p>
+  <div class="foot"><span>Giá NASANI theo bảng niêm yết ngày 18/11/2026. Giá Google theo bảng giá chính thức bằng USD, giá VND chỉ để tham khảo.</span><span>12 / 12</span></div>
+</section>
+
+</main>
+<div class="ctrl"><button id="prev" aria-label="Slide trước">‹</button><span class="n" id="num">1 / 12</span><button id="next" aria-label="Slide sau">›</button></div>
+<script>
+(function(){
+  var S=[].slice.call(document.querySelectorAll('.slide')),i=0,prog=document.getElementById('prog'),num=document.getElementById('num');
+  function go(n){i=Math.max(0,Math.min(S.length-1,n));S.forEach(function(s,k){s.classList.toggle('on',k===i)});
+    prog.style.width=((i+1)/S.length*100)+'%';num.textContent=(i+1)+' / '+S.length;
+    try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
+  var h=parseInt((location.hash||'').slice(1),10);go(h>0?h-1:0);
+  document.getElementById('prev').onclick=function(){go(i-1)};
+  document.getElementById('next').onclick=function(){go(i+1)};
+  document.addEventListener('keydown',function(e){
+    if(['ArrowRight','PageDown',' '].indexOf(e.key)>=0){e.preventDefault();go(i+1)}
+    else if(['ArrowLeft','PageUp'].indexOf(e.key)>=0){e.preventDefault();go(i-1)}
+    else if(e.key==='Home')go(0); else if(e.key==='End')go(S.length-1);});
+  var x0=null;document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  document.addEventListener('touchend',function(e){if(x0===null)return;var d=e.changedTouches[0].clientX-x0;
+    if(Math.abs(d)>50&&!matchMedia('(max-width:820px),(orientation:portrait)').matches)go(d<0?i+1:i-1);x0=null});
+})();
+</script>
+<script src="/quote-track.js" data-version="v2" defer></script>
+</body>
+</html>
