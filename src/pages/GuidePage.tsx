@@ -1,6 +1,6 @@
 import { Fragment, useState, type ReactNode } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
-import { AlertTriangle, ArrowRight, CalendarDays, CheckSquare, ExternalLink, HelpCircle, LifeBuoy, MessageCircle, ShieldCheck, Square, Users } from "lucide-react";
+import { AlertTriangle, ArrowRight, Bot, CalendarDays, CheckSquare, ExternalLink, HelpCircle, LifeBuoy, MessageCircle, ShieldCheck, Square, Users } from "lucide-react";
 import Meta from "../components/Meta";
 import Schema from "../components/Schema";
 import { socialConfig } from "../config/social";
@@ -68,13 +68,13 @@ export default function GuidePage() {
                 </Link>
               ))}
               <a href={socialConfig.zalo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center rounded-sm border border-white/30 hover:bg-white/10 px-5 py-3 text-xs font-bold uppercase tracking-wider">
-                <MessageCircle className="h-4 w-4 mr-2" /> Nhờ Duy xem kênh giúp
+                <MessageCircle className="h-4 w-4 mr-2" /> {guide.closing.zaloLabel ?? "Nhờ Duy xem kênh giúp"}
               </a>
             </div>
           </section>
 
           <p className="text-xs text-gray-500 leading-relaxed">
-            Chính sách của các nền tảng thay đổi thường xuyên. Bài này tóm tắt những điểm hay gặp ở thời điểm cập nhật, không thay thế quy định chính thức:{" "}
+            {guide.sourcesNote ?? "Chính sách của các nền tảng thay đổi thường xuyên. Bài này tóm tắt những điểm hay gặp ở thời điểm cập nhật, không thay thế quy định chính thức:"}{" "}
             {guide.sources.map((s, i) => (
               <Fragment key={s.href}>
                 {i > 0 && " · "}
@@ -253,7 +253,8 @@ const icons: Record<GuideIcon, ReactNode> = {
   life: <LifeBuoy className="h-5 w-5" />,
   users: <Users className="h-5 w-5" />,
   calendar: <CalendarDays className="h-5 w-5" />,
-  faq: <HelpCircle className="h-5 w-5" />
+  faq: <HelpCircle className="h-5 w-5" />,
+  bot: <Bot className="h-5 w-5" />
 };
 
 function SectionTitle({ icon, title, children }: { icon?: GuideIcon; title: string; children?: ReactNode }) {

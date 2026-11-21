@@ -37,7 +37,7 @@ export const knowledgeItems: KnowledgeItem[] = [
     slug: g.slug,
     title: g.title,
     summary: g.summary,
-    topic: "Chọn kênh" as const,
+    topic: g.topic ?? ("Chọn kênh" as const),
     source: "Cẩm nang" as const,
     href: `/kien-thuc/${g.slug}`,
     readingTime: g.readingTime,

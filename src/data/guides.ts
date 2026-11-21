@@ -2,7 +2,8 @@
 import type { Guide } from "./guideTypes";
 import { socialGuide } from "./socialGuide";
 import { birdAffiliateGuide } from "./birdAffiliateGuide";
+import { chatbotAiGuide } from "./chatbotAiGuide";
 
-export const guides: Guide[] = [socialGuide, birdAffiliateGuide];
+export const guides: Guide[] = [chatbotAiGuide, socialGuide, birdAffiliateGuide];
 
 export const findGuide = (slug?: string) => guides.find((g) => g.slug === slug);

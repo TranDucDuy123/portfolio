@@ -1,7 +1,9 @@
+import type { KnowledgeTopic } from "./knowledge";
+
 // Khung dữ liệu chung cho các trang cẩm nang tại /kien-thuc/<slug>.
 // Mỗi cẩm nang là một danh sách khối (block); GuidePage tự dựng giao diện theo loại khối.
 
-export type GuideIcon = "shield" | "alert" | "check" | "life" | "users" | "calendar" | "faq";
+export type GuideIcon = "shield" | "alert" | "check" | "life" | "users" | "calendar" | "faq" | "bot";
 
 // Nhãn nằm trên thẻ: tên nền tảng hoặc loại nội dung. ALWAYS_TAG luôn hiện khi lọc theo nhãn khác.
 export const ALWAYS_TAG = "Cả hai";
@@ -47,7 +49,9 @@ export interface Guide {
   updated: string; // Ghi dạng hiển thị, vd "27/10/2026"
   date: string; // ISO, cho schema
   readingTime: string;
+  topic?: KnowledgeTopic; // Chủ đề trong thư viện Kiến thức, mặc định "Chọn kênh"
   blocks: GuideBlock[];
-  closing: { title: string; text: string; links: { label: string; href: string }[] };
+  closing: { title: string; text: string; links: { label: string; href: string }[]; zaloLabel?: string };
   sources: { label: string; href: string }[];
+  sourcesNote?: string; // Câu dẫn trước danh sách nguồn, mặc định nói về chính sách nền tảng
 }
