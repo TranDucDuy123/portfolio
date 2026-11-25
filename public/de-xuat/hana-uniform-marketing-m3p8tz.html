@@ -156,6 +156,76 @@ td.c{text-align:center}
 .close p{margin-top:8px;opacity:.9;max-width:66ch}
 .foot{margin:28px 0 40px;font-size:13px;color:var(--muted);text-align:center}
 
+/* part headers */
+.part{margin-top:56px;padding:18px 20px;border-radius:var(--r);background:var(--sunk);display:grid;gap:4px}
+.part .eyebrow{color:var(--muted)}
+.part h2{font-size:clamp(1.4rem,3.8vw,1.9rem);font-weight:800}
+.part p{color:var(--muted);max-width:68ch}
+
+/* 5P chain + priority */
+.chain{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:18px;font-size:14px;font-weight:600}
+.chain span{background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:6px 12px}
+.chain span.end{background:var(--lime);border-color:var(--lime);color:#14181A}
+.chain i{font-style:normal;color:var(--muted)}
+.prio{display:grid;gap:8px;margin-top:18px}
+.pr{display:grid;grid-template-columns:28px 130px minmax(0,1fr) 44px;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.pr .o{width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-size:13px;font-weight:700}
+.pr b{font-size:14.5px}
+.pr .meter{display:grid;grid-template-columns:repeat(5,1fr);gap:3px}
+.pr .meter i{height:8px;border-radius:2px;background:var(--sunk)}
+.pr .meter i.on{background:var(--accent)}
+.pr .sc{font-weight:800;text-align:right;font-variant-numeric:tabular-nums}
+.pr p{grid-column:2/-1;font-size:13.5px;color:var(--muted)}
+@media(max-width:560px){.pr{grid-template-columns:28px minmax(0,1fr) 44px}.pr .meter{grid-column:2/-1;grid-row:2}.pr p{grid-row:3}}
+
+/* P blocks */
+.pblk{margin-top:40px;scroll-margin-top:56px}
+.pblk .ph{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.pblk .pn{font-size:13px;font-weight:800;color:var(--surface);background:var(--accent);border-radius:8px;padding:3px 9px}
+.pblk h3.t{font-size:clamp(1.2rem,3.2vw,1.5rem);font-weight:800}
+.pblk .en{color:var(--muted);font-size:14px}
+.core{margin-top:10px;font-size:1.02rem;font-weight:600;max-width:66ch}
+.sub3{margin-top:22px;font-size:1rem;font-weight:700}
+.decide{margin-top:14px;background:var(--lime-soft);border:1px solid color-mix(in srgb,var(--lime) 55%,var(--line));border-radius:12px;padding:14px 16px;font-size:14.5px}
+.decide b{color:var(--lime-ink)}
+.decide ul{margin-top:6px}
+.org{display:grid;gap:10px;margin-top:16px}
+.org .top1{justify-self:center;text-align:center;background:var(--ink);color:var(--bg);border-radius:12px;padding:12px 22px}
+.org .top1 span{display:block;font-size:12.5px;opacity:.75}
+.org .row4{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));position:relative;padding-top:14px;border-top:2px solid var(--line)}
+.org .u{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}
+.org .u b{display:block}
+.org .u span{font-size:12.5px;color:var(--muted)}
+.calc{display:grid;gap:12px;margin-top:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+.math{display:grid;gap:6px;font-size:14.5px}
+.math div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+.math div:last-child{border:0;font-weight:800;color:var(--accent-ink)}
+
+/* scorecard */
+.score-wrap{margin-top:18px;display:grid;gap:14px}
+.score-head{position:sticky;top:46px;z-index:4;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between;background:var(--ink);color:var(--bg);border-radius:var(--r);padding:14px 18px}
+.score-head .big{font-size:2rem;font-weight:800;font-variant-numeric:tabular-nums;line-height:1}
+.score-head .big small{font-size:1rem;opacity:.6}
+.score-head .verdict{font-size:14px;max-width:46ch;opacity:.9}
+.score-head .subs{display:flex;gap:6px;flex-wrap:wrap}
+.score-head .subs span{font-size:12px;border:1px solid color-mix(in srgb,var(--bg) 25%,transparent);border-radius:99px;padding:2px 9px;font-variant-numeric:tabular-nums}
+.sgroup h4{margin:0;font-size:15px;display:flex;justify-content:space-between;gap:10px}
+.sgroup h4 span{color:var(--muted);font-variant-numeric:tabular-nums;font-weight:600}
+.crit{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 0;border-top:1px solid var(--line);font-size:14.5px}
+.crit:first-of-type{border-top:0}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.seg button{font:inherit;font-size:14px;font-weight:700;width:38px;height:34px;border:0;border-left:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
+.seg button:first-child{border-left:0}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+.seg button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.scale{font-size:13px;color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.btn{font:inherit;font-weight:700;font-size:14px;border-radius:99px;padding:10px 18px;border:1.5px solid var(--ink);background:var(--ink);color:var(--bg);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink)}
+.toast{font-size:13.5px;color:var(--accent-ink);min-height:1.2em}
+@media(max-width:700px){.score-head{position:static}}
+@media print{.score-head{position:static}.actions{display:none}}
+
 @media print{
   nav.toc{display:none}
   body{background:#fff;color:#000}
@@ -172,6 +242,8 @@ td.c{text-align:center}
 
 <nav class="toc" aria-label="Mục lục">
   <div class="wrap">
+    <a href="#nam-yeu-to">5 yếu tố</a>
+    <a href="#tu-cham">Tự chấm 60 điểm</a>
     <a href="#dinh-huong">Định hướng</a>
     <a href="#kenh">Vai trò kênh</a>
     <a href="#ngan-sach">Ngân sách</a>
@@ -194,7 +266,7 @@ td.c{text-align:center}
       <div class="stat"><b class="num">15 triệu</b><span>ngân sách khởi tạo (website + setup kênh)</span></div>
       <div class="stat"><b>8 tuần</b><span>từ chốt chiến lược đến có số liệu thật</span></div>
       <div class="stat"><b>4 kênh</b><span>Website, Facebook, TikTok Shop, Shopee</span></div>
-      <div class="stat"><b class="num">3–5 triệu</b><span>thử nghiệm nội dung và quảng cáo tháng đầu, tính riêng</span></div>
+      <div class="stat"><b class="num">19 triệu</b><span>Marketing giai đoạn 2, tính riêng; tổng đầu tư 34 triệu</span></div>
     </div>
   </header>
 
@@ -205,8 +277,271 @@ td.c{text-align:center}
       <li><b>Ngân sách khởi tạo 15.000.000đ</b> cho website và setup 3 kênh.</li>
       <li><b>Lộ trình 8 tuần</b> và cơ chế báo cáo tuần, tháng.</li>
       <li><b>Mẫu sản phẩm thứ tư</b> và 7 hạng mục còn lại trong mục <a href="#can-chot">Cần chốt</a>, hạn cuối tuần 1.</li>
-      <li><b>Khoản thử nghiệm 3–5 triệu</b> cho tháng đầu sau khi nền tảng xong (ngoài 15 triệu).</li>
+      <li><b>Ngân sách Marketing 19.000.000đ</b> cho giai đoạn 2 (KOC, tài trợ cộng đồng, nội dung, quảng cáo), ngoài 15 triệu khởi tạo. Tổng đầu tư 34 triệu.</li>
+      <li><b>Cùng Duy chấm điểm thực trạng</b> theo <a href="#tu-cham">bảng 60 điểm</a> trước khi giải ngân giai đoạn 2.</li>
     </ol>
+  </div>
+
+  <!-- ===== PHẦN A: 5 YẾU TỐ ===== -->
+  <div class="part" id="nam-yeu-to">
+    <p class="eyebrow">Phần A</p>
+    <h2>Phân tích 5 yếu tố kinh doanh của Hana</h2>
+    <p>Nhìn dưới góc độ quản trị, không riêng Marketing. Đây là 5 yếu tố quyết định Hana bán được hàng, có lãi và phát triển lâu dài hay không, và là căn cứ để Founder quyết định có đầu tư thêm tiền hay chưa. Mô hình lấy 4P Marketing truyền thống (Product, Place, Price, Promotion) và thêm People, yếu tố con người trong bán hàng và vận hành.</p>
+  </div>
+
+  <section class="sec" style="margin-top:28px">
+    <h2>Chuỗi tạo ra lợi nhuận</h2>
+    <p class="lead">Năm yếu tố phải nối với nhau. Sản phẩm tốt mà giá sai vẫn khó bán. Quảng cáo tốt mà người xử lý đơn kém vẫn mất khách. Có đơn mà không kiểm soát giá vốn vẫn có thể lỗ.</p>
+    <div class="chain" aria-label="Chuỗi: sản phẩm, giá, nơi tiếp cận, người phục vụ, marketing, doanh thu">
+      <span>Sản phẩm tốt</span><i>→</i><span>Giá hợp lý</span><i>→</i><span>Có nơi tiếp cận</span><i>→</i><span>Có người phục vụ</span><i>→</i><span>Marketing tạo nhu cầu</span><i>→</i><span class="end">Doanh thu và lợi nhuận</span>
+    </div>
+
+    <h3 class="sub3" style="margin-top:28px">Mức ưu tiên và thứ tự làm</h3>
+    <p class="muted" style="font-size:14px;margin-top:4px">Điểm ưu tiên quản trị đề xuất, không phải điểm hiện trạng của Hana. Quảng cáo đứng cuối không phải vì kém quan trọng, mà vì chỉ nên tăng tốc khi 4 yếu tố trước đã sẵn sàng.</p>
+    <div class="prio">
+      <div class="pr"><span class="o">1</span><b>Sản phẩm</b><span class="meter" aria-label="5 trên 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="sc">5/5</span><p>Chốt mẫu, chất liệu và năng lực sản xuất. Phải có chất lượng và lợi thế rõ.</p></div>
+      <div class="pr"><span class="o">2</span><b>Giá bán</b><span class="meter" aria-label="5 trên 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="sc">5/5</span><p>Tính giá vốn và chính sách giá. Phải biết biên lợi nhuận trước khi chạy quảng cáo.</p></div>
+      <div class="pr"><span class="o">3</span><b>Con người</b><span class="meter" aria-label="4 trên 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="sc">4/5</span><p>Có người trả lời, báo giá, chốt đơn và quy trình bán hàng.</p></div>
+      <div class="pr"><span class="o">4</span><b>Địa điểm bán</b><span class="meter" aria-label="4 trên 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="sc">4/5</span><p>Hoàn thiện hệ thống online và các điểm tiếp cận offline.</p></div>
+      <div class="pr"><span class="o">5</span><b>Quảng cáo</b><span class="meter" aria-label="3 trên 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="sc">3/5</span><p>Đẩy mạnh khi các nền tảng đã sẵn sàng.</p></div>
+    </div>
+    <p class="note">Mỗi yếu tố bên dưới trả lời 4 câu: cần đánh giá gì, mạnh và rủi ro ở đâu, Hana cần chuẩn bị gì, Founder cần quyết điều gì.</p>
+  </section>
+
+  <!-- P1 -->
+  <div class="pblk" id="p-san-pham">
+    <div class="ph"><span class="pn">01</span><h3 class="t">Sản phẩm</h3><span class="en">Product</span></div>
+    <p class="core">Hana đang bán cái gì, và vì sao khách phải chọn Hana thay vì bên khác?</p>
+    <p class="muted" style="margin-top:6px;max-width:66ch">Định vị là thương hiệu đồng phục thể thao cho người chơi cá nhân, đội nhóm và CLB, không phải chỗ bán áo thể thao. Danh mục đầu: Pickleball (ưu tiên thử nghiệm), Cầu lông, Chạy bộ và mẫu thứ tư chưa chốt (bóng đá là ứng viên đáng cân nhắc vì nhiều đội bóng và giải phong trào).</p>
+
+    <h4 class="sub3">Tiêu chí cần đánh giá</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Tiêu chí</th><th>Câu hỏi cần trả lời</th></tr></thead>
+        <tbody>
+          <tr><td><b>Chất lượng</b></td><td>Vải có thoáng, co giãn, thấm hút tốt không?</td></tr>
+          <tr><td><b>Thiết kế</b></td><td>Có đẹp, khác biệt, hợp xu hướng không?</td></tr>
+          <tr><td><b>Form dáng</b></td><td>Có hợp nam, nữ và nhiều vóc dáng?</td></tr>
+          <tr><td><b>Chất liệu</b></td><td>Có nhiều phân khúc chất liệu không?</td></tr>
+          <tr><td><b>Kích thước</b></td><td>Có bảng size và quy chuẩn rõ ràng?</td></tr>
+          <tr><td><b>Sản xuất</b></td><td>Có chủ động sản xuất và kiểm soát lỗi?</td></tr>
+          <tr><td><b>Khác biệt</b></td><td>Vì sao khách chọn Hana thay vì đối thủ?</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 class="sub3">Ba dòng sản phẩm, ba mức giá</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Dòng</th><th>Mục tiêu</th><th>Đối tượng</th><th>Mức giá</th></tr></thead>
+        <tbody>
+          <tr><td><b>Basic</b></td><td>Dễ mua, bán lẻ</td><td>Người mua lần đầu, cá nhân</td><td>Entry</td></tr>
+          <tr><td><b>Premium</b></td><td>Tăng giá trị đơn</td><td>Người chơi thường xuyên</td><td>Premium</td></tr>
+          <tr><td class="lead-cell">Custom Team</td><td>Đơn giá trị cao, đặt lại theo mùa</td><td>CLB, đội nhóm</td><td>Theo bậc số lượng</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note warn">Phải có <b>áo mẫu thật</b> để chụp, quay và đưa CLB mặc thử. Không bán bằng hình 3D. Khách đội nhóm gần như luôn đòi sờ vải, xem đường in trước khi đặt cọc.</p>
+
+    <div class="decide"><b>Founder cần chốt:</b>
+      <ul><li>4 mẫu chủ lực, 2–3 loại chất liệu, bảng size.</li><li>Áo mẫu thực tế cho từng môn.</li><li>Quy trình đặt thiết kế riêng.</li><li>Chính sách đổi trả và xử lý lỗi sản xuất.</li></ul>
+    </div>
+  </div>
+
+  <!-- P2 -->
+  <div class="pblk" id="p-dia-diem">
+    <div class="ph"><span class="pn">02</span><h3 class="t">Địa điểm bán</h3><span class="en">Place</span></div>
+    <p class="core">Khách tìm thấy Hana ở đâu, và mua bằng cách nào?</p>
+    <p class="muted" style="margin-top:6px;max-width:66ch">Không cần cửa hàng ngay. Online tạo độ phủ, offline tạo trải nghiệm, website gom thông tin và nhu cầu đặt hàng.</p>
+
+    <div class="grid g2">
+      <div class="card">
+        <h3>Online</h3>
+        <ul>
+          <li><b>Website:</b> thương hiệu, sản phẩm, SEO, nhận yêu cầu báo giá đội.</li>
+          <li><b>Facebook:</b> xây niềm tin, tương tác, tiếp cận CLB.</li>
+          <li><b>TikTok Shop:</b> bán qua video, KOC, Affiliate, livestream.</li>
+          <li><b>Shopee:</b> khách đang tìm và mua áo trực tiếp.</li>
+        </ul>
+        <p class="muted">Chi tiết từng kênh ở <a href="#kenh">mục 2 Phần B</a>.</p>
+      </div>
+      <div class="card">
+        <h3>Offline · tiếp cận cộng đồng</h3>
+        <ul>
+          <li>Hợp tác sân pickleball, CLB cầu lông.</li>
+          <li>Tài trợ giải chạy, giải phong trào.</li>
+          <li>Mang áo mẫu đến các điểm tập.</li>
+          <li>Cộng tác viên, đại lý tại địa phương.</li>
+          <li>Tham gia sự kiện thể thao.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>Kênh</th><th>Vai trò</th><th>Ưu tiên</th></tr></thead>
+        <tbody>
+          <tr><td>Website</td><td>Thương hiệu, nhận đơn đặt riêng</td><td><span class="pill p1">Cao</span></td></tr>
+          <tr><td>Facebook</td><td>Tương tác, bán cho CLB</td><td><span class="pill p1">Cao</span></td></tr>
+          <tr><td>TikTok (nội dung)</td><td>Nhận diện, KOC</td><td><span class="pill p1">Cao</span></td></tr>
+          <tr><td>CLB thể thao</td><td>Tiếp cận trực tiếp</td><td><span class="pill p1">Cao</span></td></tr>
+          <tr><td>TikTok Shop</td><td>Bán lẻ</td><td><span class="pill p2">Trung bình</span></td></tr>
+          <tr><td>Shopee</td><td>Bán lẻ</td><td><span class="pill p2">Trung bình</span></td></tr>
+          <tr><td>Cửa hàng riêng</td><td>Trưng bày, bán trực tiếp</td><td><span class="pill">Chưa cần</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- P3 -->
+  <div class="pblk" id="p-con-nguoi">
+    <div class="ph"><span class="pn">03</span><h3 class="t">Con người</h3><span class="en">People</span></div>
+    <p class="core">Ai làm ra sản phẩm, ai bán, ai chăm sóc khách?</p>
+    <p class="muted" style="margin-top:6px;max-width:66ch">Yếu tố hay bị quên nhất khi bắt đầu chi tiền Marketing. Quảng cáo tốt mà không ai trả lời tin nhắn, báo giá chậm hoặc giao hàng lỗi thì vẫn thất bại.</p>
+
+    <h4 class="sub3">Sơ đồ tổ chức ban đầu</h4>
+    <div class="org">
+      <div class="top1"><b>Founder</b><span>Quản trị · Sản phẩm · Tài chính</span></div>
+      <div class="row4">
+        <div class="u"><b>Marketing</b><span>Thương hiệu · Nội dung · Quảng cáo</span></div>
+        <div class="u"><b>Kinh doanh</b><span>Tư vấn · Báo giá · Chốt đơn · CSKH</span></div>
+        <div class="u"><b>Sản xuất</b><span>Thiết kế · Gia công · Kiểm lỗi</span></div>
+        <div class="u"><b>Vận hành</b><span>Kho · Giao hàng · Kế toán</span></div>
+      </div>
+    </div>
+    <p class="muted" style="font-size:14px;margin-top:10px">Không cần tuyển đủ ngay. Giai đoạn đầu có thể kiêm nhiệm hoặc thuê ngoài, miễn mỗi việc có tên một người chịu trách nhiệm.</p>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>Bộ phận</th><th>Trách nhiệm</th><th>KPI</th></tr></thead>
+        <tbody>
+          <tr><td><b>Marketing</b></td><td>Thương hiệu, nội dung, quảng cáo</td><td>Khách tiềm năng, CPL, độ phủ, số nội dung</td></tr>
+          <tr><td><b>Sales</b></td><td>Tư vấn, báo giá, chốt đơn</td><td>Tỷ lệ chốt, doanh thu, giá trị đơn</td></tr>
+          <tr><td><b>Thiết kế</b></td><td>Thiết kế, chỉnh mẫu áo</td><td>Thời gian ra mẫu, số lần sửa</td></tr>
+          <tr><td><b>Sản xuất</b></td><td>Chất lượng và tiến độ</td><td>Tỷ lệ lỗi, thời gian hoàn thành</td></tr>
+          <tr><td><b>Kho</b></td><td>Tồn kho, đóng gói</td><td>Sai lệch tồn kho, giao đúng hàng</td></tr>
+          <tr><td><b>CSKH</b></td><td>Hậu mãi, khiếu nại</td><td>Tốc độ phản hồi, tỷ lệ khiếu nại</td></tr>
+          <tr><td><b>Kế toán</b></td><td>Doanh thu, chi phí, công nợ, thuế</td><td>Báo cáo đúng hạn, đối chiếu công nợ</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note"><b>Chỉ số đáng theo dõi nhất: thời gian phản hồi.</b> CLB hỏi báo giá mà chờ một ngày mới có trả lời thì nhiều khả năng đã đặt bên khác. Đề xuất mục tiêu: trả lời tin nhắn trong 15–30 phút giờ làm việc, gửi báo giá sơ bộ trong ngày.</p>
+  </div>
+
+  <!-- P4 -->
+  <div class="pblk" id="p-gia">
+    <div class="ph"><span class="pn">04</span><h3 class="t">Giá bán</h3><span class="en">Price</span></div>
+    <p class="core">Giá có đủ cạnh tranh, đủ lãi và hợp với định vị không?</p>
+    <p class="muted" style="margin-top:6px;max-width:66ch">Đừng định giá bằng cách xem đối thủ bán bao nhiêu rồi bán thấp hơn. Cần nắm 3 lớp: giá vốn, giá bán, lợi nhuận thực tế.</p>
+
+    <div class="calc">
+      <div class="card">
+        <h3>Ví dụ giá vốn một áo</h3>
+        <div class="math" style="margin-top:10px">
+          <div><span>Vải, nguyên liệu</span><span class="num">35.000đ</span></div>
+          <div><span>Gia công</span><span class="num">25.000đ</span></div>
+          <div><span>In ấn</span><span class="num">15.000đ</span></div>
+          <div><span>Bao bì</span><span class="num">5.000đ</span></div>
+          <div><span>Chi phí sản xuất khác</span><span class="num">10.000đ</span></div>
+          <div><span>Tổng giá vốn</span><span class="num">90.000đ</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Nếu bán 180.000đ/áo</h3>
+        <div class="math" style="margin-top:10px">
+          <div><span>Doanh thu</span><span class="num">180.000đ</span></div>
+          <div><span>Giá vốn</span><span class="num">−90.000đ</span></div>
+          <div><span>Lợi nhuận gộp</span><span class="num">90.000đ · 50%</span></div>
+        </div>
+        <p class="muted">Đây mới là lãi gộp, chưa trừ quảng cáo, phí sàn, hỗ trợ vận chuyển, vận hành và thuế. Lãi thật có thể chỉ còn một nửa con số này.</p>
+      </div>
+    </div>
+
+    <h4 class="sub3">Bảng giá đội theo số lượng (ví dụ cấu trúc)</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Số lượng</th><th class="r">Giá/áo</th></tr></thead>
+        <tbody>
+          <tr><td>1–5 áo</td><td class="r">220.000đ</td></tr>
+          <tr><td>6–20 áo</td><td class="r">190.000đ</td></tr>
+          <tr><td>21–50 áo</td><td class="r">170.000đ</td></tr>
+          <tr><td>Trên 50 áo</td><td class="r">Báo giá riêng</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note warn">Toàn bộ số trong mục này là <b>giả định để minh họa cấu trúc</b>. Giá thật phải tính từ chi phí sản xuất, chất liệu, độ phức tạp thiết kế và chính sách của Hana.</p>
+
+    <div class="decide"><b>Chính sách giá cần có:</b>
+      <ul><li>Giá lẻ, giá nhóm, giá CLB.</li><li>Giá đại lý, cộng tác viên, giá tài trợ.</li><li>Ưu đãi khách cũ đặt lại.</li><li><b>Mức chiết khấu tối đa</b> để người bán không tự giảm giá ăn vào lợi nhuận.</li></ul>
+    </div>
+  </div>
+
+  <!-- P5 -->
+  <div class="pblk" id="p-marketing">
+    <div class="ph"><span class="pn">05</span><h3 class="t">Quảng cáo và Marketing</h3><span class="en">Promotion</span></div>
+    <p class="core">Làm sao để khách biết, quan tâm, tin và mua Hana?</p>
+    <p class="muted" style="margin-top:6px;max-width:66ch">Marketing không đồng nghĩa với chạy quảng cáo. Chia thành 4 hoạt động, mỗi hoạt động một mục tiêu.</p>
+
+    <div class="grid g2">
+      <div class="card"><h3>Brand · xây thương hiệu</h3><p class="muted">Để người chơi biết Hana.</p><ul><li>KOC trải nghiệm, tặng áo người chơi.</li><li>Tài trợ CLB, phát triển cộng đồng.</li><li>Hình ảnh nhận diện, câu chuyện thương hiệu.</li></ul></div>
+      <div class="card"><h3>Content · nội dung</h3><p class="muted">Tạo lý do để khách quan tâm.</p><ul><li>Sản phẩm, kiến thức thể thao.</li><li>Phong cách sống, câu chuyện khách hàng.</li><li>Chương trình bán hàng. Chi tiết ở <a href="#noi-dung">mục 5 Phần B</a>.</li></ul></div>
+      <div class="card"><h3>Performance · quảng cáo hiệu suất</h3><p class="muted">Kéo khách có khả năng mua.</p><ul><li>Facebook Ads, TikTok Ads.</li><li>Shopee Ads, TikTok Shop Ads.</li></ul></div>
+      <div class="card"><h3>Trade · tiếp thị tại điểm</h3><p class="muted">Thúc quyết định mua ngay tại cộng đồng.</p><ul><li>Tài trợ giải đấu, booth trưng bày.</li><li>Áo mẫu mặc thử, voucher cho CLB.</li><li>Chương trình giới thiệu bạn bè.</li></ul></div>
+    </div>
+
+    <h4 class="sub3">Phân bổ 19 triệu Marketing giai đoạn 2</h4>
+    <div class="bbar" role="img" aria-label="KOC 5 triệu, tài trợ cộng đồng 4 triệu, nội dung 4 triệu, quảng cáo 4 triệu, voucher 1 triệu, dự phòng 1 triệu">
+      <i style="flex:5;background:var(--accent)"></i>
+      <i style="flex:4;background:#3E8FC4"></i>
+      <i style="flex:4;background:var(--lime)"></i>
+      <i style="flex:4;background:#E58A3A"></i>
+      <i style="flex:1;background:#B4566E"></i>
+      <i style="flex:1;background:var(--muted)"></i>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Hạng mục</th><th>Thuộc hoạt động</th><th class="r">Ngân sách</th></tr></thead>
+        <tbody>
+          <tr><td><span class="legend" style="margin:0"><span><i style="background:var(--accent)"></i>KOC và tặng áo trải nghiệm</span></span></td><td>Brand</td><td class="r">5.000.000</td></tr>
+          <tr><td><span class="legend" style="margin:0"><span><i style="background:#3E8FC4"></i>Tài trợ cộng đồng, offline</span></span></td><td>Trade</td><td class="r">4.000.000</td></tr>
+          <tr><td><span class="legend" style="margin:0"><span><i style="background:var(--lime)"></i>Sản xuất nội dung</span></span></td><td>Content</td><td class="r">4.000.000</td></tr>
+          <tr><td><span class="legend" style="margin:0"><span><i style="background:#E58A3A"></i>Quảng cáo Facebook, TikTok</span></span></td><td>Performance</td><td class="r">4.000.000</td></tr>
+          <tr><td><span class="legend" style="margin:0"><span><i style="background:#B4566E"></i>Voucher, khuyến mãi</span></span></td><td>Trade</td><td class="r">1.000.000</td></tr>
+          <tr><td><span class="legend" style="margin:0"><span><i style="background:var(--muted)"></i>Dự phòng thử nghiệm</span></span></td><td>—</td><td class="r">1.000.000</td></tr>
+          <tr class="total"><td>Tổng</td><td></td><td class="r">19.000.000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">15 triệu website và setup kênh tính riêng. Tổng đầu tư hai giai đoạn: <b>34.000.000đ</b>.</p>
+  </div>
+
+  <!-- Scorecard -->
+  <section class="sec" id="tu-cham">
+    <h2>Chấm điểm thực trạng Hana cùng Founder</h2>
+    <p class="lead">Để chuyển từ phân tích sang quyết định đầu tư. Mỗi tiêu chí chấm từ 0 đến 3. Điểm lưu trên trình duyệt của người chấm; bấm "Sao chép kết quả" để gửi cho Duy qua Zalo.</p>
+    <p class="scale" style="margin-top:6px"><b>0</b> chưa có · <b>1</b> yếu · <b>2</b> cơ bản · <b>3</b> hoàn thiện</p>
+
+    <div class="score-wrap">
+      <div class="score-head" aria-live="polite">
+        <div><div class="big"><span id="sTotal">0</span><small>/60</small></div></div>
+        <div class="verdict" id="sVerdict">Chưa chấm tiêu chí nào.</div>
+        <div class="subs" id="sSubs"></div>
+      </div>
+      <div class="grid g2" id="sGroups" style="margin-top:0"></div>
+      <div class="actions">
+        <button class="btn" type="button" id="sCopy">Sao chép kết quả</button>
+        <button class="btn ghost" type="button" id="sReset">Chấm lại</button>
+      </div>
+      <p class="toast" id="sToast"></p>
+      <p class="note">Ngưỡng đọc điểm (đề xuất): <b>dưới 30</b> nên làm nền trước, chưa chi quảng cáo; <b>30–44</b> đủ để chạy thử nghiệm giai đoạn 2; <b>từ 45</b> sẵn sàng tăng tốc. Yếu tố nào dưới 6/12 thì xử lý yếu tố đó trước, dù tổng điểm cao.</p>
+    </div>
+  </section>
+
+  <!-- ===== PHẦN B ===== -->
+  <div class="part">
+    <p class="eyebrow">Phần B</p>
+    <h2>Kế hoạch triển khai Marketing online 8 tuần</h2>
+    <p>Từ phân tích trên thành việc cụ thể: kênh nào làm gì, tiền chi vào đâu, tuần nào xong việc gì, đo bằng gì và ai chịu trách nhiệm.</p>
   </div>
 
   <!-- 1 -->
@@ -343,8 +678,8 @@ td.c{text-align:center}
         <thead><tr><th>Khoản mục</th><th>Tính chất</th><th>Nằm trong 15 triệu?</th></tr></thead>
         <tbody>
           <tr><td>Website và setup kênh</td><td>Một lần</td><td class="c">Có</td></tr>
-          <tr><td>Chụp ảnh, quay video sản phẩm</td><td>Sản xuất nội dung</td><td class="c">Không</td></tr>
-          <tr><td>Quảng cáo Facebook, TikTok</td><td>Ngân sách quảng cáo</td><td class="c">Không</td></tr>
+          <tr><td>Chụp ảnh, quay video sản phẩm</td><td>Sản xuất nội dung</td><td class="c">Không, nằm trong 19 triệu GĐ2</td></tr>
+          <tr><td>Quảng cáo, KOC, tài trợ, voucher</td><td>Ngân sách Marketing</td><td class="c">Không, nằm trong 19 triệu GĐ2</td></tr>
           <tr><td>Mẫu thử, sản phẩm mẫu</td><td>Chi phí sản phẩm</td><td class="c">Không</td></tr>
           <tr><td>Nhân sự vận hành</td><td>Định kỳ hằng tháng</td><td class="c">Không</td></tr>
           <tr><td>Phí sàn, vận chuyển, khuyến mãi</td><td>Theo từng đơn</td><td class="c">Không</td></tr>
@@ -359,7 +694,7 @@ td.c{text-align:center}
         <thead><tr><th>Giai đoạn</th><th>Nội dung</th><th class="r">Ngân sách</th></tr></thead>
         <tbody>
           <tr><td><b>GĐ1</b></td><td>Xây nền tảng online</td><td class="r">15 triệu</td></tr>
-          <tr><td><b>GĐ2</b></td><td>Ảnh, video, nội dung và quảng cáo thử nghiệm</td><td class="r">3–5 triệu tháng đầu, dự toán riêng</td></tr>
+          <tr><td><b>GĐ2</b></td><td>KOC, tài trợ cộng đồng, nội dung, quảng cáo thử nghiệm (<a href="#p-marketing">chi tiết</a>)</td><td class="r">19 triệu</td></tr>
           <tr><td><b>GĐ3</b></td><td>Mở rộng quảng cáo, Affiliate, cộng đồng, bán hàng</td><td class="r">Theo kết quả GĐ2</td></tr>
         </tbody>
       </table>
@@ -412,6 +747,7 @@ td.c{text-align:center}
         <h3>Marketing và tối ưu</h3>
         <ul>
           <li>Chạy thử quảng cáo Facebook nhắm CLB.</li>
+          <li>KOC mặc thử, tặng áo mẫu, tài trợ giải phong trào.</li>
           <li>Thử nghiệm video TikTok.</li>
           <li>Tối ưu tiêu đề, ảnh trên Shopee.</li>
           <li>Tiếp cận trực tiếp CLB pickleball, cầu lông, nhóm chạy.</li>
@@ -476,7 +812,7 @@ td.c{text-align:center}
         </tbody>
       </table>
     </div>
-    <p class="note warn">Đây là chỉ tiêu thử nghiệm, chưa phải cam kết doanh thu. Mốc 30–50 khách tiềm năng chỉ đạt được khi có ngân sách quảng cáo GĐ2 và hoạt động tiếp cận CLB chủ động, không đến từ việc setup kênh.</p>
+    <p class="note warn">Đây là chỉ tiêu thử nghiệm, chưa phải cam kết doanh thu. Mốc 30–50 khách tiềm năng chỉ đạt được khi giải ngân 19 triệu Marketing GĐ2 và hoạt động tiếp cận CLB chủ động, không đến từ việc setup kênh.</p>
 
     <h3 style="margin-top:28px;font-size:1.1rem">Số liệu cần đo</h3>
     <div class="tw">
@@ -566,7 +902,7 @@ td.c{text-align:center}
       <div class="ci"><span class="bx"></span><div><b>Sản xuất</b><span>Năng lực, số lượng tối thiểu cho đơn đội, thời gian hoàn thành.</span></div></div>
       <div class="ci"><span class="bx"></span><div><b>Thương hiệu</b><span>Logo, màu sắc, định vị và thông điệp Hana.</span></div></div>
       <div class="ci"><span class="bx"></span><div><b>Khách hàng</b><span>Đã chốt: đội nhóm là chính. Cần thêm danh sách CLB quen biết để tiếp cận trước.</span></div></div>
-      <div class="ci"><span class="bx"></span><div><b>Ngân sách</b><span>15 triệu khởi tạo; 3–5 triệu thử nghiệm; ngân sách vận hành tháng.</span></div></div>
+      <div class="ci"><span class="bx"></span><div><b>Ngân sách</b><span>15 triệu khởi tạo; 19 triệu Marketing GĐ2; chi phí vận hành tháng.</span></div></div>
       <div class="ci"><span class="bx"></span><div><b>Nhân sự</b><span>Ai tư vấn, báo giá, chốt đơn, đóng gói, chăm sóc khách.</span></div></div>
       <div class="ci"><span class="bx"></span><div><b>Chính sách</b><span>Đổi trả, bảo hành, đặt cọc, giao hàng, xử lý đơn thiết kế riêng.</span></div></div>
     </div>
@@ -584,12 +920,65 @@ td.c{text-align:center}
 
   <div class="close">
     <h2>Đề xuất</h2>
-    <p>Duyệt ngân sách 15.000.000đ cho giai đoạn khởi tạo và chủ trương triển khai Marketing theo lộ trình 8 tuần, lấy đồng phục đội nhóm làm hướng doanh thu chính. Duy phụ trách định hướng, điều phối và báo cáo tiến độ cùng Founder. Sau 8 tuần, quyết định bước tiếp theo dựa trên số liệu thật.</p>
+    <p>Duyệt ngân sách 15.000.000đ cho giai đoạn khởi tạo, 19.000.000đ Marketing cho giai đoạn 2 (giải ngân sau khi cùng chấm điểm thực trạng), và chủ trương triển khai Marketing theo lộ trình 8 tuần, lấy đồng phục đội nhóm làm hướng doanh thu chính. Duy phụ trách định hướng, điều phối và báo cáo tiến độ cùng Founder. Sau 8 tuần, quyết định bước tiếp theo dựa trên số liệu thật.</p>
   </div>
 
   <p class="foot">Duy Web · Zalo 0938 415 218 · duyweb.info.vn · Bản đề xuất nội bộ, số liệu ngân sách là dự toán chưa phải báo giá xác nhận.</p>
 </main>
 
+<script>
+(function(){
+  var G=[
+    ["Sản phẩm",["Có mẫu sản phẩm thực tế","Có bảng size và chất liệu rõ ràng","Có quy trình kiểm soát chất lượng","Có điểm khác biệt so với đối thủ"]],
+    ["Địa điểm bán",["Có website và Fanpage","Có gian hàng TikTok Shop và Shopee","Có kênh tiếp cận CLB thể thao","Có quy trình nhận và xử lý đơn hàng"]],
+    ["Con người",["Có người phụ trách Marketing","Có người tư vấn và chốt đơn","Có người phụ trách sản xuất và kho","Có người quản lý tài chính, kế toán"]],
+    ["Giá bán",["Biết chính xác giá vốn","Có bảng giá bán lẻ và đội nhóm","Có chính sách chiết khấu","Biết lợi nhuận sau các chi phí"]],
+    ["Quảng cáo",["Có định vị và bộ nhận diện","Có kế hoạch nội dung","Có kế hoạch KOC và seeding","Có ngân sách và hệ thống đo lường"]]
+  ];
+  var KEY="hana-5p-score", S={};
+  try{S=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){S={}}
+  var box=document.getElementById("sGroups");
+  G.forEach(function(g,gi){
+    var c=document.createElement("div");c.className="card sgroup";
+    var h=document.createElement("h4");h.innerHTML=(gi+1)+". "+g[0]+' <span id="sg'+gi+'">0/12</span>';c.appendChild(h);
+    g[1].forEach(function(t,ti){
+      var id=gi+"-"+ti,row=document.createElement("div");row.className="crit";
+      var l=document.createElement("span");l.textContent=t;row.appendChild(l);
+      var seg=document.createElement("span");seg.className="seg";seg.setAttribute("role","group");seg.setAttribute("aria-label",t);
+      for(var v=0;v<4;v++){(function(v){
+        var b=document.createElement("button");b.type="button";b.textContent=v;b.setAttribute("aria-pressed",S[id]===v?"true":"false");
+        b.onclick=function(){S[id]=(S[id]===v?undefined:v);if(S[id]===undefined)delete S[id];save();paint()};
+        b.dataset.id=id;b.dataset.v=v;seg.appendChild(b)})(v)}
+      row.appendChild(seg);c.appendChild(row)});
+    box.appendChild(c)});
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+  function sums(){var t=0,n=0,cnt=[],sub=G.map(function(g,gi){var s=0,k=0;g[1].forEach(function(_,ti){var x=S[gi+"-"+ti];if(x!==undefined){s+=x;n++;k++}});cnt.push(k);t+=s;return s});return{t:t,n:n,sub:sub,cnt:cnt}}
+  function verdict(r){
+    if(!r.n)return"Chưa chấm tiêu chí nào.";
+    var weak=G.map(function(g,i){return r.cnt[i]===4&&r.sub[i]<6?g[0]:null}).filter(Boolean);
+    var v=r.t<30?"Nên làm nền trước, chưa chi quảng cáo.":r.t<45?"Đủ để chạy thử nghiệm giai đoạn 2.":"Sẵn sàng tăng tốc.";
+    if(r.n<20)v="Đã chấm "+r.n+"/20 tiêu chí. "+v;
+    if(weak.length)v+=" Cần xử lý trước: "+weak.join(", ")+".";
+    return v}
+  function paint(){
+    var r=sums();
+    document.getElementById("sTotal").textContent=r.t;
+    document.getElementById("sVerdict").textContent=verdict(r);
+    document.getElementById("sSubs").innerHTML=G.map(function(g,i){return"<span>"+g[0]+" "+r.sub[i]+"/12</span>"}).join("");
+    G.forEach(function(_,i){document.getElementById("sg"+i).textContent=r.sub[i]+"/12"});
+    box.querySelectorAll(".seg button").forEach(function(b){b.setAttribute("aria-pressed",S[b.dataset.id]===+b.dataset.v?"true":"false")})}
+  function toast(m){var t=document.getElementById("sToast");t.textContent=m;setTimeout(function(){t.textContent=""},3500)}
+  document.getElementById("sCopy").onclick=function(){
+    var r=sums(),lines=["Hana Uniform · Chấm điểm 5 yếu tố: "+r.t+"/60",""];
+    G.forEach(function(g,gi){lines.push((gi+1)+". "+g[0]+": "+r.sub[gi]+"/12");g[1].forEach(function(t,ti){var x=S[gi+"-"+ti];lines.push("   - "+t+": "+(x===undefined?"chưa chấm":x))})});
+    lines.push("","Nhận định: "+verdict(r));
+    var txt=lines.join("\n");
+    function fallback(){var a=document.createElement("textarea");a.value=txt;document.body.appendChild(a);a.select();try{document.execCommand("copy");toast("Đã sao chép. Dán vào Zalo gửi Duy.")}catch(e){toast("Không sao chép được, hãy chụp màn hình bảng điểm.")}a.remove()}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){toast("Đã sao chép. Dán vào Zalo gửi Duy.")},fallback)}else fallback()};
+  document.getElementById("sReset").onclick=function(){if(!confirm("Xóa toàn bộ điểm đã chấm?"))return;S={};save();paint()};
+  paint();
+})();
+</script>
 <script src="/quote-track.js" data-version="v2" defer></script>
 </body>
 </html>
