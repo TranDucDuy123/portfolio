@@ -6,6 +6,9 @@
     { "source": "/chien-luoc/tu-van-hosting", "destination": "/cafe-so/hosting-la-gi", "permanent": true }
   ],
   "rewrites": [
+    { "source": "/demo/turnapparel", "destination": "https://turn-demo.vercel.app/demo/turnapparel/" },
+    { "source": "/demo/turnapparel/", "destination": "https://turn-demo.vercel.app/demo/turnapparel/" },
+    { "source": "/demo/turnapparel/:path+", "destination": "https://turn-demo.vercel.app/demo/turnapparel/:path+" },
     { "source": "/projects/:slug", "destination": "/" },
     { "source": "/bao-gia/coach-tran-cong", "destination": "/" },
     { "source": "/bao-gia-tran-cong", "destination": "/" },

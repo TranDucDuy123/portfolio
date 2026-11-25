@@ -23,6 +23,8 @@ export default function Breadcrumbs() {
     "cafe-so": "Cafe Số",
     "case-study": "Thư viện Case Study",
     "projects": "Dự án",
+    "du-an-mau": "Dự án mẫu",
+    "turn-apparel": "TURN Apparel",
     "solutions": "Giải pháp ngành",
     "blog": "Blog",
     "resources": "Tài nguyên tải về",

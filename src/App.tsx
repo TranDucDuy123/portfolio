@@ -12,6 +12,7 @@ import About from "./pages/About";
 import CafeSo from "./pages/CafeSo";
 import CaseStudies from "./pages/CaseStudies";
 import Projects from "./pages/Projects";
+import SampleProjects from "./pages/SampleProjects";
 import Solutions from "./pages/Solutions";
 import Blog from "./pages/Blog";
 import Resources from "./pages/Resources";
@@ -107,6 +108,10 @@ export function AppShell() {
             {/* Project routes */}
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:slug" element={<Projects />} />
+
+            {/* Dự án mẫu: demo chạy thật + cách vận hành chiến dịch */}
+            <Route path="/du-an-mau" element={<SampleProjects />} />
+            <Route path="/du-an-mau/:slug" element={<SampleProjects />} />
 
             {/* Solution routes */}
             <Route path="/solutions" element={<Solutions />} />

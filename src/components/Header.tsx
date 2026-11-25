@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Menu, X, ArrowUpRight, BookOpen, PlayCircle, ListChecks, UserRound, BriefcaseBusiness } from "lucide-react";
+import { Menu, X, ArrowUpRight, BookOpen, PlayCircle, ListChecks, UserRound, BriefcaseBusiness, LayoutTemplate } from "lucide-react";
 import { socialConfig } from "../config/social";
 import { LiquidNavbar, type NimbusFx } from "./ui/liquid-glass-navbar";
 
@@ -29,6 +29,7 @@ export default function Header() {
   const navigation = [
     { name: "Kiến thức", href: "/kien-thuc", match: ["/kien-thuc", "/cafe-so", "/blog"], icon: <BookOpen {...iconProps} />, fx: "glow" as NimbusFx },
     { name: "Video", href: "/videos", match: ["/videos"], icon: <PlayCircle {...iconProps} />, fx: "spin" as NimbusFx },
+    { name: "Dự án mẫu", href: "/du-an-mau", match: ["/du-an-mau"], icon: <LayoutTemplate {...iconProps} />, fx: "plane" as NimbusFx },
     { name: "Checklist", href: "/resources", match: ["/resources"], icon: <ListChecks {...iconProps} />, fx: "drop" as NimbusFx },
     { name: "Về Duy", href: "/about", match: ["/about"], icon: <UserRound {...iconProps} />, fx: "wave" as NimbusFx },
     { name: "Làm việc cùng Duy", href: "/services", match: ["/services", "/bao-gia", "/pricing", "/connect", "/solutions", "/case-study", "/projects"], icon: <BriefcaseBusiness {...iconProps} />, fx: "pop" as NimbusFx }

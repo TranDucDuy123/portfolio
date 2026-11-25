@@ -6,6 +6,7 @@ import { AppShell } from "./App";
 import { resetSsrStore } from "./lib/ssr";
 import { caseStudies } from "./data/caseStudies";
 import { industrySolutions } from "./data/solutions";
+import { sampleProjects } from "./data/sampleProjects";
 
 // Các trang cần HTML riêng. Bài Blog, Cafe Số, cẩm nang đã do vite-plugins/staticPages.ts sinh.
 export const routes = [
@@ -16,6 +17,8 @@ export const routes = [
   "/resources",
   "/videos",
   "/projects",
+  "/du-an-mau",
+  ...sampleProjects.map((p) => `/du-an-mau/${p.slug}`),
   "/connect",
   "/case-study",
   ...caseStudies.map((c) => `/case-study/${c.slug}`),
