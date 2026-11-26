@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Sổ tay vận hành ProHealthcare</title>
+<meta name="description" content="Sổ tay vận hành website ProHealthcare Việt Nam cho Coach Trần Văn Công.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: sticky tab bar for 6 areas; each area = flow (khách ↔ admin) + thêm/sửa/xóa + lưu ý */
+:root{
+  --bg:#f5f7fa; --surface:#ffffff; --fg:#17233a; --muted:#5b6a82; --line:#dde3ec;
+  --brand:#1a4fa0; --brand-bg:#e7eefb; --green:#0a8a42; --green-bg:#e3f4ea;
+  --amber:#8a5d00; --amber-bg:#fdf1d4; --grey-bg:#eef1f5;
+  --font:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1622; --surface:#17202f; --fg:#e6ecf5; --muted:#9aa8bf; --line:#2a3548;
+  --brand:#86acee; --brand-bg:#1c2a44; --green:#5fd394; --green-bg:#16352a;
+  --amber:#f0c25a; --amber-bg:#3a2f14; --grey-bg:#222c3c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1622; --surface:#17202f; --fg:#e6ecf5; --muted:#9aa8bf; --line:#2a3548;
+  --brand:#86acee; --brand-bg:#1c2a44; --green:#5fd394; --green-bg:#16352a;
+  --amber:#f0c25a; --amber-bg:#3a2f14; --grey-bg:#222c3c; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+img{max-width:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);font-size:15px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.pad{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.inner{max-width:960px;margin:0 auto}
+header.top{padding-block:28px 18px}
+header.top .inner{display:flex;flex-direction:column;gap:6px}
+h1,h2,h3{margin:0;line-height:1.25;text-wrap:balance}
+h1{font-size:1.8rem}
+h2{font-size:1.35rem;color:var(--brand)}
+h3{font-size:1.02rem}
+p{margin:0;max-width:70ch}
+.eyebrow{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.muted{color:var(--muted)}
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-block:1px solid var(--line)}
+nav.tabs .inner{display:flex;gap:4px;overflow-x:auto;padding-block:6px}
+nav.tabs a{flex:0 0 auto;text-decoration:none;color:var(--muted);font-weight:600;font-size:.9rem;padding:8px 12px;border-radius:8px}
+nav.tabs a:hover{background:var(--grey-bg);color:var(--fg)}
+nav.tabs a[aria-current="page"]{background:var(--brand-bg);color:var(--brand)}
+nav.tabs a:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+main{padding-block:24px 64px}
+main .inner{display:flex;flex-direction:column;gap:22px}
+.view{display:flex;flex-direction:column;gap:22px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+ol,ul{margin:0;padding-left:1.25em;display:flex;flex-direction:column;gap:5px}
+.path{font-size:.85rem;background:var(--grey-bg);border-radius:6px;padding:2px 8px;font-weight:600;white-space:nowrap}
+.flow{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.flow .col{padding:16px 18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.flow .col + .col{border-left:1px solid var(--line)}
+.flow .k{background:var(--green-bg)} .flow .a{background:var(--brand-bg)}
+.flow h3{font-size:.95rem}
+@media (max-width:640px){.flow{grid-template-columns:1fr}.flow .col + .col{border-left:0;border-top:1px solid var(--line)}}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.9rem}
+th,td{text-align:left;vertical-align:top;padding:9px 12px;border-bottom:1px solid var(--line)}
+th{font-size:.74rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:var(--grey-bg)}
+tr:last-child td{border-bottom:0}
+.note{background:var(--amber-bg);color:var(--amber);border-radius:8px;padding:10px 14px;font-size:.9rem}
+.note b{color:inherit}
+.status{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.pill{font-size:.78rem;font-weight:600;padding:2px 10px;border-radius:999px;background:var(--grey-bg);color:var(--fg);white-space:nowrap}
+.arrow{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.cards a{display:flex;flex-direction:column;gap:4px;text-decoration:none;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.cards a:hover{border-color:var(--brand)}
+.cards b{color:var(--brand)}
+@media (prefers-reduced-motion:no-preference){nav.tabs a{transition:background .15s}}
+.steps{display:flex;flex-direction:column;gap:12px}
+.steps details{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.steps summary{cursor:pointer;padding:12px 16px;font-weight:600;color:var(--brand)}
+.steps summary:focus-visible{outline:2px solid var(--brand);outline-offset:-2px}
+.steps .imgs{display:flex;flex-direction:column;gap:14px;padding:0 12px 14px}
+.steps a.op{display:flex;justify-content:space-between;gap:12px;text-decoration:none;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-weight:600}
+.steps a.op:hover{border-color:var(--brand)}
+.steps a.op span{color:var(--brand)}
+.steps img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--line);background:#fff}
+</style>
+</head>
+<body>
+
+
+<header class="top pad"><div class="inner">
+  <div class="eyebrow">ProHealthcare Việt Nam · Hướng dẫn cho Coach Trần Văn Công</div>
+  <h1>Sổ tay vận hành website</h1>
+  <p class="muted">Trang quản trị: <b>prohealthcarevietnam.vn/admin</b>. Bản ngày 26/11/2026. Mỗi mục gồm: khách làm gì trên web, anh xử lý gì trong admin, và cách thêm, sửa, xóa.</p>
+</div></header>
+
+<nav class="tabs pad" aria-label="Các mục hướng dẫn"><div class="inner">
+  <a href="#tong-quan">Tổng quan</a>
+  <a href="#khoa-hoc">Khóa học</a>
+  <a href="#booking">Booking coaching</a>
+  <a href="#san-pham">Sản phẩm</a>
+  <a href="#affiliate">Affiliate</a>
+  <a href="#noi-dung">Nội dung web</a>
+</div></nav>
+
+<main class="pad"><div class="inner">
+
+<!-- TỔNG QUAN -->
+<section class="view" id="v-tong-quan">
+  <h2>Tổng quan</h2>
+  <div class="cards">
+    <a href="#khoa-hoc"><b>Khóa học</b><span class="muted">Chia 3 nhánh Coach. Khách đăng ký, anh duyệt cho học.</span></a>
+    <a href="#booking"><b>Booking coaching</b><span class="muted">Khách đăng ký lộ trình với chuyên gia, anh duyệt và hẹn lịch.</span></a>
+    <a href="#san-pham"><b>Sản phẩm</b><span class="muted">Khách đặt hàng, anh xác nhận và cập nhật giao hàng.</span></a>
+    <a href="#affiliate"><b>Affiliate</b><span class="muted">Khách giới thiệu để nhận điểm, anh duyệt rút điểm.</span></a>
+    <a href="#noi-dung"><b>Nội dung web</b><span class="muted">Tin tức, phản hồi khách, FAQ, banner, form liên hệ.</span></a>
+  </div>
+
+  <h3>Hướng dẫn từng thao tác (có ảnh)</h3>
+  <div class="cards"><a href="duyet-dang-ky-khoa-hoc"><b>Duyệt đăng ký khóa học</b><span class="muted">Mở quyền học cho học viên đã đăng ký và đóng học phí.</span></a><a href="them-khoa-hoc"><b>Thêm khóa học</b><span class="muted">Tạo trang giới thiệu một khóa học mới trong đúng nhánh Coach.</span></a><a href="duyet-dang-ky-lo-trinh"><b>Duyệt đăng ký lộ trình (booking)</b><span class="muted">Xử lý khách đăng ký tư vấn 1:1 với chuyên gia.</span></a><a href="xu-ly-don-hang"><b>Xử lý đơn hàng</b><span class="muted">Xác nhận đơn và cập nhật tình trạng giao hàng.</span></a><a href="them-san-pham"><b>Thêm sản phẩm</b><span class="muted">Đưa một sản phẩm mới lên web với giá, ảnh và SEO.</span></a><a href="duyet-rut-diem"><b>Duyệt rút điểm affiliate</b><span class="muted">Duyệt hoặc từ chối yêu cầu rút điểm hoa hồng.</span></a><a href="phan-hoi-khach-hang"><b>Phản hồi khách hàng</b><span class="muted">Thêm, sửa, ẩn phản hồi khách hiện ở trang chủ.</span></a></div>
+
+  <div class="panel">
+    <h3>Việc nên làm mỗi ngày</h3>
+    <ol>
+      <li><span class="path">QUẢN LÝ ĐƠN HÀNG › Đơn hàng</span>: gọi xác nhận đơn "Mới đặt".</li>
+      <li><span class="path">QUẢN LÝ KHÓA HỌC › Duyệt đăng ký khóa học</span>: duyệt học viên đã đóng học phí.</li>
+      <li><span class="path">QUẢN LÝ KHÓA HỌC › Duyệt đăng ký lộ trình</span>: liên hệ khách đặt lịch tư vấn.</li>
+      <li><span class="path">QUẢN LÝ EMAIL › Liên hệ / Đánh giá bé</span>: đọc và trả lời khách để lại thông tin.</li>
+      <li><span class="path">QUẢN LÝ TÀI KHOẢN › Duyệt rút điểm</span>: xử lý yêu cầu rút điểm affiliate.</li>
+    </ol>
+  </div>
+
+  <div class="panel">
+    <h3>Thao tác chung ở mọi mục</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Muốn</th><th>Làm thế nào</th></tr></thead>
+      <tbody>
+        <tr><td><b>Thêm</b></td><td>Vào đúng mục ở menu trái, bấm <b>Thêm mới</b>, điền thông tin, bấm <b>Lưu</b> (lưu xong về danh sách) hoặc <b>Lưu tại trang</b> (ở lại để sửa tiếp).</td></tr>
+        <tr><td><b>Sửa</b></td><td>Bấm vào tên mục hoặc biểu tượng cây bút ở cột Thao tác, sửa xong bấm <b>Lưu</b>.</td></tr>
+        <tr><td><b>Ẩn tạm</b></td><td>Tắt công tắc <b>Hiển thị</b> ở danh sách. Bài vẫn còn, khách không thấy. Nên dùng cách này thay vì xóa.</td></tr>
+        <tr><td><b>Đưa lên nổi bật</b></td><td>Bật công tắc <b>Nổi bật</b>. Thứ tự hiển thị chỉnh ở ô <b>STT</b> (số nhỏ hiện trước).</td></tr>
+        <tr><td><b>Xóa</b></td><td>Bấm biểu tượng thùng rác. Bài vào <span class="path">Thùng rác</span> (menu góc trên phải), lấy lại được từ đó.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="note">
+    <b>Quy tắc cần nhớ:</b> (1) Sản phẩm, khóa học, chuyên gia, chính sách phải có <b>ảnh đại diện</b>. Sau khi tạo, mở lại và bấm Lưu thêm 1 lần, nếu không trang có thể báo không tìm thấy. (2) Bài đã xóa vẫn giữ đường dẫn trong Thùng rác, nên khi tạo lại phải đặt đường dẫn khác. (3) Không sửa các mục <b>Cấu hình SMTP (gửi mail), Key AI, mã Head/Body</b> nếu chưa hỏi Duy.
+  </div>
+</section>
+
+<!-- KHÓA HỌC -->
+<section class="view" id="v-khoa-hoc" hidden>
+  <h2>Khóa học</h2>
+  <p>Khóa học nằm trong <span class="path">QUẢN LÝ BÀI VIẾT › Chương trình đào tạo</span>, chia 3 nhánh (danh mục cấp 1): <b>Coach Doanh Nghiệp</b>, <b>Coach Sức Khỏe</b>, <b>Coach Mối Quan Hệ</b>.</p>
+
+  <div class="flow">
+    <div class="col k"><h3>Khách làm gì</h3>
+      <ol><li>Xem khóa ở menu <b>Chương trình đào tạo</b>, chọn nhánh, đọc trang khóa.</li>
+      <li>Xem video giới thiệu và bài học thử miễn phí.</li>
+      <li>Tạo tài khoản (<b>Đăng ký/Đăng nhập</b>) rồi đăng ký khóa, hoặc gọi hotline/Zalo.</li>
+      <li>Đóng học phí theo hướng dẫn.</li>
+      <li>Được duyệt thì vào tài khoản để học.</li></ol>
+    </div>
+    <div class="col a"><h3>Anh làm gì</h3>
+      <ol><li>Vào <span class="path">Duyệt đăng ký khóa học</span>, lọc trạng thái <b>Chờ duyệt</b>.</li>
+      <li>Kiểm tra học viên đã đóng học phí.</li>
+      <li>Bấm duyệt để mở quyền học. Có thể bấm <b>Gửi mail</b> báo cho học viên.</li>
+      <li>Muốn khóa quyền học thì bấm <b>Thu hồi</b>.</li></ol>
+      <div class="status"><span class="pill">Chờ duyệt</span><span class="arrow">→</span><span class="pill">Đã duyệt</span></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Thêm, sửa, xóa khóa học</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Ô cần điền</th><th>Ghi chú</th></tr></thead>
+      <tbody>
+        <tr><td>Đường dẫn, Tiêu đề</td><td>Đường dẫn viết không dấu, nối bằng gạch ngang, không trùng bài khác.</td></tr>
+        <tr><td>Danh mục cấp 1</td><td>Chọn 1 trong 3 nhánh Coach.</td></tr>
+        <tr><td>Mô tả</td><td>2 câu giới thiệu, hiện ở danh sách khóa.</td></tr>
+        <tr><td>Nội dung</td><td>Thông tin khóa, khóa học tập trung vào, lộ trình, dành cho ai, câu hỏi thường gặp, đăng ký.</td></tr>
+        <tr><td>Học phí, % Affiliate</td><td>Chưa có giá thì ghi "Liên hệ". % Affiliate là hoa hồng cho người giới thiệu.</td></tr>
+        <tr><td>Ảnh đại diện, Upload tập tin</td><td>Ảnh bắt buộc. Tập tin nhận doc, docx, pdf, ppt, xls, zip (không nhận video).</td></tr>
+        <tr><td>SEO</td><td>Tiêu đề và mô tả khi hiện trên Google.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted">Đổi tên 3 nhánh: <span class="path">Chương trình đào tạo › Danh mục cấp 1</span>.</p>
+  </div>
+
+  <div class="note"><b>Đang chờ Nasani:</b> chia khóa thành Chương và Bài, tải video cho từng bài, khóa bài trả phí, nút "Đăng ký khóa học" trên trang khóa. Khi có, Duy sẽ cập nhật phần này.</div>
+</section>
+
+<!-- BOOKING -->
+<section class="view" id="v-booking" hidden>
+  <h2>Booking coaching (tư vấn 1:1 với chuyên gia)</h2>
+  <p>Gồm 3 phần liên kết với nhau: <b>Đội ngũ</b> (hồ sơ chuyên gia), <b>Lộ trình học</b> (gói tư vấn), <b>Chương trình dành cho ai</b> (các tuần trong lộ trình).</p>
+
+  <div class="flow">
+    <div class="col k"><h3>Khách làm gì</h3>
+      <ol><li>Vào <b>Đội ngũ</b>, chọn chuyên gia.</li>
+      <li>Xem hồ sơ, lộ trình tư vấn, lịch, thời lượng, phí.</li>
+      <li>Bấm <b>Đăng ký ngay</b> ở lộ trình, hoặc điền form đặt lịch hay form "Đánh giá tăng trưởng".</li>
+      <li>Chờ được liên hệ hẹn lịch.</li></ol>
+    </div>
+    <div class="col a"><h3>Anh làm gì</h3>
+      <ol><li>Vào <span class="path">Duyệt đăng ký lộ trình</span>. Mỗi dòng ghi khách, lộ trình, chuyên gia.</li>
+      <li>Gọi hoặc nhắn khách để chốt lịch và phí.</li>
+      <li>Bấm duyệt khi khách xác nhận. Bấm <b>Gửi mail</b> nếu cần báo lịch.</li>
+      <li>Form đặt lịch và Đánh giá bé xem ở <span class="path">QUẢN LÝ EMAIL</span>.</li></ol>
+      <div class="status"><span class="pill">Chờ duyệt</span><span class="arrow">→</span><span class="pill">Đã duyệt</span></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Thêm, sửa, xóa</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Việc</th><th>Vào đâu</th><th>Ghi chú</th></tr></thead>
+      <tbody>
+        <tr><td>Thêm chuyên gia</td><td><span class="path">Đội ngũ</span></td><td>Ảnh, học vị, kinh nghiệm, nội dung giới thiệu, chọn danh mục cấp 1, gắn <b>Lộ trình học</b>, link Facebook, Zalo, YouTube.</td></tr>
+        <tr><td>Thêm gói tư vấn</td><td><span class="path">Lộ trình học</span></td><td>Tên gói, thời gian, thời lượng (ví dụ 4 tuần), lịch, học phí, % Affiliate, banner. Sau đó vào hồ sơ chuyên gia để gắn gói này.</td></tr>
+        <tr><td>Thêm các tuần của lộ trình</td><td><span class="path">Chương trình dành cho ai</span></td><td>Nhãn tuần (Tuần 1, Tuần 2…), tiêu đề, mô tả, chọn chuyên gia.</td></tr>
+        <tr><td>Nhóm chuyên gia</td><td><span class="path">Đội ngũ › Danh mục cấp 1</span></td><td>Chia nhóm chuyên gia (ví dụ theo nhánh Coach).</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="note"><b>Lưu ý:</b> mỗi chuyên gia hiện chỉ gắn được với lộ trình của mình. Một lộ trình không gắn chung cho nhiều chuyên gia được (đã báo Nasani). Phí tư vấn và lịch thực tế cần anh chốt.</div>
+</section>
+
+<!-- SẢN PHẨM -->
+<section class="view" id="v-san-pham" hidden>
+  <h2>Sản phẩm</h2>
+  <p>Hiện có 68 sản phẩm trong 4 danh mục cấp 1 (Sữa, Vitamin & TPBS, Chăm sóc da, Thiết bị y tế) và 16 danh mục cấp 2.</p>
+
+  <div class="flow">
+    <div class="col k"><h3>Khách làm gì</h3>
+      <ol><li>Chọn sản phẩm, bấm thêm vào <b>giỏ hàng</b>.</li>
+      <li>Điền họ tên, số điện thoại, địa chỉ, chọn tỉnh/thành.</li>
+      <li>Chọn <b>Thanh toán sau khi nhận</b> hoặc <b>Thanh toán online</b>.</li>
+      <li>Đặt hàng, nhận mã đơn.</li></ol>
+    </div>
+    <div class="col a"><h3>Anh làm gì</h3>
+      <ol><li>Vào <span class="path">Đơn hàng</span>, lọc <b>Mới đặt</b>.</li>
+      <li>Bấm vào đơn xem chi tiết, gọi khách xác nhận.</li>
+      <li>Đổi <b>Tình trạng</b> theo từng bước và ghi chú nếu cần, bấm Lưu.</li></ol>
+      <div class="status"><span class="pill">Mới đặt</span><span class="arrow">→</span><span class="pill">Đã xác nhận</span><span class="arrow">→</span><span class="pill">Đang giao hàng</span><span class="arrow">→</span><span class="pill">Đã giao</span></div>
+      <p class="muted">Khách hủy hoặc không liên lạc được thì chọn <b>Đã hủy</b>.</p>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Thêm, sửa, xóa sản phẩm</h3>
+    <ol>
+      <li>Có danh mục trước: <span class="path">Danh mục cấp 1</span>, rồi <span class="path">Danh mục cấp 2</span> (chọn cấp 1 cha).</li>
+      <li>Vào <span class="path">Sản phẩm › Thêm mới</span>. Điền: tên, đường dẫn, chọn cấp 1 và cấp 2, mô tả ngắn, nội dung, giá bán, giá khuyến mãi, % Affiliate, ảnh đại diện, album ảnh, SEO.</li>
+      <li>Lưu, rồi mở lại sản phẩm và bấm Lưu thêm 1 lần.</li>
+      <li>Hết hàng: tắt <b>Hiển thị</b> thay vì xóa.</li>
+    </ol>
+    <p class="muted">Danh mục cấp 1 không có cấp 2 thì để trống ô cấp 2.</p>
+  </div>
+  <div class="note"><b>Nội dung bắt buộc:</b> thực phẩm bảo vệ sức khỏe phải ghi "Thực phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh". Sữa cho trẻ dưới 24 tháng không so sánh với sữa mẹ. Không dùng từ "chữa khỏi", "100%", "tốt nhất".</div>
+</section>
+
+<!-- AFFILIATE -->
+<section class="view" id="v-affiliate" hidden>
+  <h2>Affiliate (giới thiệu nhận điểm)</h2>
+  <p>Người tham gia chia sẻ link sản phẩm, khóa học hoặc booking. Có người mua qua link thì họ được cộng điểm theo % Affiliate đã cài ở từng sản phẩm, khóa học, lộ trình.</p>
+
+  <div class="flow">
+    <div class="col k"><h3>Khách làm gì</h3>
+      <ol><li>Bấm <b>Đăng ký Affiliate</b>, tạo tài khoản.</li>
+      <li>Lấy link có mã giới thiệu, chia sẻ cho người quen.</li>
+      <li>Theo dõi điểm trong tài khoản.</li>
+      <li>Đủ điểm thì gửi <b>yêu cầu rút điểm</b>.</li></ol>
+    </div>
+    <div class="col a"><h3>Anh làm gì</h3>
+      <ol><li>Vào <span class="path">Duyệt rút điểm</span>, xem tên, số điện thoại, số điểm yêu cầu.</li>
+      <li>Đối chiếu đơn hàng hoặc khóa học đã hoàn tất.</li>
+      <li>Chuyển tiền cho người tham gia, rồi bấm duyệt. Không hợp lệ thì bấm <b>Từ chối</b>.</li>
+      <li>Xem và khóa tài khoản ở <span class="path">Quản lý tài khoản khách</span> (cột Kích hoạt).</li></ol>
+      <div class="status"><span class="pill">Chờ duyệt</span><span class="arrow">→</span><span class="pill">Đã duyệt</span><span class="arrow">/</span><span class="pill">Từ chối</span></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Cài đặt chương trình</h3>
+    <ul>
+      <li><b>Mức hoa hồng:</b> ô <b>% Affiliate</b> trong từng sản phẩm, khóa học, lộ trình.</li>
+      <li><b>Chính sách hiển thị cho khách:</b> <span class="path">QUẢN LÝ TRANG TĨNH › Chính sách Affiliate</span> và <span class="path">Mô tả Affiliate</span>.</li>
+    </ul>
+  </div>
+  <div class="note"><b>Cần anh chốt:</b> % hoa hồng từng loại, khi nào điểm được tính (ví dụ sau khi giao hàng và hết hạn đổi trả, khóa học hết hạn hoàn tiền, buổi tư vấn đã diễn ra) và mức rút tối thiểu.</div>
+</section>
+
+<!-- NỘI DUNG -->
+<section class="view" id="v-noi-dung" hidden>
+  <h2>Nội dung web</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Nội dung</th><th>Vào đâu</th><th>Hiện ở đâu trên web</th></tr></thead>
+    <tbody>
+      <tr><td>Tin tức, bài chuyên môn</td><td><span class="path">Tin tức</span> (có danh mục cấp 1, cấp 2)</td><td>Mục Tin tức</td></tr>
+      <tr><td>Phản hồi khách hàng</td><td><span class="path">Phản hồi khách hàng</span></td><td>Slider trên trang chủ. Tiêu đề là tên khách, có ảnh đại diện.</td></tr>
+      <tr><td>Câu hỏi thường gặp</td><td><span class="path">Câu hỏi thường gặp</span></td><td>Trang chủ. Tiêu đề là câu hỏi, Mô tả là câu trả lời.</td></tr>
+      <tr><td>Chứng chỉ</td><td><span class="path">Chứng chỉ</span></td><td>Khối chứng chỉ. Tên ngắn, tối đa khoảng 4 chữ.</td></tr>
+      <tr><td>Chỉ số, thống kê, vì sao chọn, quy trình</td><td><span class="path">Giới thiệu - Chỉ số / Thống kê</span>, <span class="path">Vì sao chọn</span>, <span class="path">Quy trình</span></td><td>Các khối giới thiệu trên trang chủ</td></tr>
+      <tr><td>Chuyên khoa</td><td><span class="path">Chuyên khoa</span></td><td>Trang Chuyên khoa nhi</td></tr>
+      <tr><td>Chính sách</td><td><span class="path">Chính sách</span></td><td>Chân trang (đổi trả, bảo mật, giao hàng…)</td></tr>
+      <tr><td>Giới thiệu, Liên hệ, Footer, Slogan</td><td><span class="path">QUẢN LÝ TRANG TĨNH</span></td><td>Trang Giới thiệu, Liên hệ, chân trang</td></tr>
+      <tr><td>Logo, banner, slideshow, video, mạng xã hội</td><td><span class="path">QUẢN LÝ HÌNH ẢNH - LIÊN KẾT</span></td><td>Đầu trang, trang chủ, nút mạng xã hội</td></tr>
+      <tr><td>Hotline, Zalo, popup</td><td>Menu góc trên phải: <span class="path">Cấu hình điện thoại / mạng xã hội / popup</span></td><td>Nút gọi nổi, popup</td></tr>
+      <tr><td>SEO từng trang danh sách</td><td><span class="path">QUẢN LÝ SEOPAGE</span></td><td>Tiêu đề và mô tả trên Google</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="flow">
+    <div class="col k"><h3>Khách để lại thông tin</h3>
+      <ul><li>Form <b>Liên hệ</b>, form đặt lịch.</li>
+      <li>Form <b>Đánh giá tăng trưởng con bạn</b>.</li>
+      <li>Ô <b>Đăng ký nhận tin</b>.</li></ul>
+    </div>
+    <div class="col a"><h3>Anh xem ở đâu</h3>
+      <ul><li><span class="path">QUẢN LÝ EMAIL › Liên hệ</span></li>
+      <li><span class="path">QUẢN LÝ EMAIL › Đánh giá bé</span></li>
+      <li><span class="path">QUẢN LÝ EMAIL › Đăng ký nhận tin</span></li></ul>
+      <p class="muted">Bấm <b>Xem tin</b> ở chuông thông báo góc trên để mở nhanh.</p>
+    </div>
+  </div>
+  <div class="note"><b>Trước khi mở web:</b> một số phản hồi khách, đơn hàng thử và lộ trình đang là <b>dữ liệu mẫu</b> do Duy tạo để thử. Duy sẽ gửi danh sách để anh xác nhận giữ hay xóa.</div>
+</section>
+
+</div></main>
+
+<script>
+const GUIDES={"khoa-hoc": [["Duyệt đăng ký khóa học", "duyet-dang-ky-khoa-hoc", 2], ["Thêm khóa học", "them-khoa-hoc", 2]], "booking": [["Duyệt đăng ký lộ trình (booking)", "duyet-dang-ky-lo-trinh", 1]], "san-pham": [["Xử lý đơn hàng", "xu-ly-don-hang", 3], ["Thêm sản phẩm", "them-san-pham", 5]], "affiliate": [["Duyệt rút điểm affiliate", "duyet-rut-diem", 1]], "noi-dung": [["Phản hồi khách hàng", "phan-hoi-khach-hang", 1]]};
+Object.entries(GUIDES).forEach(([sec,list])=>{
+  const wrap=document.createElement('div');wrap.className='steps';
+  const h=document.createElement('h3');h.textContent='Hướng dẫn bằng ảnh từng thao tác';wrap.appendChild(h);
+  list.forEach(([label,slug,n])=>{const a=document.createElement('a');a.className='op';a.href=slug;a.innerHTML='<b></b><span></span>';a.querySelector('b').textContent=label;a.querySelector('span').textContent=n+' bước →';wrap.appendChild(a)});
+  document.getElementById('v-'+sec).appendChild(wrap);
+});
+const ids=["tong-quan","khoa-hoc","booking","san-pham","affiliate","noi-dung"];
+function show(){
+  const h=(location.hash||"").slice(1);const cur=ids.includes(h)?h:"tong-quan";
+  ids.forEach(id=>{document.getElementById("v-"+id).hidden=id!==cur});
+  document.querySelectorAll("nav.tabs a").forEach(a=>{if(a.getAttribute("href")==="#"+cur)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+}
+window.addEventListener("hashchange",()=>{show();window.scrollTo({top:0})});
+show();
+</script>
+
+</body>
+</html>
