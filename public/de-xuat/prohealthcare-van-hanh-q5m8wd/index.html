@@ -330,11 +330,15 @@ tr:last-child td{border-bottom:0}
 </div></main>
 
 <script>
-const GUIDES={"khoa-hoc": [["Duyệt đăng ký khóa học", "duyet-dang-ky-khoa-hoc", 2], ["Thêm khóa học", "them-khoa-hoc", 2]], "booking": [["Duyệt đăng ký lộ trình (booking)", "duyet-dang-ky-lo-trinh", 1]], "san-pham": [["Xử lý đơn hàng", "xu-ly-don-hang", 3], ["Thêm sản phẩm", "them-san-pham", 5]], "affiliate": [["Duyệt rút điểm affiliate", "duyet-rut-diem", 1]], "noi-dung": [["Phản hồi khách hàng", "phan-hoi-khach-hang", 1]]};
+const GUIDES={"khoa-hoc": [["Duyệt đăng ký khóa học", "duyet-dang-ky-khoa-hoc", 2, "01-duyet-khoa-hoc"], ["Thêm khóa học", "them-khoa-hoc", 2, "04-them-khoa-hoc"]], "booking": [["Duyệt đăng ký lộ trình (booking)", "duyet-dang-ky-lo-trinh", 1, "05-duyet-lo-trinh"]], "san-pham": [["Xử lý đơn hàng", "xu-ly-don-hang", 3, "02-xu-ly-don-hang"], ["Thêm sản phẩm", "them-san-pham", 5, "03-them-san-pham"]], "affiliate": [["Duyệt rút điểm affiliate", "duyet-rut-diem", 1, "06-duyet-rut-diem"]], "noi-dung": [["Phản hồi khách hàng", "phan-hoi-khach-hang", 1, "07-phan-hoi-khach"]]};
 Object.entries(GUIDES).forEach(([sec,list])=>{
+  if(!document.getElementById('imgcss')){const st=document.createElement('style');st.id='imgcss';st.textContent='.steps .imgs{display:flex;flex-direction:column;gap:14px;margin-bottom:10px}.steps .imgs img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--line);background:#fff}';document.head.appendChild(st)}
   const wrap=document.createElement('div');wrap.className='steps';
   const h=document.createElement('h3');h.textContent='Hướng dẫn bằng ảnh từng thao tác';wrap.appendChild(h);
-  list.forEach(([label,slug,n])=>{const a=document.createElement('a');a.className='op';a.href=slug;a.innerHTML='<b></b><span></span>';a.querySelector('b').textContent=label;a.querySelector('span').textContent=n+' bước →';wrap.appendChild(a)});
+  list.forEach(([label,slug,n,key])=>{const a=document.createElement('a');a.className='op';a.href=slug;a.innerHTML='<b></b><span></span>';a.querySelector('b').textContent=label;a.querySelector('span').textContent='Mở trang riêng →';wrap.appendChild(a);
+    const box=document.createElement('div');box.className='imgs';
+    for(let i=1;i<=n;i++){const im=document.createElement('img');im.loading='lazy';im.width=1464;im.height=1400;im.src='anh/'+key+'-buoc-'+String(i).padStart(2,'0')+'.jpg';im.alt=label+', bước '+i;box.appendChild(im)}
+    wrap.appendChild(box)});
   document.getElementById('v-'+sec).appendChild(wrap);
 });
 const ids=["tong-quan","khoa-hoc","booking","san-pham","affiliate","noi-dung"];
