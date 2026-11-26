@@ -7,7 +7,7 @@
 <meta name="description" content="turn apparel vietnam · định hướng phong cách và các set outfit cho đợt ra mắt.">
 <link rel="canonical" href="https://duyweb.info.vn/de-xuat/turn-style-board-7fea7m">
 <meta property="og:title" content="turn VN Style Board">
-<meta property="og:description" content="Smiley Street: cách tiếp cận và 5 set outfit ra mắt tại Việt Nam.">
+<meta property="og:description" content="Smiley Street: 6 combo ra mắt turn tại Việt Nam, giá đã chốt.">
 <meta property="og:image" content="https://duyweb.info.vn/de-xuat/turn-style-board-7fea7m/og.jpg">
 <meta property="og:url" content="https://duyweb.info.vn/de-xuat/turn-style-board-7fea7m">
 <link rel="icon" href="/duyweb-favicon.svg" type="image/svg+xml">
@@ -128,7 +128,7 @@ td.win{background:var(--pink-soft)}
 .tagS{font-size:12px;color:var(--muted)}
 .acc{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}
 .acc i{width:14px;height:14px;border-radius:50%;border:1px solid var(--line)}
-.items{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--line)}
+.items{display:grid;grid-template-columns:repeat(var(--n,5),minmax(0,1fr));gap:1px;background:var(--line)}
 .it{background:var(--surface);padding:10px;display:grid;gap:6px;align-content:start;min-width:0}
 .it .ph{position:relative;background:var(--sunk);border-radius:8px;overflow:hidden}
 .it img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
@@ -139,6 +139,9 @@ td.win{background:var(--pink-soft)}
 .tier.low{background:var(--low)}.tier.mid{background:var(--mid)}.tier.high{background:var(--high)}
 .sig{position:absolute;top:6px;left:6px;background:var(--pink);color:#141312;font-size:10px;font-weight:800;border-radius:99px;padding:1px 7px}
 .new{position:absolute;top:6px;right:6px;background:var(--ink);color:var(--bg);font-size:10px;font-weight:700;border-radius:99px;padding:1px 7px}
+.new.wait{background:var(--edit);color:#fff}
+.season{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:6px}
+.it .pr{flex-wrap:wrap;gap:4px}
 .ft{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px;padding:14px 16px}
 .money{display:flex;gap:18px;flex-wrap:wrap;align-items:baseline;font-variant-numeric:tabular-nums}
 .money .big{font-size:24px;font-weight:800;letter-spacing:-.01em}
@@ -172,7 +175,7 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:12.5px;border-top:1p
 
 @media (max-width:760px){
   .items{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .items .it:last-child{grid-column:1/-1}
+  .items .it:last-child:nth-child(odd){grid-column:1/-1}
   .ft{grid-template-columns:1fr}
   .formula{grid-template-columns:repeat(2,minmax(0,1fr))}
   .formula .slot:last-child{grid-column:1/-1}
@@ -195,6 +198,7 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:12.5px;border-top:1p
     <span class="eyebrow" data-i="heroEyebrow"></span>
     <h1 data-i="heroTitle" data-html="1"></h1>
     <p data-i="heroLead"></p>
+    <div class="status" id="status"></div>
   </section>
 
   <section class="blk" id="sec-style">
@@ -240,108 +244,97 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:12.5px;border-top:1p
 <script>
 (() => {
 const T = {
-  vi:{topTitle:"ĐỊNH HƯỚNG PHONG CÁCH · VIỆT NAM",heroEyebrow:"turn apparel vietnam · đề xuất cho đợt ra mắt",
-    heroTitle:"Một phong cách: <em>Smiley Street</em>. Mặc thành set.",
-    heroLead:"Định hướng ra mắt turn tại Việt Nam: chọn một phong cách chủ đạo, dựng mỗi set outfit theo cùng một công thức 5 món để khách nhìn là nhận ra turn, và bán trọn bộ thay vì từng món.",
+  vi:{topTitle:"COMBO RA MẮT · VIỆT NAM",heroEyebrow:"turn apparel vietnam · combo ra mắt đã chốt 27/11/2026",
+    heroTitle:"Smiley Street. <em>6 combo</em> mặc trọn bộ.",
+    heroLead:"turn ra mắt tại Việt Nam bằng 6 combo: 3 set hè, 3 set thu đông. Mặt cười 3 mắt dẫn đầu, nền đen trắng giữ chung cho mọi set. Giá lẻ quy đổi thẳng từ giá gốc web Mỹ, mua trọn combo tiết kiệm 12%.",
+    stLocked:"6 combo đã chốt",stWait:"2 món chờ TURN xác nhận",stLater:"2 combo để đợt sau",
     s1Eyebrow:"Bước 1",s1Title:"Vì sao chọn Smiley Street",
-    s1Lead:"Ba hướng có đủ hàng trong kho ảnh của turn. Mỗi hướng được chấm theo 5 tiêu chí có trọng số. Smiley Street dẫn đầu vì dùng đúng tài sản nhận diện mạnh nhất và đủ hàng cho cả 5 vị trí trong set.",
-    s2Eyebrow:"Bước 2",s2Title:"Công thức một set outfit",
-    s2Lead:"Mỗi set có đủ 5 vị trí để khách mua trọn bộ. Năm quy tắc bên dưới giữ set nhìn là nhận ra turn, và kéo khách từ bậc giá thấp lên bậc cao.",
-    s3Eyebrow:"Bước 3",s3Title:"5 set Smiley Street cho đợt ra mắt",
-    s3Lead:"Mỗi set nhắm một mùa và một tệp khách. Nhãn hồng là món mang dấu hiệu nhận diện. Nhãn MỚI là món có trong kho ảnh gốc nhưng chưa nằm trong danh sách 16 sản phẩm ra mắt.",
-    s4Eyebrow:"Để sau",s4Title:"Hai hướng dự phòng",
-    s4Lead:"Retro Wash hợp làm drop thứ hai khi có thêm quần. Clean OG là nhóm basic bán quanh năm, đứng cạnh các set chính.",
-    copyBtn:"Copy ý kiến của tôi",copied:"Đã copy. Dán vào Zalo hoặc email nếu trang không lưu được.",copyFail:"Không copy tự động được. Bôi đen đoạn bên dưới để copy.",
-    footer:"Giá là đề xuất cho thị trường Việt Nam, chưa chốt theo giá vốn. Ảnh lấy từ kho ảnh gốc của turn.",
-    recommend:"Đề xuất",chosen:"Hướng được chọn",pick:"Chọn hướng này",picked:"Đã chọn",noVotes:"Chưa ai chọn",total:"điểm",
-    critH:"Tiêu chí",weightH:"Trọng số",
-    ok:"Duyệt",edit:"Cần sửa",drop:"Bỏ",note:"Ghi chú cho set này...",
-    retail:"Mua lẻ",setPrice:"Giá set",save:"Tiết kiệm",
+    s1Lead:"Ba hướng có đủ hàng trong kho ảnh của turn, chấm theo 5 tiêu chí có trọng số. Smiley Street dẫn đầu vì dùng đúng tài sản nhận diện mạnh nhất. Clean OG (đen trắng, chữ nhỏ) giữ vai trò nền cho các set thu đông.",
+    s2Eyebrow:"Bước 2",s2Title:"Công thức một combo",
+    s2Lead:"Mỗi combo 4 món. Áo, quần, mũ là bắt buộc; thêm túi hoặc vớ để chốt bộ. Mùa lạnh, áo khoác hoặc áo len làm món hero.",
+    s3Eyebrow:"Bước 3",s3Title:"6 combo ra mắt",
+    s3Lead:"Xếp theo mùa: set hè cho miền Nam, set thu đông cho miền Bắc và cho mùa ra mắt tháng 12. Nhãn hồng là món mang dấu hiệu nhận diện. Nhãn CHỜ là món TURN cần xác nhận màu hoặc tồn kho trước khi bán.",
+    seasons:{hot:"Hè · miền Nam quanh năm",cold:"Thu đông · ra mắt tháng 12"},
+    s4Eyebrow:"Để sau",s4Title:"Hai combo cho đợt sau",
+    s4Lead:"Cần thêm túi 100% Turn Tote (chưa có trên shop) và xác nhận mẫu áo Mono Print trước khi mở bán.",
+    footer:"Giá lẻ = giá gốc trên web Mỹ × 26.000đ. Giá combo = 88% tổng giá lẻ, làm tròn lên 10.000đ. Ảnh lấy từ kho ảnh gốc của turn. Cập nhật 27/11/2026.",
+    chosen:"Hướng được chọn",critH:"Tiêu chí",weightH:"Trọng số",
+    retail:"Mua lẻ",setPrice:"Giá combo",save:"Tiết kiệm",
     chkSig:n=>`Dấu hiệu nhận diện lặp ${n} lần`,chkSigBad:n=>`Dấu hiệu chỉ có ${n} lần, cần ít nhất 2`,
-    chkTier:t=>`Phủ ${t} bậc giá`,chkTierBad:"Chỉ có 1 bậc giá",chkAcc:"Một màu nhấn duy nhất",chkSlots:"Đủ 5 vị trí",
-    newTag:"MỚI",sigTag:"NHẬN DIỆN",
-    agreeSet:"Set",agreeStyle:"Phong cách",agreeVotes:"Phiếu",agreeState:"Trạng thái",
-    stAgreed:"Đã chốt",stEdit:"Cần sửa",stDrop:"Có người bỏ",stNone:"Chưa ai duyệt",stPartial:"Đang chờ",
-    you:"bạn",someone:"Một người",
-    site:"Bản xem trên duyweb.info.vn: lựa chọn chỉ lưu trên máy này.",siteLink:"Mở bảng bỏ phiếu chung",
-    saving:"Đang lưu…",saved:"Đã lưu, người khác thấy ngay",offline:"Chỉ lưu trên máy này. Dùng nút Copy ở cuối trang để gửi ý kiến.",readonly:"Bạn đang ở chế độ xem. Dùng nút Copy để gửi ý kiến.",loading:"Đang tải ý kiến…",stale:"Chưa tải được ý kiến của người khác.",
-    voters:n=>`${n} người đã góp ý`,
-    slots:["Áo","Quần","Mũ","Túi","Phụ kiện"],slotsSub:["món chính, mang dấu hiệu","cùng tông, đỡ cho áo","lặp dấu hiệu lần 2","lặp màu nhấn","cộng đơn, chốt bộ"],
-    rules:[["Đủ 5 món","Áo, quần, mũ, túi, vớ. Khách chụp ảnh cả bộ, quảng cáo cũng chạy cả bộ."],
-      ["Dấu hiệu lặp ít nhất 2 lần","Mặt cười, chữ wash hay logo xuất hiện ở áo và thêm một món nữa, để nhìn từ xa vẫn nhận ra."],
+    chkTier:t=>`Phủ ${t} bậc giá`,chkTierBad:"Chỉ có 1 bậc giá",chkAcc:"Màu nhấn",chkCore:"Đủ áo, quần, mũ",chkCoreBad:"Thiếu áo, quần hoặc mũ",
+    chkWait:n=>`Chờ TURN xác nhận: ${n}`,
+    newTag:"MỚI",waitTag:"CHỜ",sigTag:"NHẬN DIỆN",
+    slots:["Áo","Quần","Mũ","Túi / vớ","Áo khoác"],slotsSub:["món chính, mang dấu hiệu","cùng tông, đỡ cho áo","lặp dấu hiệu lần 2","cộng đơn, chốt bộ","chỉ set thu đông, món hero"],
+    rules:[["4 món một combo","Áo, quần, mũ và một món chốt bộ. Khách chụp ảnh cả bộ, quảng cáo cũng chạy cả bộ."],
+      ["Dấu hiệu lặp ít nhất 2 lần","Mặt cười, chữ turn hay must be nice xuất hiện ở áo và thêm một món nữa, để nhìn từ xa vẫn nhận ra."],
       ["Một món in lớn","Chỉ một món làm điểm nhấn chính. Các món còn lại in nhỏ hoặc trơn để set không rối."],
-      ["Nền đen trắng, một màu nhấn","Màu nhấn (vàng, cam, hồng…) lặp lại đúng 2 lần trong set."],
-      ["Đi qua ít nhất 2 bậc giá","Mỗi set có món bậc thấp kéo khách và món bậc trung hoặc cao. Giá set rẻ hơn mua lẻ khoảng 12%."]],
-    crit:["Nhận diện thương hiệu","Đủ món để làm set","Hợp khí hậu Việt Nam","Phủ 3 bậc giá","Ảnh có sẵn"]
+      ["Nền đen trắng, tối đa một màu nhấn","Vàng mặt cười cho set hè, be nhung cho set thu đông. Không thêm màu thứ hai."],
+      ["Đi qua ít nhất 2 bậc giá","Món bậc thấp kéo khách, món bậc trung hoặc cao nâng giá trị đơn. Giá combo rẻ hơn mua lẻ 12%."]],
+    crit:["Nhận diện thương hiệu","Đủ món để làm set","Hợp khí hậu Việt Nam","Phủ 3 bậc giá","Ảnh có sẵn"],
+    tiers:{low:"thấp",mid:"trung",high:"cao"}
   },
-  en:{topTitle:"STYLE DIRECTION · VIETNAM",heroEyebrow:"turn apparel vietnam · launch proposal",
-    heroTitle:"One style: <em>Smiley Street</em>. Worn as full sets.",
-    heroLead:"How we plan to launch turn in Vietnam: lead with one style, build every outfit from the same five-piece formula so it reads as turn at a glance, and sell the full look rather than single pieces.",
+  en:{topTitle:"LAUNCH BUNDLES · VIETNAM",heroEyebrow:"turn apparel vietnam · launch bundles locked 27 Nov 2026",
+    heroTitle:"Smiley Street. <em>6 bundles</em>, worn as full looks.",
+    heroLead:"turn launches in Vietnam with 6 bundles: 3 summer sets and 3 fall–winter sets. The three-eyed smiley leads, with a shared black and white base. Single prices convert the US list price directly; buying the full bundle saves 12%.",
+    stLocked:"6 bundles locked",stWait:"2 pieces waiting on turn",stLater:"2 bundles held for later",
     s1Eyebrow:"Step 1",s1Title:"Why Smiley Street",
-    s1Lead:"Three directions have enough product in turn's asset library. Each is scored on five weighted criteria. Smiley Street leads because it uses the strongest brand asset and has product for all five outfit slots.",
-    s2Eyebrow:"Step 2",s2Title:"The outfit formula",
-    s2Lead:"Every set fills five slots so a customer can buy the whole look. The five rules below keep each set recognisably turn and move customers up the price tiers.",
-    s3Eyebrow:"Step 3",s3Title:"Five Smiley Street sets for launch",
-    s3Lead:"Each set targets one season and one customer. Pink tags mark the signature pieces. NEW marks pieces that are in the asset library but not yet in the 16-product launch list.",
-    s4Eyebrow:"Later",s4Title:"Two backup directions",
-    s4Lead:"Retro Wash fits a second drop once there are more bottoms. Clean OG is the year-round basics layer that sits beside the main sets.",
-    copyBtn:"Copy my feedback",copied:"Copied. Paste it into email or chat if the page can't save.",copyFail:"Couldn't copy automatically. Select the text below to copy it.",
-    footer:"Prices are proposals for the Vietnam market in VND (k = thousand), not yet checked against landed cost. Photos come from turn's asset library.",
-    recommend:"Recommended",chosen:"Chosen direction",pick:"Choose this style",picked:"Chosen",noVotes:"No votes yet",total:"pts",
-    critH:"Criterion",weightH:"Weight",
-    ok:"Approve",edit:"Needs changes",drop:"Drop",note:"Note for this set...",
-    retail:"Bought separately",setPrice:"Set price",save:"Saves",
+    s1Lead:"Three directions have enough product in turn's asset library, scored on five weighted criteria. Smiley Street leads because it uses the strongest brand asset. Clean OG (black and white, small type) is the base layer for the fall–winter sets.",
+    s2Eyebrow:"Step 2",s2Title:"The bundle formula",
+    s2Lead:"Each bundle has 4 pieces. Top, bottom and hat are required; a bag or socks closes the look. In cold months a jacket or sweater is the hero piece.",
+    s3Eyebrow:"Step 3",s3Title:"6 launch bundles",
+    s3Lead:"Grouped by season: summer sets for the south, fall–winter sets for the north and for the December launch. Pink tags mark the signature pieces. WAIT marks pieces turn still has to confirm (colour or stock) before they go on sale.",
+    seasons:{hot:"Summer · the south, year-round",cold:"Fall–winter · December launch"},
+    s4Eyebrow:"Later",s4Title:"Two bundles for a later drop",
+    s4Lead:"They need the 100% Turn Tote (not in the shop yet) and confirmation of the Mono Print tee.",
+    footer:"Single price = US list price × 26,000 VND. Bundle price = 88% of the single total, rounded up to 10,000 VND. Photos from turn's asset library. Updated 27 Nov 2026.",
+    chosen:"Chosen direction",critH:"Criterion",weightH:"Weight",
+    retail:"Bought separately",setPrice:"Bundle price",save:"Saves",
     chkSig:n=>`Signature repeats ${n} times`,chkSigBad:n=>`Signature only ${n} time(s), needs 2+`,
-    chkTier:t=>`Covers ${t} price tiers`,chkTierBad:"Only one price tier",chkAcc:"One accent colour",chkSlots:"All 5 slots filled",
-    newTag:"NEW",sigTag:"SIGNATURE",
-    agreeSet:"Set",agreeStyle:"Style",agreeVotes:"Votes",agreeState:"Status",
-    stAgreed:"Locked",stEdit:"Needs changes",stDrop:"Someone dropped it",stNone:"No approvals yet",stPartial:"Waiting",
-    you:"you",someone:"Someone",
-    site:"Preview on duyweb.info.vn: your picks stay on this device.",siteLink:"Open the shared voting board",
-    saving:"Saving…",saved:"Saved, visible to everyone",offline:"Saved on this device only. Use the Copy button at the end to send your feedback.",readonly:"View-only access. Use the Copy button to send your feedback.",loading:"Loading feedback…",stale:"Couldn't load the others' feedback yet.",
-    voters:n=>`${n} people have weighed in`,
-    slots:["Top","Bottom","Headwear","Bag","Accessory"],slotsSub:["hero piece, carries the signature","same tone, supports the top","signature, second time","repeats the accent colour","adds to the basket"],
-    rules:[["Five pieces","Top, bottom, hat, bag, socks. Customers shoot the full look, and ads run the full look."],
-      ["Signature at least twice","The smiley, the wash or the logo shows on the top and one more piece, so the look reads from across the street."],
+    chkTier:t=>`Covers ${t} price tiers`,chkTierBad:"Only one price tier",chkAcc:"Accent",chkCore:"Top, bottom and hat present",chkCoreBad:"Missing top, bottom or hat",
+    chkWait:n=>`Waiting on turn: ${n}`,
+    newTag:"NEW",waitTag:"WAIT",sigTag:"SIGNATURE",
+    slots:["Top","Bottom","Headwear","Bag / socks","Outerwear"],slotsSub:["hero piece, carries the signature","same tone, supports the top","signature, second time","adds to the basket","fall–winter only, hero piece"],
+    rules:[["Four pieces a bundle","Top, bottom, hat and one closing piece. Customers shoot the full look, and ads run the full look."],
+      ["Signature at least twice","The smiley, the turn wordmark or must be nice shows on the top and one more piece, so the look reads from across the street."],
       ["One loud piece","Only one piece carries the big graphic. The rest are small prints or plain so the set stays clean."],
-      ["Black and white base, one accent","The accent colour (yellow, orange, pink…) appears exactly twice."],
-      ["Spans at least 2 price tiers","Each set mixes a low-tier entry piece with a mid or high-tier piece. The set price is about 12% under buying separately."]],
-    crit:["Brand recognition","Enough pieces for full sets","Fits Vietnam's climate","Covers all 3 price tiers","Photos ready"]
+      ["Black and white base, one accent at most","Smiley yellow for summer, corduroy beige for fall–winter. No second accent."],
+      ["Spans at least 2 price tiers","A low-tier piece brings people in, a mid or high-tier piece lifts the basket. The bundle is 12% under buying separately."]],
+    crit:["Brand recognition","Enough pieces for full sets","Fits Vietnam's climate","Covers all 3 price tiers","Photos ready"],
+    tiers:{low:"low",mid:"mid",high:"high"}
   }
 };
 const WEIGHTS=[30,25,15,15,15];
+/* price: VND single price (US list price × 26,000). slot: 0 top, 1 bottom, 2 hat, 3 bag/socks, 4 outerwear */
 const P={
- "smiley-circle-tee":{vi:"smiley circle tee",en:"smiley circle tee",slot:0,tier:"low",price:349,sig:1},
- "smiley-cropped-tee":{vi:"smiley cropped tee (nữ)",en:"smiley cropped tee (women)",slot:0,tier:"low",price:329,sig:1},
- "hoodie-triple-orange":{vi:"triple smiley hoodie đen/cam",en:"triple smiley hoodie black/orange",slot:0,tier:"high",price:690,sig:1},
- "hoodie-triple-white":{vi:"triple smiley hoodie trắng/đen",en:"triple smiley hoodie white/black",slot:0,tier:"high",price:690,sig:1},
- "crop-hoodie-smiley":{vi:"smiley crop hoodie (nữ)",en:"smiley crop hoodie (women)",slot:0,tier:"high",price:590,sig:1},
- "shorts-5050":{vi:"50/50 smiley shorts",en:"50/50 smiley shorts",slot:1,tier:"mid",price:390,sig:1},
- "joggers-smiley":{vi:"smiley joggers",en:"smiley joggers",slot:1,tier:"high",price:590,sig:1},
- "bucket-rev":{vi:"bucket 2 mặt",en:"reversible bucket hat",slot:2,tier:"low",price:249,sig:1},
- "dad-smiley":{vi:"smiley dad hat",en:"smiley dad hat",slot:2,tier:"low",price:290,sig:1},
- "beanie-smiley":{vi:"smiley patch beanie",en:"smiley patch beanie",slot:2,tier:"low",price:290,sig:1,isNew:1},
- "fanny-smiley":{vi:"smiley fanny pack",en:"smiley fanny pack",slot:3,tier:"mid",price:390,sig:1},
- "backpack-smiley":{vi:"smiley backpack",en:"smiley backpack",slot:3,tier:"high",price:690,sig:1,isNew:1},
- "duffle-smiley":{vi:"yellow smiley duffle",en:"yellow smiley duffle",slot:3,tier:"high",price:790,sig:1,isNew:1},
- "socks":{vi:"vớ trắng sọc đen",en:"white socks, black stripe",slot:4,tier:"low",price:89,sig:0},
- "acid-tee":{vi:"acid wash retrovision tee",en:"acid wash retrovision tee",slot:0,tier:"mid",price:429,sig:1},
- "hardrock-tee":{vi:"hard rock tee",en:"hard rock tee",slot:0,tier:"low",price:349,sig:1},
- "acid-jogger":{vi:"nothing acid wash jogger",en:"nothing acid wash jogger",slot:1,tier:"high",price:590,sig:1,isNew:1},
- "turn-shorts":{vi:"turn shorts",en:"turn shorts",slot:1,tier:"mid",price:390,sig:0},
- "bucket-acid":{vi:"bucket acid wash",en:"acid wash bucket hat",slot:2,tier:"low",price:320,sig:1},
- "trucker-hardrock":{vi:"retrovision hard rock trucker",en:"retrovision hard rock trucker",slot:2,tier:"low",price:290,sig:1},
- "sling-retro":{vi:"retrovision sling bag",en:"retrovision sling bag",slot:3,tier:"mid",price:450,sig:1},
- "tote-retro":{vi:"retrovision padded tote",en:"retrovision padded tote",slot:3,tier:"mid",price:450,sig:1},
- "mbn-tee":{vi:"must be nice tee trắng",en:"must be nice tee white",slot:0,tier:"low",price:349,sig:1},
- "hoodie-og-pink":{vi:"100% original hoodie hồng",en:"100% original hoodie pink",slot:0,tier:"high",price:650,sig:1},
- "shorts-yourturn":{vi:"it's your turn shorts",en:"it's your turn shorts",slot:1,tier:"mid",price:390,sig:1},
- "joggers-og":{vi:"turn og joggers",en:"turn og joggers",slot:1,tier:"high",price:590,sig:1},
- "t-hat":{vi:"nón chữ t đen",en:"lowercase t hat black",slot:2,tier:"low",price:249,sig:1},
- "t-hat-cord":{vi:"nón chữ t nhung be",en:"lowercase t corduroy beige",slot:2,tier:"low",price:290,sig:1},
- "tote-100":{vi:"100% turn tote",en:"100% turn tote",slot:3,tier:"low",price:290,sig:1},
- "fanny-og-white":{vi:"turn original fanny pack trắng",en:"turn original fanny pack white",slot:3,tier:"mid",price:390,sig:1}
+ "smiley-circle-tee":{vi:"Tee Left Chest turn Smiley",en:"Left Chest turn Smiley tee",slot:0,price:1040000,sig:1},
+ "smiley-cropped-tee":{vi:"Tee Smiley Cropped (nữ)",en:"Smiley Cropped tee (women)",slot:0,price:910000,sig:1},
+ "mbn-tee-black":{vi:"Tee Must Be Nice đen",en:"Must Be Nice tee, black",slot:0,price:1040000,sig:1},
+ "crop-hoodie-smiley":{vi:"Hoodie Crop 3x Smiley (nữ)",en:"3x Smiley crop hoodie (women)",slot:0,price:1690000,sig:1},
+ "mink-black":{vi:"Áo len \"100% mink\" đen",en:"\"100% mink\" sweater, black",slot:0,price:2860000,sig:1,wait:{vi:"màu Mink",en:"Mink colour"}},
+ "mono-print":{vi:"Tee turn Mono Print",en:"turn Mono Print tee",slot:0,price:1040000,sig:1,wait:{vi:"mẫu Mono Print",en:"Mono Print match"}},
+ "cassette-tee":{vi:"Tee Cassette trắng",en:"Cassette tee, white",slot:0,price:910000,sig:1},
+ "letterman":{vi:"Áo khoác Varsity Letterman",en:"Varsity Letterman jacket",slot:4,price:3250000,sig:1,wait:{vi:"tồn kho Letterman",en:"Letterman stock"}},
+ "shorts-5050":{vi:"Shorts 50/50 Smiley",en:"50/50 Smiley shorts",slot:1,price:1170000,sig:1},
+ "joggers-smiley":{vi:"Jogger 3x Smiley",en:"3x Smiley joggers",slot:1,price:1690000,sig:1},
+ "shorts-yourturn-black":{vi:"Shorts It's Your Turn đen",en:"It's Your Turn shorts, black",slot:1,price:1170000,sig:1},
+ "shorts-yourturn-pink":{vi:"Shorts It's Your Turn trắng chữ hồng",en:"It's Your Turn shorts, white/pink",slot:1,price:1170000,sig:1},
+ "bucket-rev":{vi:"Bucket Hat OG",en:"OG bucket hat",slot:2,price:780000,sig:1},
+ "dad-smiley":{vi:"Dad Hat Smiley đen",en:"Smiley dad hat, black",slot:2,price:400000,sig:1},
+ "t-hat-cord":{vi:"Nón chữ \"t\" nhung",en:"Lowercase \"t\" corduroy hat",slot:2,price:1040000,sig:1},
+ "fanny-smiley":{vi:"Túi bao tử Smiley vàng",en:"Yellow smiley fanny pack",slot:3,price:780000,sig:1},
+ "tote-100":{vi:"Túi 100% Turn Tote",en:"100% Turn Tote",slot:3,price:1170000,sig:1,isNew:1},
+ "socks":{vi:"Vớ OG trắng sọc đen",en:"OG socks, white with black stripe",slot:3,price:390000,sig:0},
+ /* only used for the style thumbnails */
+ "hoodie-triple-orange":{vi:"Hoodie 3x Smiley",en:"3x Smiley hoodie",slot:0,price:2080000,sig:1},
+ "acid-tee":{vi:"acid wash tee",en:"acid wash tee",slot:0,price:1040000,sig:1},
+ "acid-jogger":{vi:"acid wash jogger",en:"acid wash jogger",slot:1,price:0,sig:1},
+ "bucket-acid":{vi:"bucket acid wash",en:"acid wash bucket hat",slot:2,price:0,sig:1},
+ "sling-retro":{vi:"retrovision sling bag",en:"retrovision sling bag",slot:3,price:0,sig:1},
+ "mbn-tee":{vi:"must be nice tee trắng",en:"must be nice tee white",slot:0,price:1040000,sig:1},
+ "shorts-yourturn":{vi:"it's your turn shorts",en:"it's your turn shorts",slot:1,price:1170000,sig:1},
+ "t-hat":{vi:"nón chữ t đen",en:"lowercase t hat black",slot:2,price:0,sig:1}
 };
+const tierOf=p=>p<900000?"low":p<2000000?"mid":"high";
 const STYLES=[
  {id:"smiley",rec:1,name:{vi:"Smiley Street",en:"Smiley Street"},
   desc:{vi:"Đường phố vui, nền đen trắng, mặt cười 3 mắt làm dấu hiệu. Dùng đúng tài sản nhận diện mạnh nhất của turn.",en:"Playful street, black and white base, the three-eyed smiley as the signature. Uses turn's strongest brand asset."},
@@ -350,45 +343,44 @@ const STYLES=[
   desc:{vi:"Bạc màu, cổ điển 80–90s từ dòng retrovision. Rất chất nhưng thiếu quần và phần lớn là áo tối màu, hợp làm drop thứ hai.",en:"Faded, 80s–90s vintage from the retrovision line. Strong look, but few bottoms and mostly dark tops; better as a second drop."},
   scores:[8,7,8,8,8],strip:["acid-tee","acid-jogger","bucket-acid","sling-retro"]},
  {id:"og",name:{vi:"Clean OG",en:"Clean OG"},
-  desc:{vi:"Tối giản, chữ in nhỏ: must be nice, 100% original, chữ t. Dễ mặc, dễ bán nhưng khó phân biệt với các local brand basic.",en:"Minimal, small type: must be nice, 100% original, lowercase t. Easy to wear and sell, but harder to tell apart from basic local brands."},
+  desc:{vi:"Tối giản, chữ in nhỏ: must be nice, chữ turn, chữ t. Đứng riêng thì khó phân biệt với local brand basic, nên dùng làm nền cho các set thu đông.",en:"Minimal, small type: must be nice, the turn wordmark, lowercase t. On its own it blurs into basic local brands, so it works as the base for the fall–winter sets."},
   scores:[6,8,8,8,8],strip:["mbn-tee","shorts-yourturn","t-hat","tote-100"]}
 ];
+const YEL={c:"#F2C230",vi:"vàng",en:"yellow"},BW={c:"#141312",vi:"không, đen trắng",en:"none, black and white"},BEI={c:"#CDB797",vi:"be nhung",en:"corduroy beige"},PNK={c:"#E78EA3",vi:"hồng",en:"pink"};
 const OUTFITS=[
- {id:"S1",style:"smiley",name:"Smiley Summer",when:{vi:"Mùa hè · unisex",en:"Summer · unisex"},acc:{c:"#F2C230",vi:"vàng",en:"yellow"},items:["smiley-circle-tee","shorts-5050","bucket-rev","fanny-smiley","socks"]},
- {id:"S2",style:"smiley",name:"Smiley Girl",when:{vi:"Mùa hè · nữ",en:"Summer · women"},acc:{c:"#F2C230",vi:"vàng",en:"yellow"},items:["smiley-cropped-tee","shorts-5050","dad-smiley","fanny-smiley","socks"]},
- {id:"S3",style:"smiley",name:"Triple Night",when:{vi:"Thu đông · unisex",en:"Fall–winter · unisex"},acc:{c:"#F07A2A",vi:"cam",en:"orange"},items:["hoodie-triple-orange","joggers-smiley","beanie-smiley","backpack-smiley","socks"]},
- {id:"S4",style:"smiley",name:"Crop Cozy",when:{vi:"Chuyển mùa · nữ",en:"Between seasons · women"},acc:{c:"#F2C230",vi:"vàng",en:"yellow"},items:["crop-hoodie-smiley","joggers-smiley","dad-smiley","fanny-smiley","socks"]},
- {id:"S5",style:"smiley",name:"Weekend Trip",when:{vi:"Đi chơi cuối tuần",en:"Weekend away"},acc:{c:"#F2C230",vi:"vàng",en:"yellow"},items:["hoodie-triple-white","shorts-5050","bucket-rev","duffle-smiley","socks"]},
- {id:"R1",style:"retro",name:"Wash Day",when:{vi:"Chuyển mùa · unisex",en:"Between seasons · unisex"},acc:{c:"#4F7DD8",vi:"xanh wash",en:"washed blue"},items:["acid-tee","acid-jogger","bucket-acid","sling-retro","socks"]},
- {id:"R2",style:"retro",name:"Hard Rock",when:{vi:"Mùa hè · unisex",en:"Summer · unisex"},acc:{c:"#9C8CE8",vi:"tím",en:"violet"},items:["hardrock-tee","turn-shorts","trucker-hardrock","tote-retro","socks"]},
- {id:"O1",style:"og",name:"Must Be Nice",when:{vi:"Mùa hè · unisex",en:"Summer · unisex"},acc:{c:"#141312",vi:"không, đen trắng",en:"none, black and white"},items:["mbn-tee","shorts-yourturn","t-hat","tote-100","socks"]},
- {id:"O2",style:"og",name:"Soft Pink",when:{vi:"Thu đông · nữ",en:"Fall–winter · women"},acc:{c:"#E78EA3",vi:"hồng",en:"pink"},items:["hoodie-og-pink","joggers-og","t-hat-cord","fanny-og-white","socks"]}
+ {id:"C1",season:"hot",name:"Must Be Nice",when:{vi:"Hè · unisex · combo giá vào",en:"Summer · unisex · entry bundle"},acc:BW,items:["mbn-tee-black","shorts-5050","dad-smiley","socks"],
+  why:{vi:"Combo rẻ nhất, cửa vào cho khách mới. Toàn hàng đợt 1, lên kệ được ngay. Chữ must be nice trên áo, mặt cười trên quần và nón.",en:"The cheapest bundle and the way in for new customers. All wave-1 stock, ready to sell. must be nice on the tee, the smiley on the shorts and cap."}},
+ {id:"S1",season:"hot",name:"Smiley Summer",when:{vi:"Hè · unisex",en:"Summer · unisex"},acc:YEL,items:["smiley-circle-tee","shorts-5050","bucket-rev","fanny-smiley","socks"],
+  why:{vi:"Set hè đủ 5 món, mặt cười xuất hiện ở cả bộ. Túi bao tử vàng là điểm nhấn màu duy nhất.",en:"The full five-piece summer set, smiley head to toe. The yellow fanny pack is the only accent colour."}},
+ {id:"S2",season:"hot",name:"Smiley Girl",when:{vi:"Hè · nữ",en:"Summer · women"},acc:YEL,items:["smiley-cropped-tee","shorts-5050","dad-smiley","fanny-smiley","socks"],
+  why:{vi:"Bản nữ của Smiley Summer: áo crop mặt cười làm điểm nhấn, nón và túi lặp lại dấu hiệu.",en:"The women's take on Smiley Summer: the smiley crop tee is the loud piece, the cap and bag repeat the signature."}},
+ {id:"S4",season:"cold",name:"Crop Cozy",when:{vi:"Chuyển mùa · nữ",en:"Between seasons · women"},acc:YEL,items:["crop-hoodie-smiley","joggers-smiley","dad-smiley","fanny-smiley","socks"],
+  why:{vi:"Set nỉ cho nữ: crop hoodie và jogger cùng dòng mặt cười, mặc được từ tháng 10 đến tháng 3.",en:"A fleece set for women: crop hoodie and joggers from the same smiley line, wearable October to March."}},
+ {id:"C4",season:"cold",name:"Mink Winter",when:{vi:"Thu đông · unisex · hero áo len",en:"Fall–winter · unisex · sweater hero"},acc:BEI,items:["mink-black","joggers-smiley","t-hat-cord","socks"],
+  why:{vi:"Áo len lông chữ turn cỡ lớn là món in lớn duy nhất. Jogger mặt cười giữ chất Smiley Street, nón nhung be làm màu ấm.",en:"The fuzzy sweater with the big turn wordmark is the one loud piece. Smiley joggers keep it Smiley Street; the beige corduroy hat adds warmth."}},
+ {id:"C5",season:"cold",name:"Varsity Night",when:{vi:"Thu đông · unisex · ảnh bìa ra mắt",en:"Fall–winter · unisex · launch cover"},acc:BEI,items:["letterman","mbn-tee-black","joggers-smiley","t-hat-cord"],
+  why:{vi:"Combo cao nhất, dùng làm ảnh bìa và lookbook ngày ra mắt. Áo khoác varsity có mặt cười sau lưng, tee must be nice làm lớp trong.",en:"The top bundle, used for the launch cover and lookbook. The varsity jacket carries the smiley on the back, with the must be nice tee underneath."}}
 ];
-
-const WHY={
- S1:{vi:"Set vào cửa cho mùa hè miền Nam. Áo bậc thấp kéo khách, quần và túi bậc trung nâng giá trị đơn.",en:"The entry set for southern summer. A low-tier tee brings people in; the shorts and bag lift the basket."},
- S2:{vi:"Bản nữ của Smiley Summer: áo crop mặt cười vàng làm điểm nhấn, nón và túi lặp lại dấu hiệu.",en:"The women's take on Smiley Summer: the yellow-smiley crop tee is the loud piece, the cap and bag repeat the signature."},
- S3:{vi:"Set hero cho thu đông miền Bắc và quảng cáo. Hoodie triple smiley là món nhận diện mạnh nhất của turn.",en:"The hero set for the northern winter and for ads. The triple smiley hoodie is turn's most recognisable piece."},
- S4:{vi:"Set chuyển mùa cho nữ: crop hoodie và jogger cùng dòng mặt cười, mặc được từ tháng 10 đến tháng 3.",en:"A between-seasons women's set: crop hoodie and joggers from the same smiley line, wearable October to March."},
- S5:{vi:"Set đi chơi cuối tuần, chụp ảnh đẹp nhất. Túi duffle vàng là món lớn, hợp làm quà tặng hoặc combo giá cao.",en:"The weekend-away set and the most photogenic one. The yellow duffle is the statement bag, good for gifting or a premium bundle."},
- R1:{vi:"Toàn bộ wash bạc màu, hợp tệp thích đồ vintage. Cần thêm quần để đủ hàng.",en:"Head-to-toe washed vintage for the thrift crowd. Needs more bottoms before it can lead."},
- R2:{vi:"Retro rock cho mùa hè, nón trucker là dấu hiệu.",en:"Summer retro rock, with the trucker cap as the signature."},
- O1:{vi:"Basic chữ must be nice, bán quanh năm, dễ mặc đi làm.",en:"Must-be-nice basics, sold year-round and easy to wear to work."},
- O2:{vi:"Set nỉ hồng cho nữ, dùng đúng màu hồng nhận diện của turn.",en:"A pink fleece set for women in turn's signature pink."}
-};
-OUTFITS.forEach(o=>o.why=WHY[o.id]);
+const LATER=[
+ {id:"C2",name:"Mono Street",when:{vi:"Hè · unisex",en:"Summer · unisex"},acc:BW,items:["mono-print","shorts-yourturn-black","tote-100","socks"],
+  why:{vi:"Đen trắng tối giản, chữ turn in kiểu nhiễu sóng. Chờ có túi Tote và xác nhận mẫu áo.",en:"Minimal black and white with a glitched turn print. Waits for the tote and the tee match."}},
+ {id:"C3",name:"Cassette Day",when:{vi:"Hè · nữ / unisex",en:"Summer · women / unisex"},acc:PNK,items:["cassette-tee","shorts-yourturn-pink","bucket-rev","tote-100"],
+  why:{vi:"Set tông sáng, chữ hồng trên quần là màu nhấn. Chờ có túi Tote.",en:"A light set with the pink type on the shorts as the accent. Waits for the tote."}}
+];
 let lang="vi"; try{ if(localStorage.getItem("tvn-lang")==="en") lang="en"; }catch(e){}
 const t=k=>T[lang][k];
-const fmt=n=>n.toLocaleString(lang==="vi"?"vi-VN":"en-US")+"k";
+const fmt=n=>lang==="vi"?n.toLocaleString("vi-VN")+"đ":n.toLocaleString("en-US")+" ₫";
 const styleScore=s=>s.scores.reduce((a,v,i)=>a+v*WEIGHTS[i],0)/100;
 const retailOf=o=>o.items.reduce((a,k)=>a+P[k].price,0);
-const setOf=o=>Math.round(retailOf(o)*0.88/10)*10;
+const setOf=o=>Math.ceil(retailOf(o)*0.88/10000)*10000;
 const el=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e};
 function applyText(){
   document.documentElement.lang=lang;
   document.querySelectorAll("[data-i]").forEach(n=>{const v=t(n.dataset.i);if(typeof v!=="string")return;if(n.dataset.html)n.innerHTML=v;else n.textContent=v});
   document.getElementById("lang-vi").setAttribute("aria-pressed",lang==="vi");
   document.getElementById("lang-en").setAttribute("aria-pressed",lang==="en");
+  const st=document.getElementById("status");st.textContent="";
+  [["ok",t("stLocked")],["warn",t("stWait")],["",t("stLater")]].forEach(([c,x])=>{const p=el("span","pill"+(c?" "+c:""));p.append(el("span","dot"),document.createTextNode(x));st.append(p)});
 }
 function renderStyles(){
   const box=document.getElementById("styles");box.textContent="";
@@ -411,25 +403,28 @@ function renderStyles(){
 }
 function renderFormula(){
   const f=document.getElementById("formula");f.textContent="";
-  t("slots").forEach((s,i)=>{const d=el("div","slot");d.append(el("span","eyebrow",(i+1)+" / 5"),el("b",null,s),el("span",null,t("slotsSub")[i]));f.append(d)});
+  t("slots").forEach((s,i)=>{const d=el("div","slot");d.append(el("span","eyebrow",i<3?(lang==="vi"?"bắt buộc":"required"):(lang==="vi"?"tuỳ set":"per set")),el("b",null,s),el("span",null,t("slotsSub")[i]));f.append(d)});
   const r=document.getElementById("rules");r.textContent="";
   t("rules").forEach(([h,p])=>{const d=el("div","rule");d.append(el("h3",null,h),el("p",null,p));r.append(d)});
 }
 function checksOf(o){
-  const sig=o.items.filter(k=>P[k].sig).length;const tiers=new Set(o.items.map(k=>P[k].tier)).size;
-  return [[true,t("chkSlots")],[sig>=2,sig>=2?t("chkSig")(sig):t("chkSigBad")(sig)],[tiers>=2,tiers>=2?t("chkTier")(tiers):t("chkTierBad")],[true,t("chkAcc")+": "+o.acc[lang]]];
+  const sig=o.items.filter(k=>P[k].sig).length;const tiers=new Set(o.items.map(k=>tierOf(P[k].price))).size;
+  const sl=new Set(o.items.map(k=>P[k].slot));const core=(sl.has(0)||sl.has(4))&&sl.has(1)&&sl.has(2);
+  const out=[[core,core?t("chkCore"):t("chkCoreBad")],[sig>=2,sig>=2?t("chkSig")(sig):t("chkSigBad")(sig)],[tiers>=2,tiers>=2?t("chkTier")(tiers):t("chkTierBad")],[true,t("chkAcc")+": "+o.acc[lang]]];
+  const w=o.items.filter(k=>P[k].wait).map(k=>P[k].wait[lang]);
+  if(w.length)out.push([false,t("chkWait")(w.join(", "))]);
+  return out;
 }
-const tierName=x=>lang==="vi"?{low:"thấp",mid:"trung",high:"cao"}[x]:x;
-function outfitCard(o,showStyle){
+function outfitCard(o){
   const card=el("article","of");
-  const hd=el("div","hd");hd.append(el("h3",null,o.name));
-  if(showStyle)hd.append(el("span","pill",STYLES.find(s=>s.id===o.style).name[lang]));
+  const hd=el("div","hd");hd.append(el("span","pill",o.id),el("h3",null,o.name));
   hd.append(el("span","tagS",o.when[lang]));
   const acc=el("span","acc");const sw=el("i");sw.style.background=o.acc.c;acc.append(sw,document.createTextNode(o.acc[lang]));hd.append(acc);
-  const items=el("div","items");
+  const items=el("div","items");items.style.setProperty("--n",o.items.length);
   o.items.forEach(k=>{const p=P[k];const it=el("div","it");const ph=el("div","ph");const im=el("img");im.src="img/"+k+".jpg";im.alt=p[lang];im.loading="lazy";ph.append(im);
-    if(p.sig)ph.append(el("span","sig",t("sigTag")));if(p.isNew)ph.append(el("span","new",t("newTag")));
-    const pr=el("div","pr");pr.append(el("span",null,fmt(p.price)),el("span","tier "+p.tier,tierName(p.tier)));
+    if(p.sig)ph.append(el("span","sig",t("sigTag")));
+    if(p.wait)ph.append(el("span","new wait",t("waitTag")));else if(p.isNew)ph.append(el("span","new",t("newTag")));
+    const tr=tierOf(p.price);const pr=el("div","pr");pr.append(el("span",null,fmt(p.price)),el("span","tier "+tr,t("tiers")[tr]));
     it.append(el("span","sl",t("slots")[p.slot]),ph,el("span","nm",p[lang]),pr);items.append(it)});
   const ft=el("div","ft");const money=el("div","money");const r=retailOf(o),sp=setOf(o);
   const a=el("div");a.append(el("div","eyebrow",t("setPrice")),el("div","big",fmt(sp)));
@@ -437,14 +432,14 @@ function outfitCard(o,showStyle){
   const c=el("div");c.append(el("div","eyebrow",t("save")),el("div",null,fmt(r-sp)));
   money.append(a,b,c);
   const ch=el("div","checks");checksOf(o).forEach(([y,txt])=>{const d=el("div","c "+(y?"y":"n"));d.append(el("b",null,y?"✓":"!"),el("span",null,txt));ch.append(d)});
-  const why=el("p",null,o.why?o.why[lang]:"");why.style.fontSize="14.5px";why.style.alignSelf="center";
+  const why=el("p",null,o.why[lang]);why.style.fontSize="14.5px";why.style.alignSelf="center";
   const left=el("div");left.append(money,ch);ft.append(why,left);card.append(hd,items,ft);return card;
 }
 function renderOutfits(){
   const main=document.getElementById("outfits");main.textContent="";
-  OUTFITS.filter(o=>o.style==="smiley").forEach(o=>main.append(outfitCard(o,false)));
+  ["hot","cold"].forEach(s=>{main.append(el("h3","season",t("seasons")[s]));OUTFITS.filter(o=>o.season===s).forEach(o=>main.append(outfitCard(o)))});
   const alt=document.getElementById("outfits-alt");alt.textContent="";
-  OUTFITS.filter(o=>o.style!=="smiley").forEach(o=>alt.append(outfitCard(o,true)));
+  LATER.forEach(o=>alt.append(outfitCard(o)));
 }
 function renderAll(){applyText();renderStyles();renderFormula();renderOutfits()}
 document.getElementById("lang-vi").onclick=()=>{lang="vi";try{localStorage.setItem("tvn-lang","vi")}catch(e){}renderAll()};
