@@ -140,6 +140,7 @@ td.win{background:var(--pink-soft)}
 .sig{position:absolute;top:6px;left:6px;background:var(--pink);color:#141312;font-size:10px;font-weight:800;border-radius:99px;padding:1px 7px}
 .new{position:absolute;top:6px;right:6px;background:var(--ink);color:var(--bg);font-size:10px;font-weight:700;border-radius:99px;padding:1px 7px}
 .new.wait{background:var(--edit);color:#fff}
+.stk{font-size:11.5px;font-weight:700}.stk.y{color:var(--ok)}.stk.n{color:var(--edit)}
 .season{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:6px}
 .it .pr{flex-wrap:wrap;gap:4px}
 .ft{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px;padding:14px 16px}
@@ -230,6 +231,15 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:12.5px;border-top:1p
     <div class="outfits" id="outfits"></div>
   </section>
 
+  <section class="blk" id="sec-ready">
+    <div class="sechead">
+      <span class="eyebrow" data-i="s5Eyebrow"></span>
+      <h2 data-i="s5Title"></h2>
+      <p class="muted" data-i="s5Lead"></p>
+    </div>
+    <div class="outfits" id="outfits-ready"></div>
+  </section>
+
   <section class="blk" id="sec-alt">
     <div class="sechead">
       <span class="eyebrow" data-i="s4Eyebrow"></span>
@@ -247,13 +257,15 @@ const T = {
   vi:{topTitle:"COMBO RA MẮT · VIỆT NAM",heroEyebrow:"turn apparel vietnam · combo ra mắt đã chốt 27/11/2026",
     heroTitle:"Smiley Street. <em>6 combo</em> mặc trọn bộ.",
     heroLead:"turn ra mắt tại Việt Nam bằng 6 combo: 3 set hè, 3 set thu đông. Mặt cười 3 mắt dẫn đầu, nền đen trắng giữ chung cho mọi set. Giá lẻ quy đổi thẳng từ giá gốc web Mỹ, mua trọn combo tiết kiệm 12%.",
-    stLocked:"6 combo đã chốt",stWait:"2 món chờ TURN xác nhận",stLater:"2 combo để đợt sau",
+    stLocked:"6 combo đã chốt",stWait:"Hàng về (HĐ SC-003): 1.417 cái, chưa có mũ, túi, vớ, quần short",stLater:"2 set đủ hàng bán ngay",
+    s5Eyebrow:"Bán ngay",s5Title:"2 set đủ hàng từ lô SC-003",s5Lead:"Lô hàng đầu tiên (hợp đồng SC-003) chỉ có quần áo: nhiều hoodie, jogger, áo thun, chưa có mũ, túi, vớ và quần short. Hai set dưới đây chỉ dùng hàng đã có trong lô này, mở bán được ngay trong lúc chờ phụ kiện.",
+    stkY:n=>`Có hàng · ${n} cái`,stkN:"Chưa có trong lô hàng về",chkStock:(a,b)=>`Có hàng ${a}/${b} món`,chkStockAll:"Đủ hàng, bán được ngay",
     s1Eyebrow:"Bước 1",s1Title:"Vì sao chọn Smiley Street",
     s1Lead:"Ba hướng có đủ hàng trong kho ảnh của turn, chấm theo 5 tiêu chí có trọng số. Smiley Street dẫn đầu vì dùng đúng tài sản nhận diện mạnh nhất. Clean OG (đen trắng, chữ nhỏ) giữ vai trò nền cho các set thu đông.",
     s2Eyebrow:"Bước 2",s2Title:"Công thức một combo",
     s2Lead:"Mỗi combo 4 món. Áo, quần, mũ là bắt buộc; thêm túi hoặc vớ để chốt bộ. Mùa lạnh, áo khoác hoặc áo len làm món hero.",
     s3Eyebrow:"Bước 3",s3Title:"6 combo ra mắt",
-    s3Lead:"Xếp theo mùa: set hè cho miền Nam, set thu đông cho miền Bắc và cho mùa ra mắt tháng 12. Nhãn hồng là món mang dấu hiệu nhận diện. Nhãn CHỜ là món TURN cần xác nhận màu hoặc tồn kho trước khi bán.",
+    s3Lead:"Xếp theo mùa: set hè cho miền Nam, set thu đông cho miền Bắc và cho mùa ra mắt tháng 12. Nhãn hồng là món mang dấu hiệu nhận diện. Dòng xanh dưới mỗi món là số hàng đã về theo hợp đồng SC-003; dòng cam là món chưa có hàng.",
     seasons:{hot:"Hè · miền Nam quanh năm",cold:"Thu đông · ra mắt tháng 12"},
     s4Eyebrow:"Để sau",s4Title:"Hai combo cho đợt sau",
     s4Lead:"Cần thêm túi 100% Turn Tote (chưa có trên shop) và xác nhận mẫu áo Mono Print trước khi mở bán.",
@@ -276,13 +288,15 @@ const T = {
   en:{topTitle:"LAUNCH BUNDLES · VIETNAM",heroEyebrow:"turn apparel vietnam · launch bundles locked 27 Nov 2026",
     heroTitle:"Smiley Street. <em>6 bundles</em>, worn as full looks.",
     heroLead:"turn launches in Vietnam with 6 bundles: 3 summer sets and 3 fall–winter sets. The three-eyed smiley leads, with a shared black and white base. Single prices convert the US list price directly; buying the full bundle saves 12%.",
-    stLocked:"6 bundles locked",stWait:"2 pieces waiting on turn",stLater:"2 bundles held for later",
+    stLocked:"6 bundles locked",stWait:"Stock in (contract SC-003): 1,417 units, no hats, bags, socks or shorts yet",stLater:"2 sets ready to sell now",
+    s5Eyebrow:"Sell now",s5Title:"2 fully stocked sets from shipment SC-003",s5Lead:"The first shipment (contract SC-003) is apparel only: plenty of hoodies, joggers and tees, but no hats, bags, socks or shorts. These two sets use only what is in that shipment, so they can go on sale while the accessories are pending.",
+    stkY:n=>`In stock · ${n} units`,stkN:"Not in the shipment",chkStock:(a,b)=>`In stock: ${a}/${b} pieces`,chkStockAll:"Fully stocked, ready to sell",
     s1Eyebrow:"Step 1",s1Title:"Why Smiley Street",
     s1Lead:"Three directions have enough product in turn's asset library, scored on five weighted criteria. Smiley Street leads because it uses the strongest brand asset. Clean OG (black and white, small type) is the base layer for the fall–winter sets.",
     s2Eyebrow:"Step 2",s2Title:"The bundle formula",
     s2Lead:"Each bundle has 4 pieces. Top, bottom and hat are required; a bag or socks closes the look. In cold months a jacket or sweater is the hero piece.",
     s3Eyebrow:"Step 3",s3Title:"6 launch bundles",
-    s3Lead:"Grouped by season: summer sets for the south, fall–winter sets for the north and for the December launch. Pink tags mark the signature pieces. WAIT marks pieces turn still has to confirm (colour or stock) before they go on sale.",
+    s3Lead:"Grouped by season: summer sets for the south, fall–winter sets for the north and for the December launch. Pink tags mark the signature pieces. The green line under each piece is the stock received under contract SC-003; orange means not received yet.",
     seasons:{hot:"Summer · the south, year-round",cold:"Fall–winter · December launch"},
     s4Eyebrow:"Later",s4Title:"Two bundles for a later drop",
     s4Lead:"They need the 100% Turn Tote (not in the shop yet) and confirmation of the Mono Print tee.",
@@ -306,16 +320,16 @@ const T = {
 const WEIGHTS=[30,25,15,15,15];
 /* price: VND single price (US list price × 26,000). slot: 0 top, 1 bottom, 2 hat, 3 bag/socks, 4 outerwear */
 const P={
- "smiley-circle-tee":{vi:"Tee Left Chest turn Smiley",en:"Left Chest turn Smiley tee",slot:0,price:1040000,sig:1},
+ "smiley-circle-tee":{stock:9,vi:"Tee Left Chest turn Smiley",en:"Left Chest turn Smiley tee",slot:0,price:1040000,sig:1},
  "smiley-cropped-tee":{vi:"Tee Smiley Cropped (nữ)",en:"Smiley Cropped tee (women)",slot:0,price:910000,sig:1},
- "mbn-tee-black":{vi:"Tee Must Be Nice đen",en:"Must Be Nice tee, black",slot:0,price:1040000,sig:1},
+ "mbn-tee-black":{stock:20,vi:"Tee Must Be Nice đen",en:"Must Be Nice tee, black",slot:0,price:1040000,sig:1},
  "crop-hoodie-smiley":{vi:"Hoodie Crop 3x Smiley (nữ)",en:"3x Smiley crop hoodie (women)",slot:0,price:1690000,sig:1},
- "mink-black":{vi:"Áo len \"100% mink\" đen",en:"\"100% mink\" sweater, black",slot:0,price:2860000,sig:1,wait:{vi:"màu Mink",en:"Mink colour"}},
- "mono-print":{vi:"Tee turn Mono Print",en:"turn Mono Print tee",slot:0,price:1040000,sig:1,wait:{vi:"mẫu Mono Print",en:"Mono Print match"}},
- "cassette-tee":{vi:"Tee Cassette trắng",en:"Cassette tee, white",slot:0,price:910000,sig:1},
- "letterman":{vi:"Áo khoác Varsity Letterman",en:"Varsity Letterman jacket",slot:4,price:3250000,sig:1,wait:{vi:"tồn kho Letterman",en:"Letterman stock"}},
+ "mink-black":{stock:20,vi:"Áo len \"100% mink\" đen",en:"\"100% mink\" sweater, black",slot:0,price:2860000,sig:1,wait:{vi:"màu Mink",en:"Mink colour"}},
+ "mono-print":{stock:17,vi:"Tee turn Mono Print",en:"turn Mono Print tee",slot:0,price:1040000,sig:1,wait:{vi:"mẫu Mono Print",en:"Mono Print match"}},
+ "cassette-tee":{stock:20,vi:"Tee Cassette trắng",en:"Cassette tee, white",slot:0,price:910000,sig:1},
+ "letterman":{stock:15,vi:"Áo khoác Varsity Letterman",en:"Varsity Letterman jacket",slot:4,price:3250000,sig:1},
  "shorts-5050":{vi:"Shorts 50/50 Smiley",en:"50/50 Smiley shorts",slot:1,price:1170000,sig:1},
- "joggers-smiley":{vi:"Jogger 3x Smiley",en:"3x Smiley joggers",slot:1,price:1690000,sig:1},
+ "joggers-smiley":{stock:33,vi:"Jogger 3x Smiley",en:"3x Smiley joggers",slot:1,price:1690000,sig:1},
  "shorts-yourturn-black":{vi:"Shorts It's Your Turn đen",en:"It's Your Turn shorts, black",slot:1,price:1170000,sig:1},
  "shorts-yourturn-pink":{vi:"Shorts It's Your Turn trắng chữ hồng",en:"It's Your Turn shorts, white/pink",slot:1,price:1170000,sig:1},
  "bucket-rev":{vi:"Bucket Hat OG",en:"OG bucket hat",slot:2,price:780000,sig:1},
@@ -325,7 +339,8 @@ const P={
  "tote-100":{vi:"Túi 100% Turn Tote",en:"100% Turn Tote",slot:3,price:1170000,sig:1,isNew:1},
  "socks":{vi:"Vớ OG trắng sọc đen",en:"OG socks, white with black stripe",slot:3,price:390000,sig:0},
  /* only used for the style thumbnails */
- "hoodie-triple-orange":{vi:"Hoodie 3x Smiley",en:"3x Smiley hoodie",slot:0,price:2080000,sig:1},
+ "hoodie-triple-orange":{stock:80,vi:"Hoodie 3x Smiley (4 màu)",en:"3x Smiley hoodie (4 colours)",slot:0,price:2080000,sig:1},
+ "hoodie-mbn":{stock:60,vi:"Hoodie Must Be Nice đen",en:"Must Be Nice hoodie, black",slot:0,price:2080000,sig:1},
  "acid-tee":{vi:"acid wash tee",en:"acid wash tee",slot:0,price:1040000,sig:1},
  "acid-jogger":{vi:"acid wash jogger",en:"acid wash jogger",slot:1,price:0,sig:1},
  "bucket-acid":{vi:"bucket acid wash",en:"acid wash bucket hat",slot:2,price:0,sig:1},
@@ -366,6 +381,12 @@ const LATER=[
   why:{vi:"Đen trắng tối giản, chữ turn in kiểu nhiễu sóng. Chờ có túi Tote và xác nhận mẫu áo.",en:"Minimal black and white with a glitched turn print. Waits for the tote and the tee match."}},
  {id:"C3",name:"Cassette Day",when:{vi:"Hè · nữ / unisex",en:"Summer · women / unisex"},acc:PNK,items:["cassette-tee","shorts-yourturn-pink","bucket-rev","tote-100"],
   why:{vi:"Set tông sáng, chữ hồng trên quần là màu nhấn. Chờ có túi Tote.",en:"A light set with the pink type on the shorts as the accent. Waits for the tote."}}
+];
+const READY=[
+ {id:"K1",name:"Triple Set",when:{vi:"Thu đông · unisex · bộ nỉ",en:"Fall–winter · unisex · fleece set"},acc:{c:"#F07A2A",vi:"theo màu hoodie",en:"follows the hoodie"},items:["hoodie-triple-orange","joggers-smiley"],
+  why:{vi:"Bộ nỉ mặt cười đồng bộ, món nhận diện mạnh nhất của turn. Lô hàng có 80 hoodie 4 màu và 64 jogger (gồm bản V2), đủ chạy quảng cáo.",en:"The matching smiley fleece set, turn's most recognisable look. The shipment has 80 hoodies in 4 colours and 64 joggers (incl. V2), enough to back ads."}},
+ {id:"K2",name:"Must Be Nice Set",when:{vi:"Thu đông · unisex",en:"Fall–winter · unisex"},acc:{c:"#F2C230",vi:"vàng",en:"yellow"},items:["hoodie-mbn","joggers-smiley","mbn-tee-black"],
+  why:{vi:"Hoodie Must Be Nice mặt cười vàng (60 cái) với jogger mặt cười, tee must be nice làm lớp trong để mặc được cả khi trời ấm lên.",en:"The yellow-smiley Must Be Nice hoodie (60 units) with smiley joggers, plus the must be nice tee underneath for warmer afternoons."}}
 ];
 let lang="vi"; try{ if(localStorage.getItem("tvn-lang")==="en") lang="en"; }catch(e){}
 const t=k=>T[lang][k];
@@ -410,7 +431,8 @@ function renderFormula(){
 function checksOf(o){
   const sig=o.items.filter(k=>P[k].sig).length;const tiers=new Set(o.items.map(k=>tierOf(P[k].price))).size;
   const sl=new Set(o.items.map(k=>P[k].slot));const core=(sl.has(0)||sl.has(4))&&sl.has(1)&&sl.has(2);
-  const out=[[core,core?t("chkCore"):t("chkCoreBad")],[sig>=2,sig>=2?t("chkSig")(sig):t("chkSigBad")(sig)],[tiers>=2,tiers>=2?t("chkTier")(tiers):t("chkTierBad")],[true,t("chkAcc")+": "+o.acc[lang]]];
+  const out=o.id[0]==="K"?[[sig>=2,t("chkSig")(sig)],[true,t("chkAcc")+": "+o.acc[lang]]]:[[core,core?t("chkCore"):t("chkCoreBad")],[sig>=2,sig>=2?t("chkSig")(sig):t("chkSigBad")(sig)],[tiers>=2,tiers>=2?t("chkTier")(tiers):t("chkTierBad")],[true,t("chkAcc")+": "+o.acc[lang]]];
+  const ins=o.items.filter(k=>P[k].stock).length;out.unshift([ins===o.items.length,ins===o.items.length?t("chkStockAll"):t("chkStock")(ins,o.items.length)]);
   const w=o.items.filter(k=>P[k].wait).map(k=>P[k].wait[lang]);
   if(w.length)out.push([false,t("chkWait")(w.join(", "))]);
   return out;
@@ -420,12 +442,13 @@ function outfitCard(o){
   const hd=el("div","hd");hd.append(el("span","pill",o.id),el("h3",null,o.name));
   hd.append(el("span","tagS",o.when[lang]));
   const acc=el("span","acc");const sw=el("i");sw.style.background=o.acc.c;acc.append(sw,document.createTextNode(o.acc[lang]));hd.append(acc);
-  const items=el("div","items");items.style.setProperty("--n",o.items.length);
+  const items=el("div","items");items.style.setProperty("--n",o.items.length);if(o.items.length<4&&innerWidth>760)items.style.maxWidth=(o.items.length*25)+"%";
   o.items.forEach(k=>{const p=P[k];const it=el("div","it");const ph=el("div","ph");const im=el("img");im.src="img/"+k+".jpg";im.alt=p[lang];im.loading="lazy";ph.append(im);
     if(p.sig)ph.append(el("span","sig",t("sigTag")));
     if(p.wait)ph.append(el("span","new wait",t("waitTag")));else if(p.isNew)ph.append(el("span","new",t("newTag")));
     const tr=tierOf(p.price);const pr=el("div","pr");pr.append(el("span",null,fmt(p.price)),el("span","tier "+tr,t("tiers")[tr]));
-    it.append(el("span","sl",t("slots")[p.slot]),ph,el("span","nm",p[lang]),pr);items.append(it)});
+    const sk=p.stock?el("span","stk y",t("stkY")(p.stock)):el("span","stk n",t("stkN"));
+    it.append(el("span","sl",t("slots")[p.slot]),ph,el("span","nm",p[lang]),pr,sk);items.append(it)});
   const ft=el("div","ft");const money=el("div","money");const r=retailOf(o),sp=setOf(o);
   const a=el("div");a.append(el("div","eyebrow",t("setPrice")),el("div","big",fmt(sp)));
   const b=el("div");b.append(el("div","eyebrow",t("retail")),el("s",null,fmt(r)));
@@ -438,6 +461,7 @@ function outfitCard(o){
 function renderOutfits(){
   const main=document.getElementById("outfits");main.textContent="";
   ["hot","cold"].forEach(s=>{main.append(el("h3","season",t("seasons")[s]));OUTFITS.filter(o=>o.season===s).forEach(o=>main.append(outfitCard(o)))});
+  const rd=document.getElementById("outfits-ready");rd.textContent="";READY.forEach(o=>rd.append(outfitCard(o)));
   const alt=document.getElementById("outfits-alt");alt.textContent="";
   LATER.forEach(o=>alt.append(outfitCard(o)));
 }
